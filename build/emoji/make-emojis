@@ -70,7 +70,7 @@ end
 puts "\nThe following #{emoji_added.length} emoji were added:"
 print emoji_added
 
-blocklist = ['basecamp', 'basecampy']
+blocklist = ['basecamp', 'basecampy', 'hash']
 
 categories = []
 
@@ -242,7 +242,7 @@ categories.each do |category|
             FileUtils.cp(File.join(emoji_path, emoji.image_filename), File.join(tmp_directory, emoji.image_filename))
             count += 1
         end
-        if count == 45 || Emoji.all.length == i
+        if count == 45 || ( Emoji.all.length == i && count > 0 )
             batch += 1
 
             css_rules << ".emoji-category-#{category}-#{batch} { background-image: url('../images/emoji-sheets/#{category}-#{batch}.png'); }"
