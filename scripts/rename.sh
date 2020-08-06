@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 change_files() {
-    find ./* -type f -exec grep -Iq . {} \; -print | \
-        grep -v '\.go$' | \
+    find . -type f -exec grep -Iq . {} \; -print | \
+        grep -v '.git' | \
         grep -v '^./\(vendor\|LICENSE\|NOTICE\|go\.\)' | \
         grep -v '.go.tmpl\|/rename.sh' | \
     while read -r x; do
@@ -36,8 +36,9 @@ delete_files() {
     rm -f ./SECURITY.md
     rm -f ./Makefile
     rm -f ./CONTRIBUTING.md
+    rm -f ./images/redfavicon.ico ## not used
 }
 
-
-# change_files
+change_files
+rename_themes
 delete_files
