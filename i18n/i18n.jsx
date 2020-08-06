@@ -1,4 +1,4 @@
-// Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
+// Copyright (c) 2015-present Matterfoss, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
 /* eslint-disable import/order */
@@ -18,7 +18,7 @@ import uk from './uk.json';
 import zhTW from './zh-TW.json';
 import zhCN from './zh-CN.json';
 
-import {getConfig} from 'mattermost-redux/selectors/entities/general';
+import {getConfig} from 'matterfoss-redux/selectors/entities/general';
 
 import store from 'stores/redux_store.jsx';
 
