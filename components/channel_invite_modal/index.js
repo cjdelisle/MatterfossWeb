@@ -4,9 +4,9 @@
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 
-import {getTeamStats} from 'mattermost-redux/actions/teams';
-import {getProfilesNotInChannel, searchProfiles} from 'mattermost-redux/actions/users';
-import {getProfilesNotInCurrentChannel, getProfilesNotInCurrentTeam, getProfilesNotInTeam, makeGetProfilesNotInChannel} from 'mattermost-redux/selectors/entities/users';
+import {getTeamStats} from 'matterfoss-redux/actions/teams';
+import {getProfilesNotInChannel, searchProfiles} from 'matterfoss-redux/actions/users';
+import {getProfilesNotInCurrentChannel, getProfilesNotInCurrentTeam, getProfilesNotInTeam, makeGetProfilesNotInChannel} from 'matterfoss-redux/selectors/entities/users';
 
 import {addUsersToChannel} from 'actions/channel_actions';
 

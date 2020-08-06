@@ -4,9 +4,9 @@
 import {connect} from 'react-redux';
 import {bindActionCreators, Dispatch} from 'redux';
 
-import {getUserAudits} from 'mattermost-redux/actions/users';
-import {getCurrentUserId, getUserAudits as getCurrentUserAudits} from 'mattermost-redux/selectors/entities/users';
-import {GenericAction} from 'mattermost-redux/types/actions';
+import {getUserAudits} from 'matterfoss-redux/actions/users';
+import {getCurrentUserId, getUserAudits as getCurrentUserAudits} from 'matterfoss-redux/selectors/entities/users';
+import {GenericAction} from 'matterfoss-redux/types/actions';
 
 import {GlobalState} from 'types/store';
 

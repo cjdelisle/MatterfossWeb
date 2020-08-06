@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import {FormattedHTMLMessage, FormattedMessage} from 'react-intl';
 import {Tooltip} from 'react-bootstrap';
-import {Client4} from 'mattermost-redux/client';
+import {Client4} from 'matterfoss-redux/client';
 
 import {uploadBrandImage, deleteBrandImage} from 'actions/admin_actions.jsx';
 import {Constants} from 'utils/constants';
@@ -252,7 +252,7 @@ export default class BrandImageSetting extends React.PureComponent {
                     <p className='help-text m-0'>
                         <FormattedHTMLMessage
                             id='admin.team.uploadDesc'
-                            defaultMessage='Customize your user experience by adding a custom image to your login screen. See examples at <a href="http://docs.mattermost.com/administration/config-settings.html#custom-branding" target="_blank">docs.mattermost.com/administration/config-settings.html#custom-branding</a>.'
+                            defaultMessage='Customize your user experience by adding a custom image to your login screen. See examples at <a href="http://docs.matterfoss.com/administration/config-settings.html#custom-branding" target="_blank">docs.matterfoss.com/administration/config-settings.html#custom-branding</a>.'
                         />
                     </p>
                 </div>

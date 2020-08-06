@@ -3,12 +3,12 @@
 
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {getTeams} from 'mattermost-redux/actions/teams';
+import {getTeams} from 'matterfoss-redux/actions/teams';
 import {withRouter} from 'react-router-dom';
 
-import {getConfig} from 'mattermost-redux/selectors/entities/general';
-import {getMyTeams, getJoinableTeamIds, getTeamMemberships, getCurrentTeamId} from 'mattermost-redux/selectors/entities/teams';
-import {get} from 'mattermost-redux/selectors/entities/preferences';
+import {getConfig} from 'matterfoss-redux/selectors/entities/general';
+import {getMyTeams, getJoinableTeamIds, getTeamMemberships, getCurrentTeamId} from 'matterfoss-redux/selectors/entities/teams';
+import {get} from 'matterfoss-redux/selectors/entities/preferences';
 
 import {getCurrentLocale} from 'selectors/i18n';
 import {getIsLhsOpen} from 'selectors/lhs';

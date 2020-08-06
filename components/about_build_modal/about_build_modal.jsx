@@ -7,7 +7,7 @@ import {Modal} from 'react-bootstrap';
 import {FormattedMessage} from 'react-intl';
 
 import FormattedMarkdownMessage from 'components/formatted_markdown_message';
-import MattermostLogo from 'components/widgets/icons/mattermost_logo';
+import MatterfossLogo from 'components/widgets/icons/matterfoss_logo';
 
 import {AboutLinks} from 'utils/constants';
 
@@ -77,14 +77,14 @@ export default class AboutBuildModal extends React.PureComponent {
             <div>
                 <FormattedMessage
                     id='about.teamEditionLearn'
-                    defaultMessage='Join the Mattermost community at '
+                    defaultMessage='Join the Matterfoss community at '
                 />
                 <a
                     target='_blank'
                     rel='noopener noreferrer'
-                    href='http://www.mattermost.org/'
+                    href='http://www.matterfoss.org/'
                 >
-                    {'mattermost.org'}
+                    {'matterfoss.org'}
                 </a>
             </div>
         );
@@ -114,9 +114,9 @@ export default class AboutBuildModal extends React.PureComponent {
                     <a
                         target='_blank'
                         rel='noopener noreferrer'
-                        href='http://about.mattermost.com/'
+                        href='http://about.matterfoss.com/'
                     >
-                        {'about.mattermost.com'}
+                        {'about.matterfoss.com'}
                     </a>
                 </div>
             );
@@ -203,7 +203,7 @@ export default class AboutBuildModal extends React.PureComponent {
                     >
                         <FormattedMessage
                             id='about.title'
-                            values={{appTitle: config.SiteName || 'Mattermost'}}
+                            values={{appTitle: config.SiteName || 'Matterfoss'}}
                             defaultMessage='About {appTitle}'
                         />
                     </Modal.Title>
@@ -211,16 +211,16 @@ export default class AboutBuildModal extends React.PureComponent {
                 <Modal.Body>
                     <div className='about-modal__content'>
                         <div className='about-modal__logo'>
-                            <MattermostLogo/>
+                            <MatterfossLogo/>
                         </div>
                         <div>
-                            <h3 className='about-modal__title'>{'Mattermost'} {title}</h3>
+                            <h3 className='about-modal__title'>{'Matterfoss'} {title}</h3>
                             <p className='about-modal__subtitle pb-2'>{subTitle}</p>
                             <div className='form-group less'>
                                 <div>
                                     <FormattedMessage
                                         id='about.version'
-                                        defaultMessage='Mattermost Version:'
+                                        defaultMessage='Matterfoss Version:'
                                     />
                                     <span id='versionString'>{'\u00a0' + mmversion}</span>
                                 </div>
@@ -249,7 +249,7 @@ export default class AboutBuildModal extends React.PureComponent {
                             <div className='about-modal__copyright'>
                                 <FormattedMessage
                                     id='about.copyright'
-                                    defaultMessage='Copyright 2015 - {currentYear} Mattermost, Inc. All rights reserved'
+                                    defaultMessage='Copyright 2015 - {currentYear} Matterfoss, Inc. All rights reserved'
                                     values={{
                                         currentYear: new Date().getFullYear(),
                                     }}
@@ -266,7 +266,7 @@ export default class AboutBuildModal extends React.PureComponent {
                         <p>
                             <FormattedMarkdownMessage
                                 id='about.notice'
-                                defaultMessage='Mattermost is made possible by the open source software used in our [server](!https://about.mattermost.com/platform-notice-txt/), [desktop](!https://about.mattermost.com/desktop-notice-txt/) and [mobile](!https://about.mattermost.com/mobile-notice-txt/) apps.'
+                                defaultMessage='Matterfoss is made possible by the open source software used in our [server](!https://about.matterfoss.com/platform-notice-txt/), [desktop](!https://about.matterfoss.com/desktop-notice-txt/) and [mobile](!https://about.matterfoss.com/mobile-notice-txt/) apps.'
                             />
                         </p>
                     </div>

@@ -5,7 +5,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {FormattedMessage} from 'react-intl';
 import {Link} from 'react-router-dom';
-import {debounce} from 'mattermost-redux/actions/helpers';
+import {debounce} from 'matterfoss-redux/actions/helpers';
 
 import {browserHistory} from 'utils/browser_history';
 

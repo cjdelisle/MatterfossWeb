@@ -2,12 +2,12 @@
 
 exports[`AdminConsolePluginsIndex.getPluginEntries should return map with the text extracted from plugins 1`] = `
 Object {
-  "plugin_mattermost-autolink": Array [
+  "plugin_matterfoss-autolink": Array [
     "admin.plugin.enable_plugin",
     "admin.plugin.enable_plugin.help",
-    "PluginSettings.PluginStates.mattermost-autolink.Enable",
+    "PluginSettings.PluginStates.matterfoss-autolink.Enable",
     "Autolink",
-    "mattermost-autolink",
+    "matterfoss-autolink",
     "Configure this plugin directly in the config.json file. Learn more in our documentation. To report an issue, make a suggestion or a contribution, check the plugin repository.",
     "Enable administration with /autolink command",
     "EnableAdminCommand",
@@ -30,12 +30,12 @@ Object {
     "set range with /setRange command",
     "setRange",
   ],
-  "plugin_mattermost-autolink": Array [
+  "plugin_matterfoss-autolink": Array [
     "admin.plugin.enable_plugin",
     "admin.plugin.enable_plugin.help",
-    "PluginSettings.PluginStates.mattermost-autolink.Enable",
+    "PluginSettings.PluginStates.matterfoss-autolink.Enable",
     "Autolink",
-    "mattermost-autolink",
+    "matterfoss-autolink",
     "Configure this plugin directly in the config.json file. Learn more in our documentation. To report an issue, make a suggestion or a contribution, check the plugin repository.",
     "Enable administration with /autolink command",
     "EnableAdminCommand",

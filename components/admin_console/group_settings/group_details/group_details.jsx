@@ -4,7 +4,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {FormattedMessage} from 'react-intl';
-import {Groups} from 'mattermost-redux/constants';
+import {Groups} from 'matterfoss-redux/constants';
 
 import {t} from 'utils/i18n';
 import {localizeMessage} from 'utils/utils.jsx';
@@ -539,7 +539,7 @@ export default class GroupDetails extends React.PureComponent {
                             titleId={t('admin.group_settings.group_detail.groupUsersTitle')}
                             titleDefault='Users'
                             subtitleId={t('admin.group_settings.group_detail.groupUsersDescription')}
-                            subtitleDefault='Listing of users in Mattermost associated with this group.'
+                            subtitleDefault='Listing of users in Matterfoss associated with this group.'
                         >
                             <GroupUsers
                                 members={members}

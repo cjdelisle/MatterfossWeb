@@ -12,7 +12,7 @@
 
 /**
  * Note: This test requires hundreds of deactivated users
- * May generate by modifying `make test-data` command at `./mattermost-server/Makefile`
+ * May generate by modifying `make test-data` command at `./matterfoss-server/Makefile`
  * Should change to `sampledata -w 4 -u 60 --deactivated-users 200`
  */
 

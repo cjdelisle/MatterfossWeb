@@ -137,7 +137,7 @@ function generateTestReport(summary, isUploadedToS3, reportLink, environment) {
 
     let dockerImageLink = '';
     if (BUILD_TAG) {
-        dockerImageLink = `with [mattermost-enterprise-edition:${BUILD_TAG}](https://hub.docker.com/r/mattermost/mattermost-enterprise-edition/tags?name=${BUILD_TAG})`;
+        dockerImageLink = `with [matterfoss-enterprise-edition:${BUILD_TAG}](https://hub.docker.com/r/matterfoss/matterfoss-enterprise-edition/tags?name=${BUILD_TAG})`;
     }
 
     let title;
@@ -164,12 +164,12 @@ function generateTestReport(summary, isUploadedToS3, reportLink, environment) {
     if (FULL_REPORT === 'true') {
         return {
             username: 'Cypress UI Test',
-            icon_url: 'https://www.mattermost.org/wp-content/uploads/2016/04/icon.png',
+            icon_url: 'https://www.matterfoss.org/wp-content/uploads/2016/04/icon.png',
             attachments: [{
                 color: testResult.color,
                 author_name: 'Webapp End-to-end Testing',
-                author_icon: 'https://www.mattermost.org/wp-content/uploads/2016/04/icon.png',
-                author_link: 'https://www.mattermost.com',
+                author_icon: 'https://www.matterfoss.org/wp-content/uploads/2016/04/icon.png',
+                author_link: 'https://www.matterfoss.com',
                 title,
                 fields: [
                     {
@@ -195,12 +195,12 @@ function generateTestReport(summary, isUploadedToS3, reportLink, environment) {
 
     return {
         username: 'Cypress UI Test',
-        icon_url: 'https://www.mattermost.org/wp-content/uploads/2016/04/icon.png',
+        icon_url: 'https://www.matterfoss.org/wp-content/uploads/2016/04/icon.png',
         attachments: [{
             color: testResult.color,
             author_name: 'Webapp End-to-end Testing',
-            author_icon: 'https://www.mattermost.org/wp-content/uploads/2016/04/icon.png',
-            author_link: 'https://www.mattermost.com/',
+            author_icon: 'https://www.matterfoss.org/wp-content/uploads/2016/04/icon.png',
+            author_link: 'https://www.matterfoss.com/',
             title,
             text: `${quickSummary} | ${(stats.duration / (60 * 1000)).toFixed(2)} mins\n${envValue}`,
         }],
@@ -212,12 +212,12 @@ function generateDiagnosticReport(summary, serverInfo) {
 
     return {
         username: 'Cypress UI Test',
-        icon_url: 'https://www.mattermost.org/wp-content/uploads/2016/04/icon.png',
+        icon_url: 'https://www.matterfoss.org/wp-content/uploads/2016/04/icon.png',
         attachments: [{
             color: '#43A047',
             author_name: 'Cypress UI Test',
-            author_icon: 'https://www.mattermost.org/wp-content/uploads/2016/04/icon.png',
-            author_link: 'https://community.mattermost.com/core/channels/ui-test-automation',
+            author_icon: 'https://www.matterfoss.org/wp-content/uploads/2016/04/icon.png',
+            author_link: 'https://community.matterfoss.com/core/channels/ui-test-automation',
             title: `Cypress UI Test Automation #${BUILD_ID}, **${BRANCH}** branch`,
             fields: [{
                 short: false,

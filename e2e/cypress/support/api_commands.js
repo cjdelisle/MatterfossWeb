@@ -10,12 +10,12 @@ import {getAdminAccount} from './env';
 // *****************************************************************************
 // Read more:
 // - https://on.cypress.io/custom-commands on writing Cypress commands
-// - https://api.mattermost.com/ for Mattermost API reference
+// - https://api.matterfoss.com/ for Matterfoss API reference
 // *****************************************************************************
 
 // *******************************************************************************
 // Bots
-// https://api.mattermost.com/#tag/bots
+// https://api.matterfoss.com/#tag/bots
 // *******************************************************************************
 
 Cypress.Commands.add('apiGetBots', () => {
@@ -31,7 +31,7 @@ Cypress.Commands.add('apiGetBots', () => {
 
 // *****************************************************************************
 // Channels
-// https://api.mattermost.com/#tag/channels
+// https://api.matterfoss.com/#tag/channels
 // *****************************************************************************
 
 Cypress.Commands.add('apiCreateChannel', (teamId, name, displayName, type = 'O', purpose = '', header = '', unique = true) => {
@@ -162,7 +162,7 @@ Cypress.Commands.add('apiAddUserToChannel', (channelId, userId) => {
 });
 
 /**
- * https://api.mattermost.com/#tag/channels/paths/~1users~1{user_id}~1teams~1{team_id}~1channels/get
+ * https://api.matterfoss.com/#tag/channels/paths/~1users~1{user_id}~1teams~1{team_id}~1channels/get
  */
 Cypress.Commands.add('apiGetChannelsForUser', (userId, teamId) => {
     return cy.request({
@@ -176,7 +176,7 @@ Cypress.Commands.add('apiGetChannelsForUser', (userId, teamId) => {
 
 // *****************************************************************************
 // Commands
-// https://api.mattermost.com/#tag/commands
+// https://api.matterfoss.com/#tag/commands
 // *****************************************************************************
 
 /**
@@ -218,7 +218,7 @@ Cypress.Commands.add('apiEmailTest', () => {
 
 // *****************************************************************************
 // Posts
-// https://api.mattermost.com/#tag/posts
+// https://api.matterfoss.com/#tag/posts
 // *****************************************************************************
 
 /**
@@ -236,7 +236,7 @@ Cypress.Commands.add('apiUnpinPosts', (postId) => {
 
 // *****************************************************************************
 // Webhooks
-// https://api.mattermost.com/#tag/webhooks
+// https://api.matterfoss.com/#tag/webhooks
 // *****************************************************************************
 
 Cypress.Commands.add('apiCreateWebhook', (hook = {}, isIncoming = true) => {
@@ -327,7 +327,7 @@ Cypress.Commands.add('promoteUser', (userId) => {
 
 // *****************************************************************************
 // Plugins
-// https://api.mattermost.com/#tag/plugins
+// https://api.matterfoss.com/#tag/plugins
 // *****************************************************************************
 
 /**
@@ -472,7 +472,7 @@ Cypress.Commands.add('apiGetLDAPSync', () => {
 
 // *****************************************************************************
 // Roles
-// https://api.mattermost.com/#tag/roles
+// https://api.matterfoss.com/#tag/roles
 // *****************************************************************************
 
 /**
@@ -584,7 +584,7 @@ export const defaultRolesPermissions = {
 
 /**
  * Get a list of roles from their names
- * https://api.mattermost.com/#tag/roles/paths/~1roles~1names/post
+ * https://api.matterfoss.com/#tag/roles/paths/~1roles~1names/post
  */
 Cypress.Commands.add('apiGetRolesByNames', (names) => {
     return cy.request({
@@ -663,7 +663,7 @@ Cypress.Commands.add('apiDeleteScheme', (schemeId) => {
 
 // *****************************************************************************
 // Groups
-// https://api.mattermost.com/#tag/groups
+// https://api.matterfoss.com/#tag/groups
 // *****************************************************************************
 
 /**
@@ -865,7 +865,7 @@ function linkUnlinkGroupSyncable(groupID, syncableID, syncableType, httpMethod) 
 
 // *****************************************************************************
 // SAML
-// https://api.mattermost.com/#tag/SAML
+// https://api.matterfoss.com/#tag/SAML
 // *****************************************************************************
 
 /**

@@ -4,14 +4,14 @@
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 
-import {savePreferences} from 'mattermost-redux/actions/preferences';
-import {getSupportedTimezones} from 'mattermost-redux/actions/general';
-import {autoUpdateTimezone} from 'mattermost-redux/actions/timezone';
-import {getConfig, getSupportedTimezones as getTimezones, getLicense} from 'mattermost-redux/selectors/entities/general';
-import {getCurrentUserId} from 'mattermost-redux/selectors/entities/users';
-import {get} from 'mattermost-redux/selectors/entities/preferences';
-import {getUserTimezone} from 'mattermost-redux/selectors/entities/timezone';
-import {getUserCurrentTimezone} from 'mattermost-redux/utils/timezone_utils';
+import {savePreferences} from 'matterfoss-redux/actions/preferences';
+import {getSupportedTimezones} from 'matterfoss-redux/actions/general';
+import {autoUpdateTimezone} from 'matterfoss-redux/actions/timezone';
+import {getConfig, getSupportedTimezones as getTimezones, getLicense} from 'matterfoss-redux/selectors/entities/general';
+import {getCurrentUserId} from 'matterfoss-redux/selectors/entities/users';
+import {get} from 'matterfoss-redux/selectors/entities/preferences';
+import {getUserTimezone} from 'matterfoss-redux/selectors/entities/timezone';
+import {getUserCurrentTimezone} from 'matterfoss-redux/utils/timezone_utils';
 
 import {Preferences} from 'utils/constants';
 

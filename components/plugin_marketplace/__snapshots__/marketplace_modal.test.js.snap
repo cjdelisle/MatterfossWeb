@@ -25,12 +25,12 @@ exports[`components/marketplace/ AllPlugins should render with one plugin 1`] = 
   plugins={
     Array [
       Object {
-        "download_url": "https://github.com/mattermost/mattermost-plugin-nps/releases/download/v1.0.3/com.mattermost.nps-1.0.3.tar.gz",
-        "homepage_url": "https://github.com/mattermost/mattermost-plugin-nps",
+        "download_url": "https://github.com/matterfoss/matterfoss-plugin-nps/releases/download/v1.0.3/com.matterfoss.nps-1.0.3.tar.gz",
+        "homepage_url": "https://github.com/matterfoss/matterfoss-plugin-nps",
         "installed_version": "",
         "manifest": Object {
-          "description": "This plugin sends quarterly user satisfaction surveys to gather feedback and help improve Mattermost",
-          "id": "com.mattermost.nps",
+          "description": "This plugin sends quarterly user satisfaction surveys to gather feedback and help improve Matterfoss",
+          "id": "com.matterfoss.nps",
           "minServerVersion": "5.14.0",
           "name": "User Satisfaction Surveys",
           "version": "1.0.3",
@@ -46,24 +46,24 @@ exports[`components/marketplace/ AllPlugins should render with plugins 1`] = `
   plugins={
     Array [
       Object {
-        "download_url": "https://github.com/mattermost/mattermost-plugin-nps/releases/download/v1.0.3/com.mattermost.nps-1.0.3.tar.gz",
-        "homepage_url": "https://github.com/mattermost/mattermost-plugin-nps",
+        "download_url": "https://github.com/matterfoss/matterfoss-plugin-nps/releases/download/v1.0.3/com.matterfoss.nps-1.0.3.tar.gz",
+        "homepage_url": "https://github.com/matterfoss/matterfoss-plugin-nps",
         "installed_version": "",
         "manifest": Object {
-          "description": "This plugin sends quarterly user satisfaction surveys to gather feedback and help improve Mattermost",
-          "id": "com.mattermost.nps",
+          "description": "This plugin sends quarterly user satisfaction surveys to gather feedback and help improve Matterfoss",
+          "id": "com.matterfoss.nps",
           "minServerVersion": "5.14.0",
           "name": "User Satisfaction Surveys",
           "version": "1.0.3",
         },
       },
       Object {
-        "download_url": "https://github.com/mattermost/mattermost-test/releases/download/v1.0.3/com.mattermost.nps-1.0.3.tar.gz",
-        "homepage_url": "https://github.com/mattermost/mattermost-test",
+        "download_url": "https://github.com/matterfoss/matterfoss-test/releases/download/v1.0.3/com.matterfoss.nps-1.0.3.tar.gz",
+        "homepage_url": "https://github.com/matterfoss/matterfoss-test",
         "installed_version": "1.0.3",
         "manifest": Object {
           "description": "This plugin is to test",
-          "id": "com.mattermost.test",
+          "id": "com.matterfoss.test",
           "minServerVersion": "5.14.0",
           "name": "Test",
           "version": "1.0.3",
@@ -79,24 +79,24 @@ exports[`components/marketplace/ InstalledPlugins should render with multiple pl
   plugins={
     Array [
       Object {
-        "download_url": "https://github.com/mattermost/mattermost-test/releases/download/v1.0.3/com.mattermost.nps-1.0.3.tar.gz",
-        "homepage_url": "https://github.com/mattermost/mattermost-test",
+        "download_url": "https://github.com/matterfoss/matterfoss-test/releases/download/v1.0.3/com.matterfoss.nps-1.0.3.tar.gz",
+        "homepage_url": "https://github.com/matterfoss/matterfoss-test",
         "installed_version": "1.0.3",
         "manifest": Object {
           "description": "This plugin is to test",
-          "id": "com.mattermost.test",
+          "id": "com.matterfoss.test",
           "minServerVersion": "5.14.0",
           "name": "Test",
           "version": "1.0.3",
         },
       },
       Object {
-        "download_url": "https://github.com/mattermost/mattermost-test/releases/download/v1.0.3/com.mattermost.nps-1.0.3.tar.gz",
-        "homepage_url": "https://github.com/mattermost/mattermost-test",
+        "download_url": "https://github.com/matterfoss/matterfoss-test/releases/download/v1.0.3/com.matterfoss.nps-1.0.3.tar.gz",
+        "homepage_url": "https://github.com/matterfoss/matterfoss-test",
         "installed_version": "1.0.3",
         "manifest": Object {
           "description": "This plugin is to test",
-          "id": "com.mattermost.test",
+          "id": "com.matterfoss.test",
           "minServerVersion": "5.14.0",
           "name": "Test",
           "version": "1.0.3",
@@ -143,12 +143,12 @@ exports[`components/marketplace/ InstalledPlugins should render with one plugin 
   plugins={
     Array [
       Object {
-        "download_url": "https://github.com/mattermost/mattermost-test/releases/download/v1.0.3/com.mattermost.nps-1.0.3.tar.gz",
-        "homepage_url": "https://github.com/mattermost/mattermost-test",
+        "download_url": "https://github.com/matterfoss/matterfoss-test/releases/download/v1.0.3/com.matterfoss.nps-1.0.3.tar.gz",
+        "homepage_url": "https://github.com/matterfoss/matterfoss-test",
         "installed_version": "1.0.3",
         "manifest": Object {
           "description": "This plugin is to test",
-          "id": "com.mattermost.test",
+          "id": "com.matterfoss.test",
           "minServerVersion": "5.14.0",
           "name": "Test",
           "version": "1.0.3",
@@ -417,12 +417,12 @@ exports[`components/marketplace/ MarketplaceModal should render with plugins ins
             installedPlugins={
               Array [
                 Object {
-                  "download_url": "https://github.com/mattermost/mattermost-test/releases/download/v1.0.3/com.mattermost.nps-1.0.3.tar.gz",
-                  "homepage_url": "https://github.com/mattermost/mattermost-test",
+                  "download_url": "https://github.com/matterfoss/matterfoss-test/releases/download/v1.0.3/com.matterfoss.nps-1.0.3.tar.gz",
+                  "homepage_url": "https://github.com/matterfoss/matterfoss-test",
                   "installed_version": "1.0.3",
                   "manifest": Object {
                     "description": "This plugin is to test",
-                    "id": "com.mattermost.test",
+                    "id": "com.matterfoss.test",
                     "minServerVersion": "5.14.0",
                     "name": "Test",
                     "version": "1.0.3",

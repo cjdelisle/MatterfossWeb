@@ -4,7 +4,7 @@
 import React from 'react';
 import {FormattedMessage} from 'react-intl';
 
-import {ChannelCategory} from 'mattermost-redux/types/channel_categories';
+import {ChannelCategory} from 'matterfoss-redux/types/channel_categories';
 
 import {trackEvent} from 'actions/diagnostics_actions';
 import QuickInput from 'components/quick_input';

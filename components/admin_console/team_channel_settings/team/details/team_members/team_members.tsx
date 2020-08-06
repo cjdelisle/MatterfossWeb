@@ -4,11 +4,11 @@
 import React from 'react';
 import {FormattedMessage} from 'react-intl';
 
-import {ServerError} from 'mattermost-redux/types/errors';
-import {UserProfile, UsersStats, GetFilteredUsersStatsOpts} from 'mattermost-redux/types/users';
-import {TeamMembership, Team} from 'mattermost-redux/types/teams';
-import {Dictionary} from 'mattermost-redux/types/utilities';
-import GeneralConstants from 'mattermost-redux/constants/general';
+import {ServerError} from 'matterfoss-redux/types/errors';
+import {UserProfile, UsersStats, GetFilteredUsersStatsOpts} from 'matterfoss-redux/types/users';
+import {TeamMembership, Team} from 'matterfoss-redux/types/teams';
+import {Dictionary} from 'matterfoss-redux/types/utilities';
+import GeneralConstants from 'matterfoss-redux/constants/general';
 
 import {t} from 'utils/i18n';
 import Constants from 'utils/constants';

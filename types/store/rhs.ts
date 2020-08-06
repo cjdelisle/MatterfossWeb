@@ -1,11 +1,11 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
-import {Post, PostType} from 'mattermost-redux/types/posts';
-import {Channel} from 'mattermost-redux/types/channels';
-import {UserProfile} from 'mattermost-redux/types/users';
-import {FileInfo} from 'mattermost-redux/types/files';
-import {$ID} from 'mattermost-redux/types/utilities';
+import {Post, PostType} from 'matterfoss-redux/types/posts';
+import {Channel} from 'matterfoss-redux/types/channels';
+import {UserProfile} from 'matterfoss-redux/types/users';
+import {FileInfo} from 'matterfoss-redux/types/files';
+import {$ID} from 'matterfoss-redux/types/utilities';
 
 export type FakePost = {
     id: $ID<Post>;

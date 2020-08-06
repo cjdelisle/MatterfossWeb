@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import {FormattedMessage} from 'react-intl';
 
-import {getEmailInterval} from 'mattermost-redux/utils/notify_props';
+import {getEmailInterval} from 'matterfoss-redux/utils/notify_props';
 
 import {Preferences} from 'utils/constants';
 import {localizeMessage} from 'utils/utils.jsx';

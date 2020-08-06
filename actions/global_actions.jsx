@@ -9,13 +9,13 @@ import {
     getChannelByNameAndTeamName,
     getChannelStats,
     selectChannel,
-} from 'mattermost-redux/actions/channels';
-import {logout, loadMe} from 'mattermost-redux/actions/users';
-import {getConfig} from 'mattermost-redux/selectors/entities/general';
-import {getCurrentTeamId, getMyTeams, getTeam, getMyTeamMember, getTeamMemberships} from 'mattermost-redux/selectors/entities/teams';
-import {getCurrentUser, getCurrentUserId} from 'mattermost-redux/selectors/entities/users';
-import {getCurrentChannelStats, getCurrentChannelId, getMyChannelMember, getRedirectChannelNameForTeam, getChannelsNameMapInTeam, getAllDirectChannels} from 'mattermost-redux/selectors/entities/channels';
-import {ChannelTypes} from 'mattermost-redux/action_types';
+} from 'matterfoss-redux/actions/channels';
+import {logout, loadMe} from 'matterfoss-redux/actions/users';
+import {getConfig} from 'matterfoss-redux/selectors/entities/general';
+import {getCurrentTeamId, getMyTeams, getTeam, getMyTeamMember, getTeamMemberships} from 'matterfoss-redux/selectors/entities/teams';
+import {getCurrentUser, getCurrentUserId} from 'matterfoss-redux/selectors/entities/users';
+import {getCurrentChannelStats, getCurrentChannelId, getMyChannelMember, getRedirectChannelNameForTeam, getChannelsNameMapInTeam, getAllDirectChannels} from 'matterfoss-redux/selectors/entities/channels';
+import {ChannelTypes} from 'matterfoss-redux/action_types';
 
 import {browserHistory} from 'utils/browser_history';
 import {handleNewPost} from 'actions/post_actions.jsx';

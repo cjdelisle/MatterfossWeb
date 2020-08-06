@@ -3,18 +3,18 @@
 
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {getConfig, getLicense} from 'mattermost-redux/selectors/entities/general';
-import {isCurrentUserSystemAdmin} from 'mattermost-redux/selectors/entities/users';
-import {haveIChannelPermission} from 'mattermost-redux/selectors/entities/roles';
-import {getBool} from 'mattermost-redux/selectors/entities/preferences';
-import {getAllChannelStats, getChannelMemberCountsByGroup as selectChannelMemberCountsByGroup} from 'mattermost-redux/selectors/entities/channels';
-import {makeGetMessageInHistoryItem} from 'mattermost-redux/selectors/entities/posts';
-import {resetCreatePostRequest, resetHistoryIndex} from 'mattermost-redux/actions/posts';
-import {getChannelTimezones, getChannelMemberCountsByGroup} from 'mattermost-redux/actions/channels';
-import {Permissions, Preferences, Posts} from 'mattermost-redux/constants';
+import {getConfig, getLicense} from 'matterfoss-redux/selectors/entities/general';
+import {isCurrentUserSystemAdmin} from 'matterfoss-redux/selectors/entities/users';
+import {haveIChannelPermission} from 'matterfoss-redux/selectors/entities/roles';
+import {getBool} from 'matterfoss-redux/selectors/entities/preferences';
+import {getAllChannelStats, getChannelMemberCountsByGroup as selectChannelMemberCountsByGroup} from 'matterfoss-redux/selectors/entities/channels';
+import {makeGetMessageInHistoryItem} from 'matterfoss-redux/selectors/entities/posts';
+import {resetCreatePostRequest, resetHistoryIndex} from 'matterfoss-redux/actions/posts';
+import {getChannelTimezones, getChannelMemberCountsByGroup} from 'matterfoss-redux/actions/channels';
+import {Permissions, Preferences, Posts} from 'matterfoss-redux/constants';
 import {
     getAssociatedGroupsForReference,
-} from 'mattermost-redux/selectors/entities/groups';
+} from 'matterfoss-redux/selectors/entities/groups';
 
 import {connectionErrorCount} from 'selectors/views/system';
 

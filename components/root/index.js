@@ -4,11 +4,11 @@
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 
-import {getConfig} from 'mattermost-redux/selectors/entities/general';
-import {shouldShowTermsOfService, getCurrentUserId} from 'mattermost-redux/selectors/entities/users';
-import {getTeam} from 'mattermost-redux/selectors/entities/teams';
+import {getConfig} from 'matterfoss-redux/selectors/entities/general';
+import {shouldShowTermsOfService, getCurrentUserId} from 'matterfoss-redux/selectors/entities/users';
+import {getTeam} from 'matterfoss-redux/selectors/entities/teams';
 
-import {getWarnMetricsStatus} from 'mattermost-redux/actions/general';
+import {getWarnMetricsStatus} from 'matterfoss-redux/actions/general';
 
 import {loadMeAndConfig} from 'actions/views/root';
 import LocalStorageStore from 'stores/local_storage_store';

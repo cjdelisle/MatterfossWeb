@@ -4,7 +4,7 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 
-import {TeamType} from 'mattermost-redux/types/teams';
+import {TeamType} from 'matterfoss-redux/types/teams';
 
 import Markdown from 'components/markdown/markdown';
 import EmojiMap from 'utils/emoji_map';

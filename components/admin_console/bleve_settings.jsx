@@ -106,7 +106,7 @@ export default class BleveSettings extends AdminSettings {
                             values={{
                                 documentationLink: (
                                     <a
-                                        href='https://about.mattermost.com/default-bleve-documentation/'
+                                        href='https://about.matterfoss.com/default-bleve-documentation/'
                                         rel='noopener noreferrer'
                                         target='_blank'
                                     >

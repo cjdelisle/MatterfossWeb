@@ -271,7 +271,7 @@ exports[`components/admin_console/group_settings/GroupsList.tsx should match sna
         className="group-description"
       >
         <FormattedMessage
-          defaultMessage="Mattermost Linking"
+          defaultMessage="Matterfoss Linking"
           id="admin.group_settings.groups_list.mappingHeader"
           values={Object {}}
         />
@@ -400,7 +400,7 @@ exports[`components/admin_console/group_settings/GroupsList.tsx should match sna
         className="group-description"
       >
         <FormattedMessage
-          defaultMessage="Mattermost Linking"
+          defaultMessage="Matterfoss Linking"
           id="admin.group_settings.groups_list.mappingHeader"
           values={Object {}}
         />
@@ -529,7 +529,7 @@ exports[`components/admin_console/group_settings/GroupsList.tsx should match sna
         className="group-description"
       >
         <FormattedMessage
-          defaultMessage="Mattermost Linking"
+          defaultMessage="Matterfoss Linking"
           id="admin.group_settings.groups_list.mappingHeader"
           values={Object {}}
         />
@@ -657,7 +657,7 @@ exports[`components/admin_console/group_settings/GroupsList.tsx should match sna
         className="group-description"
       >
         <FormattedMessage
-          defaultMessage="Mattermost Linking"
+          defaultMessage="Matterfoss Linking"
           id="admin.group_settings.groups_list.mappingHeader"
           values={Object {}}
         />
@@ -694,7 +694,7 @@ exports[`components/admin_console/group_settings/GroupsList.tsx should match sna
       checked={false}
       has_syncables={false}
       key="test2"
-      mattermost_group_id="group-id-1"
+      matterfoss_group_id="group-id-1"
       name="test2"
       onCheckToggle={[Function]}
       primary_key="test2"
@@ -709,7 +709,7 @@ exports[`components/admin_console/group_settings/GroupsList.tsx should match sna
       checked={false}
       has_syncables={true}
       key="test3"
-      mattermost_group_id="group-id-2"
+      matterfoss_group_id="group-id-2"
       name="test3"
       onCheckToggle={[Function]}
       primary_key="test3"
@@ -821,7 +821,7 @@ exports[`components/admin_console/group_settings/GroupsList.tsx should match sna
         className="group-description"
       >
         <FormattedMessage
-          defaultMessage="Mattermost Linking"
+          defaultMessage="Matterfoss Linking"
           id="admin.group_settings.groups_list.mappingHeader"
           values={Object {}}
         />
@@ -858,7 +858,7 @@ exports[`components/admin_console/group_settings/GroupsList.tsx should match sna
       checked={false}
       has_syncables={false}
       key="test2"
-      mattermost_group_id="group-id-1"
+      matterfoss_group_id="group-id-1"
       name="test2"
       onCheckToggle={[Function]}
       primary_key="test2"
@@ -873,7 +873,7 @@ exports[`components/admin_console/group_settings/GroupsList.tsx should match sna
       checked={false}
       has_syncables={true}
       key="test3"
-      mattermost_group_id="group-id-2"
+      matterfoss_group_id="group-id-2"
       name="test3"
       onCheckToggle={[Function]}
       primary_key="test3"
@@ -1076,7 +1076,7 @@ exports[`components/admin_console/group_settings/GroupsList.tsx should match sna
         className="group-description"
       >
         <FormattedMessage
-          defaultMessage="Mattermost Linking"
+          defaultMessage="Matterfoss Linking"
           id="admin.group_settings.groups_list.mappingHeader"
           values={Object {}}
         />
@@ -1113,7 +1113,7 @@ exports[`components/admin_console/group_settings/GroupsList.tsx should match sna
       checked={false}
       has_syncables={false}
       key="test2"
-      mattermost_group_id="group-id-1"
+      matterfoss_group_id="group-id-1"
       name="test2"
       onCheckToggle={[Function]}
       primary_key="test2"
@@ -1128,7 +1128,7 @@ exports[`components/admin_console/group_settings/GroupsList.tsx should match sna
       checked={false}
       has_syncables={true}
       key="test3"
-      mattermost_group_id="group-id-2"
+      matterfoss_group_id="group-id-2"
       name="test3"
       onCheckToggle={[Function]}
       primary_key="test3"
@@ -1331,7 +1331,7 @@ exports[`components/admin_console/group_settings/GroupsList.tsx should match sna
         className="group-description"
       >
         <FormattedMessage
-          defaultMessage="Mattermost Linking"
+          defaultMessage="Matterfoss Linking"
           id="admin.group_settings.groups_list.mappingHeader"
           values={Object {}}
         />
@@ -1368,7 +1368,7 @@ exports[`components/admin_console/group_settings/GroupsList.tsx should match sna
       checked={false}
       has_syncables={false}
       key="test2"
-      mattermost_group_id="group-id-1"
+      matterfoss_group_id="group-id-1"
       name="test2"
       onCheckToggle={[Function]}
       primary_key="test2"
@@ -1383,7 +1383,7 @@ exports[`components/admin_console/group_settings/GroupsList.tsx should match sna
       checked={false}
       has_syncables={true}
       key="test3"
-      mattermost_group_id="group-id-2"
+      matterfoss_group_id="group-id-2"
       name="test3"
       onCheckToggle={[Function]}
       primary_key="test3"
@@ -1559,7 +1559,7 @@ exports[`components/admin_console/group_settings/GroupsList.tsx should match sna
         className="group-description"
       >
         <FormattedMessage
-          defaultMessage="Mattermost Linking"
+          defaultMessage="Matterfoss Linking"
           id="admin.group_settings.groups_list.mappingHeader"
           values={Object {}}
         />

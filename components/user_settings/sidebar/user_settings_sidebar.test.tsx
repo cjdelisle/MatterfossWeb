@@ -6,9 +6,9 @@ import PropTypes from 'prop-types';
 import configureStore from 'redux-mock-store';
 import {shallow, ShallowWrapper} from 'enzyme';
 
-import {UserProfile} from 'mattermost-redux/types/users';
+import {UserProfile} from 'matterfoss-redux/types/users';
 
-import {SidebarPreferences} from 'mattermost-redux/selectors/entities/preferences';
+import {SidebarPreferences} from 'matterfoss-redux/selectors/entities/preferences';
 
 import {mountWithIntl} from 'tests/helpers/intl-test-helper';
 

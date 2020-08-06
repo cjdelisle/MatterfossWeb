@@ -4,35 +4,35 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-import {UserTypes} from 'mattermost-redux/action_types';
-import {Client4} from 'mattermost-redux/client';
-import {Preferences} from 'mattermost-redux/constants';
+import {UserTypes} from 'matterfoss-redux/action_types';
+import {Client4} from 'matterfoss-redux/client';
+import {Preferences} from 'matterfoss-redux/constants';
 import {
     getChannelsInCurrentTeam,
     getDirectAndGroupChannels,
     getSortedUnreadChannelIds,
     makeGetChannel,
     getMyChannelMemberships,
-} from 'mattermost-redux/selectors/entities/channels';
-import {getBool, getMyPreferences} from 'mattermost-redux/selectors/entities/preferences';
-import {getConfig} from 'mattermost-redux/selectors/entities/general';
-import {getLastPostPerChannel} from 'mattermost-redux/selectors/entities/posts';
-import {getCurrentTeamId} from 'mattermost-redux/selectors/entities/teams';
+} from 'matterfoss-redux/selectors/entities/channels';
+import {getBool, getMyPreferences} from 'matterfoss-redux/selectors/entities/preferences';
+import {getConfig} from 'matterfoss-redux/selectors/entities/general';
+import {getLastPostPerChannel} from 'matterfoss-redux/selectors/entities/posts';
+import {getCurrentTeamId} from 'matterfoss-redux/selectors/entities/teams';
 import {
     getCurrentUserId,
     getUserIdsInChannels,
     getUser,
     searchProfiles,
-} from 'mattermost-redux/selectors/entities/users';
-import * as ChannelActions from 'mattermost-redux/actions/channels';
-import {logError} from 'mattermost-redux/actions/errors';
+} from 'matterfoss-redux/selectors/entities/users';
+import * as ChannelActions from 'matterfoss-redux/actions/channels';
+import {logError} from 'matterfoss-redux/actions/errors';
 
 import {
     sortChannelsByTypeAndDisplayName,
     isDirectChannelVisible,
     isGroupChannelVisible,
     isUnreadChannel,
-} from 'mattermost-redux/utils/channel_utils';
+} from 'matterfoss-redux/utils/channel_utils';
 
 import BotBadge from 'components/widgets/badges/bot_badge';
 import GuestBadge from 'components/widgets/badges/guest_badge';

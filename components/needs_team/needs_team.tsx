@@ -5,8 +5,8 @@ import React from 'react';
 import {Route, Switch} from 'react-router-dom';
 import iNoBounce from 'inobounce';
 
-import {Channel, ChannelMembership} from 'mattermost-redux/types/channels';
-import {Team, TeamMembership} from 'mattermost-redux/types/teams';
+import {Channel, ChannelMembership} from 'matterfoss-redux/types/channels';
+import {Team, TeamMembership} from 'matterfoss-redux/types/teams';
 
 import {startPeriodicStatusUpdates, stopPeriodicStatusUpdates} from 'actions/status_actions.jsx';
 import {startPeriodicSync, stopPeriodicSync, reconnect} from 'actions/websocket_actions.jsx';

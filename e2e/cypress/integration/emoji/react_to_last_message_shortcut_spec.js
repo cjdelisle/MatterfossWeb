@@ -453,8 +453,8 @@ describe('Keyboard shortcut for adding reactions to last message in channel or t
         openMainMenuOptions('View Members');
         verifyShortcutReactToLastMessageIsBlocked();
 
-        // * Open about mattermost modal and verify shortcut is blocked
-        openMainMenuOptions('About Mattermost');
+        // * Open about matterfoss modal and verify shortcut is blocked
+        openMainMenuOptions('About Matterfoss');
         verifyShortcutReactToLastMessageIsBlocked();
 
         // * Open channel header modal and verify shortcut is blocked

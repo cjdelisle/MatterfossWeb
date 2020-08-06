@@ -115,7 +115,7 @@ export default class Authorize extends React.PureComponent {
                         <div className='text'>
                             <FormattedMarkdownMessage
                                 id='authorize.title'
-                                defaultMessage='Authorize **{appName}** to Connect to Your **Mattermost** User Account'
+                                defaultMessage='Authorize **{appName}** to Connect to Your **Matterfoss** User Account'
                                 values={{
                                     appName: app.name,
                                 }}

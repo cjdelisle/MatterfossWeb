@@ -5,11 +5,11 @@
 import React from 'react';
 import {FormattedMessage} from 'react-intl';
 
-import {UserProfile} from 'mattermost-redux/src/types/users';
+import {UserProfile} from 'matterfoss-redux/src/types/users';
 
-import {PreferenceType} from 'mattermost-redux/types/preferences';
+import {PreferenceType} from 'matterfoss-redux/types/preferences';
 
-import {SidebarPreferences} from 'mattermost-redux/selectors/entities/preferences';
+import {SidebarPreferences} from 'matterfoss-redux/selectors/entities/preferences';
 
 import {trackEvent} from 'actions/diagnostics_actions.jsx';
 
@@ -454,7 +454,7 @@ export default class UserSettingsSidebar extends React.PureComponent<UserSetting
         const helpChannelSidebarOrganizationText = (
             <FormattedMarkdownMessage
                 id={t('user.settings.sidebar.channelSidebarOrganizationSection.desc')}
-                defaultMessage={'When enabled, access experimental channel sidebar features, including collapsible sections and unreads filtering. [Learn more](!https://about.mattermost.com/default-sidebar/) or [give us feedback](!https://about.mattermost.com/default-sidebar-survey/)'}
+                defaultMessage={'When enabled, access experimental channel sidebar features, including collapsible sections and unreads filtering. [Learn more](!https://about.matterfoss.com/default-sidebar/) or [give us feedback](!https://about.matterfoss.com/default-sidebar-survey/)'}
             />
         );
 

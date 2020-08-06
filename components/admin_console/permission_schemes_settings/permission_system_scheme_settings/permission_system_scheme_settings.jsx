@@ -5,7 +5,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {FormattedMessage} from 'react-intl';
 
-import GeneralConstants from 'mattermost-redux/constants/general';
+import GeneralConstants from 'matterfoss-redux/constants/general';
 
 import ConfirmModal from 'components/confirm_modal';
 
@@ -311,7 +311,7 @@ export default class PermissionSystemSchemeSettings extends React.PureComponent 
                                 <span>
                                     <FormattedMarkdownMessage
                                         id='admin.permissions.systemScheme.introBanner'
-                                        defaultMessage='Configure the default permissions for Team Admins, Channel Admins and other members. This scheme is inherited by all teams unless a [Team Override Scheme](!https://about.mattermost.com/default-team-override-scheme) is applied in specific teams.'
+                                        defaultMessage='Configure the default permissions for Team Admins, Channel Admins and other members. This scheme is inherited by all teams unless a [Team Override Scheme](!https://about.matterfoss.com/default-team-override-scheme) is applied in specific teams.'
                                     />
                                 </span>
                             </div>

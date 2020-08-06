@@ -5,8 +5,8 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import {Modal} from 'react-bootstrap';
 import {FormattedMessage} from 'react-intl';
-import {Client4} from 'mattermost-redux/client';
-import * as UserUtils from 'mattermost-redux/utils/user_utils';
+import {Client4} from 'matterfoss-redux/client';
+import * as UserUtils from 'matterfoss-redux/utils/user_utils';
 
 import RevokeTokenButton from 'components/admin_console/revoke_token_button';
 import LoadingScreen from 'components/loading_screen';
@@ -149,7 +149,7 @@ export default class ManageTokensModal extends React.PureComponent {
                 <div className='pt-3'>
                     <FormattedMarkdownMessage
                         id='admin.manage_tokens.userAccessTokensDescription'
-                        defaultMessage='Personal access tokens function similarly to session tokens and can be used by integrations to [interact with this Mattermost server](!https://about.mattermost.com/default-api-authentication). Tokens are disabled if the user is deactivated. Learn more about [personal access tokens](!https://about.mattermost.com/default-user-access-tokens).'
+                        defaultMessage='Personal access tokens function similarly to session tokens and can be used by integrations to [interact with this Matterfoss server](!https://about.matterfoss.com/default-api-authentication). Tokens are disabled if the user is deactivated. Learn more about [personal access tokens](!https://about.matterfoss.com/default-user-access-tokens).'
                     />
                 </div>
                 <div className='manage-teams__teams'>

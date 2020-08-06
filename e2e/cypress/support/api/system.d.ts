@@ -8,7 +8,7 @@
 // See https://jsdoc.app/index.html for reference.
 // Basic requirements for documentation are the following:
 // - Meaningful description
-// - Specific link to https://api.mattermost.com
+// - Specific link to https://api.matterfoss.com
 // - Each parameter with `@params`
 // - Return value with `@returns`
 // - Example usage with `@example`
@@ -20,7 +20,7 @@ declare namespace Cypress {
 
         /**
          * Get client license.
-         * See https://api.mattermost.com/#tag/system/paths/~1license~1client/get
+         * See https://api.matterfoss.com/#tag/system/paths/~1license~1client/get
          * @returns {ClientLicense} `out.license` as `ClientLicense`
          *
          * @example
@@ -51,7 +51,7 @@ declare namespace Cypress {
 
         /**
          * Update configuration.
-         * See https://api.mattermost.com/#tag/system/paths/~1config/put
+         * See https://api.matterfoss.com/#tag/system/paths/~1config/put
          * @param {AdminConfig} newConfig - new config
          * @returns {AdminConfig} `out.config` as `AdminConfig`
          *
@@ -64,7 +64,7 @@ declare namespace Cypress {
 
         /**
          * Get configuration.
-         * See https://api.mattermost.com/#tag/system/paths/~1config/get
+         * See https://api.matterfoss.com/#tag/system/paths/~1config/get
          * @returns {AdminConfig} `out.config` as `AdminConfig`
          *
          * @example
@@ -76,7 +76,7 @@ declare namespace Cypress {
 
         /**
          * Get analytics.
-         * See https://api.mattermost.com/#tag/system/paths/~1analytics~1old/get
+         * See https://api.matterfoss.com/#tag/system/paths/~1analytics~1old/get
          * @returns {AnalyticsRow[]} `out.analytics` as `AnalyticsRow[]`
          *
          * @example
@@ -88,7 +88,7 @@ declare namespace Cypress {
 
         /**
          * Invalidate all the caches.
-         * See https://api.mattermost.com/#tag/system/paths/~1caches~1invalidate/post
+         * See https://api.matterfoss.com/#tag/system/paths/~1caches~1invalidate/post
          * @returns {Object} `out.data` as response status
          *
          * @example

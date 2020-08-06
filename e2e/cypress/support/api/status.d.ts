@@ -8,7 +8,7 @@
 // See https://jsdoc.app/index.html for reference.
 // Basic requirements for documentation are the following:
 // - Meaningful description
-// - Specific link to https://api.mattermost.com
+// - Specific link to https://api.matterfoss.com
 // - Each parameter with `@params`
 // - Return value with `@returns`
 // - Example usage with `@example`
@@ -20,7 +20,7 @@ declare namespace Cypress {
 
         /**
          * Update status of a current user.
-         * See https://api.mattermost.com/#tag/status/paths/~1users~1{user_id}~1status/put
+         * See https://api.matterfoss.com/#tag/status/paths/~1users~1{user_id}~1status/put
          * @param {String} status - "online" (default), "offline", "away" or "dnd"
          * @returns {UserStatus} `out.status` as `UserStatus`
          *

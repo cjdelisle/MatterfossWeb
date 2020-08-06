@@ -4,8 +4,8 @@
 import React from 'react';
 import {injectIntl, IntlShape} from 'react-intl';
 
-import {Channel} from 'mattermost-redux/types/channels';
-import {Team} from 'mattermost-redux/types/teams';
+import {Channel} from 'matterfoss-redux/types/channels';
+import {Team} from 'matterfoss-redux/types/teams';
 
 import * as UserAgent from 'utils/user_agent';
 import {Constants} from 'utils/constants';
@@ -88,7 +88,7 @@ class FaviconTitleHandler extends React.PureComponent<Props> {
             const unreadTitle = unreads.messageCount > 0 ? '* ' : '';
             document.title = mentionTitle + unreadTitle + currentChannelName + ' - ' + currentTeam.display_name + ' ' + currentSiteName;
         } else {
-            document.title = formatMessage({id: 'sidebar.team_select', defaultMessage: '{siteName} - Join a team'}, {siteName: currentSiteName || 'Mattermost'});
+            document.title = formatMessage({id: 'sidebar.team_select', defaultMessage: '{siteName} - Join a team'}, {siteName: currentSiteName || 'Matterfoss'});
         }
     }
 

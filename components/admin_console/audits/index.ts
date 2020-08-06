@@ -4,11 +4,11 @@
 import {connect} from 'react-redux';
 import {bindActionCreators, Dispatch, ActionCreatorsMapObject} from 'redux';
 
-import {ActionFunc, GenericAction} from 'mattermost-redux/types/actions';
-import {Audit} from 'mattermost-redux/types/audits';
-import {getAudits} from 'mattermost-redux/actions/admin';
-import * as Selectors from 'mattermost-redux/selectors/entities/admin';
-import {getLicense} from 'mattermost-redux/selectors/entities/general';
+import {ActionFunc, GenericAction} from 'matterfoss-redux/types/actions';
+import {Audit} from 'matterfoss-redux/types/audits';
+import {getAudits} from 'matterfoss-redux/actions/admin';
+import * as Selectors from 'matterfoss-redux/selectors/entities/admin';
+import {getLicense} from 'matterfoss-redux/selectors/entities/general';
 
 import {GlobalState} from 'types/store';
 

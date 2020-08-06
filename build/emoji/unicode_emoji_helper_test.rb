@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require_relative './unicode_emoji_helper.rb'
 
-module Mattermost
+module Matterfoss
   class UnicodeEmojiHelperTest < Minitest::Test
     def setup
       @unicode_emoji_helper = UnicodeEmojiHelper.new

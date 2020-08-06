@@ -8,7 +8,7 @@
 // See https://jsdoc.app/index.html for reference.
 // Basic requirements for documentation are the following:
 // - Meaningful description
-// - Specific link to https://api.mattermost.com
+// - Specific link to https://api.matterfoss.com
 // - Each parameter with `@params`
 // - Return value with `@returns`
 // - Example usage with `@example`
@@ -20,12 +20,12 @@ declare namespace Cypress {
 
         // *******************************************************************************
         // Preferences
-        // https://api.mattermost.com/#tag/preferences
+        // https://api.matterfoss.com/#tag/preferences
         // *******************************************************************************
 
         /**
          * Save a list of the user's preferences.
-         * See https://api.mattermost.com/#tag/preferences/paths/~1users~1{user_id}~1preferences/put
+         * See https://api.matterfoss.com/#tag/preferences/paths/~1users~1{user_id}~1preferences/put
          * @param {PreferenceType[]} preferences - List of preference objects
          * @param {string} userId - User ID
          * @returns {Response} response: Cypress-chainable response which should have successful HTTP status of 200 OK to continue or pass.
@@ -37,7 +37,7 @@ declare namespace Cypress {
 
         /**
          * Save clock display mode to 24-hour preference.
-         * See https://api.mattermost.com/#tag/preferences/paths/~1users~1{user_id}~1preferences/put
+         * See https://api.matterfoss.com/#tag/preferences/paths/~1users~1{user_id}~1preferences/put
          * @param {boolean} is24Hour - true (default) or false for 12-hour
          * @returns {Response} response: Cypress-chainable response which should have successful HTTP status of 200 OK to continue or pass.
          *

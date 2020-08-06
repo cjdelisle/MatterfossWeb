@@ -13,7 +13,7 @@ import {
     IntlShape,
 } from 'react-intl';
 
-import {UserProfile} from 'mattermost-redux/types/users';
+import {UserProfile} from 'matterfoss-redux/types/users';
 
 import store from 'stores/redux_store.jsx';
 

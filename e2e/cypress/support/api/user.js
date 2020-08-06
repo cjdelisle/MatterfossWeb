@@ -6,7 +6,7 @@ import {getAdminAccount} from '../env';
 
 // *****************************************************************************
 // Users
-// https://api.mattermost.com/#tag/users
+// https://api.matterfoss.com/#tag/users
 // *****************************************************************************
 
 Cypress.Commands.add('apiLogin', (user) => {
@@ -115,7 +115,7 @@ Cypress.Commands.add('apiCreateAdmin', () => {
         password,
         first_name: 'Kenneth',
         last_name: 'Moreno',
-        email: 'sysadmin@sample.mattermost.com',
+        email: 'sysadmin@sample.matterfoss.com',
     };
 
     const options = {
@@ -137,7 +137,7 @@ function generateRandomUser(prefix = 'user') {
     const randomId = getRandomId();
 
     return {
-        email: `${prefix}${randomId}@sample.mattermost.com`,
+        email: `${prefix}${randomId}@sample.matterfoss.com`,
         username: `${prefix}${randomId}`,
         password: 'passwd',
         first_name: `First${randomId}`,

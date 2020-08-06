@@ -4,13 +4,13 @@
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 
-import {Preferences} from 'mattermost-redux/constants';
+import {Preferences} from 'matterfoss-redux/constants';
 
-import {savePreferences} from 'mattermost-redux/actions/preferences';
+import {savePreferences} from 'matterfoss-redux/actions/preferences';
 
-import {getCurrentUserId} from 'mattermost-redux/selectors/entities/common';
-import {getConfig} from 'mattermost-redux/selectors/entities/general';
-import {get as getPreference} from 'mattermost-redux/selectors/entities/preferences';
+import {getCurrentUserId} from 'matterfoss-redux/selectors/entities/common';
+import {getConfig} from 'matterfoss-redux/selectors/entities/general';
+import {get as getPreference} from 'matterfoss-redux/selectors/entities/preferences';
 
 import EmailNotificationSetting from './email_notification_setting';
 

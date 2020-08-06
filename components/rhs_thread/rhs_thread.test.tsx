@@ -4,9 +4,9 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 
-import {Channel} from 'mattermost-redux/types/channels';
-import {UserProfile} from 'mattermost-redux/types/users';
-import {Post} from 'mattermost-redux/src/types/posts';
+import {Channel} from 'matterfoss-redux/types/channels';
+import {UserProfile} from 'matterfoss-redux/types/users';
+import {Post} from 'matterfoss-redux/src/types/posts';
 
 import {TestHelper} from 'utils/test_helper';
 

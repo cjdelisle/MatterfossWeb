@@ -2,11 +2,11 @@
 // See LICENSE.txt for license information.
 
 import {bindActionCreators} from 'redux';
-import {getConfig} from 'mattermost-redux/selectors/entities/general';
-import {getChannel, getChannelModerations} from 'mattermost-redux/selectors/entities/channels';
-import {getAllGroups, getGroupsAssociatedToChannel} from 'mattermost-redux/selectors/entities/groups';
-import {getScheme} from 'mattermost-redux/selectors/entities/schemes';
-import {getScheme as loadScheme} from 'mattermost-redux/actions/schemes';
+import {getConfig} from 'matterfoss-redux/selectors/entities/general';
+import {getChannel, getChannelModerations} from 'matterfoss-redux/selectors/entities/channels';
+import {getAllGroups, getGroupsAssociatedToChannel} from 'matterfoss-redux/selectors/entities/groups';
+import {getScheme} from 'matterfoss-redux/selectors/entities/schemes';
+import {getScheme as loadScheme} from 'matterfoss-redux/actions/schemes';
 import {
     getChannel as fetchChannel,
     membersMinusGroupMembers,
@@ -19,19 +19,19 @@ import {
     updateChannelMemberSchemeRoles,
     deleteChannel,
     unarchiveChannel,
-} from 'mattermost-redux/actions/channels';
-import {getTeam as fetchTeam} from 'mattermost-redux/actions/teams';
+} from 'matterfoss-redux/actions/channels';
+import {getTeam as fetchTeam} from 'matterfoss-redux/actions/teams';
 
 import {
     getGroupsAssociatedToChannel as fetchAssociatedGroups,
     linkGroupSyncable,
     unlinkGroupSyncable,
     patchGroupSyncable,
-} from 'mattermost-redux/actions/groups';
+} from 'matterfoss-redux/actions/groups';
 
 import {connect} from 'react-redux';
 
-import {getTeam} from 'mattermost-redux/selectors/entities/teams';
+import {getTeam} from 'matterfoss-redux/selectors/entities/teams';
 
 import {setNavigationBlocked} from 'actions/admin_actions';
 

@@ -114,7 +114,7 @@ class BrowserStoreClass {
         return localStorage.getItem(StoragePrefixes.LANDING_PREFERENCE + String(siteUrl));
     }
 
-    setLandingPreferenceToMattermostApp(siteUrl) {
+    setLandingPreferenceToMatterfossApp(siteUrl) {
         localStorage.setItem(StoragePrefixes.LANDING_PREFERENCE + String(siteUrl), LandingPreferenceTypes.MATTERMOSTAPP);
     }
 

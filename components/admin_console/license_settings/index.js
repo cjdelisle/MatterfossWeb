@@ -3,8 +3,8 @@
 
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {getLicenseConfig} from 'mattermost-redux/actions/general';
-import {uploadLicense, removeLicense} from 'mattermost-redux/actions/admin';
+import {getLicenseConfig} from 'matterfoss-redux/actions/general';
+import {uploadLicense, removeLicense} from 'matterfoss-redux/actions/admin';
 
 import {requestTrialLicense} from 'actions/admin_actions';
 

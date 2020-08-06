@@ -3,11 +3,11 @@
 
 import {createSelector} from 'reselect';
 
-import {getUnreadChannelIds, getCurrentChannel} from 'mattermost-redux/selectors/entities/channels';
-import {makeGetChannelsByCategory, makeGetCategoriesForTeam} from 'mattermost-redux/selectors/entities/channel_categories';
-import {Channel} from 'mattermost-redux/types/channels';
-import {ChannelCategory} from 'mattermost-redux/types/channel_categories';
-import {RelationOneToOne} from 'mattermost-redux/types/utilities';
+import {getUnreadChannelIds, getCurrentChannel} from 'matterfoss-redux/selectors/entities/channels';
+import {makeGetChannelsByCategory, makeGetCategoriesForTeam} from 'matterfoss-redux/selectors/entities/channel_categories';
+import {Channel} from 'matterfoss-redux/types/channels';
+import {ChannelCategory} from 'matterfoss-redux/types/channel_categories';
+import {RelationOneToOne} from 'matterfoss-redux/types/utilities';
 
 import {getItemFromStorage} from 'selectors/storage';
 import {GlobalState} from 'types/store';

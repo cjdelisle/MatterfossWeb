@@ -3,9 +3,9 @@
 
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {getGroupsNotAssociatedToTeam, linkGroupSyncable, getAllGroupsAssociatedToTeam} from 'mattermost-redux/actions/groups';
-import {getGroupsNotAssociatedToTeam as selectGroupsNotAssociatedToTeam} from 'mattermost-redux/selectors/entities/groups';
-import {getCurrentTeam} from 'mattermost-redux/selectors/entities/teams';
+import {getGroupsNotAssociatedToTeam, linkGroupSyncable, getAllGroupsAssociatedToTeam} from 'matterfoss-redux/actions/groups';
+import {getGroupsNotAssociatedToTeam as selectGroupsNotAssociatedToTeam} from 'matterfoss-redux/selectors/entities/groups';
+import {getCurrentTeam} from 'matterfoss-redux/selectors/entities/teams';
 
 import {setModalSearchTerm} from 'actions/views/search';
 

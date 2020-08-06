@@ -14,9 +14,9 @@ import {
     AdminTypes,
     IntegrationTypes,
     PreferenceTypes,
-} from 'mattermost-redux/action_types';
-import {WebsocketEvents, General, Permissions} from 'mattermost-redux/constants';
-import {addChannelToInitialCategory, fetchMyCategories, receivedCategoryOrder} from 'mattermost-redux/actions/channel_categories';
+} from 'matterfoss-redux/action_types';
+import {WebsocketEvents, General, Permissions} from 'matterfoss-redux/constants';
+import {addChannelToInitialCategory, fetchMyCategories, receivedCategoryOrder} from 'matterfoss-redux/actions/channel_categories';
 import {
     getChannelAndMyMember,
     getMyChannelMember,
@@ -25,9 +25,9 @@ import {
     viewChannel,
     markChannelAsRead,
     getChannelMemberCountsByGroup,
-} from 'mattermost-redux/actions/channels';
-import {loadRolesIfNeeded} from 'mattermost-redux/actions/roles';
-import {setServerVersion} from 'mattermost-redux/actions/general';
+} from 'matterfoss-redux/actions/channels';
+import {loadRolesIfNeeded} from 'matterfoss-redux/actions/roles';
+import {setServerVersion} from 'matterfoss-redux/actions/general';
 import {
     getCustomEmojiForReaction,
     getPosts,
@@ -36,25 +36,25 @@ import {
     postDeleted,
     receivedNewPost,
     receivedPost,
-} from 'mattermost-redux/actions/posts';
-import {clearErrors, logError} from 'mattermost-redux/actions/errors';
+} from 'matterfoss-redux/actions/posts';
+import {clearErrors, logError} from 'matterfoss-redux/actions/errors';
 
-import * as TeamActions from 'mattermost-redux/actions/teams';
+import * as TeamActions from 'matterfoss-redux/actions/teams';
 import {
     checkForModifiedUsers,
     getMe,
     getMissingProfilesByIds,
     getStatusesByIds,
     getUser as loadUser,
-} from 'mattermost-redux/actions/users';
-import {removeNotVisibleUsers} from 'mattermost-redux/actions/websocket';
-import {Client4} from 'mattermost-redux/client';
-import {getCurrentUser, getCurrentUserId, getStatusForUserId, getUser, getIsManualStatusForUserId} from 'mattermost-redux/selectors/entities/users';
-import {getMyTeams, getCurrentRelativeTeamUrl, getCurrentTeamId, getCurrentTeamUrl, getTeam} from 'mattermost-redux/selectors/entities/teams';
-import {getConfig, getLicense} from 'mattermost-redux/selectors/entities/general';
-import {getChannelsInTeam, getChannel, getCurrentChannel, getCurrentChannelId, getRedirectChannelNameForTeam, getMembersInCurrentChannel, getChannelMembersInChannels} from 'mattermost-redux/selectors/entities/channels';
-import {getPost, getMostRecentPostIdInChannel} from 'mattermost-redux/selectors/entities/posts';
-import {haveISystemPermission, haveITeamPermission} from 'mattermost-redux/selectors/entities/roles';
+} from 'matterfoss-redux/actions/users';
+import {removeNotVisibleUsers} from 'matterfoss-redux/actions/websocket';
+import {Client4} from 'matterfoss-redux/client';
+import {getCurrentUser, getCurrentUserId, getStatusForUserId, getUser, getIsManualStatusForUserId} from 'matterfoss-redux/selectors/entities/users';
+import {getMyTeams, getCurrentRelativeTeamUrl, getCurrentTeamId, getCurrentTeamUrl, getTeam} from 'matterfoss-redux/selectors/entities/teams';
+import {getConfig, getLicense} from 'matterfoss-redux/selectors/entities/general';
+import {getChannelsInTeam, getChannel, getCurrentChannel, getCurrentChannelId, getRedirectChannelNameForTeam, getMembersInCurrentChannel, getChannelMembersInChannels} from 'matterfoss-redux/selectors/entities/channels';
+import {getPost, getMostRecentPostIdInChannel} from 'matterfoss-redux/selectors/entities/posts';
+import {haveISystemPermission, haveITeamPermission} from 'matterfoss-redux/selectors/entities/roles';
 
 import {getSelectedChannelId} from 'selectors/rhs';
 

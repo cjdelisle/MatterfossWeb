@@ -36,7 +36,7 @@ describe('System Console', () => {
             url: 'admin_console/reporting/server_logs',
         },
         {
-            header: 'Mattermost Users',
+            header: 'Matterfoss Users',
             sidebar: 'Users',
             url: 'admin_console/user_management/users',
         },
@@ -187,7 +187,7 @@ describe('System Console', () => {
         cy.apiRequireLicense();
 
         const newSettings = {
-            TeamSettings: {SiteName: 'Mattermost'},
+            TeamSettings: {SiteName: 'Matterfoss'},
         };
         cy.apiUpdateConfig(newSettings);
 

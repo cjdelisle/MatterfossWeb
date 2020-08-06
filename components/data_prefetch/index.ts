@@ -4,15 +4,15 @@
 import {connect} from 'react-redux';
 import {ActionCreatorsMapObject, bindActionCreators, Dispatch} from 'redux';
 
-import {getCurrentChannelId, getUnreadChannels} from 'mattermost-redux/selectors/entities/channels';
-import {memoizeResult} from 'mattermost-redux/utils/helpers';
-import {isChannelMuted} from 'mattermost-redux/utils/channel_utils';
-import {getMyChannelMemberships} from 'mattermost-redux/selectors/entities/common';
+import {getCurrentChannelId, getUnreadChannels} from 'matterfoss-redux/selectors/entities/channels';
+import {memoizeResult} from 'matterfoss-redux/utils/helpers';
+import {isChannelMuted} from 'matterfoss-redux/utils/channel_utils';
+import {getMyChannelMemberships} from 'matterfoss-redux/selectors/entities/common';
 
-import {Channel, ChannelMembership} from 'mattermost-redux/types/channels';
+import {Channel, ChannelMembership} from 'matterfoss-redux/types/channels';
 
-import {ActionFunc, GenericAction} from 'mattermost-redux/types/actions';
-import {RelationOneToOne} from 'mattermost-redux/types/utilities';
+import {ActionFunc, GenericAction} from 'matterfoss-redux/types/actions';
+import {RelationOneToOne} from 'matterfoss-redux/types/utilities';
 
 import {GlobalState} from 'types/store';
 

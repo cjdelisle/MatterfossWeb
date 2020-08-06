@@ -6,9 +6,9 @@ import {bindActionCreators, Dispatch, ActionCreatorsMapObject} from 'redux';
 
 import {createSelector} from 'reselect';
 
-import {GenericAction, ActionFunc} from 'mattermost-redux/types/actions';
-import {getTeams as fetchTeams, searchTeams} from 'mattermost-redux/actions/teams';
-import {getTeams} from 'mattermost-redux/selectors/entities/teams';
+import {GenericAction, ActionFunc} from 'matterfoss-redux/types/actions';
+import {getTeams as fetchTeams, searchTeams} from 'matterfoss-redux/actions/teams';
+import {getTeams} from 'matterfoss-redux/selectors/entities/teams';
 
 import {GlobalState} from 'types/store';
 

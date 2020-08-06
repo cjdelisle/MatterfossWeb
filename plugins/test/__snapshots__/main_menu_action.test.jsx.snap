@@ -347,7 +347,7 @@ exports[`plugins/MainMenuActions should match snapshot and click plugin item for
       id="about"
       modalId="about"
       show={true}
-      text="About Mattermost"
+      text="About Matterfoss"
     />
   </MenuGroup>
   <MenuGroup>

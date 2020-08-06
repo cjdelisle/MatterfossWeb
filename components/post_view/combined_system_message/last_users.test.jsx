@@ -3,7 +3,7 @@
 
 import React from 'react';
 
-import {Posts} from 'mattermost-redux/constants';
+import {Posts} from 'matterfoss-redux/constants';
 
 import {shallowWithIntl} from 'tests/helpers/intl-test-helper';
 

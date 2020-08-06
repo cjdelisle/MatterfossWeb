@@ -5,15 +5,15 @@
 import {connect} from 'react-redux';
 import {bindActionCreators, Dispatch, ActionCreatorsMapObject} from 'redux';
 
-import {fetchMyCategories} from 'mattermost-redux/actions/channel_categories';
-import {Preferences} from 'mattermost-redux/constants';
-import Permissions from 'mattermost-redux/constants/permissions';
-import {getCurrentChannelId} from 'mattermost-redux/selectors/entities/channels';
-import {getConfig} from 'mattermost-redux/selectors/entities/general';
-import {getBool} from 'mattermost-redux/selectors/entities/preferences';
-import {haveIChannelPermission} from 'mattermost-redux/selectors/entities/roles';
-import {getCurrentTeam} from 'mattermost-redux/selectors/entities/teams';
-import {GenericAction, ActionFunc} from 'mattermost-redux/types/actions';
+import {fetchMyCategories} from 'matterfoss-redux/actions/channel_categories';
+import {Preferences} from 'matterfoss-redux/constants';
+import Permissions from 'matterfoss-redux/constants/permissions';
+import {getCurrentChannelId} from 'matterfoss-redux/selectors/entities/channels';
+import {getConfig} from 'matterfoss-redux/selectors/entities/general';
+import {getBool} from 'matterfoss-redux/selectors/entities/preferences';
+import {haveIChannelPermission} from 'matterfoss-redux/selectors/entities/roles';
+import {getCurrentTeam} from 'matterfoss-redux/selectors/entities/teams';
+import {GenericAction, ActionFunc} from 'matterfoss-redux/types/actions';
 
 import {createCategory} from 'actions/views/channel_sidebar';
 import {openModal} from 'actions/views/modals';

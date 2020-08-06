@@ -11,14 +11,14 @@
 
 /**
  * Note : This test requires draw plugin tar file under fixtures folder.
- * Download from : https://integrations.mattermost.com/draw-plugin/
- * Copy to : ./e2e/cypress/fixtures/com.mattermost.draw-plugin.tar.gz
+ * Download from : https://integrations.matterfoss.com/draw-plugin/
+ * Copy to : ./e2e/cypress/fixtures/com.matterfoss.draw-plugin.tar.gz
  */
 
 import * as TIMEOUTS from '../../fixtures/timeouts';
 
 describe('Draw Plugin - Upload', () => {
-    const pluginId = 'com.mattermost.draw-plugin';
+    const pluginId = 'com.matterfoss.draw-plugin';
 
     before(() => {
         // # Update config
@@ -45,7 +45,7 @@ describe('Draw Plugin - Upload', () => {
     */
     it('M11759-Draw plugin Configuration - should upload draw plugin', () => {
         // * upload Draw plugin from the browser
-        const fileName = 'com.mattermost.draw-plugin.tar.gz';
+        const fileName = 'com.matterfoss.draw-plugin.tar.gz';
         const mimeType = 'application/gzip';
         cy.fixture(fileName, 'binary').
             then(Cypress.Blob.binaryStringToBlob).
@@ -64,7 +64,7 @@ describe('Draw Plugin - Upload', () => {
 
         // # Draw plugin ID should be visible
         cy.findByText(/Installed Plugins/).scrollIntoView().should('be.visible');
-        cy.findByTestId('com.mattermost.draw-plugin').scrollIntoView().should('be.visible').within(() => {
+        cy.findByTestId('com.matterfoss.draw-plugin').scrollIntoView().should('be.visible').within(() => {
             // * Verify that the Draw Plugin is shown on successful upload
             cy.findByText('Draw Plugin').should('be.visible');
 
@@ -78,7 +78,7 @@ describe('Draw Plugin - Upload', () => {
 
         // # Need to re-query DOM elements as they are updated asynchronously
         cy.findByText(/Installed Plugins/).scrollIntoView().should('be.visible');
-        cy.findByTestId('com.mattermost.draw-plugin').scrollIntoView().should('be.visible').within(() => {
+        cy.findByTestId('com.matterfoss.draw-plugin').scrollIntoView().should('be.visible').within(() => {
             // * Check plugin is not enabled
             cy.wait(TIMEOUTS.HALF_SEC).findByText('This plugin is not enabled.').should('be.visible');
 
@@ -89,7 +89,7 @@ describe('Draw Plugin - Upload', () => {
         // #Remove plugin Id should exist upon clicking Cancel in confirmation popup
         cy.get('#cancelModalButton').should('be.visible').click();
         cy.findByText(/Installed Plugins/).scrollIntoView().should('be.visible');
-        cy.findByTestId('com.mattermost.draw-plugin').scrollIntoView().should('be.visible').within(() => {
+        cy.findByTestId('com.matterfoss.draw-plugin').scrollIntoView().should('be.visible').within(() => {
             // * Click on remove
             cy.wait(TIMEOUTS.HALF_SEC).findByText('Remove').click();
         });
@@ -98,6 +98,6 @@ describe('Draw Plugin - Upload', () => {
         cy.findByText('Are you sure you would like to remove the plugin?').should('be.visible');
         cy.get('#confirmModalButton').should('be.visible').click();
         cy.findByText(/Installed Plugins/).scrollIntoView().should('be.visible');
-        cy.findByTestId('com.mattermost.draw-plugin').should('not.exist');
+        cy.findByTestId('com.matterfoss.draw-plugin').should('not.exist');
     });
 });

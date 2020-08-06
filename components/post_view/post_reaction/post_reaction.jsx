@@ -7,7 +7,7 @@ import classNames from 'classnames';
 import {Tooltip} from 'react-bootstrap';
 import {FormattedMessage} from 'react-intl';
 
-import Permissions from 'mattermost-redux/constants/permissions';
+import Permissions from 'matterfoss-redux/constants/permissions';
 
 import {Locations} from 'utils/constants';
 import {localizeMessage} from 'utils/utils.jsx';

@@ -4,7 +4,7 @@
 import React from 'react';
 import classNames from 'classnames';
 
-import {ChannelType} from 'mattermost-redux/types/channels';
+import {ChannelType} from 'matterfoss-redux/types/channels';
 
 import {trackEvent} from 'actions/diagnostics_actions';
 import EditCategoryModal from 'components/edit_category_modal';

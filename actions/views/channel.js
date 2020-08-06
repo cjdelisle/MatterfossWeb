@@ -8,12 +8,12 @@ import {
     joinChannel,
     markChannelAsRead,
     unfavoriteChannel,
-} from 'mattermost-redux/actions/channels';
-import * as PostActions from 'mattermost-redux/actions/posts';
-import {TeamTypes} from 'mattermost-redux/action_types';
-import {autocompleteUsers} from 'mattermost-redux/actions/users';
-import {selectTeam} from 'mattermost-redux/actions/teams';
-import {Posts, RequestStatus} from 'mattermost-redux/constants';
+} from 'matterfoss-redux/actions/channels';
+import * as PostActions from 'matterfoss-redux/actions/posts';
+import {TeamTypes} from 'matterfoss-redux/action_types';
+import {autocompleteUsers} from 'matterfoss-redux/actions/users';
+import {selectTeam} from 'matterfoss-redux/actions/teams';
+import {Posts, RequestStatus} from 'matterfoss-redux/constants';
 
 import {
     getChannel,
@@ -25,13 +25,13 @@ import {
     getAllDirectChannelsNameMapInCurrentTeam,
     isFavoriteChannel,
     isManuallyUnread,
-} from 'mattermost-redux/selectors/entities/channels';
-import {getCurrentRelativeTeamUrl, getCurrentTeam, getCurrentTeamId, getTeamsList} from 'mattermost-redux/selectors/entities/teams';
-import {getCurrentUserId, getUserByUsername} from 'mattermost-redux/selectors/entities/users';
-import {getMostRecentPostIdInChannel, getPost} from 'mattermost-redux/selectors/entities/posts';
+} from 'matterfoss-redux/selectors/entities/channels';
+import {getCurrentRelativeTeamUrl, getCurrentTeam, getCurrentTeamId, getTeamsList} from 'matterfoss-redux/selectors/entities/teams';
+import {getCurrentUserId, getUserByUsername} from 'matterfoss-redux/selectors/entities/users';
+import {getMostRecentPostIdInChannel, getPost} from 'matterfoss-redux/selectors/entities/posts';
 
-import {getChannelByName} from 'mattermost-redux/utils/channel_utils';
-import EventEmitter from 'mattermost-redux/utils/event_emitter';
+import {getChannelByName} from 'matterfoss-redux/utils/channel_utils';
+import EventEmitter from 'matterfoss-redux/utils/event_emitter';
 
 import {openDirectChannelToUserId} from 'actions/channel_actions.jsx';
 import {getLastViewedChannelName} from 'selectors/local_storage';

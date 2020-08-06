@@ -9,8 +9,8 @@ import {
     getStatusesByIds,
     getTotalUsersStats,
     searchProfiles,
-} from 'mattermost-redux/actions/users';
-import {searchGroupChannels} from 'mattermost-redux/actions/channels';
+} from 'matterfoss-redux/actions/users';
+import {searchGroupChannels} from 'matterfoss-redux/actions/channels';
 import {
     getCurrentUserId,
     getProfiles as selectProfiles,
@@ -18,15 +18,15 @@ import {
     getProfilesInCurrentTeam, searchProfiles as searchProfilesSelector,
     searchProfilesInCurrentTeam,
     getTotalUsersStats as getTotalUsersStatsSelector,
-} from 'mattermost-redux/selectors/entities/users';
-import {getChannelsWithUserProfiles, getAllChannels} from 'mattermost-redux/selectors/entities/channels';
-import {getConfig} from 'mattermost-redux/selectors/entities/general';
-import {getCurrentTeam} from 'mattermost-redux/selectors/entities/teams';
-import {ActionFunc} from 'mattermost-redux/types/actions';
-import {Channel} from 'mattermost-redux/types/channels';
-import {UserProfile} from 'mattermost-redux/types/users';
-import {sortByUsername, filterProfilesMatchingTerm} from 'mattermost-redux/utils/user_utils';
-import {memoizeResult} from 'mattermost-redux/utils/helpers';
+} from 'matterfoss-redux/selectors/entities/users';
+import {getChannelsWithUserProfiles, getAllChannels} from 'matterfoss-redux/selectors/entities/channels';
+import {getConfig} from 'matterfoss-redux/selectors/entities/general';
+import {getCurrentTeam} from 'matterfoss-redux/selectors/entities/teams';
+import {ActionFunc} from 'matterfoss-redux/types/actions';
+import {Channel} from 'matterfoss-redux/types/channels';
+import {UserProfile} from 'matterfoss-redux/types/users';
+import {sortByUsername, filterProfilesMatchingTerm} from 'matterfoss-redux/utils/user_utils';
+import {memoizeResult} from 'matterfoss-redux/utils/helpers';
 
 import {openDirectChannelToUserId, openGroupChannelToUserIds} from 'actions/channel_actions';
 import {loadStatusesForProfilesList} from 'actions/status_actions.jsx';

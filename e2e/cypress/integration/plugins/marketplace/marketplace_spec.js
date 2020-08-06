@@ -32,7 +32,7 @@ describe('Plugin Marketplace', () => {
                 PluginSettings: {
                     Enable: true,
                     EnableMarketplace: true,
-                    MarketplaceUrl: 'https://api.integrations.mattermost.com',
+                    MarketplaceUrl: 'https://api.integrations.matterfoss.com',
                 },
             });
 
@@ -53,7 +53,7 @@ describe('Plugin Marketplace', () => {
                 PluginSettings: {
                     Enable: true,
                     EnableMarketplace: false,
-                    MarketplaceUrl: 'https://api.integrations.mattermost.com',
+                    MarketplaceUrl: 'https://api.integrations.matterfoss.com',
                 },
             });
 
@@ -74,7 +74,7 @@ describe('Plugin Marketplace', () => {
                 PluginSettings: {
                     Enable: false,
                     EnableMarketplace: true,
-                    MarketplaceUrl: 'https://api.integrations.mattermost.com',
+                    MarketplaceUrl: 'https://api.integrations.matterfoss.com',
                 },
             });
 
@@ -143,7 +143,7 @@ describe('Plugin Marketplace', () => {
 
         it('display installed plugins and error bar', () => {
             // # Install one plugin
-            cy.apiInstallPluginFromUrl('https://github.com/mattermost/mattermost-plugin-github/releases/download/v0.7.0/github-0.7.0.tar.gz', true);
+            cy.apiInstallPluginFromUrl('https://github.com/matterfoss/matterfoss-plugin-github/releases/download/v0.7.0/github-0.7.0.tar.gz', true);
 
             // # Scroll to GitHub plugin
             cy.get('#marketplace-plugin-github').scrollIntoView().should('be.visible');
@@ -166,12 +166,12 @@ describe('Plugin Marketplace', () => {
                     Enable: true,
                     EnableMarketplace: true,
                     EnableRemoteMarketplace: true,
-                    MarketplaceUrl: 'https://api.integrations.mattermost.com',
+                    MarketplaceUrl: 'https://api.integrations.matterfoss.com',
                     PluginStates: {
                         github: {
                             Enable: false,
                         },
-                        'com.mattermost.webex': {
+                        'com.matterfoss.webex': {
                             Enable: false,
                         },
                     },
@@ -277,22 +277,22 @@ describe('Plugin Marketplace', () => {
 
         it('should install a plugin on demand', () => {
             // # Uninstall any existing webex plugin
-            cy.apiRemovePluginById('com.mattermost.webex');
+            cy.apiRemovePluginById('com.matterfoss.webex');
 
             // * Verify webex plugin should be visible
             cy.findByText('Next').click();
-            cy.get('#marketplace-plugin-com\\.mattermost\\.webex').scrollIntoView().should('be.visible');
+            cy.get('#marketplace-plugin-com\\.matterfoss\\.webex').scrollIntoView().should('be.visible');
 
             // # Install the webex plugin
-            cy.get('#marketplace-plugin-com\\.mattermost\\.webex').find('.btn.btn-primary').click();
+            cy.get('#marketplace-plugin-com\\.matterfoss\\.webex').find('.btn.btn-primary').click();
 
             // * Verify should show "Configure" after installation
-            cy.get('#marketplace-plugin-com\\.mattermost\\.webex').find('.btn.btn-outline', {timeout: TIMEOUTS.ONE_MIN}).scrollIntoView().should('be.visible').and('have.text', 'Configure');
+            cy.get('#marketplace-plugin-com\\.matterfoss\\.webex').find('.btn.btn-outline', {timeout: TIMEOUTS.ONE_MIN}).scrollIntoView().should('be.visible').and('have.text', 'Configure');
         });
 
         it('should install a plugin from search results on demand', () => {
             // # Uninstall any existing webex plugin
-            cy.apiRemovePluginById('com.mattermost.webex');
+            cy.apiRemovePluginById('com.matterfoss.webex');
 
             // # Filter to webex plugin only
             cy.findByPlaceholderText('Search Plugins').scrollIntoView().should('be.visible').type('webex');
@@ -301,13 +301,13 @@ describe('Plugin Marketplace', () => {
             cy.get('#marketplaceTabs-pane-allPlugins').find('.more-modal__row').should('have.length', 1);
 
             // * Verify webex plugin should be visible
-            cy.get('#marketplace-plugin-com\\.mattermost\\.webex').scrollIntoView().should('be.visible');
+            cy.get('#marketplace-plugin-com\\.matterfoss\\.webex').scrollIntoView().should('be.visible');
 
             // # Install the webex plugin
-            cy.get('#marketplace-plugin-com\\.mattermost\\.webex').find('.btn.btn-primary').click();
+            cy.get('#marketplace-plugin-com\\.matterfoss\\.webex').find('.btn.btn-primary').click();
 
             // * Verify should show "Configure" after installation
-            cy.get('#marketplace-plugin-com\\.mattermost\\.webex').find('.btn.btn-outline', {timeout: TIMEOUTS.ONE_MIN}).scrollIntoView().should('be.visible').and('have.text', 'Configure');
+            cy.get('#marketplace-plugin-com\\.matterfoss\\.webex').find('.btn.btn-outline', {timeout: TIMEOUTS.ONE_MIN}).scrollIntoView().should('be.visible').and('have.text', 'Configure');
 
             // * Verify search filter should be maintained
             cy.get('#marketplaceTabs-pane-allPlugins').find('.more-modal__row').should('have.length', 1);
@@ -315,7 +315,7 @@ describe('Plugin Marketplace', () => {
 
         it('should prompt to update an old GitHub plugin from all plugins', () => {
             // # Install GitHub 0.7.0 plugin
-            cy.apiInstallPluginFromUrl('https://github.com/mattermost/mattermost-plugin-github/releases/download/v0.7.0/github-0.7.0.tar.gz', true);
+            cy.apiInstallPluginFromUrl('https://github.com/matterfoss/matterfoss-plugin-github/releases/download/v0.7.0/github-0.7.0.tar.gz', true);
 
             // # Scroll to GitHub plugin
             cy.get('#marketplace-plugin-github').scrollIntoView().should('be.visible');
@@ -348,7 +348,7 @@ describe('Plugin Marketplace', () => {
             cy.get('#marketplace-plugin-github').should('be.visible');
         });
 
-        // This tests fails, if any plugins are previously installed. See https://mattermost.atlassian.net/browse/MM-21610
+        // This tests fails, if any plugins are previously installed. See https://matterfoss.atlassian.net/browse/MM-21610
         it('change tab to "All Plugins" when "Install Plugins" link is clicked', () => {
             cy.get('#marketplaceTabs').scrollIntoView().should('be.visible').within(() => {
                 // # Switch tab to installed plugin
@@ -381,7 +381,7 @@ describe('Plugin Marketplace', () => {
             cy.get('#marketplace-plugin-github').find('.tag').should('be.visible').and('to.contain', 'OFFICIAL').trigger('mouseover');
 
             // * Verify tooltip is shown after click the label
-            cy.get('div.tooltip-inner').should('be.visible').and('contain', 'This plugin is maintained by Mattermost');
+            cy.get('div.tooltip-inner').should('be.visible').and('contain', 'This plugin is maintained by Matterfoss');
         });
     });
 
@@ -419,7 +419,7 @@ describe('Plugin Marketplace', () => {
 
         it('display installed plugins', () => {
             // # Install one plugin
-            cy.apiInstallPluginFromUrl('https://github.com/mattermost/mattermost-plugin-github/releases/download/v0.7.0/github-0.7.0.tar.gz', true);
+            cy.apiInstallPluginFromUrl('https://github.com/matterfoss/matterfoss-plugin-github/releases/download/v0.7.0/github-0.7.0.tar.gz', true);
 
             // # Scroll to GitHub plugin
             cy.get('#marketplace-plugin-github').scrollIntoView().should('be.visible');

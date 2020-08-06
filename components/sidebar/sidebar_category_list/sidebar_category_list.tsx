@@ -9,10 +9,10 @@ import {Spring, SpringSystem} from 'rebound';
 import classNames from 'classnames';
 import debounce from 'lodash/debounce';
 
-import {General} from 'mattermost-redux/constants';
-import {Channel} from 'mattermost-redux/types/channels';
-import {ChannelCategory} from 'mattermost-redux/types/channel_categories';
-import {Team} from 'mattermost-redux/types/teams';
+import {General} from 'matterfoss-redux/constants';
+import {Channel} from 'matterfoss-redux/types/channels';
+import {ChannelCategory} from 'matterfoss-redux/types/channel_categories';
+import {Team} from 'matterfoss-redux/types/teams';
 
 import {trackEvent} from 'actions/diagnostics_actions';
 import UnreadChannelIndicator from 'components/unread_channel_indicator';

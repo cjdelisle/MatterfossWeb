@@ -11,12 +11,12 @@ import {
 
 describe('marketplace', () => {
     const samplePlugin = {
-        homepage_url: 'https://github.com/mattermost/mattermost-plugin-nps',
-        download_url: 'https://github.com/mattermost/mattermost-plugin-nps/releases/download/v1.0.3/com.mattermost.nps-1.0.3.tar.gz',
+        homepage_url: 'https://github.com/matterfoss/matterfoss-plugin-nps',
+        download_url: 'https://github.com/matterfoss/matterfoss-plugin-nps/releases/download/v1.0.3/com.matterfoss.nps-1.0.3.tar.gz',
         manifest: {
-            id: 'com.mattermost.nps',
+            id: 'com.matterfoss.nps',
             name: 'User Satisfaction Surveys',
-            description: 'This plugin sends quarterly user satisfaction surveys to gather feedback and help improve Mattermost',
+            description: 'This plugin sends quarterly user satisfaction surveys to gather feedback and help improve Matterfoss',
             version: '1.0.3',
             minServerVersion: '5.14.0',
         },
@@ -24,10 +24,10 @@ describe('marketplace', () => {
     };
 
     const sampleInstalledPlugin = {
-        homepage_url: 'https://github.com/mattermost/mattermost-test',
-        download_url: 'https://github.com/mattermost/mattermost-test/releases/download/v1.0.3/com.mattermost.nps-1.0.3.tar.gz',
+        homepage_url: 'https://github.com/matterfoss/matterfoss-test',
+        download_url: 'https://github.com/matterfoss/matterfoss-test/releases/download/v1.0.3/com.matterfoss.nps-1.0.3.tar.gz',
         manifest: {
-            id: 'com.mattermost.test',
+            id: 'com.matterfoss.test',
             name: 'Test',
             description: 'This plugin is to test',
             version: '1.0.3',
@@ -40,8 +40,8 @@ describe('marketplace', () => {
         views: {
             marketplace: {
                 plugins: [samplePlugin, sampleInstalledPlugin],
-                installing: {'com.mattermost.nps': true},
-                errors: {'com.mattermost.test': 'An error occurred'},
+                installing: {'com.matterfoss.nps': true},
+                errors: {'com.matterfoss.test': 'An error occurred'},
                 filter: 'existing',
             },
         },
@@ -57,11 +57,11 @@ describe('marketplace', () => {
 
     describe('getPlugin', () => {
         it('should return samplePlugin', () => {
-            expect(getPlugin(state, 'com.mattermost.nps')).toEqual(samplePlugin);
+            expect(getPlugin(state, 'com.matterfoss.nps')).toEqual(samplePlugin);
         });
 
         it('should return sampleInstalledPlugin', () => {
-            expect(getPlugin(state, 'com.mattermost.test')).toEqual(sampleInstalledPlugin);
+            expect(getPlugin(state, 'com.matterfoss.test')).toEqual(sampleInstalledPlugin);
         });
 
         it('should return undefined for unknown plugin', () => {
@@ -75,11 +75,11 @@ describe('marketplace', () => {
 
     describe('getInstalling', () => {
         it('should return true for samplePlugin', () => {
-            expect(getInstalling(state, 'com.mattermost.nps')).toBe(true);
+            expect(getInstalling(state, 'com.matterfoss.nps')).toBe(true);
         });
 
         it('should return false for sampleInstalledPlugin', () => {
-            expect(getInstalling(state, 'com.mattermost.test')).toBe(false);
+            expect(getInstalling(state, 'com.matterfoss.test')).toBe(false);
         });
 
         it('should return false for unknown plugin', () => {
@@ -89,11 +89,11 @@ describe('marketplace', () => {
 
     describe('getError', () => {
         it('should return undefined for samplePlugin', () => {
-            expect(getError(state, 'com.mattermost.nps')).toBeUndefined();
+            expect(getError(state, 'com.matterfoss.nps')).toBeUndefined();
         });
 
         it('should return error value for sampleInstalledPlugin', () => {
-            expect(getError(state, 'com.mattermost.test')).toBe('An error occurred');
+            expect(getError(state, 'com.matterfoss.test')).toBe('An error occurred');
         });
 
         it('should return undefeined for unknown plugin', () => {

@@ -218,7 +218,7 @@ describe('Interactive Dialog', () => {
         // Verify that error is: shown for invalid email and not shown for valid email.
         [
             {valid: false, value: 'invalid-email'},
-            {valid: true, value: 'test@mattermost.com'},
+            {valid: true, value: 'test@matterfoss.com'},
         ].forEach((testCase) => {
             cy.get('#someemail').scrollIntoView().clear().type(testCase.value);
 

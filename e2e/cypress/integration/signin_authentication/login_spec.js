@@ -65,10 +65,10 @@ describe('Login page', () => {
     it('should match elements, footer', () => {
         // * Check elements in the footer
         cy.get('#footer_section').should('be.visible');
-        cy.get('#company_name').should('contain', 'Mattermost');
+        cy.get('#company_name').should('contain', 'Matterfoss');
         cy.get('#copyright').
             should('contain', '© 2015-').
-            and('contain', 'Mattermost, Inc.');
+            and('contain', 'Matterfoss, Inc.');
         cy.get('#about_link').
             should('contain', 'About').
             and('have.attr', 'href', config.SupportSettings.AboutLink);

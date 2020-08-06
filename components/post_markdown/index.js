@@ -2,9 +2,9 @@
 // See LICENSE.txt for license information.
 import {createSelector} from 'reselect';
 import {connect} from 'react-redux';
-import {getChannel} from 'mattermost-redux/selectors/entities/channels';
-import {getAllUserMentionKeys} from 'mattermost-redux/selectors/entities/search';
-import {getCurrentUserMentionKeys} from 'mattermost-redux/selectors/entities/users';
+import {getChannel} from 'matterfoss-redux/selectors/entities/channels';
+import {getAllUserMentionKeys} from 'matterfoss-redux/selectors/entities/search';
+import {getCurrentUserMentionKeys} from 'matterfoss-redux/selectors/entities/users';
 
 import {canManageMembers} from 'utils/channel_utils.jsx';
 

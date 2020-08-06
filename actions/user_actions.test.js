@@ -4,9 +4,9 @@
 import thunk from 'redux-thunk';
 import configureStore from 'redux-mock-store';
 
-import {Preferences, General} from 'mattermost-redux/constants';
-import channelCategories from 'mattermost-redux/selectors/entities/channel_categories';
-import {CategoryTypes} from 'mattermost-redux/constants/channel_categories';
+import {Preferences, General} from 'matterfoss-redux/constants';
+import channelCategories from 'matterfoss-redux/selectors/entities/channel_categories';
+import {CategoryTypes} from 'matterfoss-redux/constants/channel_categories';
 
 import * as UserActions from 'actions/user_actions';
 import {getState} from 'stores/redux_store';
@@ -18,8 +18,8 @@ const mockStore = configureStore([thunk]);
 const mockChannelsObj1 = [{id: 'gmChannel1', type: General.GM_CHANNEL}];
 const mockChannelsObj2 = [{id: 'gmChannel', type: General.GM_CHANNEL}];
 
-jest.mock('mattermost-redux/actions/users', () => {
-    const original = jest.requireActual('mattermost-redux/actions/users');
+jest.mock('matterfoss-redux/actions/users', () => {
+    const original = jest.requireActual('matterfoss-redux/actions/users');
     return {
         ...original,
         searchProfiles: (...args) => ({type: 'MOCK_SEARCH_PROFILES', args}),
@@ -30,9 +30,9 @@ jest.mock('mattermost-redux/actions/users', () => {
     };
 });
 
-jest.mock('mattermost-redux/selectors/entities/channels', () => {
-    const GeneralTypes = require.requireActual('mattermost-redux/constants').General;
-    const original = jest.requireActual('mattermost-redux/selectors/entities/channels');
+jest.mock('matterfoss-redux/selectors/entities/channels', () => {
+    const GeneralTypes = require.requireActual('matterfoss-redux/constants').General;
+    const original = jest.requireActual('matterfoss-redux/selectors/entities/channels');
     const mockDmGmUsersInLhs = [{id: 'gmChannel', type: GeneralTypes.GM_CHANNEL}, {id: 'dmChannel', type: GeneralTypes.DM_CHANNEL}];
 
     return {
@@ -41,9 +41,9 @@ jest.mock('mattermost-redux/selectors/entities/channels', () => {
     };
 });
 
-jest.mock('mattermost-redux/selectors/entities/channel_categories', () => {
-    const GeneralTypes = require.requireActual('mattermost-redux/constants').General;
-    const original = require.requireActual('mattermost-redux/selectors/entities/channel_categories');
+jest.mock('matterfoss-redux/selectors/entities/channel_categories', () => {
+    const GeneralTypes = require.requireActual('matterfoss-redux/constants').General;
+    const original = require.requireActual('matterfoss-redux/selectors/entities/channel_categories');
 
     const mockChannelsObj = [{id: 'gmChannel', type: GeneralTypes.GM_CHANNEL}];
     const mockFunc = jest.fn();
@@ -55,24 +55,24 @@ jest.mock('mattermost-redux/selectors/entities/channel_categories', () => {
     };
 });
 
-jest.mock('mattermost-redux/actions/teams', () => {
-    const original = jest.requireActual('mattermost-redux/actions/teams');
+jest.mock('matterfoss-redux/actions/teams', () => {
+    const original = jest.requireActual('matterfoss-redux/actions/teams');
     return {
         ...original,
         getTeamMembersByIds: (...args) => ({type: 'MOCK_GET_TEAM_MEMBERS_BY_IDS', args}),
     };
 });
 
-jest.mock('mattermost-redux/actions/channels', () => {
-    const original = jest.requireActual('mattermost-redux/actions/channels');
+jest.mock('matterfoss-redux/actions/channels', () => {
+    const original = jest.requireActual('matterfoss-redux/actions/channels');
     return {
         ...original,
         getChannelMembersByIds: (...args) => ({type: 'MOCK_GET_CHANNEL_MEMBERS_BY_IDS', args}),
     };
 });
 
-jest.mock('mattermost-redux/actions/preferences', () => {
-    const original = jest.requireActual('mattermost-redux/actions/preferences');
+jest.mock('matterfoss-redux/actions/preferences', () => {
+    const original = jest.requireActual('matterfoss-redux/actions/preferences');
     return {
         ...original,
         deletePreferences: (...args) => ({type: 'MOCK_DELETE_PREFERENCES', args}),
@@ -130,7 +130,7 @@ describe('Actions.User', () => {
                         category: 'theme',
                         name: 'team_1',
                         user_id: 'current_user_id',
-                        value: JSON.stringify(Preferences.THEMES.mattermostDark),
+                        value: JSON.stringify(Preferences.THEMES.matterfossDark),
                     },
                 },
             },

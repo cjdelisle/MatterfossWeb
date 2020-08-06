@@ -2,8 +2,8 @@
 // See LICENSE.txt for license information.
 
 import React from 'react';
-import {UserProfile} from 'mattermost-redux/types/users';
-import {Channel, ChannelMembership} from 'mattermost-redux/types/channels';
+import {UserProfile} from 'matterfoss-redux/types/users';
+import {Channel, ChannelMembership} from 'matterfoss-redux/types/channels';
 
 import Constants from 'utils/constants';
 import * as UserAgent from 'utils/user_agent';

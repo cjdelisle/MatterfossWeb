@@ -9,7 +9,7 @@ import {
     searchCategory,
     searchIfNeededInitial,
     saveSearchScrollPosition,
-} from 'mattermost-redux/actions/gifs';
+} from 'matterfoss-redux/actions/gifs';
 
 import SearchGrid from 'components/gif_picker/components/SearchGrid';
 

@@ -11,7 +11,7 @@ jest.mock('actions/team_actions', () => ({
     }),
 }));
 
-jest.mock('mattermost-redux/actions/channels', () => ({
+jest.mock('matterfoss-redux/actions/channels', () => ({
     joinChannel: (userId, team, channel) => {
         if (channel === 'correct') {
             return ({type: 'MOCK_RECEIVED_ME'});
@@ -23,7 +23,7 @@ jest.mock('mattermost-redux/actions/channels', () => ({
     },
 }));
 
-jest.mock('mattermost-redux/actions/teams', () => ({
+jest.mock('matterfoss-redux/actions/teams', () => ({
     getTeamMembersByIds: () => ({type: 'MOCK_RECEIVED_ME'}),
     sendEmailInvitesToTeamGracefully: (team, emails) => {
         return ({type: 'MOCK_RECEIVED_ME', data: emails.map((email) => ({email, error: team === 'correct' ? undefined : {message: 'Unable to add the user to the team.'}}))});

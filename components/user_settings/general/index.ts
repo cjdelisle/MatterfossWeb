@@ -9,13 +9,13 @@ import {
     sendVerificationEmail,
     setDefaultProfileImage,
     uploadProfileImage,
-} from 'mattermost-redux/actions/users';
-import {clearErrors, logError} from 'mattermost-redux/actions/errors';
-import {getConfig} from 'mattermost-redux/selectors/entities/general';
+} from 'matterfoss-redux/actions/users';
+import {clearErrors, logError} from 'matterfoss-redux/actions/errors';
+import {getConfig} from 'matterfoss-redux/selectors/entities/general';
 
-import {GlobalState} from 'mattermost-redux/types/store';
-import {ActionFunc} from 'mattermost-redux/types/actions';
-import {UserProfile} from 'mattermost-redux/types/users';
+import {GlobalState} from 'matterfoss-redux/types/store';
+import {ActionFunc} from 'matterfoss-redux/types/actions';
+import {UserProfile} from 'matterfoss-redux/types/users';
 
 import UserSettingsGeneralTab from './user_settings_general';
 

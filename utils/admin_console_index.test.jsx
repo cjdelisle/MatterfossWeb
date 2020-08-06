@@ -79,6 +79,6 @@ describe('AdminConsoleIndex.generateIndex', () => {
         const idx = generateIndex(AdminDefinition, {[samplePlugin1.id]: samplePlugin1, [samplePlugin2.id]: samplePlugin2}, intl);
 
         expect(idx.search('random')).toEqual(['plugin_Some-random-plugin', 'site_config/public_links']);
-        expect(idx.search('autolink')).toEqual(['plugin_mattermost-autolink']);
+        expect(idx.search('autolink')).toEqual(['plugin_matterfoss-autolink']);
     });
 });

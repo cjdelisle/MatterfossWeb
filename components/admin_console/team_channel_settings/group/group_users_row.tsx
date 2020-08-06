@@ -2,13 +2,13 @@
 // See LICENSE.txt for license information.
 
 import React from 'react';
-import {UserProfile} from 'mattermost-redux/types/users';
+import {UserProfile} from 'matterfoss-redux/types/users';
 import {FormattedMessage} from 'react-intl';
 
-import {Client4} from 'mattermost-redux/client';
+import {Client4} from 'matterfoss-redux/client';
 import {Tooltip} from 'react-bootstrap';
 
-import {Group} from 'mattermost-redux/types/groups';
+import {Group} from 'matterfoss-redux/types/groups';
 
 import {t} from 'utils/i18n';
 import * as Utils from 'utils/utils';

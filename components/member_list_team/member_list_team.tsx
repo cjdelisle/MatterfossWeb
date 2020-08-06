@@ -3,9 +3,9 @@
 
 import React from 'react';
 
-import {UserProfile} from 'mattermost-redux/types/users';
-import {TeamMembership, GetTeamMembersOpts} from 'mattermost-redux/types/teams';
-import {Teams} from 'mattermost-redux/constants';
+import {UserProfile} from 'matterfoss-redux/types/users';
+import {TeamMembership, GetTeamMembersOpts} from 'matterfoss-redux/types/teams';
+import {Teams} from 'matterfoss-redux/constants';
 
 import Constants from 'utils/constants';
 import * as UserAgent from 'utils/user_agent';

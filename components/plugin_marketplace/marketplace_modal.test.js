@@ -8,12 +8,12 @@ import {AllPlugins, InstalledPlugins, MarketplaceModal} from './marketplace_moda
 
 describe('components/marketplace/', () => {
     const samplePlugin = {
-        homepage_url: 'https://github.com/mattermost/mattermost-plugin-nps',
-        download_url: 'https://github.com/mattermost/mattermost-plugin-nps/releases/download/v1.0.3/com.mattermost.nps-1.0.3.tar.gz',
+        homepage_url: 'https://github.com/matterfoss/matterfoss-plugin-nps',
+        download_url: 'https://github.com/matterfoss/matterfoss-plugin-nps/releases/download/v1.0.3/com.matterfoss.nps-1.0.3.tar.gz',
         manifest: {
-            id: 'com.mattermost.nps',
+            id: 'com.matterfoss.nps',
             name: 'User Satisfaction Surveys',
-            description: 'This plugin sends quarterly user satisfaction surveys to gather feedback and help improve Mattermost',
+            description: 'This plugin sends quarterly user satisfaction surveys to gather feedback and help improve Matterfoss',
             version: '1.0.3',
             minServerVersion: '5.14.0',
         },
@@ -21,10 +21,10 @@ describe('components/marketplace/', () => {
     };
 
     const sampleInstalledPlugin = {
-        homepage_url: 'https://github.com/mattermost/mattermost-test',
-        download_url: 'https://github.com/mattermost/mattermost-test/releases/download/v1.0.3/com.mattermost.nps-1.0.3.tar.gz',
+        homepage_url: 'https://github.com/matterfoss/matterfoss-test',
+        download_url: 'https://github.com/matterfoss/matterfoss-test/releases/download/v1.0.3/com.matterfoss.nps-1.0.3.tar.gz',
         manifest: {
-            id: 'com.mattermost.test',
+            id: 'com.matterfoss.test',
             name: 'Test',
             description: 'This plugin is to test',
             version: '1.0.3',

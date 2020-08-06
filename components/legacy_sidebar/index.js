@@ -4,20 +4,20 @@
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 
-import {Preferences} from 'mattermost-redux/constants/index';
+import {Preferences} from 'matterfoss-redux/constants/index';
 import {
     getCurrentChannel,
     getSortedUnreadChannelIds,
     getOrderedChannelIds,
     getUnreads,
-} from 'mattermost-redux/selectors/entities/channels';
+} from 'matterfoss-redux/selectors/entities/channels';
 
-import Permissions from 'mattermost-redux/constants/permissions';
-import {getConfig} from 'mattermost-redux/selectors/entities/general';
-import {getBool as getBoolPreference, getSidebarPreferences} from 'mattermost-redux/selectors/entities/preferences';
-import {getCurrentUser} from 'mattermost-redux/selectors/entities/users';
-import {haveITeamPermission} from 'mattermost-redux/selectors/entities/roles';
-import {getCurrentTeam} from 'mattermost-redux/selectors/entities/teams';
+import Permissions from 'matterfoss-redux/constants/permissions';
+import {getConfig} from 'matterfoss-redux/selectors/entities/general';
+import {getBool as getBoolPreference, getSidebarPreferences} from 'matterfoss-redux/selectors/entities/preferences';
+import {getCurrentUser} from 'matterfoss-redux/selectors/entities/users';
+import {haveITeamPermission} from 'matterfoss-redux/selectors/entities/roles';
+import {getCurrentTeam} from 'matterfoss-redux/selectors/entities/teams';
 
 import {switchToChannelById} from 'actions/views/channel';
 import {openModal} from 'actions/views/modals';

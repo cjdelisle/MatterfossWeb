@@ -4,12 +4,12 @@
 import {connect} from 'react-redux';
 import {createSelector} from 'reselect';
 import {bindActionCreators} from 'redux';
-import {makeGetCategory} from 'mattermost-redux/selectors/entities/preferences';
-import {getConfig, getLicense} from 'mattermost-redux/selectors/entities/general';
-import {haveISystemPermission} from 'mattermost-redux/selectors/entities/roles';
-import {savePreferences} from 'mattermost-redux/actions/preferences';
-import {Permissions} from 'mattermost-redux/constants';
-import {getStandardAnalytics} from 'mattermost-redux/actions/admin';
+import {makeGetCategory} from 'matterfoss-redux/selectors/entities/preferences';
+import {getConfig, getLicense} from 'matterfoss-redux/selectors/entities/general';
+import {haveISystemPermission} from 'matterfoss-redux/selectors/entities/roles';
+import {savePreferences} from 'matterfoss-redux/actions/preferences';
+import {Permissions} from 'matterfoss-redux/constants';
+import {getStandardAnalytics} from 'matterfoss-redux/actions/admin';
 
 import {Preferences} from 'utils/constants';
 

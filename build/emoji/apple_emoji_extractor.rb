@@ -2,7 +2,7 @@ require 'emoji'
 require 'fileutils'
 
 # Code in this class largely taken from https://github.com/github/gemoji
-module Mattermost
+module Matterfoss
   class AppleEmojiExtractor
     attr_reader :size
 

@@ -125,7 +125,7 @@ function getPayload(channel, withUsernameAndProfileIcon) {
     return {
         ...payload,
         username: 'payload_username',
-        icon_url: 'http://www.mattermost.org/wp-content/uploads/2016/04/icon_WS.png',
+        icon_url: 'http://www.matterfoss.org/wp-content/uploads/2016/04/icon_WS.png',
     };
 }
 

@@ -176,13 +176,13 @@ export default class InstalledOutgoingWebhooks extends React.PureComponent {
                 helpText={
                     <FormattedMessage
                         id='installed_outgoing_webhooks.help'
-                        defaultMessage='Use outgoing webhooks to connect external tools to Mattermost. {buildYourOwn} or visit the {appDirectory} to find self-hosted, third-party apps and integrations.'
+                        defaultMessage='Use outgoing webhooks to connect external tools to Matterfoss. {buildYourOwn} or visit the {appDirectory} to find self-hosted, third-party apps and integrations.'
                         values={{
                             buildYourOwn: (
                                 <a
                                     target='_blank'
                                     rel='noopener noreferrer'
-                                    href='http://docs.mattermost.com/developer/webhooks-outgoing.html'
+                                    href='http://docs.matterfoss.com/developer/webhooks-outgoing.html'
                                 >
                                     <FormattedMessage
                                         id='installed_outgoing_webhooks.help.buildYourOwn'
@@ -194,7 +194,7 @@ export default class InstalledOutgoingWebhooks extends React.PureComponent {
                                 <a
                                     target='_blank'
                                     rel='noopener noreferrer'
-                                    href='https://about.mattermost.com/default-app-directory/'
+                                    href='https://about.matterfoss.com/default-app-directory/'
                                 >
                                     <FormattedMessage
                                         id='installed_outgoing_webhooks.help.appDirectory'

@@ -60,7 +60,7 @@ describe('components/FaviconTitleHandler', () => {
         expect(document.title).toBe('(3) * teammate - Test team display name');
         wrapper.setProps({currentChannel: {}, currentTeammate: {}});
         instance.updateTitle();
-        expect(document.title).toBe('Mattermost - Join a team');
+        expect(document.title).toBe('Matterfoss - Join a team');
     });
 
     test('should display correct favicon', () => {

@@ -6,10 +6,10 @@ import 'bootstrap';
 import React from 'react';
 import {Route, Switch, Redirect} from 'react-router-dom';
 
-import {ActionFunc} from 'mattermost-redux/types/actions';
-import {AdminConfig, EnvironmentConfig, ClientLicense} from 'mattermost-redux/types/config';
-import {Role} from 'mattermost-redux/types/roles';
-import {Dictionary} from 'mattermost-redux/types/utilities';
+import {ActionFunc} from 'matterfoss-redux/types/actions';
+import {AdminConfig, EnvironmentConfig, ClientLicense} from 'matterfoss-redux/types/config';
+import {Role} from 'matterfoss-redux/types/roles';
+import {Dictionary} from 'matterfoss-redux/types/utilities';
 
 import AnnouncementBar from 'components/announcement_bar';
 import SystemNotice from 'components/system_notice';

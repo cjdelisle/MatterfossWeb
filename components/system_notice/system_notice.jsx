@@ -8,7 +8,7 @@ import {FormattedMessage} from 'react-intl';
 import {Preferences} from 'utils/constants';
 import {t} from 'utils/i18n';
 import LocalizedIcon from 'components/localized_icon';
-import MattermostLogo from 'components/widgets/icons/mattermost_logo';
+import MatterfossLogo from 'components/widgets/icons/matterfoss_logo';
 
 export default class SystemNotice extends React.PureComponent {
     static propTypes = {
@@ -120,7 +120,7 @@ export default class SystemNotice extends React.PureComponent {
             >
                 <div className='system-notice__header'>
                     <div className='system-notice__logo'>
-                        <MattermostLogo/>
+                        <MatterfossLogo/>
                     </div>
                     <div className='system-notice__title'>
                         {notice.title}

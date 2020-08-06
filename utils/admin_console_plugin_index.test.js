@@ -24,13 +24,13 @@ describe('AdminConsolePluginsIndex.getPluginEntries', () => {
     it('should return map with the text extracted from plugins', () => {
         const entries = getPluginEntries({[samplePlugin1.id]: samplePlugin1});
         expect(entries).toMatchSnapshot();
-        expect(entries).toHaveProperty('plugin_mattermost-autolink');
+        expect(entries).toHaveProperty('plugin_matterfoss-autolink');
     });
 
     it('should return map with the text extracted from plugins', () => {
         const entries = getPluginEntries({[samplePlugin1.id]: samplePlugin1, [samplePlugin2.id]: samplePlugin2});
         expect(entries).toMatchSnapshot();
-        expect(entries).toHaveProperty('plugin_mattermost-autolink');
+        expect(entries).toHaveProperty('plugin_matterfoss-autolink');
         expect(entries).toHaveProperty('plugin_Some-random-plugin');
     });
 

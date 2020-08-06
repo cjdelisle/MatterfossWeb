@@ -4,10 +4,10 @@
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 
-import {getUser, getProfiles} from 'mattermost-redux/selectors/entities/users';
-import {updateUserActive} from 'mattermost-redux/actions/users';
-import {getConfig} from 'mattermost-redux/selectors/entities/general';
-import {addUserToTeam} from 'mattermost-redux/actions/teams';
+import {getUser, getProfiles} from 'matterfoss-redux/selectors/entities/users';
+import {updateUserActive} from 'matterfoss-redux/actions/users';
+import {getConfig} from 'matterfoss-redux/selectors/entities/general';
+import {addUserToTeam} from 'matterfoss-redux/actions/teams';
 
 import {setNavigationBlocked, deferNavigation, cancelNavigation, confirmNavigation} from 'actions/admin_actions.jsx';
 import {getNavigationBlocked, showNavigationPrompt} from 'selectors/views/admin';

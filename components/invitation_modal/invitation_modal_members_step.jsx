@@ -5,8 +5,8 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import {injectIntl, FormattedMessage} from 'react-intl';
 
-import {debounce} from 'mattermost-redux/actions/helpers';
-import {isEmail} from 'mattermost-redux/utils/helpers';
+import {debounce} from 'matterfoss-redux/actions/helpers';
+import {isEmail} from 'matterfoss-redux/utils/helpers';
 
 import FormattedMarkdownMessage from 'components/formatted_markdown_message';
 import InviteMembersIcon from 'components/widgets/icons/invite_members_icon';

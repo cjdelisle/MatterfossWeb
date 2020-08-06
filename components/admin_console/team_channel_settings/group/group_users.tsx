@@ -2,7 +2,7 @@
 // See LICENSE.txt for license information.
 
 import React from 'react';
-import {UserProfile} from 'mattermost-redux/types/users';
+import {UserProfile} from 'matterfoss-redux/types/users';
 import {FormattedMessage} from 'react-intl';
 
 import NextIcon from 'components/widgets/icons/fa_next_icon';

@@ -1,7 +1,7 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
-import {searchAssociatedGroupsForReferenceLocal} from 'mattermost-redux/selectors/entities/groups';
+import {searchAssociatedGroupsForReferenceLocal} from 'matterfoss-redux/selectors/entities/groups';
 
 export function searchAssociatedGroupsForReference(prefix, teamId, channelId) {
     return async (dispatch, getState) => {

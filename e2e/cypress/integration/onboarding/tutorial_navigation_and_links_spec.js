@@ -119,7 +119,7 @@ describe('Test Tutorial Navigation', () => {
 function checkStepOne() {
     cy.get('#tutorialIntroContent').should('be.visible').
         and('contain', 'Welcome to:').
-        and('contain', 'Mattermost').
+        and('contain', 'Matterfoss').
         and('contain', 'Your team communication all in one place, instantly searchable and available anywhere.').
         and('contain', 'Keep your team connected to help them achieve what matters most.');
 
@@ -153,7 +153,7 @@ function checkStepTwo(appDownloadLink) {
 function checkStepThree() {
     cy.get('#tutorialIntroThree').should('be.visible').
         and('contain', 'Invite Teammates when you\'re ready.').
-        and('contain', 'Need anything, just email us at feedback@mattermost.com.').
+        and('contain', 'Need anything, just email us at feedback@matterfoss.com.').
         and('contain', 'Click "Next" to enter Town Square. This is the first channel teammates see when they sign up. Use it for posting updates everyone needs to know.');
 
     cy.get('#tutorialIntroCircle2').should('have.class', 'circle active');

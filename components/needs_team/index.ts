@@ -5,16 +5,16 @@ import {connect} from 'react-redux';
 import {bindActionCreators, Dispatch, ActionCreatorsMapObject} from 'redux';
 import {withRouter} from 'react-router-dom';
 
-import {loadProfilesForDirect} from 'mattermost-redux/actions/users';
-import {fetchMyChannelsAndMembers, viewChannel} from 'mattermost-redux/actions/channels';
-import {getMyTeamUnreads, getTeamByName, selectTeam} from 'mattermost-redux/actions/teams';
-import {getGroups, getAllGroupsAssociatedToChannelsInTeam, getAllGroupsAssociatedToTeam, getGroupsByUserId} from 'mattermost-redux/actions/groups';
-import {getTheme, getNewSidebarPreference} from 'mattermost-redux/selectors/entities/preferences';
-import {getLicense, getConfig} from 'mattermost-redux/selectors/entities/general';
-import {getCurrentUser} from 'mattermost-redux/selectors/entities/users';
-import {getCurrentTeamId, getMyTeams} from 'mattermost-redux/selectors/entities/teams';
-import {getCurrentChannelId} from 'mattermost-redux/selectors/entities/channels';
-import {Action} from 'mattermost-redux/types/actions';
+import {loadProfilesForDirect} from 'matterfoss-redux/actions/users';
+import {fetchMyChannelsAndMembers, viewChannel} from 'matterfoss-redux/actions/channels';
+import {getMyTeamUnreads, getTeamByName, selectTeam} from 'matterfoss-redux/actions/teams';
+import {getGroups, getAllGroupsAssociatedToChannelsInTeam, getAllGroupsAssociatedToTeam, getGroupsByUserId} from 'matterfoss-redux/actions/groups';
+import {getTheme, getNewSidebarPreference} from 'matterfoss-redux/selectors/entities/preferences';
+import {getLicense, getConfig} from 'matterfoss-redux/selectors/entities/general';
+import {getCurrentUser} from 'matterfoss-redux/selectors/entities/users';
+import {getCurrentTeamId, getMyTeams} from 'matterfoss-redux/selectors/entities/teams';
+import {getCurrentChannelId} from 'matterfoss-redux/selectors/entities/channels';
+import {Action} from 'matterfoss-redux/types/actions';
 
 import {GlobalState} from 'types/store';
 

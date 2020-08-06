@@ -4,16 +4,16 @@
 /// <reference types="cypress" />
 
 declare namespace Cypress {
-    type AdminConfig = import('mattermost-redux/types/config').AdminConfig;
-    type AnalyticsRow = import('mattermost-redux/types/admin').AnalyticsRow;
-    type Bot = import('mattermost-redux/types/bots').Bot;
-    type Channel = import('mattermost-redux/types/channels').Channel;
-    type ClientLicense = import('mattermost-redux/types/config').ClientLicense;
-    type ChannelMembership = import('mattermost-redux/types/channels').ChannelMembership;
-    type ChannelType = import('mattermost-redux/types/channels').ChannelType;
-    type PreferenceType = import('mattermost-redux/types/preferences').PreferenceType;
-    type Team = import('mattermost-redux/types/teams').Team;
-    type TeamMembership = import('mattermost-redux/types/teams').TeamMembership;
-    type UserProfile = import('mattermost-redux/types/users').UserProfile;
-    type UserStatus = import('mattermost-redux/types/users').UserStatus;
+    type AdminConfig = import('matterfoss-redux/types/config').AdminConfig;
+    type AnalyticsRow = import('matterfoss-redux/types/admin').AnalyticsRow;
+    type Bot = import('matterfoss-redux/types/bots').Bot;
+    type Channel = import('matterfoss-redux/types/channels').Channel;
+    type ClientLicense = import('matterfoss-redux/types/config').ClientLicense;
+    type ChannelMembership = import('matterfoss-redux/types/channels').ChannelMembership;
+    type ChannelType = import('matterfoss-redux/types/channels').ChannelType;
+    type PreferenceType = import('matterfoss-redux/types/preferences').PreferenceType;
+    type Team = import('matterfoss-redux/types/teams').Team;
+    type TeamMembership = import('matterfoss-redux/types/teams').TeamMembership;
+    type UserProfile = import('matterfoss-redux/types/users').UserProfile;
+    type UserStatus = import('matterfoss-redux/types/users').UserStatus;
 }

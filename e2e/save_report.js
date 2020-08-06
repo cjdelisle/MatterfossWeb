@@ -14,7 +14,7 @@
  *      - AWS_S3_BUCKET, AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY
  *   For saving reports to Automation dashboard
  *      - DASHBOARD_ENABLE, DASHBOARD_ENDPOINT and DASHBOARD_TOKEN
- *   For sending hooks to Mattermost channels
+ *   For sending hooks to Matterfoss channels
  *      - FULL_REPORT, WEBHOOK_URL and DIAGNOSTIC_WEBHOOK_URL
  *   Test type
  *      - TYPE=[type], e.g. "MASTER", "PR", "RELEASE"

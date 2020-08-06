@@ -115,7 +115,7 @@ export default class LicenseSettings extends React.PureComponent {
                 <p className='trial-error'>
                     <FormattedMarkdownMessage
                         id='admin.license.trial-request.error'
-                        defaultMessage='Trial license could not be retrieved. Visit [https://mattermost.com/trial/](https://mattermost.com/trial/) to request a license.'
+                        defaultMessage='Trial license could not be retrieved. Visit [https://matterfoss.com/trial/](https://matterfoss.com/trial/) to request a license.'
                     />
                 </p>
             );
@@ -145,8 +145,8 @@ export default class LicenseSettings extends React.PureComponent {
 
         if (license.IsLicensed === 'true' && !uploading) {
             // Note: DO NOT LOCALISE THESE STRINGS. Legally we can not since the license is in English.
-            const sku = license.SkuShortName ? <React.Fragment>{`Edition: Mattermost Enterprise Edition ${license.SkuShortName}`}<br/></React.Fragment> : null;
-            edition = 'Mattermost Enterprise Edition. Enterprise features on this server have been unlocked with a license key and a valid subscription.';
+            const sku = license.SkuShortName ? <React.Fragment>{`Edition: Matterfoss Enterprise Edition ${license.SkuShortName}`}<br/></React.Fragment> : null;
+            edition = 'Matterfoss Enterprise Edition. Enterprise features on this server have been unlocked with a license key and a valid subscription.';
             licenseType = (
                 <div>
                     <p>
@@ -164,12 +164,12 @@ export default class LicenseSettings extends React.PureComponent {
                     <a
                         rel='noopener noreferrer'
                         target='_blank'
-                        href='https://about.mattermost.com/enterprise-edition-terms/'
+                        href='https://about.matterfoss.com/enterprise-edition-terms/'
                     >{'Enterprise Edition Terms of Service'}</a>{' and '}
                     <a
                         rel='noopener noreferrer'
                         target='_blank'
-                        href='https://about.mattermost.com/default-privacy-policy/'
+                        href='https://about.matterfoss.com/default-privacy-policy/'
                     >{'Privacy Policy.'}</a>
                 </div>
             );
@@ -209,7 +209,7 @@ export default class LicenseSettings extends React.PureComponent {
             // Note: DO NOT LOCALISE THESE STRINGS. Legally we can not since the license is in English.
             edition = (
                 <div>
-                    {'Mattermost Enterprise Edition. A license is required to unlock enterprise features.'}
+                    {'Matterfoss Enterprise Edition. A license is required to unlock enterprise features.'}
                     <p className='trial'>
                         <button
                             className='btn btn-primary'
@@ -230,7 +230,7 @@ export default class LicenseSettings extends React.PureComponent {
                     <p className='trial-legal-terms'>
                         <FormattedMarkdownMessage
                             id='admin.license.trial-request.accept-terms'
-                            defaultMessage='By clicking **Start trial**, I agree to the [Mattermost Software Evaluation Agreement](!https://mattermost.com/software-evaluation-agreement/), [Privacy Policy](!https://mattermost.com/privacy-policy/), and receiving product emails.'
+                            defaultMessage='By clicking **Start trial**, I agree to the [Matterfoss Software Evaluation Agreement](!https://matterfoss.com/software-evaluation-agreement/), [Privacy Policy](!https://matterfoss.com/privacy-policy/), and receiving product emails.'
                         />
                     </p>
                 </div>
@@ -277,7 +277,7 @@ export default class LicenseSettings extends React.PureComponent {
                         <input
                             ref='fileInput'
                             type='file'
-                            accept='.mattermost-license'
+                            accept='.matterfoss-license'
                             onChange={this.handleChange}
                         />
                     </div>
@@ -297,7 +297,7 @@ export default class LicenseSettings extends React.PureComponent {
                     <p className='help-text m-0'>
                         <FormattedMarkdownMessage
                             id='admin.license.uploadDesc'
-                            defaultMessage='Upload a license key for Mattermost Enterprise Edition to upgrade this server. [Visit us online](!http://mattermost.com) to learn more about the benefits of Enterprise Edition or to purchase a key.'
+                            defaultMessage='Upload a license key for Matterfoss Enterprise Edition to upgrade this server. [Visit us online](!http://matterfoss.com) to learn more about the benefits of Enterprise Edition or to purchase a key.'
                         />
                     </p>
                 </div>

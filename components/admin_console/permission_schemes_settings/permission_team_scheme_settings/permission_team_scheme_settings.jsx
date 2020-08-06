@@ -497,7 +497,7 @@ export default class PermissionTeamSchemeSettings extends React.PureComponent {
                                 <span>
                                     <FormattedMarkdownMessage
                                         id='admin.permissions.teamScheme.introBanner'
-                                        defaultMessage='[Team Override Schemes](!https://about.mattermost.com/default-team-override-scheme) set the permissions for Team Admins, Channel Admins and other members in specific teams. Use a Team Override Scheme when specific teams need permission exceptions to the [System Scheme](!https://about.mattermost.com/default-system-scheme).'
+                                        defaultMessage='[Team Override Schemes](!https://about.matterfoss.com/default-team-override-scheme) set the permissions for Team Admins, Channel Admins and other members in specific teams. Use a Team Override Scheme when specific teams need permission exceptions to the [System Scheme](!https://about.matterfoss.com/default-system-scheme).'
                                     />
                                 </span>
                             </div>

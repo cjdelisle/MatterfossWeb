@@ -5,7 +5,7 @@ import {getRandomId} from '../../utils';
 
 // *****************************************************************************
 // Teams
-// https://api.mattermost.com/#tag/teams
+// https://api.matterfoss.com/#tag/teams
 // *****************************************************************************
 
 Cypress.Commands.add('apiCreateTeam', (name, displayName, type = 'O', unique = true) => {

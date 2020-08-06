@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import {FormattedMessage} from 'react-intl';
 import PDFJS from 'pdfjs-dist';
-import {getFileDownloadUrl} from 'mattermost-redux/utils/file_utils';
+import {getFileDownloadUrl} from 'matterfoss-redux/utils/file_utils';
 
 import LoadingSpinner from 'components/widgets/loading/loading_spinner';
 import FileInfoPreview from 'components/file_info_preview';

@@ -4,19 +4,19 @@
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 
-import {getTeams, getTeamStats} from 'mattermost-redux/actions/teams';
+import {getTeams, getTeamStats} from 'matterfoss-redux/actions/teams';
 import {
     getUser,
     getUserAccessToken,
     getProfiles,
     searchProfiles,
     revokeSessionsForAllUsers,
-} from 'mattermost-redux/actions/users';
-import {logError} from 'mattermost-redux/actions/errors';
-import {getTeamsList} from 'mattermost-redux/selectors/entities/teams';
-import {getUsers} from 'mattermost-redux/selectors/entities/users';
-import {getConfig} from 'mattermost-redux/selectors/entities/general';
-import {Stats} from 'mattermost-redux/constants';
+} from 'matterfoss-redux/actions/users';
+import {logError} from 'matterfoss-redux/actions/errors';
+import {getTeamsList} from 'matterfoss-redux/selectors/entities/teams';
+import {getUsers} from 'matterfoss-redux/selectors/entities/users';
+import {getConfig} from 'matterfoss-redux/selectors/entities/general';
+import {Stats} from 'matterfoss-redux/constants';
 
 import {loadProfilesAndTeamMembers, loadProfilesWithoutTeam} from 'actions/user_actions.jsx';
 

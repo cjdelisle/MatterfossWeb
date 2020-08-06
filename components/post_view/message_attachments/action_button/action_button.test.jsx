@@ -3,7 +3,7 @@
 
 import React from 'react';
 import {shallow} from 'enzyme';
-import {changeOpacity} from 'mattermost-redux/utils/theme_utils';
+import {changeOpacity} from 'matterfoss-redux/utils/theme_utils';
 
 import {Constants} from 'utils/constants';
 import ActionButton from 'components/post_view/message_attachments/action_button/action_button';
@@ -46,7 +46,7 @@ describe('components/post_view/message_attachments/action_button.jsx', () => {
     test('should have correct styles when provided color from not default theme', () => {
         const props = {
             ...baseProps,
-            theme: Constants.THEMES.mattermostDark,
+            theme: Constants.THEMES.matterfossDark,
             action: {...baseProps.action, style: 'danger'},
         };
 
@@ -54,9 +54,9 @@ describe('components/post_view/message_attachments/action_button.jsx', () => {
         const buttonStyles = wrapper.find('button').prop('style');
 
         expect(buttonStyles).toHaveProperty('backgroundColor', '#ffffff');
-        expect(buttonStyles).toHaveProperty('borderColor', changeOpacity(Constants.THEMES.mattermostDark.errorTextColor, 0.25));
+        expect(buttonStyles).toHaveProperty('borderColor', changeOpacity(Constants.THEMES.matterfossDark.errorTextColor, 0.25));
         expect(buttonStyles).toHaveProperty('borderWidth', 2);
-        expect(buttonStyles).toHaveProperty('color', Constants.THEMES.mattermostDark.errorTextColor);
+        expect(buttonStyles).toHaveProperty('color', Constants.THEMES.matterfossDark.errorTextColor);
     });
 
     test('should have correct styles when provided status color', () => {

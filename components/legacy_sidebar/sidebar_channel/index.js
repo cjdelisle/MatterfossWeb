@@ -4,8 +4,8 @@
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 
-import {Client4} from 'mattermost-redux/client';
-import {savePreferences} from 'mattermost-redux/actions/preferences';
+import {Client4} from 'matterfoss-redux/client';
+import {savePreferences} from 'matterfoss-redux/actions/preferences';
 
 import {
     getCurrentChannelId,
@@ -14,15 +14,15 @@ import {
     isFavoriteChannel,
     makeGetChannel,
     shouldHideDefaultChannel,
-} from 'mattermost-redux/selectors/entities/channels';
-import {getMyChannelMemberships} from 'mattermost-redux/selectors/entities/common';
-import {getCurrentTeamId} from 'mattermost-redux/selectors/entities/teams';
-import {getUserIdsInChannels, getUser} from 'mattermost-redux/selectors/entities/users';
-import {getInt, getTeammateNameDisplaySetting} from 'mattermost-redux/selectors/entities/preferences';
-import {getConfig} from 'mattermost-redux/selectors/entities/general';
-import {isChannelMuted} from 'mattermost-redux/utils/channel_utils';
+} from 'matterfoss-redux/selectors/entities/channels';
+import {getMyChannelMemberships} from 'matterfoss-redux/selectors/entities/common';
+import {getCurrentTeamId} from 'matterfoss-redux/selectors/entities/teams';
+import {getUserIdsInChannels, getUser} from 'matterfoss-redux/selectors/entities/users';
+import {getInt, getTeammateNameDisplaySetting} from 'matterfoss-redux/selectors/entities/preferences';
+import {getConfig} from 'matterfoss-redux/selectors/entities/general';
+import {isChannelMuted} from 'matterfoss-redux/utils/channel_utils';
 
-import {displayUsername} from 'mattermost-redux/utils/user_utils';
+import {displayUsername} from 'matterfoss-redux/utils/user_utils';
 
 import {Constants, NotificationLevels, StoragePrefixes} from 'utils/constants';
 

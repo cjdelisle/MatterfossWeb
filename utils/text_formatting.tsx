@@ -8,7 +8,7 @@ import emojiRegex from 'emoji-regex';
 
 import {Renderer} from 'marked';
 
-import {Channel} from 'mattermost-redux/types/channels';
+import {Channel} from 'matterfoss-redux/types/channels';
 
 import {formatWithRenderer} from 'utils/markdown';
 
@@ -116,7 +116,7 @@ interface TextFormattingOptionsBase {
     markdown: boolean;
 
     /**
-   * The origin of this Mattermost instance.
+   * The origin of this Matterfoss instance.
    *
    * If provided, links to channels and posts will be replaced with internal
    * links that can be handled by a special click handler.

@@ -4,12 +4,12 @@
 import {bindActionCreators, Dispatch} from 'redux';
 import {connect} from 'react-redux';
 
-import {savePreferences} from 'mattermost-redux/actions/preferences';
-import {Preferences} from 'mattermost-redux/constants';
-import {getConfig} from 'mattermost-redux/selectors/entities/general';
-import {get as getPreference, getSidebarPreferences, getNewSidebarPreference} from 'mattermost-redux/selectors/entities/preferences';
-import {getCurrentUser} from 'mattermost-redux/selectors/entities/users';
-import {GlobalState} from 'mattermost-redux/types/store';
+import {savePreferences} from 'matterfoss-redux/actions/preferences';
+import {Preferences} from 'matterfoss-redux/constants';
+import {getConfig} from 'matterfoss-redux/selectors/entities/general';
+import {get as getPreference, getSidebarPreferences, getNewSidebarPreference} from 'matterfoss-redux/selectors/entities/preferences';
+import {getCurrentUser} from 'matterfoss-redux/selectors/entities/users';
+import {GlobalState} from 'matterfoss-redux/types/store';
 
 import UserSettingsSidebar from './user_settings_sidebar';
 

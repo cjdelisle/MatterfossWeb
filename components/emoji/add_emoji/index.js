@@ -4,7 +4,7 @@
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 
-import {createCustomEmoji} from 'mattermost-redux/actions/emojis';
+import {createCustomEmoji} from 'matterfoss-redux/actions/emojis';
 
 import {getEmojiMap} from 'selectors/emojis';
 

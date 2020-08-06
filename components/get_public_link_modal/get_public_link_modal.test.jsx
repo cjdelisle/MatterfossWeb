@@ -32,7 +32,7 @@ describe('components/GetPublicLinkModal', () => {
     test('should match snapshot when link is not empty', () => {
         const wrapper = shallow(
             <GetPublicLinkModal
-                link={'http://mattermost.com/files/n5bnoaz3e7g93nyipzo1bixdwr/public?h=atw9qQHI1nUPnxo1e48tPspo1Qvwd3kHtJZjysmI5zs'}
+                link={'http://matterfoss.com/files/n5bnoaz3e7g93nyipzo1bixdwr/public?h=atw9qQHI1nUPnxo1e48tPspo1Qvwd3kHtJZjysmI5zs'}
                 actions={{getFilePublicLink: jest.fn()}}
             />,
         );
@@ -46,7 +46,7 @@ describe('components/GetPublicLinkModal', () => {
 
         const wrapper = shallow(
             <GetPublicLinkModal
-                link={'http://mattermost.com/files/n5bnoaz3e7g93nyipzo1bixdwr/public?h=atw9qQHI1nUPnxo1e48tPspo1Qvwd3kHtJZjysmI5zs'}
+                link={'http://matterfoss.com/files/n5bnoaz3e7g93nyipzo1bixdwr/public?h=atw9qQHI1nUPnxo1e48tPspo1Qvwd3kHtJZjysmI5zs'}
                 actions={{getFilePublicLink}}
             />,
         );
@@ -62,7 +62,7 @@ describe('components/GetPublicLinkModal', () => {
 
         const wrapper = shallow(
             <GetPublicLinkModal
-                link={'http://mattermost.com/files/n5bnoaz3e7g93nyipzo1bixdwr/public?h=atw9qQHI1nUPnxo1e48tPspo1Qvwd3kHtJZjysmI5zs'}
+                link={'http://matterfoss.com/files/n5bnoaz3e7g93nyipzo1bixdwr/public?h=atw9qQHI1nUPnxo1e48tPspo1Qvwd3kHtJZjysmI5zs'}
                 actions={{getFilePublicLink}}
             />,
         );
@@ -76,7 +76,7 @@ describe('components/GetPublicLinkModal', () => {
     test('should call handleToggle on GetLinkModal\'s onHide', () => {
         const wrapper = shallow(
             <GetPublicLinkModal
-                link={'http://mattermost.com/files/n5bnoaz3e7g93nyipzo1bixdwr/public?h=atw9qQHI1nUPnxo1e48tPspo1Qvwd3kHtJZjysmI5zs'}
+                link={'http://matterfoss.com/files/n5bnoaz3e7g93nyipzo1bixdwr/public?h=atw9qQHI1nUPnxo1e48tPspo1Qvwd3kHtJZjysmI5zs'}
                 actions={{getFilePublicLink: jest.fn()}}
             />,
         );

@@ -4,7 +4,7 @@
 import {shallow} from 'enzyme';
 import React from 'react';
 
-import {Client4} from 'mattermost-redux/client';
+import {Client4} from 'matterfoss-redux/client';
 
 import ExternalImage from './external_image';
 
@@ -115,13 +115,13 @@ describe('ExternalImage', () => {
             },
             {
                 name: 'no metadata, proxied image',
-                src: 'https://mattermost.example.com/api/v4/image?url=' + encodeURIComponent('https://example.com/image.png'),
+                src: 'https://matterfoss.example.com/api/v4/image?url=' + encodeURIComponent('https://example.com/image.png'),
                 imageMetadata: null,
                 expected: false,
             },
             {
                 name: 'no metadata, proxied svg image',
-                src: 'https://mattermost.example.com/api/v4/image?url=' + encodeURIComponent('https://example.com/image.svg'),
+                src: 'https://matterfoss.example.com/api/v4/image?url=' + encodeURIComponent('https://example.com/image.svg'),
                 imageMetadata: null,
                 expected: true,
             },

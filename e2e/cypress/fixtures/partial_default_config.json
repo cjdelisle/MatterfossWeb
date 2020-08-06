@@ -86,7 +86,7 @@
         "EnableLatex": false
     },
     "TeamSettings": {
-        "SiteName": "Mattermost",
+        "SiteName": "Matterfoss",
         "MaxUsersPerTeam": 2000,
         "EnableTeamCreation": true,
         "EnableUserCreation": true,
@@ -221,7 +221,7 @@
         "SMTPServerTimeout": 10,
         "ConnectionSecurity": "",
         "SendPushNotifications": true,
-        "PushNotificationServer": "https://push-test.mattermost.com",
+        "PushNotificationServer": "https://push-test.matterfoss.com",
         "PushNotificationContents": "generic",
         "EnableEmailBatching": false,
         "EmailBatchingBufferSize": 256,
@@ -247,12 +247,12 @@
         "ShowFullName": true
     },
     "SupportSettings": {
-        "TermsOfServiceLink": "https://about.mattermost.com/default-terms/",
-        "PrivacyPolicyLink": "https://about.mattermost.com/default-privacy-policy/",
-        "AboutLink": "https://about.mattermost.com/default-about/",
-        "HelpLink": "https://about.mattermost.com/default-help/",
-        "ReportAProblemLink": "https://about.mattermost.com/default-report-a-problem/",
-        "SupportEmail": "feedback@mattermost.com",
+        "TermsOfServiceLink": "https://about.matterfoss.com/default-terms/",
+        "PrivacyPolicyLink": "https://about.matterfoss.com/default-privacy-policy/",
+        "AboutLink": "https://about.matterfoss.com/default-about/",
+        "HelpLink": "https://about.matterfoss.com/default-help/",
+        "ReportAProblemLink": "https://about.matterfoss.com/default-report-a-problem/",
+        "SupportEmail": "feedback@matterfoss.com",
         "CustomTermsOfServiceEnabled": false,
         "CustomTermsOfServiceReAcceptancePeriod": 365,
         "EnableAskCommunityLink": true
@@ -378,9 +378,9 @@
         "LoginButtonTextColor": "#ffffff"
     },
     "NativeAppSettings": {
-        "AppDownloadLink": "https://mattermost.com/download/#mattermostApps",
-        "AndroidAppDownloadLink": "https://about.mattermost.com/mattermost-android-app/",
-        "IosAppDownloadLink": "https://about.mattermost.com/mattermost-ios-app/"
+        "AppDownloadLink": "https://matterfoss.com/download/#matterfossApps",
+        "AndroidAppDownloadLink": "https://about.matterfoss.com/matterfoss-android-app/",
+        "IosAppDownloadLink": "https://about.matterfoss.com/matterfoss-ios-app/"
     },
     "ClusterSettings": {
         "Enable": false,
@@ -470,7 +470,7 @@
         "ClientDirectory": "./client/plugins",
         "Plugins": {},
         "PluginStates": {
-            "com.mattermost.nps": {
+            "com.matterfoss.nps": {
                 "Enable": false
             }
         },
@@ -478,7 +478,7 @@
         "EnableRemoteMarketplace": true,
         "AutomaticPrepackagedPlugins": true,
         "RequirePluginSignature": false,
-        "MarketplaceUrl": "https://api.integrations.mattermost.com",
+        "MarketplaceUrl": "https://api.integrations.matterfoss.com",
         "SignaturePublicKeyFiles": []
     },
     "DisplaySettings": {

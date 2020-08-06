@@ -4,7 +4,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import {FormattedDate, FormattedMessage} from 'react-intl';
-import {General} from 'mattermost-redux/constants';
+import {General} from 'matterfoss-redux/constants';
 
 import LoadingScreen from 'components/loading_screen';
 
@@ -154,7 +154,7 @@ export default class TeamAnalytics extends React.PureComponent {
                     <div className='banner__content'>
                         <FormattedMarkdownMessage
                             id='analytics.system.infoAndSkippedIntensiveQueries'
-                            defaultMessage='Use data for only the chosen team. Exclude posts in direct message channels that are not tied to a team. \n \n To maximize performance, some statistics are disabled. You can [re-enable them in config.json](!https://docs.mattermost.com/administration/statistics.html).'
+                            defaultMessage='Use data for only the chosen team. Exclude posts in direct message channels that are not tied to a team. \n \n To maximize performance, some statistics are disabled. You can [re-enable them in config.json](!https://docs.matterfoss.com/administration/statistics.html).'
                         />
                     </div>
                 </div>

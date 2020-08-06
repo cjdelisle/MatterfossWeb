@@ -36,14 +36,14 @@ describe('Markdown', () => {
         // Note we check width and height to verify that img element is actually loaded
         cy.getLastPostId().then((postId) => {
             cy.get(`#postMessageText_${postId}`).find('div.markdown-inline-img__container').
-                should('contain', 'Mattermost/platform build status:  ');
+                should('contain', 'Matterfoss/platform build status:  ');
 
             cy.get(`#postMessageText_${postId}`).find('img').
                 should('have.class', 'markdown-inline-img').
                 and('have.class', 'markdown-inline-img--hover').
                 and('have.class', 'markdown-inline-img--no-border').
                 and('have.attr', 'alt', 'Build Status').
-                and('have.attr', 'src', `${baseUrl}/api/v4/image?url=https%3A%2F%2Ftravis-ci.org%2Fmattermost%2Fplatform.svg%3Fbranch%3Dmaster`).
+                and('have.attr', 'src', `${baseUrl}/api/v4/image?url=https%3A%2F%2Ftravis-ci.org%2Fmatterfoss%2Fplatform.svg%3Fbranch%3Dmaster`).
                 and((inlineImg) => {
                     expect(inlineImg.height()).to.be.closeTo(20, 0.9);
                 }).
@@ -124,7 +124,7 @@ describe('Markdown', () => {
 
     it('channel header is markdown image', () => {
         // # Update channel header
-        cy.updateChannelHeader('![MM Logo](https://www.mattermost.org/wp-content/uploads/2016/03/logoHorizontal.png)');
+        cy.updateChannelHeader('![MM Logo](https://www.matterfoss.org/wp-content/uploads/2016/03/logoHorizontal.png)');
 
         // * Verify image in header
         cy.get('#channelHeaderDescription').find('div.markdown__paragraph-inline').as('imageDiv');
@@ -148,7 +148,7 @@ describe('Markdown', () => {
 
     it('channel header is markdown image that is also a link', () => {
         // # Update channel header
-        cy.updateChannelHeader('[![Build Status](https://travis-ci.org/mattermost/platform.svg?branch=master)](https://travis-ci.org/mattermost/platform)');
+        cy.updateChannelHeader('[![Build Status](https://travis-ci.org/matterfoss/platform.svg?branch=master)](https://travis-ci.org/matterfoss/platform)');
 
         // * Verify image in header
         cy.get('#channelHeaderDescription').find('div.markdown__paragraph-inline').as('imageDiv');

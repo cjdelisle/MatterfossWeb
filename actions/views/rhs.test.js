@@ -4,9 +4,9 @@
 import {batchActions} from 'redux-batched-actions';
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
-import * as PostActions from 'mattermost-redux/actions/posts';
-import * as SearchActions from 'mattermost-redux/actions/search';
-import {SearchTypes} from 'mattermost-redux/action_types';
+import * as PostActions from 'matterfoss-redux/actions/posts';
+import * as SearchActions from 'matterfoss-redux/actions/search';
+import {SearchTypes} from 'matterfoss-redux/action_types';
 
 import {
     updateRhsState,
@@ -42,19 +42,19 @@ const previousSelectedPost = {
     root_id: 'root123',
 };
 
-const UserSelectors = require('mattermost-redux/selectors/entities/users');
-UserSelectors.getCurrentUserMentionKeys = jest.fn(() => [{key: '@here'}, {key: '@mattermost'}, {key: '@channel'}, {key: '@all'}]);
+const UserSelectors = require('matterfoss-redux/selectors/entities/users');
+UserSelectors.getCurrentUserMentionKeys = jest.fn(() => [{key: '@here'}, {key: '@matterfoss'}, {key: '@channel'}, {key: '@all'}]);
 
 // Mock Date.now() to return a constant value.
 const POST_CREATED_TIME = Date.now();
 global.Date.now = jest.fn(() => POST_CREATED_TIME);
 
-jest.mock('mattermost-redux/actions/posts', () => ({
+jest.mock('matterfoss-redux/actions/posts', () => ({
     getPostThread: (...args) => ({type: 'MOCK_GET_POST_THREAD', args}),
     getProfilesAndStatusesForPosts: (...args) => ({type: 'MOCK_GET_PROFILES_AND_STATUSES_FOR_POSTS', args}),
 }));
 
-jest.mock('mattermost-redux/actions/search', () => ({
+jest.mock('matterfoss-redux/actions/search', () => ({
     searchPostsWithParams: (...args) => ({type: 'MOCK_SEARCH_POSTS', args}),
     clearSearch: (...args) => ({type: 'MOCK_CLEAR_SEARCH', args}),
     getFlaggedPosts: jest.fn(),
@@ -388,11 +388,11 @@ describe('rhs view actions', () => {
 
             const compareStore = mockStore(initialState);
 
-            compareStore.dispatch(performSearch('@mattermost ', true));
+            compareStore.dispatch(performSearch('@matterfoss ', true));
             compareStore.dispatch(batchActions([
                 {
                     type: ActionTypes.UPDATE_RHS_SEARCH_TERMS,
-                    terms: '@mattermost ',
+                    terms: '@matterfoss ',
                 },
                 {
                     type: ActionTypes.UPDATE_RHS_STATE,
@@ -609,11 +609,11 @@ describe('rhs view actions', () => {
             store.dispatch(openAtPrevious({isMentionSearch: true}));
             const compareStore = mockStore(initialState);
 
-            compareStore.dispatch(performSearch('@mattermost ', true));
+            compareStore.dispatch(performSearch('@matterfoss ', true));
             compareStore.dispatch(batchActions([
                 {
                     type: ActionTypes.UPDATE_RHS_SEARCH_TERMS,
-                    terms: '@mattermost ',
+                    terms: '@matterfoss ',
                 },
                 {
                     type: ActionTypes.UPDATE_RHS_STATE,

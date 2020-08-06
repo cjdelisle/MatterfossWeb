@@ -5,7 +5,7 @@ import $ from 'jquery';
 import PropTypes from 'prop-types';
 import React from 'react';
 import {Redirect} from 'react-router';
-import {viewChannel} from 'mattermost-redux/actions/channels';
+import {viewChannel} from 'matterfoss-redux/actions/channels';
 import semver from 'semver';
 
 import * as GlobalActions from 'actions/global_actions.jsx';

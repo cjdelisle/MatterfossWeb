@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import Scrollbars from 'react-custom-scrollbars';
 import {FormattedMessage} from 'react-intl';
-import Permissions from 'mattermost-redux/constants/permissions';
+import Permissions from 'matterfoss-redux/constants/permissions';
 import classNames from 'classnames';
 import {DragDropContext, Droppable} from 'react-beautiful-dnd';
 

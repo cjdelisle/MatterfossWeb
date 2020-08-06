@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import ProfilePicture from 'components/profile_picture';
-import MattermostLogo from 'components/widgets/icons/mattermost_logo';
+import MatterfossLogo from 'components/widgets/icons/matterfoss_logo';
 
 import Constants, {UserStatuses} from 'utils/constants';
 import * as PostUtils from 'utils/post_utils';
@@ -89,7 +89,7 @@ export default class PostProfilePicture extends React.PureComponent {
         const fromWebhook = PostUtils.isFromWebhook(post);
 
         if (isSystemMessage && !compactDisplay && !fromWebhook && !isBot) {
-            return <MattermostLogo className='icon'/>;
+            return <MatterfossLogo className='icon'/>;
         }
         const fromAutoResponder = PostUtils.fromAutoResponder(post);
 

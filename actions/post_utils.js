@@ -6,17 +6,17 @@ import {
     markChannelAsRead,
     markChannelAsUnread,
     markChannelAsViewed,
-} from 'mattermost-redux/actions/channels';
-import * as PostActions from 'mattermost-redux/actions/posts';
-import {WebsocketEvents} from 'mattermost-redux/constants';
-import * as PostSelectors from 'mattermost-redux/selectors/entities/posts';
-import {getCurrentChannelId, isManuallyUnread} from 'mattermost-redux/selectors/entities/channels';
-import {getCurrentUserId} from 'mattermost-redux/selectors/entities/users';
+} from 'matterfoss-redux/actions/channels';
+import * as PostActions from 'matterfoss-redux/actions/posts';
+import {WebsocketEvents} from 'matterfoss-redux/constants';
+import * as PostSelectors from 'matterfoss-redux/selectors/entities/posts';
+import {getCurrentChannelId, isManuallyUnread} from 'matterfoss-redux/selectors/entities/channels';
+import {getCurrentUserId} from 'matterfoss-redux/selectors/entities/users';
 import {
     isFromWebhook,
     isSystemMessage,
     shouldIgnorePost,
-} from 'mattermost-redux/utils/post_utils';
+} from 'matterfoss-redux/utils/post_utils';
 
 import {sendDesktopNotification} from 'actions/notification_actions.jsx';
 

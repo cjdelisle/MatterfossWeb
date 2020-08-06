@@ -2,23 +2,23 @@
 // See LICENSE.txt for license information.
 
 import {createSelector} from 'reselect';
-import {getCurrentUserId} from 'mattermost-redux/selectors/entities/users';
-import {getCurrentTeamId} from 'mattermost-redux/selectors/entities/teams';
+import {getCurrentUserId} from 'matterfoss-redux/selectors/entities/users';
+import {getCurrentTeamId} from 'matterfoss-redux/selectors/entities/teams';
 import {
     makeGetMessageInHistoryItem,
     makeGetCommentCountForPost,
     getPost,
     getPostIdsInChannel,
-} from 'mattermost-redux/selectors/entities/posts';
-import {getCustomEmojisByName} from 'mattermost-redux/selectors/entities/emojis';
+} from 'matterfoss-redux/selectors/entities/posts';
+import {getCustomEmojisByName} from 'matterfoss-redux/selectors/entities/emojis';
 import {
     removeReaction,
     addMessageIntoHistory,
     moveHistoryIndexBack,
     moveHistoryIndexForward,
-} from 'mattermost-redux/actions/posts';
-import {Posts} from 'mattermost-redux/constants';
-import {isPostPendingOrFailed} from 'mattermost-redux/utils/post_utils';
+} from 'matterfoss-redux/actions/posts';
+import {Posts} from 'matterfoss-redux/constants';
+import {isPostPendingOrFailed} from 'matterfoss-redux/utils/post_utils';
 
 import * as PostActions from 'actions/post_actions.jsx';
 import {executeCommand} from 'actions/command';

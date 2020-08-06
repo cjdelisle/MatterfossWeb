@@ -4,8 +4,8 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import {FormattedMessage} from 'react-intl';
-import {debounce} from 'mattermost-redux/actions/helpers';
-import {Permissions} from 'mattermost-redux/constants';
+import {debounce} from 'matterfoss-redux/actions/helpers';
+import {Permissions} from 'matterfoss-redux/constants';
 
 import {getStandardAnalytics} from 'actions/admin_actions.jsx';
 import {Constants, UserSearchOptions, SearchUserTeamFilter, UserFilters} from 'utils/constants';

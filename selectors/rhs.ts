@@ -2,10 +2,10 @@
 // See LICENSE.txt for license information.
 
 import {createSelector} from 'reselect';
-import {getCurrentUserId} from 'mattermost-redux/selectors/entities/users';
-import {Post, PostType} from 'mattermost-redux/types/posts';
-import {Channel} from 'mattermost-redux/types/channels';
-import {$ID} from 'mattermost-redux/types/utilities';
+import {getCurrentUserId} from 'matterfoss-redux/selectors/entities/users';
+import {Post, PostType} from 'matterfoss-redux/types/posts';
+import {Channel} from 'matterfoss-redux/types/channels';
+import {$ID} from 'matterfoss-redux/types/utilities';
 
 import {makeGetGlobalItem} from 'selectors/storage';
 import {PostTypes} from 'utils/constants';

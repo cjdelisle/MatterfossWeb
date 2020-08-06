@@ -5,10 +5,10 @@ import React from 'react';
 import {Modal} from 'react-bootstrap';
 import {FormattedMessage} from 'react-intl';
 
-import {Client4} from 'mattermost-redux/client';
-import {Channel} from 'mattermost-redux/types/channels';
-import {RelationOneToOne} from 'mattermost-redux/types/utilities';
-import {UserProfile} from 'mattermost-redux/types/users';
+import {Client4} from 'matterfoss-redux/client';
+import {Channel} from 'matterfoss-redux/types/channels';
+import {RelationOneToOne} from 'matterfoss-redux/types/utilities';
+import {UserProfile} from 'matterfoss-redux/types/users';
 
 import {browserHistory} from 'utils/browser_history';
 import Constants from 'utils/constants';

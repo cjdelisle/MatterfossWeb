@@ -3,17 +3,17 @@
 
 import {bindActionCreators} from 'redux';
 
-import {getTeam} from 'mattermost-redux/selectors/entities/teams';
+import {getTeam} from 'matterfoss-redux/selectors/entities/teams';
 
-import {getTeam as fetchTeam, membersMinusGroupMembers, patchTeam, removeUserFromTeam, updateTeamMemberSchemeRoles, addUserToTeam} from 'mattermost-redux/actions/teams';
-import {getAllGroups, getGroupsAssociatedToTeam} from 'mattermost-redux/selectors/entities/groups';
+import {getTeam as fetchTeam, membersMinusGroupMembers, patchTeam, removeUserFromTeam, updateTeamMemberSchemeRoles, addUserToTeam} from 'matterfoss-redux/actions/teams';
+import {getAllGroups, getGroupsAssociatedToTeam} from 'matterfoss-redux/selectors/entities/groups';
 
 import {
     getGroupsAssociatedToTeam as fetchAssociatedGroups,
     linkGroupSyncable,
     unlinkGroupSyncable,
     patchGroupSyncable,
-} from 'mattermost-redux/actions/groups';
+} from 'matterfoss-redux/actions/groups';
 
 import {connect} from 'react-redux';
 

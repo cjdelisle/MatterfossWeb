@@ -5,10 +5,10 @@ import React from 'react';
 import {Modal} from 'react-bootstrap';
 import {FormattedMessage} from 'react-intl';
 
-import {UserProfile} from 'mattermost-redux/src/types/users';
-import {Dictionary} from 'mattermost-redux/src/types/utilities';
-import {AnalyticsRow} from 'mattermost-redux/types/admin';
-import {ActionFunc} from 'mattermost-redux/types/actions';
+import {UserProfile} from 'matterfoss-redux/src/types/users';
+import {Dictionary} from 'matterfoss-redux/src/types/utilities';
+import {AnalyticsRow} from 'matterfoss-redux/types/admin';
+import {ActionFunc} from 'matterfoss-redux/types/actions';
 
 import {getSiteURL} from 'utils/url';
 import {Constants, ModalIdentifiers} from 'utils/constants';
@@ -97,9 +97,9 @@ export default class WarnMetricAckModal extends React.PureComponent<Props, State
             return '';
         }
 
-        const mailRecipient = 'support@mattermost.com';
-        const mailSubject = 'Mattermost Contact Us request';
-        let mailBody = 'Mattermost Contact Us request. My team now has ' + this.props.warnMetricStatus.limit + ' users and I am considering Mattermost Enterprise Edition.';
+        const mailRecipient = 'support@matterfoss.com';
+        const mailSubject = 'Matterfoss Contact Us request';
+        let mailBody = 'Matterfoss Contact Us request. My team now has ' + this.props.warnMetricStatus.limit + ' users and I am considering Matterfoss Enterprise Edition.';
         mailBody += '\r\n';
         mailBody += 'Contact ' + this.props.user.first_name + ' ' + this.props.user.last_name;
         mailBody += '\r\n';
@@ -116,7 +116,7 @@ export default class WarnMetricAckModal extends React.PureComponent<Props, State
         mailBody += 'Diagnostic Id ' + this.props.diagnosticId;
         mailBody += '\r\n';
 
-        mailBody += 'If you have any additional inquiries, please contact support@mattermost.com';
+        mailBody += 'If you have any additional inquiries, please contact support@matterfoss.com';
 
         const mailToLinkText = 'mailto:' + mailRecipient + '?cc=' + this.props.user.email + '&subject=' + encodeURIComponent(mailSubject) + '&body=' + encodeURIComponent(mailBody);
 
@@ -148,13 +148,13 @@ export default class WarnMetricAckModal extends React.PureComponent<Props, State
         const headerTitle = (
             <FormattedMessage
                 id='warn_metric_ack_modal.header.title'
-                defaultMessage='Upgrade to Mattermost Enterprise Edition'
+                defaultMessage='Upgrade to Matterfoss Enterprise Edition'
             />
         );
         const descriptionText = (
             <FormattedMessage
                 id='warn_metric_ack_modal.number_of_active_users.description'
-                defaultMessage='Mattermost strongly recommends that deployments of over {limit} users upgrade to Mattermost Enterprise E20, which offers features such as user management, server clustering, and performance monitoring'
+                defaultMessage='Matterfoss strongly recommends that deployments of over {limit} users upgrade to Matterfoss Enterprise E20, which offers features such as user management, server clustering, and performance monitoring'
                 values={{
                     limit: this.props.warnMetricStatus.limit,
                 }}

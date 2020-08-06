@@ -1,7 +1,7 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
-import {Client4} from 'mattermost-redux/client';
+import {Client4} from 'matterfoss-redux/client';
 
 import {isDevMode} from 'utils/utils';
 
@@ -62,7 +62,7 @@ export function measure(name1, name2) {
         return [-1, ''];
     }
 
-    const displayPrefix = '🐐 Mattermost: ';
+    const displayPrefix = '🐐 Matterfoss: ';
     const measurementName = `${displayPrefix}${name1} - ${name2}`;
     performance.measure(measurementName, name1, name2);
     const lastDuration = mostRecentDurationByEntryName(measurementName);

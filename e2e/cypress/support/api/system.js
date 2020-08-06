@@ -7,7 +7,7 @@ import partialDefaultConfig from '../../fixtures/partial_default_config.json';
 
 // *****************************************************************************
 // System
-// https://api.mattermost.com/#tag/system
+// https://api.matterfoss.com/#tag/system
 // *****************************************************************************
 
 Cypress.Commands.add('apiGetClientLicense', () => {

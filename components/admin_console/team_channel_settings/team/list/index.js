@@ -5,8 +5,8 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {createSelector} from 'reselect';
 
-import {getTeams as fetchTeams, searchTeams} from 'mattermost-redux/actions/teams';
-import {getTeams} from 'mattermost-redux/selectors/entities/teams';
+import {getTeams as fetchTeams, searchTeams} from 'matterfoss-redux/actions/teams';
+import {getTeams} from 'matterfoss-redux/selectors/entities/teams';
 
 import TeamList from './team_list.jsx';
 

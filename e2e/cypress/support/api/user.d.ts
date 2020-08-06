@@ -8,7 +8,7 @@
 // See https://jsdoc.app/index.html for reference.
 // Basic requirements for documentation are the following:
 // - Meaningful description
-// - Specific link to https://api.mattermost.com
+// - Specific link to https://api.matterfoss.com
 // - Each parameter with `@params`
 // - Return value with `@returns`
 // - Example usage with `@example`
@@ -20,7 +20,7 @@ declare namespace Cypress {
 
         /**
          * Login to server via API.
-         * See https://api.mattermost.com/#tag/users/paths/~1users~1login/post
+         * See https://api.matterfoss.com/#tag/users/paths/~1users~1login/post
          * @param {string} user.username - username of a user
          * @param {string} user.password - password of  user
          * @returns {UserProfile} out.user: `UserProfile` object
@@ -32,7 +32,7 @@ declare namespace Cypress {
 
         /**
          * Login as admin via API.
-         * See https://api.mattermost.com/#tag/users/paths/~1users~1login/post
+         * See https://api.matterfoss.com/#tag/users/paths/~1users~1login/post
          * @returns {UserProfile} out.user: `UserProfile` object
          *
          * @example
@@ -42,7 +42,7 @@ declare namespace Cypress {
 
         /**
          * Logout a user's active session from server via API.
-         * See https://api.mattermost.com/#tag/users/paths/~1users~1logout/post
+         * See https://api.matterfoss.com/#tag/users/paths/~1users~1logout/post
          * Clears all cookies espececially `MMAUTHTOKEN`, `MMUSERID` and `MMCSRF`.
          *
          * @example
@@ -52,7 +52,7 @@ declare namespace Cypress {
 
         /**
          * Gets current user
-         * See https://api.mattermost.com/#tag/users/paths/~1users~1{user_id}/get
+         * See https://api.matterfoss.com/#tag/users/paths/~1users~1{user_id}/get
          * @returns {UserProfile} out.user: `UserProfile` object
          *
          * @example
@@ -64,7 +64,7 @@ declare namespace Cypress {
 
         /**
          * Get a user by email
-         * See https://api.mattermost.com/#tag/users/paths/~1users~1email~1{email}/get
+         * See https://api.matterfoss.com/#tag/users/paths/~1users~1email~1{email}/get
          * @param {String} email - email address of a user to get profile
          * @returns {UserProfile} out.user: `UserProfile` object
          *
@@ -77,7 +77,7 @@ declare namespace Cypress {
 
         /**
          * Get users by usernames
-         * See https://api.mattermost.com/#tag/users/paths/~1users~1usernames/post
+         * See https://api.matterfoss.com/#tag/users/paths/~1users~1usernames/post
          * @param {String[]} usernames - list of usernames to get profiles
          * @returns {UserProfile[]} out.users: list of `UserProfile` objects
          *
@@ -90,7 +90,7 @@ declare namespace Cypress {
 
         /**
          * Patch a user.
-         * See https://api.mattermost.com/#tag/users/paths/~1users~1{user_id}~1patch/put
+         * See https://api.matterfoss.com/#tag/users/paths/~1users~1{user_id}~1patch/put
          * @param {String} userId - ID of user to patch
          * @param {UserProfile} userData - user profile to be updated
          * @param {string} userData.email
@@ -114,7 +114,7 @@ declare namespace Cypress {
 
         /**
          * Convenient command to patch a current user.
-         * See https://api.mattermost.com/#tag/users/paths/~1users~1{user_id}~1patch/put
+         * See https://api.matterfoss.com/#tag/users/paths/~1users~1{user_id}~1patch/put
          * @param {UserProfile} userData - user profile to be updated
          * @param {string} userData.email
          * @param {string} userData.username
@@ -172,7 +172,7 @@ declare namespace Cypress {
 
         /**
          * Revoke all active sessions for a user.
-         * See https://api.mattermost.com/#tag/users/paths/~1users~1{user_id}~1sessions~1revoke~1all/post
+         * See https://api.matterfoss.com/#tag/users/paths/~1users~1{user_id}~1sessions~1revoke~1all/post
          * @param {String} userId - ID of a user
          * @returns {Object} `out.data` as response status
          *
@@ -183,7 +183,7 @@ declare namespace Cypress {
 
         /**
          * Get list of users that are not team members
-         * See https://api.mattermost.com/#tag/users/paths/~1users/post
+         * See https://api.matterfoss.com/#tag/users/paths/~1users/post
          * @param {String} queryParams.teamId - Team ID
          * @param {String} queryParams.page - Page to select, 0 (default)
          * @param {String} queryParams.perPage - The number of users per page, 60 (default)

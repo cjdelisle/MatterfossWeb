@@ -3,11 +3,11 @@
 
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {removePost} from 'mattermost-redux/actions/posts';
-import {isCurrentChannelReadOnly} from 'mattermost-redux/selectors/entities/channels';
-import {getCurrentTeamId} from 'mattermost-redux/selectors/entities/teams';
-import {get} from 'mattermost-redux/selectors/entities/preferences';
-import {getConfig} from 'mattermost-redux/selectors/entities/general';
+import {removePost} from 'matterfoss-redux/actions/posts';
+import {isCurrentChannelReadOnly} from 'matterfoss-redux/selectors/entities/channels';
+import {getCurrentTeamId} from 'matterfoss-redux/selectors/entities/teams';
+import {get} from 'matterfoss-redux/selectors/entities/preferences';
+import {getConfig} from 'matterfoss-redux/selectors/entities/general';
 
 import {emitShortcutReactToLastPostFrom} from 'actions/post_actions.jsx';
 import {Preferences} from 'utils/constants';

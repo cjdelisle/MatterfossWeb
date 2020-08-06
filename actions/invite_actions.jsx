@@ -1,10 +1,10 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
-import * as TeamActions from 'mattermost-redux/actions/teams';
-import {getTeamMember} from 'mattermost-redux/selectors/entities/teams';
-import {getChannelMembersInChannels} from 'mattermost-redux/selectors/entities/channels';
-import {joinChannel} from 'mattermost-redux/actions/channels';
+import * as TeamActions from 'matterfoss-redux/actions/teams';
+import {getTeamMember} from 'matterfoss-redux/selectors/entities/teams';
+import {getChannelMembersInChannels} from 'matterfoss-redux/selectors/entities/channels';
+import {joinChannel} from 'matterfoss-redux/actions/channels';
 
 import {addUsersToTeam} from 'actions/team_actions';
 

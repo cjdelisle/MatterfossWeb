@@ -367,7 +367,7 @@ export default class GeneralTab extends React.PureComponent {
                         <div>
                             <FormattedMarkdownMessage
                                 id='team_settings.openInviteDescription.groupConstrained'
-                                defaultMessage='No, members of this team are added and removed by linked groups. [Learn More](!https://mattermost.com/pl/default-ldap-group-constrained-team-channel.html)'
+                                defaultMessage='No, members of this team are added and removed by linked groups. [Learn More](!https://matterfoss.com/pl/default-ldap-group-constrained-team-channel.html)'
                             />
                         </div>
                     </div>,
@@ -731,14 +731,14 @@ export default class GeneralTab extends React.PureComponent {
                             onChange={this.updateAllowedDomains}
                             value={this.state.allowed_domains}
                             onFocus={Utils.moveCursorToEnd}
-                            placeholder={{id: t('general_tab.AllowedDomainsExample'), defaultMessage: 'corp.mattermost.com, mattermost.org'}}
+                            placeholder={{id: t('general_tab.AllowedDomainsExample'), defaultMessage: 'corp.matterfoss.com, matterfoss.org'}}
                             aria-label={Utils.localizeMessage('general_tab.allowedDomains.ariaLabel', 'Allowed Domains')}
                         />
                     </div>
                 </div>,
             );
 
-            const allowedDomainsInfo = <span>{Utils.localizeMessage('general_tab.AllowedDomainsInfo', 'Users can only join the team if their email matches a specific domain (e.g. "mattermost.org") or list of comma-separated domains (e.g. "corp.mattermost.com, mattermost.org").')}</span>;
+            const allowedDomainsInfo = <span>{Utils.localizeMessage('general_tab.AllowedDomainsInfo', 'Users can only join the team if their email matches a specific domain (e.g. "matterfoss.org") or list of comma-separated domains (e.g. "corp.matterfoss.com, matterfoss.org").')}</span>;
 
             allowedDomainsSection = (
                 <SettingItemMax

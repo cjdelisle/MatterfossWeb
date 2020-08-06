@@ -7,8 +7,8 @@ import React from 'react';
 import {FormattedMessage} from 'react-intl';
 import {Tooltip} from 'react-bootstrap';
 
-import {Posts} from 'mattermost-redux/constants';
-import * as ReduxPostUtils from 'mattermost-redux/utils/post_utils';
+import {Posts} from 'matterfoss-redux/constants';
+import * as ReduxPostUtils from 'matterfoss-redux/utils/post_utils';
 
 import * as PostUtils from 'utils/post_utils.jsx';
 import * as Utils from 'utils/utils.jsx';

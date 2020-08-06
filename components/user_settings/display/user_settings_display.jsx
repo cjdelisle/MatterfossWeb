@@ -4,7 +4,7 @@
 
 import PropTypes from 'prop-types';
 import React from 'react';
-import {getTimezoneRegion} from 'mattermost-redux/utils/timezone_utils';
+import {getTimezoneRegion} from 'matterfoss-redux/utils/timezone_utils';
 import {FormattedMessage} from 'react-intl';
 
 import Constants from 'utils/constants';

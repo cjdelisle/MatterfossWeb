@@ -20,7 +20,7 @@ import TextDismissableBar from '../text_dismissable_bar';
 import ackIcon from 'images/icons/check-circle-outline.svg';
 import alertIcon from 'images/icons/round-white-info-icon.svg';
 
-const RENEWAL_LINK = 'https://mattermost.com/renew/';
+const RENEWAL_LINK = 'https://matterfoss.com/renew/';
 
 class ConfigurationAnnouncementBar extends React.PureComponent {
     static propTypes = {
@@ -234,10 +234,10 @@ class ConfigurationAnnouncementBar extends React.PureComponent {
             let defaultMessage;
             if (this.props.config.EnableSignUpWithGitLab === 'true') {
                 id = t('announcement_bar.error.site_url_gitlab.full');
-                defaultMessage = 'Please configure your [site URL](https://docs.mattermost.com/administration/config-settings.html#site-url) either on the [System Console](/admin_console/environment/web_server) or, if you\'re using GitLab Mattermost, in gitlab.rb.';
+                defaultMessage = 'Please configure your [site URL](https://docs.matterfoss.com/administration/config-settings.html#site-url) either on the [System Console](/admin_console/environment/web_server) or, if you\'re using GitLab Matterfoss, in gitlab.rb.';
             } else {
                 id = t('announcement_bar.error.site_url.full');
-                defaultMessage = 'Please configure your [site URL](https://docs.mattermost.com/administration/config-settings.html#site-url) on the [System Console](/admin_console/environment/web_server).';
+                defaultMessage = 'Please configure your [site URL](https://docs.matterfoss.com/administration/config-settings.html#site-url) on the [System Console](/admin_console/environment/web_server).';
             }
 
             const values = {siteURL: this.props.siteURL};

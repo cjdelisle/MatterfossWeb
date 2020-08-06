@@ -12,8 +12,8 @@ jest.mock('stores/redux_store', () => ({
     getState: jest.fn(),
 }));
 
-jest.mock('mattermost-redux/utils/channel_utils', () => ({
-    ...jest.requireActual('mattermost-redux/utils/channel_utils'),
+jest.mock('matterfoss-redux/utils/channel_utils', () => ({
+    ...jest.requireActual('matterfoss-redux/utils/channel_utils'),
     isGroupChannelVisible: jest.fn(() => true),
     isDirectChannelVisible: jest.fn(() => true),
     isUnreadChannel: jest.fn(() => false),

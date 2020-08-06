@@ -4,9 +4,9 @@
 import {connect} from 'react-redux';
 import {bindActionCreators, Dispatch} from 'redux';
 
-import {getCurrentChannelId} from 'mattermost-redux/selectors/entities/channels';
-import {GenericAction} from 'mattermost-redux/types/actions';
-import {Channel} from 'mattermost-redux/types/channels';
+import {getCurrentChannelId} from 'matterfoss-redux/selectors/entities/channels';
+import {GenericAction} from 'matterfoss-redux/types/actions';
+import {Channel} from 'matterfoss-redux/types/channels';
 
 import {getPostDraft} from 'selectors/rhs';
 import {StoragePrefixes} from 'utils/constants';

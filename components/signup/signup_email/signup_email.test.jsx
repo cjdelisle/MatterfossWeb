@@ -17,7 +17,7 @@ describe('components/SignupEmail', () => {
             },
         },
         enableSignUpWithEmail: true,
-        siteName: 'Mattermost',
+        siteName: 'Matterfoss',
         termsOfServiceLink: '',
         privacyPolicyLink: '',
         customDescriptionText: '',

@@ -7,7 +7,7 @@ import React from 'react';
 import {Modal} from 'react-bootstrap';
 import {FormattedMessage} from 'react-intl';
 
-import {isEmail} from 'mattermost-redux/utils/helpers';
+import {isEmail} from 'matterfoss-redux/utils/helpers';
 
 import {adminResetEmail} from 'actions/admin_actions.jsx';
 

@@ -2,9 +2,9 @@
 // See LICENSE.txt for license information.
 
 import {connect} from 'react-redux';
-import {getTeammateNameDisplaySetting} from 'mattermost-redux/selectors/entities/preferences';
-import {getCurrentUserId, getUsersByUsername} from 'mattermost-redux/selectors/entities/users';
-import {getGroupsByName} from 'mattermost-redux/selectors/entities/groups';
+import {getTeammateNameDisplaySetting} from 'matterfoss-redux/selectors/entities/preferences';
+import {getCurrentUserId, getUsersByUsername} from 'matterfoss-redux/selectors/entities/users';
+import {getGroupsByName} from 'matterfoss-redux/selectors/entities/groups';
 
 import AtMention from './at_mention.jsx';
 

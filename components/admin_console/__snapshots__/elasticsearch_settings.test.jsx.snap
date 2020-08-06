@@ -36,7 +36,7 @@ exports[`components/ElasticSearchSettings should match snapshot, disabled 1`] = 
             values={
               Object {
                 "documentationLink": <a
-                  href="https://about.mattermost.com/default-elasticsearch-documentation/"
+                  href="https://about.matterfoss.com/default-elasticsearch-documentation/"
                   rel="noopener noreferrer"
                   target="_blank"
                 >
@@ -78,7 +78,7 @@ exports[`components/ElasticSearchSettings should match snapshot, disabled 1`] = 
             values={
               Object {
                 "documentationLink": <a
-                  href="https://about.mattermost.com/default-elasticsearch-server-setup/"
+                  href="https://about.matterfoss.com/default-elasticsearch-server-setup/"
                   rel="noopener noreferrer"
                   target="_blank"
                 >
@@ -116,7 +116,7 @@ exports[`components/ElasticSearchSettings should match snapshot, disabled 1`] = 
         }
         helpText={
           <FormattedMessage
-            defaultMessage="When true, Mattermost will not require the Elasticsearch certificate to be signed by a trusted Certificate Authority."
+            defaultMessage="When true, Matterfoss will not require the Elasticsearch certificate to be signed by a trusted Certificate Authority."
             id="admin.elasticsearch.skipTLSVerificationDescription"
             values={Object {}}
           />
@@ -236,7 +236,7 @@ exports[`components/ElasticSearchSettings should match snapshot, disabled 1`] = 
         }
         helpText={
           <FormattedMessage
-            defaultMessage="Tests if the Mattermost server can connect to the Elasticsearch server specified. Testing the connection only saves the configuration if the test is successful. See log file for more detailed error messages."
+            defaultMessage="Tests if the Matterfoss server can connect to the Elasticsearch server specified. Testing the connection only saves the configuration if the test is successful. See log file for more detailed error messages."
             id="admin.elasticsearch.testHelpText"
             values={Object {}}
           />
@@ -486,7 +486,7 @@ exports[`components/ElasticSearchSettings should match snapshot, enabled 1`] = `
             values={
               Object {
                 "documentationLink": <a
-                  href="https://about.mattermost.com/default-elasticsearch-documentation/"
+                  href="https://about.matterfoss.com/default-elasticsearch-documentation/"
                   rel="noopener noreferrer"
                   target="_blank"
                 >
@@ -528,7 +528,7 @@ exports[`components/ElasticSearchSettings should match snapshot, enabled 1`] = `
             values={
               Object {
                 "documentationLink": <a
-                  href="https://about.mattermost.com/default-elasticsearch-server-setup/"
+                  href="https://about.matterfoss.com/default-elasticsearch-server-setup/"
                   rel="noopener noreferrer"
                   target="_blank"
                 >
@@ -566,7 +566,7 @@ exports[`components/ElasticSearchSettings should match snapshot, enabled 1`] = `
         }
         helpText={
           <FormattedMessage
-            defaultMessage="When true, Mattermost will not require the Elasticsearch certificate to be signed by a trusted Certificate Authority."
+            defaultMessage="When true, Matterfoss will not require the Elasticsearch certificate to be signed by a trusted Certificate Authority."
             id="admin.elasticsearch.skipTLSVerificationDescription"
             values={Object {}}
           />
@@ -686,7 +686,7 @@ exports[`components/ElasticSearchSettings should match snapshot, enabled 1`] = `
         }
         helpText={
           <FormattedMessage
-            defaultMessage="Tests if the Mattermost server can connect to the Elasticsearch server specified. Testing the connection only saves the configuration if the test is successful. See log file for more detailed error messages."
+            defaultMessage="Tests if the Matterfoss server can connect to the Elasticsearch server specified. Testing the connection only saves the configuration if the test is successful. See log file for more detailed error messages."
             id="admin.elasticsearch.testHelpText"
             values={Object {}}
           />

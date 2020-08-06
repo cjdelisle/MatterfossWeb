@@ -31,7 +31,7 @@ exports[`components/MessageExportSettings should match snapshot, disabled, actia
         }
         helpText={
           <injectIntl(FormattedMarkdownMessage)
-            defaultMessage="When true, Mattermost will export all messages that were posted in the last 24 hours. The export task is scheduled to run once per day. See [the documentation](!https://about.mattermost.com/default-compliance-export-documentation) to learn more."
+            defaultMessage="When true, Matterfoss will export all messages that were posted in the last 24 hours. The export task is scheduled to run once per day. See [the documentation](!https://about.matterfoss.com/default-compliance-export-documentation) to learn more."
             id="admin.service.complianceExportDesc"
           />
         }
@@ -215,7 +215,7 @@ exports[`components/MessageExportSettings should match snapshot, disabled, globa
         }
         helpText={
           <injectIntl(FormattedMarkdownMessage)
-            defaultMessage="When true, Mattermost will export all messages that were posted in the last 24 hours. The export task is scheduled to run once per day. See [the documentation](!https://about.mattermost.com/default-compliance-export-documentation) to learn more."
+            defaultMessage="When true, Matterfoss will export all messages that were posted in the last 24 hours. The export task is scheduled to run once per day. See [the documentation](!https://about.matterfoss.com/default-compliance-export-documentation) to learn more."
             id="admin.service.complianceExportDesc"
           />
         }
@@ -404,9 +404,9 @@ exports[`components/MessageExportSettings should match snapshot, disabled, globa
             />
           }
           onChange={[Function]}
-          placeholder="E.g.: \\"globalrelay@mattermost.com\\""
+          placeholder="E.g.: \\"globalrelay@matterfoss.com\\""
           setByEnv={false}
-          value="globalRelay@mattermost.com"
+          value="globalRelay@matterfoss.com"
         />
       </SettingsGroup>
       <Connect(injectIntl(JobTable))
@@ -505,7 +505,7 @@ exports[`components/MessageExportSettings should match snapshot, enabled, actian
         }
         helpText={
           <injectIntl(FormattedMarkdownMessage)
-            defaultMessage="When true, Mattermost will export all messages that were posted in the last 24 hours. The export task is scheduled to run once per day. See [the documentation](!https://about.mattermost.com/default-compliance-export-documentation) to learn more."
+            defaultMessage="When true, Matterfoss will export all messages that were posted in the last 24 hours. The export task is scheduled to run once per day. See [the documentation](!https://about.matterfoss.com/default-compliance-export-documentation) to learn more."
             id="admin.service.complianceExportDesc"
           />
         }
@@ -689,7 +689,7 @@ exports[`components/MessageExportSettings should match snapshot, enabled, global
         }
         helpText={
           <injectIntl(FormattedMarkdownMessage)
-            defaultMessage="When true, Mattermost will export all messages that were posted in the last 24 hours. The export task is scheduled to run once per day. See [the documentation](!https://about.mattermost.com/default-compliance-export-documentation) to learn more."
+            defaultMessage="When true, Matterfoss will export all messages that were posted in the last 24 hours. The export task is scheduled to run once per day. See [the documentation](!https://about.matterfoss.com/default-compliance-export-documentation) to learn more."
             id="admin.service.complianceExportDesc"
           />
         }
@@ -878,9 +878,9 @@ exports[`components/MessageExportSettings should match snapshot, enabled, global
             />
           }
           onChange={[Function]}
-          placeholder="E.g.: \\"globalrelay@mattermost.com\\""
+          placeholder="E.g.: \\"globalrelay@matterfoss.com\\""
           setByEnv={false}
-          value="globalRelay@mattermost.com"
+          value="globalRelay@matterfoss.com"
         />
       </SettingsGroup>
       <Connect(injectIntl(JobTable))

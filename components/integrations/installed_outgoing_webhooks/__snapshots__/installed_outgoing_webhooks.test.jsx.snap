@@ -140,12 +140,12 @@ exports[`components/integrations/InstalledOutgoingWebhooks should match snapshot
   }
   helpText={
     <FormattedMessage
-      defaultMessage="Use outgoing webhooks to connect external tools to Mattermost. {buildYourOwn} or visit the {appDirectory} to find self-hosted, third-party apps and integrations."
+      defaultMessage="Use outgoing webhooks to connect external tools to Matterfoss. {buildYourOwn} or visit the {appDirectory} to find self-hosted, third-party apps and integrations."
       id="installed_outgoing_webhooks.help"
       values={
         Object {
           "appDirectory": <a
-            href="https://about.mattermost.com/default-app-directory/"
+            href="https://about.matterfoss.com/default-app-directory/"
             rel="noopener noreferrer"
             target="_blank"
           >
@@ -156,7 +156,7 @@ exports[`components/integrations/InstalledOutgoingWebhooks should match snapshot
             />
           </a>,
           "buildYourOwn": <a
-            href="http://docs.mattermost.com/developer/webhooks-outgoing.html"
+            href="http://docs.matterfoss.com/developer/webhooks-outgoing.html"
             rel="noopener noreferrer"
             target="_blank"
           >

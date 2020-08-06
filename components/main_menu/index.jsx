@@ -4,11 +4,11 @@
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 
-import {getConfig} from 'mattermost-redux/selectors/entities/general';
-import {getMyTeams, getJoinableTeamIds, getCurrentTeam} from 'mattermost-redux/selectors/entities/teams';
-import {getCurrentUser} from 'mattermost-redux/selectors/entities/users';
-import {haveITeamPermission, haveICurrentTeamPermission, haveISystemPermission} from 'mattermost-redux/selectors/entities/roles';
-import {Permissions} from 'mattermost-redux/constants';
+import {getConfig} from 'matterfoss-redux/selectors/entities/general';
+import {getMyTeams, getJoinableTeamIds, getCurrentTeam} from 'matterfoss-redux/selectors/entities/teams';
+import {getCurrentUser} from 'matterfoss-redux/selectors/entities/users';
+import {haveITeamPermission, haveICurrentTeamPermission, haveISystemPermission} from 'matterfoss-redux/selectors/entities/roles';
+import {Permissions} from 'matterfoss-redux/constants';
 
 import {RHSStates} from 'utils/constants';
 

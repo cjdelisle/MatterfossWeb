@@ -54,7 +54,7 @@ class TeamImportTab extends React.PureComponent {
     render() {
         const uploadDocsLink = (
             <a
-                href='https://docs.mattermost.com/administration/migrating.html#migrating-from-slack'
+                href='https://docs.matterfoss.com/administration/migrating.html#migrating-from-slack'
                 target='_blank'
                 rel='noopener noreferrer'
             >
@@ -89,7 +89,7 @@ class TeamImportTab extends React.PureComponent {
 
         const importCliLink = (
             <a
-                href='https://docs.mattermost.com/administration/migrating.html#migrating-from-slack-using-the-mattermost-cli'
+                href='https://docs.matterfoss.com/administration/migrating.html#migrating-from-slack-using-the-matterfoss-cli'
                 target='_blank'
                 rel='noopener noreferrer'
             >
@@ -105,7 +105,7 @@ class TeamImportTab extends React.PureComponent {
                 <p>
                     <FormattedMessage
                         id='team_import_tab.importHelpLine1'
-                        defaultMessage="Slack import to Mattermost supports importing of messages in your Slack team's public channels."
+                        defaultMessage="Slack import to Matterfoss supports importing of messages in your Slack team's public channels."
                     />
                 </p>
                 <p>
@@ -170,7 +170,7 @@ class TeamImportTab extends React.PureComponent {
                     />
                     <a
                         href={this.state.link}
-                        download='MattermostImportSummary.txt'
+                        download='MatterfossImportSummary.txt'
                     >
                         <FormattedMessage
                             id='team_import_tab.summary'
@@ -190,7 +190,7 @@ class TeamImportTab extends React.PureComponent {
                     />
                     <a
                         href={this.state.link}
-                        download='MattermostImportSummary.txt'
+                        download='MatterfossImportSummary.txt'
                     >
                         <FormattedMessage
                             id='team_import_tab.summary'

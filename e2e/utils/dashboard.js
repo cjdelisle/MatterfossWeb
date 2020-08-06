@@ -36,7 +36,7 @@ function saveDashboard(report, branch) {
         endpoint: DASHBOARD_ENDPOINT,
         token: DASHBOARD_TOKEN,
         project: 'Webapp',
-        description: 'Mattermost UI Automation with Cypress',
+        description: 'Matterfoss UI Automation with Cypress',
     };
 
     const rpClient = new RPClient(reporterOptions);

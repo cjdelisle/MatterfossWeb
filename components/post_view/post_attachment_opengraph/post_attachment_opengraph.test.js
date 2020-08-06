@@ -9,13 +9,13 @@ import ExternalImage from 'components/external_image';
 import PostAttachmentOpenGraph, {getBestImageUrl} from './post_attachment_opengraph';
 
 describe('PostAttachmentOpenGraph', () => {
-    const imageUrl = 'http://mattermost.com/OpenGraphImage.jpg';
+    const imageUrl = 'http://matterfoss.com/OpenGraphImage.jpg';
     const post = {
         id: 'post_id_1',
         root_id: 'root_id',
         channel_id: 'channel_id',
         create_at: 1,
-        message: 'https://mattermost.com',
+        message: 'https://matterfoss.com',
         metadata: {
             images: {
                 [imageUrl]: {
@@ -28,7 +28,7 @@ describe('PostAttachmentOpenGraph', () => {
 
     const baseProps = {
         post,
-        link: 'http://mattermost.com',
+        link: 'http://matterfoss.com',
         previewEnabled: true,
         isEmbedVisible: true,
         enableLinkPreviews: true,
@@ -39,8 +39,8 @@ describe('PostAttachmentOpenGraph', () => {
                 secure_url: '',
                 url: imageUrl,
             }],
-            site_name: 'Mattermost',
-            title: 'Mattermost Private Cloud Messaging',
+            site_name: 'Matterfoss',
+            title: 'Matterfoss Private Cloud Messaging',
         },
         toggleEmbedVisibility: jest.fn(),
         actions: {

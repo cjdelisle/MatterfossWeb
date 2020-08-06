@@ -12,10 +12,10 @@ import {
     getGroupSyncables as fetchGroupSyncables,
     patchGroupSyncable,
     patchGroup,
-} from 'mattermost-redux/actions/groups';
-import {getProfilesInGroup} from 'mattermost-redux/actions/users';
-import {getGroup, getGroupTeams, getGroupChannels, getGroupMemberCount} from 'mattermost-redux/selectors/entities/groups';
-import {getProfilesInGroup as selectProfilesInGroup} from 'mattermost-redux/selectors/entities/users';
+} from 'matterfoss-redux/actions/groups';
+import {getProfilesInGroup} from 'matterfoss-redux/actions/users';
+import {getGroup, getGroupTeams, getGroupChannels, getGroupMemberCount} from 'matterfoss-redux/selectors/entities/groups';
+import {getProfilesInGroup as selectProfilesInGroup} from 'matterfoss-redux/selectors/entities/users';
 
 import {setNavigationBlocked} from 'actions/admin_actions';
 

@@ -3,10 +3,10 @@
 
 import {connect} from 'react-redux';
 import {bindActionCreators, Dispatch} from 'redux';
-import {getCurrentUserId} from 'mattermost-redux/selectors/entities/users';
-import {getCurrentTeamId} from 'mattermost-redux/selectors/entities/teams';
-import {removeUserFromTeam as leaveTeam} from 'mattermost-redux/actions/teams';
-import {GenericAction} from 'mattermost-redux/types/actions';
+import {getCurrentUserId} from 'matterfoss-redux/selectors/entities/users';
+import {getCurrentTeamId} from 'matterfoss-redux/selectors/entities/teams';
+import {removeUserFromTeam as leaveTeam} from 'matterfoss-redux/actions/teams';
+import {GenericAction} from 'matterfoss-redux/types/actions';
 
 import {toggleSideBarRightMenuAction} from 'actions/global_actions.jsx';
 import {ModalIdentifiers} from 'utils/constants';

@@ -37,10 +37,10 @@ export default class TutorialIntroScreens extends React.PureComponent {
     handleNext = () => {
         switch (this.state.currentScreen) {
         case 0:
-            trackEvent('tutorial', 'tutorial_screen_1_welcome_to_mattermost_next');
+            trackEvent('tutorial', 'tutorial_screen_1_welcome_to_matterfoss_next');
             break;
         case 1:
-            trackEvent('tutorial', 'tutorial_screen_2_how_mattermost_works_next');
+            trackEvent('tutorial', 'tutorial_screen_2_how_matterfoss_works_next');
             break;
         case 2:
             trackEvent('tutorial', 'tutorial_screen_3_youre_all_set_next');
@@ -68,10 +68,10 @@ export default class TutorialIntroScreens extends React.PureComponent {
 
         switch (this.state.currentScreen) {
         case 0:
-            trackEvent('tutorial', 'tutorial_screen_1_welcome_to_mattermost_skip');
+            trackEvent('tutorial', 'tutorial_screen_1_welcome_to_matterfoss_skip');
             break;
         case 1:
-            trackEvent('tutorial', 'tutorial_screen_2_how_mattermost_works_skip');
+            trackEvent('tutorial', 'tutorial_screen_2_how_matterfoss_works_skip');
             break;
         case 2:
             trackEvent('tutorial', 'tutorial_screen_3_youre_all_set_skip');
@@ -114,7 +114,7 @@ export default class TutorialIntroScreens extends React.PureComponent {
                 <h1>
                     <FormattedMessage
                         id='tutorial_intro.screenOne.title2'
-                        defaultMessage='Mattermost'
+                        defaultMessage='Matterfoss'
                     />
                 </h1>
                 <p>
@@ -187,7 +187,7 @@ export default class TutorialIntroScreens extends React.PureComponent {
                 <h3>
                     <FormattedMessage
                         id='tutorial_intro.screenTwo.title'
-                        defaultMessage='How Mattermost Works:'
+                        defaultMessage='How Matterfoss Works:'
                     />
                 </h3>
                 <p>

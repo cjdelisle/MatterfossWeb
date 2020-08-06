@@ -3,7 +3,7 @@
 
 import React from 'react';
 
-import {ActionFunc} from 'mattermost-redux/types/actions';
+import {ActionFunc} from 'matterfoss-redux/types/actions';
 
 import {filterAndSortTeamsByDisplayName} from 'utils/team_utils.jsx';
 import {t} from 'utils/i18n';

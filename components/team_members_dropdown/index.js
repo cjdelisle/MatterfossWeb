@@ -4,18 +4,18 @@
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 
-import {getChannelStats} from 'mattermost-redux/actions/channels';
+import {getChannelStats} from 'matterfoss-redux/actions/channels';
 import {
     getMyTeamMembers,
     getMyTeamUnreads,
     getTeamStats,
     getTeamMember,
     updateTeamMemberSchemeRoles,
-} from 'mattermost-redux/actions/teams';
-import {getUser, updateUserActive} from 'mattermost-redux/actions/users';
-import {getCurrentUser} from 'mattermost-redux/selectors/entities/users';
-import {getCurrentChannelId} from 'mattermost-redux/selectors/entities/channels';
-import {getCurrentRelativeTeamUrl, getCurrentTeam} from 'mattermost-redux/selectors/entities/teams';
+} from 'matterfoss-redux/actions/teams';
+import {getUser, updateUserActive} from 'matterfoss-redux/actions/users';
+import {getCurrentUser} from 'matterfoss-redux/selectors/entities/users';
+import {getCurrentChannelId} from 'matterfoss-redux/selectors/entities/channels';
+import {getCurrentRelativeTeamUrl, getCurrentTeam} from 'matterfoss-redux/selectors/entities/teams';
 
 import {removeUserFromTeamAndGetStats} from 'actions/team_actions.jsx';
 

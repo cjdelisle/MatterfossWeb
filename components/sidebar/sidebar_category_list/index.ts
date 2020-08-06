@@ -4,11 +4,11 @@
 import {connect} from 'react-redux';
 import {bindActionCreators, Dispatch} from 'redux';
 
-import {moveCategory} from 'mattermost-redux/actions/channel_categories';
-import {getSortedUnreadChannelIds, getCurrentChannel} from 'mattermost-redux/selectors/entities/channels';
-import {makeGetCategoriesForTeam} from 'mattermost-redux/selectors/entities/channel_categories';
-import {getCurrentTeam} from 'mattermost-redux/selectors/entities/teams';
-import {GenericAction} from 'mattermost-redux/types/actions';
+import {moveCategory} from 'matterfoss-redux/actions/channel_categories';
+import {getSortedUnreadChannelIds, getCurrentChannel} from 'matterfoss-redux/selectors/entities/channels';
+import {makeGetCategoriesForTeam} from 'matterfoss-redux/selectors/entities/channel_categories';
+import {getCurrentTeam} from 'matterfoss-redux/selectors/entities/teams';
+import {GenericAction} from 'matterfoss-redux/types/actions';
 
 import {switchToChannelById} from 'actions/views/channel';
 import {

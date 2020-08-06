@@ -4,7 +4,7 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 
-import {Client4} from 'mattermost-redux/client';
+import {Client4} from 'matterfoss-redux/client';
 
 import Root from 'components/root/root';
 import * as GlobalActions from 'actions/global_actions.jsx';
@@ -29,11 +29,11 @@ jest.mock('utils/utils', () => ({
     enableDevModeFeatures: jest.fn(),
 }));
 
-jest.mock('mattermost-redux/actions/general', () => ({
+jest.mock('matterfoss-redux/actions/general', () => ({
     setUrl: () => {},
 }));
-jest.mock('mattermost-redux/client', () => {
-    const original = require.requireActual('mattermost-redux/client');
+jest.mock('matterfoss-redux/client', () => {
+    const original = require.requireActual('matterfoss-redux/client');
 
     return {
         ...original,

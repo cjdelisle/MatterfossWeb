@@ -8,7 +8,7 @@
 // See https://jsdoc.app/index.html for reference.
 // Basic requirements for documentation are the following:
 // - Meaningful description
-// - Specific link to https://api.mattermost.com
+// - Specific link to https://api.matterfoss.com
 // - Each parameter with `@params`
 // - Return value with `@returns`
 // - Example usage with `@example`
@@ -20,12 +20,12 @@ declare namespace Cypress {
 
         // *******************************************************************************
         // Bots
-        // https://api.mattermost.com/#tag/bots
+        // https://api.matterfoss.com/#tag/bots
         // *******************************************************************************
 
         /**
          * Get a page of a list of bots via API.
-         * See https://api.mattermost.com/#tag/bots/paths/~1bots/get
+         * See https://api.matterfoss.com/#tag/bots/paths/~1bots/get
          * @returns {Response} response: Cypress-chainable response which should have successful HTTP status of 200 OK to continue or pass.
          * @returns {Bot} response.body: `Bot` object
          *
@@ -38,12 +38,12 @@ declare namespace Cypress {
 
         // *******************************************************************************
         // Channels
-        // https://api.mattermost.com/#tag/channels
+        // https://api.matterfoss.com/#tag/channels
         // *******************************************************************************
 
         /**
          * Create a new direct message channel between two users via API.
-         * See https://api.mattermost.com/#tag/channels/paths/~1channels~1direct/post
+         * See https://api.matterfoss.com/#tag/channels/paths/~1channels~1direct/post
          * @param {string} teamId - The team ID of the team to create the channel on
          * @param {string} name - The unique handle for the channel, will be present in the channel URL
          * @param {string} displayName - The non-unique UI name for the channel
@@ -69,7 +69,7 @@ declare namespace Cypress {
 
         /**
          * Create a new direct message channel between two users.
-         * See https://api.mattermost.com/#tag/channels/paths/~1channels~1direct/post
+         * See https://api.matterfoss.com/#tag/channels/paths/~1channels~1direct/post
          * @param {string[]} userIds - The two user ids to be in the direct message
          * @returns {Response} response: Cypress-chainable response which should have successful HTTP status of 201 CREATED to continue or pass.
          * @returns {Channel} response.body: `Channel` object
@@ -83,7 +83,7 @@ declare namespace Cypress {
 
         /**
          * Create a new group message channel to group of users via API. If the logged in user's id is not included in the list, it will be appended to the end.
-         * See https://api.mattermost.com/#tag/channels/paths/~1channels~1group/post
+         * See https://api.matterfoss.com/#tag/channels/paths/~1channels~1group/post
          * @param {string[]} userIds - User ids to be in the group message channel
          * @returns {Response} response: Cypress-chainable response which should have successful HTTP status of 201 CREATED to continue or pass.
          * @returns {Channel} response.body: `Channel` object
@@ -99,7 +99,7 @@ declare namespace Cypress {
          * Soft deletes a channel, by marking the channel as deleted in the database.
          * Soft deleted channels will not be accessible in the user interface.
          * Direct and group message channels cannot be deleted.
-         * See https://api.mattermost.com/#tag/channels/paths/~1channels~1{channel_id}/delete
+         * See https://api.matterfoss.com/#tag/channels/paths/~1channels~1{channel_id}/delete
          * @param {string} channelId - The channel ID to be deleted
          * @returns {Response} response: Cypress-chainable response which should have successful HTTP status of 200 OK to continue or pass.
          *
@@ -111,7 +111,7 @@ declare namespace Cypress {
         /**
          * Update a channel.
          * The fields that can be updated are listed as parameters. Omitted fields will be treated as blanks.
-         * See https://api.mattermost.com/#tag/channels/paths/~1channels~1{channel_id}/put
+         * See https://api.matterfoss.com/#tag/channels/paths/~1channels~1{channel_id}/put
          * @param {string} channelId - The channel ID to be updated
          * @param {Channel} channel - Channel object to be updated
          * @param {string} channel.name - The unique handle for the channel, will be present in the channel URL
@@ -130,7 +130,7 @@ declare namespace Cypress {
          * Partially update a channel by providing only the fields you want to update.
          * Omitted fields will not be updated.
          * The fields that can be updated are defined in the request body, all other provided fields will be ignored.
-         * See https://api.mattermost.com/#tag/channels/paths/~1channels~1{channel_id}~1patch/put
+         * See https://api.matterfoss.com/#tag/channels/paths/~1channels~1{channel_id}~1patch/put
          * @param {string} channelId - The channel ID to be patched
          * @param {Channel} channel - Channel object to be patched
          * @param {string} channel.name - The unique handle for the channel, will be present in the channel URL
@@ -147,7 +147,7 @@ declare namespace Cypress {
 
         /**
          * Gets a channel from the provided team name and channel name strings.
-         * See https://api.mattermost.com/#tag/channels/paths/~1teams~1name~1{team_name}~1channels~1name~1{channel_name}/get
+         * See https://api.matterfoss.com/#tag/channels/paths/~1teams~1name~1{team_name}~1channels~1name~1{channel_name}/get
          * @param {string} teamName - Team name
          * @param {string} channelName - Channel name
          * @returns {Response} response: Cypress-chainable response which should have successful HTTP status of 200 OK to continue or pass.
@@ -162,7 +162,7 @@ declare namespace Cypress {
 
         /**
          * Get channel from the provided channel id string.
-         * See https://api.mattermost.com/#tag/channels/paths/~1channels~1{channel_id}/get
+         * See https://api.matterfoss.com/#tag/channels/paths/~1channels~1{channel_id}/get
          * @param {string} channelId - Channel ID
          * @returns {Response} response: Cypress-chainable response which should have successful HTTP status of 200 OK to continue or pass.
          * @returns {Channel} response.body: `Channel` object
@@ -176,7 +176,7 @@ declare namespace Cypress {
 
         /**
          * Add a user to a channel by creating a channel member object.
-         * See https://api.mattermost.com/#tag/channels/paths/~1channels~1{channel_id}~1members/post
+         * See https://api.matterfoss.com/#tag/channels/paths/~1channels~1{channel_id}~1members/post
          * @param {string} channelId - Channel ID
          * @param {string} userId - User ID to add to the channel
          * @returns {Response} response: Cypress-chainable response which should have successful HTTP status of 200 OK to continue or pass.

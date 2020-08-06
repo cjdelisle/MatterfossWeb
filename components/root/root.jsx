@@ -3,14 +3,14 @@
 
 import $ from 'jquery';
 
-import {rudderAnalytics, Client4} from 'mattermost-redux/client';
+import {rudderAnalytics, Client4} from 'matterfoss-redux/client';
 import PropTypes from 'prop-types';
 import React from 'react';
 import FastClick from 'fastclick';
 import {Route, Switch, Redirect} from 'react-router-dom';
-import {setUrl} from 'mattermost-redux/actions/general';
-import {setSystemEmojis} from 'mattermost-redux/actions/emojis';
-import {getConfig} from 'mattermost-redux/selectors/entities/general';
+import {setUrl} from 'matterfoss-redux/actions/general';
+import {setSystemEmojis} from 'matterfoss-redux/actions/emojis';
+import {getConfig} from 'matterfoss-redux/selectors/entities/general';
 
 import * as UserAgent from 'utils/user_agent';
 import {EmojiIndicesByAlias} from 'utils/emoji.jsx';

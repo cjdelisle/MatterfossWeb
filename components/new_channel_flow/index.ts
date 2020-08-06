@@ -4,12 +4,12 @@
 import {connect} from 'react-redux';
 import {bindActionCreators, Dispatch, ActionCreatorsMapObject} from 'redux';
 
-import {ActionFunc, GenericAction} from 'mattermost-redux/types/actions';
-import {Channel} from 'mattermost-redux/types/channels';
-import {ServerError} from 'mattermost-redux/types/errors';
-import {createChannel} from 'mattermost-redux/actions/channels';
-import {getCurrentTeamId} from 'mattermost-redux/selectors/entities/teams';
-import {GlobalState} from 'mattermost-redux/types/store';
+import {ActionFunc, GenericAction} from 'matterfoss-redux/types/actions';
+import {Channel} from 'matterfoss-redux/types/channels';
+import {ServerError} from 'matterfoss-redux/types/errors';
+import {createChannel} from 'matterfoss-redux/actions/channels';
+import {getCurrentTeamId} from 'matterfoss-redux/selectors/entities/teams';
+import {GlobalState} from 'matterfoss-redux/types/store';
 
 import {switchToChannel} from 'actions/views/channel';
 

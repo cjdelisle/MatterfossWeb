@@ -159,11 +159,11 @@ describe('I18456 Built-in slash commands: common', () => {
                 // * Could not find the channel lalodkjngjrngorejng. Please use the channel handle to identify channels.
                 should('have.text', `Could not find the channel ${invalidChannel}. Please use the channel handle to identify channels.`).
 
-                // * Channel handle links to: https://docs.mattermost.com/help/getting-started/organizing-conversations.html#naming-a-channel
+                // * Channel handle links to: https://docs.matterfoss.com/help/getting-started/organizing-conversations.html#naming-a-channel
                 contains('a', 'channel handle').then((link) => {
                     const href = link.prop('href');
                     cy.request(href).its('allRequestResponses').then((response) => {
-                        cy.wrap(response[1]['Request URL']).should('equal', 'https://docs.mattermost.com/help/getting-started/organizing-conversations.html#naming-a-channel');
+                        cy.wrap(response[1]['Request URL']).should('equal', 'https://docs.matterfoss.com/help/getting-started/organizing-conversations.html#naming-a-channel');
                     });
                 });
         });

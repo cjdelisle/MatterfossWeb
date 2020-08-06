@@ -4,16 +4,16 @@
 import {connect} from 'react-redux';
 import {bindActionCreators, Dispatch, ActionCreatorsMapObject} from 'redux';
 
-import {Client4} from 'mattermost-redux/client';
-import {savePreferences} from 'mattermost-redux/actions/preferences';
-import {ActionFunc} from 'mattermost-redux/types/actions';
-import {PreferenceType} from 'mattermost-redux/types/preferences';
-import {GlobalState} from 'mattermost-redux/types/store';
-import {Channel} from 'mattermost-redux/types/channels';
-import {UserProfile} from 'mattermost-redux/types/users';
-import {getCurrentChannelId, getRedirectChannelNameForTeam} from 'mattermost-redux/selectors/entities/channels';
-import {getCurrentTeam} from 'mattermost-redux/selectors/entities/teams';
-import {getCurrentUser, getUser} from 'mattermost-redux/selectors/entities/users';
+import {Client4} from 'matterfoss-redux/client';
+import {savePreferences} from 'matterfoss-redux/actions/preferences';
+import {ActionFunc} from 'matterfoss-redux/types/actions';
+import {PreferenceType} from 'matterfoss-redux/types/preferences';
+import {GlobalState} from 'matterfoss-redux/types/store';
+import {Channel} from 'matterfoss-redux/types/channels';
+import {UserProfile} from 'matterfoss-redux/types/users';
+import {getCurrentChannelId, getRedirectChannelNameForTeam} from 'matterfoss-redux/selectors/entities/channels';
+import {getCurrentTeam} from 'matterfoss-redux/selectors/entities/teams';
+import {getCurrentUser, getUser} from 'matterfoss-redux/selectors/entities/users';
 
 import {leaveDirectChannel} from 'actions/views/channel';
 

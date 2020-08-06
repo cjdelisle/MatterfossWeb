@@ -41,7 +41,7 @@ exports[`components/ClusterSettings should match snapshot, encryption disabled 1
         }
         helpText={
           <injectIntl(FormattedMarkdownMessage)
-            defaultMessage="When true, Mattermost will run in High Availability mode. Please see [documentation](!http://docs.mattermost.com/deployment/cluster.html) to learn more about configuring High Availability for Mattermost."
+            defaultMessage="When true, Matterfoss will run in High Availability mode. Please see [documentation](!http://docs.matterfoss.com/deployment/cluster.html) to learn more about configuring High Availability for Matterfoss."
             id="admin.cluster.enableDescription"
           />
         }
@@ -342,7 +342,7 @@ exports[`components/ClusterSettings should match snapshot, encryption enabled 1`
         }
         helpText={
           <injectIntl(FormattedMarkdownMessage)
-            defaultMessage="When true, Mattermost will run in High Availability mode. Please see [documentation](!http://docs.mattermost.com/deployment/cluster.html) to learn more about configuring High Availability for Mattermost."
+            defaultMessage="When true, Matterfoss will run in High Availability mode. Please see [documentation](!http://docs.matterfoss.com/deployment/cluster.html) to learn more about configuring High Availability for Matterfoss."
             id="admin.cluster.enableDescription"
           />
         }

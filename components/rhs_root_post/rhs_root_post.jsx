@@ -6,8 +6,8 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import {FormattedMessage, injectIntl} from 'react-intl';
 import {Tooltip} from 'react-bootstrap';
-import {Posts} from 'mattermost-redux/constants';
-import * as ReduxPostUtils from 'mattermost-redux/utils/post_utils';
+import {Posts} from 'matterfoss-redux/constants';
+import * as ReduxPostUtils from 'matterfoss-redux/utils/post_utils';
 
 import Constants, {Locations} from 'utils/constants';
 import * as PostUtils from 'utils/post_utils.jsx';
@@ -111,7 +111,7 @@ class RhsRootPost extends React.PureComponent {
             if (isPostHeaderVisibleToUser) {
                 if (!isEphemeralPost && !isSystemMessage && !isDeletedPost && !isFailedPost && !Utils.isMobile() &&
                     !channelIsArchived && !isPostsFakeParentDeleted && enableEmojiPicker) {
-                    // As per issue in #2 of mattermost-webapp/pull/4478#pullrequestreview-339313236
+                    // As per issue in #2 of matterfoss-webapp/pull/4478#pullrequestreview-339313236
                     // We are not not handling focus condition as we did for rhs_comment as the dot menu is already in dom and not visible
                     this.toggleEmojiPicker(isLastPost);
                 }

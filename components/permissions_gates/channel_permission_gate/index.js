@@ -3,7 +3,7 @@
 
 import {connect} from 'react-redux';
 
-import {haveIChannelPermission} from 'mattermost-redux/selectors/entities/roles';
+import {haveIChannelPermission} from 'matterfoss-redux/selectors/entities/roles';
 
 import ChannelPermissionGate from './channel_permission_gate.jsx';
 

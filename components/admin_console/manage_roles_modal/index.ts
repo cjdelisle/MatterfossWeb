@@ -4,7 +4,7 @@
 import {connect} from 'react-redux';
 import {bindActionCreators, Dispatch} from 'redux';
 
-import {updateUserRoles} from 'mattermost-redux/actions/users';
+import {updateUserRoles} from 'matterfoss-redux/actions/users';
 
 import {GlobalState} from 'types/store';
 
