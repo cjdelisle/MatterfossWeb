@@ -266,7 +266,7 @@ export default class AboutBuildModal extends React.PureComponent {
                         <p>
                             <FormattedMarkdownMessage
                                 id='about.notice'
-                                defaultMessage='Matterfoss is made possible by the open source software used in our [server](!https://about.matterfoss.com/platform-notice-txt/), [desktop](!https://about.matterfoss.com/desktop-notice-txt/) and [mobile](!https://about.matterfoss.com/mobile-notice-txt/) apps.'
+                                defaultMessage='Matterfoss is made possible by the open source software used in our [server](!https://about.matterfoss.com/platform-notice-txt/), [desktop](!https://about.matterfoss.com/desktop-notice-txt/) and [mobile](!https://about.matterfoss.com/mobile-notice-txt/) apps. The Matterfoss logo is provided under Creative Commons Attribution license by [QualityIcons](https://thenounproject.com/nivya.becse/).'
                             />
                         </p>
                     </div>
