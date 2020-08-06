@@ -1,3 +1,8 @@
+Matterfoss Web App: This application is based on the code used in the Mattermost product by Mattermost Inc.
+The following notice is from the original Mattermost code and is kept for historical and informational purposes.
+It is not sure whether this information remains correct and/or relevant.
+
+
 Mattermost Web App
 © 2017-present Mattermost, Inc.  All Rights Reserved.  See LICENSE.txt for license information.
 
