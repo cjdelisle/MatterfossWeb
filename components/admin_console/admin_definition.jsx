@@ -187,8 +187,12 @@ const AdminDefinition = {
                 'admin.license.edition',
                 'admin.license.type',
                 'admin.license.key',
-                'Matterfoss Enterprise Edition. Unlock enterprise features in this software through the purchase of a subscription from ',
-                'This software is offered under a commercial license.\n\nSee ENTERPRISE-EDITION-LICENSE.txt in your root install directory for details. See NOTICE.txt for information about open source software used in this system.',
+                'Matterfoss - Licensed under the AGPL',
+                'This software is offered under the GNU Affero GPL 3.0. ' +
+                        'You are reminded that under the terms of the AGPL, providing a ' +
+                        'this web service constitutes redistribution of the software and ' +
+                        'therefore any changes that you make to the software must be made ' +
+                        'available to your users in source code form.',
             ],
             schema: {
                 id: 'LicenseSettings',
@@ -1284,7 +1288,7 @@ const AdminDefinition = {
                         label: t('admin.log.enableDiagnostics'),
                         label_default: 'Enable Diagnostics and Error Reporting:',
                         help_text: t('admin.log.enableDiagnosticsDescription'),
-                        help_text_default: 'Enable this feature to improve the quality and performance of Matterfoss by sending error reporting and diagnostic information to Matterfoss, Inc. Read our [privacy policy](!https://about.matterfoss.com/default-privacy-policy/) to learn more.',
+                        help_text_default: 'Enable this feature to improve the quality and performance of Matterfoss by sending error reporting and diagnostic information to Mattermost, Inc. and Matterfoss Developers Read our [privacy policy](!https://about.matterfoss.com/default-privacy-policy/) to learn more.',
                         help_text_markdown: true,
                         onConfigSave: (displayVal, previousVal) => {
                             if (previousVal && previousVal !== displayVal) {

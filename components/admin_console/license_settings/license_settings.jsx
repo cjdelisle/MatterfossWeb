@@ -143,34 +143,26 @@ export default class LicenseSettings extends React.PureComponent {
         const startsAt = <FormattedDate value={new Date(parseInt(license.StartsAt, 10))}/>;
         const expiresAt = <FormattedDate value={new Date(parseInt(license.ExpiresAt, 10))}/>;
 
-        if (license.IsLicensed === 'true' && !uploading) {
+        // Matterfoss: We are always licensed because it's AGPL
+        if (true /*license.IsLicensed === 'true' && !uploading*/) {
             // Note: DO NOT LOCALISE THESE STRINGS. Legally we can not since the license is in English.
-            const sku = license.SkuShortName ? <React.Fragment>{`Edition: Matterfoss Enterprise Edition ${license.SkuShortName}`}<br/></React.Fragment> : null;
-            edition = 'Matterfoss Enterprise Edition. Enterprise features on this server have been unlocked with a license key and a valid subscription.';
+            edition = 'Matterfoss - Licensed under the AGPL';
             licenseType = (
                 <div>
                     <p>
-                        {'This software is offered under a commercial license.\n\nSee ENTERPRISE-EDITION-LICENSE.txt in your root install directory for details. See NOTICE.txt for information about open source software used in this system.\n\nYour subscription details are as follows:'}
+                        {'This software is offered under the GNU Affero GPL 3.0. ' +
+                        'You are reminded that under the terms of the AGPL, providing a ' +
+                        'this web service constitutes redistribution of the software and ' +
+                        'therefore any changes that you make to the software must be made ' +
+                        'available to your users in source code form.'}
                     </p>
-                    {`Name: ${license.Name}`}<br/>
-                    {`Company or organization name: ${license.Company}`}<br/>
-                    {sku}
-                    {`Number of users: ${license.Users}`}<br/>
-                    {'License issued: '}{issued}<br/>
-                    {'Start date of license: '}{startsAt}<br/>
-                    {'Expiry date of license: '}{expiresAt}<br/>
                     <br/>
-                    {'See also '}
+                    {'See also: '}
                     <a
                         rel='noopener noreferrer'
                         target='_blank'
-                        href='https://about.matterfoss.com/enterprise-edition-terms/'
-                    >{'Enterprise Edition Terms of Service'}</a>{' and '}
-                    <a
-                        rel='noopener noreferrer'
-                        target='_blank'
-                        href='https://about.matterfoss.com/default-privacy-policy/'
-                    >{'Privacy Policy.'}</a>
+                        href='https://www.gnu.org/licenses/agpl-3.0.en.html'
+                    >{'AGPL License text'}</a>
                 </div>
             );
 
@@ -209,7 +201,7 @@ export default class LicenseSettings extends React.PureComponent {
             // Note: DO NOT LOCALISE THESE STRINGS. Legally we can not since the license is in English.
             edition = (
                 <div>
-                    {'Matterfoss Enterprise Edition. A license is required to unlock enterprise features.'}
+                    {'Matterfoss. A license is required to unlock enterprise features.'}
                     <p className='trial'>
                         <button
                             className='btn btn-primary'
@@ -297,7 +289,7 @@ export default class LicenseSettings extends React.PureComponent {
                     <p className='help-text m-0'>
                         <FormattedMarkdownMessage
                             id='admin.license.uploadDesc'
-                            defaultMessage='Upload a license key for Matterfoss Enterprise Edition to upgrade this server. [Visit us online](!http://matterfoss.com) to learn more about the benefits of Enterprise Edition or to purchase a key.'
+                            defaultMessage='Upload a license key for Matterfoss to upgrade this server. [Visit us online](!http://matterfoss.com) to learn more about the benefits of Enterprise Edition or to purchase a key.'
                         />
                     </p>
                 </div>
@@ -343,7 +335,7 @@ export default class LicenseSettings extends React.PureComponent {
                                     {licenseType}
                                 </div>
                             </div>
-                            <div className='form-group'>
+                            {/* <div className='form-group'>
                                 <label
                                     className='control-label col-sm-4'
                                 >
@@ -353,7 +345,7 @@ export default class LicenseSettings extends React.PureComponent {
                                     />
                                 </label>
                                 {licenseKey}
-                            </div>
+                            </div> */}
                         </form>
                     </div>
                 </div>

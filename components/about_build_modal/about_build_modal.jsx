@@ -214,6 +214,19 @@ export default class AboutBuildModal extends React.PureComponent {
                             <MatterfossLogo/>
                         </div>
                         <div>
+                            <h3 className='about-modal__title'>Matterfoss Free Software Chat</h3>
+                            <FormattedMarkdownMessage
+                                id="matterfoss.agpl"
+                                defaultMessage={('Matterfoss is provided to under the terms of the GNU Affero GPL v3.0, ' +
+                                'you are entitled to access the source code of [Matterfoss](https://github.com/cjdelisle/Matterfoss) ' +
+                                'server and the [MatterfossWeb](https://github.com/cjdelisle/MatterfossWeb) front end. ' +
+                                'The Matterfoss logo is provided under Creative Commons Attribution license by ' +
+                                '[QualityIcons](https://thenounproject.com/nivya.becse/). If you are an administrator and ' +
+                                'you have made changes to your Matterfoss server, update this notice with links to your modified ' +
+                                'Matterfoss instance by editing about_build_modal.jsx')}
+                            />
+                        </div>
+                        {/* <div>
                             <h3 className='about-modal__title'>{'Matterfoss'} {title}</h3>
                             <p className='about-modal__subtitle pb-2'>{subTitle}</p>
                             <div className='form-group less'>
@@ -241,15 +254,14 @@ export default class AboutBuildModal extends React.PureComponent {
                                 </div>
                             </div>
                             {licensee}
-                        </div>
+                        </div> */}
                     </div>
                     <div className='about-modal__footer'>
-                        {learnMore}
                         <div className='form-group'>
                             <div className='about-modal__copyright'>
                                 <FormattedMessage
                                     id='about.copyright'
-                                    defaultMessage='Copyright 2015 - {currentYear} Matterfoss, Inc. All rights reserved'
+                                    defaultMessage='Copyright 2015 - {currentYear} Mattermost, Inc. and Matterfoss Developers All rights reserved'
                                     values={{
                                         currentYear: new Date().getFullYear(),
                                     }}
@@ -262,15 +274,7 @@ export default class AboutBuildModal extends React.PureComponent {
                             </div>
                         </div>
                     </div>
-                    <div className='about-modal__notice form-group pt-3'>
-                        <p>
-                            <FormattedMarkdownMessage
-                                id='about.notice'
-                                defaultMessage='Matterfoss is made possible by the open source software used in our [server](!https://about.matterfoss.com/platform-notice-txt/), [desktop](!https://about.matterfoss.com/desktop-notice-txt/) and [mobile](!https://about.matterfoss.com/mobile-notice-txt/) apps. The Matterfoss logo is provided under Creative Commons Attribution license by [QualityIcons](https://thenounproject.com/nivya.becse/).'
-                            />
-                        </p>
-                    </div>
-                    <div className='about-modal__hash'>
+                    {/* <div className='about-modal__hash'>
                         <p>
                             <FormattedMessage
                                 id='about.hash'
@@ -288,7 +292,7 @@ export default class AboutBuildModal extends React.PureComponent {
                                 id='about.hashwebapp'
                                 defaultMessage='Webapp Build Hash:'
                             />
-                            &nbsp;{/* global COMMIT_HASH */ this.props.webappBuildHash || (typeof COMMIT_HASH === 'undefined' ? '' : COMMIT_HASH)}
+                            &nbsp;{/ * global COMMIT_HASH * / this.props.webappBuildHash || (typeof COMMIT_HASH === 'undefined' ? '' : COMMIT_HASH)}
                         </p>
                         <p>
                             <FormattedMessage
@@ -297,7 +301,7 @@ export default class AboutBuildModal extends React.PureComponent {
                             />
                             &nbsp;{config.BuildDate}
                         </p>
-                    </div>
+                    </div> */}
                 </Modal.Body>
             </Modal>
         );
