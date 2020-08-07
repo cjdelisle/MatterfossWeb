@@ -68,7 +68,7 @@ describe('Login page', () => {
         cy.get('#company_name').should('contain', 'Matterfoss');
         cy.get('#copyright').
             should('contain', '© 2015-').
-            and('contain', 'Matterfoss, Inc.');
+            and('contain', 'Mattermost, Inc. and Matterfoss Developers');
         cy.get('#about_link').
             should('contain', 'About').
             and('have.attr', 'href', config.SupportSettings.AboutLink);

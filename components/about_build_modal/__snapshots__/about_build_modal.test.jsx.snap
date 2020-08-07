@@ -157,7 +157,7 @@ exports[`components/AboutBuildModal should match snapshot for enterprise edition
           className="about-modal__copyright"
         >
           <FormattedMessage
-            defaultMessage="Copyright 2015 - {currentYear} Matterfoss, Inc. All rights reserved"
+            defaultMessage="Copyright 2015 - {currentYear} Mattermost, Inc. and Matterfoss Developers All rights reserved"
             id="about.copyright"
             values={
               Object {
@@ -395,7 +395,7 @@ exports[`components/AboutBuildModal should match snapshot for team edition 1`] =
           className="about-modal__copyright"
         >
           <FormattedMessage
-            defaultMessage="Copyright 2015 - {currentYear} Matterfoss, Inc. All rights reserved"
+            defaultMessage="Copyright 2015 - {currentYear} Mattermost, Inc. and Matterfoss Developers All rights reserved"
             id="about.copyright"
             values={
               Object {
@@ -644,7 +644,7 @@ exports[`components/AboutBuildModal should show ci if a ci build 1`] = `
           className="about-modal__copyright"
         >
           <FormattedMessage
-            defaultMessage="Copyright 2015 - {currentYear} Matterfoss, Inc. All rights reserved"
+            defaultMessage="Copyright 2015 - {currentYear} Mattermost, Inc. and Matterfoss Developers All rights reserved"
             id="about.copyright"
             values={
               Object {
@@ -881,7 +881,7 @@ exports[`components/AboutBuildModal should show dev if this is a dev build 1`] =
           className="about-modal__copyright"
         >
           <FormattedMessage
-            defaultMessage="Copyright 2015 - {currentYear} Matterfoss, Inc. All rights reserved"
+            defaultMessage="Copyright 2015 - {currentYear} Mattermost, Inc. and Matterfoss Developers All rights reserved"
             id="about.copyright"
             values={
               Object {

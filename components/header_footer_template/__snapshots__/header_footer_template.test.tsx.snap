@@ -31,7 +31,7 @@ exports[`components/HeaderFooterTemplate should match snapshot with about link 1
           className="pull-right footer-link copyright"
           id="copyright"
         >
-          © 2015-2017 Matterfoss, Inc.
+          © 2015-2017 Mattermost, Inc. and Matterfoss Developers
         </span>
         <span
           className="pull-right"
@@ -87,7 +87,7 @@ exports[`components/HeaderFooterTemplate should match snapshot with all links 1`
           className="pull-right footer-link copyright"
           id="copyright"
         >
-          © 2015-2017 Matterfoss, Inc.
+          © 2015-2017 Mattermost, Inc. and Matterfoss Developers
         </span>
         <span
           className="pull-right"
@@ -186,7 +186,7 @@ exports[`components/HeaderFooterTemplate should match snapshot with children 1`]
           className="pull-right footer-link copyright"
           id="copyright"
         >
-          © 2015-2017 Matterfoss, Inc.
+          © 2015-2017 Mattermost, Inc. and Matterfoss Developers
         </span>
         <span
           className="pull-right"
@@ -228,7 +228,7 @@ exports[`components/HeaderFooterTemplate should match snapshot with help link 1`
           className="pull-right footer-link copyright"
           id="copyright"
         >
-          © 2015-2017 Matterfoss, Inc.
+          © 2015-2017 Mattermost, Inc. and Matterfoss Developers
         </span>
         <span
           className="pull-right"
@@ -284,7 +284,7 @@ exports[`components/HeaderFooterTemplate should match snapshot with privacy poli
           className="pull-right footer-link copyright"
           id="copyright"
         >
-          © 2015-2017 Matterfoss, Inc.
+          © 2015-2017 Mattermost, Inc. and Matterfoss Developers
         </span>
         <span
           className="pull-right"
@@ -340,7 +340,7 @@ exports[`components/HeaderFooterTemplate should match snapshot with term of serv
           className="pull-right footer-link copyright"
           id="copyright"
         >
-          © 2015-2017 Matterfoss, Inc.
+          © 2015-2017 Mattermost, Inc. and Matterfoss Developers
         </span>
         <span
           className="pull-right"
@@ -396,7 +396,7 @@ exports[`components/HeaderFooterTemplate should match snapshot without children 
           className="pull-right footer-link copyright"
           id="copyright"
         >
-          © 2015-2017 Matterfoss, Inc.
+          © 2015-2017 Mattermost, Inc. and Matterfoss Developers
         </span>
         <span
           className="pull-right"

@@ -130,7 +130,7 @@ export default class NotLoggedIn extends React.PureComponent<Props> {
                                 id='copyright'
                                 className='pull-right footer-link copyright'
                             >
-                                {`© 2015-${new Date().getFullYear()} Matterfoss, Inc.`}
+                                {`© 2015-${new Date().getFullYear()} Mattermost, Inc. and Matterfoss Developers`}
                             </span>
                             <span className='pull-right'>
                                 {content}
