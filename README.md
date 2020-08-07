@@ -48,3 +48,7 @@ somewhat harder. If you want to change the logos, the files you will need to cha
 If you want to replace the matterfoss emoji, you will also need to run
 [make-emojis](https://github.com/cjdelisle/MatterfossWeb/blob/master/build/make-emojis)
 to generate the emoji files.
+
+## Attribution
+The Matterfoss logo was created by QualityIcons ( https://thenounproject.com/nivya.becse/ ) and
+is provided under the Creative Commons Attribution license.
