@@ -9,7 +9,7 @@ import {loadProfilesForDirect} from 'matterfoss-redux/actions/users';
 import {fetchMyChannelsAndMembers, viewChannel} from 'matterfoss-redux/actions/channels';
 import {getMyTeamUnreads, getTeamByName, selectTeam} from 'matterfoss-redux/actions/teams';
 import {getGroups, getAllGroupsAssociatedToChannelsInTeam, getAllGroupsAssociatedToTeam, getGroupsByUserId} from 'matterfoss-redux/actions/groups';
-import {getTheme, getNewSidebarPreference} from 'matterfoss-redux/selectors/entities/preferences';
+import {getTheme} from 'matterfoss-redux/selectors/entities/preferences';
 import {getLicense, getConfig} from 'matterfoss-redux/selectors/entities/general';
 import {getCurrentUser} from 'matterfoss-redux/selectors/entities/users';
 import {getCurrentTeamId, getMyTeams} from 'matterfoss-redux/selectors/entities/teams';
@@ -48,7 +48,7 @@ function mapStateToProps(state: GlobalState, ownProps: OwnProps) {
         previousTeamId: getPreviousTeamId(state) as string,
         teamsList: getMyTeams(state),
         currentChannelId: getCurrentChannelId(state),
-        useLegacyLHS: !getNewSidebarPreference(state),
+        useLegacyLHS: config.EnableLegacySidebar === 'true',
         plugins,
     };
 }

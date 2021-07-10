@@ -35,7 +35,7 @@ describe('Messaging', () => {
         });
     });
 
-    it('M18692-Delete a GIF from RHS reply thread, other user viewing in center and RHS sees GIF preview disappear from both', () => {
+    it('MM-T114_1 Delete a GIF from RHS reply thread, other user viewing in center and RHS sees GIF preview disappear from both', () => {
         // # Type message to use
         cy.postMessage('123');
 
@@ -48,9 +48,6 @@ describe('Messaging', () => {
         // # Change user and go to Town Square
         cy.apiLogin(testUser);
         cy.visit(`/${testTeam.name}/channels/town-square`);
-
-        // # Wait for the page to be loaded
-        cy.wait(TIMEOUTS.FIVE_SEC);
 
         // # Click Reply button to open the RHS
         cy.clickPostCommentIcon();
@@ -100,7 +97,7 @@ describe('Messaging', () => {
         });
     });
 
-    it('M18692-Delete a GIF from RHS reply thread, other user viewing in center and RHS sees GIF preview disappear from both (mobile view)', () => {
+    it('MM-T114_2 Delete a GIF from RHS reply thread, other user viewing in center and RHS sees GIF preview disappear from both (mobile view)', () => {
         cy.apiAdminLogin();
 
         // # Type message to use

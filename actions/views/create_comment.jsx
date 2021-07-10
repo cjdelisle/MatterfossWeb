@@ -2,6 +2,7 @@
 // See LICENSE.txt for license information.
 
 import {createSelector} from 'reselect';
+
 import {getCurrentUserId} from 'matterfoss-redux/selectors/entities/users';
 import {getCurrentTeamId} from 'matterfoss-redux/selectors/entities/teams';
 import {

@@ -2,7 +2,7 @@
 // See LICENSE.txt for license information.
 
 import React from 'react';
-import {shallow, ShallowWrapper} from 'enzyme';
+import {shallow} from 'enzyme';
 import assert from 'assert';
 
 import {ChannelType, Channel} from 'matterfoss-redux/types/channels';
@@ -28,24 +28,23 @@ describe('components/NewChannelFlow', () => {
                 return Promise.resolve({data});
             }),
             switchToChannel: jest.fn(),
+            closeModal: jest.fn(),
         },
-        show: true,
         channelType: Constants.OPEN_CHANNEL as ChannelType,
         canCreatePublicChannel: true,
         canCreatePrivateChannel: true,
-        onModalDismissed: jest.fn(),
         currentTeamId: 'garbage',
     };
 
     test('should match snapshot, with base props', () => {
-        const wrapper: ShallowWrapper<any, any, NewChannelFlow> = shallow(
+        const wrapper = shallow<NewChannelFlow>(
             <NewChannelFlow {...baseProps}/>,
         );
         expect(wrapper).toMatchSnapshot();
     });
 
     test('should match state when channelDataChanged is called', () => {
-        const wrapper: ShallowWrapper<any, any, NewChannelFlow> = shallow(
+        const wrapper = shallow<NewChannelFlow>(
             <NewChannelFlow {...baseProps}/>,
         );
         const data = {displayName: 'name', purpose: 'purpose', header: 'header'};
@@ -57,7 +56,7 @@ describe('components/NewChannelFlow', () => {
     });
 
     test('should match state when urlChangeDismissed is called', () => {
-        const wrapper: ShallowWrapper<any, any, NewChannelFlow> = shallow(
+        const wrapper = shallow<NewChannelFlow>(
             <NewChannelFlow {...baseProps}/>,
         );
         wrapper.instance().urlChangeDismissed();
@@ -66,7 +65,7 @@ describe('components/NewChannelFlow', () => {
     });
 
     test('should match state when urlChangeSubmitted is called', () => {
-        const wrapper: ShallowWrapper<any, any, NewChannelFlow> = shallow(
+        const wrapper = shallow<NewChannelFlow>(
             <NewChannelFlow {...baseProps}/>,
         );
         const newUrl = 'example.com';
@@ -79,7 +78,7 @@ describe('components/NewChannelFlow', () => {
     });
 
     test('should match state when urlChangeRequested is called', () => {
-        const wrapper: ShallowWrapper<any, any, NewChannelFlow> = shallow(
+        const wrapper = shallow<NewChannelFlow>(
             <NewChannelFlow {...baseProps}/>,
         );
 
@@ -88,33 +87,33 @@ describe('components/NewChannelFlow', () => {
     });
 
     test('should match state when typeSwitched is called, with state switched from OPEN_CHANNEL', () => {
-        const wrapper: ShallowWrapper<any, any, NewChannelFlow> = shallow(
+        const wrapper = shallow<NewChannelFlow>(
             <NewChannelFlow {...baseProps}/>,
         );
 
-        wrapper.setState({channelType: Constants.OPEN_CHANNEL, serverError: 'server error'});
+        wrapper.setState({channelType: Constants.OPEN_CHANNEL as ChannelType, serverError: 'server error'});
         wrapper.instance().typeSwitched(Constants.PRIVATE_CHANNEL as ChannelType);
         expect(wrapper.state('channelType')).toEqual(Constants.PRIVATE_CHANNEL);
         expect(wrapper.state('serverError')).toEqual('');
 
-        wrapper.setState({channelType: Constants.PRIVATE_CHANNEL, serverError: 'server error'});
+        wrapper.setState({channelType: Constants.PRIVATE_CHANNEL as ChannelType, serverError: 'server error'});
         wrapper.instance().typeSwitched(Constants.OPEN_CHANNEL as ChannelType);
         expect(wrapper.state('channelType')).toEqual(Constants.OPEN_CHANNEL);
         expect(wrapper.state('serverError')).toEqual('');
     });
 
     test('should match state when typeSwitched is called, with state switched from PRIVATE_CHANNEL', () => {
-        const wrapper: ShallowWrapper<any, any, NewChannelFlow> = shallow(
+        const wrapper = shallow<NewChannelFlow>(
             <NewChannelFlow {...baseProps}/>,
         );
 
-        wrapper.setState({channelType: Constants.PRIVATE_CHANNEL});
+        wrapper.setState({channelType: Constants.PRIVATE_CHANNEL as ChannelType});
         wrapper.instance().typeSwitched(Constants.OPEN_CHANNEL as ChannelType);
         expect(wrapper.state('channelType')).toEqual(Constants.OPEN_CHANNEL);
     });
 
     test('should match state when onModalExited is called', () => {
-        const wrapper: ShallowWrapper<any, any, NewChannelFlow> = shallow(
+        const wrapper = shallow<NewChannelFlow>(
             <NewChannelFlow {...baseProps}/>,
         );
 
@@ -123,7 +122,7 @@ describe('components/NewChannelFlow', () => {
     });
 
     test('should match state when onSubmit is called with invalid channelDisplayName', () => {
-        const wrapper: ShallowWrapper<any, any, NewChannelFlow> = shallow(
+        const wrapper = shallow<NewChannelFlow>(
             <NewChannelFlow {...baseProps}/>,
         );
 
@@ -132,7 +131,7 @@ describe('components/NewChannelFlow', () => {
     });
 
     test('should call createChannel when onSubmit is called with valid channelDisplayName and valid channelName', () => {
-        const wrapper: ShallowWrapper<any, any, NewChannelFlow> = shallow(
+        const wrapper = shallow<NewChannelFlow>(
             <NewChannelFlow {...baseProps}/>,
         );
 
@@ -144,8 +143,8 @@ describe('components/NewChannelFlow', () => {
         expect(wrapper.instance().props.actions.createChannel).toHaveBeenCalledTimes(1);
     });
 
-    test('call onModalDismissed after successfully creating channel', (done) => {
-        const wrapper: ShallowWrapper<any, any, NewChannelFlow> = shallow(
+    test('call closeModal after successfully creating channel', (done) => {
+        const wrapper = shallow<NewChannelFlow>(
             <NewChannelFlow {...baseProps}/>,
         );
 
@@ -157,14 +156,14 @@ describe('components/NewChannelFlow', () => {
         wrapper.instance().onSubmit();
         expect(wrapper.instance().props.actions.createChannel).toHaveBeenCalledTimes(1);
         process.nextTick(() => {
-            expect(baseProps.onModalDismissed).toHaveBeenCalledTimes(1);
+            expect(baseProps.actions.closeModal).toHaveBeenCalledTimes(1);
             expect(wrapper.instance().props.actions.switchToChannel).toHaveBeenCalledTimes(1);
             done();
         });
     });
 
-    test('don\'t call onModalDismissed after failing to create channel', () => {
-        const wrapper: ShallowWrapper<any, any, NewChannelFlow> = shallow(
+    test('don\'t call closeModal after failing to create channel', () => {
+        const wrapper = shallow<NewChannelFlow>(
             <NewChannelFlow {...baseProps}/>,
         );
 
@@ -174,7 +173,7 @@ describe('components/NewChannelFlow', () => {
             purpose: '',
         });
         wrapper.instance().onSubmit();
-        expect(baseProps.onModalDismissed).toHaveBeenCalledTimes(0);
+        expect(baseProps.actions.closeModal).toHaveBeenCalledTimes(0);
 
         wrapper.instance().channelDataChanged({
             displayName: 't',
@@ -189,11 +188,11 @@ describe('components/NewChannelFlow', () => {
             purpose: '',
         });
         wrapper.instance().onSubmit();
-        expect(baseProps.onModalDismissed).toHaveBeenCalledTimes(0);
+        expect(baseProps.actions.closeModal).toHaveBeenCalledTimes(0);
     });
 
     test('show URL modal when trying to submit non-Latin display name', () => {
-        const wrapper: ShallowWrapper<any, any, NewChannelFlow> = shallow(
+        const wrapper = shallow<NewChannelFlow>(
             <NewChannelFlow {...baseProps}/>,
         );
 
@@ -210,8 +209,8 @@ describe('components/NewChannelFlow', () => {
         expect(wrapper.state('flowState')).toEqual(SHOW_EDIT_URL_THEN_COMPLETE);
     });
 
-    test('call onModalDismissed after successfully creating channel from URL modal', (done) => {
-        const wrapper: ShallowWrapper<any, any, NewChannelFlow> = shallow(
+    test('call closeModal after successfully creating channel from URL modal', (done) => {
+        const wrapper = shallow<NewChannelFlow>(
             <NewChannelFlow {...baseProps}/>,
         );
 
@@ -228,7 +227,7 @@ describe('components/NewChannelFlow', () => {
         wrapper.instance().urlChangeSubmitted('test');
         expect(wrapper.instance().props.actions.createChannel).toHaveBeenCalledTimes(1);
         process.nextTick(() => {
-            expect(baseProps.onModalDismissed).toHaveBeenCalledTimes(1);
+            expect(baseProps.actions.closeModal).toHaveBeenCalledTimes(1);
             done();
         });
     });
@@ -238,10 +237,9 @@ describe('components/NewChannelFlow', () => {
             actions: {
                 createChannel: jest.fn(),
                 switchToChannel: jest.fn(),
+                closeModal: jest.fn(),
             },
             currentTeamId: '',
-            onModalDismissed: jest.fn(),
-            show: false,
             channelType: Constants.OPEN_CHANNEL as ChannelType,
             canCreatePublicChannel: true,
             canCreatePrivateChannel: true,
@@ -267,36 +265,5 @@ describe('components/NewChannelFlow', () => {
 
         props.canCreatePublicChannel = true;
         assert.equal(getChannelTypeFromProps(props), Constants.OPEN_CHANNEL);
-    });
-
-    test('should reset the state when being shown', () => {
-        const wrapper = shallow(
-            <NewChannelFlow
-                {...baseProps}
-                show={false}
-            />,
-        );
-
-        wrapper.setState({
-            serverError: 'an error',
-            channelType: 'a type',
-            flowState: SHOW_EDIT_URL,
-            channelDisplayName: 'a display name',
-            channelName: 'a name',
-            channelPurpose: 'a purpose',
-            channelHeader: 'a header',
-            nameModified: true,
-        });
-
-        wrapper.setProps({show: true});
-
-        expect(wrapper.state('serverError')).toEqual('');
-        expect(wrapper.state('channelType')).toEqual(Constants.OPEN_CHANNEL);
-        expect(wrapper.state('flowState')).toEqual(SHOW_NEW_CHANNEL);
-        expect(wrapper.state('channelDisplayName')).toEqual('');
-        expect(wrapper.state('channelName')).toEqual('');
-        expect(wrapper.state('channelPurpose')).toEqual('');
-        expect(wrapper.state('channelHeader')).toEqual('');
-        expect(wrapper.state('nameModified')).toEqual(false);
     });
 });

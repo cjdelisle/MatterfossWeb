@@ -3,11 +3,12 @@
 
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
+
 import {getPlugins} from 'matterfoss-redux/actions/admin';
 import {getConfig, getLicense} from 'matterfoss-redux/selectors/entities/general';
 
 import {getNavigationBlocked} from 'selectors/views/admin';
-import {getAdminDefinition} from 'selectors/admin_console';
+import {getAdminDefinition, getConsoleAccess} from 'selectors/admin_console';
 
 import AdminSidebar from './admin_sidebar.jsx';
 
@@ -17,6 +18,7 @@ function mapStateToProps(state) {
     const buildEnterpriseReady = config.BuildEnterpriseReady === 'true';
     const siteName = config.SiteName;
     const adminDefinition = getAdminDefinition(state);
+    const consoleAccess = getConsoleAccess(state);
 
     return {
         license,
@@ -26,6 +28,8 @@ function mapStateToProps(state) {
         buildEnterpriseReady,
         siteName,
         adminDefinition,
+        consoleAccess,
+        cloud: state.entities.cloud,
     };
 }
 

@@ -2,6 +2,7 @@
 // See LICENSE.txt for license information.
 
 import {batchActions} from 'redux-batched-actions';
+
 import {
     ChannelTypes,
     EmojiTypes,
@@ -26,7 +27,19 @@ import {
     markChannelAsRead,
     getChannelMemberCountsByGroup,
 } from 'matterfoss-redux/actions/channels';
+import {getCloudSubscription, getSubscriptionStats} from 'matterfoss-redux/actions/cloud';
 import {loadRolesIfNeeded} from 'matterfoss-redux/actions/roles';
+
+import {isCollapsedThreadsEnabled} from 'matterfoss-redux/selectors/entities/preferences';
+import {getThread} from 'matterfoss-redux/selectors/entities/threads';
+import {
+    getThread as fetchThread,
+    handleAllMarkedRead,
+    handleReadChanged,
+    handleFollowChanged,
+    handleThreadArrived,
+} from 'matterfoss-redux/actions/threads';
+
 import {setServerVersion} from 'matterfoss-redux/actions/general';
 import {
     getCustomEmojiForReaction,
@@ -49,12 +62,16 @@ import {
 } from 'matterfoss-redux/actions/users';
 import {removeNotVisibleUsers} from 'matterfoss-redux/actions/websocket';
 import {Client4} from 'matterfoss-redux/client';
-import {getCurrentUser, getCurrentUserId, getStatusForUserId, getUser, getIsManualStatusForUserId} from 'matterfoss-redux/selectors/entities/users';
+import {getCurrentUser, getCurrentUserId, getStatusForUserId, getUser, getIsManualStatusForUserId, isCurrentUserSystemAdmin} from 'matterfoss-redux/selectors/entities/users';
 import {getMyTeams, getCurrentRelativeTeamUrl, getCurrentTeamId, getCurrentTeamUrl, getTeam} from 'matterfoss-redux/selectors/entities/teams';
 import {getConfig, getLicense} from 'matterfoss-redux/selectors/entities/general';
 import {getChannelsInTeam, getChannel, getCurrentChannel, getCurrentChannelId, getRedirectChannelNameForTeam, getMembersInCurrentChannel, getChannelMembersInChannels} from 'matterfoss-redux/selectors/entities/channels';
 import {getPost, getMostRecentPostIdInChannel} from 'matterfoss-redux/selectors/entities/posts';
 import {haveISystemPermission, haveITeamPermission} from 'matterfoss-redux/selectors/entities/roles';
+import {appsEnabled} from 'matterfoss-redux/selectors/entities/apps';
+import {getStandardAnalytics} from 'matterfoss-redux/actions/admin';
+
+import {fetchAppBindings} from 'matterfoss-redux/actions/apps';
 
 import {getSelectedChannelId} from 'selectors/rhs';
 
@@ -65,14 +82,15 @@ import {syncPostsInChannel} from 'actions/views/channel';
 
 import {browserHistory} from 'utils/browser_history';
 import {loadChannelsForCurrentUser} from 'actions/channel_actions.jsx';
-import {redirectUserToDefaultTeam} from 'actions/global_actions.jsx';
+import {loadCustomEmojisIfNeeded} from 'actions/emoji_actions';
+import {redirectUserToDefaultTeam} from 'actions/global_actions';
 import {handleNewPost} from 'actions/post_actions.jsx';
 import * as StatusActions from 'actions/status_actions.jsx';
 import {loadProfilesForSidebar} from 'actions/user_actions.jsx';
 import store from 'stores/redux_store.jsx';
 import WebSocketClient from 'client/web_websocket_client.jsx';
 import {loadPlugin, loadPluginsIfNecessary, removePlugin} from 'plugins';
-import {ActionTypes, Constants, AnnouncementBarMessages, SocketEvents, UserStatuses, ModalIdentifiers} from 'utils/constants';
+import {ActionTypes, Constants, AnnouncementBarMessages, SocketEvents, UserStatuses, ModalIdentifiers, WarnMetricTypes} from 'utils/constants';
 import {getSiteURL} from 'utils/url';
 import {isGuest} from 'utils/utils';
 import RemovedFromChannelModal from 'components/removed_from_channel_modal';
@@ -175,7 +193,10 @@ export function reconnect(includeWebSocket = true) {
         const currentChannelId = getCurrentChannelId(state);
         const mostRecentId = getMostRecentPostIdInChannel(state, currentChannelId);
         const mostRecentPost = getPost(state, mostRecentId);
+
         dispatch(loadChannelsForCurrentUser());
+        dispatch(handleRefreshAppsBindings());
+
         if (mostRecentPost) {
             dispatch(syncPostsInChannel(currentChannelId, mostRecentPost.create_at));
         } else {
@@ -330,7 +351,7 @@ export function handleEvent(msg) {
         break;
 
     case SocketEvents.CHANNEL_CREATED:
-        handleChannelCreatedEvent(msg);
+        dispatch(handleChannelCreatedEvent(msg));
         break;
 
     case SocketEvents.CHANNEL_DELETED:
@@ -468,11 +489,32 @@ export function handleEvent(msg) {
     case SocketEvents.SIDEBAR_CATEGORY_DELETED:
         dispatch(handleSidebarCategoryDeleted(msg));
         break;
-
     case SocketEvents.SIDEBAR_CATEGORY_ORDER_UPDATED:
         dispatch(handleSidebarCategoryOrderUpdated(msg));
         break;
+    case SocketEvents.USER_ACTIVATION_STATUS_CHANGED:
+        dispatch(handleUserActivationStatusChange());
+        break;
+    case SocketEvents.CLOUD_PAYMENT_STATUS_UPDATED:
+        dispatch(handleCloudPaymentStatusUpdated(msg));
+        break;
+    case SocketEvents.FIRST_ADMIN_VISIT_MARKETPLACE_STATUS_RECEIVED:
+        handleFirstAdminVisitMarketplaceStatusReceivedEvent(msg);
+        break;
+    case SocketEvents.THREAD_FOLLOW_CHANGED:
+        dispatch(handleThreadFollowChanged(msg));
+        break;
+    case SocketEvents.THREAD_READ_CHANGED:
+        dispatch(handleThreadReadChanged(msg));
+        break;
+    case SocketEvents.THREAD_UPDATED:
+        dispatch(handleThreadUpdated(msg));
+        break;
 
+    case SocketEvents.APPS_FRAMEWORK_REFRESH_BINDINGS: {
+        dispatch(handleRefreshAppsBindings(msg));
+        break;
+    }
     default:
     }
 
@@ -539,7 +581,7 @@ function debouncePostEvent(wait) {
     };
 
     return function fx(msg) {
-        if (timeout && count > 2) {
+        if (timeout && count > 4) {
             // If the timeout is going this is the second or further event so queue them up.
             if (queue.push(msg) > 200) {
                 // Don't run us out of memory, give up if the queue gets insane
@@ -587,10 +629,12 @@ export function handleNewPostEvent(msg) {
 
 export function handleNewPostEvents(queue) {
     return (myDispatch, myGetState) => {
+        // Note that this method doesn't properly update the sidebar state for these posts
         const posts = queue.map((msg) => JSON.parse(msg.data.post));
 
         // Receive the posts as one continuous block since they were received within a short period
-        const actions = posts.map(receivedNewPost);
+        const crtEnabled = isCollapsedThreadsEnabled(myGetState());
+        const actions = posts.map((post) => receivedNewPost(post, crtEnabled));
         myDispatch(batchActions(actions));
 
         // Load the posts' threads
@@ -812,6 +856,11 @@ function handleUserAddedEvent(msg) {
         if (currentTeamId === msg.data.team_id && currentUserId === msg.data.user_id) {
             doDispatch(fetchChannelAndAddToSidebar(msg.broadcast.channel_id));
         }
+
+        // This event is fired when a user first joins the server, so refresh analytics to see if we're now over the user limit
+        if (license.Cloud === 'true' && isCurrentUserSystemAdmin(doGetState())) {
+            doDispatch(getStandardAnalytics());
+        }
     };
 }
 
@@ -927,6 +976,10 @@ export async function handleUserUpdatedEvent(msg) {
     const state = getState();
     const currentUser = getCurrentUser(state);
     const user = msg.data.user;
+    if (user && user.props) {
+        const customStatus = user.props.customStatus ? JSON.parse(user.props.customStatus) : undefined;
+        dispatch(loadCustomEmojisIfNeeded([customStatus?.emoji]));
+    }
 
     const config = getConfig(state);
     const license = getLicense(state);
@@ -1001,13 +1054,23 @@ function handleRoleUpdatedEvent(msg) {
 }
 
 function handleChannelCreatedEvent(msg) {
-    const channelId = msg.data.channel_id;
-    const teamId = msg.data.team_id;
-    const state = getState();
+    return async (myDispatch, myGetState) => {
+        const channelId = msg.data.channel_id;
+        const teamId = msg.data.team_id;
+        const state = myGetState();
 
-    if (getCurrentTeamId(state) === teamId && !getChannel(state, channelId)) {
-        dispatch(getChannelAndMyMember(channelId));
-    }
+        if (getCurrentTeamId(state) === teamId) {
+            let channel = getChannel(state, channelId);
+
+            if (!channel) {
+                await myDispatch(getChannelAndMyMember(channelId));
+
+                channel = getChannel(myGetState(), channelId);
+            }
+
+            myDispatch(addChannelToInitialCategory(channel, false));
+        }
+    };
 }
 
 function handleChannelDeletedEvent(msg) {
@@ -1246,14 +1309,21 @@ function handleGroupNotAssociatedToChannelEvent(msg) {
 }
 
 function handleWarnMetricStatusReceivedEvent(msg) {
+    var receivedData = JSON.parse(msg.data.warnMetricStatus);
+    let bannerData;
+    if (receivedData.id === WarnMetricTypes.SYSTEM_WARN_METRIC_NUMBER_OF_ACTIVE_USERS_500) {
+        bannerData = AnnouncementBarMessages.WARN_METRIC_STATUS_NUMBER_OF_USERS;
+    } else if (receivedData.id === WarnMetricTypes.SYSTEM_WARN_METRIC_NUMBER_OF_POSTS_2M) {
+        bannerData = AnnouncementBarMessages.WARN_METRIC_STATUS_NUMBER_OF_POSTS;
+    }
     store.dispatch(batchActions([
         {
             type: GeneralTypes.WARN_METRIC_STATUS_RECEIVED,
-            data: JSON.parse(msg.data.warnMetricStatus),
+            data: receivedData,
         },
         {
             type: ActionTypes.SHOW_NOTICE,
-            data: [AnnouncementBarMessages.NUMBER_OF_ACTIVE_USERS_WARN_METRIC_STATUS],
+            data: [bannerData],
         },
     ]));
 }
@@ -1307,4 +1377,85 @@ function handleSidebarCategoryDeleted(msg) {
 
 function handleSidebarCategoryOrderUpdated(msg) {
     return receivedCategoryOrder(msg.broadcast.team_id, msg.data.order);
+}
+
+export function handleUserActivationStatusChange() {
+    return (doDispatch, doGetState) => {
+        const state = doGetState();
+        const license = getLicense(state);
+
+        // This event is fired when a user first joins the server, so refresh analytics to see if we're now over the user limit
+        if (license.Cloud === 'true') {
+            if (isCurrentUserSystemAdmin(state)) {
+                doDispatch(getStandardAnalytics());
+            }
+            doDispatch(getSubscriptionStats());
+        }
+    };
+}
+
+function handleCloudPaymentStatusUpdated() {
+    return (doDispatch) => doDispatch(getCloudSubscription());
+}
+
+function handleRefreshAppsBindings() {
+    return (doDispatch, doGetState) => {
+        const state = doGetState();
+        if (appsEnabled(state)) {
+            doDispatch(fetchAppBindings(getCurrentUserId(state), getCurrentChannelId(state)));
+        }
+        return {data: true};
+    };
+}
+
+function handleFirstAdminVisitMarketplaceStatusReceivedEvent(msg) {
+    const receivedData = JSON.parse(msg.data.firstAdminVisitMarketplaceStatus);
+    store.dispatch({type: GeneralTypes.FIRST_ADMIN_VISIT_MARKETPLACE_STATUS_RECEIVED, data: receivedData});
+}
+
+function handleThreadReadChanged(msg) {
+    return (doDispatch, doGetState) => {
+        if (msg.data.thread_id) {
+            const thread = doGetState().entities.threads.threads?.[msg.data.thread_id];
+            if (thread) {
+                handleReadChanged(
+                    doDispatch,
+                    msg.data.thread_id,
+                    msg.broadcast.team_id,
+                    msg.data.channel_id,
+                    {
+                        lastViewedAt: msg.data.timestamp,
+                        prevUnreadMentions: thread.unread_mentions,
+                        newUnreadMentions: msg.data.unread_mentions,
+                        prevUnreadReplies: thread.unread_replies,
+                        newUnreadReplies: msg.data.unread_replies,
+                    },
+                );
+            }
+        } else {
+            handleAllMarkedRead(doDispatch, msg.broadcast.team_id);
+        }
+    };
+}
+
+function handleThreadUpdated(msg) {
+    return (doDispatch, doGetState) => {
+        try {
+            const threadData = JSON.parse(msg.data.thread);
+            handleThreadArrived(doDispatch, doGetState, threadData, msg.broadcast.team_id);
+        } catch {
+            // invalid JSON
+        }
+    };
+}
+
+function handleThreadFollowChanged(msg) {
+    return async (doDispatch, doGetState) => {
+        const state = doGetState();
+        const thread = getThread(state, msg.data.thread_id);
+        if (!thread && msg.data.state) {
+            await doDispatch(fetchThread(getCurrentUserId(state), getCurrentTeamId(state), msg.data.thread_id, true));
+        }
+        handleFollowChanged(doDispatch, msg.data.thread_id, msg.broadcast.team_id, msg.data.state);
+    };
 }

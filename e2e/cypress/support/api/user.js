@@ -1,30 +1,87 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
+import authenticator from 'authenticator';
+
 import {getRandomId} from '../../utils';
 import {getAdminAccount} from '../env';
+
+import {buildQueryString} from './helpers';
 
 // *****************************************************************************
 // Users
 // https://api.matterfoss.com/#tag/users
 // *****************************************************************************
 
-Cypress.Commands.add('apiLogin', (user) => {
-    cy.request({
+Cypress.Commands.add('apiLogin', (user, requestOptions = {}) => {
+    return cy.request({
         headers: {'X-Requested-With': 'XMLHttpRequest'},
         url: '/api/v4/users/login',
         method: 'POST',
-        body: {login_id: user.username, password: user.password},
+        body: {login_id: user.username || user.email, password: user.password},
+        ...requestOptions,
     }).then((response) => {
-        expect(response.status).to.equal(200);
-        return cy.wrap({user: response.body});
+        if (requestOptions.failOnStatusCode) {
+            expect(response.status).to.equal(200);
+        }
+
+        if (response.status === 200) {
+            return cy.wrap({
+                user: {
+                    ...response.body,
+                    password: user.password,
+                },
+            });
+        }
+
+        return cy.wrap({error: response.body});
     });
 });
 
-Cypress.Commands.add('apiAdminLogin', () => {
+Cypress.Commands.add('apiLoginWithMFA', (user, token) => {
+    return cy.request({
+        headers: {'X-Requested-With': 'XMLHttpRequest'},
+        url: '/api/v4/users/login',
+        method: 'POST',
+        body: {login_id: user.username, password: user.password, token},
+    }).then((response) => {
+        expect(response.status).to.equal(200);
+        return cy.wrap({
+            user: {
+                ...response.body,
+                password: user.password,
+            },
+        });
+    });
+});
+
+Cypress.Commands.add('apiAdminLogin', (requestOptions = {}) => {
     const admin = getAdminAccount();
 
-    return cy.apiLogin(admin);
+    // First, login with username
+    cy.apiLogin(admin, requestOptions).then((resp) => {
+        if (resp.error) {
+            if (resp.error.id === 'mfa.validate_token.authenticate.app_error') {
+                // On fail, try to login via MFA
+                return cy.dbGetUser({username: admin.username}).then(({user: {mfasecret}}) => {
+                    const token = authenticator.generateToken(mfasecret);
+                    return cy.apiLoginWithMFA(admin, token);
+                });
+            }
+
+            // Or, try to login via email
+            delete admin.username;
+            return cy.apiLogin(admin, requestOptions);
+        }
+
+        return resp;
+    });
+});
+
+Cypress.Commands.add('apiAdminLoginWithMFA', (token) => {
+    const admin = getAdminAccount();
+
+    return cy.apiLoginWithMFA(admin, token);
 });
 
 Cypress.Commands.add('apiLogout', () => {
@@ -36,7 +93,7 @@ Cypress.Commands.add('apiLogout', () => {
     });
 
     // * Verify logged out
-    cy.visit('/login?extra=expired').url().should('include', '/login?extra=expired');
+    cy.visit('/login?extra=expired').url().should('include', '/login');
 
     // # Ensure we clear out these specific cookies
     ['MMAUTHTOKEN', 'MMUSERID', 'MMCSRF'].forEach((cookie) => {
@@ -45,29 +102,35 @@ Cypress.Commands.add('apiLogout', () => {
 
     // # Clear remainder of cookies
     cy.clearCookies();
-
-    // * Verify cookies are empty
-    cy.getCookies({log: false}).should('be.empty');
 });
 
 Cypress.Commands.add('apiGetMe', () => {
+    return cy.apiGetUserById('me');
+});
+
+Cypress.Commands.add('apiGetUserById', (userId) => {
     return cy.request({
         headers: {'X-Requested-With': 'XMLHttpRequest'},
-        url: 'api/v4/users/me',
-        method: 'GET',
+        url: '/api/v4/users/' + userId,
     }).then((response) => {
         expect(response.status).to.equal(200);
-        cy.wrap({user: response.body});
+        return cy.wrap({user: response.body});
     });
 });
 
-Cypress.Commands.add('apiGetUserByEmail', (email) => {
+Cypress.Commands.add('apiGetUserByEmail', (email, failOnStatusCode = true) => {
     return cy.request({
         headers: {'X-Requested-With': 'XMLHttpRequest'},
         url: '/api/v4/users/email/' + email,
+        failOnStatusCode,
     }).then((response) => {
-        expect(response.status).to.equal(200);
-        cy.wrap({user: response.body});
+        const {body, status} = response;
+
+        if (failOnStatusCode) {
+            expect(status).to.equal(200);
+            return cy.wrap({user: body});
+        }
+        return cy.wrap({user: status === 200 ? body : null});
     });
 });
 
@@ -79,7 +142,7 @@ Cypress.Commands.add('apiGetUsersByUsernames', (usernames = []) => {
         body: usernames,
     }).then((response) => {
         expect(response.status).to.equal(200);
-        cy.wrap({users: response.body});
+        return cy.wrap({users: response.body});
     });
 });
 
@@ -91,7 +154,7 @@ Cypress.Commands.add('apiPatchUser', (userId, userData) => {
         body: userData,
     }).then((response) => {
         expect(response.status).to.equal(200);
-        cy.wrap({user: response.body});
+        return cy.wrap({user: response.body});
     });
 });
 
@@ -103,7 +166,17 @@ Cypress.Commands.add('apiPatchMe', (data) => {
         body: data,
     }).then((response) => {
         expect(response.status).to.equal(200);
-        cy.wrap({user: response.body});
+        return cy.wrap({user: response.body});
+    });
+});
+
+Cypress.Commands.add('apiCreateCustomAdmin', () => {
+    const sysadminUser = generateRandomUser('other-admin');
+
+    return cy.apiCreateUser({user: sysadminUser}).then(({user}) => {
+        return cy.apiPatchUserRoles(user.id, ['system_admin', 'system_user']).then(() => {
+            return cy.wrap({sysadmin: user});
+        });
     });
 });
 
@@ -129,7 +202,7 @@ Cypress.Commands.add('apiCreateAdmin', () => {
     return cy.request(options).then((res) => {
         expect(res.status).to.equal(201);
 
-        cy.wrap({sysadmin: res.body});
+        return cy.wrap({sysadmin: {...res.body, password}});
     });
 });
 
@@ -146,7 +219,12 @@ function generateRandomUser(prefix = 'user') {
     };
 }
 
-Cypress.Commands.add('apiCreateUser', ({prefix = 'user', bypassTutorial = true, user = null} = {}) => {
+Cypress.Commands.add('apiCreateUser', ({
+    prefix = 'user',
+    bypassTutorial = true,
+    hideCloudOnboarding = true,
+    user = null,
+} = {}) => {
     const newUser = user || generateRandomUser(prefix);
 
     const createUserOption = {
@@ -165,13 +243,21 @@ Cypress.Commands.add('apiCreateUser', ({prefix = 'user', bypassTutorial = true, 
             cy.apiSaveTutorialStep(createdUser.id, '999');
         }
 
+        if (hideCloudOnboarding) {
+            cy.apiSaveCloudOnboardingPreference(createdUser.id, 'hide', 'true');
+        }
+
         return cy.wrap({user: {...createdUser, password: newUser.password}});
     });
 });
 
-Cypress.Commands.add('apiCreateGuestUser', ({prefix = 'guest', activate = true} = {}) => {
-    return cy.apiCreateUser({prefix}).then(({user}) => {
-        cy.demoteUser(user.id);
+Cypress.Commands.add('apiCreateGuestUser', ({
+    prefix = 'guest',
+    hideCloudOnboarding = true,
+    activate = true,
+} = {}) => {
+    return cy.apiCreateUser({prefix, hideCloudOnboarding}).then(({user}) => {
+        cy.apiDemoteUserToGuest(user.id);
         cy.externalActivateUser(user.id, activate);
 
         return cy.wrap({guest: user});
@@ -189,17 +275,194 @@ Cypress.Commands.add('apiRevokeUserSessions', (userId) => {
         method: 'POST',
     }).then((response) => {
         expect(response.status).to.equal(200);
-        cy.wrap({data: response.body});
+        return cy.wrap({data: response.body});
+    });
+});
+
+Cypress.Commands.add('apiGetUsers', (queryParams = {}) => {
+    const queryString = buildQueryString(queryParams);
+
+    return cy.request({
+        method: 'GET',
+        url: `/api/v4/users?${queryString}`,
+        headers: {'X-Requested-With': 'XMLHttpRequest'},
+    }).then((response) => {
+        expect(response.status).to.equal(200);
+        return cy.wrap({users: response.body});
     });
 });
 
 Cypress.Commands.add('apiGetUsersNotInTeam', ({teamId, page = 0, perPage = 60} = {}) => {
+    return cy.apiGetUsers({not_in_team: teamId, page, per_page: perPage});
+});
+
+Cypress.Commands.add('apiPatchUserRoles', (userId, roleNames = ['system_user']) => {
     return cy.request({
-        method: 'GET',
-        url: `/api/v4/users?not_in_team=${teamId}&page=${page}&per_page=${perPage}`,
         headers: {'X-Requested-With': 'XMLHttpRequest'},
+        url: `/api/v4/users/${userId}/roles`,
+        method: 'PUT',
+        body: {roles: roleNames.join(' ')},
     }).then((response) => {
         expect(response.status).to.equal(200);
-        cy.wrap({users: response.body});
+        return cy.wrap({user: response.body});
     });
 });
+
+Cypress.Commands.add('apiDeactivateUser', (userId) => {
+    const options = {
+        headers: {'X-Requested-With': 'XMLHttpRequest'},
+        method: 'DELETE',
+        url: `/api/v4/users/${userId}`,
+    };
+
+    // # Deactivate a user account
+    return cy.request(options).then((response) => {
+        expect(response.status).to.equal(200);
+        return cy.wrap(response);
+    });
+});
+
+Cypress.Commands.add('apiActivateUser', (userId) => {
+    const options = {
+        headers: {'X-Requested-With': 'XMLHttpRequest'},
+        method: 'PUT',
+        url: `/api/v4/users/${userId}/active`,
+        body: {
+            active: true,
+        },
+    };
+
+    // # Activate a user account
+    return cy.request(options).then((response) => {
+        expect(response.status).to.equal(200);
+        return cy.wrap(response);
+    });
+});
+
+Cypress.Commands.add('apiDemoteUserToGuest', (userId) => {
+    return cy.request({
+        headers: {'X-Requested-With': 'XMLHttpRequest'},
+        url: `/api/v4/users/${userId}/demote`,
+        method: 'POST',
+    }).then((response) => {
+        expect(response.status).to.equal(200);
+        return cy.apiGetUserById(userId).then(({user}) => {
+            return cy.wrap({guest: user});
+        });
+    });
+});
+
+Cypress.Commands.add('apiPromoteGuestToUser', (userId) => {
+    return cy.request({
+        headers: {'X-Requested-With': 'XMLHttpRequest'},
+        url: `/api/v4/users/${userId}/promote`,
+        method: 'POST',
+    }).then((response) => {
+        expect(response.status).to.equal(200);
+        return cy.apiGetUserById(userId);
+    });
+});
+
+/**
+ * Verify a user email via API
+ * @param {String} userId - ID of user of email to verify
+ */
+Cypress.Commands.add('apiVerifyUserEmailById', (userId) => {
+    const options = {
+        headers: {'X-Requested-With': 'XMLHttpRequest'},
+        method: 'POST',
+        url: `/api/v4/users/${userId}/email/verify/member`,
+    };
+
+    return cy.request(options).then((response) => {
+        expect(response.status).to.equal(200);
+        return cy.wrap({user: response.body});
+    });
+});
+
+Cypress.Commands.add('apiActivateUserMFA', (userId, activate, token) => {
+    return cy.request({
+        headers: {'X-Requested-With': 'XMLHttpRequest'},
+        url: `/api/v4/users/${userId}/mfa`,
+        method: 'PUT',
+        body: {
+            activate,
+            code: token,
+        },
+    }).then((response) => {
+        expect(response.status).to.equal(200);
+        return cy.wrap(response);
+    });
+});
+
+Cypress.Commands.add('apiResetPassword', (userId, currentPass, newPass) => {
+    return cy.request({
+        headers: {'X-Requested-With': 'XMLHttpRequest'},
+        method: 'PUT',
+        url: `/api/v4/users/${userId}/password`,
+        body: {
+            current_password: currentPass,
+            new_password: newPass,
+        },
+    }).then((response) => {
+        expect(response.status).to.equal(200);
+        return cy.wrap({user: response.body});
+    });
+});
+
+Cypress.Commands.add('apiGenerateMfaSecret', (userId) => {
+    return cy.request({
+        headers: {'X-Requested-With': 'XMLHttpRequest'},
+        method: 'POST',
+        url: `/api/v4/users/${userId}/mfa/generate`,
+    }).then((response) => {
+        expect(response.status).to.equal(200);
+        return cy.wrap({code: response.body});
+    });
+});
+
+Cypress.Commands.add('apiAccessToken', (userId, description) => {
+    return cy.request({
+        headers: {'X-Requested-With': 'XMLHttpRequest'},
+        url: '/api/v4/users/' + userId + '/tokens',
+        method: 'POST',
+        body: {
+            description,
+        },
+    }).then((response) => {
+        expect(response.status).to.equal(200);
+        return cy.wrap(response.body);
+    });
+});
+
+Cypress.Commands.add('apiRevokeAccessToken', (tokenId) => {
+    return cy.request({
+        headers: {'X-Requested-With': 'XMLHttpRequest'},
+        url: '/api/v4/users/tokens/revoke',
+        method: 'POST',
+        body: {
+            token_id: tokenId,
+        },
+    }).then((response) => {
+        expect(response.status).to.equal(200);
+        return cy.wrap(response);
+    });
+});
+
+Cypress.Commands.add('apiUpdateUserAuth', (userId, authData, password, authService) => {
+    return cy.request({
+        headers: {'X-Requested-With': 'XMLHttpRequest'},
+        method: 'PUT',
+        url: `/api/v4/users/${userId}/auth`,
+        body: {
+            auth_data: authData,
+            password,
+            auth_service: authService,
+        },
+    }).then((response) => {
+        expect(response.status).to.equal(200);
+        return cy.wrap(response);
+    });
+});
+
+export {generateRandomUser};

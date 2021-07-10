@@ -2,6 +2,7 @@
 // See LICENSE.txt for license information.
 
 import React from 'react';
+
 import {
     getChannelsInCurrentTeam,
 } from 'matterfoss-redux/selectors/entities/channels';
@@ -208,8 +209,6 @@ export default class SearchChannelWithPermissionsProvider extends Provider {
                 if (!viewArchivedChannels && channelIsArchived) {
                     continue;
                 } else if (!members[channel.id]) {
-                    continue;
-                } else if (channelIsArchived && !members[channel.id]) {
                     continue;
                 } else if (channel.type === Constants.OPEN_CHANNEL) {
                     wrappedChannel.type = Constants.OPEN_CHANNEL;

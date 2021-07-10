@@ -2,9 +2,10 @@
 // See LICENSE.txt for license information.
 
 import {connect} from 'react-redux';
+
 import {getTeammateNameDisplaySetting} from 'matterfoss-redux/selectors/entities/preferences';
 import {getCurrentUserId, getUsersByUsername} from 'matterfoss-redux/selectors/entities/users';
-import {getGroupsByName} from 'matterfoss-redux/selectors/entities/groups';
+import {getAllGroupsForReferenceByName} from 'matterfoss-redux/selectors/entities/groups';
 
 import AtMention from './at_mention.jsx';
 
@@ -13,7 +14,7 @@ function mapStateToProps(state) {
         currentUserId: getCurrentUserId(state),
         teammateNameDisplay: getTeammateNameDisplaySetting(state),
         usersByUsername: getUsersByUsername(state),
-        groupsByName: getGroupsByName(state),
+        groupsByName: getAllGroupsForReferenceByName(state),
     };
 }
 

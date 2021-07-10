@@ -3,6 +3,7 @@
 
 import {ActionCreatorsMapObject, bindActionCreators, Dispatch} from 'redux';
 import {connect} from 'react-redux';
+
 import {deleteChannel} from 'matterfoss-redux/actions/channels';
 import {getCurrentTeam} from 'matterfoss-redux/selectors/entities/teams';
 import {getConfig} from 'matterfoss-redux/selectors/entities/general';

@@ -2,6 +2,7 @@
 // See LICENSE.txt for license information.
 
 import {connect} from 'react-redux';
+
 import {getConfig} from 'matterfoss-redux/selectors/entities/general';
 
 import PremadeThemeChooser from './premade_theme_chooser.jsx';

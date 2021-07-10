@@ -29,7 +29,7 @@ describe('Interactive Dialog', () => {
         // # Create new team and create command on it
         cy.apiCreateTeam('test-team', 'Test Team').then(({team}) => {
             for (let i = 0; i < 20; i++) {
-                cy.apiCreateChannel(team.id, 'name' + i + Date.now(), 'name' + i + Date.now());
+                cy.apiCreateChannel(team.id, `channel-${i}`, `Channel ${i}`);
             }
 
             cy.visit(`/${team.name}`);
@@ -43,7 +43,7 @@ describe('Interactive Dialog', () => {
                 icon_url: '',
                 method: 'P',
                 team_id: team.id,
-                trigger: 'user_and_channel_dialog' + Date.now(),
+                trigger: 'user_and_channel_dialog',
                 url: `${webhookBaseUrl}/user_and_channel_dialog_request`,
                 username: '',
             };
@@ -55,9 +55,9 @@ describe('Interactive Dialog', () => {
         });
     });
 
-    it('ID21031 - Individual "User" and "Channel" screens are scrollable', () => {
+    it('MM-T2498 - Individual "User" and "Channel" screens are scrollable', () => {
         // # Post a slash command
-        cy.postMessage(`/${createdCommand.trigger}`);
+        cy.postMessage(`/${createdCommand.trigger} `);
 
         // * Verify that the interactive dialog modal open up
         cy.get('#interactiveDialogModal').should('be.visible').within(() => {
@@ -77,7 +77,7 @@ describe('Interactive Dialog', () => {
                 cy.wrap($elForm).find('input').should('be.visible').and('have.attr', 'autocomplete', 'off').and('have.attr', 'placeholder', element.placeholder);
 
                 // * Verify that the suggestion list or autocomplete open up on click of input element
-                cy.wrap($elForm).find('#suggestionList').should('not.be.visible');
+                cy.wrap($elForm).find('#suggestionList').should('not.exist');
                 cy.wrap($elForm).find('input').click();
                 cy.wrap($elForm).find('#suggestionList').scrollIntoView().should('be.visible').children();
 
@@ -115,7 +115,7 @@ describe('Interactive Dialog', () => {
             cy.get('.modal-header').should('be.visible').within(($elForm) => {
                 cy.wrap($elForm).find('button.close').should('be.visible').click();
             });
-            cy.get('#interactiveDialogModal').should('not.be.visible');
+            cy.get('#interactiveDialogModal').should('not.exist');
         });
     });
 });

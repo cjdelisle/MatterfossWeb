@@ -25,7 +25,7 @@ describe('Search', () => {
         });
     });
 
-    it('S14548 Search results Right-Hand-Side: Post a comment', () => {
+    it('MM-T373 Search results Right-Hand-Side: Post a comment', () => {
         const message = `asparagus${getRandomId()}`;
         const comment = 'Replying to asparagus';
 
@@ -33,7 +33,7 @@ describe('Search', () => {
         cy.postMessage(message);
 
         // # Search for the text we just entered
-        cy.get('#searchBox').type(message).type('{enter}');
+        cy.uiSearchPosts(message);
 
         // # Get last postId
         cy.getLastPostId().then((postId) => {
@@ -46,7 +46,7 @@ describe('Search', () => {
             cy.clickPostCommentIcon(postId, 'SEARCH');
 
             // # Reply with a comment
-            cy.get('#reply_textbox').type(`${comment}{enter}`);
+            cy.postMessageReplyInRHS(comment);
 
             // * Verify sidebar is still open
             cy.get('#rhsContainer').should('be.visible');

@@ -3,6 +3,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import {Permissions} from 'matterfoss-redux/constants';
 
 import {Constants, ModalIdentifiers} from 'utils/constants';
@@ -25,7 +26,6 @@ import AddGroupsToChannelModal from 'components/add_groups_to_channel_modal';
 import ChannelGroupsManageModal from 'components/channel_groups_manage_modal';
 
 import ChannelPermissionGate from 'components/permissions_gates/channel_permission_gate';
-import TeamPermissionGate from 'components/permissions_gates/team_permission_gate';
 
 import Menu from 'components/widgets/menu/menu';
 
@@ -254,12 +254,13 @@ export default class ChannelHeaderDropdown extends React.PureComponent {
                             text={localizeMessage('channel_header.rename', 'Rename Channel')}
                         />
                     </ChannelPermissionGate>
-                    <TeamPermissionGate
+                    <ChannelPermissionGate
+                        channelId={channel.id}
                         teamId={channel.team_id}
-                        permissions={[Permissions.MANAGE_TEAM]}
+                        permissions={[Permissions.CONVERT_PUBLIC_CHANNEL_TO_PRIVATE]}
                     >
                         <Menu.ItemToggleModalRedux
-                            id='channelCovertToPrivate'
+                            id='channelConvertToPrivate'
                             show={!isArchived && !isDefault && channel.type === Constants.OPEN_CHANNEL}
                             modalId={ModalIdentifiers.CONVERT_CHANNEL}
                             dialogType={ConvertChannelModal}
@@ -269,7 +270,7 @@ export default class ChannelHeaderDropdown extends React.PureComponent {
                             }}
                             text={localizeMessage('channel_header.convert', 'Convert to Private Channel')}
                         />
-                    </TeamPermissionGate>
+                    </ChannelPermissionGate>
                     <ChannelPermissionGate
                         channelId={channel.id}
                         teamId={channel.team_id}

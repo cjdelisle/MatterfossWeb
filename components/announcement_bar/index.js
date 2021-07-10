@@ -3,6 +3,7 @@
 
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
+
 import {Permissions} from 'matterfoss-redux/constants';
 import {getCurrentUser} from 'matterfoss-redux/selectors/entities/users';
 import {haveISystemPermission} from 'matterfoss-redux/selectors/entities/roles';

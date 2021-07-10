@@ -35,11 +35,12 @@ describe('Messaging', () => {
         });
     });
 
-    it('M15381 - Whitespace with emojis does not affect size', () => {
+    it('MM-T164 Whitespace with emojis does not affect size', () => {
         const emojis = [':book:', ':key:', ':gem:'];
 
         // # Post a message beginning with a new line and followed by emojis
-        cy.postMessage('\n' + emojis.join(' '));
+        cy.postMessage('hello');
+        cy.get('#post_textbox').type('\n' + emojis.join(' ')).type('{enter}');
 
         // # Get last post message text
         cy.getLastPostId().then((postId) => {
@@ -74,7 +75,7 @@ describe('Messaging', () => {
         checkEmojiSize('@spacesMessage', emojis, true);
     });
 
-    it('MM-15012 - Emojis are not jumbo when accompanied by text', () => {
+    it('MM-T163 Emojis are not jumbo when accompanied by text', () => {
         const emojis = [':book:', ':key:', ':gem:'];
 
         // # Post a message
@@ -90,7 +91,7 @@ describe('Messaging', () => {
         checkEmojiSize('@newLineMessage', emojis, false);
     });
 
-    it('M17457 Emojis show as jumbo in main thread - Multi emoji, no text, including unicode and emoticon', () => {
+    it('MM-T160 Emojis show as jumbo in main thread - Multi emoji, no text, including unicode and emoticon', () => {
         // # Create list of emojis we want to post
         const emojis = [':smiley:', ':thumbsup:', '🤟'];
 

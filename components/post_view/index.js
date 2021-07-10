@@ -3,6 +3,7 @@
 
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
+
 import {getChannel} from 'matterfoss-redux/selectors/entities/channels';
 import {getUser} from 'matterfoss-redux/selectors/entities/users';
 import {getTeamByName, getTeamMemberships} from 'matterfoss-redux/selectors/entities/teams';
@@ -53,7 +54,6 @@ function makeMapStateToProps() {
         return {
             lastViewedAt,
             channelLoading,
-            channel,
         };
     };
 }

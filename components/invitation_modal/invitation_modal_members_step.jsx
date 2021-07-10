@@ -18,8 +18,6 @@ import {getSiteURL} from 'utils/url';
 import {t} from 'utils/i18n.jsx';
 import {localizeMessage} from 'utils/utils.jsx';
 
-import './invitation_modal_members_step.scss';
-
 class InvitationModalMembersStep extends React.PureComponent {
     static propTypes = {
         teamName: PropTypes.string.isRequired,

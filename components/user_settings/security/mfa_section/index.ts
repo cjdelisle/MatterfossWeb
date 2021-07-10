@@ -3,6 +3,7 @@
 
 import {connect} from 'react-redux';
 import {bindActionCreators, Dispatch, ActionCreatorsMapObject} from 'redux';
+
 import {getConfig, getLicense} from 'matterfoss-redux/selectors/entities/general';
 import {getCurrentUser} from 'matterfoss-redux/selectors/entities/users';
 import {GlobalState} from 'matterfoss-redux/types/store';

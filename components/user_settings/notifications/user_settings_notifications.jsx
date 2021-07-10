@@ -1,15 +1,18 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
-/* eslint-disable react/no-string-refs */
 
 import PropTypes from 'prop-types';
 import React from 'react';
 import {FormattedMessage} from 'react-intl';
 
+import semver from 'semver';
+
 import Constants, {NotificationLevels} from 'utils/constants';
 import * as Utils from 'utils/utils.jsx';
 import SettingItemMax from 'components/setting_item_max.jsx';
 import SettingItemMin from 'components/setting_item_min';
+
+import {isDesktopApp} from 'utils/user_agent';
 
 import DesktopNotificationSettings from './desktop_notification_settings.jsx';
 import EmailNotificationSetting from './email_notification_setting';
@@ -20,6 +23,7 @@ function getNotificationsStateFromProps(props) {
 
     let desktop = NotificationLevels.MENTION;
     let sound = 'true';
+    let desktopNotificationSound = 'Bing';
     let comments = 'never';
     let enableEmail = 'true';
     let pushActivity = NotificationLevels.MENTION;
@@ -36,6 +40,9 @@ function getNotificationsStateFromProps(props) {
         }
         if (user.notify_props.desktop_sound) {
             sound = user.notify_props.desktop_sound;
+        }
+        if (user.notify_props.desktop_notification_sound) {
+            desktopNotificationSound = user.notify_props.desktop_notification_sound;
         }
         if (user.notify_props.comments) {
             comments = user.notify_props.comments;
@@ -96,6 +103,7 @@ function getNotificationsStateFromProps(props) {
         pushActivity,
         pushStatus,
         desktopSound: sound,
+        desktopNotificationSound,
         usernameKey,
         customKeys,
         customKeysChecked: customKeys.length > 0,
@@ -132,12 +140,19 @@ export default class NotificationsTab extends React.PureComponent {
         super(props);
 
         this.state = getNotificationsStateFromProps(props);
+        this.customCheckRef = React.createRef();
+        this.customMentionsRef = React.createRef();
+        this.drawerRef = React.createRef();
+        this.wrapperRef = React.createRef();
     }
 
     handleSubmit = () => {
         const data = {};
         data.email = this.state.enableEmail;
         data.desktop_sound = this.state.desktopSound;
+        if (!isDesktopApp() || (window.desktop && semver.gte(window.desktop.version, '4.6.0'))) {
+            data.desktop_notification_sound = this.state.desktopNotificationSound;
+        }
         data.desktop = this.state.desktopActivity;
         data.push = this.state.pushActivity;
         data.push_status = this.state.pushStatus;
@@ -231,10 +246,10 @@ export default class NotificationsTab extends React.PureComponent {
     }
 
     updateCustomMentionKeys = () => {
-        const checked = this.refs.customcheck.checked;
+        const checked = this.customCheckRef.current.checked;
 
         if (checked) {
-            const text = this.refs.custommentions.value;
+            const text = this.customMentionsRef.current.value;
 
             // remove all spaces and split string into individual keys
             this.setState({customKeys: text.replace(/ /g, ''), customKeysChecked: true});
@@ -244,7 +259,7 @@ export default class NotificationsTab extends React.PureComponent {
     }
 
     onCustomChange = () => {
-        this.refs.customcheck.checked = true;
+        this.customCheckRef.current.checked = true;
         this.updateCustomMentionKeys();
     }
 
@@ -335,7 +350,7 @@ export default class NotificationsTab extends React.PureComponent {
                         <span>
                             <FormattedMessage
                                 id='user.settings.push_notification.status_info'
-                                defaultMessage='Notification alerts are only pushed to your mobile device when your online status matches the selection above.'
+                                defaultMessage='Notification alerts are only pushed to your mobile device when your availability matches the selection above.'
                             />
                         </span>
                     );
@@ -557,7 +572,7 @@ export default class NotificationsTab extends React.PureComponent {
                             />
                             <FormattedMessage
                                 id='user.settings.notifications.sensitiveUsername'
-                                defaultMessage='Your non-case sensitive username "{username}"'
+                                defaultMessage='Your non case-sensitive username "{username}"'
                                 values={{
                                     username: user.username,
                                 }}
@@ -595,7 +610,7 @@ export default class NotificationsTab extends React.PureComponent {
                         <label>
                             <input
                                 id='notificationTriggerCustom'
-                                ref='customcheck'
+                                ref={this.customCheckRef}
                                 type='checkbox'
                                 checked={this.state.customKeysChecked}
                                 onChange={this.updateCustomMentionKeys}
@@ -609,7 +624,7 @@ export default class NotificationsTab extends React.PureComponent {
                     <input
                         id='notificationTriggerCustomText'
                         autoFocus={this.state.customKeysChecked}
-                        ref='custommentions'
+                        ref={this.customMentionsRef}
                         className='form-control mentions-input'
                         type='text'
                         defaultValue={this.state.customKeys}
@@ -875,7 +890,7 @@ export default class NotificationsTab extends React.PureComponent {
                     </button>
                     <h4
                         className='modal-title'
-                        ref='title'
+                        ref={this.drawerRef}
                     >
                         <div className='modal-back'>
                             <FormattedMessage
@@ -898,7 +913,7 @@ export default class NotificationsTab extends React.PureComponent {
                     </h4>
                 </div>
                 <div
-                    ref='wrapper'
+                    ref={this.wrapperRef}
                     className='user-settings'
                 >
                     <h3
@@ -921,6 +936,7 @@ export default class NotificationsTab extends React.PureComponent {
                         cancel={this.handleCancel}
                         error={this.state.serverError}
                         active={this.props.activeSection === 'desktop'}
+                        selectedSound={this.state.desktopNotificationSound}
                     />
                     <div className='divider-light'/>
                     <EmailNotificationSetting

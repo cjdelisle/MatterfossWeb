@@ -3,22 +3,14 @@
 
 import {connect} from 'react-redux';
 import {bindActionCreators, Dispatch, ActionCreatorsMapObject} from 'redux';
+
 import {sendVerificationEmail} from 'matterfoss-redux/actions/users';
 import {getConfig} from 'matterfoss-redux/selectors/entities/general';
 import {getCurrentUser} from 'matterfoss-redux/selectors/entities/users';
 import {GlobalState} from 'matterfoss-redux/types/store';
 import {GenericAction, ActionFunc} from 'matterfoss-redux/types/actions';
 
-import UserSettingsModal from './user_settings_modal';
-
-type Actions = {
-    sendVerificationEmail: (email: string) => Promise<{
-        data: {};
-        error: {
-            err: string;
-        };
-    }>;
-}
+import UserSettingsModal, {Props} from './user_settings_modal';
 
 function mapStateToProps(state: GlobalState) {
     const config = getConfig(state);
@@ -39,7 +31,7 @@ function mapStateToProps(state: GlobalState) {
 
 function mapDispatchToProps(dispatch: Dispatch<GenericAction>) {
     return {
-        actions: bindActionCreators<ActionCreatorsMapObject<ActionFunc>, Actions>({
+        actions: bindActionCreators<ActionCreatorsMapObject<ActionFunc>, Props['actions']>({
             sendVerificationEmail,
         }, dispatch),
     };

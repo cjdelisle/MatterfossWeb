@@ -4,19 +4,22 @@
 
 import React from 'react';
 import {Modal} from 'react-bootstrap';
-import {FormattedHTMLMessage, FormattedMessage} from 'react-intl';
+import {FormattedMessage} from 'react-intl';
+
 import {Client4} from 'matterfoss-redux/client';
 import {General} from 'matterfoss-redux/constants';
+import {ActionResult} from 'matterfoss-redux/types/actions';
 import {UserProfile} from 'matterfoss-redux/types/users';
 import * as UserUtils from 'matterfoss-redux/utils/user_utils';
 
-import {trackEvent} from 'actions/diagnostics_actions.jsx';
+import {trackEvent} from 'actions/telemetry_actions.jsx';
 
 import FormattedMarkdownMessage from 'components/formatted_markdown_message.jsx';
 import BotBadge from 'components/widgets/badges/bot_badge';
 import Avatar from 'components/widgets/users/avatar';
+import {isSuccess} from 'types/actions';
 
-type Props = {
+export type Props = {
     show: boolean;
     user?: UserProfile;
     userAccessTokensEnabled: boolean;
@@ -24,7 +27,7 @@ type Props = {
     // defining custom function type instead of using React.MouseEventHandler
     // to make the event optional
     onModalDismissed: (e?: React.MouseEvent<HTMLButtonElement>) => void;
-    actions: { updateUserRoles: Function };
+    actions: { updateUserRoles: (userId: string, roles: string) => Promise<ActionResult>};
 }
 
 type State = {
@@ -55,7 +58,7 @@ export default class ManageRolesModal extends React.PureComponent<Props, State> 
         this.state = getStateFromProps(props);
     }
 
-    static getDerivedStateFromProps(nextProps: Props, prevState: Props) {
+    static getDerivedStateFromProps(nextProps: Props, prevState: State) {
         if (prevState.user?.id !== nextProps.user?.id) {
             return getStateFromProps(nextProps);
         }
@@ -130,11 +133,10 @@ export default class ManageRolesModal extends React.PureComponent<Props, State> 
             }
         }
 
-        const {data} = await this.props.actions.updateUserRoles(this.props.user!.id, roles);
-
+        const result = await this.props.actions.updateUserRoles(this.props.user!.id, roles);
         this.trackRoleChanges(roles, this.props.user!.roles);
 
-        if (data) {
+        if (isSuccess(result)) {
             this.props.onModalDismissed();
         } else {
             this.handleError(
@@ -167,7 +169,7 @@ export default class ManageRolesModal extends React.PureComponent<Props, State> 
                     <p>
                         <FormattedMarkdownMessage
                             id='admin.manage_roles.additionalRoles'
-                            defaultMessage='Select additional permissions for the account. [Read more about roles and permissions](!https://about.matterfoss.com/default-permissions).'
+                            defaultMessage='Select additional permissions for the account. [Read more about roles and permissions](!https://about.mattermost.com/default-permissions).'
                         />
                     </p>
                     <div className='checkbox'>
@@ -187,7 +189,7 @@ export default class ManageRolesModal extends React.PureComponent<Props, State> 
                             </strong>
                             <FormattedMessage
                                 id='admin.manage_roles.postAllRole'
-                                defaultMessage='Access to post to all Matterfoss channels including direct messages.'
+                                defaultMessage='Access to post to all Mattermost channels including direct messages.'
                             />
                         </label>
                     </div>
@@ -208,7 +210,7 @@ export default class ManageRolesModal extends React.PureComponent<Props, State> 
                             </strong>
                             <FormattedMessage
                                 id='admin.manage_roles.postAllPublicRole'
-                                defaultMessage='Access to post to all Matterfoss public channels.'
+                                defaultMessage='Access to post to all Mattermost public channels.'
                             />
                         </label>
                     </div>
@@ -240,10 +242,10 @@ export default class ManageRolesModal extends React.PureComponent<Props, State> 
                                 />
                                 <FormattedMarkdownMessage
                                     id='admin.manage_roles.allowUserAccessTokens'
-                                    defaultMessage='Allow this account to generate [personal access tokens](!https://about.matterfoss.com/default-user-access-tokens).'
+                                    defaultMessage='Allow this account to generate [personal access tokens](!https://about.mattermost.com/default-user-access-tokens).'
                                 />
                                 <span className='d-block pt-2 pb-2 light'>
-                                    <FormattedHTMLMessage
+                                    <FormattedMessage
                                         id='admin.manage_roles.allowUserAccessTokensDesc'
                                         defaultMessage="Removing this permission doesn't delete existing tokens. To delete them, go to the user's Manage Tokens menu."
                                     />

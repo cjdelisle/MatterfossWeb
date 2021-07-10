@@ -2,6 +2,7 @@
 // See LICENSE.txt for license information.
 
 import {combineReducers} from 'redux';
+
 import {General} from 'matterfoss-redux/constants';
 
 import {StorageTypes} from 'utils/constants';

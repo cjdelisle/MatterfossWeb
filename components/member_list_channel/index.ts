@@ -4,6 +4,7 @@
 import {connect} from 'react-redux';
 import {bindActionCreators, Dispatch, ActionCreatorsMapObject} from 'redux';
 import {createSelector} from 'reselect';
+
 import {searchProfilesInCurrentChannel, getProfilesInCurrentChannel} from 'matterfoss-redux/selectors/entities/users';
 import {getMembersInCurrentChannel, getCurrentChannelStats, getCurrentChannel} from 'matterfoss-redux/selectors/entities/channels';
 import {getMembersInCurrentTeam} from 'matterfoss-redux/selectors/entities/teams';
@@ -12,7 +13,7 @@ import {searchProfiles} from 'matterfoss-redux/actions/users';
 import {sortByUsername} from 'matterfoss-redux/utils/user_utils';
 import {UserProfile} from 'matterfoss-redux/types/users';
 import {Channel, ChannelMembership} from 'matterfoss-redux/types/channels';
-import {ActionFunc} from 'matterfoss-redux/types/actions';
+import {ActionFunc, GenericAction} from 'matterfoss-redux/types/actions';
 
 import {
     loadProfilesAndTeamMembersAndChannelMembers,
@@ -23,10 +24,10 @@ import {setModalSearchTerm} from 'actions/views/search';
 
 import {GlobalState} from 'types/store';
 
-import MemberListChannel from './member_list_channel';
+import MemberListChannel, {Props} from './member_list_channel';
 
 const getUsersAndActionsToDisplay = createSelector(
-    (state: GlobalState, users: Array<UserProfile>) => users,
+    (state: GlobalState, users: UserProfile[]) => users,
     getMembersInCurrentTeam,
     getMembersInCurrentChannel,
     getCurrentChannel,
@@ -82,27 +83,9 @@ function mapStateToProps(state: GlobalState) {
     };
 }
 
-type Actions = {
-    searchProfiles: (term: string, options?: {}) => Promise<{data: UserProfile[]}>;
-    getChannelMembers: (channelId: string) => Promise<{data: ChannelMembership[]}>;
-    getChannelStats: (channelId: string) => Promise<{data: {}}>;
-    setModalSearchTerm: (term: string) => Promise<{
-        data: boolean;
-    }>;
-    loadProfilesAndTeamMembersAndChannelMembers: (page: number, perPage: number, teamId?: string, channelId?: string) => Promise<{
-        data: boolean;
-    }>;
-    loadStatusesForProfilesList: (users: Array<UserProfile>) => Promise<{
-        data: boolean;
-    }>;
-    loadTeamMembersAndChannelMembersForProfilesList: (profiles: any, teamId: string, channelId: string) => Promise<{
-        data: boolean;
-    }>;
-}
-
 function mapDispatchToProps(dispatch: Dispatch) {
     return {
-        actions: bindActionCreators<ActionCreatorsMapObject<ActionFunc>, Actions>({
+        actions: bindActionCreators<ActionCreatorsMapObject<ActionFunc | GenericAction>, Props['actions']>({
             getChannelMembers,
             searchProfiles,
             getChannelStats,

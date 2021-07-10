@@ -2,6 +2,7 @@
 // See LICENSE.txt for license information.
 
 import React from 'react';
+
 import {getFileThumbnailUrl, getFileUrl} from 'matterfoss-redux/utils/file_utils';
 import {FileInfo} from 'matterfoss-redux/types/files';
 

@@ -14,7 +14,7 @@ import JobsTable from './jobs';
 import SettingsGroup from './settings_group.jsx';
 import TextSetting from './text_setting';
 
-export default class DataRetentionSettings extends AdminSettings {
+export default class DataRetentionSettingsOld extends AdminSettings {
     getConfigFromState = (config) => {
         config.DataRetentionSettings.EnableMessageDeletion = this.state.enableMessageDeletion === 'true';
         config.DataRetentionSettings.EnableFileDeletion = this.state.enableFileDeletion === 'true';
@@ -185,6 +185,7 @@ export default class DataRetentionSettings extends AdminSettings {
                     value={this.state.messageRetentionDays}
                     onChange={this.handleChange}
                     setByEnv={this.isSetByEnv('DataRetentionSettings.MessageRetentionDays')}
+                    disabled={this.props.isDisabled}
                 />
             );
         }
@@ -205,6 +206,7 @@ export default class DataRetentionSettings extends AdminSettings {
                     value={this.state.fileRetentionDays}
                     onChange={this.handleChange}
                     setByEnv={this.isSetByEnv('DataRetentionSettings.FileRetentionDays')}
+                    disabled={this.props.isDisabled}
                 />
             );
         }
@@ -222,7 +224,7 @@ export default class DataRetentionSettings extends AdminSettings {
                             values={{
                                 documentationLink: (
                                     <a
-                                        href='https://about.matterfoss.com/default-dataretention-documentation/'
+                                        href='https://about.mattermost.com/default-dataretention-documentation/'
                                         rel='noopener noreferrer'
                                         target='_blank'
                                     >
@@ -254,6 +256,7 @@ export default class DataRetentionSettings extends AdminSettings {
                     value={this.state.enableMessageDeletion}
                     onChange={this.handleChange}
                     setByEnv={this.isSetByEnv('DataRetentionSettings.EnableMessageDeletion')}
+                    disabled={this.props.isDisabled}
                 />
                 {messageRetentionDaysSetting}
                 <DropdownSetting
@@ -274,6 +277,7 @@ export default class DataRetentionSettings extends AdminSettings {
                     value={this.state.enableFileDeletion}
                     onChange={this.handleChange}
                     setByEnv={this.isSetByEnv('DataRetentionSettings.EnableFileDeletion')}
+                    disabled={this.props.isDisabled}
                 />
                 {fileRetentionDaysSetting}
                 <TextSetting
@@ -294,10 +298,11 @@ export default class DataRetentionSettings extends AdminSettings {
                     value={this.state.deletionJobStartTime}
                     onChange={this.handleChange}
                     setByEnv={this.isSetByEnv('DataRetentionSettings.DeletionJobStartTime')}
+                    disabled={this.props.isDisabled}
                 />
                 <JobsTable
                     jobType={JobTypes.DATA_RETENTION}
-                    disabled={this.state.enableMessageDeletion !== 'true' && this.state.enableFileDeletion !== 'true'}
+                    disabled={(this.state.enableMessageDeletion !== 'true' && this.state.enableFileDeletion !== 'true') || this.props.isDisabled}
                     createJobButtonText={
                         <FormattedMessage
                             id='admin.data_retention.createJob.title'

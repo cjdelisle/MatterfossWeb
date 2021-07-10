@@ -24,9 +24,9 @@ describe('Message Reply', () => {
         });
     });
 
-    it('MM-16730 Reply to an older message', () => {
+    it('MM-T90 Reply to older message', () => {
         // # Get yesterdays date in UTC
-        const yesterdaysDate = Cypress.moment().subtract(1, 'days').valueOf();
+        const yesterdaysDate = Cypress.dayjs().subtract(1, 'days').valueOf();
 
         // # Post a day old message
         cy.postMessageAs({sender: sysadmin, message: 'Hello from yesterday', channelId: newChannel.id, createAt: yesterdaysDate}).
@@ -55,13 +55,13 @@ describe('Message Reply', () => {
 
                 // * Verify that the reply is in the RHS with matching text
                 cy.get(`#rhsPost_${replyId}`).within(() => {
-                    cy.findByTestId('post-link').should('not.be.visible');
+                    cy.findByTestId('post-link').should('not.exist');
                     cy.get(`#rhsPostMessageText_${replyId}`).should('be.visible').and('have.text', 'A reply to an older post with attachment');
                 });
 
                 cy.get(`#CENTER_time_${postId}`).find('time').invoke('attr', 'dateTime').then((originalTimeStamp) => {
                     // * Verify the first post timestamp equals the RHS timestamp
-                    cy.get(`#RHS_ROOT_time_${postId}`).find('time').invoke('attr', 'dateTime').should('be', originalTimeStamp);
+                    cy.get(`#RHS_ROOT_time_${postId}`).find('time').invoke('attr', 'dateTime').should('equal', originalTimeStamp);
 
                     // * Verify the first post timestamp was not modified by the reply
                     cy.get(`#CENTER_time_${replyId}`).find('time').should('have.attr', 'dateTime').and('not.equal', originalTimeStamp);
@@ -73,6 +73,6 @@ describe('Message Reply', () => {
         cy.closeRHS();
 
         // # Verify RHS is open
-        cy.get('#rhsContainer').should('not.be.visible');
+        cy.get('#rhsContainer').should('not.exist');
     });
 });

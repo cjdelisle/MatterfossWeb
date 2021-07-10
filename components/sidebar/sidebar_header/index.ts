@@ -2,6 +2,7 @@
 // See LICENSE.txt for license information.
 
 import {connect} from 'react-redux';
+
 import {getConfig} from 'matterfoss-redux/selectors/entities/general';
 import {getCurrentUser} from 'matterfoss-redux/selectors/entities/users';
 import {getInt} from 'matterfoss-redux/selectors/entities/preferences';

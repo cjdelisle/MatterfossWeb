@@ -2,9 +2,11 @@
 // See LICENSE.txt for license information.
 
 import React from 'react';
-import {ChannelWithTeamData} from 'matterfoss-redux/types/channels';
+
 import {Link} from 'react-router-dom';
 import {FormattedMessage} from 'react-intl';
+
+import {ChannelWithTeamData} from 'matterfoss-redux/types/channels';
 
 import {Constants} from 'utils/constants';
 import GlobeIcon from 'components/widgets/icons/globe_icon';
@@ -14,6 +16,7 @@ import ArchiveIcon from 'components/widgets/icons/archive_icon';
 interface Props {
     channel: ChannelWithTeamData;
     onRowClick: (id: string) => void;
+    isDisabled?: boolean;
 }
 
 export default class ChannelRow extends React.PureComponent<Props> {
@@ -58,7 +61,9 @@ export default class ChannelRow extends React.PureComponent<Props> {
                         className='group-actions'
                         data-testid={`${channel.display_name}edit`}
                     >
-                        <Link to={`/admin_console/user_management/channels/${channel.id}`} >
+                        <Link
+                            to={`/admin_console/user_management/channels/${channel.id}`}
+                        >
                             <FormattedMessage
                                 id='admin.channel_settings.channel_row.configure'
                                 defaultMessage='Edit'

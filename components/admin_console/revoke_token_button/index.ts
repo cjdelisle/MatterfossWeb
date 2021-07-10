@@ -3,6 +3,7 @@
 
 import {connect} from 'react-redux';
 import {bindActionCreators, Dispatch} from 'redux';
+
 import {revokeUserAccessToken} from 'matterfoss-redux/actions/users';
 import {GenericAction} from 'matterfoss-redux/types/actions';
 

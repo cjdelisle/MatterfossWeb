@@ -5,6 +5,7 @@ import React from 'react';
 import {FormattedMessage} from 'react-intl';
 
 import {ServerError} from 'matterfoss-redux/types/errors';
+import {ActionResult} from 'matterfoss-redux/types/actions';
 import {UserProfile, UsersStats, GetFilteredUsersStatsOpts} from 'matterfoss-redux/types/users';
 import {TeamMembership, Team} from 'matterfoss-redux/types/teams';
 import {Dictionary} from 'matterfoss-redux/types/utilities';
@@ -12,7 +13,7 @@ import GeneralConstants from 'matterfoss-redux/constants/general';
 
 import {t} from 'utils/i18n';
 import Constants from 'utils/constants';
-import {trackEvent} from 'actions/diagnostics_actions.jsx';
+import {trackEvent} from 'actions/telemetry_actions.jsx';
 
 import AdminPanel from 'components/widgets/admin_console/admin_panel';
 import UserGrid from 'components/admin_console/user_grid/user_grid';
@@ -34,6 +35,7 @@ type Props = {
     totalCount: number;
     searchTerm: string;
     loading?: boolean;
+    isDisabled?: boolean;
     enableGuestAccounts: boolean;
 
     onAddCallback: (users: UserProfile[]) => void;
@@ -44,22 +46,18 @@ type Props = {
         getTeamStats: (teamId: string) => Promise<{
             data: boolean;
         }>;
-        loadProfilesAndReloadTeamMembers: (page: number, perPage: number, teamId?: string, options?: {}) => Promise<{
+        loadProfilesAndReloadTeamMembers: (page: number, perPage: number, teamId?: string, options?: {[key: string]: any}) => Promise<{
             data: boolean;
         }>;
-        searchProfilesAndTeamMembers: (term: string, options?: {}) => Promise<{
+        searchProfilesAndTeamMembers: (term: string, options?: {[key: string]: any}) => Promise<{
             data: boolean;
         }>;
         getFilteredUsersStats: (filters: GetFilteredUsersStatsOpts) => Promise<{
             data?: UsersStats;
             error?: ServerError;
         }>;
-        setUserGridSearch: (term: string) => Promise<{
-            data: boolean;
-        }>;
-        setUserGridFilters: (filters: GetFilteredUsersStatsOpts) => Promise<{
-            data: boolean;
-        }>;
+        setUserGridSearch: (term: string) => ActionResult;
+        setUserGridFilters: (filters: GetFilteredUsersStatsOpts) => ActionResult;
     };
 }
 
@@ -145,7 +143,7 @@ export default class TeamMembers extends React.PureComponent<Props, State> {
         this.props.onAddCallback(users);
     }
 
-    private search = async (term: string) => {
+    private onSearch = async (term: string) => {
         this.props.actions.setUserGridSearch(term);
     }
 
@@ -171,10 +169,11 @@ export default class TeamMembers extends React.PureComponent<Props, State> {
             if (teamRoles.length > 0) {
                 filters = {...filters, team_roles: teamRoles};
             }
+
             [...systemRoles, ...teamRoles].forEach((role) => {
                 trackEvent('admin_team_config_page', `${role}_filter_applied_to_members_block`, {team_id: this.props.teamId});
             });
-            this.props.actions.setUserGridFilters({roles: systemRoles, team_roles: teamRoles});
+            this.props.actions.setUserGridFilters(filters);
             this.props.actions.getFilteredUsersStats({in_team: this.props.teamId, include_bots: true, ...filters});
         } else {
             this.props.actions.setUserGridFilters(filters);
@@ -186,7 +185,7 @@ export default class TeamMembers extends React.PureComponent<Props, State> {
     }
 
     public render = () => {
-        const {users, team, usersToAdd, usersToRemove, teamMembers, totalCount, searchTerm} = this.props;
+        const {users, team, usersToAdd, usersToRemove, teamMembers, totalCount, searchTerm, isDisabled} = this.props;
 
         const filterOptions: FilterOptions = {
             role: {
@@ -260,6 +259,7 @@ export default class TeamMembers extends React.PureComponent<Props, State> {
                         id='addTeamMembers'
                         className='btn btn-primary'
                         dialogType={AddUsersToTeamModal}
+                        isDisabled={isDisabled}
                         dialogProps={{
                             team,
                             onAddCallback: this.onAddCallback,
@@ -284,11 +284,12 @@ export default class TeamMembers extends React.PureComponent<Props, State> {
                     totalCount={totalCount}
                     memberships={teamMembers}
                     updateMembership={this.updateMembership}
-                    search={this.search}
+                    onSearch={this.onSearch}
                     term={searchTerm}
                     includeUsers={usersToAdd}
                     excludeUsers={usersToRemove}
                     scope={'team'}
+                    readOnly={isDisabled}
                     filterProps={filterProps}
                 />
             </AdminPanel>

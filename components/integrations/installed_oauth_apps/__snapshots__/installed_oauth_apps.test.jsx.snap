@@ -32,7 +32,7 @@ exports[`components/integrations/InstalledOAuthApps should match snapshot 1`] = 
       values={
         Object {
           "appDirectory": <a
-            href="https://about.matterfoss.com/default-app-directory/"
+            href="https://about.mattermost.com/default-app-directory/"
             rel="noopener noreferrer"
             target="_blank"
           >

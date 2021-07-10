@@ -10,7 +10,7 @@ import {ChannelWithTeamData, ChannelSearchOpts} from 'matterfoss-redux/types/cha
 import {debounce} from 'matterfoss-redux/actions/helpers';
 
 import {browserHistory} from 'utils/browser_history';
-import {trackEvent} from 'actions/diagnostics_actions.jsx';
+import {trackEvent} from 'actions/telemetry_actions.jsx';
 
 import {Constants} from 'utils/constants';
 import {isArchivedChannel} from 'utils/channel_utils';
@@ -21,19 +21,20 @@ import {PAGE_SIZE} from 'components/admin_console/team_channel_settings/abstract
 import GlobeIcon from 'components/widgets/icons/globe_icon';
 import LockIcon from 'components/widgets/icons/lock_icon';
 import ArchiveIcon from 'components/widgets/icons/archive_icon';
+import SharedChannelIndicator from 'components/shared_channel_indicator';
 
 import './channel_list.scss';
 interface ChannelListProps {
     actions: {
         searchAllChannels: (term: string, opts: ChannelSearchOpts) => Promise<{ data: any }>;
-        getData: (page: number, perPage: number, notAssociatedToGroup? : string, excludeDefaultChannels?: boolean, includeDeleted?: boolean) => ActionFunc | ActionResult | Promise<ChannelWithTeamData[]>;
+        getData: (page: number, perPage: number, notAssociatedToGroup?: string, excludeDefaultChannels?: boolean, includeDeleted?: boolean) => ActionFunc | ActionResult | Promise<ChannelWithTeamData[]>;
     };
     data: ChannelWithTeamData[];
     total: number;
     removeGroup?: () => void;
-    onPageChangedCallback?: () => void;
     emptyListTextId?: string;
     emptyListTextDefaultMessage?: string;
+    isDisabled?: boolean;
 }
 
 interface ChannelListState {
@@ -117,7 +118,7 @@ export default class ChannelList extends React.PureComponent<ChannelListProps, C
         this.setState({page: this.state.page - 1});
     }
 
-    search = async (term = '') => {
+    onSearch = async (term = '') => {
         this.loadPage(0, term, this.state.filters);
     }
 
@@ -191,6 +192,15 @@ export default class ChannelList extends React.PureComponent<ChannelListProps, C
                 );
             }
 
+            if (channel.shared) {
+                iconToDisplay = (
+                    <SharedChannelIndicator
+                        className='channel-icon'
+                        channelType={channel.type}
+                    />
+                );
+            }
+
             return {
                 cells: {
                     id: channel.id,
@@ -221,7 +231,7 @@ export default class ChannelList extends React.PureComponent<ChannelListProps, C
                     edit: (
                         <span
                             className='group-actions TeamList_editRow'
-                            data-testid={`${channel.display_name}edit`}
+                            data-testid={`${channel.name}edit`}
                         >
                             <Link to={`/admin_console/user_management/channels/${channel.id}`} >
                                 <FormattedMessage
@@ -396,7 +406,7 @@ export default class ChannelList extends React.PureComponent<ChannelListProps, C
                     startCount={startCount}
                     endCount={endCount}
                     total={total}
-                    search={this.search}
+                    onSearch={this.onSearch}
                     term={term}
                     placeholderEmpty={placeholderEmpty}
                     rowsContainerStyles={rowsContainerStyles}

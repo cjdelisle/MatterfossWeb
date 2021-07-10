@@ -1,7 +1,7 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
-import React from 'react';
+import React, {CSSProperties} from 'react';
 
 import {isMobile} from 'utils/utils';
 
@@ -12,6 +12,7 @@ import MenuGroup from './menu_group';
 import MenuItemAction from './menu_items/menu_item_action';
 import MenuItemExternalLink from './menu_items/menu_item_external_link';
 import MenuItemLink from './menu_items/menu_item_link';
+import MenuTopNotification from './menu_items/menu_top_notification';
 import MenuItemToggleModalRedux from './menu_items/menu_item_toggle_modal_redux';
 
 import './menu.scss';
@@ -22,7 +23,7 @@ type Props = {
     openUp?: boolean;
     id?: string;
     ariaLabel: string;
-    customStyles?: object;
+    customStyles?: CSSProperties;
 }
 
 export default class Menu extends React.PureComponent<Props> {
@@ -33,6 +34,7 @@ export default class Menu extends React.PureComponent<Props> {
     public static ItemLink = MenuItemLink
     public static ItemToggleModalRedux = MenuItemToggleModalRedux
     public static ItemSubMenu = SubMenuItem
+    public static TopNotification = MenuTopNotification
 
     public node: React.RefObject<HTMLUListElement>; //Public because it is used by tests
     private observer: MutationObserver;
@@ -66,9 +68,10 @@ export default class Menu extends React.PureComponent<Props> {
                 prevWasDivider = false;
             }
         }
+        children.reverse();
 
         // Hiding trailing dividers
-        for (const child of children.reverse()) {
+        for (const child of children) {
             if (child.classList.contains('menu-divider') || child.classList.contains('mobile-menu-divider')) {
                 child.style.display = 'none';
             } else {
@@ -107,11 +110,11 @@ export default class Menu extends React.PureComponent<Props> {
 
     public render() {
         const {children, openUp, openLeft, id, ariaLabel, customStyles} = this.props;
-        let styles: React.CSSProperties = {};
+        let styles: CSSProperties = {};
         if (customStyles) {
             styles = customStyles;
         } else {
-            if (openLeft && !isMobile()) {
+            if (openLeft) {
                 styles.left = 'inherit';
                 styles.right = 0;
             }

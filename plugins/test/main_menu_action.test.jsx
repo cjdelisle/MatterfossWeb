@@ -33,20 +33,29 @@ describe('plugins/MainMenuActions', () => {
             canManageIntegrations: true,
             moreTeamsToJoin: true,
             teamIsGroupConstrained: true,
+            showGettingStarted: true,
             actions: {
                 openModal: jest.fn(),
                 showMentions: jest.fn(),
                 showFlaggedPosts: jest.fn(),
                 closeRightHandSide: jest.fn(),
                 closeRhsMenu: jest.fn(),
+                unhideNextSteps: jest.fn(),
+                getCloudSubscription: jest.fn(),
+                getSubscriptionStats: jest.fn(),
             },
+            isCloud: false,
+            subscription: {},
+            userIsAdmin: true,
         };
 
-        const wrapper = shallowWithIntl(
+        let wrapper = shallowWithIntl(
             <MainMenu
                 {...requiredProps}
             />,
         );
+
+        wrapper = wrapper.find('MainMenu').shallow();
 
         expect(wrapper).toMatchSnapshot();
         expect(wrapper.findWhere((node) => node.key() === 'someplugin_pluginmenuitem').props().text).toBe('some plugin text');

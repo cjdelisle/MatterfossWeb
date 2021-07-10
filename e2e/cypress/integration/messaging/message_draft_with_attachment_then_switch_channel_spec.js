@@ -19,21 +19,21 @@ describe('Message Draft with attachment and Switch Channels', () => {
         cy.apiInitSetup({loginAfter: true}).then(({team, channel}) => {
             testChannel1 = channel;
 
-            cy.apiCreateChannel(team.id, 'channel', 'Channel').then((res) => {
-                testChannel2 = res.body;
+            cy.apiCreateChannel(team.id, 'channel', 'Channel').then((out) => {
+                testChannel2 = out.channel;
             });
             cy.visit(`/${team.name}/channels/town-square`);
         });
     });
 
-    it('M14126 Message Draft Pencil Icon - No text, only file attachment', () => {
+    it('MM-T129 Message Draft Pencil Icon - No text, only file attachment', () => {
         cy.get(`#sidebarItem_${testChannel1.name}`).click({force: true});
 
         // # Validate if the channel has been opened
         cy.url().should('include', '/channels/' + testChannel1.name);
 
         // # Validate if the draft icon is not visible on the sidebar before making a draft
-        cy.get(`#sidebarItem_${testChannel1.name} #draftIcon`).should('be.not.visible');
+        cy.get(`#sidebarItem_${testChannel1.name}`).findByTestId('draftIcon').should('not.exist');
 
         // # Upload a file on center view
         cy.get('#fileUploadInput').attachFile('matterfoss-icon.png');
@@ -45,6 +45,6 @@ describe('Message Draft with attachment and Switch Channels', () => {
         cy.url().should('include', '/channels/' + testChannel2.name);
 
         // # Validate if the draft icon is visible in side bar for the previous channel
-        cy.get(`#sidebarItem_${testChannel1.name} #draftIcon`).scrollIntoView().should('be.visible');
+        cy.get(`#sidebarItem_${testChannel1.name}`).findByTestId('draftIcon').should('be.visible');
     });
 });

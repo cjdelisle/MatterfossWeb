@@ -19,7 +19,10 @@
     "noEmit": true,
     "experimentalDecorators": true,
     "jsx": "react",
-    "baseUrl": "."
+    "baseUrl": ".",
+    "paths": {
+        "matterfoss-redux/*": ["packages/matterfoss-redux/src/*"],
+    }
   },
   "include": [
     "./**/*"
@@ -27,6 +30,8 @@
   "exclude": [
     "dist",
     "e2e",
-    "!node_modules/@types"
+    "!node_modules/@types",
+    "storybook-static",
+    "coverage"
   ]
 }

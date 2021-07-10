@@ -55,7 +55,6 @@ exports[`components/admin_console/CustomPluginSettings should match snapshot wit
               <FormattedMessage
                 defaultMessage="false"
                 id="admin.false"
-                values={Object {}}
               />
             }
             helpText={
@@ -73,7 +72,6 @@ exports[`components/admin_console/CustomPluginSettings should match snapshot wit
               <FormattedMessage
                 defaultMessage="true"
                 id="admin.true"
-                values={Object {}}
               />
             }
             value={true}
@@ -159,7 +157,6 @@ exports[`components/admin_console/CustomPluginSettings should match snapshot wit
               <FormattedMessage
                 defaultMessage="Regenerate"
                 id="admin.regenerate"
-                values={Object {}}
               />
             }
             setByEnv={false}
@@ -203,7 +200,6 @@ exports[`components/admin_console/CustomPluginSettings should match snapshot wit
         <FormattedMessage
           defaultMessage="Save"
           id="save_button.save"
-          values={Object {}}
         />
       }
       disabled={true}
@@ -214,6 +210,7 @@ exports[`components/admin_console/CustomPluginSettings should match snapshot wit
     />
     <div
       className="error-message"
+      data-testid="errorMessage"
       onMouseOut={[Function]}
       onMouseOver={[Function]}
     >
@@ -234,6 +231,7 @@ exports[`components/admin_console/CustomPluginSettings should match snapshot wit
       placement="top"
       rootClose={false}
       show={false}
+      target={null}
     >
       <Tooltip
         bsClass="tooltip"
@@ -262,12 +260,7 @@ exports[`components/admin_console/CustomPluginSettings should match snapshot wit
         className="form-horizontal"
         onSubmit={[Function]}
         role="form"
-      >
-        <SettingsGroup
-          container={false}
-          show={true}
-        />
-      </form>
+      />
     </div>
   </div>
   <div
@@ -279,7 +272,6 @@ exports[`components/admin_console/CustomPluginSettings should match snapshot wit
         <FormattedMessage
           defaultMessage="Save"
           id="save_button.save"
-          values={Object {}}
         />
       }
       disabled={true}
@@ -290,6 +282,7 @@ exports[`components/admin_console/CustomPluginSettings should match snapshot wit
     />
     <div
       className="error-message"
+      data-testid="errorMessage"
       onMouseOut={[Function]}
       onMouseOver={[Function]}
     >
@@ -310,6 +303,7 @@ exports[`components/admin_console/CustomPluginSettings should match snapshot wit
       placement="top"
       rootClose={false}
       show={false}
+      target={null}
     >
       <Tooltip
         bsClass="tooltip"
@@ -376,7 +370,6 @@ exports[`components/admin_console/CustomPluginSettings should match snapshot wit
               <FormattedMessage
                 defaultMessage="false"
                 id="admin.false"
-                values={Object {}}
               />
             }
             helpText={
@@ -394,7 +387,6 @@ exports[`components/admin_console/CustomPluginSettings should match snapshot wit
               <FormattedMessage
                 defaultMessage="true"
                 id="admin.true"
-                values={Object {}}
               />
             }
             value={false}
@@ -480,7 +472,6 @@ exports[`components/admin_console/CustomPluginSettings should match snapshot wit
               <FormattedMessage
                 defaultMessage="Regenerate"
                 id="admin.regenerate"
-                values={Object {}}
               />
             }
             setByEnv={false}
@@ -524,7 +515,6 @@ exports[`components/admin_console/CustomPluginSettings should match snapshot wit
         <FormattedMessage
           defaultMessage="Save"
           id="save_button.save"
-          values={Object {}}
         />
       }
       disabled={true}
@@ -535,6 +525,7 @@ exports[`components/admin_console/CustomPluginSettings should match snapshot wit
     />
     <div
       className="error-message"
+      data-testid="errorMessage"
       onMouseOut={[Function]}
       onMouseOver={[Function]}
     >
@@ -555,6 +546,7 @@ exports[`components/admin_console/CustomPluginSettings should match snapshot wit
       placement="top"
       rootClose={false}
       show={false}
+      target={null}
     >
       <Tooltip
         bsClass="tooltip"

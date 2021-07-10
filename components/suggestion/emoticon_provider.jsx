@@ -11,7 +11,7 @@ import {getEmojiMap, getRecentEmojis} from 'selectors/emojis';
 import store from 'stores/redux_store.jsx';
 
 import * as Emoticons from 'utils/emoticons';
-import {compareEmojis} from 'utils/emoji_utils.jsx';
+import {compareEmojis} from 'utils/emoji_utils';
 
 import Suggestion from './suggestion.jsx';
 import Provider from './provider.jsx';
@@ -53,9 +53,14 @@ class EmoticonSuggestion extends Suggestion {
 }
 
 export default class EmoticonProvider extends Provider {
+    constructor() {
+        super();
+
+        this.triggerCharacter = ':';
+    }
     handlePretextChanged(pretext, resultsCallback) {
         // Look for the potential emoticons at the start of the text, after whitespace, and at the start of emoji reaction commands
-        const captured = (/(^|\s|^\+|^-)(:([^:\s]*))$/g).exec(pretext);
+        const captured = (/(^|\s|^\+|^-)(:([^:\s]*))$/g).exec(pretext.toLowerCase());
         if (!captured) {
             return false;
         }

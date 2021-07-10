@@ -3,6 +3,7 @@
 
 import React from 'react';
 import {FormattedMessage} from 'react-intl';
+
 import * as UserUtils from 'matterfoss-redux/utils/user_utils';
 import {Permissions} from 'matterfoss-redux/constants';
 import {AdminConfig} from 'matterfoss-redux/types/config';
@@ -17,7 +18,7 @@ import {Constants} from 'utils/constants';
 import * as Utils from 'utils/utils.jsx';
 import {t} from 'utils/i18n';
 import {getSiteURL} from 'utils/url';
-import {emitUserLoggedOutEvent} from 'actions/global_actions.jsx';
+import {emitUserLoggedOutEvent} from 'actions/global_actions';
 import ConfirmModal from 'components/confirm_modal';
 import SystemPermissionGate from 'components/permissions_gates/system_permission_gate';
 
@@ -27,7 +28,7 @@ import Menu from 'components/widgets/menu/menu';
 const ROWS_FROM_BOTTOM_TO_OPEN_UP = 3;
 const TOTAL_USERS_TO_OPEN_UP = 5;
 
-type Props = {
+export type Props = {
     user: UserProfile;
     currentUser: UserProfile;
     mfaEnabled: boolean;
@@ -38,12 +39,13 @@ type Props = {
     config: DeepPartial<AdminConfig>;
     bots: Dictionary<Bot>;
     isLicensed: boolean;
+    isDisabled: boolean;
     actions: {
         updateUserActive: (id: string, active: boolean) => Promise<{error: ServerError}>;
         revokeAllSessionsForUser: (id: string) => Promise<{error: ServerError; data: any}>;
         promoteGuestToUser: (id: string) => Promise<{error: ServerError}>;
         demoteUserToGuest: (id: string) => Promise<{error: ServerError}>;
-        loadBots: (page?: number, size?: number) => Promise<{}>;
+        loadBots: (page?: number, size?: number) => Promise<unknown>;
     };
     doPasswordReset: (user: UserProfile) => void;
     doEmailReset: (user: UserProfile) => void;
@@ -192,7 +194,7 @@ export default class SystemUsersDropdown extends React.PureComponent<Props, Stat
                     messageForUsersWithBotAccounts = (
                         <FormattedMarkdownMessage
                             id='deactivate_member_modal.desc.for_users_with_bot_accounts'
-                            defaultMessage='This action deactivates {username}.\n \n * They will be logged out and not have access to any teams or channels on this system.\n * Bot accounts they manage will be disabled along with their integrations. To enable them again, go to [Integrations > Bot Accounts]({siteURL}/_redirect/integrations/bots). [Learn more about bot accounts](!https://matterfoss.com/pl/default-bot-accounts).\n \n \n'
+                            defaultMessage='This action deactivates {username}.\n \n * They will be logged out and not have access to any teams or channels on this system.\n * Bot accounts they manage will be disabled along with their integrations. To enable them again, go to [Integrations > Bot Accounts]({siteURL}/_redirect/integrations/bots). [Learn more about bot accounts](!https://mattermost.com/pl/default-bot-accounts).\n \n \n'
                             values={{
                                 username: user.username,
                                 siteURL: getSiteURL(),
@@ -297,7 +299,7 @@ export default class SystemUsersDropdown extends React.PureComponent<Props, Stat
         const title = (
             <FormattedMessage
                 id='promote_to_user_modal.title'
-                defaultMessage='Promote guest {username} to user'
+                defaultMessage='Promote guest {username} to member'
                 values={{
                     username: this.props.user.username,
                 }}
@@ -307,7 +309,7 @@ export default class SystemUsersDropdown extends React.PureComponent<Props, Stat
         const message = (
             <FormattedMessage
                 id='promote_to_user_modal.desc'
-                defaultMessage='This action promotes the guest {username} to a member. It will allow the user to join public channels and interact with users outside of the channels they are currently members of. Are you sure you want to promote guest {username} to user?'
+                defaultMessage='This action promotes the guest {username} to a member. It will allow the user to join public channels and interact with users outside of the channels they are currently members of. Are you sure you want to promote guest {username} to member?'
                 values={{
                     username: this.props.user.username,
                 }}
@@ -454,7 +456,7 @@ export default class SystemUsersDropdown extends React.PureComponent<Props, Stat
     }
 
     render() {
-        const {currentUser, user, isLicensed} = this.props;
+        const {currentUser, user, isLicensed, config} = this.props;
         const isGuest = Utils.isGuest(user);
         if (!user) {
             return <div/>;
@@ -490,6 +492,7 @@ export default class SystemUsersDropdown extends React.PureComponent<Props, Stat
         let showManageTeams = true;
         let showRevokeSessions = true;
         const showMfaReset = this.props.mfaEnabled && Boolean(user.mfa_active);
+        const showManageRoles = Utils.isSystemAdmin(currentUser.roles);
 
         if (user.delete_at > 0) {
             currentRoles = (
@@ -521,7 +524,9 @@ export default class SystemUsersDropdown extends React.PureComponent<Props, Stat
                 {revokeSessionsModal}
                 {promoteToUserModal}
                 {demoteToGuestModal}
-                <MenuWrapper>
+                <MenuWrapper
+                    isDisabled={this.props.isDisabled}
+                >
                     <div className='text-right'>
                         <a>
                             <span>{currentRoles} </span>
@@ -547,7 +552,7 @@ export default class SystemUsersDropdown extends React.PureComponent<Props, Stat
                             disabled={disableActivationToggle}
                         />
                         <Menu.ItemAction
-                            show={!isGuest}
+                            show={showManageRoles}
                             onClick={this.handleManageRoles}
                             text={Utils.localizeMessage('admin.user_item.manageRoles', 'Manage Roles')}
                         />
@@ -584,10 +589,10 @@ export default class SystemUsersDropdown extends React.PureComponent<Props, Stat
                         <Menu.ItemAction
                             show={isGuest}
                             onClick={this.handlePromoteToUser}
-                            text={Utils.localizeMessage('admin.user_item.promoteToUser', 'Promote to User')}
+                            text={Utils.localizeMessage('admin.user_item.promoteToMember', 'Promote to Member')}
                         />
                         <Menu.ItemAction
-                            show={!isGuest && user.id !== currentUser.id && isLicensed}
+                            show={!isGuest && user.id !== currentUser.id && isLicensed && config.GuestAccountsSettings?.Enable}
                             onClick={this.handleDemoteToGuest}
                             text={Utils.localizeMessage('admin.user_item.demoteToGuest', 'Demote to Guest')}
                         />

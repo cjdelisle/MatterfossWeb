@@ -18,7 +18,7 @@ describe('Message deletion', () => {
         });
     });
 
-    it('M13336 Delete both parent post and reply when deleting parent post from center', () => {
+    it('MM-T112 Delete a parent message that has a reply - reply thread', () => {
         // # Post message in center.
         cy.postMessage('test message deletion');
 
@@ -43,30 +43,30 @@ describe('Message deletion', () => {
                 cy.get('#deletePostModal').should('be.visible');
 
                 // * Check that confirmation dialog contains correct text
-                cy.get('#deletePostModal').should('have', 'Are you sure you want to delete this Post?');
+                cy.get('#deletePostModal').should('contain', 'Are you sure you want to delete this Post?');
 
                 // * Check that confirmation dialog shows that the post has one comment on it
-                cy.get('#deletePostModal').should('have', 'This post has 1 comment on it.');
+                cy.get('#deletePostModal').should('contain', 'This post has 1 comment on it.');
 
                 // # Confirm deletion.
                 cy.get('#deletePostModalButton').click();
 
                 // * Check that the modal is closed
-                cy.get('#deletePostModal').should('not.be.visible');
+                cy.get('#deletePostModal').should('not.exist');
 
                 // * Check that the RHS is closed.
-                cy.get('#rhsContainer').should('not.be.visible');
+                cy.get('#rhsContainer').should('not.exist');
 
                 // * Check that parent message is no longer visible.
-                cy.get(`#post_${parentMessageId}`).should('not.be.visible');
+                cy.get(`#post_${parentMessageId}`).should('not.exist');
 
                 // * Check that reply message is no longer visible.
-                cy.get(`#post_${replyMessageId}`).should('not.be.visible');
+                cy.get(`#post_${replyMessageId}`).should('not.exist');
             });
 
             cy.getLastPostId().then((replyMessageId) => {
                 // * Check that last message do not contain (message deleted)
-                cy.get(`#post_${replyMessageId}`).should('not.have', '(message deleted)');
+                cy.get(`#post_${replyMessageId}`).should('not.contain', '(message deleted)');
             });
         });
     });

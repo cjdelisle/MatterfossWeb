@@ -3,6 +3,7 @@
 
 import PropTypes from 'prop-types';
 import React from 'react';
+
 import {Posts} from 'matterfoss-redux/constants';
 
 import * as PostUtils from 'utils/post_utils.jsx';
@@ -128,6 +129,7 @@ export default class PostBody extends React.PureComponent {
     render() {
         const post = this.props.post;
         const parentPost = this.props.parentPost;
+        const parentPostUser = this.props.parentPostUser;
 
         let comment;
         let postClass = '';
@@ -138,6 +140,7 @@ export default class PostBody extends React.PureComponent {
             comment = (
                 <CommentedOn
                     post={parentPost}
+                    parentPostUser={parentPostUser}
                     onCommentClick={this.props.handleCommentClick}
                 />
             );

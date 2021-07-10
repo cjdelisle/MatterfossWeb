@@ -4,6 +4,7 @@
 import React from 'react';
 import {Modal} from 'react-bootstrap';
 import {FormattedMessage} from 'react-intl';
+
 import {Channel} from 'matterfoss-redux/types/channels';
 
 import MemberListChannel from 'components/member_list_channel';
@@ -30,7 +31,7 @@ type Props = {
     actions: {
         openModal: (modalData: {
             modalId: string;
-            dialogProps: {};
+            dialogProps: {[key: string]: any};
             dialogType: (props: any) => React.ReactElement | null;
         }) => Promise<{data: boolean}>;
     };

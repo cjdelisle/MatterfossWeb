@@ -3,10 +3,11 @@
 
 import PropTypes from 'prop-types';
 import React from 'react';
-import {injectIntl} from 'react-intl';
+import {injectIntl, FormattedMessage} from 'react-intl';
+
 import {Permissions} from 'matterfoss-redux/constants';
 
-import * as GlobalActions from 'actions/global_actions.jsx';
+import * as GlobalActions from 'actions/global_actions';
 import {Constants, ModalIdentifiers} from 'utils/constants';
 import {intlShape} from 'utils/react_intl';
 import {cmdOrCtrlPressed, isKeyPressed} from 'utils/utils';
@@ -26,16 +27,18 @@ import TeamSettingsModal from 'components/team_settings_modal';
 import AboutBuildModal from 'components/about_build_modal';
 import AddGroupsToTeamModal from 'components/add_groups_to_team_modal';
 import MarketplaceModal from 'components/plugin_marketplace';
+import UpgradeLink from 'components/widgets/links/upgrade_link';
 
 import Menu from 'components/widgets/menu/menu';
 import TeamGroupsManageModal from 'components/team_groups_manage_modal';
+
+import withGetCloudSubscription from '../common/hocs/cloud/with_get_cloud_subscription';
 
 class MainMenu extends React.PureComponent {
     static propTypes = {
         mobile: PropTypes.bool.isRequired,
         id: PropTypes.string,
         teamId: PropTypes.string,
-        teamType: PropTypes.string,
         teamName: PropTypes.string,
         siteName: PropTypes.string,
         currentUser: PropTypes.object,
@@ -48,8 +51,6 @@ class MainMenu extends React.PureComponent {
         canManageSystemBots: PropTypes.bool.isRequired,
         canCreateOrDeleteCustomEmoji: PropTypes.bool.isRequired,
         canManageIntegrations: PropTypes.bool.isRequired,
-        enableUserCreation: PropTypes.bool.isRequired,
-        enableEmailInvitations: PropTypes.bool.isRequired,
         enablePluginMarketplace: PropTypes.bool.isRequired,
         experimentalPrimaryTeam: PropTypes.string,
         helpLink: PropTypes.string,
@@ -59,13 +60,22 @@ class MainMenu extends React.PureComponent {
         isMentionSearch: PropTypes.bool,
         teamIsGroupConstrained: PropTypes.bool.isRequired,
         isLicensedForLDAPGroups: PropTypes.bool,
+        showGettingStarted: PropTypes.bool.isRequired,
         intl: intlShape.isRequired,
+        showNextStepsTips: PropTypes.bool,
+        isFreeTrial: PropTypes.bool,
+        daysLeftOnTrial: PropTypes.number,
+        isCloud: PropTypes.bool,
+        subscriptionStats: PropTypes.object,
+        firstAdminVisitMarketplaceStatus: PropTypes.bool,
         actions: PropTypes.shape({
             openModal: PropTypes.func.isRequred,
             showMentions: PropTypes.func,
             showFlaggedPosts: PropTypes.func,
             closeRightHandSide: PropTypes.func.isRequired,
             closeRhsMenu: PropTypes.func.isRequired,
+            unhideNextSteps: PropTypes.func.isRequired,
+            getSubscriptionStats: PropTypes.func.isRequired,
         }).isRequired,
     };
 
@@ -80,7 +90,7 @@ class MainMenu extends React.PureComponent {
         GlobalActions.toggleShortcutsModal();
     }
 
-    componentDidMount() {
+    async componentDidMount() {
         document.addEventListener('keydown', this.handleKeyDown);
     }
 
@@ -115,8 +125,17 @@ class MainMenu extends React.PureComponent {
         }
     }
 
+    shouldShowUpgradeModal = () => {
+        const {subscriptionStats, isCloud} = this.props;
+
+        if (subscriptionStats?.is_paid_tier === 'true') { // eslint-disable-line camelcase
+            return false;
+        }
+        return isCloud && subscriptionStats?.remaining_seats <= 0;
+    }
+
     render() {
-        const {currentUser, teamIsGroupConstrained, isLicensedForLDAPGroups} = this.props;
+        const {currentUser, teamIsGroupConstrained, isLicensedForLDAPGroups, isFreeTrial, daysLeftOnTrial, isCloud} = this.props;
 
         if (!currentUser) {
             return null;
@@ -143,12 +162,49 @@ class MainMenu extends React.PureComponent {
 
         const {formatMessage} = this.props.intl;
 
+        const invitePeopleModal = (
+            <Menu.ItemToggleModalRedux
+                id='invitePeople'
+                modalId={ModalIdentifiers.INVITATION}
+                dialogType={InvitationModal}
+                text={formatMessage({
+                    id: 'navbar_dropdown.invitePeople',
+                    defaultMessage: 'Invite People',
+                })}
+                extraText={formatMessage({
+                    id: 'navbar_dropdown.invitePeopleExtraText',
+                    defaultMessage: 'Add or invite people to the team',
+                })}
+                icon={this.props.mobile && <i className='fa fa-user-plus'/>}
+            />
+        );
+
         return (
             <Menu
                 mobile={this.props.mobile}
                 id={this.props.id}
                 ariaLabel={formatMessage({id: 'navbar_dropdown.menuAriaLabel', defaultMessage: 'main menu'})}
             >
+                {isCloud && isFreeTrial &&
+                    <Menu.Group>
+                        <SystemPermissionGate permissions={Permissions.SYSCONSOLE_WRITE_BILLING}>
+                            <Menu.TopNotification
+                                show={true}
+                                id='topNotification'
+                            >
+                                <FormattedMessage
+                                    id='admin.billing.subscription.cloudTrial.trialTopMenuNotification'
+                                    defaultMessage='There are {daysLeftOnTrial} days left on your Cloud trial.'
+                                    values={{daysLeftOnTrial}}
+                                />
+                                <UpgradeLink
+                                    buttonText='Subscribe Now'
+                                    styleLink={true}
+                                />
+                            </Menu.TopNotification>
+                        </SystemPermissionGate>
+                    </Menu.Group>
+                }
                 <Menu.Group>
                     <Menu.ItemAction
                         id='recentMentions'
@@ -192,14 +248,7 @@ class MainMenu extends React.PureComponent {
                         teamId={this.props.teamId}
                         permissions={[Permissions.ADD_USER_TO_TEAM, Permissions.INVITE_GUEST]}
                     >
-                        <Menu.ItemToggleModalRedux
-                            id='invitePeople'
-                            modalId={ModalIdentifiers.INVITATION}
-                            dialogType={InvitationModal}
-                            text={formatMessage({id: 'navbar_dropdown.invitePeople', defaultMessage: 'Invite People'})}
-                            extraText={formatMessage({id: 'navbar_dropdown.invitePeopleExtraText', defaultMessage: 'Add or invite people to the team'})}
-                            icon={this.props.mobile && <i className='fa fa-user-plus'/>}
-                        />
+                        {invitePeopleModal}
                     </TeamPermissionGate>
                 </Menu.Group>
                 <Menu.Group>
@@ -294,14 +343,15 @@ class MainMenu extends React.PureComponent {
                     />
                     <TeamPermissionGate
                         teamId={this.props.teamId}
-                        permissions={[Permissions.MANAGE_SYSTEM]}
+                        permissions={[Permissions.SYSCONSOLE_WRITE_PLUGINS]}
                     >
                         <Menu.ItemToggleModalRedux
                             id='marketplaceModal'
                             modalId={ModalIdentifiers.PLUGIN_MARKETPLACE}
                             show={!this.props.mobile && this.props.enablePluginMarketplace}
                             dialogType={MarketplaceModal}
-                            text={formatMessage({id: 'navbar_dropdown.marketplace', defaultMessage: 'Plugin Marketplace'})}
+                            text={formatMessage({id: 'navbar_dropdown.marketplace', defaultMessage: 'Marketplace'})}
+                            showUnread={!this.props.firstAdminVisitMarketplaceStatus}
                         />
                     </TeamPermissionGate>
                     <Menu.ItemLink
@@ -312,7 +362,7 @@ class MainMenu extends React.PureComponent {
                     />
                 </Menu.Group>
                 <Menu.Group>
-                    <SystemPermissionGate permissions={[Permissions.MANAGE_SYSTEM]}>
+                    <SystemPermissionGate permissions={Permissions.SYSCONSOLE_READ_PERMISSIONS}>
                         <Menu.ItemLink
                             id='systemConsole'
                             show={!this.props.mobile}
@@ -329,6 +379,12 @@ class MainMenu extends React.PureComponent {
                         url={this.props.helpLink}
                         text={formatMessage({id: 'navbar_dropdown.help', defaultMessage: 'Help'})}
                         icon={this.props.mobile && <i className='fa fa-question'/>}
+                    />
+                    <Menu.ItemAction
+                        id='gettingStarted'
+                        show={this.props.showGettingStarted}
+                        onClick={() => this.props.actions.unhideNextSteps()}
+                        text={formatMessage({id: this.props.showNextStepsTips ? 'sidebar_next_steps.tipsAndNextSteps' : 'navbar_dropdown.gettingStarted', defaultMessage: this.props.showNextStepsTips ? 'Tips & Next Steps' : 'Getting Started'})}
                     />
                     <Menu.ItemAction
                         id='keyboardShortcuts'
@@ -354,7 +410,7 @@ class MainMenu extends React.PureComponent {
                         id='about'
                         modalId={ModalIdentifiers.ABOUT}
                         dialogType={AboutBuildModal}
-                        text={formatMessage({id: 'navbar_dropdown.about', defaultMessage: 'About {appTitle}'}, {appTitle: this.props.siteName || 'Matterfoss'})}
+                        text={formatMessage({id: 'navbar_dropdown.about', defaultMessage: 'About {appTitle}'}, {appTitle: this.props.siteName || 'Mattermost'})}
                         icon={this.props.mobile && <i className='fa fa-info'/>}
                     />
                 </Menu.Group>
@@ -371,4 +427,4 @@ class MainMenu extends React.PureComponent {
     }
 }
 
-export default injectIntl(MainMenu);
+export default injectIntl(withGetCloudSubscription((MainMenu)));

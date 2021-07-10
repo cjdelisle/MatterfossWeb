@@ -25,7 +25,7 @@ type Props = {
 
     learnMoreURL: string;
 
-    imgPath: string;
+    featureDiscoveryImage: JSX.Element;
 
     stats?: Dictionary<number | AnalyticsRow[]>;
     actions: {
@@ -75,7 +75,7 @@ export default class FeatureDiscovery extends React.PureComponent<Props, State> 
             copyID,
             copyDefault,
             learnMoreURL,
-            imgPath
+            featureDiscoveryImage,
         } = this.props;
 
         let gettingTrialError: React.ReactNode = '';
@@ -109,6 +109,7 @@ export default class FeatureDiscovery extends React.PureComponent<Props, State> 
                         />
                     </div>
                     <button
+                        type='button'
                         className='btn btn-primary'
                         data-testid='featureDiscovery_primaryCallToAction'
                         onClick={this.requestLicense}
@@ -145,11 +146,7 @@ export default class FeatureDiscovery extends React.PureComponent<Props, State> 
                 </div>
 
                 <div className='FeatureDiscovery_imageWrapper'>
-                    <img
-                        className='FeatureDiscovery_image'
-                        src={imgPath}
-                        alt='Feature Discovery Image'
-                    />
+                    {featureDiscoveryImage}
                 </div>
 
             </div>

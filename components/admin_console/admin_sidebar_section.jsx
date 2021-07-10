@@ -4,7 +4,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import {trackEvent} from 'actions/diagnostics_actions.jsx';
+import {trackEvent} from 'actions/telemetry_actions.jsx';
 import BlockableLink from 'components/admin_console/blockable_link';
 import * as Utils from 'utils/utils.jsx';
 
@@ -18,6 +18,8 @@ export default class AdminSidebarSection extends React.PureComponent {
             subsection: PropTypes.bool,
             children: PropTypes.node,
             action: PropTypes.node,
+            definitionKey: PropTypes.string,
+            tag: PropTypes.node,
         };
     }
 
@@ -60,6 +62,14 @@ export default class AdminSidebarSection extends React.PureComponent {
         if (this.props.subsection) {
             className += ' sidebar-subsection';
         }
+        let tag = '';
+        if (this.props.tag) {
+            tag = (
+                <span className={`${className}-tag`}>
+                    {this.props.tag}
+                </span>
+            );
+        }
         const sidebarItemSafeId = Utils.createSafeId(this.props.name);
         let sidebarItem = (
             <BlockableLink
@@ -70,7 +80,7 @@ export default class AdminSidebarSection extends React.PureComponent {
                 onClick={() => trackEvent('admin', sidebarItemSafeId)}
             >
                 <span className={`${className}-title__text`}>
-                    {this.props.title}
+                    {this.props.title}{tag}
                 </span>
                 {this.props.action}
             </BlockableLink>
@@ -90,7 +100,10 @@ export default class AdminSidebarSection extends React.PureComponent {
         }
 
         return (
-            <li className={className}>
+            <li
+                className={className}
+                data-testid={this.props.definitionKey}
+            >
                 {sidebarItem}
                 {clonedChildren}
             </li>

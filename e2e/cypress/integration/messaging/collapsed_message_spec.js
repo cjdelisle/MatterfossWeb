@@ -10,22 +10,6 @@
 // Stage: @prod
 // Group: @messaging
 
-function verifyCollapsedPost() {
-    // * Verify show more button
-    cy.get('#showMoreButton').scrollIntoView().should('be.visible').and('have.text', 'Show more');
-
-    // * Verify gradient
-    cy.get('#collapseGradient').should('be.visible');
-}
-
-function verifyExpandedPost() {
-    // * Verify show more button now says 'Show less'
-    cy.get('#showMoreButton').scrollIntoView().should('be.visible').and('have.text', 'Show less');
-
-    // * Verify gradient
-    cy.get('#collapseGradient').should('be.not.visible');
-}
-
 describe('Long message', () => {
     before(() => {
         // # Login as test user and visit town-square
@@ -34,7 +18,7 @@ describe('Long message', () => {
         });
     });
 
-    it('M14321 will show more/less content correctly', () => {
+    it('MM-T104 Can `Show More` and `Show Less` on long posts, Markdown in long posts', () => {
         // # Post message with kitchen sink markdown text
         cy.postMessageFromFile('long_text_post.txt');
 
@@ -61,3 +45,19 @@ describe('Long message', () => {
         });
     });
 });
+
+function verifyCollapsedPost() {
+    // * Verify show more button
+    cy.get('#showMoreButton').scrollIntoView().should('be.visible').and('have.text', 'Show more');
+
+    // * Verify gradient
+    cy.get('#collapseGradient').should('be.visible');
+}
+
+function verifyExpandedPost() {
+    // * Verify show more button now says 'Show less'
+    cy.get('#showMoreButton').scrollIntoView().should('be.visible').and('have.text', 'Show less');
+
+    // * Verify gradient
+    cy.get('#collapseGradient').should('not.be.visible');
+}

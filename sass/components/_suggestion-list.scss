@@ -2,7 +2,7 @@
 
 .app__body {
     .suggestion--selected {
-        background-color: v(center-channel-color-08);
+        background-color: rgba(var(--center-channel-color-rgb), 0.08);
     }
 }
 
@@ -58,6 +58,19 @@
         position: relative;
         top: 4px;
     }
+
+    .shared-channel-icon {
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        font-size: 16px;
+        margin-left: 8px;
+        color: rgba(61, 60, 64, 0.56);
+
+        &:before {
+            margin: 0;
+        }
+    }
 }
 
 .suggestion-list--top {
@@ -67,6 +80,7 @@
 
 .suggestion-list--bottom {
     position: absolute;
+    top: 0;
 }
 
 .suggestion-list__content {
@@ -89,7 +103,7 @@
 
     &::-webkit-scrollbar-thumb {
         border: 1px solid v(center-channel-bg);
-        background-color: v(center-channel-color-24) !important;
+        background-color: rgba(var(--center-channel-color-rgb), 0.24) !important;
         border-radius: 4px;
     }
 
@@ -103,11 +117,29 @@
         display: flex;
         align-items: center;
         padding: 0 2.4rem;
+
+        .shared-user-icon {
+            color: rgba(61, 60, 64, 0.56);
+            font-size: 16px;
+            height: 16px;
+            width: 16px;
+            line-height: 16px;
+            margin-left: 8px;
+
+            &:before {
+                margin: 0;
+            }
+        }
     }
 
     .modal & {
         max-height: 205px;
         width: 100%;
+    }
+
+    .suggestion-list__info_user {
+        display: flex;
+        max-width: 89%;
     }
 }
 
@@ -122,7 +154,7 @@
 }
 
 .slash-command__icon {
-    background: v(center-channel-color-08);
+    background: rgba(var(--center-channel-color-rgb), 0.08);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -155,6 +187,11 @@
     position: absolute;
 }
 
+.suggestion-list__content--bottom {
+    top: 0;
+    position: absolute;
+}
+
 .suggestion-list__divider {
     font-size: 1.2rem;
     color: v(center-channel-color-60);
@@ -177,7 +214,7 @@
     &:before {
         content: '';
         height: 1px;
-        background: v(center-channel-color-08);
+        background: rgba(var(--center-channel-color-rgb), 0.08);
         position: absolute;
         top: -7px;
         left: 0;

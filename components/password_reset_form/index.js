@@ -3,6 +3,7 @@
 
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
+
 import {getConfig} from 'matterfoss-redux/selectors/entities/general';
 import {resetUserPassword} from 'matterfoss-redux/actions/users';
 

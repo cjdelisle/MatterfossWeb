@@ -8,14 +8,16 @@
 // ***************************************************************
 
 // Stage: @prod
-// Group: @account_setting
+// Group: @account_setting @not_cloud
 
 describe('Account Settings > Sidebar > Channel Switcher', () => {
     before(() => {
-        // # Update config and visit town-square channel
+        cy.shouldNotRunOnCloudEdition();
+
+        // # Update config
         cy.apiUpdateConfig({
             ServiceSettings: {
-                ExperimentalChannelSidebarOrganization: 'disabled',
+                EnableLegacySidebar: true,
             },
         });
 
@@ -65,7 +67,7 @@ describe('Account Settings > Sidebar > Channel Switcher', () => {
         cy.get('#accountSettingsHeader > .close').should('be.visible').click();
     });
 
-    it('AS12980 Hide Channel Switcher button in left-hand-side', () => {
+    it('MM-T265_1 Hide Channel Switcher button in LHS', () => {
         // * Check that the Sidebar tab is loaded, then click
         cy.get('#sidebarButton').should('be.visible').click();
 
@@ -86,10 +88,10 @@ describe('Account Settings > Sidebar > Channel Switcher', () => {
         cy.get('#accountSettingsHeader > .close').should('be.visible').click();
 
         // * Channel Switcher button should disappear from the bottom of the left-hand-side bar
-        cy.get('#sidebarSwitcherButton').should('be.not.visible');
+        cy.get('#sidebarSwitcherButton').should('not.exist');
     });
 
-    it('AS12980 Show Channel Switcher button in left-hand-side', () => {
+    it('MM-T265_2 Show Channel Switcher button in LHS', () => {
         // * Check that the Sidebar tab is loaded, then click
         cy.get('#sidebarButton').should('be.visible').click();
 

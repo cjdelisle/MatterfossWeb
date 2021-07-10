@@ -1,11 +1,11 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
-/* eslint-disable react/no-string-refs */
 
 import PropTypes from 'prop-types';
 import React from 'react';
 import {FormattedMessage, injectIntl} from 'react-intl';
 import {Tooltip} from 'react-bootstrap';
+
 import {Posts} from 'matterfoss-redux/constants';
 import * as ReduxPostUtils from 'matterfoss-redux/utils/post_utils';
 
@@ -27,6 +27,7 @@ import InfoSmallIcon from 'components/widgets/icons/info_small_icon';
 
 import UserProfile from 'components/user_profile';
 import PostPreHeader from 'components/post_view/post_pre_header';
+import CustomStatusEmoji from 'components/custom_status/custom_status_emoji';
 
 class RhsRootPost extends React.PureComponent {
     static propTypes = {
@@ -68,6 +69,9 @@ class RhsRootPost extends React.PureComponent {
             emitShortcutReactToLastPostFrom: PropTypes.func,
         }),
         emojiMap: PropTypes.object.isRequired,
+        timestampProps: PropTypes.object,
+        isBot: PropTypes.bool,
+        collapsedThreadsEnabled: PropTypes.bool,
     };
 
     static defaultProps = {
@@ -86,6 +90,7 @@ class RhsRootPost extends React.PureComponent {
         };
 
         this.postHeaderRef = React.createRef();
+        this.dotMenuRef = React.createRef();
     }
 
     handleShortcutReactToLastPost = (isLastPost) => {
@@ -111,7 +116,7 @@ class RhsRootPost extends React.PureComponent {
             if (isPostHeaderVisibleToUser) {
                 if (!isEphemeralPost && !isSystemMessage && !isDeletedPost && !isFailedPost && !Utils.isMobile() &&
                     !channelIsArchived && !isPostsFakeParentDeleted && enableEmojiPicker) {
-                    // As per issue in #2 of matterfoss-webapp/pull/4478#pullrequestreview-339313236
+                    // As per issue in #2 of mattermost-webapp/pull/4478#pullrequestreview-339313236
                     // We are not not handling focus condition as we did for rhs_comment as the dot menu is already in dom and not visible
                     this.toggleEmojiPicker(isLastPost);
                 }
@@ -133,7 +138,7 @@ class RhsRootPost extends React.PureComponent {
         const {shortcutReactToLastPostEmittedFrom, isLastPost} = this.props;
 
         const shortcutReactToLastPostEmittedFromRHS = prevProps.shortcutReactToLastPostEmittedFrom !== shortcutReactToLastPostEmittedFrom &&
-        shortcutReactToLastPostEmittedFrom === Locations.RHS_ROOT;
+            shortcutReactToLastPostEmittedFrom === Locations.RHS_ROOT;
         if (shortcutReactToLastPostEmittedFromRHS) {
             this.handleShortcutReactToLastPost(isLastPost);
         }
@@ -156,6 +161,7 @@ class RhsRootPost extends React.PureComponent {
                 eventTime={post.create_at}
                 postId={post.id}
                 location={Locations.RHS_ROOT}
+                timestampProps={this.props.timestampProps}
             />
         );
     };
@@ -211,7 +217,7 @@ class RhsRootPost extends React.PureComponent {
         }
 
         if (e.altKey) {
-            this.props.actions.markPostAsUnread(this.props.post);
+            this.props.actions.markPostAsUnread(this.props.post, 'RHS_ROOT');
         }
     }
 
@@ -221,11 +227,11 @@ class RhsRootPost extends React.PureComponent {
     }
 
     getDotMenuRef = () => {
-        return this.refs.dotMenu;
+        return this.dotMenuRef.current;
     };
 
     render() {
-        const {post, isReadOnly, teamId, channelIsArchived} = this.props;
+        const {post, isReadOnly, teamId, channelIsArchived, collapsedThreadsEnabled, isBot} = this.props;
 
         const isPostDeleted = post && post.state === Posts.POST_DELETED;
         const isEphemeral = Utils.isPostEphemeral(post);
@@ -342,12 +348,13 @@ class RhsRootPost extends React.PureComponent {
         if (!isPostDeleted && this.props.post.type !== Constants.PostTypes.FAKE_PARENT_DELETED) {
             dotMenuContainer = (
                 <div
-                    ref='dotMenu'
+                    ref={this.dotMenuRef}
                     className='col post-menu'
                 >
-                    {dotMenu}
+                    {!collapsedThreadsEnabled && dotMenu}
                     {postReaction}
                     {postFlagIcon}
+                    {collapsedThreadsEnabled && dotMenu}
                 </div>
             );
         }
@@ -383,6 +390,20 @@ class RhsRootPost extends React.PureComponent {
             );
         }
 
+        let customStatus;
+        if (!(isSystemMessage || post?.props?.from_webhook || isBot)) {
+            customStatus = (
+                <CustomStatusEmoji
+                    userID={post.user_id}
+                    showTooltip={true}
+                    emojiStyle={{
+                        marginLeft: 4,
+                        marginTop: 2,
+                    }}
+                />
+            );
+        }
+
         return (
             <div
                 role='listitem'
@@ -410,6 +431,7 @@ class RhsRootPost extends React.PureComponent {
                             isRHS={true}
                             post={post}
                             userId={post.user_id}
+                            channelId={post.channel_id}
                         />
                     </div>
                     <div>
@@ -420,6 +442,7 @@ class RhsRootPost extends React.PureComponent {
                             <div className='col__name'>
                                 {userProfile}
                                 {botIndicator}
+                                {customStatus}
                             </div>
                             <div className='col'>
                                 {this.renderPostTime(isEphemeral)}
@@ -451,4 +474,3 @@ class RhsRootPost extends React.PureComponent {
 }
 
 export default injectIntl(RhsRootPost);
-/* eslint-enable react/no-string-refs */

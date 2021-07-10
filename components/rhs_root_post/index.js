@@ -7,9 +7,9 @@ import {bindActionCreators} from 'redux';
 import {isChannelReadOnlyById, getChannel} from 'matterfoss-redux/selectors/entities/channels';
 import {getCurrentTeamId} from 'matterfoss-redux/selectors/entities/teams';
 import {makeGetReactionsForPost} from 'matterfoss-redux/selectors/entities/posts';
-import {makeGetDisplayName} from 'matterfoss-redux/selectors/entities/users';
+import {makeGetDisplayName, getUser} from 'matterfoss-redux/selectors/entities/users';
 import {getConfig} from 'matterfoss-redux/selectors/entities/general';
-import {get} from 'matterfoss-redux/selectors/entities/preferences';
+import {get, isCollapsedThreadsEnabled} from 'matterfoss-redux/selectors/entities/preferences';
 
 import {markPostAsUnread, emitShortcutReactToLastPostFrom} from 'actions/post_actions.jsx';
 import {isEmbedVisible} from 'selectors/posts';
@@ -29,11 +29,15 @@ function mapStateToProps(state, ownProps) {
     const enableEmojiPicker = config.EnableEmojiPicker === 'true';
     const enablePostUsernameOverride = config.EnablePostUsernameOverride === 'true';
     const teamId = ownProps.teamId || getCurrentTeamId(state);
-    const channel = getChannel(state, ownProps.post.channel_id) || {};
+    const channel = getChannel(state, ownProps.post.channel_id);
     const emojiMap = getEmojiMap(state);
     const shortcutReactToLastPostEmittedFrom = getShortcutReactToLastPostEmittedFrom(state);
 
+    const user = getUser(state, ownProps.post.user_id);
+    const isBot = Boolean(user && user.is_bot);
+
     return {
+        isBot,
         author: getDisplayName(state, ownProps.post.user_id),
         reactions: getReactionsForPost(state, ownProps.post.id),
         emojiMap,
@@ -47,6 +51,7 @@ function mapStateToProps(state, ownProps) {
         isFlagged: get(state, Preferences.CATEGORY_FLAGGED_POST, ownProps.post.id, null) != null,
         compactDisplay: get(state, Preferences.CATEGORY_DISPLAY_SETTINGS, Preferences.MESSAGE_DISPLAY, Preferences.MESSAGE_DISPLAY_DEFAULT) === Preferences.MESSAGE_DISPLAY_COMPACT,
         shortcutReactToLastPostEmittedFrom,
+        collapsedThreadsEnabled: isCollapsedThreadsEnabled(state),
     };
 }
 
@@ -59,4 +64,4 @@ function mapDispatchToProps(dispatch) {
     };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps, null, {forwardRef: true})(RhsRootPost);
+export default connect(mapStateToProps, mapDispatchToProps)(RhsRootPost);

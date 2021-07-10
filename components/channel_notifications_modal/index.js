@@ -3,6 +3,7 @@
 
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
+
 import {updateChannelNotifyProps} from 'matterfoss-redux/actions/channels';
 import {getConfig} from 'matterfoss-redux/selectors/entities/general';
 import {getMyCurrentChannelMembership} from 'matterfoss-redux/selectors/entities/channels';

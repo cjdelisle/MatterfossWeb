@@ -88,7 +88,7 @@ describe('Interactive Menu', () => {
             cy.get('.select-suggestion-container').should('be.visible');
 
             // * Suggestion list should not be visible before dropdown is clicked
-            cy.get('#suggestionList').should('not.be.visible');
+            cy.get('#suggestionList').should('not.exist');
 
             // # Click on the suggestion dropdown input
             cy.findByPlaceholderText('Select an option...').scrollIntoView().should('be.visible').click();
@@ -105,7 +105,7 @@ describe('Interactive Menu', () => {
         cy.get('body').click();
     });
 
-    it('IM15887 - Selected Option is displayed, Ephemeral message is posted', () => {
+    it('MM-T1736 - Selected Option is displayed, Ephemeral message is posted', () => {
         // # Post an incoming webhook
         const payload = getMessageMenusPayload({options});
         cy.postIncomingWebhook({url: incomingWebhook.url, data: payload, waitFor: 'attachment-pretext'});
@@ -125,7 +125,7 @@ describe('Interactive Menu', () => {
         verifyEphemeralMessage('Ephemeral | select option: option1');
     });
 
-    it('IM15887 - Reply is displayed in center channel with "commented on [user\'s] message: [text]"', () => {
+    it('MM-T1737 - Reply is displayed in center channel with "commented on [user\'s] message: [text]"', () => {
         // # Post an incoming webhook
         const payload = getMessageMenusPayload({options});
         cy.postIncomingWebhook({url: incomingWebhook.url, data: payload, waitFor: 'attachment-pretext'});
@@ -154,7 +154,7 @@ describe('Interactive Menu', () => {
 
                 // * Verify that the reply is in the RHS with matching text
                 cy.get(`#rhsPost_${replyMessageId}`).within(() => {
-                    cy.get('.post__link').should('not.be.visible');
+                    cy.get('.post__link').should('not.exist');
                     cy.get(`#rhsPostMessageText_${replyMessageId}`).should('be.visible').and('have.text', 'Reply to webhook');
                 });
 
@@ -164,7 +164,7 @@ describe('Interactive Menu', () => {
         });
     });
 
-    it('IM21039 - Searching within the list of options', () => {
+    it('MM-T1743 - Searching within the list of options', () => {
         const searchOptions = [
             {text: 'SearchOption1', value: 'searchoption1'},
             {text: 'SearchOption2', value: 'searchoption2'},
@@ -195,7 +195,7 @@ describe('Interactive Menu', () => {
         });
     });
 
-    it('IM21042 - "No items match" feedback', () => {
+    it('MM-T1746 - No items match feedback', () => {
         const missingUser = Date.now();
         const userOptions = getMessageMenusPayload({dataSource: 'users'});
 
@@ -216,7 +216,7 @@ describe('Interactive Menu', () => {
         });
     });
 
-    it('IM21043 - Using up/down arrow keys to make selection', () => {
+    it('MM-T1742 - Using up/down arrow keys to make selection', () => {
         const basicOptions = getMessageMenusPayload({options});
 
         // # Post an incoming webhook for interactive menu with basic options
@@ -286,7 +286,7 @@ describe('Interactive Menu', () => {
         });
     });
 
-    it('IM21037 - Clicking in / Tapping on the message attachment menu box opens list of selections', () => {
+    it('MM-T1740 - Clicking in / Tapping on the message attachment menu box opens list of selections', () => {
         // # Create a message attachment with menu
         const basicOptionPayload = getMessageMenusPayload({options});
         cy.postIncomingWebhook({url: incomingWebhook.url, data: basicOptionPayload, waitFor: 'attachment-pretext'});
@@ -318,7 +318,7 @@ describe('Interactive Menu', () => {
         });
     });
 
-    it('IM21036 - Enter selects the option', () => {
+    it('MM-T1745 - Enter selects the option', () => {
         // # Create a message attachment with menu
         const distinctOptions = messageMenusOptions['distinct-options'];
         const distinctOptionsPayload = getMessageMenusPayload({options: distinctOptions});
@@ -370,11 +370,11 @@ describe('Interactive Menu', () => {
             });
         });
 
-        // # Get the emphemirical message from webhook, which is only visible to us
+        // # Get the ephemeral message from webhook, which is only visible to us
         verifyEphemeralMessage('Ephemeral | select option: mango');
     });
 
-    it('IM21035 - Long lists of selections are scrollable', () => {
+    it('MM-T1741 - Long lists of selections are scrollable', () => {
         const manyOptions = messageMenusOptions['many-options'];
         const manyOptionsPayload = getMessageMenusPayload({options: manyOptions});
 
@@ -424,7 +424,7 @@ describe('Interactive Menu', () => {
         });
     });
 
-    it('IM21040 - Selection is mirrored in RHS / Message Thread', () => {
+    it('MM-T1747 - Selection is mirrored in RHS / Message Thread', () => {
         // # Create a webhook with distinct options
         const distinctOptions = messageMenusOptions['distinct-options'];
         const distinctListOptionPayload = getMessageMenusPayload({options: distinctOptions});
@@ -438,7 +438,7 @@ describe('Interactive Menu', () => {
             // # Get the last messages attachment container
             cy.get(`#messageAttachmentList_${lastPostId}`).within(() => {
                 // # Start typing only first few letters in the input
-                cy.findByPlaceholderText('Select an option...').scrollIntoView().clear({force: true}).type(`${firstFewLettersOfSelectedItem}`);
+                cy.findByPlaceholderText('Select an option...').scrollIntoView().clear({force: true}).type(`${firstFewLettersOfSelectedItem}`).wait(TIMEOUTS.ONE_SEC);
 
                 // * Message attachment dropdown with the selected item should be visible
                 cy.get('#suggestionList').should('exist').within(() => {
@@ -446,7 +446,7 @@ describe('Interactive Menu', () => {
                 });
 
                 // # Now that we know selected option appeared in the list, Click enter on input field
-                cy.findByPlaceholderText('Select an option...').scrollIntoView().clear({force: true}).type('{enter}');
+                cy.findByPlaceholderText('Select an option...').scrollIntoView().type('{enter}');
 
                 // * Verify the input has the selected value
                 cy.findByDisplayValue(selectedItem).should('exist');
@@ -474,7 +474,7 @@ describe('Interactive Menu', () => {
         });
     });
 
-    it('IM21044 - Change selection in RHS / Message Thread', () => {
+    it('MM-T1748 - Change selection in RHS / Message Thread', () => {
         // # Create a webhook with distinct options
         const distinctOptions = messageMenusOptions['distinct-options'];
         const distinctListOptionPayload = getMessageMenusPayload({options: distinctOptions});
@@ -487,7 +487,7 @@ describe('Interactive Menu', () => {
         cy.getLastPostId().then((parentPostId) => {
             // # Get the last messages attachment container
             cy.get(`#messageAttachmentList_${parentPostId}`).within(() => {
-                // # Open the message attachment menu dropdown by clickin on input
+                // # Open the message attachment menu dropdown by clicking on input
                 cy.findByPlaceholderText('Select an option...').scrollIntoView().click();
 
                 // * Message attachment dropdown with the selected item should be visible
@@ -531,13 +531,13 @@ describe('Interactive Menu', () => {
             });
 
             // # Checking if we got updated ephemeral message with the new selection we made
-            verifyEphemeralMessage('Ephemeral | select option: avacodo');
+            verifyEphemeralMessage('Ephemeral | select option: avocado');
 
             cy.closeRHS();
         });
     });
 
-    it('IM21038 - Selected options with long usernames are not cut off in the RHS', () => {
+    it('MM-T1738 - Selected options with long usernames are not cut off in the RHS', () => {
         // # Make webhook request to get list of all the users
         const userOptions = getMessageMenusPayload({dataSource: 'users'});
         cy.postIncomingWebhook({url: incomingWebhook.url, data: userOptions, waitFor: 'attachment-pretext'});
@@ -578,7 +578,7 @@ describe('Interactive Menu', () => {
 });
 
 function verifyMessageAttachmentList(postId, isRhs, text) {
-    return cy.get(`#messageAttachmentList_${postId}`).within(() => {
+    cy.get(`#messageAttachmentList_${postId}`).within(() => {
         cy.findByTestId('autoCompleteSelector').should('be.visible');
 
         if (isRhs) {
@@ -601,8 +601,8 @@ function verifyMessageAttachmentList(postId, isRhs, text) {
             and('have.css', 'width', '220px').
             and('have.css', 'padding-right', '30px');
 
-        return cy.findByPlaceholderText('Select an option...').scrollIntoView().invoke('attr', 'value').then((value) => {
-            return cy.wrap({value});
+        cy.findByPlaceholderText('Select an option...').scrollIntoView().invoke('attr', 'value').then((value) => {
+            cy.wrap(value).as('optionValue');
         });
     });
 }
@@ -611,17 +611,19 @@ function verifyLastPost() {
     // # Get message attachment from the last post, and
     // * Verify its content in center view
     cy.getLastPostId().then((postId) => {
-        verifyMessageAttachmentList(postId, false).then(({value}) => {
-            // Open the same post in RHS, and
-            // * Verify its content in RHS
-            cy.clickPostCommentIcon(postId);
-            cy.get(`#rhsPost_${postId}`).within(() => {
+        verifyMessageAttachmentList(postId, false);
+
+        // # Open the same post in RHS, and
+        // * Verify its content in RHS
+        cy.clickPostCommentIcon(postId);
+        cy.get(`#rhsPost_${postId}`).within(() => {
+            cy.get('@optionValue').then((value) => {
                 verifyMessageAttachmentList(postId, true, value);
             });
-
-            // # Close the RHS
-            cy.closeRHS();
         });
+
+        // # Close the RHS
+        cy.closeRHS();
     });
 }
 

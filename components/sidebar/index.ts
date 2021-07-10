@@ -1,4 +1,3 @@
-
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
@@ -9,13 +8,14 @@ import {fetchMyCategories} from 'matterfoss-redux/actions/channel_categories';
 import {Preferences} from 'matterfoss-redux/constants';
 import Permissions from 'matterfoss-redux/constants/permissions';
 import {getCurrentChannelId} from 'matterfoss-redux/selectors/entities/channels';
-import {getConfig} from 'matterfoss-redux/selectors/entities/general';
+import {getLicense} from 'matterfoss-redux/selectors/entities/general';
 import {getBool} from 'matterfoss-redux/selectors/entities/preferences';
 import {haveIChannelPermission} from 'matterfoss-redux/selectors/entities/roles';
 import {getCurrentTeam} from 'matterfoss-redux/selectors/entities/teams';
-import {GenericAction, ActionFunc} from 'matterfoss-redux/types/actions';
+import {GenericAction} from 'matterfoss-redux/types/actions';
 
-import {createCategory} from 'actions/views/channel_sidebar';
+import {createCategory, clearChannelSelection} from 'actions/views/channel_sidebar';
+import {isUnreadFilterEnabled} from 'selectors/views/channel_sidebar';
 import {openModal} from 'actions/views/modals';
 import {GlobalState} from 'types/store';
 import {getIsLhsOpen} from 'selectors/lhs';
@@ -24,9 +24,8 @@ import Sidebar from './sidebar';
 
 function mapStateToProps(state: GlobalState) {
     const currentTeam = getCurrentTeam(state);
-    const config = getConfig(state);
-    const isDataPrefechEnabled = config.ExperimentalDataPrefetch === 'true';
     const currentChannelId = getCurrentChannelId(state);
+    const unreadFilterEnabled = isUnreadFilterEnabled(state);
 
     let canCreatePublicChannel = false;
     let canCreatePrivateChannel = false;
@@ -44,13 +43,14 @@ function mapStateToProps(state: GlobalState) {
         canCreatePublicChannel,
         canJoinPublicChannel,
         isOpen: getIsLhsOpen(state),
-        isDataPrefechEnabled,
         hasSeenModal: getBool(
             state,
             Preferences.CATEGORY_WHATS_NEW_MODAL,
             Preferences.HAS_SEEN_SIDEBAR_WHATS_NEW_MODAL,
             false,
         ),
+        isCloud: getLicense(state).Cloud === 'true',
+        unreadFilterEnabled,
     };
 }
 
@@ -60,11 +60,13 @@ type Actions = {
     openModal: (modalData: {modalId: string; dialogType: React.Component; dialogProps?: any}) => Promise<{
         data: boolean;
     }>;
+    clearChannelSelection: () => void;
 }
 
 function mapDispatchToProps(dispatch: Dispatch<GenericAction>) {
     return {
-        actions: bindActionCreators<ActionCreatorsMapObject<ActionFunc>, Actions>({
+        actions: bindActionCreators<ActionCreatorsMapObject, Actions>({
+            clearChannelSelection,
             createCategory,
             fetchMyCategories,
             openModal,

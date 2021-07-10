@@ -4,6 +4,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import {FormattedDate, FormattedMessage} from 'react-intl';
+
 import {General} from 'matterfoss-redux/constants';
 
 import LoadingScreen from 'components/loading_screen';
@@ -154,7 +155,7 @@ export default class TeamAnalytics extends React.PureComponent {
                     <div className='banner__content'>
                         <FormattedMarkdownMessage
                             id='analytics.system.infoAndSkippedIntensiveQueries'
-                            defaultMessage='Use data for only the chosen team. Exclude posts in direct message channels that are not tied to a team. \n \n To maximize performance, some statistics are disabled. You can [re-enable them in config.json](!https://docs.matterfoss.com/administration/statistics.html).'
+                            defaultMessage='Use data for only the chosen team. Exclude posts in direct message channels that are not tied to a team. \n \n To maximize performance, some statistics are disabled. You can [re-enable them in config.json](!https://docs.mattermost.com/administration/statistics.html).'
                         />
                     </div>
                 </div>
@@ -183,6 +184,7 @@ export default class TeamAnalytics extends React.PureComponent {
                                 defaultMessage='Total Posts'
                             />
                         }
+                        id='totalPosts'
                         data={postCountsDay}
                         width={740}
                         height={225}
@@ -200,6 +202,7 @@ export default class TeamAnalytics extends React.PureComponent {
                                 defaultMessage='Active Users With Posts'
                             />
                         }
+                        id='activeUsersWithPosts'
                         data={userCountsWithPostsDay}
                         width={740}
                         height={225}
@@ -246,6 +249,7 @@ export default class TeamAnalytics extends React.PureComponent {
                     </div>
                     <div className='team-statistics__team-filter'>
                         <select
+                            data-testid='teamFilter'
                             className='form-control team-statistics__team-filter__dropdown'
                             onChange={this.handleTeamChange}
                             value={this.state.team.id}

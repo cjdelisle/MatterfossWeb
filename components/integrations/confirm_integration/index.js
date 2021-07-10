@@ -2,6 +2,7 @@
 // See LICENSE.txt for license information.
 
 import {connect} from 'react-redux';
+
 import {getCommands, getOAuthApps, getIncomingHooks, getOutgoingHooks} from 'matterfoss-redux/selectors/entities/integrations';
 import {getBotAccounts} from 'matterfoss-redux/selectors/entities/bots';
 

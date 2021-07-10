@@ -2,8 +2,10 @@
 // See LICENSE.txt for license information.
 
 import React from 'react';
-import {Group} from 'matterfoss-redux/types/groups';
+
 import {FormattedMessage} from 'react-intl';
+
+import {Group} from 'matterfoss-redux/types/groups';
 
 import ToggleModalButton from 'components/toggle_modal_button';
 import MenuWrapper from 'components/widgets/menu/menu_wrapper';
@@ -18,10 +20,15 @@ interface GroupRowProps {
     key?: string;
     setNewGroupRole: (gid: string) => void;
     type: string;
+    isDisabled?: boolean;
 }
 
 export default class GroupRow extends React.PureComponent<GroupRowProps> {
-    removeGroup = () => {
+    removeGroup = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+        e.preventDefault();
+        if (this.props.isDisabled) {
+            return;
+        }
         this.props.removeGroup(this.props.group.id!);
     };
 
@@ -99,7 +106,9 @@ export default class GroupRow extends React.PureComponent<GroupRowProps> {
                         </ToggleModalButton>
                     </span>
                     <div className='group-description row-content roles'>
-                        <MenuWrapper>
+                        <MenuWrapper
+                            isDisabled={this.props.isDisabled}
+                        >
                             <div>
                                 <a data-testid='current-role'>
                                     <span>{this.displayCurrentRole()}</span>
@@ -127,6 +136,7 @@ export default class GroupRow extends React.PureComponent<GroupRowProps> {
                         <a
                             href='#'
                             onClick={this.removeGroup}
+                            className={this.props.isDisabled ? 'disabled' : ''}
                         >
                             <FormattedMessage
                                 id='admin.team_channel_settings.group_row.remove'

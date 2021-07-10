@@ -20,6 +20,10 @@ describe('admin_console/team_channel_settings/channel/ChannelModeration', () => 
                 value: true,
                 enabled: true,
             },
+            admins: {
+                value: true,
+                enabled: true,
+            },
         },
     }];
     const onChannelPermissionsChanged = () => {
@@ -35,6 +39,7 @@ describe('admin_console/team_channel_settings/channel/ChannelModeration', () => 
                 teamSchemeID={teamSchemeID}
                 teamSchemeDisplayName={teamSchemeDisplayName}
                 guestAccountsEnabled={true}
+                readOnly={false}
                 isPublic={true}
             />,
         );
@@ -46,8 +51,8 @@ describe('admin_console/team_channel_settings/channel/ChannelModeration', () => 
             <ChannelModerationTableRow
                 key={channelPermissions[0].name}
                 name={channelPermissions[0].name}
-                guests={channelPermissions[0].roles.guests?.['value']}
-                guestsDisabled={!channelPermissions[0].roles.guests?.['enabled']}
+                guests={channelPermissions[0].roles.guests?.value}
+                guestsDisabled={!channelPermissions[0].roles.guests?.enabled}
                 members={channelPermissions[0].roles.members.value}
                 membersDisabled={!channelPermissions[0].roles.members.enabled}
                 onClick={onChannelPermissionsChanged}
@@ -71,6 +76,10 @@ describe('admin_console/team_channel_settings/channel/ChannelModeration', () => 
                         value: false,
                         enabled: true,
                     },
+                    admins: {
+                        value: true,
+                        enabled: true,
+                    },
                 },
             },
             {
@@ -84,6 +93,10 @@ describe('admin_console/team_channel_settings/channel/ChannelModeration', () => 
                         value: false,
                         enabled: false,
                     },
+                    admins: {
+                        value: true,
+                        enabled: true,
+                    },
                 },
             },
         ];
@@ -95,6 +108,7 @@ describe('admin_console/team_channel_settings/channel/ChannelModeration', () => 
                 teamSchemeDisplayName={teamSchemeDisplayName}
                 guestAccountsEnabled={true}
                 isPublic={true}
+                readOnly={false}
             />,
         );
         expect(wrapper).toMatchSnapshot();
@@ -113,6 +127,10 @@ describe('admin_console/team_channel_settings/channel/ChannelModeration', () => 
                         value: false,
                         enabled: true,
                     },
+                    admins: {
+                        value: true,
+                        enabled: true,
+                    },
                 },
             },
             {
@@ -126,6 +144,10 @@ describe('admin_console/team_channel_settings/channel/ChannelModeration', () => 
                         value: false,
                         enabled: false,
                     },
+                    admins: {
+                        value: true,
+                        enabled: true,
+                    },
                 },
             },
         ];
@@ -137,6 +159,7 @@ describe('admin_console/team_channel_settings/channel/ChannelModeration', () => 
                 teamSchemeDisplayName={teamSchemeDisplayName}
                 guestAccountsEnabled={true}
                 isPublic={false}
+                readOnly={false}
             />,
         );
         expect(wrapper).toMatchSnapshot();
@@ -155,6 +178,10 @@ describe('admin_console/team_channel_settings/channel/ChannelModeration', () => 
                         value: true,
                         enabled: true,
                     },
+                    admins: {
+                        value: true,
+                        enabled: true,
+                    },
                 },
             },
             {
@@ -168,6 +195,10 @@ describe('admin_console/team_channel_settings/channel/ChannelModeration', () => 
                         value: false,
                         enabled: false,
                     },
+                    admins: {
+                        value: true,
+                        enabled: true,
+                    },
                 },
             },
         ];
@@ -179,6 +210,7 @@ describe('admin_console/team_channel_settings/channel/ChannelModeration', () => 
                 teamSchemeDisplayName={teamSchemeDisplayName}
                 guestAccountsEnabled={true}
                 isPublic={true}
+                readOnly={false}
             />,
         );
         expect(wrapper).toMatchSnapshot();
@@ -197,6 +229,10 @@ describe('admin_console/team_channel_settings/channel/ChannelModeration', () => 
                         value: true,
                         enabled: true,
                     },
+                    admins: {
+                        value: true,
+                        enabled: true,
+                    },
                 },
             },
             {
@@ -210,6 +246,10 @@ describe('admin_console/team_channel_settings/channel/ChannelModeration', () => 
                         value: false,
                         enabled: false,
                     },
+                    admins: {
+                        value: true,
+                        enabled: true,
+                    },
                 },
             },
         ];
@@ -221,6 +261,7 @@ describe('admin_console/team_channel_settings/channel/ChannelModeration', () => 
                 teamSchemeDisplayName={teamSchemeDisplayName}
                 guestAccountsEnabled={true}
                 isPublic={false}
+                readOnly={false}
             />,
         );
         expect(wrapper).toMatchSnapshot();
@@ -235,6 +276,7 @@ describe('admin_console/team_channel_settings/channel/ChannelModeration', () => 
                 teamSchemeDisplayName={undefined}
                 guestAccountsEnabled={false}
                 isPublic={false}
+                readOnly={false}
             />,
         );
         expect(wrapper).toMatchSnapshot();
@@ -245,8 +287,8 @@ describe('admin_console/team_channel_settings/channel/ChannelModeration', () => 
             <ChannelModerationTableRow
                 key={channelPermissions[0].name}
                 name={channelPermissions[0].name}
-                guests={channelPermissions[0].roles.guests?.['value']}
-                guestsDisabled={!channelPermissions[0].roles.guests?.['enabled']}
+                guests={channelPermissions[0].roles.guests?.value}
+                guestsDisabled={!channelPermissions[0].roles.guests?.enabled}
                 members={channelPermissions[0].roles.members.value}
                 membersDisabled={!channelPermissions[0].roles.members.enabled}
                 onClick={onChannelPermissionsChanged}
@@ -267,6 +309,7 @@ describe('admin_console/team_channel_settings/channel/ChannelModeration', () => 
                     teamSchemeDisplayName={teamSchemeDisplayName}
                     guestAccountsEnabled={true}
                     isPublic={false}
+                    readOnly={false}
                 />,
             );
             const instance: any = wrapper.instance();
@@ -286,6 +329,7 @@ describe('admin_console/team_channel_settings/channel/ChannelModeration', () => 
                     teamSchemeDisplayName={teamSchemeDisplayName}
                     guestAccountsEnabled={true}
                     isPublic={false}
+                    readOnly={false}
                 />,
             );
             const instance: any = wrapper.instance();
@@ -297,6 +341,10 @@ describe('admin_console/team_channel_settings/channel/ChannelModeration', () => 
                         enabled: false,
                     },
                     members: {
+                        value: true,
+                        enabled: true,
+                    },
+                    admins: {
                         value: true,
                         enabled: true,
                     },
@@ -315,6 +363,7 @@ describe('admin_console/team_channel_settings/channel/ChannelModeration', () => 
                     teamSchemeDisplayName={teamSchemeDisplayName}
                     guestAccountsEnabled={true}
                     isPublic={false}
+                    readOnly={false}
                 />,
             );
             const instance: any = wrapper.instance();
@@ -328,6 +377,10 @@ describe('admin_console/team_channel_settings/channel/ChannelModeration', () => 
                     members: {
                         value: true,
                         enabled: false,
+                    },
+                    admins: {
+                        value: true,
+                        enabled: true,
                     },
                 },
             };
@@ -344,6 +397,7 @@ describe('admin_console/team_channel_settings/channel/ChannelModeration', () => 
                     teamSchemeDisplayName={teamSchemeDisplayName}
                     guestAccountsEnabled={true}
                     isPublic={false}
+                    readOnly={false}
                 />,
             );
             const instance: any = wrapper.instance();
@@ -357,6 +411,10 @@ describe('admin_console/team_channel_settings/channel/ChannelModeration', () => 
                     members: {
                         value: true,
                         enabled: false,
+                    },
+                    admins: {
+                        value: true,
+                        enabled: true,
                     },
                 },
             };
@@ -377,6 +435,10 @@ describe('admin_console/team_channel_settings/channel/ChannelModeration', () => 
                             value: true,
                             enabled: true,
                         },
+                        admins: {
+                            value: true,
+                            enabled: true,
+                        },
                     },
                 },
                 {
@@ -387,6 +449,10 @@ describe('admin_console/team_channel_settings/channel/ChannelModeration', () => 
                             enabled: true,
                         },
                         members: {
+                            value: true,
+                            enabled: true,
+                        },
+                        admins: {
                             value: true,
                             enabled: true,
                         },
@@ -401,6 +467,7 @@ describe('admin_console/team_channel_settings/channel/ChannelModeration', () => 
                     teamSchemeDisplayName={teamSchemeDisplayName}
                     guestAccountsEnabled={true}
                     isPublic={false}
+                    readOnly={false}
                 />,
             );
             const instance: any = wrapper.instance();
@@ -422,6 +489,10 @@ describe('admin_console/team_channel_settings/channel/ChannelModeration', () => 
                             value: true,
                             enabled: true,
                         },
+                        admins: {
+                            value: true,
+                            enabled: true,
+                        },
                     },
                 },
                 {
@@ -435,6 +506,10 @@ describe('admin_console/team_channel_settings/channel/ChannelModeration', () => 
                             value: true,
                             enabled: false,
                         },
+                        admins: {
+                            value: true,
+                            enabled: true,
+                        },
                     },
                 },
             ];
@@ -446,6 +521,7 @@ describe('admin_console/team_channel_settings/channel/ChannelModeration', () => 
                     teamSchemeDisplayName={teamSchemeDisplayName}
                     guestAccountsEnabled={true}
                     isPublic={false}
+                    readOnly={false}
                 />,
             );
             const instance: any = wrapper.instance();
@@ -467,6 +543,10 @@ describe('admin_console/team_channel_settings/channel/ChannelModeration', () => 
                             value: false,
                             enabled: true,
                         },
+                        admins: {
+                            value: true,
+                            enabled: true,
+                        },
                     },
                 },
                 {
@@ -480,6 +560,10 @@ describe('admin_console/team_channel_settings/channel/ChannelModeration', () => 
                             value: false,
                             enabled: false,
                         },
+                        admins: {
+                            value: true,
+                            enabled: true,
+                        },
                     },
                 },
             ];
@@ -491,6 +575,7 @@ describe('admin_console/team_channel_settings/channel/ChannelModeration', () => 
                     teamSchemeDisplayName={teamSchemeDisplayName}
                     guestAccountsEnabled={true}
                     isPublic={true}
+                    readOnly={false}
                 />,
             );
             const instance: any = wrapper.instance();
@@ -512,6 +597,10 @@ describe('admin_console/team_channel_settings/channel/ChannelModeration', () => 
                             value: false,
                             enabled: true,
                         },
+                        admins: {
+                            value: true,
+                            enabled: true,
+                        },
                     },
                 },
                 {
@@ -525,6 +614,10 @@ describe('admin_console/team_channel_settings/channel/ChannelModeration', () => 
                             value: false,
                             enabled: false,
                         },
+                        admins: {
+                            value: true,
+                            enabled: true,
+                        },
                     },
                 },
             ];
@@ -536,6 +629,7 @@ describe('admin_console/team_channel_settings/channel/ChannelModeration', () => 
                     teamSchemeDisplayName={teamSchemeDisplayName}
                     guestAccountsEnabled={true}
                     isPublic={true}
+                    readOnly={false}
                 />,
             );
             const instance: any = wrapper.instance();
@@ -557,6 +651,10 @@ describe('admin_console/team_channel_settings/channel/ChannelModeration', () => 
                             value: true,
                             enabled: true,
                         },
+                        admins: {
+                            value: true,
+                            enabled: true,
+                        },
                     },
                 },
                 {
@@ -570,6 +668,10 @@ describe('admin_console/team_channel_settings/channel/ChannelModeration', () => 
                             value: false,
                             enabled: false,
                         },
+                        admins: {
+                            value: true,
+                            enabled: true,
+                        },
                     },
                 },
             ];
@@ -581,6 +683,7 @@ describe('admin_console/team_channel_settings/channel/ChannelModeration', () => 
                     teamSchemeDisplayName={teamSchemeDisplayName}
                     guestAccountsEnabled={true}
                     isPublic={true}
+                    readOnly={false}
                 />,
             );
             const instance: any = wrapper.instance();

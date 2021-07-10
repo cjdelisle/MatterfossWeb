@@ -1,0 +1,142 @@
+
+
+@mixin leveled-bg($hover, $active) {
+    &:hover {
+        &:not(:disabled) {
+            background: rgba($hover, .08);
+        }
+    }
+    &:active,
+    &.is-active {
+        &:not(:disabled) {
+            background: rgba($active, .08);
+        }
+    }
+    &.is-active {
+        &:active,
+        &:hover {
+            &:not(:disabled) {
+                background: rgba($active, .16);
+            }
+        }
+
+        &:hover {
+            &:active:not(:disabled) {
+                background: rgba($active, .24);
+            }
+        }
+
+    }
+};
+
+@mixin leveled-color($hover, $active) {
+    &:hover {
+        &:not(:disabled) {
+            color: rgba($hover, .72);
+        }
+    }
+
+    &:active,
+    &.is-active {
+        &:not(:disabled) {
+            color: rgba($active, 1);
+        }
+    }
+};
+
+.Button {
+    padding: 4px 10px;
+    border-radius: 4px;
+    position: relative;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 600;
+
+    color: rgba(var(--center-channel-color-rgb), .56);
+
+    &.allowTextOverflow {
+        min-width: 4rem;
+        .Button_label {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+    }
+
+    &:hover {
+        text-decoration: none;
+    }
+
+    &:disabled {
+        opacity: 32%;
+    }
+
+    &.Button___transparent {
+        background: transparent;
+        border: none;
+
+        @include leveled-bg(
+            $hover: var(--center-channel-color-rgb),
+            $active: var(--button-bg-rgb),
+        );
+
+        @include leveled-color(
+            $hover: var(--center-channel-color-rgb),
+            $active: var(--button-bg-rgb),
+        );
+
+    }
+
+    &.Button___large {
+        font-size: 14px;
+
+        &.Button___icon {
+            width: 32px; height: 32px;
+            padding: 7px 0;
+            font-size: 18px;
+            line-height: 18px;
+        }
+    }
+
+    .Button_label {
+        display: inline-block;
+        max-width: 100%;
+    }
+
+    .Button_prepended {
+        margin-right: .5em;
+    }
+    .Button_appended {
+        margin-left: .5em;
+    }
+    .dot {
+        position: absolute;
+        width: 4px; height: 4px;
+        right: 6px; top: 6px;
+        border-radius: 50%;
+
+        background: rgba(var(--sidebar-text-active-border-rgb), 1);
+    }
+}
+
+
+.separated + .separated {
+    // --button-separator-gap should always be even
+    margin-left: var(--button-separator-gap, 0px);
+}
+.separated:not(.Button),
+.separated:not(:hover):not(.is-active) {
+    + .separated:not(.Button),
+    + .separated:not(:hover):not(.is-active) {
+        position: relative;
+        &::before {
+            pointer-events: none;
+            display: inline-block;
+            position: absolute;
+            width: 1px; height: var(--button-separator-height, 100%);
+            left: calc(-.5px - var(--button-separator-gap, 0px) / 2); top: 50%; transform: translateY(-50%);
+            background: rgba(var(--center-channel-color-rgb), .16);
+            content: '';
+        }
+    }
+}

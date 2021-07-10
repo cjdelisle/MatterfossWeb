@@ -211,3 +211,32 @@ Cypress.Commands.add('apiSaveTutorialStep', (userId, value = '999') => {
 
     return cy.apiSaveUserPreference([preference], userId);
 });
+
+Cypress.Commands.add('apiSaveCloudOnboardingPreference', (userId, name, value) => {
+    const preference = {
+        user_id: userId,
+        category: 'recommended_next_steps',
+        name,
+        value,
+    };
+
+    return cy.apiSaveUserPreference([preference], userId);
+});
+
+Cypress.Commands.add('apiSaveDirectChannelShowPreference', (userId, otherUserId, value) => {
+    const preference = {
+        user_id: userId,
+        category: 'direct_channel_show',
+        name: otherUserId,
+        value,
+    };
+
+    return cy.apiSaveUserPreference([preference], userId);
+});
+
+Cypress.Commands.add('apiGetUserPreference', (userId) => {
+    return cy.request(`/api/v4/users/${userId}/preferences`).then((response) => {
+        expect(response.status).to.equal(200);
+        return cy.wrap(response.body);
+    });
+});

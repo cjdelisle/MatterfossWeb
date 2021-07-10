@@ -7,117 +7,110 @@
 // - Use element ID when selecting an element. Create one if none.
 // ***************************************************************
 
+// Stage: @prod
 // Group: @account_setting
 
-import * as TIMEOUTS from '../../../../fixtures/timeouts';
+import {hexToRgbArray, rgbArrayToString} from '../../../../utils';
 
-const testCases = [
-    {key: 0, name: 'Sidebar BG', backgroundColor: 'rgb(176, 182, 189)', themeId: 'sidebarBg', value: '#b0b6bd'},
-    {key: 1, name: 'Sidebar Text', backgroundColor: 'rgb(187, 175, 175)', themeId: 'sidebarText', value: '#bbafaf'},
-    {key: 2, name: 'Sidebar Header BG', backgroundColor: 'rgb(173, 178, 185)', themeId: 'sidebarHeaderBg', value: '#adb2b9'},
-    {key: 3, name: 'Sidebar Header Text', backgroundColor: 'rgb(183, 171, 171)', themeId: 'sidebarHeaderTextColor', value: '#b7abab'},
-    {key: 4, name: 'Sidebar Unread Text', backgroundColor: 'rgb(181, 169, 169)', themeId: 'sidebarUnreadText', value: '#b5a9a9'},
-    {key: 5, name: 'Sidebar Text Hover BG', backgroundColor: 'rgb(167, 172, 179)', themeId: 'sidebarTextHoverBg', value: '#a7acb3'},
-    {key: 6, name: 'Sidebar Text Active Border', backgroundColor: 'rgb(165, 170, 177)', themeId: 'sidebarTextActiveBorder', value: '#a5aab1'},
-    {key: 7, name: 'Sidebar Text Active Color', backgroundColor: 'rgb(175, 163, 163)', themeId: 'sidebarTextActiveColor', value: '#afa3a3'},
-    {key: 8, name: 'Online Indicator', backgroundColor: 'rgb(161, 173, 170)', themeId: 'onlineIndicator', value: '#a1adaa'},
-    {key: 9, name: 'Away Indicator', backgroundColor: 'rgb(170, 166, 159)', themeId: 'awayIndicator', value: '#aaa69f'},
-    {key: 10, name: 'Do Not Disturb Indicator', backgroundColor: 'rgb(168, 157, 157)', themeId: 'dndIndicator', value: '#a89d9d'},
-    {key: 11, name: 'Mention Jewel BG', backgroundColor: 'rgb(166, 155, 155)', themeId: 'mentionBg', value: '#a69b9b'},
-    {key: 12, name: 'Mention Jewel Text', backgroundColor: 'rgb(238, 246, 255)', themeId: 'mentionColor', value: '#eef6ff'},
-];
+describe('Custom Theme - Sidebar Styles', () => {
+    const themeRgbColor = {};
 
-describe('AS14318 Theme Colors - Custom Sidebar Styles input change', () => {
     before(() => {
         // # Login as new user and visit town-square
         cy.apiInitSetup({loginAfter: true}).then(({team}) => {
             cy.visit(`/${team.name}/channels/town-square`);
 
             // # Go to Theme > Custom > Sidebar Styles
-            toThemeDisplaySettings();
-            openSidebarStyles();
+            cy.uiOpenAccountSettingsModal('Display').within(() => {
+                cy.uiGetHeading('Display Settings').scrollIntoView().should('be.visible');
+                cy.uiGetHeading('Theme').scrollIntoView().should('be.visible').click();
+                cy.uiGetRadioButton('Custom Theme').click();
+                cy.findByText('Sidebar Styles').scrollIntoView().should('be.visible').click({force: true});
+            });
         });
     });
 
-    testCases.forEach((testCase) => {
-        it(`should change ${testCase.name} custom color`, () => {
+    it('MM-T3853_1 Should change custom sidebar styles on click to color picker', () => {
+        const testCases = [
+            {key: 0, name: 'Sidebar BG', themeId: 'sidebarBg'},
+            {key: 1, name: 'Sidebar Text', themeId: 'sidebarText'},
+            {key: 2, name: 'Sidebar Header BG', themeId: 'sidebarHeaderBg'},
+            {key: 3, name: 'Team Sidebar BG', themeId: 'sidebarTeamBarBg'},
+            {key: 4, name: 'Sidebar Header Text', themeId: 'sidebarHeaderTextColor'},
+            {key: 5, name: 'Sidebar Unread Text', themeId: 'sidebarUnreadText'},
+            {key: 6, name: 'Sidebar Text Hover BG', themeId: 'sidebarTextHoverBg'},
+            {key: 7, name: 'Sidebar Text Active Border', themeId: 'sidebarTextActiveBorder'},
+            {key: 8, name: 'Sidebar Text Active Color', themeId: 'sidebarTextActiveColor'},
+            {key: 9, name: 'Online Indicator', themeId: 'onlineIndicator'},
+            {key: 10, name: 'Away Indicator', themeId: 'awayIndicator'},
+            {key: 11, name: 'Do Not Disturb Indicator', themeId: 'dndIndicator'},
+            {key: 12, name: 'Mention Jewel BG', themeId: 'mentionBg'},
+            {key: 13, name: 'Mention Jewel Text', themeId: 'mentionColor'},
+        ];
+
+        Cypress._.forEach(testCases, (testCase) => {
             // # Click input color button
             cy.get('.input-group-addon').eq(testCase.key).scrollIntoView().click({force: true});
 
             // # Click the 15, 40 plus key coordinate of color popover
             cy.get('.color-popover').should('be.visible').click(15, 40 + testCase.key);
 
-            // * Check that icon color change
-            cy.get('.color-icon').eq(testCase.key).should('have.css', 'background-color', testCase.backgroundColor);
+            cy.get(`#${testCase.themeId}-inputColorValue`).scrollIntoView().should('be.visible').invoke('attr', 'value').then((hexColor) => {
+                themeRgbColor[testCase.themeId] = hexToRgbArray(hexColor);
 
-            // * Check that theme colors for text sharing is updated
-            cy.get('#pasteBox').scrollIntoView().should('contain', `"${testCase.themeId}":"${testCase.value}"`);
+                // * Check that icon color change
+                cy.get('.color-icon').eq(testCase.key).should('have.css', 'background-color', rgbArrayToString(themeRgbColor[testCase.themeId]));
+
+                // * Check that theme colors for text sharing is updated
+                cy.get('#pasteBox').scrollIntoView().should('contain', `"${testCase.themeId}":"${hexColor.toLowerCase()}"`);
+            });
         });
     });
 
-    it('should observe color change in Account Settings modal before saving', () => {
+    it('MM-T3853_2 Should observe color change in Account Settings modal before saving', () => {
         // * Check Sidebar BG color change
-        cy.get('.settings-links').should('have.css', 'background-color', 'rgb(176, 182, 189)');
+        cy.get('.settings-links').should('have.css', 'background-color', rgbArrayToString(themeRgbColor.sidebarBg));
 
         // * Check Sidebar Text color change
-        cy.get('#generalButton').should('have.css', 'color', 'rgba(187, 175, 175, 0.6)');
+        const rgbArr = themeRgbColor.sidebarText;
+        cy.get('#generalButton').should('have.css', 'color', `rgba(${rgbArr[0]}, ${rgbArr[1]}, ${rgbArr[2]}, 0.6)`);
 
         // * Check Sidebar Header BG color change
-        cy.get('#accountSettingsHeader').should('have.css', 'background', 'rgb(173, 178, 185) none repeat scroll 0% 0% / auto padding-box border-box');
+        cy.get('#accountSettingsHeader').should('have.css', 'background', `${rgbArrayToString(themeRgbColor.sidebarHeaderBg)} none repeat scroll 0% 0% / auto padding-box border-box`);
 
         // * Check Sidebar Header Text color change
-        cy.get('#accountSettingsModalLabel').should('have.css', 'color', 'rgb(183, 171, 171)');
+        cy.get('#accountSettingsModalLabel').should('have.css', 'color', rgbArrayToString(themeRgbColor.sidebarHeaderTextColor));
 
         cy.get('#saveSetting').click({force: true});
         cy.get('#accountSettingsHeader > .close').click();
     });
 
-    it('should take effect each custom color in Channel View', () => {
+    it('MM-T3853_3 Should take effect each custom color in Channel View', () => {
         // * Check Mention Jewel BG color
-        cy.get('#unreadIndicatorBottom').should('have.css', 'background-color', 'rgb(166, 155, 155)');
+        cy.get('#unreadIndicatorBottom').should('have.css', 'background-color', rgbArrayToString(themeRgbColor.mentionBg));
 
         // * Check Mention Jewel Text color
-        cy.get('#unreadIndicatorBottom').should('have.css', 'color', 'rgb(238, 246, 255)');
+        cy.get('#unreadIndicatorBottom').should('have.css', 'color', rgbArrayToString(themeRgbColor.mentionColor));
 
         // # Set user status to online
-        cy.userStatus(0);
+        cy.uiOpenSetStatusMenu('Online');
 
         // * Check Online Indicator color
-        cy.get('.online--icon').should('have.css', 'fill', 'rgb(161, 173, 170)');
+        cy.get('.online--icon').should('have.css', 'fill', rgbArrayToString(themeRgbColor.onlineIndicator));
 
         // # Set user status to away
-        cy.userStatus(1);
+        cy.uiOpenSetStatusMenu('Away');
 
         // * Check Away Indicator color
-        cy.get('.away--icon').should('have.css', 'fill', 'rgb(170, 166, 159)');
+        cy.get('.away--icon').should('have.css', 'fill', rgbArrayToString(themeRgbColor.awayIndicator));
 
         // # Set user status to do not disturb
-        cy.userStatus(2);
+        cy.uiOpenDndStatusSubMenu().find('#dndTime-30mins_menuitem').click();
 
         // * Check Do Not Disturb Indicator color
-        cy.get('.dnd--icon').should('have.css', 'fill', 'rgb(168, 157, 157)');
+        cy.get('.dnd--icon').should('have.css', 'fill', rgbArrayToString(themeRgbColor.dndIndicator));
 
         // # Revert user status to online
-        cy.userStatus(0);
+        cy.uiOpenSetStatusMenu('Online');
     });
 });
-
-function toThemeDisplaySettings() {
-    // # Go to account settings modal
-    cy.toAccountSettingsModal();
-
-    // * Check that the Display tab is loaded, then click on it
-    cy.get('#displayButton', {timeout: TIMEOUTS.FIVE_SEC}).should('be.visible').click();
-}
-
-// Open sidebar styles at Account Settings > Display > Theme
-function openSidebarStyles() {
-    // # Click "Edit" on Theme
-    cy.get('#themeEdit').scrollIntoView().click();
-
-    // # Select Custom Theme
-    cy.get('#customThemes').click();
-
-    // # Expand sidebar styles
-    cy.get('#sidebarStyles').click({force: true});
-}

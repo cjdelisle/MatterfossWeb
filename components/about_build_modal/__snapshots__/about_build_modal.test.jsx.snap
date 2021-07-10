@@ -68,7 +68,7 @@ exports[`components/AboutBuildModal should match snapshot for enterprise edition
           className="about-modal__title"
         >
           Matterfoss
-           
+
           <FormattedMessage
             defaultMessage="Enterprise Edition"
             id="about.enterpriseEditione1"
@@ -143,11 +143,11 @@ exports[`components/AboutBuildModal should match snapshot for enterprise edition
           values={Object {}}
         />
         <a
-          href="http://about.matterfoss.com/"
+          href="http://about.mattermost.com/"
           rel="noopener noreferrer"
           target="_blank"
         >
-          about.matterfoss.com
+          about.mattermost.com
         </a>
       </div>
       <div
@@ -170,7 +170,7 @@ exports[`components/AboutBuildModal should match snapshot for enterprise edition
           className="about-modal__links"
         >
           <a
-            href="https://about.matterfoss.com/default-terms/"
+            href="https://about.mattermost.com/default-terms/"
             id="tosLink"
             rel="noopener noreferrer"
             target="_blank"
@@ -181,9 +181,9 @@ exports[`components/AboutBuildModal should match snapshot for enterprise edition
               values={Object {}}
             />
           </a>
-           - 
+           -
           <a
-            href="https://about.matterfoss.com/default-privacy-policy/"
+            href="https://about.mattermost.com/default-privacy-policy/"
             id="privacyLink"
             rel="noopener noreferrer"
             target="_blank"
@@ -202,7 +202,7 @@ exports[`components/AboutBuildModal should match snapshot for enterprise edition
     >
       <p>
         <injectIntl(FormattedMarkdownMessage)
-          defaultMessage="Matterfoss is made possible by the open source software used in our [server](!https://about.matterfoss.com/platform-notice-txt/), [desktop](!https://about.matterfoss.com/desktop-notice-txt/) and [mobile](!https://about.matterfoss.com/mobile-notice-txt/) apps."
+          defaultMessage="Matterfoss is made possible by the open source software used in our [server](!https://about.mattermost.com/platform-notice-txt/), [desktop](!https://about.mattermost.com/desktop-notice-txt/) and [mobile](!https://about.mattermost.com/mobile-notice-txt/) apps."
           id="about.notice"
         />
       </p>
@@ -317,7 +317,7 @@ exports[`components/AboutBuildModal should match snapshot for team edition 1`] =
           className="about-modal__title"
         >
           Matterfoss
-           
+
           <FormattedMessage
             defaultMessage="Team Edition"
             id="about.teamEditiont0"
@@ -408,7 +408,7 @@ exports[`components/AboutBuildModal should match snapshot for team edition 1`] =
           className="about-modal__links"
         >
           <a
-            href="https://about.matterfoss.com/default-terms/"
+            href="https://about.mattermost.com/default-terms/"
             id="tosLink"
             rel="noopener noreferrer"
             target="_blank"
@@ -419,9 +419,9 @@ exports[`components/AboutBuildModal should match snapshot for team edition 1`] =
               values={Object {}}
             />
           </a>
-           - 
+           -
           <a
-            href="https://about.matterfoss.com/default-privacy-policy/"
+            href="https://about.mattermost.com/default-privacy-policy/"
             id="privacyLink"
             rel="noopener noreferrer"
             target="_blank"
@@ -440,7 +440,7 @@ exports[`components/AboutBuildModal should match snapshot for team edition 1`] =
     >
       <p>
         <injectIntl(FormattedMarkdownMessage)
-          defaultMessage="Matterfoss is made possible by the open source software used in our [server](!https://about.matterfoss.com/platform-notice-txt/), [desktop](!https://about.matterfoss.com/desktop-notice-txt/) and [mobile](!https://about.matterfoss.com/mobile-notice-txt/) apps."
+          defaultMessage="Matterfoss is made possible by the open source software used in our [server](!https://about.mattermost.com/platform-notice-txt/), [desktop](!https://about.mattermost.com/desktop-notice-txt/) and [mobile](!https://about.mattermost.com/mobile-notice-txt/) apps."
           id="about.notice"
         />
       </p>
@@ -554,7 +554,7 @@ exports[`components/AboutBuildModal should show ci if a ci build 1`] = `
           className="about-modal__title"
         >
           Matterfoss
-           
+
           <FormattedMessage
             defaultMessage="Team Edition"
             id="about.teamEditiont0"
@@ -657,7 +657,7 @@ exports[`components/AboutBuildModal should show ci if a ci build 1`] = `
           className="about-modal__links"
         >
           <a
-            href="https://about.matterfoss.com/default-terms/"
+            href="https://about.mattermost.com/default-terms/"
             id="tosLink"
             rel="noopener noreferrer"
             target="_blank"
@@ -668,9 +668,9 @@ exports[`components/AboutBuildModal should show ci if a ci build 1`] = `
               values={Object {}}
             />
           </a>
-           - 
+           -
           <a
-            href="https://about.matterfoss.com/default-privacy-policy/"
+            href="https://about.mattermost.com/default-privacy-policy/"
             id="privacyLink"
             rel="noopener noreferrer"
             target="_blank"
@@ -689,7 +689,7 @@ exports[`components/AboutBuildModal should show ci if a ci build 1`] = `
     >
       <p>
         <injectIntl(FormattedMarkdownMessage)
-          defaultMessage="Matterfoss is made possible by the open source software used in our [server](!https://about.matterfoss.com/platform-notice-txt/), [desktop](!https://about.matterfoss.com/desktop-notice-txt/) and [mobile](!https://about.matterfoss.com/mobile-notice-txt/) apps."
+          defaultMessage="Matterfoss is made possible by the open source software used in our [server](!https://about.mattermost.com/platform-notice-txt/), [desktop](!https://about.mattermost.com/desktop-notice-txt/) and [mobile](!https://about.mattermost.com/mobile-notice-txt/) apps."
           id="about.notice"
         />
       </p>
@@ -803,7 +803,7 @@ exports[`components/AboutBuildModal should show dev if this is a dev build 1`] =
           className="about-modal__title"
         >
           Matterfoss
-           
+
           <FormattedMessage
             defaultMessage="Team Edition"
             id="about.teamEditiont0"
@@ -894,7 +894,7 @@ exports[`components/AboutBuildModal should show dev if this is a dev build 1`] =
           className="about-modal__links"
         >
           <a
-            href="https://about.matterfoss.com/default-terms/"
+            href="https://about.mattermost.com/default-terms/"
             id="tosLink"
             rel="noopener noreferrer"
             target="_blank"
@@ -905,9 +905,9 @@ exports[`components/AboutBuildModal should show dev if this is a dev build 1`] =
               values={Object {}}
             />
           </a>
-           - 
+           -
           <a
-            href="https://about.matterfoss.com/default-privacy-policy/"
+            href="https://about.mattermost.com/default-privacy-policy/"
             id="privacyLink"
             rel="noopener noreferrer"
             target="_blank"
@@ -926,7 +926,7 @@ exports[`components/AboutBuildModal should show dev if this is a dev build 1`] =
     >
       <p>
         <injectIntl(FormattedMarkdownMessage)
-          defaultMessage="Matterfoss is made possible by the open source software used in our [server](!https://about.matterfoss.com/platform-notice-txt/), [desktop](!https://about.matterfoss.com/desktop-notice-txt/) and [mobile](!https://about.matterfoss.com/mobile-notice-txt/) apps."
+          defaultMessage="Matterfoss is made possible by the open source software used in our [server](!https://about.mattermost.com/platform-notice-txt/), [desktop](!https://about.mattermost.com/desktop-notice-txt/) and [mobile](!https://about.mattermost.com/mobile-notice-txt/) apps."
           id="about.notice"
         />
       </p>

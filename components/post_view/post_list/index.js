@@ -4,6 +4,7 @@
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {withRouter} from 'react-router-dom';
+
 import {getRecentPostsChunkInChannel, makeGetPostsChunkAroundPost, getUnreadPostsChunk, getPost} from 'matterfoss-redux/selectors/entities/posts';
 import {isManuallyUnread} from 'matterfoss-redux/selectors/entities/channels';
 import {memoizeResult} from 'matterfoss-redux/utils/helpers';
@@ -11,7 +12,7 @@ import {markChannelAsRead, markChannelAsViewed} from 'matterfoss-redux/actions/c
 import {makePreparePostIdsForPostList} from 'matterfoss-redux/utils/post_list';
 import {RequestStatus} from 'matterfoss-redux/constants';
 
-import {updateNewMessagesAtInChannel} from 'actions/global_actions.jsx';
+import {updateNewMessagesAtInChannel} from 'actions/global_actions';
 import {getLatestPostId, makeCreateAriaLabelForPost} from 'utils/post_utils.jsx';
 import {
     checkAndSetMobileView,

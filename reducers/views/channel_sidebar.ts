@@ -3,10 +3,15 @@
 
 import {combineReducers} from 'redux';
 
+import {ChannelCategoryTypes, UserTypes} from 'matterfoss-redux/action_types';
+
 import {GenericAction} from 'matterfoss-redux/types/actions';
-import {UserTypes} from 'matterfoss-redux/action_types';
+import {ChannelCategory} from 'matterfoss-redux/types/channel_categories';
+
+import {removeItem} from 'matterfoss-redux/utils/array_utils';
 
 import {DraggingState} from 'types/store';
+
 import {ActionTypes} from 'utils/constants';
 
 export function unreadFilterEnabled(state = false, action: GenericAction) {
@@ -42,8 +47,84 @@ export function newCategoryIds(state: string[] = [], action: GenericAction): str
     switch (action.type) {
     case ActionTypes.ADD_NEW_CATEGORY_ID:
         return [...state, action.data];
+    case ChannelCategoryTypes.RECEIVED_CATEGORY: {
+        const category: ChannelCategory = action.data;
+
+        if (category.channel_ids.length > 0) {
+            return removeItem(state, category.id);
+        }
+
+        return state;
+    }
+    case ChannelCategoryTypes.RECEIVED_CATEGORIES: {
+        const categories = action.data;
+
+        return categories.reduce((nextState: string[], category: ChannelCategory) => {
+            if (category.channel_ids.length > 0) {
+                return removeItem(nextState, category.id);
+            }
+
+            return nextState;
+        }, state);
+    }
+
     case UserTypes.LOGOUT_SUCCESS:
         return [];
+    default:
+        return state;
+    }
+}
+
+export function multiSelectedChannelIds(state: string[] = [], action: GenericAction): string[] {
+    switch (action.type) {
+    case ActionTypes.MULTISELECT_CHANNEL:
+        // Channel was not previously selected
+        // now will be the only selected item
+        if (!state.includes(action.data)) {
+            return [action.data];
+        }
+
+        // Channel was part of a selected group
+        // will now become the only selected item
+        if (state.length > 1) {
+            return [action.data];
+        }
+
+        // Channel was previously selected but not in a group
+        // we will now clear the selection
+        return [];
+    case ActionTypes.MULTISELECT_CHANNEL_ADD:
+        // if not selected - add it to the selected items
+        if (state.indexOf(action.data) === -1) {
+            return [
+                ...state,
+                action.data,
+            ];
+        }
+
+        // it was previously selected and now needs to be removed from the group
+        return removeItem(state, action.data);
+    case ActionTypes.MULTISELECT_CHANNEL_TO:
+        return action.data;
+
+    case ActionTypes.MULTISELECT_CHANNEL_CLEAR:
+        return state.length > 0 ? [] : state;
+
+    case UserTypes.LOGOUT_SUCCESS:
+        return [];
+    default:
+        return state;
+    }
+}
+
+export function lastSelectedChannel(state = '', action: GenericAction): string {
+    switch (action.type) {
+    case ActionTypes.MULTISELECT_CHANNEL:
+    case ActionTypes.MULTISELECT_CHANNEL_ADD:
+        return action.data;
+    case ActionTypes.MULTISELECT_CHANNEL_CLEAR:
+    case UserTypes.LOGOUT_SUCCESS:
+        return '';
     default:
         return state;
     }
@@ -53,4 +134,6 @@ export default combineReducers({
     unreadFilterEnabled,
     draggingState,
     newCategoryIds,
+    multiSelectedChannelIds,
+    lastSelectedChannel,
 });

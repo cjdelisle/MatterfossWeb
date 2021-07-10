@@ -15,7 +15,6 @@ exports[`admin_console/team_channel_settings/channel/ChannelDetails should match
       <FormattedMessage
         defaultMessage="Channel Configuration"
         id="admin.channel_settings.channel_detail.channel_configuration"
-        values={Object {}}
       />
     </div>
   </div>
@@ -43,11 +42,13 @@ exports[`admin_console/team_channel_settings/channel/ChannelDetails should match
             "team_id": "id_123",
             "team_name": "team",
             "total_msg_count": 0,
+            "total_msg_count_root": 0,
             "type": "O",
             "update_at": 0,
           }
         }
         isArchived={false}
+        isDisabled={false}
         onToggleArchive={[Function]}
         team={
           Object {
@@ -61,14 +62,12 @@ exports[`admin_console/team_channel_settings/channel/ChannelDetails should match
           <FormattedMessage
             defaultMessage="Save and Archive Channel"
             id="admin.channel_settings.channel_detail.archive_confirm.button"
-            values={Object {}}
           />
         }
         message={
           <FormattedMessage
             defaultMessage="Saving will archive the channel from the team and make its contents inaccessible for all users. Are you sure you wish to save and archive this channel?"
             id="admin.channel_settings.channel_detail.archive_confirm.message"
-            values={Object {}}
           />
         }
         modalClass=""
@@ -79,7 +78,6 @@ exports[`admin_console/team_channel_settings/channel/ChannelDetails should match
           <FormattedMessage
             defaultMessage="Save and Archive Channel"
             id="admin.channel_settings.channel_detail.archive_confirm.title"
-            values={Object {}}
           />
         }
       />
@@ -91,9 +89,11 @@ exports[`admin_console/team_channel_settings/channel/ChannelDetails should match
         toPublic={true}
       />
       <ChannelModeration
+        channelPermissions={Array []}
         guestAccountsEnabled={true}
         isPublic={true}
         onChannelPermissionsChanged={[Function]}
+        readOnly={false}
         teamSchemeDisplayName="asdf"
         teamSchemeID="asdf"
       />
@@ -114,6 +114,7 @@ exports[`admin_console/team_channel_settings/channel/ChannelDetails should match
       />
       <ChannelModes
         isDefault={false}
+        isDisabled={false}
         isPublic={true}
         isSynced={false}
         onToggle={[Function]}
@@ -136,6 +137,7 @@ exports[`admin_console/team_channel_settings/channel/ChannelDetails should match
             "team_id": "id_123",
             "team_name": "team",
             "total_msg_count": 0,
+            "total_msg_count_root": 0,
             "type": "O",
             "update_at": 0,
           }
@@ -159,6 +161,7 @@ exports[`admin_console/team_channel_settings/channel/ChannelDetails should match
             },
           ]
         }
+        isDisabled={false}
         onAddCallback={[Function]}
         onGroupRemoved={[Function]}
         removedGroups={Array []}
@@ -168,6 +171,7 @@ exports[`admin_console/team_channel_settings/channel/ChannelDetails should match
       />
       <Connect(ChannelMembers)
         channelId="123"
+        isDisabled={false}
         onAddCallback={[Function]}
         onRemoveCallback={[Function]}
         updateRole={[Function]}
@@ -178,6 +182,7 @@ exports[`admin_console/team_channel_settings/channel/ChannelDetails should match
   </div>
   <SaveChangesPanel
     cancelLink="/admin_console/user_management/channels"
+    isDisabled={false}
     onClick={[Function]}
     saveNeeded={false}
     saving={false}
@@ -201,7 +206,6 @@ exports[`admin_console/team_channel_settings/channel/ChannelDetails should match
       <FormattedMessage
         defaultMessage="Channel Configuration"
         id="admin.channel_settings.channel_detail.channel_configuration"
-        values={Object {}}
       />
     </div>
   </div>
@@ -229,11 +233,13 @@ exports[`admin_console/team_channel_settings/channel/ChannelDetails should match
             "team_id": "id_123",
             "team_name": "team",
             "total_msg_count": 0,
+            "total_msg_count_root": 0,
             "type": "O",
             "update_at": 0,
           }
         }
         isArchived={false}
+        isDisabled={false}
         onToggleArchive={[Function]}
         team={Object {}}
       />
@@ -243,14 +249,12 @@ exports[`admin_console/team_channel_settings/channel/ChannelDetails should match
           <FormattedMessage
             defaultMessage="Save and Archive Channel"
             id="admin.channel_settings.channel_detail.archive_confirm.button"
-            values={Object {}}
           />
         }
         message={
           <FormattedMessage
             defaultMessage="Saving will archive the channel from the team and make its contents inaccessible for all users. Are you sure you wish to save and archive this channel?"
             id="admin.channel_settings.channel_detail.archive_confirm.message"
-            values={Object {}}
           />
         }
         modalClass=""
@@ -261,7 +265,6 @@ exports[`admin_console/team_channel_settings/channel/ChannelDetails should match
           <FormattedMessage
             defaultMessage="Save and Archive Channel"
             id="admin.channel_settings.channel_detail.archive_confirm.title"
-            values={Object {}}
           />
         }
       />
@@ -273,9 +276,11 @@ exports[`admin_console/team_channel_settings/channel/ChannelDetails should match
         toPublic={true}
       />
       <ChannelModeration
+        channelPermissions={Array []}
         guestAccountsEnabled={true}
         isPublic={true}
         onChannelPermissionsChanged={[Function]}
+        readOnly={false}
         teamSchemeDisplayName="asdf"
         teamSchemeID="asdf"
       />
@@ -296,6 +301,7 @@ exports[`admin_console/team_channel_settings/channel/ChannelDetails should match
       />
       <ChannelModes
         isDefault={false}
+        isDisabled={false}
         isPublic={true}
         isSynced={false}
         onToggle={[Function]}
@@ -318,6 +324,7 @@ exports[`admin_console/team_channel_settings/channel/ChannelDetails should match
             "team_id": "id_123",
             "team_name": "team",
             "total_msg_count": 0,
+            "total_msg_count_root": 0,
             "type": "O",
             "update_at": 0,
           }
@@ -341,6 +348,7 @@ exports[`admin_console/team_channel_settings/channel/ChannelDetails should match
             },
           ]
         }
+        isDisabled={false}
         onAddCallback={[Function]}
         onGroupRemoved={[Function]}
         removedGroups={Array []}
@@ -350,6 +358,7 @@ exports[`admin_console/team_channel_settings/channel/ChannelDetails should match
       />
       <Connect(ChannelMembers)
         channelId="123"
+        isDisabled={false}
         onAddCallback={[Function]}
         onRemoveCallback={[Function]}
         updateRole={[Function]}
@@ -360,6 +369,7 @@ exports[`admin_console/team_channel_settings/channel/ChannelDetails should match
   </div>
   <SaveChangesPanel
     cancelLink="/admin_console/user_management/channels"
+    isDisabled={false}
     onClick={[Function]}
     saveNeeded={false}
     saving={false}

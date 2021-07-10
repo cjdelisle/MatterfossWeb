@@ -3,6 +3,7 @@
 
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
+
 import {savePreferences} from 'matterfoss-redux/actions/preferences';
 import {setStatus} from 'matterfoss-redux/actions/users';
 import {Preferences} from 'matterfoss-redux/constants';

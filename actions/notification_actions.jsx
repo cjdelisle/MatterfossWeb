@@ -2,9 +2,10 @@
 // See LICENSE.txt for license information.
 
 import semver from 'semver';
+
 import {logError} from 'matterfoss-redux/actions/errors';
 import {getProfilesByIds} from 'matterfoss-redux/actions/users';
-import {getChannel, getCurrentChannel, getMyChannelMember} from 'matterfoss-redux/selectors/entities/channels';
+import {getCurrentChannel, getMyChannelMember, makeGetChannel} from 'matterfoss-redux/selectors/entities/channels';
 import {getConfig} from 'matterfoss-redux/selectors/entities/general';
 import {getTeammateNameDisplaySetting} from 'matterfoss-redux/selectors/entities/preferences';
 import {getCurrentUserId, getCurrentUser, getStatusForUserId, getUser} from 'matterfoss-redux/selectors/entities/users';
@@ -48,7 +49,7 @@ export function sendDesktopNotification(post, msgProps) {
         }
         const teamId = msgProps.team_id;
 
-        let channel = getChannel(state, post.channel_id);
+        let channel = makeGetChannel()(state, {id: post.channel_id});
         const user = getCurrentUser(state);
         const userStatus = getStatusForUserId(state, user.id);
         const member = getMyChannelMember(state, post.channel_id);
@@ -141,32 +142,39 @@ export function sendDesktopNotification(post, msgProps) {
         const activeChannel = getCurrentChannel(state);
         const channelId = channel ? channel.id : null;
         const notify = (activeChannel && activeChannel.id !== channelId) || !state.views.browser.focused;
+        const soundName = user.notify_props !== undefined && user.notify_props.desktop_notification_sound !== undefined ? user.notify_props.desktop_notification_sound : 'None';
 
         if (notify) {
-            dispatch(notifyMe(title, body, channel, teamId, !sound));
+            dispatch(notifyMe(title, body, channel, teamId, !sound, soundName));
 
             //Don't add extra sounds on native desktop clients
             if (sound && !isWindowsApp() && !isMacApp() && !isMobileApp()) {
-                Utils.ding();
+                Utils.ding(soundName);
             }
         }
     };
 }
 
-const notifyMe = (title, body, channel, teamId, silent) => (dispatch, getState) => {
+const notifyMe = (title, body, channel, teamId, silent, soundName) => (dispatch, getState) => {
     // handle notifications in desktop app >= 4.3.0
     if (isDesktopApp() && window.desktop && semver.gte(window.desktop.version, '4.3.0')) {
+        const msg = {
+            title,
+            body,
+            channel,
+            teamId,
+            silent,
+        };
+
+        if (isDesktopApp() && window.desktop && semver.gte(window.desktop.version, '4.6.0')) {
+            msg.data = {soundName};
+        }
+
         // get the desktop app to trigger the notification
         window.postMessage(
             {
                 type: 'dispatch-notification',
-                message: {
-                    title,
-                    body,
-                    channel,
-                    teamId,
-                    silent,
-                },
+                message: msg,
             },
             window.location.origin,
         );

@@ -2,6 +2,7 @@
 // See LICENSE.txt for license information.
 
 import {combineReducers} from 'redux';
+
 import {ChannelTypes, PostTypes, UserTypes, GeneralTypes} from 'matterfoss-redux/action_types';
 
 import {ActionTypes, Constants, NotificationLevels} from 'utils/constants';
@@ -94,7 +95,7 @@ function mobileView(state = false, action) {
     }
 }
 
-function keepChannelIdAsUnread(state = null, action) {
+function lastUnreadChannel(state = null, action) {
     switch (action.type) {
     case ActionTypes.SELECT_CHANNEL_WITH_MEMBER: {
         const member = action.member;
@@ -172,7 +173,7 @@ export default combineReducers({
     loadingPosts,
     focusedPostId,
     mobileView,
-    keepChannelIdAsUnread,
+    lastUnreadChannel,
     lastGetPosts,
     toastStatus,
     channelPrefetchStatus,

@@ -27,7 +27,7 @@ describe('Edit Message', () => {
         cy.visit(townsquareLink);
     });
 
-    it('M13909 Escape should not close modal when an autocomplete drop down is in use', () => {
+    it('MM-T121 Escape should not close modal when an autocomplete drop down is in use', () => {
         // # Post a message
         cy.postMessage('Hello World!');
 
@@ -77,7 +77,7 @@ describe('Edit Message', () => {
         cy.get('#emojiPicker').should('not.exist');
     });
 
-    it('M13482 Display correct timestamp for edited message', () => {
+    it('MM-T102 Timestamp on edited post shows original post time', () => {
         // # Post a message
         cy.postMessage('Checking timestamp');
 
@@ -99,7 +99,7 @@ describe('Edit Message', () => {
                 cy.get('#edit_textbox').type('Some text {enter}');
 
                 // * Edit modal should disappear
-                cy.get('.edit-modal').should('not.be.visible');
+                cy.get('.edit-modal').should('not.exist');
 
                 // # Mouseover the post again
                 cy.get(`#post_${postId}`).trigger('mouseover');
@@ -114,12 +114,12 @@ describe('Edit Message', () => {
                 cy.get('#rhsContainer').should('be.visible');
 
                 // * Check that the RHS timeStamp equals the original post timeStamp
-                cy.get(`#CENTER_time_${postId}`).find('time').invoke('attr', 'dateTime').should('be', originalTimeStamp);
+                cy.get(`#CENTER_time_${postId}`).find('time').invoke('attr', 'dateTime').should('equal', originalTimeStamp);
             });
         });
     });
 
-    it('M15519 Open edit modal immediately after making a post when post is pending', () => {
+    it('MM-T97 Open edit modal immediately after making a post', () => {
         // # Enter first message
         const firstMessage = 'Hello';
         cy.postMessage(firstMessage);
@@ -145,7 +145,7 @@ describe('Edit Message', () => {
             // * Edit post modal should appear, and edit the post
             cy.get('#editPostModal').should('be.visible');
             cy.get('#edit_textbox').should('have.text', secondMessage).type(' Another new message{enter}');
-            cy.get('#editPostModal').should('be.not.visible');
+            cy.get('#editPostModal').should('not.exist');
 
             // * Check the second post and verify that it contains new edited message.
             cy.get(postText).should('have.text', `${secondMessage} Another new message`);

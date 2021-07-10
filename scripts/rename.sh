@@ -16,7 +16,7 @@ change_files() {
             gsub(/matterfoss\/matterfoss-utilities/, "mattermost/mattermost-utilities");
             gsub(/matterfoss\/eslint-plugin-matterfoss/, "mattermost/eslint-plugin-mattermost");
             gsub(/matterfoss\/react-bootstrap/, "mattermost/react-bootstrap");
-            gsub(/matterfoss\/matterfoss-redux/, "mattermost/mattermost-redux");
+            gsub(/matterfoss\/matterfoss-redux/, "mattermost/matterfoss-redux");
             gsub(/matterfoss\/marked/, "mattermost/marked");
             gsub(/matterfoss\/dynamic-virtualized-list/, "mattermost/dynamic-virtualized-list");
             print;

@@ -1,6 +1,7 @@
 @charset "UTF-8";
 .emojisprite-preview {
-    @include transform(scale(.55));
+    zoom: 0.55;
+    -moz-transform: scale(0.55);
     background-repeat: no-repeat;
     cursor: pointer;
     height: 64px;
@@ -10,7 +11,8 @@
     padding: 0 10px 0 0;
 }
 .emojisprite {
-    @include transform(scale(.35));
+    zoom: 0.35;
+    -moz-transform: scale(0.35);
     background-repeat: no-repeat;
     border-radius: 18px;
     cursor: pointer;
@@ -20,7 +22,8 @@
 }
 .emojisprite-loading {
     background-image: none !important;
-    @include transform(scale(.35));
+    zoom: 0.35;
+    -moz-transform: scale(0.35);
     background-repeat: no-repeat;
     border-radius: 18px;
     cursor: pointer;

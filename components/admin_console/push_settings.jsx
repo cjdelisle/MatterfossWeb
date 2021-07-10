@@ -126,28 +126,28 @@ export default class PushSettings extends AdminSettings {
             sendHelpText = (
                 <FormattedMarkdownMessage
                     id='admin.email.pushOffHelp'
-                    defaultMessage='Please see [documentation on push notifications](!https://about.matterfoss.com/default-mobile-push-notifications/) to learn more about setup options.'
+                    defaultMessage='Please see [documentation on push notifications](!https://about.mattermost.com/default-mobile-push-notifications/) to learn more about setup options.'
                 />
             );
         } else if (this.state.pushNotificationServerType === PUSH_NOTIFICATIONS_MHPNS) {
             pushServerHelpText = (
                 <FormattedMarkdownMessage
                     id='admin.email.mhpnsHelp'
-                    defaultMessage='Download [Matterfoss iOS app](!https://about.matterfoss.com/matterfoss-ios-app/) from iTunes. Download [Matterfoss Android app](!https://about.matterfoss.com/matterfoss-android-app/) from Google Play. Learn more about the [Matterfoss Hosted Push Notification Service](!https://about.matterfoss.com/default-hpns/).'
+                    defaultMessage='Download [Matterfoss iOS app](!https://about.mattermost.com/matterfoss-ios-app/) from iTunes. Download [Matterfoss Android app](!https://about.mattermost.com/matterfoss-android-app/) from Google Play. Learn more about the [Matterfoss Hosted Push Notification Service](!https://about.mattermost.com/default-hpns/).'
                 />
             );
         } else if (this.state.pushNotificationServerType === PUSH_NOTIFICATIONS_MTPNS) {
             pushServerHelpText = (
                 <FormattedMarkdownMessage
                     id='admin.email.mtpnsHelp'
-                    defaultMessage='Download [Matterfoss iOS app](!https://about.matterfoss.com/matterfoss-ios-app/) from iTunes. Download [Matterfoss Android app](!https://about.matterfoss.com/matterfoss-android-app/) from Google Play. Learn more about the [Matterfoss Test Push Notification Service](!https://about.matterfoss.com/default-tpns/).'
+                    defaultMessage='Download [Matterfoss iOS app](!https://about.mattermost.com/matterfoss-ios-app/) from iTunes. Download [Matterfoss Android app](!https://about.mattermost.com/matterfoss-android-app/) from Google Play. Learn more about the [Matterfoss Test Push Notification Service](!https://about.mattermost.com/default-tpns/).'
                 />
             );
         } else {
             pushServerHelpText = (
                 <FormattedMarkdownMessage
                     id='admin.email.easHelp'
-                    defaultMessage='Learn more about compiling and deploying your own mobile apps from an [Enterprise App Store](!https://about.matterfoss.com/default-enterprise-app-store).'
+                    defaultMessage='Learn more about compiling and deploying your own mobile apps from an [Enterprise App Store](!https://about.mattermost.com/default-enterprise-app-store).'
                 />
             );
         }
@@ -163,10 +163,11 @@ export default class PushSettings extends AdminSettings {
                             ref='agree'
                             checked={this.state.agree}
                             onChange={this.handleAgreeChange}
+                            disabled={this.props.isDisabled}
                         />
                         <FormattedMarkdownMessage
                             id='admin.email.agreeHPNS'
-                            defaultMessage=' I understand and accept the Matterfoss Hosted Push Notification Service [Terms of Service](!https://about.matterfoss.com/hpns-terms/) and [Privacy Policy](!https://about.matterfoss.com/hpns-privacy/).'
+                            defaultMessage=' I understand and accept the Matterfoss Hosted Push Notification Service [Terms of Service](!https://about.mattermost.com/hpns-terms/) and [Privacy Policy](!https://about.mattermost.com/hpns-privacy/).'
                         />
                     </div>
                 </div>
@@ -188,6 +189,7 @@ export default class PushSettings extends AdminSettings {
                     onChange={this.handleDropdownChange}
                     helpText={sendHelpText}
                     setByEnv={this.isPushNotificationServerSetByEnv()}
+                    disabled={this.props.isDisabled}
                 />
                 {tosCheckbox}
                 <TextSetting
@@ -202,7 +204,7 @@ export default class PushSettings extends AdminSettings {
                     helpText={pushServerHelpText}
                     value={this.state.pushNotificationServer}
                     onChange={this.handleChange}
-                    disabled={this.state.pushNotificationServerType !== PUSH_NOTIFICATIONS_CUSTOM}
+                    disabled={this.props.isDisabled || this.state.pushNotificationServerType !== PUSH_NOTIFICATIONS_CUSTOM}
                     setByEnv={this.isSetByEnv('EmailSettings.PushNotificationServer')}
                 />
                 <TextSetting
@@ -224,6 +226,7 @@ export default class PushSettings extends AdminSettings {
                     value={this.state.maxNotificationsPerChannel}
                     onChange={this.handleChange}
                     setByEnv={this.isSetByEnv('TeamSettings.MaxNotificationsPerChannel')}
+                    disabled={this.props.isDisabled}
                 />
             </SettingsGroup>
         );

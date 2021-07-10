@@ -3,23 +3,26 @@
 
 import {connect} from 'react-redux';
 import {bindActionCreators, Dispatch} from 'redux';
+
+import {withRouter} from 'react-router-dom';
+
 import {getConfig, getEnvironmentConfig, updateConfig} from 'matterfoss-redux/actions/admin';
 import {loadRolesIfNeeded, editRole} from 'matterfoss-redux/actions/roles';
 import * as Selectors from 'matterfoss-redux/selectors/entities/admin';
-import {withRouter} from 'react-router-dom';
 import {getConfig as getGeneralConfig, getLicense} from 'matterfoss-redux/selectors/entities/general';
 import {getRoles} from 'matterfoss-redux/selectors/entities/roles';
 import {selectChannel} from 'matterfoss-redux/actions/channels';
 import {selectTeam} from 'matterfoss-redux/actions/teams';
-import {isCurrentUserSystemAdmin, getCurrentUserId} from 'matterfoss-redux/selectors/entities/users';
+import {isCurrentUserSystemAdmin, currentUserHasAnAdminRole, getCurrentUserId} from 'matterfoss-redux/selectors/entities/users';
 import {getTeam} from 'matterfoss-redux/selectors/entities/teams';
+import {ConsoleAccess} from 'matterfoss-redux/types/admin';
 
 import {General} from 'matterfoss-redux/constants';
 import {GenericAction} from 'matterfoss-redux/types/actions';
 
 import {setNavigationBlocked, deferNavigation, cancelNavigation, confirmNavigation} from 'actions/admin_actions.jsx';
 import {getNavigationBlocked, showNavigationPrompt} from 'selectors/views/admin';
-import {getAdminDefinition} from 'selectors/admin_console';
+import {getAdminDefinition, getConsoleAccess} from 'selectors/admin_console';
 
 import LocalStorageStore from 'stores/local_storage_store';
 
@@ -34,6 +37,7 @@ function mapStateToProps(state: GlobalState) {
     const teamId = LocalStorageStore.getPreviousTeamId(getCurrentUserId(state));
     const team = getTeam(state, teamId || '');
     const unauthorizedRoute = team ? `/${team.name}/channels/${General.DEFAULT_CHANNEL}` : '/';
+    const consoleAccess: ConsoleAccess = getConsoleAccess(state);
 
     return {
         config: Selectors.getConfig(state),
@@ -44,8 +48,12 @@ function mapStateToProps(state: GlobalState) {
         navigationBlocked: getNavigationBlocked(state),
         showNavigationPrompt: showNavigationPrompt(state),
         isCurrentUserSystemAdmin: isCurrentUserSystemAdmin(state),
+        currentUserHasAnAdminRole: currentUserHasAnAdminRole(state),
         roles: getRoles(state),
         adminDefinition,
+        consoleAccess,
+        cloud: state.entities.cloud,
+        team,
     };
 }
 

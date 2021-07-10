@@ -7,7 +7,7 @@ import {connect} from 'react-redux';
 import {savePreferences} from 'matterfoss-redux/actions/preferences';
 import {Preferences} from 'matterfoss-redux/constants';
 import {getConfig} from 'matterfoss-redux/selectors/entities/general';
-import {get as getPreference, getSidebarPreferences, getNewSidebarPreference} from 'matterfoss-redux/selectors/entities/preferences';
+import {get as getPreference, getSidebarPreferences} from 'matterfoss-redux/selectors/entities/preferences';
 import {getCurrentUser} from 'matterfoss-redux/selectors/entities/users';
 import {GlobalState} from 'matterfoss-redux/types/store';
 
@@ -30,7 +30,6 @@ function mapStateToProps(state: GlobalState) {
         'true',
     );
 
-    const channelSidebarOrganizationOption = getNewSidebarPreference(state);
     const sidebarPreference = getSidebarPreferences(state);
 
     return {
@@ -39,11 +38,10 @@ function mapStateToProps(state: GlobalState) {
         unreadsAtTop: sidebarPreference.unreads_at_top,
         favoriteAtTop: sidebarPreference.favorite_at_top,
         channelSwitcherOption,
-        channelSidebarOrganizationOption: String(channelSidebarOrganizationOption),
         showChannelOrganization: config.ExperimentalChannelOrganization === 'true',
-        showChannelSidebarOrganization: config.ExperimentalChannelSidebarOrganization !== 'disabled',
         showUnusedOption: config.CloseUnusedDirectMessages === 'true',
         user: getCurrentUser(state),
+        enableLegacySidebar: config.EnableLegacySidebar === 'true',
     };
 }
 

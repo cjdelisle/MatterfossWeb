@@ -3,6 +3,7 @@
 
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
+
 import {createIncomingHook} from 'matterfoss-redux/actions/integrations';
 import {getConfig} from 'matterfoss-redux/selectors/entities/general';
 

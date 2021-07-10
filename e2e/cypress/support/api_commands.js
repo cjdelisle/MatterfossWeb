@@ -1,182 +1,17 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
-import xor from 'lodash.xor';
-
-import {getRandomId} from '../utils';
-
 import {getAdminAccount} from './env';
 
 // *****************************************************************************
 // Read more:
 // - https://on.cypress.io/custom-commands on writing Cypress commands
-// - https://api.matterfoss.com/ for Matterfoss API reference
+// - https://api.mattermost.com/ for Mattermost API reference
 // *****************************************************************************
-
-// *******************************************************************************
-// Bots
-// https://api.matterfoss.com/#tag/bots
-// *******************************************************************************
-
-Cypress.Commands.add('apiGetBots', () => {
-    return cy.request({
-        headers: {'X-Requested-With': 'XMLHttpRequest'},
-        url: '/api/v4/bots',
-        method: 'GET',
-    }).then((response) => {
-        expect(response.status).to.equal(200);
-        return cy.wrap(response);
-    });
-});
-
-// *****************************************************************************
-// Channels
-// https://api.matterfoss.com/#tag/channels
-// *****************************************************************************
-
-Cypress.Commands.add('apiCreateChannel', (teamId, name, displayName, type = 'O', purpose = '', header = '', unique = true) => {
-    const randomSuffix = getRandomId();
-
-    return cy.request({
-        headers: {'X-Requested-With': 'XMLHttpRequest'},
-        url: '/api/v4/channels',
-        method: 'POST',
-        body: {
-            team_id: teamId,
-            name: unique ? `${name}-${randomSuffix}` : name,
-            display_name: unique ? `${displayName} ${randomSuffix}` : displayName,
-            type,
-            purpose,
-            header,
-        },
-    }).then((response) => {
-        expect(response.status).to.equal(201);
-        return cy.wrap(response);
-    });
-});
-
-Cypress.Commands.add('apiCreateDirectChannel', (userids) => {
-    return cy.request({
-        headers: {'X-Requested-With': 'XMLHttpRequest'},
-        url: '/api/v4/channels/direct',
-        method: 'POST',
-        body: userids,
-    }).then((response) => {
-        expect(response.status).to.equal(201);
-        return cy.wrap(response);
-    });
-});
-
-Cypress.Commands.add('apiCreateGroupChannel', (userIds = []) => {
-    return cy.request({
-        headers: {'X-Requested-With': 'XMLHttpRequest'},
-        url: '/api/v4/channels/group',
-        method: 'POST',
-        body: userIds,
-    }).then((response) => {
-        expect(response.status).to.equal(201);
-        return cy.wrap(response);
-    });
-});
-
-Cypress.Commands.add('apiDeleteChannel', (channelId) => {
-    return cy.request({
-        headers: {'X-Requested-With': 'XMLHttpRequest'},
-        url: '/api/v4/channels/' + channelId,
-        method: 'DELETE',
-    }).then((response) => {
-        expect(response.status).to.equal(200);
-        return cy.wrap(response);
-    });
-});
-
-Cypress.Commands.add('apiUpdateChannel', (channelId, channelData) => {
-    return cy.request({
-        headers: {'X-Requested-With': 'XMLHttpRequest'},
-        url: '/api/v4/channels/' + channelId,
-        method: 'PUT',
-        body: {
-            id: channelId,
-            ...channelData,
-        },
-    }).then((response) => {
-        expect(response.status).to.equal(200);
-        return cy.wrap(response);
-    });
-});
-
-Cypress.Commands.add('apiPatchChannel', (channelId, channelData) => {
-    return cy.request({
-        headers: {'X-Requested-With': 'XMLHttpRequest'},
-        method: 'PUT',
-        url: `/api/v4/channels/${channelId}/patch`,
-        body: channelData,
-    }).then((response) => {
-        expect(response.status).to.equal(200);
-        return cy.wrap(response);
-    });
-});
-
-Cypress.Commands.add('apiGetChannelByName', (teamName, channelName) => {
-    return cy.request({
-        headers: {'X-Requested-With': 'XMLHttpRequest'},
-        url: `/api/v4/teams/name/${teamName}/channels/name/${channelName}`,
-    }).then((response) => {
-        expect(response.status).to.equal(200);
-        return cy.wrap(response);
-    });
-});
-
-Cypress.Commands.add('apiGetChannel', (channelId) => {
-    return cy.request({
-        headers: {'X-Requested-With': 'XMLHttpRequest'},
-        url: `/api/v4/channels/${channelId}`,
-    }).then((response) => {
-        expect(response.status).to.equal(200);
-        return cy.wrap(response);
-    });
-});
-
-Cypress.Commands.add('apiGetAllChannels', () => {
-    return cy.request({
-        headers: {'X-Requested-With': 'XMLHttpRequest'},
-        url: '/api/v4/channels',
-    }).then((response) => {
-        expect(response.status).to.equal(200);
-        return cy.wrap(response);
-    });
-});
-
-Cypress.Commands.add('apiAddUserToChannel', (channelId, userId) => {
-    return cy.request({
-        headers: {'X-Requested-With': 'XMLHttpRequest'},
-        url: '/api/v4/channels/' + channelId + '/members',
-        method: 'POST',
-        body: {
-            user_id: userId,
-        },
-    }).then((response) => {
-        expect(response.status).to.equal(201);
-        return cy.wrap(response);
-    });
-});
-
-/**
- * https://api.matterfoss.com/#tag/channels/paths/~1users~1{user_id}~1teams~1{team_id}~1channels/get
- */
-Cypress.Commands.add('apiGetChannelsForUser', (userId, teamId) => {
-    return cy.request({
-        headers: {'X-Requested-With': 'XMLHttpRequest'},
-        url: `/api/v4/users/${userId}/teams/${teamId}/channels`,
-    }).then((response) => {
-        expect(response.status).to.equal(200);
-        return cy.wrap(response);
-    });
-});
 
 // *****************************************************************************
 // Commands
-// https://api.matterfoss.com/#tag/commands
+// https://api.mattermost.com/#tag/commands
 // *****************************************************************************
 
 /**
@@ -194,7 +29,7 @@ Cypress.Commands.add('apiCreateCommand', (command = {}) => {
 
     return cy.request(options).then((response) => {
         expect(response.status).to.equal(201);
-        return {data: response.body, status: response.status};
+        return cy.wrap({data: response.body, status: response.status});
     });
 });
 
@@ -212,20 +47,68 @@ Cypress.Commands.add('apiEmailTest', () => {
         method: 'POST',
     }).then((response) => {
         expect(response.status, 'SMTP not setup at sysadmin config').to.equal(200);
-        cy.wrap(response);
+        return cy.wrap(response);
     });
 });
 
 // *****************************************************************************
 // Posts
-// https://api.matterfoss.com/#tag/posts
+// https://api.mattermost.com/#tag/posts
 // *****************************************************************************
 
 /**
-* Unpins pinned posts of given postID directly via API
+* Creates a post directly via API
 * This API assume that the user is logged in and has cookie to access
-* @param {String} postId - Post ID of the pinned post to unpin
+* @param {String} channelId - Where to post
+* @param {String} message - What to post
+* @param {String} rootId - Parent post ID. Set to "" to avoid nesting
+* @param {Object} props - Post props
+* @param {String} token - Optional token to use for auth. If not provided - posts as current user
 */
+Cypress.Commands.add('apiCreatePost', (channelId, message, rootId, props, token = '', failOnStatusCode = true) => {
+    const headers = {'X-Requested-With': 'XMLHttpRequest'};
+    if (token !== '') {
+        headers.Authorization = `Bearer ${token}`;
+    }
+    return cy.request({
+        headers,
+        failOnStatusCode,
+        url: '/api/v4/posts',
+        method: 'POST',
+        body: {
+            channel_id: channelId,
+            root_id: rootId,
+            message,
+            props,
+        },
+    });
+});
+
+/**
+ * Creates a post directly via API
+ * This API assume that the user is logged in as admin
+ * @param {String} userDd - user for whom to create the token
+ */
+Cypress.Commands.add('apiCreateToken', (userId) => {
+    return cy.request({
+        headers: {'X-Requested-With': 'XMLHttpRequest'},
+        url: `/api/v4/users/${userId}/tokens`,
+        method: 'POST',
+        body: {
+            description: 'some text',
+        },
+    }).then((response) => {
+        // * Validate that request was denied
+        expect(response.status).to.equal(200);
+        return cy.wrap({token: response.body.token});
+    });
+});
+
+/**
+ * Unpins pinned posts of given postID directly via API
+ * This API assume that the user is logged in and has cookie to access
+ * @param {Post} postId - Post ID of the pinned post to unpin
+ */
 Cypress.Commands.add('apiUnpinPosts', (postId) => {
     return cy.request({
         headers: {'X-Requested-With': 'XMLHttpRequest'},
@@ -236,7 +119,7 @@ Cypress.Commands.add('apiUnpinPosts', (postId) => {
 
 // *****************************************************************************
 // Webhooks
-// https://api.matterfoss.com/#tag/webhooks
+// https://api.mattermost.com/#tag/webhooks
 // *****************************************************************************
 
 Cypress.Commands.add('apiCreateWebhook', (hook = {}, isIncoming = true) => {
@@ -250,7 +133,7 @@ Cypress.Commands.add('apiCreateWebhook', (hook = {}, isIncoming = true) => {
 
     return cy.request(options).then((response) => {
         const data = response.body;
-        return {...data, url: isIncoming ? `${Cypress.config().baseUrl}/hooks/${data.id}` : ''};
+        return cy.wrap({...data, url: isIncoming ? `${Cypress.config().baseUrl}/hooks/${data.id}` : ''});
     });
 });
 
@@ -269,19 +152,6 @@ Cypress.Commands.add('apiGetTeam', (teamId) => {
         expect(response.status).to.equal(200);
         return cy.wrap(response);
     });
-});
-
-/**
- * Demote a Member to Guest directly via API
- * @param {String} userId - The user ID
- * All parameter required
- */
-Cypress.Commands.add('demoteUser', (userId) => {
-    //Demote Regular Member to Guest User
-    const baseUrl = Cypress.config('baseUrl');
-    const admin = getAdminAccount();
-
-    cy.externalRequest({user: admin, method: 'post', baseUrl, path: `users/${userId}/demote`});
 });
 
 /**
@@ -313,148 +183,6 @@ Cypress.Commands.add('removeUserFromTeam', (teamId, userId) => {
 });
 
 /**
- * Promote a Guest to a Member directly via API
- * @param {String} userId - The user ID
- * All parameter required
- */
-Cypress.Commands.add('promoteUser', (userId) => {
-    //Promote Regular Member to Guest User
-    const baseUrl = Cypress.config('baseUrl');
-    const admin = getAdminAccount();
-
-    cy.externalRequest({user: admin, method: 'post', baseUrl, path: `users/${userId}/promote`});
-});
-
-// *****************************************************************************
-// Plugins
-// https://api.matterfoss.com/#tag/plugins
-// *****************************************************************************
-
-/**
- * Install plugin from URL directly via API.
- *
- * @param {String} pluginDownloadUrl - URL used to download the plugin
- * @param {String} force - Set to 'true' to overwrite a previously installed plugin with the same ID, if any
- */
-Cypress.Commands.add('apiInstallPluginFromUrl', (pluginDownloadUrl, force = false) => {
-    return cy.request({
-        headers: {'X-Requested-With': 'XMLHttpRequest'},
-        url: `/api/v4/plugins/install_from_url?plugin_download_url=${encodeURIComponent(pluginDownloadUrl)}&force=${force}`,
-        method: 'POST',
-        timeout: 60000,
-    }).then((response) => {
-        expect(response.status).to.equal(201);
-        return cy.wrap(response);
-    });
-});
-
-/**
- * Remove the plugin with the provided ID from the server. All plugin files are deleted.
- *
- * @param {String} pluginId - Id of the plugin to uninstall
- */
-Cypress.Commands.add('apiRemovePluginById', (pluginId) => {
-    return cy.request({
-        headers: {'X-Requested-With': 'XMLHttpRequest'},
-        url: `/api/v4/plugins/${encodeURIComponent(pluginId)}`,
-        method: 'DELETE',
-        failOnStatusCode: false,
-    }).then((response) => {
-        if (response.status !== 200 && response.status !== 404) {
-            expect(response.status).to.equal(200);
-        }
-        return cy.wrap(response);
-    });
-});
-
-/**
- * Get all user`s plugins.
- *
- */
-Cypress.Commands.add('apiGetAllPlugins', () => {
-    return cy.request({
-        headers: {'X-Requested-With': 'XMLHttpRequest'},
-        url: '/api/v4/plugins',
-        method: 'GET',
-        failOnStatusCode: false,
-    }).then((response) => {
-        expect(response.status).to.equal(200);
-        return cy.wrap(response);
-    });
-});
-
-/**
- * Enable plugin by id.
- *
- * @param {String} pluginId - Id of the plugin to enable
- */
-Cypress.Commands.add('apiEnablePluginById', (pluginId) => {
-    return cy.request({
-        headers: {'X-Requested-With': 'XMLHttpRequest'},
-        url: `/api/v4/plugins/${encodeURIComponent(pluginId)}/enable`,
-        method: 'POST',
-        timeout: 60000,
-        failOnStatusCode: true,
-    }).then((response) => {
-        expect(response.status).to.equal(200);
-        return cy.wrap(response);
-    });
-});
-
-/**
- * Upload binary file by name and Type *
- * @param {String} filename - name of the plugin to upload
- */
-Cypress.Commands.add('apiUploadPlugin', (filename) => {
-    cy.apiUploadFile('plugin', filename, {url: '/api/v4/plugins', method: 'POST', successStatus: 201});
-});
-
-/**
- * Creates a bot directly via API
- * This API assume that the user is logged in and has cookie to access
- * @param {String} username - The bots username
- * @param {String} displayName - The non-unique UI name for the bot
- * @param {String} description - The description of the bot
- * All parameters are required
- */
-Cypress.Commands.add('apiCreateBot', (username, displayName, description) => {
-    return cy.request({
-        headers: {'X-Requested-With': 'XMLHttpRequest'},
-        url: '/api/v4/bots',
-        method: 'POST',
-        body: {
-            username,
-            display_name: displayName,
-            description,
-        },
-    }).then((response) => {
-        expect(response.status).to.equal(201);
-        return cy.wrap(response);
-    });
-});
-
-/**
- * Get access token
- * This API assume that the user is logged in and has cookie to access
- * @param {String} user_id - The user id to generate token for
- * @param {String} description - The description of the token usage
- * All parameters are required
- */
-Cypress.Commands.add('apiAccessToken', (userId, description) => {
-    return cy.request({
-        headers: {'X-Requested-With': 'XMLHttpRequest'},
-        url: '/api/v4/users/' + userId + '/tokens',
-        method: 'POST',
-        body: {
-            description,
-        },
-    }).then((response) => {
-        expect(response.status).to.equal(200);
-        return cy.wrap(response.body.token);
-    });
-});
-
-/**
  * Get LDAP Group Sync Job Status
  *
  */
@@ -471,199 +199,8 @@ Cypress.Commands.add('apiGetLDAPSync', () => {
 });
 
 // *****************************************************************************
-// Roles
-// https://api.matterfoss.com/#tag/roles
-// *****************************************************************************
-
-/**
- * Get role by name.
- *
- * @param {String} roleName - Name of the role to get
- */
-Cypress.Commands.add('getRoleByName', (roleName) => {
-    return cy.request({
-        headers: {'X-Requested-With': 'XMLHttpRequest'},
-        url: `/api/v4/roles/name/${roleName}`,
-        method: 'GET',
-        timeout: 60000,
-    }).then((response) => {
-        expect(response.status).to.equal(200);
-        return cy.wrap(response);
-    });
-});
-
-export const defaultRolesPermissions = {
-    team_admin: [
-        'edit_others_posts',
-        'remove_user_from_team',
-        'manage_team', 'import_team',
-        'manage_team_roles',
-        'manage_channel_roles',
-        'manage_slash_commands',
-        'manage_others_slash_commands',
-        'manage_incoming_webhooks',
-        'manage_outgoing_webhooks',
-        'delete_post',
-        'delete_others_posts',
-        'manage_others_outgoing_webhooks',
-        'add_reaction',
-        'manage_others_incoming_webhooks',
-        'use_channel_mentions',
-        'manage_public_channel_members',
-        'manage_private_channel_members',
-        'create_post',
-        'remove_reaction',
-        'use_group_mentions',
-    ],
-    channel_admin: [
-        'manage_channel_roles',
-        'create_post',
-        'add_reaction',
-        'remove_reaction',
-        'manage_public_channel_members',
-        'manage_private_channel_members',
-        'use_channel_mentions',
-        'use_group_mentions',
-    ],
-    system_user: [
-        'create_direct_channel',
-        'create_group_channel',
-        'permanent_delete_user',
-        'create_team',
-        'get_public_link',
-        'list_public_teams',
-        'join_public_teams',
-        'view_members',
-    ],
-    team_user: [
-        'list_team_channels',
-        'join_public_channels',
-        'read_public_channel',
-        'view_team',
-        'create_public_channel',
-        'create_private_channel',
-        'invite_user',
-        'add_user_to_team',
-    ],
-    channel_user: [
-        'manage_public_channel_properties',
-        'delete_public_channel',
-        'manage_private_channel_properties',
-        'delete_private_channel',
-        'read_channel',
-        'add_reaction',
-        'remove_reaction',
-        'manage_public_channel_members',
-        'upload_file',
-        'create_post',
-        'use_slash_commands',
-        'manage_private_channel_members',
-        'delete_post',
-        'edit_post',
-        'use_channel_mentions',
-        'use_group_mentions',
-    ],
-    system_guest: [
-        'create_direct_channel',
-        'create_group_channel',
-    ],
-    team_guest: [
-        'view_team',
-    ],
-    channel_guest: [
-        'edit_post',
-        'add_reaction',
-        'remove_reaction',
-        'use_channel_mentions',
-        'use_slash_commands',
-        'read_channel',
-        'upload_file',
-        'create_post',
-    ],
-};
-
-/**
- * Get a list of roles from their names
- * https://api.matterfoss.com/#tag/roles/paths/~1roles~1names/post
- */
-Cypress.Commands.add('apiGetRolesByNames', (names) => {
-    return cy.request({
-        headers: {'X-Requested-With': 'XMLHttpRequest'},
-        url: '/api/v4/roles/names',
-        method: 'POST',
-        body: names || Object.keys(defaultRolesPermissions),
-    }).then((response) => {
-        expect(response.status).to.equal(200);
-        return cy.wrap(response);
-    });
-});
-
-/**
- * Patch a role.
- *
- * @param {String} roleID - ID of the role to patch
- * @param {String} force - Set to 'true' to overwrite a previously installed plugin with the same ID, if any
- */
-Cypress.Commands.add('apiPatchRole', (roleID, patch) => {
-    return cy.request({
-        headers: {'X-Requested-With': 'XMLHttpRequest'},
-        url: `/api/v4/roles/${roleID}/patch`,
-        method: 'PUT',
-        timeout: 60000,
-        body: patch,
-    }).then((response) => {
-        expect(response.status).to.equal(200);
-        return cy.wrap(response);
-    });
-});
-
-Cypress.Commands.add('apiResetRoles', () => {
-    cy.apiGetRolesByNames().then((res) => {
-        const rolePermissions = res.body;
-
-        rolePermissions.forEach((role) => {
-            const defaultPermissions = defaultRolesPermissions[role.name];
-            const diff = xor(role.permissions, defaultPermissions);
-
-            if (diff.length > 0) {
-                cy.apiPatchRole(role.id, {permissions: defaultPermissions});
-            }
-        });
-    });
-});
-
-/**
- * Get all schemes in the system - must have PERMISSION_MANAGE_SYSTEM
- *
- * @param {String} scope - either "team" or "channel"
- */
-Cypress.Commands.add('apiGetSchemes', (scope) => {
-    return cy.request({
-        headers: {'X-Requested-With': 'XMLHttpRequest'},
-        url: `/api/v4/schemes?scope=${scope}`,
-        method: 'GET',
-    });
-});
-
-/**
- * Delete a scheme directly via API
- *
- * @param {String} schemeId - the id of the scheme to delete
- */
-Cypress.Commands.add('apiDeleteScheme', (schemeId) => {
-    return cy.request({
-        headers: {'X-Requested-With': 'XMLHttpRequest'},
-        url: '/api/v4/schemes/' + schemeId,
-        method: 'DELETE',
-    }).then((response) => {
-        expect(response.status).to.equal(200);
-        return cy.wrap(response);
-    });
-});
-
-// *****************************************************************************
 // Groups
-// https://api.matterfoss.com/#tag/groups
+// https://api.mattermost.com/#tag/groups
 // *****************************************************************************
 
 /**
@@ -860,124 +397,5 @@ function linkUnlinkGroupSyncable(groupID, syncableID, syncableType, httpMethod) 
     }).then((response) => {
         expect(response.status).to.be.oneOf([200, 201, 204]);
         return cy.wrap(response);
-    });
-}
-
-// *****************************************************************************
-// SAML
-// https://api.matterfoss.com/#tag/SAML
-// *****************************************************************************
-
-/**
- * Get SAML certificate status directly via API.
- */
-Cypress.Commands.add('apiGetSAMLCertificateStatus', () => {
-    return cy.request({
-        headers: {'X-Requested-With': 'XMLHttpRequest'},
-        url: '/api/v4/saml/certificate/status',
-        method: 'GET',
-    }).then((response) => {
-        expect(response.status).to.be.oneOf([200, 201]);
-        return cy.wrap(response);
-    });
-});
-
-/**
- * Get metadata from Identity Provider directly via API.
- *
- * @param {String} samlMetadataUrl
- */
-Cypress.Commands.add('apiGetMetadataFromIdp', (samlMetadataUrl) => {
-    return cy.request({
-        headers: {'X-Requested-With': 'XMLHttpRequest'},
-        url: '/api/v4/saml/metadatafromidp',
-        method: 'POST',
-        body: {saml_metadata_url: samlMetadataUrl},
-    }).then((response) => {
-        expect(response.status, 'Failed to obtain metadata from Identity Provider URL').to.equal(200);
-        return cy.wrap(response);
-    });
-});
-
-/**
- * Upload SAML IDP certificate directly via API
- * @param {String} filename
- */
-Cypress.Commands.add('apiUploadSAMLIDPCert', (filename) => {
-    cy.apiUploadFile('certificate', filename, {url: '/api/v4/saml/certificate/idp', method: 'POST', successStatus: 200});
-});
-
-/**
- * Upload SAML public certificate directly via API
- * @param {String} filename
- */
-Cypress.Commands.add('apiUploadSAMLPublicCert', (filename) => {
-    cy.apiUploadFile('certificate', filename, {url: '/api/v4/saml/certificate/public', method: 'POST', successStatus: 200});
-});
-
-/**
- * Upload SAML private Key directly via API
- * @param {String} filename
- */
-Cypress.Commands.add('apiUploadSAMLPrivateKey', (filename) => {
-    cy.apiUploadFile('certificate', filename, {url: '/api/v4/saml/certificate/private', method: 'POST', successStatus: 200});
-});
-
-// *****************************************************************************
-// Common / Helper commands
-// *****************************************************************************
-
-/**
- * Upload file directly via API
- * @param {String} name - name of form
- * @param {String} filename - name of a file to upload
- * @param {Object} options - request options
- * @param {String} options.url
- * @param {String} options.method
- * @param {Number} options.successStatus
- */
-Cypress.Commands.add('apiUploadFile', (name, filename, options = {}) => {
-    const formData = new FormData();
-
-    cy.fixture(filename, 'binary', {timeout: 1200000}).
-        then(Cypress.Blob.binaryStringToBlob).
-        then((blob) => {
-            formData.set(name, blob, filename);
-            formRequest(options.method, options.url, formData, options.successStatus);
-        });
-});
-
-/**
- * process binary file HTTP form request
- * @param {String} method - Http request method - POST/PUT
- * @param {String} url - HTTP resource URL
- * @param {FormData} FormData - Key value pairs representing form fields and value
- */
-function formRequest(method, url, formData, successStatus) {
-    const baseUrl = Cypress.config('baseUrl');
-    const xhr = new XMLHttpRequest();
-    xhr.open(method, url, false);
-    let cookies = '';
-    cy.getCookie('MMCSRF', {log: false}).then((token) => {
-        //get MMCSRF cookie value
-        const csrfToken = token.value;
-        cy.getCookies({log: false}).then((cookieValues) => {
-            //prepare cookie string
-            cookieValues.forEach((cookie) => {
-                cookies += cookie.name + '=' + cookie.value + '; ';
-            });
-
-            //set headers
-            xhr.setRequestHeader('Access-Control-Allow-Origin', baseUrl);
-            xhr.setRequestHeader('Access-Control-Allow-Methods', 'GET, POST, PUT');
-            xhr.setRequestHeader('X-CSRF-Token', csrfToken);
-            xhr.setRequestHeader('Cookie', cookies);
-            xhr.send(formData);
-            if (xhr.readyState === 4) {
-                expect(xhr.status, 'Expected form request to be processed successfully').to.equal(successStatus);
-            } else {
-                expect(xhr.status, 'Form request process delayed').to.equal(successStatus);
-            }
-        });
     });
 }

@@ -2,8 +2,10 @@
 // See LICENSE.txt for license information.
 
 import {createSelector} from 'reselect';
-import {getCurrentUserId} from 'matterfoss-redux/selectors/entities/users';
+
+import {makeGetChannel} from 'matterfoss-redux/selectors/entities/channels';
 import {Post, PostType} from 'matterfoss-redux/types/posts';
+import {getCurrentUserId} from 'matterfoss-redux/selectors/entities/users';
 import {Channel} from 'matterfoss-redux/types/channels';
 import {$ID} from 'matterfoss-redux/types/utilities';
 
@@ -11,7 +13,7 @@ import {makeGetGlobalItem} from 'selectors/storage';
 import {PostTypes} from 'utils/constants';
 import {localizeMessage} from 'utils/utils.jsx';
 import {GlobalState} from 'types/store';
-import {RhsState, FakePost, PostDraft} from 'types/store/rhs';
+import {RhsState, FakePost, PostDraft, SearchType} from 'types/store/rhs';
 
 export function getSelectedPostId(state: GlobalState): $ID<Post> {
     return state.views.rhs.selectedPostId;
@@ -25,6 +27,10 @@ export function getSelectedPostCardId(state: GlobalState): $ID<Post> {
     return state.views.rhs.selectedPostCardId;
 }
 
+export function getFilesSearchExtFilter(state: GlobalState): string[] {
+    return state.views.rhs.filesSearchExtFilter;
+}
+
 export function getSelectedPostCard(state: GlobalState) {
     return state.entities.posts.posts[getSelectedPostCardId(state)];
 }
@@ -32,6 +38,16 @@ export function getSelectedPostCard(state: GlobalState) {
 export function getSelectedChannelId(state: GlobalState) {
     return state.views.rhs.selectedChannelId;
 }
+
+export const getSelectedChannel = (() => {
+    const getChannel = makeGetChannel();
+
+    return (state: GlobalState) => {
+        const channelId = getSelectedChannelId(state);
+
+        return getChannel(state, {id: channelId});
+    };
+})();
 
 export function getPluggableId(state: GlobalState) {
     return state.views.rhs.pluggableId;
@@ -73,6 +89,10 @@ export function getPreviousRhsState(state: GlobalState): RhsState {
 
 export function getSearchTerms(state: GlobalState): string {
     return state.views.rhs.searchTerms;
+}
+
+export function getSearchType(state: GlobalState): SearchType {
+    return state.views.rhs.searchType;
 }
 
 export function getSearchResultsTerms(state: GlobalState): string {

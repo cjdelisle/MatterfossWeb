@@ -8,7 +8,7 @@
 // See https://jsdoc.app/index.html for reference.
 // Basic requirements for documentation are the following:
 // - Meaningful description
-// - Specific link to https://api.matterfoss.com
+// - Specific link to https://api.mattermost.com
 // - Each parameter with `@params`
 // - Return value with `@returns`
 // - Example usage with `@example`
@@ -16,12 +16,14 @@
 // ***************************************************************
 
 declare namespace Cypress {
-    interface Chainable<Subject = any> {
+    interface Chainable {
 
         /**
-         * Get client license.
-         * See https://api.matterfoss.com/#tag/system/paths/~1license~1client/get
+         * Get a subset of the server license needed by the client.
+         * See https://api.mattermost.com/#tag/system/paths/~1license~1client/get
          * @returns {ClientLicense} `out.license` as `ClientLicense`
+         * @returns {Boolean} `out.isLicensed`
+         * @returns {Boolean} `out.isCloudLicensed`
          *
          * @example
          *   cy.apiGetClientLicense().then(({license}) => {
@@ -31,17 +33,20 @@ declare namespace Cypress {
         apiGetClientLicense(): Chainable<ClientLicense>;
 
         /**
-         * Verifies if server has license for a certain feature and fail test if not found.
-         * @param {string} feature - feature to check, e.g. 'LDAP'
+         * Verify if server has license for a certain feature and fail test if not found.
+         * Upload a license if it does not exist.
+         * @param {string[]} ...features - accepts multiple arguments of features to check, e.g. 'LDAP'
          * @returns {ClientLicense} `out.license` as `ClientLicense`
          *
          * @example
          *   cy.apiRequireLicenseForFeature('LDAP');
+        *    cy.apiRequireLicenseForFeature('LDAP', 'SAML');
          */
-        apiRequireLicenseForFeature(feature: string): Chainable<ClientLicense>;
+        apiRequireLicenseForFeature(...features: string[]): Chainable<ClientLicense>;
 
         /**
-         * Verifies if server has license and fail test if not found.
+         * Verify if server has license and fail test if not found.
+         * Upload a license if it does not exist.
          * @returns {ClientLicense} `out.license` as `ClientLicense`
          *
          * @example
@@ -50,8 +55,40 @@ declare namespace Cypress {
         apiRequireLicense(): Chainable<ClientLicense>;
 
         /**
+         * Upload a license to enable enterprise features.
+         * See https://api.mattermost.com/#tag/system/paths/~1license/post
+         * @param {String} filePath - path of the license file relative to fixtures folder
+         * @returns {Response} response: Cypress-chainable response which should have successful HTTP status of 200 OK to continue or pass.
+         *
+         * @example
+         *   const filePath = 'mattermost-license.txt';
+         *   cy.apiUploadLicense(filePath);
+         */
+        apiUploadLicense(filePath: string): Chainable<Response>;
+
+        /**
+         * Request and install a trial license for your server.
+         * See https://api.mattermost.com/#tag/system/paths/~1trial-license/post
+         * @returns {Object} `out.data` as response status
+         *
+         * @example
+         *   cy.apiInstallTrialLicense();
+         */
+        apiInstallTrialLicense(): Chainable<Record<string, any>>;
+
+        /**
+         * Remove the license file from the server. This will disable all enterprise features.
+         * See https://api.mattermost.com/#tag/system/paths/~1license/delete
+         * @returns {Response} response: Cypress-chainable response which should have successful HTTP status of 200 OK to continue or pass.
+         *
+         * @example
+         *   cy.apiDeleteLicense();
+         */
+        apiDeleteLicense(): Chainable<Response>;
+
+        /**
          * Update configuration.
-         * See https://api.matterfoss.com/#tag/system/paths/~1config/put
+         * See https://api.mattermost.com/#tag/system/paths/~1config/put
          * @param {AdminConfig} newConfig - new config
          * @returns {AdminConfig} `out.config` as `AdminConfig`
          *
@@ -63,8 +100,21 @@ declare namespace Cypress {
         apiUpdateConfig(newConfig: AdminConfig): Chainable<AdminConfig>;
 
         /**
+         * Reload the configuration file to pick up on any changes made to it.
+         * See https://api.mattermost.com/#tag/system/paths/~1config~1reload/post
+         * @returns {AdminConfig} `out.config` as `AdminConfig`
+         *
+         * @example
+         *   cy.apiReloadConfig().then(({config}) => {
+         *       // do something with config
+         *   });
+         */
+        apiReloadConfig(): Chainable<AdminConfig>;
+
+        /**
          * Get configuration.
-         * See https://api.matterfoss.com/#tag/system/paths/~1config/get
+         * See https://api.mattermost.com/#tag/system/paths/~1config/get
+         * @param {Boolean} old - false (default) or true to return old format of client config
          * @returns {AdminConfig} `out.config` as `AdminConfig`
          *
          * @example
@@ -76,7 +126,7 @@ declare namespace Cypress {
 
         /**
          * Get analytics.
-         * See https://api.matterfoss.com/#tag/system/paths/~1analytics~1old/get
+         * See https://api.mattermost.com/#tag/system/paths/~1analytics~1old/get
          * @returns {AnalyticsRow[]} `out.analytics` as `AnalyticsRow[]`
          *
          * @example
@@ -88,12 +138,44 @@ declare namespace Cypress {
 
         /**
          * Invalidate all the caches.
-         * See https://api.matterfoss.com/#tag/system/paths/~1caches~1invalidate/post
+         * See https://api.mattermost.com/#tag/system/paths/~1caches~1invalidate/post
          * @returns {Object} `out.data` as response status
          *
          * @example
          *   cy.apiInvalidateCache();
          */
         apiInvalidateCache(): Chainable<Record<string, any>>;
+
+        /**
+         * Allow test for server other than Cloud edition or with Cloud license.
+         * Otherwise, fail fast.
+         * @example
+         *   cy.shouldNotRunOnCloudEdition();
+         */
+        shouldNotRunOnCloudEdition(): Chainable;
+
+        /**
+         * Allow test for server on Team edition or without license.
+         * Otherwise, fail fast.
+         * @example
+         *   cy.shouldRunOnTeamEdition();
+         */
+        shouldRunOnTeamEdition(): Chainable;
+
+        /**
+         * Allow test for server with Plugin upload enabled.
+         * Otherwise, fail fast.
+         * @example
+         *   cy.shouldHavePluginUploadEnabled();
+         */
+        shouldHavePluginUploadEnabled(): Chainable;
+
+        /**
+         * Allow test for server running with subpath.
+         * Otherwise, fail fast.
+         * @example
+         *   cy.shouldRunWithSubpath();
+         */
+        shouldRunWithSubpath(): Chainable;
     }
 }

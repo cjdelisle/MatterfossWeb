@@ -4,6 +4,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {FormattedMessage} from 'react-intl';
+
 import {Groups} from 'matterfoss-redux/constants';
 
 import {t} from 'utils/i18n';
@@ -31,6 +32,7 @@ export default class GroupDetails extends React.PureComponent {
         groupChannels: PropTypes.arrayOf(PropTypes.object),
         members: PropTypes.arrayOf(PropTypes.object),
         memberCount: PropTypes.number.isRequired,
+        isDisabled: PropTypes.bool,
         actions: PropTypes.shape({
             getGroup: PropTypes.func.isRequired,
             getMembers: PropTypes.func.isRequired,
@@ -363,10 +365,16 @@ export default class GroupDetails extends React.PureComponent {
                     serverError = result.error?.message;
                 }
             }
-            this.setState({allowReference, groupMentionName: lcGroupMentionName, serverError});
+            this.setState({
+                allowReference,
+                groupMentionName: lcGroupMentionName,
+                serverError,
+                hasAllowReferenceChanged: result.error ? hasAllowReferenceChanged : false,
+                hasGroupMentionNameChanged: result.error ? hasGroupMentionNameChanged : false,
+            });
         }
 
-        return true;
+        return !serverError;
     };
 
     handleRolesToUpdate = async () => {
@@ -434,7 +442,7 @@ export default class GroupDetails extends React.PureComponent {
     }
 
     render = () => {
-        const {group, members, memberCount} = this.props;
+        const {group, members, memberCount, isDisabled} = this.props;
         const {groupTeams, groupChannels} = this.state;
         const {allowReference, groupMentionName, saving, saveNeeded, serverError} = this.state;
 
@@ -470,6 +478,7 @@ export default class GroupDetails extends React.PureComponent {
                             allowReference={allowReference}
                             onToggle={this.onMentionToggle}
                             onChange={this.onMentionChange}
+                            readOnly={isDisabled}
                         />
 
                         <AdminPanel
@@ -480,8 +489,11 @@ export default class GroupDetails extends React.PureComponent {
                             subtitleDefault='Set default teams and channels for group members. Teams added will include default channels, town-square, and off-topic. Adding a channel without setting the team will add the implied team to the listing below.'
                             button={(
                                 <div className='group-profile-add-menu'>
-                                    <MenuWrapper>
+                                    <MenuWrapper
+                                        isDisabled={isDisabled}
+                                    >
                                         <button
+                                            type='button'
                                             id='add_team_or_channel'
                                             className='btn btn-primary'
                                         >
@@ -516,6 +528,7 @@ export default class GroupDetails extends React.PureComponent {
                                 unlink={this.props.actions.unlink}
                                 onChangeRoles={this.onChangeRoles}
                                 onRemoveItem={this.onRemoveTeamOrChannel}
+                                isDisabled={isDisabled}
                             />
                         </AdminPanel>
                         {this.state.addTeamOpen &&
@@ -539,7 +552,7 @@ export default class GroupDetails extends React.PureComponent {
                             titleId={t('admin.group_settings.group_detail.groupUsersTitle')}
                             titleDefault='Users'
                             subtitleId={t('admin.group_settings.group_detail.groupUsersDescription')}
-                            subtitleDefault='Listing of users in Matterfoss associated with this group.'
+                            subtitleDefault='Listing of users in Mattermost associated with this group.'
                         >
                             <GroupUsers
                                 members={members}

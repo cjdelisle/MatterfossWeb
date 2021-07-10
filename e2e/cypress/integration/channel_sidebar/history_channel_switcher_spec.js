@@ -10,25 +10,14 @@
 // Stage: @prod
 // Group: @channel_sidebar
 
-import {testWithConfig} from '../../support/hooks';
-
 import {getRandomId} from '../../utils';
 
 describe('Channel sidebar', () => {
-    testWithConfig({
-        ServiceSettings: {
-            ExperimentalChannelSidebarOrganization: 'default_on',
-        },
-    });
-
     before(() => {
         // # Login as test user and visit town-square
         cy.apiInitSetup({loginAfter: true}).then(({team}) => {
             cy.visit(`/${team.name}/channels/town-square`);
         });
-
-        // # Close "What's new" modal
-        cy.uiCloseWhatsNewModal();
     });
 
     it('should not show history arrows on the regular webapp', () => {
@@ -61,7 +50,7 @@ describe('Channel sidebar', () => {
         cy.get('.channel-switcher__suggestion-box #quickSwitchInput').type('{enter}');
 
         // * Verify that the channel switcher is closed and the active channel is now Off-Topic
-        cy.get('.channel-switch__modal').should('not.be.visible');
+        cy.get('.channel-switch__modal').should('not.exist');
         cy.url().should('include', `/${teamName}/channels/off-topic`);
         cy.get('#channelHeaderTitle').should('contain', 'Off-Topic');
         cy.get('.SidebarChannel.active:contains(Off-Topic)').should('be.visible');

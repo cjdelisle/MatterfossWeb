@@ -4,6 +4,7 @@
 import assert from 'assert';
 
 import {createIntl} from 'react-intl';
+
 import {Posts} from 'matterfoss-redux/constants';
 
 import * as PostUtils from 'utils/post_utils.jsx';
@@ -728,6 +729,20 @@ describe('PostUtils.createAriaLabelForPost', () => {
         assert.ok(ariaLabel.indexOf(':space emoji:'));
         assert.ok(ariaLabel.indexOf(':not_an_emoji:'));
     });
+    test('Generating aria label should not break if message is undefined', () => {
+        const intl = createIntl({locale: 'en', messages: enMessages, defaultLocale: 'en'}, {});
+
+        const testPost = {
+            id: 32,
+            message: undefined,
+            create_at: (new Date().getTime() / 1000) || 0,
+        };
+        const author = 'test_author';
+        const reactions = {};
+        const isFlagged = true;
+
+        assert.doesNotThrow(() => PostUtils.createAriaLabelForPost(testPost, author, isFlagged, reactions, intl, emojiMap));
+    });
 });
 
 describe('PostUtils.splitMessageBasedOnCaretPosition', () => {
@@ -766,6 +781,24 @@ describe('makeGetReplyCount', () => {
         expect(getReplyCount(state, post)).toBe(2);
     });
 
+    test('should return the number of comments when called on a root post with reply_count and postsInThread meta does not exist', () => {
+        const getReplyCount = PostUtils.makeGetReplyCount();
+
+        const state = {
+            entities: {
+                posts: {
+                    posts: {
+                        post1: {id: 'post1', reply_count: 22},
+                    },
+                    postsInThread: {},
+                },
+            },
+        };
+        const post = state.entities.posts.posts.post1;
+
+        expect(getReplyCount(state, post)).toBe(22);
+    });
+
     test('should return the number of comments when called on a comment', () => {
         const getReplyCount = PostUtils.makeGetReplyCount();
 
@@ -788,7 +821,7 @@ describe('makeGetReplyCount', () => {
         expect(getReplyCount(state, post)).toBe(2);
     });
 
-    test('should return 0 when called on a post without comments', () => {
+    test('should return 0 when called on a post without comments without reply_count', () => {
         const getReplyCount = PostUtils.makeGetReplyCount();
 
         const state = {

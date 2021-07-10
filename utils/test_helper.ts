@@ -1,11 +1,17 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
-import {Channel, ChannelMembership, ChannelNotifyProps} from 'matterfoss-redux/types/channels';
+import {Channel, ChannelMembership, ChannelNotifyProps, ChannelWithTeamData} from 'matterfoss-redux/types/channels';
 import {Bot} from 'matterfoss-redux/types/bots';
 import {Role} from 'matterfoss-redux/types/roles';
-import {UserProfile} from 'matterfoss-redux/types/users';
+import {UserProfile, UserAccessToken} from 'matterfoss-redux/types/users';
 import {Team, TeamMembership} from 'matterfoss-redux/types/teams';
 import {Group} from 'matterfoss-redux/types/groups';
+import {FileInfo} from 'matterfoss-redux/types/files';
+import {Post} from 'matterfoss-redux/types/posts';
+import {CategorySorting, ChannelCategory} from 'matterfoss-redux/types/channel_categories';
+import {Command} from 'matterfoss-redux/types/integrations';
+import {CategoryTypes} from 'matterfoss-redux/constants/channel_categories';
+import {Session} from 'matterfoss-redux/types/sessions';
 
 export class TestHelper {
     public static getUserMock(override: Partial<UserProfile> = {}): UserProfile {
@@ -55,6 +61,17 @@ export class TestHelper {
         return Object.assign({}, defaultUser, override);
     }
 
+    public static getUserAccessTokenMock(override?: Partial<UserAccessToken>): UserAccessToken {
+        const defaultUserAccessToken: UserAccessToken = {
+            id: 'token_id',
+            token: 'token',
+            user_id: 'user_id',
+            description: 'token_description',
+            is_active: true,
+        };
+        return Object.assign({}, defaultUserAccessToken, override);
+    }
+
     public static getBotMock(override: Partial<Bot>): Bot {
         const defaultBot: Bot = {
             create_at: 0,
@@ -69,7 +86,7 @@ export class TestHelper {
         return Object.assign({}, defaultBot, override);
     }
 
-    public static getChannelMock(override: Partial<Channel>): Channel {
+    public static getChannelMock(override?: Partial<Channel>): Channel {
         const defaultChannel: Channel = {
             id: 'channel_id',
             create_at: 0,
@@ -83,12 +100,54 @@ export class TestHelper {
             purpose: 'purpose',
             last_post_at: 0,
             total_msg_count: 0,
+            total_msg_count_root: 0,
             extra_update_at: 0,
             creator_id: 'id',
             scheme_id: 'id',
             group_constrained: false,
         };
         return Object.assign({}, defaultChannel, override);
+    }
+
+    public static getChannelWithTeamDataMock(override?: Partial<ChannelWithTeamData>): ChannelWithTeamData {
+        const defaultChannel: ChannelWithTeamData = {
+            id: 'channel_id',
+            create_at: 0,
+            update_at: 0,
+            delete_at: 0,
+            team_id: 'team_id',
+            type: 'O',
+            display_name: 'name',
+            name: 'DN',
+            header: 'header',
+            purpose: 'purpose',
+            last_post_at: 0,
+            total_msg_count: 0,
+            total_msg_count_root: 0,
+            extra_update_at: 0,
+            creator_id: 'id',
+            scheme_id: 'id',
+            group_constrained: false,
+            team_display_name: 'teamDisplayName',
+            team_name: 'teamName',
+            team_update_at: 0,
+        };
+        return Object.assign({}, defaultChannel, override);
+    }
+
+    public static getCategoryMock(override?: Partial<ChannelCategory>): ChannelCategory {
+        const defaultCategory: ChannelCategory = {
+            id: 'category_id',
+            team_id: 'team_id',
+            user_id: 'user_id',
+            type: CategoryTypes.CUSTOM,
+            display_name: 'category_name',
+            sorting: CategorySorting.Alphabetical,
+            channel_ids: ['channel_id'],
+            muted: false,
+            collapsed: false,
+        };
+        return Object.assign({}, defaultCategory, override);
     }
 
     public static getChannelMembershipMock(override: Partial<ChannelMembership>, overrideNotifyProps: Partial<ChannelNotifyProps>): ChannelMembership {
@@ -108,6 +167,8 @@ export class TestHelper {
             last_viewed_at: 0,
             msg_count: 0,
             mention_count: 0,
+            mention_count_root: 0,
+            msg_count_root: 0,
             notify_props: notifyProps,
             last_update_at: 0,
             scheme_user: true,
@@ -116,7 +177,7 @@ export class TestHelper {
         return Object.assign({}, defaultMembership, override);
     }
 
-    public static getTeamMock(override: Partial<Team>): Team {
+    public static getTeamMock(override?: Partial<Team>): Team {
         const defaultTeam: Team = {
             id: 'team_id',
             create_at: 0,
@@ -141,6 +202,8 @@ export class TestHelper {
         const defaultMembership: TeamMembership = {
             mention_count: 0,
             msg_count: 0,
+            mention_count_root: 0,
+            msg_count_root: 0,
             team_id: 'team_id',
             user_id: 'user_id',
             roles: 'team_user',
@@ -184,5 +247,95 @@ export class TestHelper {
             allow_reference: true,
         };
         return Object.assign({}, defaultGroup, override);
+    }
+
+    public static getPostMock(override: Partial<Post> = {}): Post {
+        const defaultPost: Post = {
+            edit_at: 0,
+            original_id: '',
+            hashtags: '',
+            pending_post_id: '',
+            reply_count: 0,
+            metadata: {
+                embeds: [],
+                emojis: [],
+                files: [],
+                images: {},
+                reactions: [],
+            },
+            channel_id: '',
+            create_at: 0,
+            delete_at: 0,
+            id: 'id',
+            is_pinned: false,
+            message: 'post message',
+            parent_id: '',
+            props: {},
+            root_id: '',
+            type: 'system_add_remove',
+            update_at: 0,
+            user_id: 'user_id',
+        };
+        return Object.assign({}, defaultPost, override);
+    }
+
+    public static getFileInfoMock(override: Partial<FileInfo>): FileInfo {
+        const defaultFileInfo: FileInfo = {
+            id: 'file_info_id',
+            user_id: 'user_id',
+            create_at: 1,
+            update_at: 1,
+            delete_at: 1,
+            name: 'name',
+            extension: 'jpg',
+            size: 1,
+            mime_type: 'mime_type',
+            has_preview_image: true,
+            width: 350,
+            height: 200,
+            clientId: 'client_id',
+        };
+        return Object.assign({}, defaultFileInfo, override);
+    }
+
+    public static getCommandMock(override: Partial<Command>): Command {
+        const defaultCommand: Command = {
+            id: 'command_id',
+            display_name: 'command_display_name',
+            description: 'command_description',
+            token: 'token',
+            create_at: 0,
+            update_at: 0,
+            delete_at: 0,
+            creator_id: 'creator_id',
+            team_id: 'team_id',
+            trigger: 'trigger',
+            method: 'G',
+            username: 'username',
+            icon_url: '',
+            auto_complete: true,
+            auto_complete_desc: 'auto_complete_hint',
+            auto_complete_hint: 'auto_complete_desc',
+            url: '',
+        };
+        return Object.assign({}, defaultCommand, override);
+    }
+
+    public static getSessionMock(override: Partial<Session>): Session {
+        const defaultSession: Session = {
+            id: 'session_id',
+            token: 'session_token',
+            create_at: 0,
+            expires_at: 0,
+            last_activity_at: 0,
+            user_id: 'user_id',
+            device_id: 'device_id',
+            roles: '',
+            is_oauth: false,
+            props: {},
+            team_members: [],
+            local: false,
+        };
+        return Object.assign({}, defaultSession, override);
     }
 }

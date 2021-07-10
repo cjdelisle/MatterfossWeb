@@ -1,6 +1,5 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
-/* eslint-disable react/no-string-refs */
 
 import React from 'react';
 import PropTypes from 'prop-types';
@@ -38,6 +37,8 @@ import FormattedAdminHeader from 'components/widgets/admin_console/formatted_adm
 
 import Setting from './setting';
 
+import './schema_admin_settings.scss';
+
 export default class SchemaAdminSettings extends React.PureComponent {
     static propTypes = {
         config: PropTypes.object,
@@ -48,6 +49,10 @@ export default class SchemaAdminSettings extends React.PureComponent {
         license: PropTypes.object,
         editRole: PropTypes.func,
         updateConfig: PropTypes.func.isRequired,
+        isDisabled: PropTypes.bool,
+        consoleAccess: PropTypes.object,
+        cloud: PropTypes.object,
+        isCurrentUserSystemAdmin: PropTypes.bool,
     }
 
     constructor(props) {
@@ -84,6 +89,7 @@ export default class SchemaAdminSettings extends React.PureComponent {
             showConfirmId: '',
             clientWarning: '',
         };
+        this.errorMessageRef = React.createRef();
     }
 
     static getDerivedStateFromProps(props, state) {
@@ -160,7 +166,14 @@ export default class SchemaAdminSettings extends React.PureComponent {
         const schema = this.props.schema;
 
         if (schema) {
-            const settings = schema.settings || [];
+            let settings = [];
+
+            if (schema.settings) {
+                settings = schema.settings;
+            } else if (schema.sections) {
+                schema.sections.map((section) => section.settings).forEach((sectionSettings) => settings.push(...sectionSettings));
+            }
+
             settings.forEach((setting) => {
                 if (!setting.key) {
                     return;
@@ -193,7 +206,14 @@ export default class SchemaAdminSettings extends React.PureComponent {
         let state = {};
 
         if (schema) {
-            const settings = schema.settings || [];
+            let settings = [];
+
+            if (schema.settings) {
+                settings = schema.settings;
+            } else if (schema.sections) {
+                schema.sections.map((section) => section.settings).forEach((sectionSettings) => settings.push(...sectionSettings));
+            }
+
             settings.forEach((setting) => {
                 if (!setting.key) {
                     return;
@@ -346,8 +366,9 @@ export default class SchemaAdminSettings extends React.PureComponent {
     }
 
     isDisabled = (setting) => {
+        const enterpriseReady = this.props.config.BuildEnterpriseReady === 'true';
         if (typeof setting.isDisabled === 'function') {
-            return setting.isDisabled(this.props.config, this.state, this.props.license);
+            return setting.isDisabled(this.props.config, this.state, this.props.license, enterpriseReady, this.props.consoleAccess, this.props.cloud, this.props.isCurrentUserSystemAdmin);
         }
         return Boolean(setting.isDisabled);
     }
@@ -465,7 +486,7 @@ export default class SchemaAdminSettings extends React.PureComponent {
                 id={setting.key}
                 label={this.renderLabel(setting)}
                 helpText={this.renderHelpText(setting)}
-                value={(!this.isDisabled(setting) && this.state[setting.key]) || false}
+                value={this.state[setting.key] || false}
                 disabled={this.isDisabled(setting)}
                 setByEnv={this.isSetByEnv(setting.key)}
                 onChange={this.handleChange}
@@ -480,7 +501,7 @@ export default class SchemaAdminSettings extends React.PureComponent {
                 id={setting.key}
                 label={this.renderLabel(setting)}
                 helpText={this.renderHelpText(setting)}
-                value={(!this.isDisabled(setting) && this.state[setting.key]) || false}
+                value={this.state[setting.key] || false}
                 disabled={this.isDisabled(setting)}
                 setByEnv={this.isSetByEnv(setting.key)}
                 onChange={this.handlePermissionChange}
@@ -536,12 +557,7 @@ export default class SchemaAdminSettings extends React.PureComponent {
                     defaultMessage={setting.no_result_default}
                 />
             );
-            const notPresent = (
-                <FormattedMessage
-                    id={setting.not_present}
-                    defaultMessage={setting.not_present_default}
-                />
-            );
+
             return (
                 <MultiSelectSetting
                     key={this.props.schema.id + '_language_' + setting.key}
@@ -554,7 +570,6 @@ export default class SchemaAdminSettings extends React.PureComponent {
                     setByEnv={this.isSetByEnv(setting.key)}
                     onChange={(changedId, value) => this.handleChange(changedId, value.join(','))}
                     noResultText={noResultText}
-                    notPresent={notPresent}
                 />
             );
         }
@@ -839,48 +854,113 @@ export default class SchemaAdminSettings extends React.PureComponent {
     renderSettings = () => {
         const schema = this.props.schema;
 
-        const settingsList = [];
         if (schema.settings) {
-            schema.settings.forEach((setting) => {
-                if (this.buildSettingFunctions[setting.type] && !this.isHidden(setting)) {
-                    settingsList.push(this.buildSettingFunctions[setting.type](setting));
+            const settingsList = [];
+            if (schema.settings) {
+                schema.settings.forEach((setting) => {
+                    if (this.buildSettingFunctions[setting.type] && !this.isHidden(setting)) {
+                        settingsList.push(this.buildSettingFunctions[setting.type](setting));
+                    }
+                });
+            }
+
+            let header;
+            if (schema.header) {
+                header = (
+                    <div className='banner'>
+                        <SchemaText
+                            text={schema.header}
+                            isMarkdown={true}
+                            isTranslated={this.props.schema.translate}
+                        />
+                    </div>
+                );
+            }
+
+            let footer;
+            if (schema.footer) {
+                footer = (
+                    <div className='banner'>
+                        <SchemaText
+                            text={schema.footer}
+                            isMarkdown={true}
+                            isTranslated={this.props.schema.translate}
+                        />
+                    </div>
+                );
+            }
+
+            return (
+                <SettingsGroup container={false}>
+                    {header}
+                    {settingsList}
+                    {footer}
+                </SettingsGroup>
+            );
+        } else if (schema.sections) {
+            const sections = [];
+
+            schema.sections.forEach((section) => {
+                const settingsList = [];
+                if (section.settings) {
+                    section.settings.forEach((setting) => {
+                        if (this.buildSettingFunctions[setting.type] && !this.isHidden(setting)) {
+                            settingsList.push(this.buildSettingFunctions[setting.type](setting));
+                        }
+                    });
                 }
+
+                let header;
+                if (section.header) {
+                    header = (
+                        <div className='banner'>
+                            <SchemaText
+                                text={section.header}
+                                isMarkdown={true}
+                                isTranslated={this.props.schema.translate}
+                            />
+                        </div>
+                    );
+                }
+
+                let footer;
+                if (section.footer) {
+                    footer = (
+                        <div className='banner'>
+                            <SchemaText
+                                text={section.footer}
+                                isMarkdown={true}
+                                isTranslated={this.props.schema.translate}
+                            />
+                        </div>
+                    );
+                }
+
+                sections.push(
+                    <div className={'config-section'}>
+                        <SettingsGroup
+                            show={true}
+                            title={section.title}
+                            subtitle={section.subtitle}
+                        >
+                            <div className={'section-body'}>
+                                {header}
+                                {settingsList}
+                                {footer}
+                            </div>
+                        </SettingsGroup>
+                    </div>,
+                );
             });
-        }
 
-        let header;
-        if (schema.header) {
-            header = (
-                <div className='banner'>
-                    <SchemaText
-                        text={schema.header}
-                        isMarkdown={true}
-                        isTranslated={this.props.schema.translate}
-                    />
+            return (
+                <div>
+                    {sections}
                 </div>
             );
         }
 
-        let footer;
-        if (schema.footer) {
-            footer = (
-                <div className='banner'>
-                    <SchemaText
-                        text={schema.footer}
-                        isMarkdown={true}
-                        isTranslated={this.props.schema.translate}
-                    />
-                </div>
-            );
-        }
-
-        return (
-            <SettingsGroup container={false}>
-                {header}
-                {settingsList}
-                {footer}
-            </SettingsGroup>
-        );
+        return null;
     }
 
     closeTooltip = () => {
@@ -985,7 +1065,10 @@ export default class SchemaAdminSettings extends React.PureComponent {
         if (schema && schema.component && schema.settings) {
             const CustomComponent = schema.component;
             return (
-                <CustomComponent {...this.props}/>
+                <CustomComponent
+                    {...this.props}
+                    disabled={this.props.isDisabled}
+                />
             );
         }
         return null;
@@ -996,7 +1079,10 @@ export default class SchemaAdminSettings extends React.PureComponent {
         if (schema && schema.component && !schema.settings) {
             const CustomComponent = schema.component;
             return (
-                <CustomComponent {...this.props}/>
+                <CustomComponent
+                    {...this.props}
+                    disabled={this.props.isDisabled}
+                />
             );
         }
 
@@ -1055,7 +1141,8 @@ export default class SchemaAdminSettings extends React.PureComponent {
                     />
                     <div
                         className='error-message'
-                        ref='errorMessage'
+                        data-testid='errorMessage'
+                        ref={this.errorMessageRef}
                         onMouseOver={this.openTooltip}
                         onMouseOut={this.closeTooltip}
                     >
@@ -1071,7 +1158,7 @@ export default class SchemaAdminSettings extends React.PureComponent {
                         show={this.state.errorTooltip}
                         delayShow={Constants.OVERLAY_TIME_DELAY}
                         placement='top'
-                        target={this.refs.errorMessage}
+                        target={this.errorMessageRef.current}
                     >
                         <Tooltip id='error-tooltip' >
                             {this.state.serverError}

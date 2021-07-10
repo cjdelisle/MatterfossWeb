@@ -52,3 +52,4 @@ to generate the emoji files.
 ## Attribution
 The Matterfoss logo was created by QualityIcons ( https://thenounproject.com/nivya.becse/ ) and
 is provided under the Creative Commons Attribution license.
+

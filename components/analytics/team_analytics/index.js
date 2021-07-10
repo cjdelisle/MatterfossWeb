@@ -3,11 +3,12 @@
 
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
+
 import {getTeams} from 'matterfoss-redux/actions/teams';
 import {getProfilesInTeam} from 'matterfoss-redux/actions/users';
 import {getTeamsList} from 'matterfoss-redux/selectors/entities/teams';
 
-import BrowserStore from 'stores/browser_store.jsx';
+import BrowserStore from 'stores/browser_store';
 import {getCurrentLocale} from 'selectors/i18n';
 
 import TeamAnalytics from './team_analytics.jsx';

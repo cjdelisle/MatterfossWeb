@@ -14,9 +14,9 @@ export function searchAndValidate(query, expectedResults = []) {
     cy.reload();
 
     // # Enter in search query, and hit enter
-    cy.get('#searchBox').clear().wait(TIMEOUTS.HALF_SEC).type(query).wait(TIMEOUTS.HALF_SEC).type('{enter}');
+    cy.get('#searchBox').clear().wait(TIMEOUTS.HALF_SEC).type(query).wait(TIMEOUTS.HALF_SEC).type('{enter}').should('be.empty');
 
-    cy.get('#loadingSpinner').should('not.be.visible');
+    cy.get('#loadingSpinner').should('not.exist');
     cy.get('#search-items-container', {timeout: TIMEOUTS.ONE_MIN}).should('be.visible');
 
     // * Verify the amount of results matches the amount of our expected results
@@ -95,25 +95,18 @@ export function setupTestData(data, {team, admin, anotherAdmin}) {
     const baseUrl = Cypress.config('baseUrl');
     cy.externalRequest({user: admin, method: 'put', baseUrl, path: `users/${anotherAdmin.id}/roles`, data: {roles: 'system_user system_admin'}});
 
-    // # Visit town-square
-    cy.visit(`/${team.name}/channels/town-square`);
-
     // # Create a post from today
     cy.get('#postListContent', {timeout: TIMEOUTS.HALF_MIN}).should('be.visible');
     cy.postMessage(todayMessage).wait(TIMEOUTS.ONE_SEC);
 
-    cy.apiGetChannelByName(team.name, 'town-square').then((townSquareRes) => {
-        const townSquareChannel = townSquareRes.body;
-
+    cy.apiGetChannelByName(team.name, 'town-square').then(({channel: townSquareChannel}) => {
         // # Post message as new admin to Town Square
         cy.postMessageAs({sender: anotherAdmin, message: firstMessage, channelId: townSquareChannel.id, createAt: firstDateEarly.ms});
 
         // # Post message as sysadmin to Town Square
         cy.postMessageAs({sender: admin, message: secondMessage, channelId: townSquareChannel.id, createAt: secondDateEarly.ms});
 
-        cy.apiGetChannelByName(team.name, 'off-topic').then((offTopicRes) => {
-            const offTopicChannel = offTopicRes.body;
-
+        cy.apiGetChannelByName(team.name, 'off-topic').then(({channel: offTopicChannel}) => {
             // # Post message as sysadmin to off topic
             cy.postMessageAs({sender: admin, message: firstOffTopicMessage, channelId: offTopicChannel.id, createAt: firstDateLater.ms});
 

@@ -9,9 +9,11 @@ import * as Utils from 'utils/utils.jsx';
 
 import BotBadge from 'components/widgets/badges/bot_badge';
 import GuestBadge from 'components/widgets/badges/guest_badge';
+import SharedUserIndicator from 'components/shared_user_indicator';
 import Avatar from 'components/widgets/users/avatar';
 
 import Suggestion from '../suggestion.jsx';
+import CustomStatusEmoji from 'components/custom_status/custom_status_emoji';
 
 export default class AtMentionSuggestion extends Suggestion {
     render() {
@@ -21,6 +23,7 @@ export default class AtMentionSuggestion extends Suggestion {
         let itemname;
         let description;
         let icon;
+        let customStatus;
         if (item.username === 'all') {
             itemname = 'all';
             description = (
@@ -124,6 +127,17 @@ export default class AtMentionSuggestion extends Suggestion {
                     url={Utils.imageURLForUser(item.id, item.last_picture_update)}
                 />
             );
+
+            customStatus = (
+                <CustomStatusEmoji
+                    showTooltip={true}
+                    userID={item.id}
+                    emojiSize={15}
+                    emojiStyle={{
+                        margin: '0 4px 4px',
+                    }}
+                />
+            );
         }
 
         let youElement = null;
@@ -140,6 +154,16 @@ export default class AtMentionSuggestion extends Suggestion {
         let className = 'mentions__name';
         if (isSelection) {
             className += ' suggestion--selected';
+        }
+
+        let sharedIcon;
+        if (item.remote_id) {
+            sharedIcon = (
+                <SharedUserIndicator
+                    className='shared-user-icon'
+                    withTooltip={true}
+                />
+            );
         }
 
         return (
@@ -159,10 +183,12 @@ export default class AtMentionSuggestion extends Suggestion {
                         show={Boolean(item.is_bot)}
                         className='badge-autocomplete'
                     />
+                    {customStatus}
                     <span className='light ml-2'>
                         {description}
                         {youElement}
                     </span>
+                    {sharedIcon}
                     <GuestBadge
                         show={Utils.isGuest(item)}
                         className='badge-autocomplete'

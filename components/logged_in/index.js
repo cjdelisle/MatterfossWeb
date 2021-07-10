@@ -3,6 +3,7 @@
 
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
+
 import {autoUpdateTimezone} from 'matterfoss-redux/actions/timezone';
 import {getCurrentChannelId} from 'matterfoss-redux/selectors/entities/channels';
 import {getLicense, getConfig} from 'matterfoss-redux/selectors/entities/general';

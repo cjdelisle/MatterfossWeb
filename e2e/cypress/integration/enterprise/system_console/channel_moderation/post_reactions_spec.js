@@ -17,8 +17,8 @@ import {checkboxesTitleToIdMap} from './constants';
 
 import {
     deleteOrEditTeamScheme,
-    disableChannelModeratedPermission,
-    enableChannelModeratedPermission,
+    disablePermission,
+    enablePermission,
     goToPermissionsAndCreateTeamOverrideScheme,
     goToSystemScheme,
     saveConfigForChannel,
@@ -59,11 +59,11 @@ describe('MM-23102 - Channel Moderation - Post Reactions', () => {
         });
     });
 
-    it('Post Reactions option for Guests', () => {
+    it('MM-T1543 Post Reactions option for Guests', () => {
         visitChannelConfigPage(testChannel);
 
         // # Uncheck the post reactions option for Guests and save
-        disableChannelModeratedPermission(checkboxesTitleToIdMap.POST_REACTIONS_GUESTS);
+        disablePermission(checkboxesTitleToIdMap.POST_REACTIONS_GUESTS);
         saveConfigForChannel();
 
         // # Login as a Guest user and visit the same channel
@@ -78,7 +78,7 @@ describe('MM-23102 - Channel Moderation - Post Reactions', () => {
 
         // # Visit test channel configuration page and enable post reactions for guest and save
         visitChannelConfigPage(testChannel);
-        enableChannelModeratedPermission(checkboxesTitleToIdMap.POST_REACTIONS_GUESTS);
+        enablePermission(checkboxesTitleToIdMap.POST_REACTIONS_GUESTS);
         saveConfigForChannel();
 
         visitChannel(guestUser, testChannel, testTeam);
@@ -91,11 +91,11 @@ describe('MM-23102 - Channel Moderation - Post Reactions', () => {
         });
     });
 
-    it('Post Reactions option for Members', () => {
+    it('MM-T1544 Post Reactions option for Members', () => {
         visitChannelConfigPage(testChannel);
 
         // # Uncheck the Create reactions option for Members and save
-        disableChannelModeratedPermission(checkboxesTitleToIdMap.POST_REACTIONS_MEMBERS);
+        disablePermission(checkboxesTitleToIdMap.POST_REACTIONS_MEMBERS);
         saveConfigForChannel();
 
         // # Login as a Member user and visit the same channel
@@ -110,7 +110,7 @@ describe('MM-23102 - Channel Moderation - Post Reactions', () => {
 
         // # Visit test Channel configuration page and enable post reactions for members and save
         visitChannelConfigPage(testChannel);
-        enableChannelModeratedPermission(checkboxesTitleToIdMap.POST_REACTIONS_MEMBERS);
+        enablePermission(checkboxesTitleToIdMap.POST_REACTIONS_MEMBERS);
         saveConfigForChannel();
 
         // # Login as a Member user and visit the same channel
@@ -124,7 +124,7 @@ describe('MM-23102 - Channel Moderation - Post Reactions', () => {
         });
     });
 
-    it('Post Reactions option removed for Guests and Members in System Scheme', () => {
+    it('MM-T1545 Post Reactions option removed for Guests and Members in System Scheme', () => {
         // # Login as sysadmin and visit the Permissions page in the system console.
         // # Edit the System Scheme and remove the Post Reaction option for Guests & Save.
         goToSystemScheme();
@@ -180,7 +180,7 @@ describe('MM-23102 - Channel Moderation - Post Reactions', () => {
 
     // GUEST PERMISSIONS DON'T EXIST ON TEAM OVERRIDE SCHEMES SO GUEST PORTION NOT IMPLEMENTED!
     // ONLY THE MEMBERS PORTION OF THIS TEST IS IMPLEMENTED
-    it('Post Reactions option removed for Guests & Members in Team Override Scheme', () => {
+    it('MM-T1546_4 Post Reactions option removed for Guests & Members in Team Override Scheme', () => {
         const teamOverrideSchemeName = `post_reactions_${getRandomId()}`;
 
         // # Create a new team override scheme

@@ -272,7 +272,7 @@ exports[`components/ChannelHeaderDropdown should match snapshot with no plugin i
           "$$typeof": Symbol(react.memo),
           "WrappedComponent": [Function],
           "compare": null,
-          "displayName": "Connect(injectIntl(EditChannelHeaderModal))",
+          "displayName": "Connect(EditChannelHeaderModal)",
           "type": [Function],
         }
       }
@@ -302,7 +302,7 @@ exports[`components/ChannelHeaderDropdown should match snapshot with no plugin i
             "$$typeof": Symbol(react.memo),
             "WrappedComponent": [Function],
             "compare": null,
-            "displayName": "Connect(injectIntl(EditChannelHeaderModal))",
+            "displayName": "Connect(EditChannelHeaderModal)",
             "type": [Function],
           }
         }
@@ -356,10 +356,11 @@ exports[`components/ChannelHeaderDropdown should match snapshot with no plugin i
         text="Rename Channel"
       />
     </Connect(ChannelPermissionGate)>
-    <Connect(TeamPermissionGate)
+    <Connect(ChannelPermissionGate)
+      channelId="test-channel-id"
       permissions={
         Array [
-          "manage_team",
+          "convert_public_channel_to_private",
         ]
       }
     >
@@ -379,12 +380,12 @@ exports[`components/ChannelHeaderDropdown should match snapshot with no plugin i
             "type": [Function],
           }
         }
-        id="channelCovertToPrivate"
+        id="channelConvertToPrivate"
         modalId="convert_channel"
         show={false}
         text="Convert to Private Channel"
       />
-    </Connect(TeamPermissionGate)>
+    </Connect(ChannelPermissionGate)>
     <Connect(ChannelPermissionGate)
       channelId="test-channel-id"
       permissions={
@@ -756,7 +757,7 @@ exports[`components/ChannelHeaderDropdown should match snapshot with plugins 1`]
           "$$typeof": Symbol(react.memo),
           "WrappedComponent": [Function],
           "compare": null,
-          "displayName": "Connect(injectIntl(EditChannelHeaderModal))",
+          "displayName": "Connect(EditChannelHeaderModal)",
           "type": [Function],
         }
       }
@@ -786,7 +787,7 @@ exports[`components/ChannelHeaderDropdown should match snapshot with plugins 1`]
             "$$typeof": Symbol(react.memo),
             "WrappedComponent": [Function],
             "compare": null,
-            "displayName": "Connect(injectIntl(EditChannelHeaderModal))",
+            "displayName": "Connect(EditChannelHeaderModal)",
             "type": [Function],
           }
         }
@@ -840,10 +841,11 @@ exports[`components/ChannelHeaderDropdown should match snapshot with plugins 1`]
         text="Rename Channel"
       />
     </Connect(ChannelPermissionGate)>
-    <Connect(TeamPermissionGate)
+    <Connect(ChannelPermissionGate)
+      channelId="test-channel-id"
       permissions={
         Array [
-          "manage_team",
+          "convert_public_channel_to_private",
         ]
       }
     >
@@ -863,12 +865,12 @@ exports[`components/ChannelHeaderDropdown should match snapshot with plugins 1`]
             "type": [Function],
           }
         }
-        id="channelCovertToPrivate"
+        id="channelConvertToPrivate"
         modalId="convert_channel"
         show={false}
         text="Convert to Private Channel"
       />
-    </Connect(TeamPermissionGate)>
+    </Connect(ChannelPermissionGate)>
     <Connect(ChannelPermissionGate)
       channelId="test-channel-id"
       permissions={

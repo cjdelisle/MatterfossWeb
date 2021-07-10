@@ -4,9 +4,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {FormattedMessage, injectIntl} from 'react-intl';
+
+import {Tooltip} from 'react-bootstrap';
+
 import {Posts} from 'matterfoss-redux/constants/index';
 import * as ReduxPostUtils from 'matterfoss-redux/utils/post_utils';
-import {Tooltip} from 'react-bootstrap';
 
 import PostMessageContainer from 'components/post_view/post_message_view';
 import FileAttachmentListContainer from 'components/file_attachment_list';
@@ -137,6 +139,7 @@ class SearchResultsItem extends React.PureComponent {
 
         this.state = {
             dropdownOpened: false,
+            showPreview: false,
         };
     }
 
@@ -376,6 +379,7 @@ class SearchResultsItem extends React.PureComponent {
                 <DateSeparator date={currentPostDay}/>
                 <div
                     className={`a11y__section ${this.getClassName()}`}
+                    id={'searchResult_' + post.id}
                     aria-label={this.state.currentAriaLabel}
                     onFocus={this.handleSearchItemFocus}
                     data-a11y-sort-order={this.props.a11yIndex}

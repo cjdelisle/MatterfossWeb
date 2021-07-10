@@ -3,6 +3,7 @@
 
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
+
 import {getConfig, getLicense} from 'matterfoss-redux/selectors/entities/general';
 import {isCurrentUserSystemAdmin} from 'matterfoss-redux/selectors/entities/users';
 import {haveIChannelPermission} from 'matterfoss-redux/selectors/entities/roles';
@@ -12,9 +13,7 @@ import {makeGetMessageInHistoryItem} from 'matterfoss-redux/selectors/entities/p
 import {resetCreatePostRequest, resetHistoryIndex} from 'matterfoss-redux/actions/posts';
 import {getChannelTimezones, getChannelMemberCountsByGroup} from 'matterfoss-redux/actions/channels';
 import {Permissions, Preferences, Posts} from 'matterfoss-redux/constants';
-import {
-    getAssociatedGroupsForReference,
-} from 'matterfoss-redux/selectors/entities/groups';
+import {getAssociatedGroupsForReferenceByMention} from 'matterfoss-redux/selectors/entities/groups';
 
 import {connectionErrorCount} from 'selectors/views/system';
 
@@ -76,6 +75,7 @@ function makeMapStateToProps() {
             permission: Permissions.USE_GROUP_MENTIONS,
         });
         const channelMemberCountsByGroup = selectChannelMemberCountsByGroup(state, ownProps.channelId);
+        const groupsWithAllowReference = useGroupMentions ? getAssociatedGroupsForReferenceByMention(state, channel.team_id, channel.id) : null;
 
         return {
             draft,
@@ -98,7 +98,7 @@ function makeMapStateToProps() {
             canPost,
             useChannelMentions,
             shouldShowPreview: showPreviewOnCreateComment(state),
-            groupsWithAllowReference: new Map(getAssociatedGroupsForReference(state, channel.team_id, channel.id).map((group) => [`@${group.name}`, group])),
+            groupsWithAllowReference,
             useGroupMentions,
             channelMemberCountsByGroup,
         };

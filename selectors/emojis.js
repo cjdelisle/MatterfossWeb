@@ -5,6 +5,7 @@ import {createSelector} from 'reselect';
 
 import {getCustomEmojisByName} from 'matterfoss-redux/selectors/entities/emojis';
 import {getCurrentUserId} from 'matterfoss-redux/selectors/entities/users';
+import {getConfig} from 'matterfoss-redux/selectors/entities/general';
 
 import LocalStorageStore from 'stores/local_storage_store';
 
@@ -35,3 +36,8 @@ export const getRecentEmojis = createSelector(
         return recentEmojis;
     },
 );
+
+export function isCustomEmojiEnabled(state) {
+    const config = getConfig(state);
+    return config && config.EnableCustomEmoji === 'true';
+}

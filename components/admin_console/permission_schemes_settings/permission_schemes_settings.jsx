@@ -33,6 +33,7 @@ export default class PermissionSchemesSettings extends React.PureComponent {
             loadSchemes: PropTypes.func.isRequired,
             loadSchemeTeams: PropTypes.func.isRequired,
         }),
+        isDisabled: PropTypes.bool,
     };
 
     constructor(props) {
@@ -135,6 +136,7 @@ export default class PermissionSchemesSettings extends React.PureComponent {
                 scheme={scheme}
                 history={this.props.history}
                 key={scheme.id}
+                isDisabled={this.props.isDisabled}
             />
         ));
         const hasCustomSchemes = this.props.license.CustomPermissionsSchemes === 'true';
@@ -148,9 +150,9 @@ export default class PermissionSchemesSettings extends React.PureComponent {
                     titleId={t('admin.permissions.teamOverrideSchemesTitle')}
                     titleDefault='Team Override Schemes'
                     subtitleId={t('admin.permissions.teamOverrideSchemesBannerText')}
-                    subtitleDefault='Use when specific teams need permission exceptions to the [System Scheme](!https://about.matterfoss.com/default-system-scheme).'
+                    subtitleDefault='Use when specific teams need permission exceptions to the [System Scheme](!https://about.mattermost.com/default-system-scheme).'
                     url='/admin_console/user_management/permissions/team_override_scheme'
-                    disabled={teamOverrideView !== null}
+                    disabled={(teamOverrideView !== null) || this.props.isDisabled}
                     linkTextId={t('admin.permissions.teamOverrideSchemesNewButton')}
                     linkTextDefault='New Team Override Scheme'
                 >
@@ -165,9 +167,10 @@ export default class PermissionSchemesSettings extends React.PureComponent {
                     {schemes.length > 0 && schemes}
                     {schemes.length === (PAGE_SIZE * (this.state.page + 1)) &&
                         <button
+                            type='button'
                             className='more-schemes theme style--none color--link'
                             onClick={this.loadMoreSchemes}
-                            disabled={this.state.loadingMore}
+                            disabled={this.props.isDisabled || this.state.loadingMore}
                         >
                             <LoadingWrapper
                                 loading={this.state.loadingMore}
@@ -206,17 +209,18 @@ export default class PermissionSchemesSettings extends React.PureComponent {
                                 <span>
                                     <FormattedMarkdownMessage
                                         id='admin.permissions.introBanner'
-                                        defaultMessage='Permission Schemes set the default permissions for Team Admins, Channel Admins and everyone else. Learn more about permission schemes in our [documentation](!https://about.matterfoss.com/default-advanced-permissions).'
+                                        defaultMessage='Permission Schemes set the default permissions for Team Admins, Channel Admins and everyone else. Learn more about permission schemes in our [documentation](!https://about.mattermost.com/default-advanced-permissions).'
                                     />
                                 </span>
                             </div>
                         </div>
 
                         <AdminPanelWithLink
+                            id='systemScheme'
                             titleId={t('admin.permissions.systemSchemeBannerTitle')}
                             titleDefault='System Scheme'
                             subtitleId={t('admin.permissions.systemSchemeBannerText')}
-                            subtitleDefault='Set the default permissions inherited by all teams unless a [Team Override Scheme](!https://about.matterfoss.com/default-team-override-scheme) is applied.'
+                            subtitleDefault='Set the default permissions inherited by all teams unless a [Team Override Scheme](!https://about.mattermost.com/default-team-override-scheme) is applied.'
                             url='/admin_console/user_management/permissions/system_scheme'
                             disabled={teamOverrideView !== null}
                             linkTextId={t('admin.permissions.systemSchemeBannerButton')}
@@ -253,6 +257,10 @@ t('admin.permissions.group.teams_team_scope.description');
 t('admin.permissions.group.teams_team_scope.name');
 t('admin.permissions.permission.assign_system_admin_role.description');
 t('admin.permissions.permission.assign_system_admin_role.name');
+t('admin.permissions.permission.convert_public_channel_to_private.description');
+t('admin.permissions.permission.convert_public_channel_to_private.name');
+t('admin.permissions.permission.convert_private_channel_to_public.description');
+t('admin.permissions.permission.convert_private_channel_to_public.name');
 t('admin.permissions.permission.create_direct_channel.description');
 t('admin.permissions.permission.create_direct_channel.name');
 t('admin.permissions.permission.create_group_channel.description');
@@ -311,12 +319,14 @@ t('admin.permissions.permission.manage_jobs.description');
 t('admin.permissions.permission.manage_jobs.name');
 t('admin.permissions.permission.manage_oauth.description');
 t('admin.permissions.permission.manage_oauth.name');
-t('admin.permissions.permission.manage_private_channel_members.description');
-t('admin.permissions.permission.manage_private_channel_members.name');
+t('admin.permissions.group.manage_private_channel_members_and_read_groups.description');
+t('admin.permissions.group.manage_private_channel_members_and_read_groups.name');
 t('admin.permissions.permission.manage_private_channel_properties.description');
 t('admin.permissions.permission.manage_private_channel_properties.name');
-t('admin.permissions.permission.manage_public_channel_members.description');
-t('admin.permissions.permission.manage_public_channel_members.name');
+t('admin.permissions.group.manage_public_channel_members_and_read_groups.description');
+t('admin.permissions.group.manage_public_channel_members_and_read_groups.name');
+t('admin.permissions.group.convert_public_channel_to_private.description');
+t('admin.permissions.group.convert_public_channel_to_private.name');
 t('admin.permissions.permission.manage_public_channel_properties.description');
 t('admin.permissions.permission.manage_public_channel_properties.name');
 t('admin.permissions.permission.manage_roles.description');
@@ -362,3 +372,9 @@ t('admin.permissions.roles.system_admin.name');
 t('admin.permissions.roles.system_user.name');
 t('admin.permissions.roles.team_admin.name');
 t('admin.permissions.roles.team_user.name');
+t('admin.permissions.group.manage_shared_channels.name');
+t('admin.permissions.group.manage_shared_channels.description');
+t('admin.permissions.permission.manage_shared_channels.name');
+t('admin.permissions.permission.manage_shared_channels.description');
+t('admin.permissions.permission.manage_secure_connections.name');
+t('admin.permissions.permission.manage_secure_connections.description');

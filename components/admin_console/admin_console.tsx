@@ -9,7 +9,10 @@ import {Route, Switch, Redirect} from 'react-router-dom';
 import {ActionFunc} from 'matterfoss-redux/types/actions';
 import {AdminConfig, EnvironmentConfig, ClientLicense} from 'matterfoss-redux/types/config';
 import {Role} from 'matterfoss-redux/types/roles';
+import {ConsoleAccess} from 'matterfoss-redux/types/admin';
 import {Dictionary} from 'matterfoss-redux/types/utilities';
+import {CloudState} from 'matterfoss-redux/types/cloud';
+import {Team} from 'matterfoss-redux/types/teams';
 
 import AnnouncementBar from 'components/announcement_bar';
 import SystemNotice from 'components/system_notice';
@@ -17,6 +20,8 @@ import ModalController from 'components/modal_controller';
 
 import SchemaAdminSettings from 'components/admin_console/schema_admin_settings';
 import DiscardChangesModal from 'components/discard_changes_modal';
+
+import BackstageNavbar from 'components/backstage/components/backstage_navbar';
 
 import AdminSidebar from './admin_sidebar';
 import Highlight from './highlight';
@@ -30,9 +35,13 @@ type Props = {
     unauthorizedRoute: string;
     buildEnterpriseReady: boolean;
     roles: Dictionary<Role>;
-    match: { url: string };
+    match: {url: string};
     showNavigationPrompt: boolean;
     isCurrentUserSystemAdmin: boolean;
+    currentUserHasAnAdminRole: boolean;
+    consoleAccess: ConsoleAccess;
+    cloud: CloudState;
+    team: Team;
     actions: {
         getConfig: () => ActionFunc;
         getEnvironmentConfig: () => ActionFunc;
@@ -53,19 +62,21 @@ type State = {
 
 // not every page in the system console will need the license and config, but the vast majority will
 type ExtraProps = {
+    enterpriseReady: boolean;
     license?: Record<string, any>;
     config?: DeepPartial<AdminConfig>;
     environmentConfig?: Partial<EnvironmentConfig>;
     setNavigationBlocked?: () => void;
-    roles?: {
-        [x: string]: string | object;
-    };
+    roles?: Dictionary<Role>;
     editRole?: (role: Role) => void;
     updateConfig?: (config: AdminConfig) => ActionFunc;
+    cloud: CloudState;
+    isCurrentUserSystemAdmin: boolean;
 }
 
 type Item = {
-    isHidden?: (config?: DeepPartial<AdminConfig>, state?: Record<string, any>, license?: Record<string, any>, buildEnterpriseReady?: boolean) => void;
+    isHidden?: (config?: Record<string, any>, state?: Record<string, any>, license?: Record<string, any>, buildEnterpriseReady?: boolean, consoleAccess?: ConsoleAccess, cloud?: CloudState, isCurrentUserSystemAdmin?: boolean) => boolean;
+    isDisabled?: (config?: Record<string, any>, state?: Record<string, any>, license?: Record<string, any>, buildEnterpriseReady?: boolean, consoleAccess?: ConsoleAccess, cloud?: CloudState, isCurrentUserSystemAdmin?: boolean) => boolean;
     schema: Record<string, any>;
     url: string;
 }
@@ -81,7 +92,7 @@ export default class AdminConsole extends React.PureComponent<Props, State> {
     public componentDidMount(): void {
         this.props.actions.getConfig();
         this.props.actions.getEnvironmentConfig();
-        this.props.actions.loadRolesIfNeeded(['channel_user', 'team_user', 'system_user', 'channel_admin', 'team_admin', 'system_admin']);
+        this.props.actions.loadRolesIfNeeded(['channel_user', 'team_user', 'system_user', 'channel_admin', 'team_admin', 'system_admin', 'system_user_manager', 'system_read_only_admin', 'system_manager']);
         this.props.actions.selectChannel('');
         this.props.actions.selectTeam('');
     }
@@ -98,24 +109,65 @@ export default class AdminConsole extends React.PureComponent<Props, State> {
             roles.team_admin &&
             roles.team_user &&
             roles.system_admin &&
-            roles.system_user
+            roles.system_user &&
+            roles.system_user_manager &&
+            roles.system_read_only_admin &&
+            roles.system_manager
         );
     }
 
     private renderRoutes = (extraProps: ExtraProps) => {
-        const schemas = Object.values(this.props.adminDefinition).reduce((acc, section) => {
-            const items = Object.values(section).filter((item) => {
-                if (item.isHidden && item.isHidden(this.props.config, {}, this.props.license, this.props.buildEnterpriseReady)) {
-                    return false;
+        const {adminDefinition, config, license, buildEnterpriseReady, consoleAccess, cloud, isCurrentUserSystemAdmin} = this.props;
+
+        const schemas: Item[] = Object.values(adminDefinition).reduce((acc, section) => {
+            let items: Item[] = [];
+
+            let isSectionHidden = false;
+            Object.entries(section).find(([key, value]) => {
+                if (key === 'isHidden') {
+                    if (typeof value === 'function') {
+                        isSectionHidden = value(config, this.state, license, buildEnterpriseReady, consoleAccess, cloud, isCurrentUserSystemAdmin);
+                    } else {
+                        isSectionHidden = Boolean(value);
+                    }
                 }
-                if (!item.schema) {
-                    return false;
-                }
-                return true;
+                return null;
             });
+
+            if (!isSectionHidden) {
+                items = Object.values(section).filter((item: Item) => Boolean(item.schema));
+            }
             return acc.concat(items);
         }, [] as Item[]);
-        const schemaRoutes = schemas.map((item: Item) => {
+
+        let defaultUrl = '';
+
+        const schemaRoutes = schemas.map((item: Item, index: number) => {
+            if (typeof item.isHidden !== 'undefined') {
+                const isHidden = (typeof item.isHidden === 'function') ? item.isHidden(config, this.state, license, buildEnterpriseReady, consoleAccess, cloud, isCurrentUserSystemAdmin) : Boolean(item.isHidden);
+                if (isHidden) {
+                    return false;
+                }
+            }
+
+            let isItemDisabled: boolean;
+
+            if (typeof item.isDisabled === 'function') {
+                isItemDisabled = item.isDisabled(config, this.state, license, buildEnterpriseReady, consoleAccess, cloud, isCurrentUserSystemAdmin);
+            } else {
+                isItemDisabled = Boolean(item.isDisabled);
+            }
+
+            if (!isItemDisabled && defaultUrl === '') {
+                const {url} = schemas[index];
+
+                // Don't use a url as default if it requires an additional ID
+                // in the path.
+                if (!url.includes(':')) {
+                    defaultUrl = url;
+                }
+            }
+
             return (
                 <Route
                     key={item.url}
@@ -124,13 +176,14 @@ export default class AdminConsole extends React.PureComponent<Props, State> {
                         <SchemaAdminSettings
                             {...extraProps}
                             {...props}
+                            consoleAccess={this.props.consoleAccess}
                             schema={item.schema}
+                            isDisabled={isItemDisabled}
                         />
                     )}
                 />
             );
         });
-        const defaultUrl = schemas[0].url;
 
         return (
             <Switch>
@@ -150,7 +203,7 @@ export default class AdminConsole extends React.PureComponent<Props, State> {
         } = this.props;
         const {setNavigationBlocked, cancelNavigation, confirmNavigation, editRole, updateConfig} = this.props.actions;
 
-        if (!this.props.isCurrentUserSystemAdmin) {
+        if (!this.props.currentUserHasAnAdminRole) {
             return (
                 <Redirect to={this.props.unauthorizedRoute}/>
             );
@@ -182,6 +235,7 @@ export default class AdminConsole extends React.PureComponent<Props, State> {
         );
 
         const extraProps: ExtraProps = {
+            enterpriseReady: this.props.buildEnterpriseReady,
             license,
             config,
             environmentConfig,
@@ -189,6 +243,8 @@ export default class AdminConsole extends React.PureComponent<Props, State> {
             roles,
             editRole,
             updateConfig,
+            cloud: this.props.cloud,
+            isCurrentUserSystemAdmin: this.props.isCurrentUserSystemAdmin,
         };
         return (
             <div
@@ -196,6 +252,9 @@ export default class AdminConsole extends React.PureComponent<Props, State> {
                 id='adminConsoleWrapper'
             >
                 <AnnouncementBar/>
+                <BackstageNavbar
+                    team={this.props.team}
+                />
                 <SystemNotice/>
                 <AdminSidebar onFilterChange={this.onFilterChange}/>
                 <div className='admin-console'>

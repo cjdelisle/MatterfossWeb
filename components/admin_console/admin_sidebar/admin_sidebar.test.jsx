@@ -3,6 +3,8 @@
 
 import React from 'react';
 
+import {RESOURCE_KEYS} from 'matterfoss-redux/constants/permissions_sysconsole';
+
 import {samplePlugin1} from 'tests/helpers/admin_console_plugin_index_sample_pluings';
 import {shallowWithIntl} from 'tests/helpers/intl-test-helper';
 
@@ -31,6 +33,9 @@ describe('components/AdminSidebar', () => {
                 Enable: true,
                 EnableUploads: true,
             },
+            FeatureFlags: {
+                CustomDataRetentionEnabled: true,
+            },
         },
         adminDefinition: AdminDefinition,
         buildEnterpriseReady: false,
@@ -55,10 +60,57 @@ describe('components/AdminSidebar', () => {
         actions: {
             getPlugins: jest.fn(),
         },
+        consoleAccess: {
+            read: {
+                about: true,
+                reporting: true,
+                environment: true,
+                site_configuration: true,
+                authentication: true,
+                plugins: true,
+                integrations: true,
+                compliance: true,
+            },
+            write: {
+                about: true,
+                reporting: true,
+                environment: true,
+                site_configuration: true,
+                authentication: true,
+                plugins: true,
+                integrations: true,
+                compliance: true,
+            },
+        },
     };
+
+    Object.keys(RESOURCE_KEYS).forEach((key) => {
+        Object.values(RESOURCE_KEYS[key]).forEach((value) => {
+            defaultProps.consoleAccess = {
+                ...defaultProps.consoleAccess,
+                read: {
+                    ...defaultProps.consoleAccess.read,
+                    [value]: true,
+                },
+                write: {
+                    ...defaultProps.consoleAccess.write,
+                    [value]: true,
+                },
+            };
+        });
+    });
 
     test('should match snapshot', () => {
         const props = {...defaultProps};
+        const wrapper = shallowWithIntl(<AdminSidebar {...props}/>);
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    test('should match snapshot, no access', () => {
+        const props = {
+            ...defaultProps,
+            consoleAccess: {},
+        };
         const wrapper = shallowWithIntl(<AdminSidebar {...props}/>);
         expect(wrapper).toMatchSnapshot();
     });
@@ -192,21 +244,39 @@ describe('components/AdminSidebar', () => {
                 LDAPGroups: 'true',
                 LDAP: 'true',
                 Cluster: 'true',
-                Metrics: 'true',
                 SAML: 'true',
                 Compliance: 'true',
                 CustomTermsOfService: 'true',
                 MessageExport: 'true',
                 Elasticsearch: 'true',
                 CustomPermissionsSchemes: 'true',
+                OpenId: 'true',
             },
             config: {
                 ExperimentalSettings: {
                     RestrictSystemAdmin: false,
                 },
+                FeatureFlags: {
+                    CustomDataRetentionEnabled: true,
+                },
                 PluginSettings: {
                     Enable: true,
                     EnableUploads: true,
+                },
+                GoogleSettings: {
+                    Id: 'googleID',
+                    Secret: 'googleSecret',
+                    Scope: 'scope',
+                },
+                GitLabSettings: {
+                    Id: 'gitlabID',
+                    Secret: 'gitlabSecret',
+                    Scope: 'scope',
+                },
+                Office365Settings: {
+                    Id: 'office365ID',
+                    Secret: 'office365Secret',
+                    Scope: 'scope',
                 },
             },
             adminDefinition: AdminDefinition,
@@ -231,6 +301,9 @@ describe('components/AdminSidebar', () => {
             onFilterChange: jest.fn(),
             actions: {
                 getPlugins: jest.fn(),
+            },
+            consoleAccess: {
+                ...defaultProps.consoleAccess,
             },
         };
 
@@ -349,6 +422,11 @@ describe('components/AdminSidebar', () => {
             onFilterChange: jest.fn(),
             actions: {
                 getPlugins: jest.fn(),
+            },
+            consoleAccess: {
+                read: {
+                    plugins: true,
+                },
             },
         };
 

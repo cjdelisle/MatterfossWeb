@@ -45,7 +45,6 @@ exports[`components/MoreDirectChannels should exclude deleted users if there is 
       <FormattedMessage
         defaultMessage="Direct Messages"
         id="more_direct_channels.title"
-        values={Object {}}
       />
     </ModalTitle>
   </ModalHeader>
@@ -108,7 +107,13 @@ exports[`components/MoreDirectChannels should exclude deleted users if there is 
       }
       perPage={50}
       placeholderText="Search and add members"
+      saveButtonPosition="top"
       saving={false}
+      selectedItemRef={
+        Object {
+          "current": null,
+        }
+      }
       submitImmediatelyOn={[Function]}
       users={
         Array [
@@ -145,6 +150,7 @@ exports[`components/MoreDirectChannels should exclude deleted users if there is 
         ]
       }
       valueRenderer={[Function]}
+      valueWithImage={false}
       values={Array []}
     />
   </ModalBody>
@@ -161,55 +167,70 @@ exports[`components/MoreDirectChannels should exclude deleted users if there is 
       <FormattedMessage
         defaultMessage="Close"
         id="general_button.close"
-        values={Object {}}
       />
     </button>
   </ModalFooter>
 </Modal>
 `;
 
-exports[`components/MoreDirectChannels should match renderOption snapshot 1`] = `
+exports[`components/MoreDirectChannels should match renderOptionValue snapshot 1`] = `
 <div
   className="more-modal__row clickable more-modal__row--selected"
   onClick={[Function]}
-  onMouseMove={[Function]}
+  onMouseEnter={[Function]}
 >
-  <ProfilePicture
-    hasMention={false}
-    isEmoji={false}
-    isRHS={false}
-    size="md"
-    src="/api/v4/users/user_id_1/image"
-    status="online"
-    wrapperClass=""
-  />
-  <div
-    className="more-modal__details"
-  >
+  <React.Fragment>
+    <ProfilePicture
+      hasMention={false}
+      isEmoji={false}
+      isRHS={false}
+      size="md"
+      src="/api/v4/users/user_id_1/image"
+      status="online"
+      wrapperClass=""
+    />
     <div
-      className="more-modal__name"
+      className="more-modal__details"
     >
-      <span>
-        @undefined
+      <div
+        className="more-modal__name"
+      >
         <span
-          className="light"
+          id="displayedUserNameusername1"
         >
-          
+          @username1
+          <span
+            className="light"
+          >
+            
+          </span>
         </span>
-      </span>
-      <BotBadge
-        className="badge-popoverlist"
-        show={false}
-      />
-      <GuestBadge
-        className="badge-popoverlist"
-        show={false}
+        <BotBadge
+          className="badge-popoverlist"
+          show={false}
+        />
+        <GuestBadge
+          className="badge-popoverlist"
+          show={false}
+        />
+        <CustomStatusEmoji
+          emojiSize={15}
+          emojiStyle={
+            Object {
+              "marginLeft": 4,
+            }
+          }
+          showTooltip={true}
+          spanStyle={Object {}}
+          tooltipDirection="top"
+          userID="user_id_1"
+        />
+      </div>
+      <div
+        className="more-modal__description"
       />
     </div>
-    <div
-      className="more-modal__description"
-    />
-  </div>
+  </React.Fragment>
   <div
     className="more-modal__actions"
   >
@@ -267,7 +288,6 @@ exports[`components/MoreDirectChannels should match snapshot 1`] = `
       <FormattedMessage
         defaultMessage="Direct Messages"
         id="more_direct_channels.title"
-        values={Object {}}
       />
     </ModalTitle>
   </ModalHeader>
@@ -324,7 +344,13 @@ exports[`components/MoreDirectChannels should match snapshot 1`] = `
       }
       perPage={50}
       placeholderText="Search and add members"
+      saveButtonPosition="top"
       saving={false}
+      selectedItemRef={
+        Object {
+          "current": null,
+        }
+      }
       submitImmediatelyOn={[Function]}
       users={
         Array [
@@ -349,6 +375,7 @@ exports[`components/MoreDirectChannels should match snapshot 1`] = `
         ]
       }
       valueRenderer={[Function]}
+      valueWithImage={false}
       values={
         Array [
           Object {
@@ -378,7 +405,6 @@ exports[`components/MoreDirectChannels should match snapshot 1`] = `
       <FormattedMessage
         defaultMessage="Close"
         id="general_button.close"
-        values={Object {}}
       />
     </button>
   </ModalFooter>
@@ -386,19 +412,37 @@ exports[`components/MoreDirectChannels should match snapshot 1`] = `
 `;
 
 exports[`components/MoreDirectChannels should render the group channel option 1`] = `
-<GroupMessageOption
-  channel={
-    Object {
-      "profiles": Array [
-        Object {
-          "id": "user_id_2",
-          "username": "username",
-        },
-      ],
-      "type": "G",
-    }
-  }
-  isSelected={false}
-  onAdd={[Function]}
-/>
+<div
+  className="more-modal__row clickable"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+>
+  <React.Fragment>
+    <div
+      className="more-modal__gm-icon bg-text-200"
+    >
+      1
+    </div>
+    <div
+      className="more-modal__details"
+    >
+      <div
+        className="more-modal__name"
+      >
+        <span>
+          @username
+        </span>
+      </div>
+    </div>
+  </React.Fragment>
+  <div
+    className="more-modal__actions"
+  >
+    <div
+      className="more-modal__actions--round"
+    >
+      <AddIcon />
+    </div>
+  </div>
+</div>
 `;

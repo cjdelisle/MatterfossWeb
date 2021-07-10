@@ -3,6 +3,7 @@
 
 import {connect} from 'react-redux';
 import {bindActionCreators, Dispatch, ActionCreatorsMapObject} from 'redux';
+
 import {getCurrentTeam} from 'matterfoss-redux/selectors/entities/teams';
 import {ActionFunc} from 'matterfoss-redux/types/actions';
 

@@ -4,8 +4,6 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 
-import {mountWithIntl} from 'tests/helpers/intl-test-helper';
-
 import InvitationModal from './invitation_modal.jsx';
 
 describe('components/invitation_modal/InvitationModal', () => {
@@ -22,8 +20,13 @@ describe('components/invitation_modal/InvitationModal', () => {
         canInviteGuests: true,
         canAddUsers: true,
         emailInvitationsEnabled: true,
+        isFreeTierWithNoFreeSeats: false,
+        isCloud: false,
+        userIsAdmin: false,
+        cloudUserLimit: '10',
         actions: {
             closeModal: jest.fn(),
+            openModal: jest.fn(),
             sendGuestsInvites: jest.fn(),
             sendMembersInvites: jest.fn(),
             searchProfiles: jest.fn(),
@@ -89,12 +92,25 @@ describe('components/invitation_modal/InvitationModal', () => {
     test('should work properly with full inside (and with the reference to the modal)', () => {
         const props = {...defaultProps};
         props.currentTeam.invite_id = '';
-        const wrapper = mountWithIntl(
+        const wrapper = shallow(
             <InvitationModal {...props}/>,
         );
+
         wrapper.instance().goToMembers();
 
         expect(props.actions.getTeam).toHaveBeenCalledTimes(1);
         expect(props.actions.getTeam).toHaveBeenCalledWith(props.currentTeam.id);
+    });
+
+    test('should match the snapshot when is free tier and have no free seats', () => {
+        const props = {...defaultProps};
+        props.isFreeTierWithNoFreeSeats = true;
+        props.isCloud = true;
+
+        const wrapper = shallow(
+            <InvitationModal {...props}/>,
+        );
+
+        expect(wrapper).toMatchSnapshot();
     });
 });

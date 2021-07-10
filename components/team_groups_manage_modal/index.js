@@ -3,6 +3,7 @@
 
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
+
 import {getGroupsAssociatedToTeam, unlinkGroupSyncable, patchGroupSyncable} from 'matterfoss-redux/actions/groups';
 import {getMyTeamMembers} from 'matterfoss-redux/actions/teams';
 

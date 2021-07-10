@@ -1,4 +1,3 @@
-
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
@@ -66,8 +65,8 @@ describe('Post Header', () => {
         cy.getLastPostId().then((postId) => {
             // * Check that the center dot menu' button and dropdown are hidden
             cy.get(`#post_${postId}`).should('be.visible').within(() => {
-                cy.get(`#CENTER_button_${postId}`).should('not.be.visible');
-                cy.get('.dropdown-menu').should('not.be.visible');
+                cy.get(`#CENTER_button_${postId}`).should('not.exist');
+                cy.get('.dropdown-menu').should('not.exist');
             });
 
             // # Click dot menu of a post
@@ -84,8 +83,8 @@ describe('Post Header', () => {
 
             // * Check that the center dot menu and dropdown are hidden
             cy.get(`#post_${postId}`).should('be.visible').within(() => {
-                cy.get(`#CENTER_button_${postId}`).should('not.be.visible');
-                cy.get('.dropdown-menu').should('not.be.visible');
+                cy.get(`#CENTER_button_${postId}`).should('not.exist');
+                cy.get('.dropdown-menu').should('not.exist');
             });
         });
     });
@@ -134,21 +133,21 @@ describe('Post Header', () => {
         cy.closeRHS();
 
         // * Check that the RHS is close
-        cy.get('#rhsContainer').should('not.be.visible');
+        cy.get('#rhsContainer').should('not.exist');
     });
 
-    it('M17442 Visual verification of "Searching" animation for Flagged and Pinned posts', () => {
+    it('MM-T122 Visual verification of "Searching" animation for Saved and Pinned posts', () => {
         cy.delayRequestToRoutes(['pinned', 'flagged'], 5000);
         cy.reload();
 
-        // Pin and flag last post before clicking on Pinned and Flagged post icons
+        // Pin and save last post before clicking on Pinned and Saved post icons
         cy.postMessage('Post');
 
-        //Pin and flag the posted message
+        //Pin and save the posted message
         cy.getLastPostId().then((postId) => {
             cy.clickPostDotMenu(postId);
             cy.get(`#pin_post_${postId}`).click();
-            cy.clickPostFlagIcon(postId);
+            cy.clickPostSaveIcon(postId);
         });
 
         // # Click on the "Pinned Posts" icon to the left of the "Search" box
@@ -164,10 +163,10 @@ describe('Post Header', () => {
             cy.get('#searchResultsCloseButton').should('be.visible').click();
         });
 
-        // # Click on the "Flagged Posts" icon to the right of the "Search" box
+        // # Click on the "Saved Posts" icon to the right of the "Search" box
         cy.get('#channelHeaderFlagButton').click();
 
-        // * Verify that the RHS for pinned posts is opened.
+        // * Verify that the RHS for saved posts is opened.
         cy.get('#searchContainer').should('be.visible').within(() => {
             // * Check that searching indicator appears before the pinned posts are loaded
             cy.get('#loadingSpinner').should('be.visible').and('have.text', 'Searching...');

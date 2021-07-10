@@ -8,6 +8,7 @@
 // ***************************************************************
 
 // Stage: @prod
+// Group: @enterprise @system_console
 
 import {getAdminAccount} from '../../../support/env';
 
@@ -116,8 +117,8 @@ const removePermission = (permissionCheckBoxTestId) => {
 };
 
 const deleteExistingTeamOverrideSchemes = () => {
-    cy.apiGetSchemes('team').then((res) => {
-        res.body.forEach((scheme) => {
+    cy.apiGetSchemes('team').then(({schemes}) => {
+        schemes.forEach((scheme) => {
             cy.apiDeleteScheme(scheme.id);
         });
     });
@@ -127,7 +128,7 @@ const deleteExistingTeamOverrideSchemes = () => {
 // # If enabled is true assumes the user has the permission enabled and checks for no system message
 const channelMentionsPermissionCheck = (enabled) => {
     // # Type @here and post it to the channel
-    cy.postMessage('@here');
+    cy.postMessage('@here ');
 
     // # Get last post message text
     cy.getLastPostId().then((postId) => {
@@ -179,8 +180,8 @@ const checkChannelPermission = (permissionName, hasChannelPermissionCheckFunc, n
     cy.apiAdminLogin();
 
     // # Get team scheme URL
-    cy.apiGetSchemes('team').then((res) => {
-        const teamScheme = res.body[0];
+    cy.apiGetSchemes('team').then(({schemes}) => {
+        const teamScheme = schemes[0];
         const url = `admin_console/user_management/permissions/team_override_scheme/${teamScheme.id}`;
 
         // todo: add checks for guests once matterfoss-webapp/pull/5061 is merged

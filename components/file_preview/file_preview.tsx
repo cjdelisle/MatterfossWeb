@@ -3,6 +3,7 @@
 /* eslint-disable react/no-string-refs */
 
 import React, {ReactNode} from 'react';
+
 import {getFileThumbnailUrl, getFileUrl} from 'matterfoss-redux/utils/file_utils';
 import {FileInfo} from 'matterfoss-redux/types/files';
 

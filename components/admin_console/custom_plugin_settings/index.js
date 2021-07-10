@@ -5,6 +5,7 @@ import {connect} from 'react-redux';
 import {createSelector} from 'reselect';
 
 import {getRoles} from 'matterfoss-redux/selectors/entities/roles';
+import {appsEnabled} from 'matterfoss-redux/selectors/entities/apps';
 
 import {Constants} from 'utils/constants';
 import {localizeMessage} from 'utils/utils.jsx';
@@ -13,6 +14,8 @@ import {getAdminConsoleCustomComponents} from 'selectors/admin_console';
 import SchemaAdminSettings from '../schema_admin_settings';
 import {it} from '../admin_definition';
 
+import {appsPluginID} from 'utils/apps';
+
 import CustomPluginSettings from './custom_plugin_settings.jsx';
 import getEnablePluginSetting from './enable_plugin_setting';
 
@@ -20,7 +23,8 @@ function makeGetPluginSchema() {
     return createSelector(
         (state, pluginId) => state.entities.admin.plugins[pluginId],
         (state, pluginId) => getAdminConsoleCustomComponents(state, pluginId),
-        (plugin, customComponents) => {
+        (state) => appsEnabled(state),
+        (plugin, customComponents, areAppsEnabled) => {
             if (!plugin) {
                 return null;
             }
@@ -36,7 +40,7 @@ function makeGetPluginSchema() {
                     let bannerType = '';
                     let type = setting.type;
                     let displayName = setting.display_name;
-                    let isDisabled = it.stateIsFalse(pluginEnabledConfigKey);
+                    let isDisabled = it.any(it.stateIsFalse(pluginEnabledConfigKey), it.not(it.userHasWritePermissionOnResource('plugins')));
 
                     if (customComponents[key]) {
                         component = customComponents[key].component;
@@ -46,7 +50,7 @@ function makeGetPluginSchema() {
                         type = Constants.SettingsTypes.TYPE_BANNER;
                         displayName = localizeMessage('admin.plugin.customSetting.pluginDisabledWarning', 'In order to view this setting, enable the plugin and click Save.');
                         bannerType = 'warning';
-                        isDisabled = it.stateIsTrue(pluginEnabledConfigKey);
+                        isDisabled = it.any(it.stateIsTrue(pluginEnabledConfigKey), it.not(it.userHasWritePermissionOnResource('plugins')));
                     }
 
                     return {
@@ -64,7 +68,15 @@ function makeGetPluginSchema() {
                 });
             }
 
-            settings.unshift(getEnablePluginSetting(plugin));
+            if (plugin.id !== appsPluginID || areAppsEnabled) {
+                const pluginEnableSetting = getEnablePluginSetting(plugin);
+                pluginEnableSetting.isDisabled = it.any(pluginEnableSetting.isDisabled, it.not(it.userHasWritePermissionOnResource('plugins')));
+                settings.unshift(pluginEnableSetting);
+            }
+
+            settings.forEach((s) => {
+                s.isDisabled = it.any(s.isDisabled, it.not(it.userHasWritePermissionOnResource('plugins')));
+            });
 
             return {
                 ...plugin.settings_schema,

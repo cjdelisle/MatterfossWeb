@@ -36,21 +36,19 @@ describe('Incoming webhook', () => {
     });
 
     it('MM-T623 Lock to this channel on webhook configuration works', () => {
-        cy.apiCreateChannel(testTeam.id, 'other-channel', 'Other Channel').then((response) => {
-            const otherChannel = response.body;
-
+        cy.apiCreateChannel(testTeam.id, 'other-channel', 'Other Channel').then(({channel}) => {
             // # Post the first incoming webhook
-            const payload1 = getPayload(otherChannel);
+            const payload1 = getPayload(channel);
             cy.postIncomingWebhook({url: incomingWebhook.url, data: payload1});
 
             // # Switch to other channel and wait for the first webhook message to get posted successfully
-            switchToChannel(testTeam.name, otherChannel.name);
+            switchToChannel(testTeam.name, channel.name);
             waitUntilWebhookPosted(payload1.text);
 
             // # Edit webhook to lock into the test channel
             editIncomingWebhook(incomingWebhook.id, testTeam.name, true);
 
-            const payload2 = getPayload(otherChannel);
+            const payload2 = getPayload(channel);
 
             // # Try to post a second incoming webhook
             cy.task('postIncomingWebhook', {url: incomingWebhook.url, data: payload2}).then((res) => {
@@ -66,7 +64,7 @@ describe('Incoming webhook', () => {
             cy.postIncomingWebhook({url: incomingWebhook.url, data: payload2});
 
             // # Switch to other channel and wait for the second webhook message to get posted
-            switchToChannel(testTeam.name, otherChannel.name);
+            switchToChannel(testTeam.name, channel.name);
             waitUntilWebhookPosted(payload2.text);
         });
     });
@@ -74,7 +72,7 @@ describe('Incoming webhook', () => {
 
 function switchToChannel(teamName, channelName) {
     cy.visit(`/${teamName}/channels/town-square`);
-    cy.get(`#sidebarItem_${channelName}`, {timeout: TIMEOUTS.ONE_MIN}).should('be.visible').click();
+    cy.get(`#sidebarItem_${channelName}`, {timeout: TIMEOUTS.ONE_MIN}).should('be.visible').click({force: true});
 }
 
 function editIncomingWebhook(incomingWebhookId, teamName, lockToChannel) {

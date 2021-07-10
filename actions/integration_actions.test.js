@@ -3,6 +3,7 @@
 
 import thunk from 'redux-thunk';
 import configureStore from 'redux-mock-store';
+
 import {getProfilesByIds} from 'matterfoss-redux/actions/users';
 
 import * as Actions from 'actions/integration_actions.jsx';

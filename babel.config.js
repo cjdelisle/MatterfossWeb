@@ -25,13 +25,11 @@ const config = {
         }],
     ],
     plugins: [
+        'lodash',
         '@babel/plugin-proposal-class-properties',
-        '@babel/plugin-syntax-dynamic-import',
-        '@babel/proposal-object-rest-spread',
+        '@babel/plugin-proposal-object-rest-spread',
         'react-hot-loader/babel',
         'babel-plugin-typescript-to-proptypes',
-        '@babel/plugin-proposal-optional-chaining',
-        '@babel/plugin-proposal-nullish-coalescing-operator',
     ],
 };
 

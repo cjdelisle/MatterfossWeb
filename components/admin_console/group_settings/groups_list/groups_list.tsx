@@ -3,6 +3,7 @@
 
 import React from 'react';
 import {FormattedMessage} from 'react-intl';
+
 import {GroupSearchOpts, MixedUnlinkedGroupRedux} from 'matterfoss-redux/types/groups';
 
 import * as Utils from 'utils/utils';
@@ -19,6 +20,7 @@ const LDAP_GROUPS_PAGE_SIZE = 200;
 type Props = {
     groups: MixedUnlinkedGroupRedux[];
     total: number;
+    readOnly?: boolean;
     actions: {
         getLdapGroups: (page?: number, perPage?: number, opts?: GroupSearchOpts) => Promise<any>;
         link: (key: string) => Promise<any>;
@@ -55,7 +57,7 @@ type State = {
     filterIsUnlinked?: boolean;
 }
 
-type filterUpdates = [string, boolean];
+type FilterUpdates = [string, boolean];
 
 const FILTER_STATE_SEARCH_KEY_MAPPING: FilterSearchMap = {
     filterIsConfigured: {filter: 'is:configured', option: {is_configured: true}},
@@ -84,7 +86,7 @@ export default class GroupsList extends React.PureComponent<Props, State> {
         };
     }
 
-    public closeFilters() {
+    public closeFilters = () => {
         this.setState({showFilters: false});
     }
 
@@ -116,7 +118,7 @@ export default class GroupsList extends React.PureComponent<Props, State> {
 
     public linkSelectedGroups() {
         for (const group of this.props.groups) {
-            if (this.state.checked[group.primary_key] && !group.matterfoss_group_id) {
+            if (this.state.checked[group.primary_key] && !group.mattermost_group_id) {
                 this.props.actions.link(group.primary_key);
             }
         }
@@ -124,7 +126,7 @@ export default class GroupsList extends React.PureComponent<Props, State> {
 
     public unlinkSelectedGroups() {
         for (const group of this.props.groups) {
-            if (this.state.checked[group.primary_key] && group.matterfoss_group_id) {
+            if (this.state.checked[group.primary_key] && group.mattermost_group_id) {
                 this.props.actions.unlink(group.primary_key);
             }
         }
@@ -134,7 +136,7 @@ export default class GroupsList extends React.PureComponent<Props, State> {
         let hasSelectedLinked = false;
         for (const group of this.props.groups) {
             if (this.state.checked[group.primary_key]) {
-                if (!group.matterfoss_group_id) {
+                if (!group.mattermost_group_id) {
                     return 'link';
                 }
                 hasSelectedLinked = true;
@@ -152,8 +154,10 @@ export default class GroupsList extends React.PureComponent<Props, State> {
         case 'link':
             return (
                 <button
+                    type='button'
                     className='btn btn-primary'
                     onClick={() => this.linkSelectedGroups()}
+                    disabled={this.props.readOnly}
                 >
                     <i className='icon fa fa-link'/>
                     <FormattedMessage
@@ -165,8 +169,10 @@ export default class GroupsList extends React.PureComponent<Props, State> {
         case 'unlink':
             return (
                 <button
+                    type='button'
                     className='btn btn-primary'
                     onClick={() => this.unlinkSelectedGroups()}
+                    disabled={this.props.readOnly}
                 >
                     <i className='icon fa fa-unlink'/>
                     <FormattedMessage
@@ -178,7 +184,9 @@ export default class GroupsList extends React.PureComponent<Props, State> {
         default:
             return (
                 <button
+                    type='button'
                     className='btn btn-inactive disabled'
+                    disabled={this.props.readOnly}
                 >
                     <i className='icon fa fa-link'/>
                     <FormattedMessage
@@ -205,7 +213,7 @@ export default class GroupsList extends React.PureComponent<Props, State> {
                     <div className='group-description'>
                         <FormattedMessage
                             id='admin.group_settings.groups_list.mappingHeader'
-                            defaultMessage='Matterfoss Linking'
+                            defaultMessage='Mattermost Linking'
                         />
                     </div>
                     <div className='group-actions'/>
@@ -238,11 +246,12 @@ export default class GroupsList extends React.PureComponent<Props, State> {
                     key={item.primary_key}
                     primary_key={item.primary_key}
                     name={item.name}
-                    matterfoss_group_id={item.matterfoss_group_id}
+                    mattermost_group_id={item.mattermost_group_id}
                     has_syncables={item.has_syncables}
                     failed={item.failed}
                     checked={Boolean(this.state.checked[item.primary_key])}
                     onCheckToggle={(key: string) => this.onCheckToggle(key)}
+                    readOnly={this.props.readOnly}
                     actions={{
                         link: this.props.actions.link,
                         unlink: this.props.actions.unlink,
@@ -260,8 +269,6 @@ export default class GroupsList extends React.PureComponent<Props, State> {
         let {searchString} = this.state;
 
         const newState = {...this.state};
-        delete newState.page;
-        delete newState.checked;
 
         let q = searchString;
         let opts = {q: ''};
@@ -323,9 +330,9 @@ export default class GroupsList extends React.PureComponent<Props, State> {
         return newSearchString.replace(/\s{2,}/g, ' ');
     }
 
-    public handleFilterCheck(updates: filterUpdates[]) {
+    public handleFilterCheck(updates: FilterUpdates[]) {
         let {searchString} = this.state;
-        updates.forEach((item: filterUpdates) => {
+        updates.forEach((item: FilterUpdates) => {
             searchString = this.newSearchString(searchString, item[0], item[1]);
             this.setState({[item[0]]: item[1]} as any);
         });
@@ -492,6 +499,7 @@ export default class GroupsList extends React.PureComponent<Props, State> {
                             />
                         </div>
                         <button
+                            type='button'
                             className={'btn btn-link prev ' + (firstPage ? 'disabled' : '')}
                             onClick={(e: any) => this.previousPage(e)}
                             disabled={firstPage}
@@ -499,6 +507,7 @@ export default class GroupsList extends React.PureComponent<Props, State> {
                             <PreviousIcon/>
                         </button>
                         <button
+                            type='button'
                             className={'btn btn-link next ' + (lastPage ? 'disabled' : '')}
                             onClick={(e: any) => this.nextPage(e)}
                             disabled={lastPage}

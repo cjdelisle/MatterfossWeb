@@ -3,6 +3,7 @@
 
 import {bindActionCreators, Dispatch} from 'redux';
 import {connect} from 'react-redux';
+
 import {verifyUserEmail, getMe} from 'matterfoss-redux/actions/users';
 import {getConfig} from 'matterfoss-redux/selectors/entities/general';
 import {getCurrentUserId} from 'matterfoss-redux/selectors/entities/users';

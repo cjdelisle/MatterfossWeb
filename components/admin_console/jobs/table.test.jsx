@@ -99,4 +99,89 @@ describe('components/admin_console/jobs/table', () => {
         wrapper.find('.job-table__cancel-button').first().simulate('click', {preventDefault: jest.fn(), currentTarget: {getAttribute: () => '1234'}});
         expect(cancelJob).toHaveBeenCalledTimes(1);
     });
+
+    test('files column should show', () => {
+        const cols = [
+            {header: ''},
+            {header: 'Status'},
+            {header: 'Files'},
+            {header: 'Finish Time'},
+            {header: 'Run Time'},
+            {header: 'Details'},
+        ];
+
+        const wrapper = shallowWithIntl(
+            <JobTable
+                {...baseProps}
+                jobType='message_export'
+                downloadExportResults={true}
+            />,
+        );
+
+        // There should be ONLY 1 table element
+        const table = wrapper.find('table');
+        expect(table).toHaveLength(1);
+
+        // The table should have ONLY 1 thead element
+        const thead = table.find('thead');
+        expect(thead).toHaveLength(1);
+
+        // The number of th tags should be equal to number of columns
+        const headers = thead.find('th');
+        expect(headers).toHaveLength(cols.length);
+    });
+
+    test('files column should not show', () => {
+        const cols = [
+            {header: ''},
+            {header: 'Status'},
+            {header: 'Finish Time'},
+            {header: 'Run Time'},
+            {header: 'Details'},
+        ];
+
+        const wrapper = shallowWithIntl(
+            <JobTable
+                {...baseProps}
+                jobType='not a message export'
+                downloadExportResults={false}
+            />,
+        );
+
+        // There should be ONLY 1 table element
+        const table = wrapper.find('table');
+        expect(table).toHaveLength(1);
+
+        // The table should have ONLY 1 thead element
+        const thead = table.find('thead');
+        expect(thead).toHaveLength(1);
+
+        // The number of th tags should be equal to number of columns
+        const headers = thead.find('th');
+        expect(headers).toHaveLength(cols.length);
+    });
+
+    test('hide create job button', () => {
+        const wrapper = shallowWithIntl(
+            <JobTable
+                {...baseProps}
+                hideJobCreateButton={true}
+            />,
+        );
+
+        const button = wrapper.find('button.btn-default');
+        expect(button).toHaveLength(0);
+    });
+
+    test('add custom class', () => {
+        const wrapper = shallowWithIntl(
+            <JobTable
+                {...baseProps}
+                className={'job-table__data-retention'}
+            />,
+        );
+
+        const element = wrapper.find('.job-table__data-retention');
+        expect(element).toHaveLength(1);
+    });
 });

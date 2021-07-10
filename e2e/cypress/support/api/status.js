@@ -17,7 +17,39 @@ Cypress.Commands.add('apiUpdateUserStatus', (status = 'online') => {
             body: data,
         }).then((response) => {
             expect(response.status).to.equal(200);
-            cy.wrap({status: response.body});
+            return cy.wrap({status: response.body});
         });
+    });
+});
+
+Cypress.Commands.add('apiGetUserStatus', (userId) => {
+    return cy.request({
+        headers: {'X-Requested-With': 'XMLHttpRequest'},
+        url: `/api/v4/users/${userId}/status`,
+        method: 'GET',
+    }).then((response) => {
+        expect(response.status).to.equal(200);
+        return cy.wrap({status: response.body});
+    });
+});
+
+Cypress.Commands.add('apiUpdateUserCustomStatus', (customStatus) => {
+    return cy.request({
+        headers: {'X-Requested-With': 'XMLHttpRequest'},
+        url: '/api/v4/users/me/status/custom',
+        method: 'PUT',
+        body: JSON.stringify(customStatus),
+    }).then((response) => {
+        expect(response.status).to.equal(200);
+    });
+});
+
+Cypress.Commands.add('apiClearUserCustomStatus', () => {
+    return cy.request({
+        headers: {'X-Requested-With': 'XMLHttpRequest'},
+        url: '/api/v4/users/me/status/custom',
+        method: 'DELETE',
+    }).then((response) => {
+        expect(response.status).to.equal(200);
     });
 });

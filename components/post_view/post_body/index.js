@@ -2,6 +2,7 @@
 // See LICENSE.txt for license information.
 
 import {connect} from 'react-redux';
+
 import {getPost} from 'matterfoss-redux/selectors/entities/posts';
 import {isCurrentChannelReadOnly, getCurrentChannel} from 'matterfoss-redux/selectors/entities/channels';
 import {getUser} from 'matterfoss-redux/selectors/entities/users';
@@ -20,7 +21,7 @@ function mapStateToProps(state, ownProps) {
     const config = getConfig(state);
     const enablePostUsernameOverride = config.EnablePostUsernameOverride === 'true';
 
-    const currentChannel = getCurrentChannel(state);
+    const currentChannel = getCurrentChannel(state) || {};
     const channelIsArchived = currentChannel.delete_at !== 0;
 
     return {

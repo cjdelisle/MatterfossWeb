@@ -27,13 +27,14 @@ type Props = {
     includeUsers: { [userId: string]: UserProfile };
 
     loadPage: (page: number) => void;
-    search: (term: string) => void;
+    onSearch: (term: string) => void;
     removeUser: (user: UserProfile) => void;
     updateMembership: (membership: BaseMembership) => void;
 
     totalCount: number;
     loading: boolean;
     term: string;
+    readOnly?: boolean;
 
     filterProps: {
         options: FilterOptions;
@@ -78,8 +79,8 @@ export default class UserGrid extends React.PureComponent<Props, State> {
         this.loadPage(this.state.page - 1);
     }
 
-    private search = async (term: string) => {
-        this.props.search(term);
+    private onSearch = async (term: string) => {
+        this.props.onSearch(term);
         this.setState({page: 0});
     }
 
@@ -160,7 +161,7 @@ export default class UserGrid extends React.PureComponent<Props, State> {
 
     private getRows = (): Row[] => {
         const {page, membershipsToUpdate} = this.state;
-        const {memberships, users, excludeUsers, includeUsers, totalCount, term, scope} = this.props;
+        const {memberships, users, excludeUsers, includeUsers, totalCount, term, scope, readOnly} = this.props;
         const {startCount, endCount} = this.getPaginationProps();
 
         let usersToDisplay = users;
@@ -211,15 +212,17 @@ export default class UserGrid extends React.PureComponent<Props, State> {
                             membership={membership}
                             handleUpdateMembership={this.updateMembership}
                             scope={scope}
+                            isDisabled={readOnly}
                         />
                     ),
                     remove: (
                         <UserGridRemove
                             user={user}
                             removeUser={this.removeUser}
+                            isDisabled={readOnly}
                         />
                     ),
-                }
+                },
             };
         });
     }
@@ -293,7 +296,7 @@ export default class UserGrid extends React.PureComponent<Props, State> {
                 startCount={startCount}
                 endCount={endCount}
                 total={total}
-                search={this.search}
+                onSearch={this.onSearch}
                 term={this.props.term || ''}
                 placeholderEmpty={placeholderEmpty}
                 rowsContainerStyles={rowsContainerStyles}

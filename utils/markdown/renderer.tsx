@@ -6,7 +6,7 @@ import marked, {MarkedOptions} from 'marked';
 import * as PostUtils from 'utils/post_utils';
 import * as SyntaxHighlighting from 'utils/syntax_highlighting';
 import * as TextFormatting from 'utils/text_formatting';
-import {getScheme, isUrlSafe} from 'utils/url';
+import {getScheme, isUrlSafe, shouldOpenInNewTab} from 'utils/url';
 import EmojiMap from 'utils/emoji_map';
 
 export default class Renderer extends marked.Renderer {
@@ -14,7 +14,7 @@ export default class Renderer extends marked.Renderer {
     private emojiMap: EmojiMap;
     public constructor(
         options: MarkedOptions,
-        formattingOptions = {},
+        formattingOptions: TextFormatting.TextFormattingOptions,
         emojiMap = new EmojiMap(new Map()),
     ) {
         super(options);
@@ -35,7 +35,7 @@ export default class Renderer extends marked.Renderer {
             return `<div data-latex="${TextFormatting.escapeHtml(code)}"></div>`;
         }
         if (usedLanguage === 'texcode' || usedLanguage === 'latexcode') {
-            usedLanguage = 'tex';
+            usedLanguage = 'latex';
         }
 
         // treat html as xml to prevent injection attacks
@@ -44,13 +44,8 @@ export default class Renderer extends marked.Renderer {
         }
 
         let className = 'post-code';
-        let codeClassName = 'hljs';
         if (!usedLanguage) {
             className += ' post-code--wrap';
-        }
-
-        if (SyntaxHighlighting.canHighlight(usedLanguage)) {
-            codeClassName = 'hljs hljs-ln';
         }
 
         let header = '';
@@ -62,10 +57,19 @@ export default class Renderer extends marked.Renderer {
             );
         }
 
-        // if we have to apply syntax highlighting AND highlighting of search terms, create two copies
+        let lineNumbers = '';
+        if (SyntaxHighlighting.canHighlight(usedLanguage)) {
+            lineNumbers = (
+                '<div class="post-code__line-numbers">' +
+                    SyntaxHighlighting.renderLineNumbers(code) +
+                '</div>'
+            );
+        }
+
+        // If we have to apply syntax highlighting AND highlighting of search terms, create two copies
         // of the code block, one with syntax highlighting applied and another with invisible text, but
         // search term highlighting and overlap them
-        const content = SyntaxHighlighting.highlight(usedLanguage, code, true);
+        const content = SyntaxHighlighting.highlight(usedLanguage, code);
         let searchedContent = '';
 
         if (this.formattingOptions.searchPatterns) {
@@ -92,10 +96,13 @@ export default class Renderer extends marked.Renderer {
         return (
             '<div class="' + className + '">' +
                 header +
-                '<code class="' + codeClassName + '">' +
-                    searchedContent +
-                    content +
-                '</code>' +
+                '<div class="hljs">' +
+                    lineNumbers +
+                    '<code>' +
+                        searchedContent +
+                        content +
+                    '</code>' +
+                '</div>' +
             '</div>'
         );
     }
@@ -200,22 +207,15 @@ export default class Renderer extends marked.Renderer {
 
         output += `" href="${outHref}" rel="noreferrer"`;
 
-        // special case for team invite links, channel links, and permalinks that are inside the app
-        let internalLink = false;
-        const pattern = new RegExp(
-            '^(' +
-        TextFormatting.escapeRegex(this.formattingOptions.siteURL) +
-        ')?\\/(?:signup_user_complete|admin_console|[^\\/]+\\/(?:pl|channels|messages))\\/',
-        );
-        internalLink = pattern.test(outHref);
+        const openInNewTab = shouldOpenInNewTab(outHref, this.formattingOptions.siteURL, this.formattingOptions.managedResourcePaths);
 
-        if (internalLink && this.formattingOptions.siteURL) {
+        if (openInNewTab || !this.formattingOptions.siteURL) {
+            output += ' target="_blank"';
+        } else {
             output += ` data-link="${outHref.replace(
                 this.formattingOptions.siteURL,
                 '',
             )}"`;
-        } else {
-            output += ' target="_blank"';
         }
 
         if (title) {

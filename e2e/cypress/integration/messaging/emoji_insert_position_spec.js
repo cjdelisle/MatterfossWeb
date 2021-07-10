@@ -18,7 +18,7 @@ describe('Messaging', () => {
         });
     });
 
-    it('M23348 - Selecting an emoji from emoji picker should insert it at the cursor position', () => {
+    it('MM-T95 Selecting an emoji from emoji picker should insert it at the cursor position', () => {
         // # Write some text in the send box.
         cy.get('#post_textbox').type('HelloWorld!');
 
@@ -27,7 +27,10 @@ describe('Messaging', () => {
 
         // # Select the grinning emoji from the emoji picker.
         cy.get('#emojiPickerButton').click();
-        cy.get('img[data-testid="grinning"]').click();
+        cy.findAllByTestId('emojiItem').
+            findByRole('button', {name: 'grinning emoji'}).
+            should('exist').
+            click({force: true});
 
         // * The emoji should be inserted where the cursor is at the time of selection.
         cy.get('#post_textbox').should('have.value', 'Hello :grinning: World!');

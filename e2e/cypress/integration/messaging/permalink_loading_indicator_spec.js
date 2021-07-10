@@ -23,15 +23,15 @@ describe('Messaging', () => {
             testTeam = team;
             testPublicChannel = channel;
 
-            cy.apiCreateChannel(testTeam.id, 'private', 'Private', 'P').then((res) => {
-                testPrivateChannel = res.body;
+            cy.apiCreateChannel(testTeam.id, 'private', 'Private', 'P').then((out) => {
+                testPrivateChannel = out.channel;
             });
 
             cy.visit(`/${testTeam.name}/channels/town-square`);
         });
     });
 
-    it('M18701-Permalink to first post in channel shows endless loading indicator above', () => {
+    it('MM-T3308 Permalink to first post in channel does not show endless loading indicator above', () => {
         const message = getRandomId();
         const maxMessageCount = 10;
 
@@ -81,10 +81,10 @@ describe('Messaging', () => {
                 cy.get(`#postMessageText_${clickedPostId}`).scrollIntoView().should('be.visible').and('have.text', `${message}-${maxMessageCount}`);
 
                 // * Check if the loading indicator is not visible
-                cy.get('.loading-screen').should('not.be.visible');
+                cy.get('.loading-screen').should('not.exist');
 
                 // * Check if the more messages text is not visible
-                cy.get('.more-messages-text').should('not.be.visible');
+                cy.get('.more-messages-text').should('not.exist');
             });
         });
     });

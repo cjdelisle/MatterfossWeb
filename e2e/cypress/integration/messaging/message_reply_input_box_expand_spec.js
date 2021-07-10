@@ -23,7 +23,7 @@ describe('Messaging', () => {
         });
     });
 
-    it('M18706-Input box on reply thread can expand', () => {
+    it('MM-T209 Input box on reply thread can expand', () => {
         const maxReplyCount = 15;
         const halfViewportHeight = Cypress.config('viewportHeight') / 2;
         const padding = 10;
@@ -41,7 +41,7 @@ describe('Messaging', () => {
         // # Post several replies and verify last reply
         cy.get(`#${replyTextBoxId}`).clear().should('be.visible').as('replyTextBox');
         for (let i = 1; i <= maxReplyCount; i++) {
-            cy.get('@replyTextBox').type(`post ${i}`).type('{enter}');
+            cy.postMessageReplyInRHS(`post ${i}`);
         }
         verifyLastReply(maxReplyCount);
 

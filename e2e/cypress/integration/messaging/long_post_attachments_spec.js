@@ -39,7 +39,7 @@ function postAttachments() {
     });
 }
 
-describe('M14322 Long post with multiple attachments', () => {
+describe('Messaging', () => {
     let testTeam;
 
     beforeEach(() => {
@@ -53,7 +53,8 @@ describe('M14322 Long post with multiple attachments', () => {
         });
     });
 
-    it('Attachment previews/thumbnails display as expected, when viewing full or partial post', () => {
+    it('MM-T105 Long post with mutiple attachments', () => {
+        // * Attachment previews/thumbnails display as expected, when viewing full or partial post':
         // # Post attachments
         postAttachments();
 
@@ -73,9 +74,8 @@ describe('M14322 Long post with multiple attachments', () => {
                     find('.post-image__name').contains('small-image.png').should('exist');
             });
         });
-    });
 
-    it('Can click one of the attachments and cycle through the multiple attachment previews as usual', () => {
+        // * Can click one of the attachments and cycle through the multiple attachment previews as usual:
         // # Post attachments
         postAttachments();
 
@@ -97,8 +97,11 @@ describe('M14322 Long post with multiple attachments', () => {
                 cy.findByTestId('fileCountFooter').contains(`File ${index} of 4`).should('exist');
             }
 
-            // # click on close the preview
-            cy.get('.modal-close').should('be.visible').click();
+            // * Verify that the preview modal opens
+            cy.get('div.modal-image__content').should('be.visible').trigger('mouseover');
+
+            // # Close the modal
+            cy.get('div.modal-close').should('exist').click({force: true});
         });
     });
 });

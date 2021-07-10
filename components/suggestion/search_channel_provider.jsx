@@ -1,19 +1,25 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
-import {sortChannelsByTypeListAndDisplayName} from 'matterfoss-redux/utils/channel_utils';
+import {isDirectChannel, isGroupChannel, sortChannelsByTypeListAndDisplayName} from 'matterfoss-redux/utils/channel_utils';
+
+import store from 'stores/redux_store.jsx';
 
 import Constants from 'utils/constants';
+import {getCurrentLocale} from 'selectors/i18n';
 
 import Provider from './provider.jsx';
 import SearchChannelSuggestion from './search_channel_suggestion';
 
-function itemToTerm(item) {
+const getState = store.getState;
+
+function itemToTerm(isAtSearch, item) {
+    const prefix = isAtSearch ? '' : '@';
     if (item.type === Constants.DM_CHANNEL) {
-        return '@' + item.display_name;
+        return prefix + item.display_name;
     }
     if (item.type === Constants.GM_CHANNEL) {
-        return '@' + item.display_name.replace(/ /g, '');
+        return prefix + item.display_name.replace(/ /g, '');
     }
     if (item.type === Constants.OPEN_CHANNEL || item.type === Constants.PRIVATE_CHANNEL) {
         return item.name;
@@ -30,7 +36,11 @@ export default class SearchChannelProvider extends Provider {
     handlePretextChanged(pretext, resultsCallback) {
         const captured = (/\b(?:in|channel):\s*(\S*)$/i).exec(pretext.toLowerCase());
         if (captured) {
-            const channelPrefix = captured[1];
+            let channelPrefix = captured[1];
+            const isAtSearch = channelPrefix.startsWith('@');
+            if (isAtSearch) {
+                channelPrefix = channelPrefix.replace(/^@/, '');
+            }
 
             this.startNewRequest(channelPrefix);
 
@@ -41,11 +51,15 @@ export default class SearchChannelProvider extends Provider {
                         return;
                     }
 
-                    //
-                    // MM-12677 When this is migrated this needs to be fixed to pull the user's locale
-                    //
-                    const channels = data.sort(sortChannelsByTypeListAndDisplayName.bind(null, 'en', [Constants.DM_CHANNEL, Constants.GM_CHANNEL, Constants.PRIVATE_CHANNEL, Constants.OPEN_CHANNEL]));
-                    const channelNames = channels.map(itemToTerm);
+                    let channels = data;
+                    if (isAtSearch) {
+                        channels = channels.filter((ch) => isDirectChannel(ch) || isGroupChannel(ch));
+                    }
+
+                    const locale = getCurrentLocale(getState());
+
+                    channels = channels.sort(sortChannelsByTypeListAndDisplayName.bind(null, locale, [Constants.OPEN_CHANNEL, Constants.PRIVATE_CHANNEL, Constants.DM_CHANNEL, Constants.GM_CHANNEL]));
+                    const channelNames = channels.map(itemToTerm.bind(null, isAtSearch));
 
                     resultsCallback({
                         matchedPretext: channelPrefix,

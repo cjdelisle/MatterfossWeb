@@ -7,6 +7,7 @@ import {bindActionCreators, Dispatch, ActionCreatorsMapObject} from 'redux';
 import {createSelector} from 'reselect';
 
 import {GenericAction, ActionFunc} from 'matterfoss-redux/types/actions';
+import {TeamSearchOpts} from 'matterfoss-redux/types/teams';
 import {getTeams as fetchTeams, searchTeams} from 'matterfoss-redux/actions/teams';
 import {getTeams} from 'matterfoss-redux/selectors/entities/teams';
 
@@ -21,7 +22,7 @@ const getSortedListOfTeams = createSelector(
 
 type Actions = {
     getData: (page: number, perPage: number) => Promise<{ data: any }>;
-    searchTeams: (term: string, page?: number, perPage?: number) => Promise<{ data: any }>;
+    searchTeams: (term: string, opts: TeamSearchOpts) => Promise<{ data: any }>;
 };
 
 function mapStateToProps(state: GlobalState) {

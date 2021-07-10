@@ -2,6 +2,7 @@
 // See LICENSE.txt for license information.
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
+
 import * as Actions from 'matterfoss-redux/actions/integrations';
 import {getOutgoingHooks} from 'matterfoss-redux/selectors/entities/integrations';
 import {getCurrentTeamId} from 'matterfoss-redux/selectors/entities/teams';

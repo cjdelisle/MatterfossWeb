@@ -11,16 +11,18 @@ import {Dictionary} from 'matterfoss-redux/types/utilities';
 import {UserProfile} from 'matterfoss-redux/types/users';
 import {Scheme} from 'matterfoss-redux/types/schemes';
 import {ChannelModerationRoles} from 'matterfoss-redux/types/roles';
-import {SyncablePatch, Group} from 'matterfoss-redux/types/groups';
+import {SyncablePatch, Group, SyncableType} from 'matterfoss-redux/types/groups';
 import {Channel, ChannelModeration as ChannelPermissions, ChannelModerationPatch} from 'matterfoss-redux/types/channels';
 import {Team} from 'matterfoss-redux/types/teams';
+
+import {ServerError} from 'matterfoss-redux/types/errors';
 
 import ConfirmModal from 'components/confirm_modal';
 import BlockableLink from 'components/admin_console/blockable_link';
 import FormError from 'components/form_error';
 import Constants from 'utils/constants';
 import {browserHistory} from 'utils/browser_history';
-import {trackEvent} from 'actions/diagnostics_actions.jsx';
+import {trackEvent} from 'actions/telemetry_actions.jsx';
 
 import {NeedGroupsError, UsersWillBeRemovedError} from '../../errors';
 import ConvertConfirmModal from '../../convert_confirm_modal';
@@ -31,39 +33,21 @@ import SaveChangesPanel from '../../save_changes_panel';
 import {ChannelModes} from './channel_modes';
 import {ChannelGroups} from './channel_groups';
 import {ChannelProfile} from './channel_profile';
-import ChannelModeration from './channel_moderation';
 import ChannelMembers from './channel_members';
+import ChannelModeration from './channel_moderation';
 
-interface ChannelDetailsProps {
+export interface ChannelDetailsProps {
     channelID: string;
     channel: Channel;
     team: Partial<Team>;
     groups: Group[];
     totalGroups: number;
-    channelPermissions?: Array<ChannelPermissions>;
     allGroups: Dictionary<Group>;
+    channelPermissions: ChannelPermissions[];
     teamScheme?: Scheme;
     guestAccountsEnabled: boolean;
-    actions: {
-        getGroups: (channelID: string, q?: string, page?: number, perPage?: number) => Promise<Partial<Group>[]>;
-        linkGroupSyncable: (groupID: string, syncableID: string, syncableType: string, patch: Partial<SyncablePatch>) => ActionFunc|ActionResult;
-        unlinkGroupSyncable: (groupID: string, syncableID: string, syncableType: string) => ActionFunc;
-        membersMinusGroupMembers: (channelID: string, groupIDs: Array<string>, page?: number, perPage?: number) => ActionFunc|ActionResult;
-        setNavigationBlocked: (blocked: boolean) => any;
-        getChannel: (channelId: string) => ActionFunc;
-        getTeam: (teamId: string) => Promise<ActionResult>;
-        getChannelModerations: (channelId: string) => Promise<Array<ChannelPermissions>>;
-        patchChannel: (channelId: string, patch: Channel) => ActionFunc;
-        updateChannelPrivacy: (channelId: string, privacy: string) => Promise<ActionResult>;
-        patchGroupSyncable: (groupID: string, syncableID: string, syncableType: string, patch: Partial<SyncablePatch>) => ActionFunc;
-        patchChannelModerations: (channelID: string, patch: Array<ChannelModerationPatch>) => any;
-        loadScheme: (schemeID: string) => Promise<ActionResult>;
-        addChannelMember: (channelId: string, userId: string, postRootId?: string) => Promise<ActionResult>;
-        removeChannelMember: (channelId: string, userId: string) => Promise<ActionResult>;
-        updateChannelMemberSchemeRoles: (channelId: string, userId: string, isSchemeUser: boolean, isSchemeAdmin: boolean) => Promise<ActionResult>;
-        deleteChannel: (channelId: string) => Promise<ActionResult>;
-        unarchiveChannel: (channelId: string) => Promise<ActionResult>;
-    };
+    isDisabled?: boolean;
+    actions: ChannelDetailsActions;
 }
 
 interface ChannelDetailsState {
@@ -89,11 +73,32 @@ interface ChannelDetailsState {
     showConvertConfirmModal: boolean;
     showRemoveConfirmModal: boolean;
     showConvertAndRemoveConfirmModal: boolean;
-    channelPermissions?: Array<ChannelPermissions>;
+    channelPermissions: ChannelPermissions[];
     teamScheme?: Scheme;
     isLocalArchived: boolean;
     showArchiveConfirmModal: boolean;
 }
+
+export type ChannelDetailsActions = {
+    getGroups: (channelID: string, q?: string, page?: number, perPage?: number, filterAllowReference?: boolean) => Promise<ActionResult>;
+    linkGroupSyncable: (groupID: string, syncableID: string, syncableType: SyncableType, patch: SyncablePatch) => ActionResult;
+    unlinkGroupSyncable: (groupID: string, syncableID: string, syncableType: SyncableType) => ActionFunc;
+    membersMinusGroupMembers: (channelID: string, groupIDs: string[], page?: number, perPage?: number) => ActionResult;
+    setNavigationBlocked: (blocked: boolean) => {type: 'SET_NAVIGATION_BLOCKED'; blocked: boolean};
+    getChannel: (channelId: string) => ActionFunc;
+    getTeam: (teamId: string) => Promise<ActionResult>;
+    getChannelModerations: (channelId: string) => Promise<ActionResult>;
+    patchChannel: (channelId: string, patch: Channel) => ActionFunc;
+    updateChannelPrivacy: (channelId: string, privacy: string) => Promise<ActionResult>;
+    patchGroupSyncable: (groupID: string, syncableID: string, syncableType: SyncableType, patch: Partial<SyncablePatch>) => ActionFunc;
+    patchChannelModerations: (channelID: string, patch: ChannelModerationPatch[]) => {data: Channel; error: ServerError};
+    loadScheme: (schemeID: string) => Promise<ActionResult>;
+    addChannelMember: (channelId: string, userId: string, postRootId?: string) => Promise<ActionResult>;
+    removeChannelMember: (channelId: string, userId: string) => Promise<ActionResult>;
+    updateChannelMemberSchemeRoles: (channelId: string, userId: string, isSchemeUser: boolean, isSchemeAdmin: boolean) => Promise<ActionResult>;
+    deleteChannel: (channelId: string) => Promise<ActionResult>;
+    unarchiveChannel: (channelId: string) => Promise<ActionResult>;
+};
 
 export default class ChannelDetails extends React.PureComponent<ChannelDetailsProps, ChannelDetailsState> {
     constructor(props: ChannelDetailsProps) {
@@ -148,51 +153,49 @@ export default class ChannelDetails extends React.PureComponent<ChannelDetailsPr
         }
     }
 
-    async componentDidMount() {
+    componentDidMount() {
         const {channelID, channel, actions} = this.props;
-        const actionsToAwait = [];
         if (channelID) {
-            actionsToAwait.push(actions.getGroups(channelID).
+            actions.getGroups(channelID).
                 then(() => actions.getChannel(channelID)).
-                then(() => this.setState({groups: this.props.groups})),
-            );
-            actionsToAwait.push(actions.getChannelModerations(channelID).then(() => this.restrictChannelMentions()));
+                then(() => this.setState({groups: this.props.groups}));
+
+            actions.getChannelModerations(channelID).then(() => this.restrictChannelMentions());
         }
 
         if (channel.team_id) {
-            actionsToAwait.push(actions.getTeam(channel.team_id).
+            actions.getTeam(channel.team_id).
                 then(async (data: any) => {
                     if (data.data && data.data.scheme_id) {
                         await actions.loadScheme(data.data.scheme_id);
                     }
                 }).
-                then(() => this.setState({teamScheme: this.props.teamScheme})),
-            );
+                then(() => this.setState({teamScheme: this.props.teamScheme}));
         }
-
-        await Promise.all(actionsToAwait);
     }
 
     private restrictChannelMentions() {
         // Disabling use_channel_mentions on every role that create_post is either disabled or has a value of false
         let channelPermissions = this.props.channelPermissions;
-        const currentCreatePostRoles: any = channelPermissions!.find((element) => element.name === Permissions.CHANNEL_MODERATED_PERMISSIONS.CREATE_POST)?.roles;
-        for (const channelRole of Object.keys(currentCreatePostRoles)) {
-            channelPermissions = channelPermissions!.map((permission) => {
-                if (permission.name === Permissions.CHANNEL_MODERATED_PERMISSIONS.USE_CHANNEL_MENTIONS && (!currentCreatePostRoles[channelRole].value || !currentCreatePostRoles[channelRole].enabled)) {
-                    return {
-                        name: permission.name,
-                        roles: {
-                            ...permission.roles,
-                            [channelRole]: {
-                                value: false,
-                                enabled: false,
+        const currentCreatePostRoles: any = channelPermissions.find((element) => element.name === Permissions.CHANNEL_MODERATED_PERMISSIONS.CREATE_POST)?.roles;
+        if (currentCreatePostRoles) {
+            for (const channelRole of Object.keys(currentCreatePostRoles)) {
+                channelPermissions = channelPermissions.map((permission) => {
+                    if (permission.name === Permissions.CHANNEL_MODERATED_PERMISSIONS.USE_CHANNEL_MENTIONS && (!currentCreatePostRoles[channelRole].value || !currentCreatePostRoles[channelRole].enabled)) {
+                        return {
+                            name: permission.name,
+                            roles: {
+                                ...permission.roles,
+                                [channelRole]: {
+                                    value: false,
+                                    enabled: false,
+                                },
                             },
-                        },
-                    };
-                }
-                return permission;
-            });
+                        };
+                    }
+                    return permission;
+                });
+            }
         }
         this.setState({channelPermissions});
     }
@@ -239,6 +242,8 @@ export default class ChannelDetails extends React.PureComponent<ChannelDetailsPr
                                 <UsersWillBeRemovedError
                                     total={usersToRemoveCount}
                                     users={result.data.users}
+                                    scope='channel'
+                                    scopeId={this.props.channelID}
                                 />
                             );
                         }
@@ -268,13 +273,13 @@ export default class ChannelDetails extends React.PureComponent<ChannelDetailsPr
     }
 
     private channelPermissionsChanged = (name: string, channelRole: ChannelModerationRoles) => {
-        const currentValueIndex = this.state.channelPermissions!.findIndex((element) => element.name === name);
-        const currentValue = this.state.channelPermissions![currentValueIndex].roles[channelRole]!.value;
+        const currentValueIndex = this.state.channelPermissions.findIndex((element) => element.name === name);
+        const currentValue = this.state.channelPermissions[currentValueIndex].roles[channelRole]!.value;
         const newValue = !currentValue;
-        let channelPermissions = [...this.state.channelPermissions!];
+        let channelPermissions = [...this.state.channelPermissions];
 
         if (name === Permissions.CHANNEL_MODERATED_PERMISSIONS.CREATE_POST) {
-            const originalObj = this.props.channelPermissions!.find((element) => element.name === Permissions.CHANNEL_MODERATED_PERMISSIONS.USE_CHANNEL_MENTIONS)?.roles![channelRole];
+            const originalObj = this.props.channelPermissions.find((element) => element.name === Permissions.CHANNEL_MODERATED_PERMISSIONS.USE_CHANNEL_MENTIONS)?.roles![channelRole];
             channelPermissions = channelPermissions.map((permission) => {
                 if (permission.name === Permissions.CHANNEL_MODERATED_PERMISSIONS.USE_CHANNEL_MENTIONS && !newValue) {
                     return {
@@ -303,11 +308,11 @@ export default class ChannelDetails extends React.PureComponent<ChannelDetailsPr
             });
         }
         channelPermissions[currentValueIndex] = {
-            ...channelPermissions![currentValueIndex],
+            ...channelPermissions[currentValueIndex],
             roles: {
-                ...channelPermissions![currentValueIndex].roles,
+                ...channelPermissions[currentValueIndex].roles,
                 [channelRole]: {
-                    ...channelPermissions![currentValueIndex].roles[channelRole],
+                    ...channelPermissions[currentValueIndex].roles[channelRole],
                     value: newValue,
                 },
             },
@@ -414,7 +419,7 @@ export default class ChannelDetails extends React.PureComponent<ChannelDetailsPr
         if (isPrivacyChanging) {
             const convert = actions.updateChannelPrivacy(channel.id, isPublic ? Constants.OPEN_CHANNEL : Constants.PRIVATE_CHANNEL);
             promises.push(
-                convert.then((res) => {
+                convert.then((res: ActionResult) => {
                     if ('error' in res) {
                         return res;
                     }
@@ -470,9 +475,9 @@ export default class ChannelDetails extends React.PureComponent<ChannelDetailsPr
                     // If the privacy is changing update the manage_members value for the channel moderation widget
                     actionsToAwait.push(
                         actions.getChannelModerations(channelID).then(() => {
-                            const manageMembersIndex = channelPermissions!.findIndex((element) => element.name === Permissions.CHANNEL_MODERATED_PERMISSIONS.MANAGE_MEMBERS);
+                            const manageMembersIndex = channelPermissions.findIndex((element) => element.name === Permissions.CHANNEL_MODERATED_PERMISSIONS.MANAGE_MEMBERS);
                             if (channelPermissions) {
-                                const updatedManageMembers = this.props.channelPermissions!.find((element) => element.name === Permissions.CHANNEL_MODERATED_PERMISSIONS.MANAGE_MEMBERS);
+                                const updatedManageMembers = this.props.channelPermissions.find((element) => element.name === Permissions.CHANNEL_MODERATED_PERMISSIONS.MANAGE_MEMBERS);
                                 channelPermissions[manageMembersIndex] = updatedManageMembers || channelPermissions[manageMembersIndex];
                             }
                             this.setState({channelPermissions});
@@ -483,7 +488,7 @@ export default class ChannelDetails extends React.PureComponent<ChannelDetailsPr
             }
         }
 
-        const patchChannelPermissionsArray: Array<ChannelModerationPatch> = channelPermissions!.map((p) => {
+        const patchChannelPermissionsArray: ChannelModerationPatch[] = channelPermissions.map((p) => {
             return {
                 name: p.name,
                 roles: {
@@ -511,22 +516,12 @@ export default class ChannelDetails extends React.PureComponent<ChannelDetailsPr
         if (usersToUpdate && !isSynced) {
             const addUserActions: any[] = [];
             const removeUserActions: any[] = [];
-            const rolesToPromote: any[] = [];
-            const rolesToDemote: any[] = [];
             const {addChannelMember, removeChannelMember, updateChannelMemberSchemeRoles} = this.props.actions;
             usersToAddList.forEach((user) => {
                 addUserActions.push(addChannelMember(channelID, user.id));
             });
             usersToRemoveList.forEach((user) => {
                 removeUserActions.push(removeChannelMember(channelID, user.id));
-            });
-            userRolesToUpdate.forEach((userId) => {
-                const {schemeUser, schemeAdmin} = rolesToUpdate[userId];
-                if (schemeAdmin) {
-                    rolesToPromote.push(updateChannelMemberSchemeRoles(channelID, userId, schemeUser, schemeAdmin));
-                } else {
-                    rolesToDemote.push(updateChannelMemberSchemeRoles(channelID, userId, schemeUser, schemeAdmin));
-                }
             });
 
             if (addUserActions.length > 0) {
@@ -552,6 +547,17 @@ export default class ChannelDetails extends React.PureComponent<ChannelDetailsPr
                     trackEvent('admin_channel_config_page', 'members_removed_from_channel', {count, channel_id: channelID});
                 }
             }
+
+            const rolesToPromote: any[] = [];
+            const rolesToDemote: any[] = [];
+            userRolesToUpdate.forEach((userId) => {
+                const {schemeUser, schemeAdmin} = rolesToUpdate[userId];
+                if (schemeAdmin) {
+                    rolesToPromote.push(updateChannelMemberSchemeRoles(channelID, userId, schemeUser, schemeAdmin));
+                } else {
+                    rolesToDemote.push(updateChannelMemberSchemeRoles(channelID, userId, schemeUser, schemeAdmin));
+                }
+            });
 
             if (rolesToPromote.length > 0) {
                 const result = await Promise.all(rolesToPromote);
@@ -636,6 +642,10 @@ export default class ChannelDetails extends React.PureComponent<ChannelDetailsPr
 
     private onToggleArchive = () => {
         const {isLocalArchived, serverError, previousServerError} = this.state;
+        const {isDisabled} = this.props;
+        if (isDisabled) {
+            return;
+        }
         const newState: any = {
             saveNeeded: true,
             isLocalArchived: !isLocalArchived,
@@ -695,9 +705,10 @@ export default class ChannelDetails extends React.PureComponent<ChannelDetailsPr
                     channelPermissions={channelPermissions}
                     onChannelPermissionsChanged={this.channelPermissionsChanged}
                     teamSchemeID={teamScheme?.id}
-                    teamSchemeDisplayName={teamScheme?.['display_name']}
+                    teamSchemeDisplayName={teamScheme?.display_name}
                     guestAccountsEnabled={this.props.guestAccountsEnabled}
                     isPublic={this.props.channel.type === Constants.OPEN_CHANNEL}
+                    readOnly={this.props.isDisabled}
                 />
 
                 <RemoveConfirmModal
@@ -722,6 +733,7 @@ export default class ChannelDetails extends React.PureComponent<ChannelDetailsPr
                     isSynced={isSynced}
                     isDefault={isDefault}
                     onToggle={this.setToggles}
+                    isDisabled={this.props.isDisabled}
                 />
 
                 <ChannelGroups
@@ -733,6 +745,7 @@ export default class ChannelDetails extends React.PureComponent<ChannelDetailsPr
                     onAddCallback={this.handleGroupChange}
                     onGroupRemoved={this.handleGroupRemoved}
                     setNewGroupRole={this.setNewGroupRole}
+                    isDisabled={this.props.isDisabled}
                 />
 
                 {!isSynced &&
@@ -743,6 +756,7 @@ export default class ChannelDetails extends React.PureComponent<ChannelDetailsPr
                         usersToAdd={usersToAdd}
                         updateRole={this.addRolesToUpdate}
                         channelId={this.props.channelID}
+                        isDisabled={this.props.isDisabled}
                     />
                 }
             </>
@@ -768,6 +782,7 @@ export default class ChannelDetails extends React.PureComponent<ChannelDetailsPr
                             team={team}
                             onToggleArchive={this.onToggleArchive}
                             isArchived={isLocalArchived}
+                            isDisabled={this.props.isDisabled}
                         />
                         <ConfirmModal
                             show={showArchiveConfirmModal}
@@ -802,6 +817,7 @@ export default class ChannelDetails extends React.PureComponent<ChannelDetailsPr
                     onClick={this.onSave}
                     serverError={serverError}
                     cancelLink='/admin_console/user_management/channels'
+                    isDisabled={this.props.isDisabled}
                 />
             </div>
         );

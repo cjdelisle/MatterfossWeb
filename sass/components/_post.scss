@@ -4,19 +4,19 @@
     .custom-textarea {
         border-radius: 4px;
         background: transparent;
-        border: 1px solid v(center-channel-color-24);
+        border: none;
+        box-shadow: inset 0 0 0 1px rgba(v(center-channel-color-rgb), 0.24);
         height: 100%;
         line-height: 20px;
         min-height: 46px;
         overflow: hidden;
         resize: none;
+        transition: none;
         white-space: pre-wrap;
         word-wrap: break-word;
 
         &:focus {
-            border: 2px solid v(center-channel-color-32);
-            box-shadow: none;
-            padding: 11px 0 11px 14px;
+            box-shadow: inset 0 0 0 2px rgba(v(center-channel-color-rgb), 0.32);
         }
 
         &.bad-connection {
@@ -42,14 +42,14 @@
         ul {
             white-space: normal;
         }
-        box-shadow: none;
+
         left: 0;
         position: relative;
         top: 0;
         z-index: 2;
 
         &:focus {
-            border-color: v(center-channel-color-40);
+            border-color: rgba(v(center-channel-color-rgb), 0.4);
         }
 
         p {
@@ -74,8 +74,8 @@
 }
 
 .help__format-text {
-    @include opacity(0);
     @include single-transition(all, .3s, ease-in, .3s);
+    opacity: 0;
     display: inline-block;
     font-size: .85em;
     vertical-align: bottom;
@@ -120,7 +120,7 @@
     text-align: center;
     top: 0;
     width: 100%;
-    z-index: 11;
+    z-index: 13;
 
     .overlay__indent {
         @include clearfix;
@@ -370,7 +370,7 @@
 .post-create__container {
     @include flex(0 0 auto);
     width: 100%;
-    z-index: 10;
+    z-index: 12;
 
     label {
         font-weight: normal;
@@ -389,8 +389,9 @@
     .custom-textarea {
         bottom: 0;
         max-height: calc(50vh - 40px);
-        padding: 12px 0 12px 15px;
+        padding: 13px 0 12px 16px;
         resize: none;
+        cursor: auto;
 
         &:not(.custom-textarea--emoji-picker) {
             padding-right: 40px;
@@ -417,7 +418,7 @@
 
     .scroll {
         .post-body__actions {
-            right: 10px;
+            right: calc(var(--detected-scrollbar-width) - 4px);
         }
 
         .custom-textarea {
@@ -510,10 +511,6 @@
                 }
             }
         }
-
-        textarea {
-            box-shadow: none;
-        }
     }
 
     .msg-typing {
@@ -542,7 +539,6 @@
 .post-body__actions {
     margin: 0 1px 0 0;
     display: flex;
-    height: 100%;
     position: absolute;
     right: 0;
     top: 0;
@@ -561,19 +557,19 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        fill: v(center-channel-color-56);
-        color: v(center-channel-color-56);
+        fill: rgba(v(center-channel-color-rgb), 0.56);
+        color: rgba(v(center-channel-color-rgb), 0.56);
 
         &:hover {
-            background: v(center-channel-color-08);
-            fill: v(center-channel-color-72);
-            color: v(center-channel-color-72);
+            background: rgba(v(center-channel-color-rgb), 0.08);
+            fill: rgba(v(center-channel-color-rgb), 0.72);
+            color: rgba(v(center-channel-color-rgb), 0.72);
         }
 
         &:active,
         &--active,
         &--active:hover {
-            background: v(button-bg-08);
+            background: rgba(var(--button-bg-rgb), 0.08);
             fill: v(button-bg);
             color: v(button-bg);
         }
@@ -652,11 +648,8 @@
     }
     .loading-screen {
         position: relative;
-        height: 40px;
+        height: calc(40px + 1em);
         padding: 0px;
-        .loading__content {
-            height: 40px;
-        }
     }
 }
 
@@ -668,7 +661,7 @@
     word-wrap: break-word;
 
     &:hover {
-        background-color: v(center-channel-color-04);
+        background-color: rgba(v(center-channel-color-rgb), 0.04);
     }
 
     .browser--ie & {
@@ -1097,10 +1090,6 @@
                 .status-wrapper {
                     display: none;
                 }
-
-                img {
-                    display: none;
-                }
             }
 
             .post__header {
@@ -1129,8 +1118,42 @@
 
             &.same--user {
                 .post__img {
-                    img {
+                    .status-wrapper {
                         display: none;
+                    }
+                }
+
+                &.post--bot {
+                    .post__header {
+                        height: auto;
+                        float: none;
+                    }
+
+                    &.post--compact {
+                        .post__header {
+                            float: left;
+                        }
+                    }
+
+                    .col__name {
+                        display: flex;
+                    }
+
+                    .post__permalink {
+                        position: relative;
+                        top: auto;
+                        left: auto;
+                        width: auto;
+                    }
+
+                    .post__time {
+                        opacity: 0.6;
+                    }
+
+                    .post__img {
+                        .status-wrapper {
+                            display: inline;
+                        }
                     }
                 }
             }
@@ -1198,7 +1221,7 @@
 
             .post-pre-header__link-separator {
                 margin: 0px 5px;
-                color: var(--center-channel-color-32);
+                color: rgba(var(--center-channel-color-rgb), 0.32);
                 font-size: 4px;
                 vertical-align: top;
             }
@@ -1277,6 +1300,19 @@
                 height: 30px;
                 line-height: 30px;
                 padding: 0 8px;
+            }
+        }
+
+        .shared-user-icon {
+            color: rgba(61, 60, 64, 0.72);
+            margin: 0 0 0 4px;
+            font-size: 16px;
+            line-height: 20px;
+            width: 16px;
+            height: 20px;
+
+            &:before {
+                margin: 0;
             }
         }
     }
@@ -1400,9 +1436,6 @@
             padding-right: 20px !important;
         }
 
-        div {
-        }
-
         p + p {
             margin: 0.5em 0 0;
         }
@@ -1508,7 +1541,7 @@
 
     .post-add-reaction-emoji-picker-open {
         .Reaction {
-            background-color: v(button-bg-08);
+            background-color: rgba(var(--button-bg-rgb), 0.08);
             color: v(button-bg);
             fill: v(button-bg);
         }
@@ -1524,9 +1557,13 @@
         -moz-user-select: none;    /* Firefox all */
         -ms-user-select: none;     /* IE 10+ */
         user-select: none;
-    
+
         a {
             font-weight: bold;
+
+            &.user_name:hover {
+                text-decoration: none;
+            }
         }
     }
 
@@ -1587,6 +1624,17 @@
 
         &:hover {
             text-decoration: underline;
+        }
+    }
+
+    .post_permalink_mobile_view {
+        color: inherit;
+        display: inline-block;
+
+        &:hover,
+        &:focus {
+            color: inherit;
+            text-decoration: none;
         }
     }
 
@@ -1743,21 +1791,17 @@
     }
 }
 
-.post--pinned-or-flagged {
-    background-color: var(--mention-highlight-bg-12);
-}
-
 .Badge {
-    &.badge-autocomplete {
+    .badge-autocomplete {
         margin: 0px 4px;
         padding: 0px 5px;
         display: inline;
     }
-    &.badge-popoverlist {
+    .badge-popoverlist {
         margin: 0px 4px;
         display: inline;
     }
-    &.badge-admin {
+    .badge-admin {
         margin: 0px 4px;
         background: rgba(61, 60, 64, 0.15);
         display: inline;
@@ -1785,7 +1829,7 @@
     width: 100%;
 
     .post-collapse__gradient, .post-attachment-collapse__gradient {
-        background: linear-gradient(transparent, v(center-channel-bg));
+        background: linear-gradient(rgba(var(--center-channel-bg-rgb), 0), v(center-channel-bg));
         position: relative;
     }
 
@@ -1809,6 +1853,10 @@
     .post-collapse__show-more-button {
         @include single-transition(all, .15s, ease);
         @include border-radius(2px);
+        &:hover {
+            color: var(--center-channel-bg);
+        }
+        background: var(--center-channel-bg);
         border: 1px solid transparent;
         display: inline-block;
         flex-shrink: 0;
@@ -1899,6 +1947,14 @@
     }
 }
 
+.post-message__text {
+    text-align: left;
+}
+
+.post-message__text > ul, .post-code, .table-responsive {
+    direction: ltr;
+}
+
 .file-attachment-menu-item-input {
     @include opacity(0);
     cursor: pointer;
@@ -1949,19 +2005,34 @@
 }
 
 .app__body .app__content .post.post--highlight {
-    animation-duration: 1s;
+    animation-duration: 2s;
     animation-name: postHighlight;
     animation-delay: 5s;
     animation-fill-mode: forwards;
 }
 
-@keyframes postPinnedOrFlaggedHighlight {
-    100% {
-      background: initial;
-      background-color: var(--mention-highlight-bg-12);
-    }
+// Handle fade out effect for permalink highlightning
+.app__body .post-list__table .post:not(.current--user).post--highlight .post-collapse__gradient,
+.app__body .post-list__table .post.post--compact.post--highlight .post-collapse__gradient {
+    background:linear-gradient(rgba(var(--mention-highlight-bg-mixed-rgb), 0.5), rgba(var(--mention-highlight-bg-mixed-rgb), 0.5));
 }
 
-.app__body .app__content .post.post--pinned-or-flagged-highlight {
-    animation-name: postPinnedOrFlaggedHighlight;
+.app__body .post-list__table .post.current--user.post--highlight:not(.post--compact) .post-collapse__gradient {
+    background:linear-gradient(rgba(var(--center-channel-bg-rgb), 0), rgba(var(--mention-highlight-bg-mixed-rgb), 1));
+}
+
+.app__body .post-list__table .post.current--user.post--highlight:not(.post--compact) .post-collapse__show-more {
+    background: rgba(var(--mention-highlight-bg-mixed-rgb), 1);
+}
+
+.app__body .post-list__table .post.current--user.post--highlight:hover .post-collapse__gradient,
+.app__body .post-list__table .post.current--user.post--highlight.post--hovered .post-collapse__gradient {
+    background:linear-gradient(rgba(var(--mention-highlight-bg-mixed-rgb), 0.5), rgba(var(--mention-highlight-bg-mixed-rgb), 1));
+}
+
+.CollapsedReplies___feature-enabled {
+    .post.other--root {
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
 }

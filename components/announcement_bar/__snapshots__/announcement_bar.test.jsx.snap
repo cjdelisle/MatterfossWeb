@@ -3,7 +3,12 @@
 exports[`components/AnnouncementBar should match snapshot, bar not showing 1`] = `
 <div
   className="announcement-bar announcement-bar-critical"
-  style={Object {}}
+  style={
+    Object {
+      "backgroundColor": "",
+      "color": "",
+    }
+  }
 >
   <OverlayTrigger
     defaultOverlayShown={false}
@@ -27,14 +32,16 @@ exports[`components/AnnouncementBar should match snapshot, bar not showing 1`] =
       ]
     }
   >
-    <span>
+    <div
+      className="announcement-bar__text"
+    >
       <injectIntl(FormattedMarkdownMessage)
         id="text"
       />
       <span
         className="announcement-bar__link"
       />
-    </span>
+    </div>
   </OverlayTrigger>
 </div>
 `;
@@ -42,7 +49,12 @@ exports[`components/AnnouncementBar should match snapshot, bar not showing 1`] =
 exports[`components/AnnouncementBar should match snapshot, bar showing 1`] = `
 <div
   className="announcement-bar announcement-bar-critical"
-  style={Object {}}
+  style={
+    Object {
+      "backgroundColor": "",
+      "color": "",
+    }
+  }
 >
   <OverlayTrigger
     defaultOverlayShown={false}
@@ -66,14 +78,16 @@ exports[`components/AnnouncementBar should match snapshot, bar showing 1`] = `
       ]
     }
   >
-    <span>
+    <div
+      className="announcement-bar__text"
+    >
       <injectIntl(FormattedMarkdownMessage)
         id="text"
       />
       <span
         className="announcement-bar__link"
       />
-    </span>
+    </div>
   </OverlayTrigger>
 </div>
 `;
@@ -81,7 +95,12 @@ exports[`components/AnnouncementBar should match snapshot, bar showing 1`] = `
 exports[`components/AnnouncementBar should match snapshot, bar showing, no dismissal 1`] = `
 <div
   className="announcement-bar announcement-bar-critical"
-  style={Object {}}
+  style={
+    Object {
+      "backgroundColor": "",
+      "color": "",
+    }
+  }
 >
   <OverlayTrigger
     defaultOverlayShown={false}
@@ -105,14 +124,16 @@ exports[`components/AnnouncementBar should match snapshot, bar showing, no dismi
       ]
     }
   >
-    <span>
+    <div
+      className="announcement-bar__text"
+    >
       <injectIntl(FormattedMarkdownMessage)
         id="text"
       />
       <span
         className="announcement-bar__link"
       />
-    </span>
+    </div>
   </OverlayTrigger>
 </div>
 `;
@@ -120,7 +141,12 @@ exports[`components/AnnouncementBar should match snapshot, bar showing, no dismi
 exports[`components/AnnouncementBar should match snapshot, dismissal 1`] = `
 <div
   className="announcement-bar announcement-bar-critical"
-  style={Object {}}
+  style={
+    Object {
+      "backgroundColor": "",
+      "color": "",
+    }
+  }
 >
   <OverlayTrigger
     defaultOverlayShown={false}
@@ -144,14 +170,16 @@ exports[`components/AnnouncementBar should match snapshot, dismissal 1`] = `
       ]
     }
   >
-    <span>
+    <div
+      className="announcement-bar__text"
+    >
       <injectIntl(FormattedMarkdownMessage)
         id="text"
       />
       <span
         className="announcement-bar__link"
       />
-    </span>
+    </div>
   </OverlayTrigger>
 </div>
 `;
@@ -159,7 +187,12 @@ exports[`components/AnnouncementBar should match snapshot, dismissal 1`] = `
 exports[`components/AnnouncementBar should match snapshot, dismissal 2`] = `
 <div
   className="announcement-bar announcement-bar-critical"
-  style={Object {}}
+  style={
+    Object {
+      "backgroundColor": "",
+      "color": "",
+    }
+  }
 >
   <OverlayTrigger
     defaultOverlayShown={false}
@@ -183,14 +216,16 @@ exports[`components/AnnouncementBar should match snapshot, dismissal 2`] = `
       ]
     }
   >
-    <span>
+    <div
+      className="announcement-bar__text"
+    >
       <injectIntl(FormattedMarkdownMessage)
         id="text"
       />
       <span
         className="announcement-bar__link"
       />
-    </span>
+    </div>
   </OverlayTrigger>
 </div>
 `;
@@ -198,7 +233,12 @@ exports[`components/AnnouncementBar should match snapshot, dismissal 2`] = `
 exports[`components/AnnouncementBar should match snapshot, dismissal 3`] = `
 <div
   className="announcement-bar announcement-bar-critical"
-  style={Object {}}
+  style={
+    Object {
+      "backgroundColor": "",
+      "color": "",
+    }
+  }
 >
   <OverlayTrigger
     defaultOverlayShown={false}
@@ -222,14 +262,16 @@ exports[`components/AnnouncementBar should match snapshot, dismissal 3`] = `
       ]
     }
   >
-    <span>
+    <div
+      className="announcement-bar__text"
+    >
       <injectIntl(FormattedMarkdownMessage)
         id="text"
       />
       <span
         className="announcement-bar__link"
       />
-    </span>
+    </div>
   </OverlayTrigger>
 </div>
 `;
@@ -237,7 +279,12 @@ exports[`components/AnnouncementBar should match snapshot, dismissal 3`] = `
 exports[`components/AnnouncementBar should match snapshot, props change 1`] = `
 <div
   className="announcement-bar announcement-bar-critical"
-  style={Object {}}
+  style={
+    Object {
+      "backgroundColor": "",
+      "color": "",
+    }
+  }
 >
   <OverlayTrigger
     defaultOverlayShown={false}
@@ -261,14 +308,16 @@ exports[`components/AnnouncementBar should match snapshot, props change 1`] = `
       ]
     }
   >
-    <span>
+    <div
+      className="announcement-bar__text"
+    >
       <injectIntl(FormattedMarkdownMessage)
         id="text"
       />
       <span
         className="announcement-bar__link"
       />
-    </span>
+    </div>
   </OverlayTrigger>
 </div>
 `;
@@ -276,7 +325,12 @@ exports[`components/AnnouncementBar should match snapshot, props change 1`] = `
 exports[`components/AnnouncementBar should match snapshot, props change 2`] = `
 <div
   className="announcement-bar announcement-bar-critical"
-  style={Object {}}
+  style={
+    Object {
+      "backgroundColor": "",
+      "color": "",
+    }
+  }
 >
   <OverlayTrigger
     defaultOverlayShown={false}
@@ -300,14 +354,16 @@ exports[`components/AnnouncementBar should match snapshot, props change 2`] = `
       ]
     }
   >
-    <span>
+    <div
+      className="announcement-bar__text"
+    >
       <injectIntl(FormattedMarkdownMessage)
         id="text"
       />
       <span
         className="announcement-bar__link"
       />
-    </span>
+    </div>
   </OverlayTrigger>
 </div>
 `;
@@ -315,7 +371,12 @@ exports[`components/AnnouncementBar should match snapshot, props change 2`] = `
 exports[`components/AnnouncementBar should match snapshot, props change 3`] = `
 <div
   className="announcement-bar announcement-bar-critical"
-  style={Object {}}
+  style={
+    Object {
+      "backgroundColor": "",
+      "color": "",
+    }
+  }
 >
   <OverlayTrigger
     defaultOverlayShown={false}
@@ -339,14 +400,16 @@ exports[`components/AnnouncementBar should match snapshot, props change 3`] = `
       ]
     }
   >
-    <span>
+    <div
+      className="announcement-bar__text"
+    >
       <injectIntl(FormattedMarkdownMessage)
         id="text"
       />
       <span
         className="announcement-bar__link"
       />
-    </span>
+    </div>
   </OverlayTrigger>
 </div>
 `;
@@ -354,7 +417,12 @@ exports[`components/AnnouncementBar should match snapshot, props change 3`] = `
 exports[`components/AnnouncementBar should match snapshot, props change 4`] = `
 <div
   className="announcement-bar announcement-bar-critical"
-  style={Object {}}
+  style={
+    Object {
+      "backgroundColor": "",
+      "color": "",
+    }
+  }
 >
   <OverlayTrigger
     defaultOverlayShown={false}
@@ -378,14 +446,16 @@ exports[`components/AnnouncementBar should match snapshot, props change 4`] = `
       ]
     }
   >
-    <span>
+    <div
+      className="announcement-bar__text"
+    >
       <injectIntl(FormattedMarkdownMessage)
         id="text"
       />
       <span
         className="announcement-bar__link"
       />
-    </span>
+    </div>
   </OverlayTrigger>
 </div>
 `;

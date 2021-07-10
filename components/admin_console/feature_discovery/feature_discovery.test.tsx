@@ -6,6 +6,8 @@ import {shallow} from 'enzyme';
 
 import FeatureDiscovery from 'components/admin_console/feature_discovery/feature_discovery';
 
+import SamlSVG from './features/images/saml_svg';
+
 describe('components/feature_discovery', () => {
     describe('FeatureDiscovery', () => {
         test('should match snapshot', () => {
@@ -16,8 +18,9 @@ describe('components/feature_discovery', () => {
                     titleDefault='Foo'
                     copyID='translation.test.copy'
                     copyDefault={'Bar'}
-                    learnMoreURL='https://test.matterfoss.com/secondary/'
-                    imgPath='foo/bar.png'
+                    learnMoreURL='https://test.mattermost.com/secondary/'
+                    featureDiscoveryImage={<SamlSVG/>}
+                    // eslint-disable-next-line @typescript-eslint/naming-convention
                     stats={{TOTAL_USERS: 20}}
                     actions={{
                         requestTrialLicense: jest.fn(),

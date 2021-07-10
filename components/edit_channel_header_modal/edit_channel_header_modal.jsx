@@ -1,36 +1,23 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
-/* eslint-disable react/no-string-refs */
 
 import React from 'react';
 import PropTypes from 'prop-types';
 import {Modal} from 'react-bootstrap';
-import {defineMessages, FormattedMessage, injectIntl} from 'react-intl';
+import {FormattedMessage} from 'react-intl';
 
 import Textbox from 'components/textbox';
 import TextboxLinks from 'components/textbox/textbox_links';
 import Constants, {ModalIdentifiers} from 'utils/constants';
-import {intlShape} from 'utils/react_intl';
 import {isMobile} from 'utils/user_agent';
 import {insertLineBreakFromKeyEvent, isKeyPressed, isUnhandledLineBreakKeyCombo, localizeMessage} from 'utils/utils.jsx';
-import {t} from 'utils/i18n';
 
 const KeyCodes = Constants.KeyCodes;
 
-const holders = defineMessages({
-    error: {
-        id: t('edit_channel_header_modal.error'),
-        defaultMessage: 'This channel header is too long, please enter a shorter one',
-    },
-});
+const headerMaxLength = 1024;
 
-class EditChannelHeaderModal extends React.PureComponent {
+export default class EditChannelHeaderModal extends React.PureComponent {
     static propTypes = {
-
-        /*
-         * react-intl helper object
-         */
-        intl: intlShape.isRequired,
 
         /*
          * Object with info about current channel ,
@@ -79,6 +66,7 @@ class EditChannelHeaderModal extends React.PureComponent {
             header: props.channel.header,
             saving: false,
         };
+        this.editChannelHeaderTextboxRef = React.createRef();
     }
 
     handleModalKeyDown = (e) => {
@@ -120,14 +108,14 @@ class EditChannelHeaderModal extends React.PureComponent {
     }
 
     focusTextbox = () => {
-        if (this.refs.editChannelHeaderTextbox) {
-            this.refs.editChannelHeaderTextbox.focus();
+        if (this.editChannelHeaderTextboxRef.current) {
+            this.editChannelHeaderTextboxRef.current.focus();
         }
     }
 
     blurTextbox = () => {
-        if (this.refs.editChannelHeaderTextbox) {
-            this.refs.editChannelHeaderTextbox.blur();
+        if (this.editChannelHeaderTextboxRef.current) {
+            this.editChannelHeaderTextboxRef.current.blur();
         }
     }
 
@@ -165,7 +153,15 @@ class EditChannelHeaderModal extends React.PureComponent {
 
         let errorMsg;
         if (serverError.server_error_id === 'model.channel.is_valid.header.app_error') {
-            errorMsg = this.props.intl.formatMessage(holders.error);
+            errorMsg = (
+                <FormattedMessage
+                    id='edit_channel_header_modal.error'
+                    defaultMessage='The text entered exceeds the character limit. The channel header is limited to {maxLength} characters.'
+                    values={{
+                        maxLength: headerMaxLength,
+                    }}
+                />
+            );
         } else {
             errorMsg = serverError.message;
         }
@@ -240,8 +236,9 @@ class EditChannelHeaderModal extends React.PureComponent {
                                 createMessage={localizeMessage('edit_channel_header.editHeader', 'Edit the Channel Header...')}
                                 previewMessageLink={localizeMessage('edit_channel_header.previewHeader', 'Edit Header')}
                                 handlePostError={this.handlePostError}
+                                channelId={this.props.channel.id}
                                 id='edit_textbox'
-                                ref='editChannelHeaderTextbox'
+                                ref={this.editChannelHeaderTextboxRef}
                                 characterLimit={1024}
                                 preview={this.props.shouldShowPreview}
                             />
@@ -286,6 +283,3 @@ class EditChannelHeaderModal extends React.PureComponent {
         );
     }
 }
-
-export default injectIntl(EditChannelHeaderModal);
-/* eslint-enable react/no-string-refs */

@@ -10,7 +10,6 @@ exports[`components/admin_console/user_grid/UserGrid should match snapshot with 
         "name": <FormattedMessage
           defaultMessage="Name"
           id="admin.user_grid.name"
-          values={Object {}}
         />,
         "width": 3,
       },
@@ -24,7 +23,6 @@ exports[`components/admin_console/user_grid/UserGrid should match snapshot with 
         "name": <FormattedMessage
           defaultMessage="Role"
           id="admin.user_grid.role"
-          values={Object {}}
         />,
         "overflow": "visible",
       },
@@ -46,12 +44,12 @@ exports[`components/admin_console/user_grid/UserGrid should match snapshot with 
   }
   loading={false}
   nextPage={[Function]}
+  onSearch={[Function]}
   page={0}
   placeholderEmpty={
     <FormattedMessage
       defaultMessage="No users found"
       id="admin.user_grid.notFound"
-      values={Object {}}
     />
   }
   previousPage={[Function]}
@@ -107,16 +105,15 @@ exports[`components/admin_console/user_grid/UserGrid should match snapshot with 
               }
             }
           />,
-          "new": <Badge
+          "new": <Memo(Badge)
             className="NewUserBadge"
             show={false}
           >
             <FormattedMessage
               defaultMessage="New"
               id="admin.user_grid.new"
-              values={Object {}}
             />
-          </Badge>,
+          </Memo(Badge)>,
           "remove": <UserGridRemove
             removeUser={[Function]}
             user={
@@ -171,7 +168,9 @@ exports[`components/admin_console/user_grid/UserGrid should match snapshot with 
               Object {
                 "delete_at": 0,
                 "mention_count": 0,
+                "mention_count_root": 0,
                 "msg_count": 0,
+                "msg_count_root": 0,
                 "roles": "team_user",
                 "scheme_admin": false,
                 "scheme_user": true,
@@ -278,16 +277,15 @@ exports[`components/admin_console/user_grid/UserGrid should match snapshot with 
               }
             }
           />,
-          "new": <Badge
+          "new": <Memo(Badge)
             className="NewUserBadge"
             show={false}
           >
             <FormattedMessage
               defaultMessage="New"
               id="admin.user_grid.new"
-              values={Object {}}
             />
-          </Badge>,
+          </Memo(Badge)>,
           "remove": <UserGridRemove
             removeUser={[Function]}
             user={
@@ -342,7 +340,9 @@ exports[`components/admin_console/user_grid/UserGrid should match snapshot with 
               Object {
                 "delete_at": 0,
                 "mention_count": 0,
+                "mention_count_root": 0,
                 "msg_count": 0,
+                "msg_count_root": 0,
                 "roles": "team_user",
                 "scheme_admin": false,
                 "scheme_user": true,
@@ -406,7 +406,7 @@ exports[`components/admin_console/user_grid/UserGrid should match snapshot with 
       "minHeight": "160px",
     }
   }
-  search={[Function]}
+  searchPlaceholder=""
   startCount={1}
   term=""
   total={2}
@@ -423,7 +423,6 @@ exports[`components/admin_console/user_grid/UserGrid should match snapshot with 
         "name": <FormattedMessage
           defaultMessage="Name"
           id="admin.user_grid.name"
-          values={Object {}}
         />,
         "width": 3,
       },
@@ -437,7 +436,6 @@ exports[`components/admin_console/user_grid/UserGrid should match snapshot with 
         "name": <FormattedMessage
           defaultMessage="Role"
           id="admin.user_grid.role"
-          values={Object {}}
         />,
         "overflow": "visible",
       },
@@ -459,12 +457,12 @@ exports[`components/admin_console/user_grid/UserGrid should match snapshot with 
   }
   loading={false}
   nextPage={[Function]}
+  onSearch={[Function]}
   page={0}
   placeholderEmpty={
     <FormattedMessage
       defaultMessage="No users found"
       id="admin.user_grid.notFound"
-      values={Object {}}
     />
   }
   previousPage={[Function]}
@@ -520,16 +518,15 @@ exports[`components/admin_console/user_grid/UserGrid should match snapshot with 
               }
             }
           />,
-          "new": <Badge
+          "new": <Memo(Badge)
             className="NewUserBadge"
             show={true}
           >
             <FormattedMessage
               defaultMessage="New"
               id="admin.user_grid.new"
-              values={Object {}}
             />
-          </Badge>,
+          </Memo(Badge)>,
           "remove": <UserGridRemove
             removeUser={[Function]}
             user={
@@ -686,16 +683,15 @@ exports[`components/admin_console/user_grid/UserGrid should match snapshot with 
               }
             }
           />,
-          "new": <Badge
+          "new": <Memo(Badge)
             className="NewUserBadge"
             show={false}
           >
             <FormattedMessage
               defaultMessage="New"
               id="admin.user_grid.new"
-              values={Object {}}
             />
-          </Badge>,
+          </Memo(Badge)>,
           "remove": <UserGridRemove
             removeUser={[Function]}
             user={
@@ -750,7 +746,9 @@ exports[`components/admin_console/user_grid/UserGrid should match snapshot with 
               Object {
                 "delete_at": 0,
                 "mention_count": 0,
+                "mention_count_root": 0,
                 "msg_count": 0,
+                "msg_count_root": 0,
                 "roles": "team_user",
                 "scheme_admin": false,
                 "scheme_user": true,
@@ -857,16 +855,15 @@ exports[`components/admin_console/user_grid/UserGrid should match snapshot with 
               }
             }
           />,
-          "new": <Badge
+          "new": <Memo(Badge)
             className="NewUserBadge"
             show={false}
           >
             <FormattedMessage
               defaultMessage="New"
               id="admin.user_grid.new"
-              values={Object {}}
             />
-          </Badge>,
+          </Memo(Badge)>,
           "remove": <UserGridRemove
             removeUser={[Function]}
             user={
@@ -921,7 +918,9 @@ exports[`components/admin_console/user_grid/UserGrid should match snapshot with 
               Object {
                 "delete_at": 0,
                 "mention_count": 0,
+                "mention_count_root": 0,
                 "msg_count": 0,
+                "msg_count_root": 0,
                 "roles": "team_user",
                 "scheme_admin": false,
                 "scheme_user": true,
@@ -985,7 +984,7 @@ exports[`components/admin_console/user_grid/UserGrid should match snapshot with 
       "minHeight": "240px",
     }
   }
-  search={[Function]}
+  searchPlaceholder=""
   startCount={1}
   term=""
   total={3}
@@ -1002,7 +1001,6 @@ exports[`components/admin_console/user_grid/UserGrid should match snapshot with 
         "name": <FormattedMessage
           defaultMessage="Name"
           id="admin.user_grid.name"
-          values={Object {}}
         />,
         "width": 3,
       },
@@ -1016,7 +1014,6 @@ exports[`components/admin_console/user_grid/UserGrid should match snapshot with 
         "name": <FormattedMessage
           defaultMessage="Role"
           id="admin.user_grid.role"
-          values={Object {}}
         />,
         "overflow": "visible",
       },
@@ -1038,12 +1035,12 @@ exports[`components/admin_console/user_grid/UserGrid should match snapshot with 
   }
   loading={false}
   nextPage={[Function]}
+  onSearch={[Function]}
   page={0}
   placeholderEmpty={
     <FormattedMessage
       defaultMessage="No users found"
       id="admin.user_grid.notFound"
-      values={Object {}}
     />
   }
   previousPage={[Function]}
@@ -1099,16 +1096,15 @@ exports[`components/admin_console/user_grid/UserGrid should match snapshot with 
               }
             }
           />,
-          "new": <Badge
+          "new": <Memo(Badge)
             className="NewUserBadge"
             show={false}
           >
             <FormattedMessage
               defaultMessage="New"
               id="admin.user_grid.new"
-              values={Object {}}
             />
-          </Badge>,
+          </Memo(Badge)>,
           "remove": <UserGridRemove
             removeUser={[Function]}
             user={
@@ -1163,7 +1159,9 @@ exports[`components/admin_console/user_grid/UserGrid should match snapshot with 
               Object {
                 "delete_at": 0,
                 "mention_count": 0,
+                "mention_count_root": 0,
                 "msg_count": 0,
+                "msg_count_root": 0,
                 "roles": "team_user",
                 "scheme_admin": false,
                 "scheme_user": true,
@@ -1227,7 +1225,7 @@ exports[`components/admin_console/user_grid/UserGrid should match snapshot with 
       "minHeight": "80px",
     }
   }
-  search={[Function]}
+  searchPlaceholder=""
   startCount={1}
   term=""
   total={1}

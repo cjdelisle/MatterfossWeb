@@ -8,7 +8,7 @@
 // ***************************************************************
 
 // Stage: @prod
-// Group: @guest_account
+// Group: @enterprise @guest_account
 
 /**
  * Note: This test requires Enterprise license to be uploaded
@@ -64,9 +64,14 @@ describe('Guest Account - Guest User Removal Experience', () => {
         });
     });
 
-    it('MM-18044 Verify behavior when Guest User is removed from channel', () => {
+    it('MM-T1360 Taken to login screen when removed from last channel', () => {
         // # Demote the current member to a guest user
-        cy.demoteUser(guest.id);
+        cy.apiAdminLogin();
+        cy.apiDemoteUserToGuest(guest.id);
+
+        // # Login as guest user
+        cy.apiLogin(guest);
+        cy.reload();
 
         // * Verify team Sidebar is visible
         cy.get('#teamSidebarWrapper').should('be.visible');

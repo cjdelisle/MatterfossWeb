@@ -3,6 +3,7 @@
 
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
+
 import {addCommand} from 'matterfoss-redux/actions/integrations';
 
 import AddCommand from './add_command.jsx';

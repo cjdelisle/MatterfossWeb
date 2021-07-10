@@ -3,6 +3,7 @@
 
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
+
 import {getSessions, revokeSession} from 'matterfoss-redux/actions/users';
 import {getCurrentUserId, getUserSessions} from 'matterfoss-redux/selectors/entities/users';
 

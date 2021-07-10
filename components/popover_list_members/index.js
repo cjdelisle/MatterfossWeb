@@ -4,6 +4,7 @@
 import {connect} from 'react-redux';
 import {createSelector} from 'reselect';
 import {bindActionCreators} from 'redux';
+
 import {getAllChannelStats} from 'matterfoss-redux/selectors/entities/channels';
 import {getCurrentRelativeTeamUrl} from 'matterfoss-redux/selectors/entities/teams';
 import {getCurrentUserId, getUserStatuses, makeGetProfilesInChannel} from 'matterfoss-redux/selectors/entities/users';
