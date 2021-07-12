@@ -303,10 +303,10 @@ var config = {
         // Generate manifest.json, honouring any configured publicPath. This also handles injecting
         // <link rel="apple-touch-icon" ... /> and <meta name="apple-*" ... /> tags into root.html.
         new WebpackPwaManifest({
-            name: 'Matterfoss',
-            short_name: 'Matterfoss',
+            name: 'MatterFOSS',
+            short_name: 'MatterFOSS',
             start_url: '..',
-            description: 'Matterfoss is an open source, self-hosted Slack-alternative',
+            description: 'MatterFOSS is an open source, self-hosted Slack-alternative',
             background_color: '#ffffff',
             inject: true,
             ios: true,

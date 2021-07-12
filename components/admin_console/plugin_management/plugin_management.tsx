@@ -840,7 +840,7 @@ export default class PluginManagement extends AdminSettings<Props, State> {
                     helpText={
                         <FormattedMarkdownMessage
                             id='admin.plugins.settings.enableDesc'
-                            defaultMessage='When true, enables plugins on your Mattermost server. Use plugins to integrate with third-party systems, extend functionality, or customize the user interface of your Mattermost server. See [documentation](https://about.mattermost.com/default-plugin-uploads) to learn more.'
+                            defaultMessage='When true, enables plugins on your MatterFOSS server. Use plugins to integrate with third-party systems, extend functionality, or customize the user interface of your MatterFOSS server. See [documentation](https://example.com/default-plugin-uploads) to learn more.'
                         />
                     }
                     value={this.state.enable}
@@ -960,7 +960,7 @@ export default class PluginManagement extends AdminSettings<Props, State> {
                         <p className='help-text'>
                             <FormattedMessage
                                 id='admin.plugin.installedDesc'
-                                defaultMessage='Installed plugins on your Mattermost server.'
+                                defaultMessage='Installed plugins on your MatterFOSS server.'
                             />
                         </p>
                         <br/>
@@ -976,21 +976,21 @@ export default class PluginManagement extends AdminSettings<Props, State> {
             uploadHelpText = (
                 <FormattedMarkdownMessage
                     id='admin.plugin.uploadDesc'
-                    defaultMessage='Upload a plugin for your Mattermost server. See [documentation](!https://about.mattermost.com/default-plugin-uploads) to learn more.'
+                    defaultMessage='Upload a plugin for your MatterFOSS server. See [documentation](!https://example.com/default-plugin-uploads) to learn more.'
                 />
             );
         } else if (enable && !enableUploads) {
             uploadHelpText = (
                 <FormattedMarkdownMessage
                     id='admin.plugin.uploadDisabledDesc'
-                    defaultMessage='Enable plugin uploads in config.json. See [documentation](!https://about.mattermost.com/default-plugin-uploads) to learn more.'
+                    defaultMessage='Enable plugin uploads in config.json. See [documentation](!https://example.com/default-plugin-uploads) to learn more.'
                 />
             );
         } else {
             uploadHelpText = (
                 <FormattedMarkdownMessage
                     id='admin.plugin.uploadAndPluginDisabledDesc'
-                    defaultMessage='To enable plugins, set **Enable Plugins** to true. See [documentation](!https://about.mattermost.com/default-plugin-uploads) to learn more.'
+                    defaultMessage='To enable plugins, set **Enable Plugins** to true. See [documentation](!https://example.com/default-plugin-uploads) to learn more.'
                 />
             );
         }
@@ -1029,7 +1029,7 @@ export default class PluginManagement extends AdminSettings<Props, State> {
                                     helpText={
                                         <FormattedMarkdownMessage
                                             id='admin.plugins.settings.requirePluginSignatureDesc'
-                                            defaultMessage='When true, uploading plugins is disabled and may only be installed through the Marketplace. Plugins are always verified during Mattermost server startup and initialization. See [documentation](!https://mattermost.com/pl/default-plugin-signing) to learn more.'
+                                            defaultMessage='When true, uploading plugins is disabled and may only be installed through the Marketplace. Plugins are always verified during MatterFOSS server startup and initialization. See [documentation](!https://mattermost.com/pl/default-plugin-signing) to learn more.'
                                         />
                                     }
                                     value={this.state.requirePluginSignature}

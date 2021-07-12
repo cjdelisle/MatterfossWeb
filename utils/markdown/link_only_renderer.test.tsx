@@ -113,9 +113,9 @@ describe('formatWithRenderer | LinkOnlyRenderer', () => {
         },
         {
             description: 'heading: multiline with header and links',
-            inputText: '###### H6 header\n[link 1](https://matterfoss.com) - [link 2](https://matterfoss.com)',
-            outputText: 'H6 header <a class="theme markdown__link" href="https://matterfoss.com" target="_blank">' +
-            'link 1</a> - <a class="theme markdown__link" href="https://matterfoss.com" target="_blank">link 2</a>',
+            inputText: '###### H6 header\n[link 1](https://mattermost.com) - [link 2](https://mattermost.com)',
+            outputText: 'H6 header <a class="theme markdown__link" href="https://mattermost.com" target="_blank">' +
+            'link 1</a> - <a class="theme markdown__link" href="https://mattermost.com" target="_blank">link 2</a>',
         },
         {
             description: 'list: 1. First ordered list item',
@@ -262,21 +262,21 @@ describe('formatWithRenderer | LinkOnlyRenderer', () => {
         },
         {
             description: 'link: link without a scheme',
-            inputText: 'Do you like www.matterfoss.com?',
-            outputText: 'Do you like <a class="theme markdown__link" href="http://www.matterfoss.com" target="_blank">' +
-            'www.matterfoss.com</a>?',
+            inputText: 'Do you like www.example.com?',
+            outputText: 'Do you like <a class="theme markdown__link" href="http://www.example.com" target="_blank">' +
+            'www.example.com</a>?',
         },
         {
             description: 'link: link with a scheme',
-            inputText: 'Do you like http://www.matterfoss.com?',
-            outputText: 'Do you like <a class="theme markdown__link" href="http://www.matterfoss.com" target="_blank">' +
-            'http://www.matterfoss.com</a>?',
+            inputText: 'Do you like https://www.example.com?',
+            outputText: 'Do you like <a class="theme markdown__link" href="https://www.example.com" target="_blank">' +
+            'https://www.example.com</a>?',
         },
         {
             description: 'link: link with a title',
-            inputText: 'Do you like [Matterfoss](http://www.matterfoss.com)?',
-            outputText: 'Do you like <a class="theme markdown__link" href="http://www.matterfoss.com" target="_blank">' +
-            'Matterfoss</a>?',
+            inputText: 'Do you like [MatterFOSS](https://www.example.com)?',
+            outputText: 'Do you like <a class="theme markdown__link" href="https://www.example.com" target="_blank">' +
+            'MatterFOSS</a>?',
         },
         {
             description: 'link: link with curly brackets',

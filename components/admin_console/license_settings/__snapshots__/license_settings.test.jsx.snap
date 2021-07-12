@@ -24,7 +24,7 @@ exports[`components/admin_console/license_settings/LicenseSettings load screen a
           isLicenseExpired={false}
           license={
             Object {
-              "Company": "Mattermost Inc.",
+              "Company": "MatterFOSS",
               "ExpiresAt": "1620335443650",
               "IsLicensed": "true",
               "IssuedAt": "1517714643650",
@@ -52,7 +52,7 @@ exports[`components/admin_console/license_settings/LicenseSettings load screen a
           >
             <div>
               <p>
-                Mattermost Team Edition. Upgrade to Matterfoss to add the ability to unlock enterprise features.
+                MatterFOSS.
               </p>
               <div>
                 <p>
@@ -98,10 +98,10 @@ exports[`components/admin_console/license_settings/LicenseSettings load screen a
           >
             <div>
               <p>
-                When using Mattermost Team Edition, the software is offered under a Mattermost MIT Compiled License. See MIT-COMPILED-LICENSE.md in your root install directory for details.
+                When using MatterFOSS Team Edition, the software is offered under a MatterFOSS MIT Compiled License. See MIT-COMPILED-LICENSE.md in your root install directory for details.
               </p>
               <p>
-                When using Matterfoss, the software is offered under a commercial license. See below for “Enterprise Edition License” for details.
+                When using MatterFOSS, the software is offered under a commercial license. See below for “Enterprise Edition License” for details.
               </p>
               <p>
                 See NOTICE.txt for information about open source software used in the system.
@@ -125,16 +125,16 @@ exports[`components/admin_console/license_settings/LicenseSettings load screen a
           >
             <div>
               <p>
-                The Matterfoss (EE) license (the “EE License”)
+                The MatterFOSS (EE) license (the “EE License”)
               </p>
               <p>
-                Copyright (c) 2016-present Mattermost, Inc.
+                Copyright (c) 2016-present MatterFOSS
               </p>
               <p>
-                The subscription-only features of the Matterfoss software and associated documentation files (the "Software") may only be used if you (and any entity that you represent) (i) have agreed to, and are in compliance with, the Mattermost Subscription Terms of Service, available at https://about.mattermost.com/enterprise-edition-terms/ (the “EE Terms”), and (ii) otherwise have a valid Matterfoss subscription for the correct features, number of user seats and instances of Matterfoss that you are running, accessing, or using.  You may, however, utilize the free version of the Software (with several features not enabled) under this license without a license key or subscription provided that you otherwise comply with the terms and conditions of this Agreement. Subject to the foregoing, except as explicitly permitted in the EE Terms, it is forbidden to copy, merge, modify, publish, distribute, sublicense, stream, perform, display, create derivative works of and/or sell the Software in either source or executable form without written agreement from Mattermost.  Notwithstanding anything to the contrary, free versions of the Software are provided “AS-IS” without indemnification, support, or warranties of any kind, expressed or implied. You assume all risk associated with any use of free versions of the Software.
+                The subscription-only features of the MatterFOSS software and associated documentation files (the "Software") may only be used if you (and any entity that you represent) (i) have agreed to, and are in compliance with, the MatterFOSS Subscription Terms of Service, available at https://about.mattermost.com/enterprise-edition-terms/ (the “EE Terms”), and (ii) otherwise have a valid MatterFOSS subscription for the correct features, number of user seats and instances of MatterFOSS that you are running, accessing, or using.  You may, however, utilize the free version of the Software (with several features not enabled) under this license without a license key or subscription provided that you otherwise comply with the terms and conditions of this Agreement. Subject to the foregoing, except as explicitly permitted in the EE Terms, it is forbidden to copy, merge, modify, publish, distribute, sublicense, stream, perform, display, create derivative works of and/or sell the Software in either source or executable form without written agreement from Mattermost.  Notwithstanding anything to the contrary, free versions of the Software are provided “AS-IS” without indemnification, support, or warranties of any kind, expressed or implied. You assume all risk associated with any use of free versions of the Software.
               </p>
               <p>
-                EXCEPT AS OTHERWISE SET FORTH IN A BINDING WRITTEN AGREEMENT BETWEEN YOU AND MATTERMOST, THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+                EXCEPT AS OTHERWISE SET FORTH IN A BINDING WRITTEN AGREEMENT BETWEEN YOU AND MATTERFOSS, THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
               </p>
             </div>
           </div>
@@ -169,7 +169,7 @@ exports[`components/admin_console/license_settings/LicenseSettings load screen w
           isLicenseExpired={false}
           license={
             Object {
-              "Company": "Mattermost Inc.",
+              "Company": "MatterFOSS",
               "ExpiresAt": "1620335443650",
               "IsLicensed": "true",
               "IssuedAt": "1517714643650",
@@ -197,7 +197,7 @@ exports[`components/admin_console/license_settings/LicenseSettings load screen w
           >
             <div>
               <p>
-                Mattermost Team Edition. Upgrade to Matterfoss to add the ability to unlock enterprise features.
+                MatterFOSS.
               </p>
               <div>
                 <p>
@@ -231,7 +231,7 @@ exports[`components/admin_console/license_settings/LicenseSettings load screen w
                   className="upgrade-legal-terms"
                 >
                   <injectIntl(FormattedMarkdownMessage)
-                    defaultMessage="By clicking **Upgrade to Enterprise Edition**, I agree to the terms of the Matterfoss License."
+                    defaultMessage="By clicking **Upgrade to Enterprise Edition**, I agree to the terms of the MatterFOSS License."
                     id="admin.license.enterprise.upgrade.accept-terms"
                   />
                 </p>
@@ -255,10 +255,10 @@ exports[`components/admin_console/license_settings/LicenseSettings load screen w
           >
             <div>
               <p>
-                When using Mattermost Team Edition, the software is offered under a Mattermost MIT Compiled License. See MIT-COMPILED-LICENSE.md in your root install directory for details.
+                When using MatterFOSS Team Edition, the software is offered under a MatterFOSS MIT Compiled License. See MIT-COMPILED-LICENSE.md in your root install directory for details.
               </p>
               <p>
-                When using Matterfoss, the software is offered under a commercial license. See below for “Enterprise Edition License” for details.
+                When using MatterFOSS, the software is offered under a commercial license. See below for “Enterprise Edition License” for details.
               </p>
               <p>
                 See NOTICE.txt for information about open source software used in the system.
@@ -282,16 +282,16 @@ exports[`components/admin_console/license_settings/LicenseSettings load screen w
           >
             <div>
               <p>
-                The Matterfoss (EE) license (the “EE License”)
+                The MatterFOSS (EE) license (the “EE License”)
               </p>
               <p>
-                Copyright (c) 2016-present Mattermost, Inc.
+                Copyright (c) 2016-present MatterFOSS
               </p>
               <p>
-                The subscription-only features of the Matterfoss software and associated documentation files (the "Software") may only be used if you (and any entity that you represent) (i) have agreed to, and are in compliance with, the Mattermost Subscription Terms of Service, available at https://about.mattermost.com/enterprise-edition-terms/ (the “EE Terms”), and (ii) otherwise have a valid Matterfoss subscription for the correct features, number of user seats and instances of Matterfoss that you are running, accessing, or using.  You may, however, utilize the free version of the Software (with several features not enabled) under this license without a license key or subscription provided that you otherwise comply with the terms and conditions of this Agreement. Subject to the foregoing, except as explicitly permitted in the EE Terms, it is forbidden to copy, merge, modify, publish, distribute, sublicense, stream, perform, display, create derivative works of and/or sell the Software in either source or executable form without written agreement from Mattermost.  Notwithstanding anything to the contrary, free versions of the Software are provided “AS-IS” without indemnification, support, or warranties of any kind, expressed or implied. You assume all risk associated with any use of free versions of the Software.
+                The subscription-only features of the MatterFOSS software and associated documentation files (the "Software") may only be used if you (and any entity that you represent) (i) have agreed to, and are in compliance with, the MatterFOSS Subscription Terms of Service, available at https://about.mattermost.com/enterprise-edition-terms/ (the “EE Terms”), and (ii) otherwise have a valid MatterFOSS subscription for the correct features, number of user seats and instances of MatterFOSS that you are running, accessing, or using.  You may, however, utilize the free version of the Software (with several features not enabled) under this license without a license key or subscription provided that you otherwise comply with the terms and conditions of this Agreement. Subject to the foregoing, except as explicitly permitted in the EE Terms, it is forbidden to copy, merge, modify, publish, distribute, sublicense, stream, perform, display, create derivative works of and/or sell the Software in either source or executable form without written agreement from Mattermost.  Notwithstanding anything to the contrary, free versions of the Software are provided “AS-IS” without indemnification, support, or warranties of any kind, expressed or implied. You assume all risk associated with any use of free versions of the Software.
               </p>
               <p>
-                EXCEPT AS OTHERWISE SET FORTH IN A BINDING WRITTEN AGREEMENT BETWEEN YOU AND MATTERMOST, THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+                EXCEPT AS OTHERWISE SET FORTH IN A BINDING WRITTEN AGREEMENT BETWEEN YOU AND MATTERFOSS, THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
               </p>
             </div>
           </div>
@@ -326,7 +326,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
           isLicenseExpired={false}
           license={
             Object {
-              "Company": "Mattermost Inc.",
+              "Company": "MatterFOSS",
               "ExpiresAt": "1620335443650",
               "IsLicensed": "true",
               "IssuedAt": "1517714643650",
@@ -352,7 +352,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
           <div
             className="col-sm-8"
           >
-            Matterfoss. Enterprise features on this server have been unlocked with a license key and a valid subscription.
+            MatterFOSS - Licensed under the AGPL
           </div>
         </div>
         <div
@@ -371,96 +371,23 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
           >
             <div>
               <p>
-                This software is offered under a commercial license.
-
-See ENTERPRISE-EDITION-LICENSE.txt in your root install directory for details. See NOTICE.txt for information about open source software used in this system.
-
-Your subscription details are as follows:
+                This software is offered under the GNU Affero GPL 3.0. You are reminded that under the terms of the AGPL, providing a this web service constitutes redistribution of the software and therefore any changes that you make to the software must be made available to your users in source code form.
               </p>
-              Name: LicenseName
               <br />
-              Company or organization name: Mattermost Inc.
-              <br />
-              Edition: Matterfoss SkuName
-              <br />
-              Number of users: 100
-              <br />
-              License issued:
-              <FormattedDate
-                value={2018-02-04T03:24:03.650Z}
-              />
-
-              <FormattedTime
-                value={2018-02-04T03:24:03.650Z}
-              />
-              <br />
-              Start date of license:
-              <FormattedDate
-                value={2018-02-04T03:24:03.650Z}
-              />
-              <br />
-              Expiry date of license:
-              <FormattedDate
-                value={2021-05-06T21:10:43.650Z}
-              />
-              <br />
-              <br />
-              See also
+              See also: 
               <a
-                href="https://about.mattermost.com/enterprise-edition-terms/"
+                href="https://www.gnu.org/licenses/agpl-3.0.en.html"
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                Enterprise Edition Terms of Service
-              </a>
-               and
-              <a
-                data-testid="privacyPolicyLink"
-                href="https://about.mattermost.com/default-privacy-policy/"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                Privacy Policy.
+                AGPL License text
               </a>
             </div>
           </div>
         </div>
         <div
           className="form-group"
-        >
-          <label
-            className="control-label col-sm-4"
-          >
-            <FormattedMessage
-              defaultMessage="License Key: "
-              id="admin.license.key"
-            />
-          </label>
-          <div
-            className="col-sm-8"
-          >
-            <button
-              className="btn btn-danger"
-              data-testid="remove-button"
-              disabled={false}
-              id="remove-button"
-              onClick={[Function]}
-              type="button"
-            >
-              <FormattedMessage
-                defaultMessage="Remove Enterprise License and Downgrade Server"
-                id="admin.license.keyRemove"
-              />
-            </button>
-            <br />
-            <br />
-            <p
-              className="help-text"
-            >
-              If you migrate servers you may need to remove your license key to install it elsewhere. You can remove the key here, which will revert functionality to that of Team Edition.
-            </p>
-          </div>
-        </div>
+        />
       </form>
     </div>
   </div>
@@ -491,7 +418,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
           isLicenseExpired={false}
           license={
             Object {
-              "Company": "Mattermost Inc.",
+              "Company": "MatterFOSS",
               "ExpiresAt": "1620335443650",
               "IsLicensed": "true",
               "IssuedAt": "1517714643650",
@@ -517,7 +444,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
           <div
             className="col-sm-8"
           >
-            Matterfoss. Enterprise features on this server have been unlocked with a license key and a valid subscription.
+            MatterFOSS - Licensed under the AGPL
           </div>
         </div>
         <div
@@ -536,96 +463,23 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
           >
             <div>
               <p>
-                This software is offered under a commercial license.
-
-See ENTERPRISE-EDITION-LICENSE.txt in your root install directory for details. See NOTICE.txt for information about open source software used in this system.
-
-Your subscription details are as follows:
+                This software is offered under the GNU Affero GPL 3.0. You are reminded that under the terms of the AGPL, providing a this web service constitutes redistribution of the software and therefore any changes that you make to the software must be made available to your users in source code form.
               </p>
-              Name: LicenseName
               <br />
-              Company or organization name: Mattermost Inc.
-              <br />
-              Edition: Matterfoss SkuName
-              <br />
-              Number of users: 100
-              <br />
-              License issued:
-              <FormattedDate
-                value={2018-02-04T03:24:03.650Z}
-              />
-
-              <FormattedTime
-                value={2018-02-04T03:24:03.650Z}
-              />
-              <br />
-              Start date of license:
-              <FormattedDate
-                value={2018-02-04T03:24:03.650Z}
-              />
-              <br />
-              Expiry date of license:
-              <FormattedDate
-                value={2021-05-06T21:10:43.650Z}
-              />
-              <br />
-              <br />
-              See also
+              See also: 
               <a
-                href="https://about.mattermost.com/enterprise-edition-terms/"
+                href="https://www.gnu.org/licenses/agpl-3.0.en.html"
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                Enterprise Edition Terms of Service
-              </a>
-               and
-              <a
-                data-testid="privacyPolicyLink"
-                href="https://about.mattermost.com/default-privacy-policy/"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                Privacy Policy.
+                AGPL License text
               </a>
             </div>
           </div>
         </div>
         <div
           className="form-group"
-        >
-          <label
-            className="control-label col-sm-4"
-          >
-            <FormattedMessage
-              defaultMessage="License Key: "
-              id="admin.license.key"
-            />
-          </label>
-          <div
-            className="col-sm-8"
-          >
-            <button
-              className="btn btn-danger"
-              data-testid="remove-button"
-              disabled={true}
-              id="remove-button"
-              onClick={[Function]}
-              type="button"
-            >
-              <FormattedMessage
-                defaultMessage="Remove Enterprise License and Downgrade Server"
-                id="admin.license.keyRemove"
-              />
-            </button>
-            <br />
-            <br />
-            <p
-              className="help-text"
-            >
-              If you migrate servers you may need to remove your license key to install it elsewhere. You can remove the key here, which will revert functionality to that of Team Edition.
-            </p>
-          </div>
-        </div>
+        />
       </form>
     </div>
   </div>
@@ -656,7 +510,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
           isLicenseExpired={false}
           license={
             Object {
-              "Company": "Mattermost Inc.",
+              "Company": "MatterFOSS",
               "ExpiresAt": "1620335443650",
               "IsLicensed": "true",
               "IssuedAt": "1517714643650",
@@ -682,7 +536,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
           <div
             className="col-sm-8"
           >
-            Matterfoss. Enterprise features on this server have been unlocked with a license key and a valid subscription.
+            MatterFOSS - Licensed under the AGPL
           </div>
         </div>
         <div
@@ -700,101 +554,21 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
             className="col-sm-8"
           >
             <div>
-              <div>
-                <p>
-                  When using Matterfoss, the software is offered under a commercial license. See below for “Enterprise Edition License” for details.
-                </p>
-                <p>
-                  See NOTICE.txt for information about open source software used in the system.
-                </p>
-                <p>
-                  Your subscription details are as follows:
-                </p>
-              </div>
-              Name: LicenseName
               <br />
-              Company or organization name: Mattermost Inc.
-              <br />
-              Edition: Matterfoss SkuName
-              <br />
-              Number of users: 100
-              <br />
-              License issued:
-              <FormattedDate
-                value={2018-02-04T03:24:03.650Z}
-              />
-
-              <FormattedTime
-                value={2018-02-04T03:24:03.650Z}
-              />
-              <br />
-              Start date of license:
-              <FormattedDate
-                value={2018-02-04T03:24:03.650Z}
-              />
-              <br />
-              Expiry date of license:
-              <FormattedDate
-                value={2021-05-06T21:10:43.650Z}
-              />
-              <br />
-              <br />
-              See also
+              See also: 
               <a
-                href="https://about.mattermost.com/enterprise-edition-terms/"
+                href="https://www.gnu.org/licenses/agpl-3.0.en.html"
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                Enterprise Edition Terms of Service
-              </a>
-               and
-              <a
-                data-testid="privacyPolicyLink"
-                href="https://about.mattermost.com/default-privacy-policy/"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                Privacy Policy.
+                AGPL License text
               </a>
             </div>
           </div>
         </div>
         <div
           className="form-group"
-        >
-          <label
-            className="control-label col-sm-4"
-          >
-            <FormattedMessage
-              defaultMessage="License Key: "
-              id="admin.license.key"
-            />
-          </label>
-          <div
-            className="col-sm-8"
-          >
-            <button
-              className="btn btn-danger"
-              data-testid="remove-button"
-              disabled={false}
-              id="remove-button"
-              onClick={[Function]}
-              type="button"
-            >
-              <FormattedMessage
-                defaultMessage="Remove Enterprise License and Downgrade Server"
-                id="admin.license.keyRemove"
-              />
-            </button>
-            <br />
-            <br />
-            <p
-              className="help-text"
-            >
-              If you migrate servers you may need to remove your license key to install it elsewhere. You can remove the key here, which will revert functionality to that of Team Edition.
-            </p>
-          </div>
-        </div>
+        />
         <div
           className="form-group"
         >
@@ -811,16 +585,16 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
           >
             <div>
               <p>
-                The Matterfoss (EE) license (the “EE License”)
+                The MatterFOSS (EE) license (the “EE License”)
               </p>
               <p>
-                Copyright (c) 2016-present Mattermost, Inc.
+                Copyright (c) 2016-present MatterFOSS
               </p>
               <p>
-                The subscription-only features of the Matterfoss software and associated documentation files (the "Software") may only be used if you (and any entity that you represent) (i) have agreed to, and are in compliance with, the Mattermost Subscription Terms of Service, available at https://about.mattermost.com/enterprise-edition-terms/ (the “EE Terms”), and (ii) otherwise have a valid Matterfoss subscription for the correct features, number of user seats and instances of Matterfoss that you are running, accessing, or using.  You may, however, utilize the free version of the Software (with several features not enabled) under this license without a license key or subscription provided that you otherwise comply with the terms and conditions of this Agreement. Subject to the foregoing, except as explicitly permitted in the EE Terms, it is forbidden to copy, merge, modify, publish, distribute, sublicense, stream, perform, display, create derivative works of and/or sell the Software in either source or executable form without written agreement from Mattermost.  Notwithstanding anything to the contrary, free versions of the Software are provided “AS-IS” without indemnification, support, or warranties of any kind, expressed or implied. You assume all risk associated with any use of free versions of the Software.
+                The subscription-only features of the MatterFOSS software and associated documentation files (the "Software") may only be used if you (and any entity that you represent) (i) have agreed to, and are in compliance with, the MatterFOSS Subscription Terms of Service, available at https://about.mattermost.com/enterprise-edition-terms/ (the “EE Terms”), and (ii) otherwise have a valid MatterFOSS subscription for the correct features, number of user seats and instances of MatterFOSS that you are running, accessing, or using.  You may, however, utilize the free version of the Software (with several features not enabled) under this license without a license key or subscription provided that you otherwise comply with the terms and conditions of this Agreement. Subject to the foregoing, except as explicitly permitted in the EE Terms, it is forbidden to copy, merge, modify, publish, distribute, sublicense, stream, perform, display, create derivative works of and/or sell the Software in either source or executable form without written agreement from Mattermost.  Notwithstanding anything to the contrary, free versions of the Software are provided “AS-IS” without indemnification, support, or warranties of any kind, expressed or implied. You assume all risk associated with any use of free versions of the Software.
               </p>
               <p>
-                EXCEPT AS OTHERWISE SET FORTH IN A BINDING WRITTEN AGREEMENT BETWEEN YOU AND MATTERMOST, THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+                EXCEPT AS OTHERWISE SET FORTH IN A BINDING WRITTEN AGREEMENT BETWEEN YOU AND MATTERFOSS, THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
               </p>
             </div>
           </div>
@@ -874,7 +648,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
           <div
             className="col-sm-8"
           >
-            Matterfoss. Enterprise features on this server have been unlocked with a license key and a valid subscription.
+            MatterFOSS - Licensed under the AGPL
           </div>
         </div>
         <div
@@ -893,94 +667,23 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
           >
             <div>
               <p>
-                This software is offered under a commercial license.
-
-See ENTERPRISE-EDITION-LICENSE.txt in your root install directory for details. See NOTICE.txt for information about open source software used in this system.
-
-Your subscription details are as follows:
+                This software is offered under the GNU Affero GPL 3.0. You are reminded that under the terms of the AGPL, providing a this web service constitutes redistribution of the software and therefore any changes that you make to the software must be made available to your users in source code form.
               </p>
-              Name: undefined
               <br />
-              Company or organization name: undefined
-              <br />
-              Number of users: undefined
-              <br />
-              License issued:
-              <FormattedDate
-                value={2021-04-06T13:10:43.650Z}
-              />
-
-              <FormattedTime
-                value={2021-04-06T13:10:43.650Z}
-              />
-              <br />
-              Start date of license:
-              <FormattedDate
-                value={2021-04-06T13:10:43.650Z}
-              />
-              <br />
-              Expiry date of license:
-              <FormattedDate
-                value={2021-05-06T21:10:43.650Z}
-              />
-              <br />
-              <br />
-              See also
+              See also: 
               <a
-                href="https://about.mattermost.com/enterprise-edition-terms/"
+                href="https://www.gnu.org/licenses/agpl-3.0.en.html"
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                Enterprise Edition Terms of Service
-              </a>
-               and
-              <a
-                data-testid="privacyPolicyLink"
-                href="https://about.mattermost.com/default-privacy-policy/"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                Privacy Policy.
+                AGPL License text
               </a>
             </div>
           </div>
         </div>
         <div
           className="form-group"
-        >
-          <label
-            className="control-label col-sm-4"
-          >
-            <FormattedMessage
-              defaultMessage="License Key: "
-              id="admin.license.key"
-            />
-          </label>
-          <div
-            className="col-sm-8"
-          >
-            <button
-              className="btn btn-danger"
-              data-testid="remove-button"
-              disabled={false}
-              id="remove-button"
-              onClick={[Function]}
-              type="button"
-            >
-              <FormattedMessage
-                defaultMessage="Remove Enterprise License and Downgrade Server"
-                id="admin.license.keyRemove"
-              />
-            </button>
-            <br />
-            <br />
-            <p
-              className="help-text"
-            >
-              If you migrate servers you may need to remove your license key to install it elsewhere. You can remove the key here, which will revert functionality to that of Team Edition.
-            </p>
-          </div>
-        </div>
+        />
       </form>
     </div>
   </div>
@@ -1021,7 +724,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
             className="col-sm-8"
           >
             <div>
-              Matterfoss. A license is required to unlock enterprise features.
+              MatterFOSS. A license is required to unlock enterprise features
               <p
                 className="trial"
               >
@@ -1046,7 +749,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
                 className="trial-legal-terms"
               >
                 <injectIntl(FormattedMarkdownMessage)
-                  defaultMessage="By clicking **Start trial**, I agree to the [Mattermost Software Evaluation Agreement](!https://mattermost.com/software-evaluation-agreement/), [Privacy Policy](!https://mattermost.com/privacy-policy/), and receiving product emails."
+                  defaultMessage="By clicking **Start trial**, I agree to the [MatterFOSS Software Evaluation Agreement](!https://mattermost.com/software-evaluation-agreement/), [Privacy Policy](!https://mattermost.com/privacy-policy/), and receiving product emails."
                   id="admin.license.trial-request.accept-terms"
                 />
               </p>
@@ -1067,9 +770,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
           <div
             className="col-sm-8"
           >
-            This software is offered under a commercial license.
-
-See ENTERPRISE-EDITION-LICENSE.txt in your root install directory for details. See NOTICE.txt for information about open source software used in this system.
+            This software is offered under the GNU Affero GPL 3.0. You are reminded that under the terms of the AGPL, providing a this web service constitutes redistribution of the software and therefore any changes that you make to the software must be made available to your users in source code form.
           </div>
         </div>
         <div
@@ -1129,7 +830,7 @@ See ENTERPRISE-EDITION-LICENSE.txt in your root install directory for details. S
               className="help-text m-0"
             >
               <injectIntl(FormattedMarkdownMessage)
-                defaultMessage="Upload a license key for Matterfoss to upgrade this server. [Visit us online](!http://mattermost.com) to learn more about the benefits of Enterprise Edition or to purchase a key."
+                defaultMessage="Upload a license key for MatterFOSS to upgrade this server. [Visit us online](!http://mattermost.com) to learn more about the benefits of Enterprise Edition or to purchase a key."
                 id="admin.license.uploadDesc"
               />
             </p>
@@ -1175,7 +876,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
             className="col-sm-8"
           >
             <div>
-              Matterfoss. A license is required to unlock enterprise features.
+              MatterFOSS. A license is required to unlock enterprise features
               <p
                 className="trial"
               >
@@ -1200,7 +901,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
                 className="trial-legal-terms"
               >
                 <injectIntl(FormattedMarkdownMessage)
-                  defaultMessage="By clicking **Start trial**, I agree to the [Mattermost Software Evaluation Agreement](!https://mattermost.com/software-evaluation-agreement/), [Privacy Policy](!https://mattermost.com/privacy-policy/), and receiving product emails."
+                  defaultMessage="By clicking **Start trial**, I agree to the [MatterFOSS Software Evaluation Agreement](!https://mattermost.com/software-evaluation-agreement/), [Privacy Policy](!https://mattermost.com/privacy-policy/), and receiving product emails."
                   id="admin.license.trial-request.accept-terms"
                 />
               </p>
@@ -1223,7 +924,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
           >
             <div>
               <p>
-                When using Matterfoss, the software is offered under a commercial license. See below for “Enterprise Edition License” for details.
+                When using MatterFOSS, the software is offered under a commercial license. See below for “Enterprise Edition License” for details.
               </p>
               <p>
                 See NOTICE.txt for information about open source software used in the system.
@@ -1288,7 +989,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
               className="help-text m-0"
             >
               <injectIntl(FormattedMarkdownMessage)
-                defaultMessage="Upload a license key for Matterfoss to upgrade this server. [Visit us online](!http://mattermost.com) to learn more about the benefits of Enterprise Edition or to purchase a key."
+                defaultMessage="Upload a license key for MatterFOSS to upgrade this server. [Visit us online](!http://mattermost.com) to learn more about the benefits of Enterprise Edition or to purchase a key."
                 id="admin.license.uploadDesc"
               />
             </p>
@@ -1310,16 +1011,16 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
           >
             <div>
               <p>
-                The Matterfoss (EE) license (the “EE License”)
+                The MatterFOSS (EE) license (the “EE License”)
               </p>
               <p>
-                Copyright (c) 2016-present Mattermost, Inc.
+                Copyright (c) 2016-present MatterFOSS
               </p>
               <p>
-                The subscription-only features of the Matterfoss software and associated documentation files (the "Software") may only be used if you (and any entity that you represent) (i) have agreed to, and are in compliance with, the Mattermost Subscription Terms of Service, available at https://about.mattermost.com/enterprise-edition-terms/ (the “EE Terms”), and (ii) otherwise have a valid Matterfoss subscription for the correct features, number of user seats and instances of Matterfoss that you are running, accessing, or using.  You may, however, utilize the free version of the Software (with several features not enabled) under this license without a license key or subscription provided that you otherwise comply with the terms and conditions of this Agreement. Subject to the foregoing, except as explicitly permitted in the EE Terms, it is forbidden to copy, merge, modify, publish, distribute, sublicense, stream, perform, display, create derivative works of and/or sell the Software in either source or executable form without written agreement from Mattermost.  Notwithstanding anything to the contrary, free versions of the Software are provided “AS-IS” without indemnification, support, or warranties of any kind, expressed or implied. You assume all risk associated with any use of free versions of the Software.
+                The subscription-only features of the MatterFOSS software and associated documentation files (the "Software") may only be used if you (and any entity that you represent) (i) have agreed to, and are in compliance with, the MatterFOSS Subscription Terms of Service, available at https://about.mattermost.com/enterprise-edition-terms/ (the “EE Terms”), and (ii) otherwise have a valid MatterFOSS subscription for the correct features, number of user seats and instances of MatterFOSS that you are running, accessing, or using.  You may, however, utilize the free version of the Software (with several features not enabled) under this license without a license key or subscription provided that you otherwise comply with the terms and conditions of this Agreement. Subject to the foregoing, except as explicitly permitted in the EE Terms, it is forbidden to copy, merge, modify, publish, distribute, sublicense, stream, perform, display, create derivative works of and/or sell the Software in either source or executable form without written agreement from Mattermost.  Notwithstanding anything to the contrary, free versions of the Software are provided “AS-IS” without indemnification, support, or warranties of any kind, expressed or implied. You assume all risk associated with any use of free versions of the Software.
               </p>
               <p>
-                EXCEPT AS OTHERWISE SET FORTH IN A BINDING WRITTEN AGREEMENT BETWEEN YOU AND MATTERMOST, THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+                EXCEPT AS OTHERWISE SET FORTH IN A BINDING WRITTEN AGREEMENT BETWEEN YOU AND MATTERFOSS, THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
               </p>
             </div>
           </div>
@@ -1354,7 +1055,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
           isLicenseExpired={false}
           license={
             Object {
-              "Company": "Mattermost Inc.",
+              "Company": "MatterFOSS",
               "ExpiresAt": "1620335443650",
               "IsLicensed": "true",
               "IssuedAt": "1517714643650",
@@ -1382,7 +1083,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
           >
             <div>
               <p>
-                Mattermost Team Edition. Upgrade to Matterfoss to add the ability to unlock enterprise features.
+                MatterFOSS.
               </p>
               <div>
                 <p>
@@ -1416,7 +1117,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
                   className="upgrade-legal-terms"
                 >
                   <injectIntl(FormattedMarkdownMessage)
-                    defaultMessage="By clicking **Upgrade to Enterprise Edition**, I agree to the terms of the Matterfoss License."
+                    defaultMessage="By clicking **Upgrade to Enterprise Edition**, I agree to the terms of the MatterFOSS License."
                     id="admin.license.enterprise.upgrade.accept-terms"
                   />
                 </p>
@@ -1440,10 +1141,10 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
           >
             <div>
               <p>
-                When using Mattermost Team Edition, the software is offered under a Mattermost MIT Compiled License. See MIT-COMPILED-LICENSE.md in your root install directory for details.
+                When using MatterFOSS Team Edition, the software is offered under a MatterFOSS MIT Compiled License. See MIT-COMPILED-LICENSE.md in your root install directory for details.
               </p>
               <p>
-                When using Matterfoss, the software is offered under a commercial license. See below for “Enterprise Edition License” for details.
+                When using MatterFOSS, the software is offered under a commercial license. See below for “Enterprise Edition License” for details.
               </p>
               <p>
                 See NOTICE.txt for information about open source software used in the system.
@@ -1467,16 +1168,16 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
           >
             <div>
               <p>
-                The Matterfoss (EE) license (the “EE License”)
+                The MatterFOSS (EE) license (the “EE License”)
               </p>
               <p>
-                Copyright (c) 2016-present Mattermost, Inc.
+                Copyright (c) 2016-present MatterFOSS
               </p>
               <p>
-                The subscription-only features of the Matterfoss software and associated documentation files (the "Software") may only be used if you (and any entity that you represent) (i) have agreed to, and are in compliance with, the Mattermost Subscription Terms of Service, available at https://about.mattermost.com/enterprise-edition-terms/ (the “EE Terms”), and (ii) otherwise have a valid Matterfoss subscription for the correct features, number of user seats and instances of Matterfoss that you are running, accessing, or using.  You may, however, utilize the free version of the Software (with several features not enabled) under this license without a license key or subscription provided that you otherwise comply with the terms and conditions of this Agreement. Subject to the foregoing, except as explicitly permitted in the EE Terms, it is forbidden to copy, merge, modify, publish, distribute, sublicense, stream, perform, display, create derivative works of and/or sell the Software in either source or executable form without written agreement from Mattermost.  Notwithstanding anything to the contrary, free versions of the Software are provided “AS-IS” without indemnification, support, or warranties of any kind, expressed or implied. You assume all risk associated with any use of free versions of the Software.
+                The subscription-only features of the MatterFOSS software and associated documentation files (the "Software") may only be used if you (and any entity that you represent) (i) have agreed to, and are in compliance with, the MatterFOSS Subscription Terms of Service, available at https://about.mattermost.com/enterprise-edition-terms/ (the “EE Terms”), and (ii) otherwise have a valid MatterFOSS subscription for the correct features, number of user seats and instances of MatterFOSS that you are running, accessing, or using.  You may, however, utilize the free version of the Software (with several features not enabled) under this license without a license key or subscription provided that you otherwise comply with the terms and conditions of this Agreement. Subject to the foregoing, except as explicitly permitted in the EE Terms, it is forbidden to copy, merge, modify, publish, distribute, sublicense, stream, perform, display, create derivative works of and/or sell the Software in either source or executable form without written agreement from Mattermost.  Notwithstanding anything to the contrary, free versions of the Software are provided “AS-IS” without indemnification, support, or warranties of any kind, expressed or implied. You assume all risk associated with any use of free versions of the Software.
               </p>
               <p>
-                EXCEPT AS OTHERWISE SET FORTH IN A BINDING WRITTEN AGREEMENT BETWEEN YOU AND MATTERMOST, THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+                EXCEPT AS OTHERWISE SET FORTH IN A BINDING WRITTEN AGREEMENT BETWEEN YOU AND MATTERFOSS, THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
               </p>
             </div>
           </div>
@@ -1522,7 +1223,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
           >
             <div>
               <p>
-                Mattermost Team Edition. Upgrade to Matterfoss to add the ability to unlock enterprise features.
+                MatterFOSS.
               </p>
               <div>
                 <p>
@@ -1556,7 +1257,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
                   className="upgrade-legal-terms"
                 >
                   <injectIntl(FormattedMarkdownMessage)
-                    defaultMessage="By clicking **Upgrade to Enterprise Edition**, I agree to the terms of the Matterfoss License."
+                    defaultMessage="By clicking **Upgrade to Enterprise Edition**, I agree to the terms of the MatterFOSS License."
                     id="admin.license.enterprise.upgrade.accept-terms"
                   />
                 </p>
@@ -1580,10 +1281,10 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
           >
             <div>
               <p>
-                When using Mattermost Team Edition, the software is offered under a Mattermost MIT Compiled License. See MIT-COMPILED-LICENSE.md in your root install directory for details.
+                When using MatterFOSS Team Edition, the software is offered under a MatterFOSS MIT Compiled License. See MIT-COMPILED-LICENSE.md in your root install directory for details.
               </p>
               <p>
-                When using Matterfoss, the software is offered under a commercial license. See below for “Enterprise Edition License” for details.
+                When using MatterFOSS, the software is offered under a commercial license. See below for “Enterprise Edition License” for details.
               </p>
               <p>
                 See NOTICE.txt for information about open source software used in the system.
@@ -1607,16 +1308,16 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
           >
             <div>
               <p>
-                The Matterfoss (EE) license (the “EE License”)
+                The MatterFOSS (EE) license (the “EE License”)
               </p>
               <p>
-                Copyright (c) 2016-present Mattermost, Inc.
+                Copyright (c) 2016-present MatterFOSS
               </p>
               <p>
-                The subscription-only features of the Matterfoss software and associated documentation files (the "Software") may only be used if you (and any entity that you represent) (i) have agreed to, and are in compliance with, the Mattermost Subscription Terms of Service, available at https://about.mattermost.com/enterprise-edition-terms/ (the “EE Terms”), and (ii) otherwise have a valid Matterfoss subscription for the correct features, number of user seats and instances of Matterfoss that you are running, accessing, or using.  You may, however, utilize the free version of the Software (with several features not enabled) under this license without a license key or subscription provided that you otherwise comply with the terms and conditions of this Agreement. Subject to the foregoing, except as explicitly permitted in the EE Terms, it is forbidden to copy, merge, modify, publish, distribute, sublicense, stream, perform, display, create derivative works of and/or sell the Software in either source or executable form without written agreement from Mattermost.  Notwithstanding anything to the contrary, free versions of the Software are provided “AS-IS” without indemnification, support, or warranties of any kind, expressed or implied. You assume all risk associated with any use of free versions of the Software.
+                The subscription-only features of the MatterFOSS software and associated documentation files (the "Software") may only be used if you (and any entity that you represent) (i) have agreed to, and are in compliance with, the MatterFOSS Subscription Terms of Service, available at https://about.mattermost.com/enterprise-edition-terms/ (the “EE Terms”), and (ii) otherwise have a valid MatterFOSS subscription for the correct features, number of user seats and instances of MatterFOSS that you are running, accessing, or using.  You may, however, utilize the free version of the Software (with several features not enabled) under this license without a license key or subscription provided that you otherwise comply with the terms and conditions of this Agreement. Subject to the foregoing, except as explicitly permitted in the EE Terms, it is forbidden to copy, merge, modify, publish, distribute, sublicense, stream, perform, display, create derivative works of and/or sell the Software in either source or executable form without written agreement from Mattermost.  Notwithstanding anything to the contrary, free versions of the Software are provided “AS-IS” without indemnification, support, or warranties of any kind, expressed or implied. You assume all risk associated with any use of free versions of the Software.
               </p>
               <p>
-                EXCEPT AS OTHERWISE SET FORTH IN A BINDING WRITTEN AGREEMENT BETWEEN YOU AND MATTERMOST, THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+                EXCEPT AS OTHERWISE SET FORTH IN A BINDING WRITTEN AGREEMENT BETWEEN YOU AND MATTERFOSS, THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
               </p>
             </div>
           </div>

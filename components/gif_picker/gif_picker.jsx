@@ -15,7 +15,7 @@ export const appProps = {
     basePath: '/matterfoss',
     itemTapType: constants.ItemTapAction.SHARE,
     appClassName: 'gfycat',
-    shareEvent: 'shareMatterfoss',
+    shareEvent: 'shareMatterFOSS',
     appId: 'matterfosswebviews',
     enableHistory: true,
     header: {

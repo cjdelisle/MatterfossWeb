@@ -1,7 +1,7 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 export const samplePlugin1 = {
-    id: 'matterfoss-autolink',
+    id: 'mattermost-autolink',
     name: 'Autolink',
     description: 'Automatically rewrite text matching a regular expression into a Markdown link.',
     version: '1.1.0',

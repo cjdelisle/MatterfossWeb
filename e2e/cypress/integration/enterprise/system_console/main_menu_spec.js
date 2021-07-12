@@ -38,7 +38,7 @@ describe('Main menu', () => {
 
     it('MM-T913 About opens About modal', () => {
         // # click to open about modal
-        cy.findByText('About Mattermost').click();
+        cy.findByText('About MatterFOSS').click();
 
         // * Verify server link text has correct link destination and opens in a new tab
         verifyLink('server', 'https://about.mattermost.com/platform-notice-txt/');
@@ -50,7 +50,7 @@ describe('Main menu', () => {
         verifyLink('mobile', 'https://about.mattermost.com/mobile-notice-txt/');
 
         // * Verify version exists in modal
-        cy.findByText('Mattermost Version:').should('be.visible');
+        cy.findByText('MatterFOSS Version:').should('be.visible');
 
         // * Verify licensed to exists in modal
         cy.findByText('Licensed to:').should('be.visible');
@@ -61,7 +61,7 @@ describe('Main menu', () => {
 
         // * Find privacy link and then assert that the href is what we expect it to be
         cy.findByTestId('privacyPolicyLink').then((el) => {
-            expect(el[0].href).equal('https://about.mattermost.com/default-privacy-policy/');
+            expect(el[0].href).equal('https://example.com/default-privacy-policy/');
         });
     });
 });

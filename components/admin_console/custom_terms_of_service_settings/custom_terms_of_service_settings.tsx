@@ -191,7 +191,7 @@ export default class CustomTermsOfServiceSettings extends AdminSettings<Props, S
                     helpText={
                         <FormattedMarkdownMessage
                             id='admin.support.enableTermsOfServiceHelp'
-                            defaultMessage='When true, new users must accept the terms of service before accessing any Mattermost teams on desktop, web or mobile. Existing users must accept them after login or a page refresh.\n \nTo update terms of service link displayed in account creation and login pages, go to [Site Configuration > Customization](../site_config/customization).'
+                            defaultMessage='When true, new users must accept the terms of service before accessing any MatterFOSS teams on desktop, web or mobile. Existing users must accept them after login or a page refresh.\n \nTo update terms of service link displayed in account creation and login pages, go to [Site Configuration > Customization](../site_config/customization).'
                         />
                     }
                     value={Boolean(this.state.termsEnabled)}

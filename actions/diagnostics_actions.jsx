@@ -62,7 +62,7 @@ export function measure(name1, name2) {
         return [-1, ''];
     }
 
-    const displayPrefix = '🐐 Matterfoss: ';
+    const displayPrefix = '🐐 MatterFOSS: ';
     const measurementName = `${displayPrefix}${name1} - ${name2}`;
     performance.measure(measurementName, name1, name2);
     const lastDuration = mostRecentDurationByEntryName(measurementName);

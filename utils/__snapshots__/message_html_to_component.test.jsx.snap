@@ -81,7 +81,7 @@ exports[`messageHtmlToComponent Inline markdown image 1`] = `
   className="markdown-inline-img__container"
 >
   <MarkdownImage
-    alt="Matterfoss"
+    alt="MatterFOSS"
     className="markdown-inline-img"
     imageIsLink={false}
     imageMetadata={Object {}}
@@ -112,7 +112,7 @@ exports[`messageHtmlToComponent Inline markdown image where image is link 1`] = 
     target="_blank"
   >
     <MarkdownImage
-      alt="Matterfoss"
+      alt="MatterFOSS"
       className="markdown-inline-img"
       imageIsLink={true}
       imageMetadata={Object {}}

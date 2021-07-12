@@ -97,9 +97,9 @@ describe('Signup Email page', () => {
 
         // * Check elements in the footer
         cy.get('#footer_section').scrollIntoView().should('be.visible');
-        cy.get('#company_name').should('contain', 'Matterfoss');
+        cy.get('#company_name').should('contain', 'MatterFOSS');
         cy.get('#copyright').should('contain', '© 2015-');
-        cy.get('#copyright').should('contain', 'Mattermost, Inc. and Matterfoss Developers');
+        cy.get('#copyright').should('contain', 'Mattermost, Inc. and MatterFOSS Developers');
         cy.get('#about_link').should('contain', 'About');
         cy.get('#about_link').should('have.attr', 'href', config.SupportSettings.AboutLink || ABOUT_LINK);
         cy.get('#privacy_link').should('contain', 'Privacy');

@@ -20,7 +20,7 @@ export default class NotLoggedIn extends React.PureComponent<Props> {
         children: PropTypes.object,
 
         /*
-         * Matterfoss configuration
+         * MatterFOSS configuration
          */
         config: PropTypes.object,
     };
@@ -122,7 +122,7 @@ export default class NotLoggedIn extends React.PureComponent<Props> {
                                 id='company_name'
                                 className='pull-right footer-site-name'
                             >
-                                {'Matterfoss'}
+                                {'MatterFOSS'}
                             </span>
                         </div>
                         <div className='col-xs-12'>
@@ -130,7 +130,7 @@ export default class NotLoggedIn extends React.PureComponent<Props> {
                                 id='copyright'
                                 className='pull-right footer-link copyright'
                             >
-                                {`© 2015-${new Date().getFullYear()} Mattermost, Inc. and Matterfoss Developers`}
+                                {`© 2015-${new Date().getFullYear()} Mattermost, Inc. and Mattermost Developers`}
                             </span>
                             <span className='pull-right'>
                                 {content}

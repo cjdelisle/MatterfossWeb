@@ -28,7 +28,7 @@ describe('components/admin_console/group_settings/GroupsList.tsx', () => {
             <GroupsList
                 groups={[
                     {primary_key: 'test1', name: 'test1'},
-                    {primary_key: 'test2', name: 'test2', matterfoss_group_id: 'group-id-1', has_syncables: false},
+                    {primary_key: 'test2', name: 'test2', mattermost_group_id: 'group-id-1', has_syncables: false},
                 ]}
                 total={2}
                 actions={{
@@ -47,7 +47,7 @@ describe('components/admin_console/group_settings/GroupsList.tsx', () => {
             <GroupsList
                 groups={[
                     {primary_key: 'test1', name: 'test1'},
-                    {primary_key: 'test2', name: 'test2', matterfoss_group_id: 'group-id-1', has_syncables: false},
+                    {primary_key: 'test2', name: 'test2', mattermost_group_id: 'group-id-1', has_syncables: false},
                 ]}
                 total={2}
                 actions={{
@@ -66,7 +66,7 @@ describe('components/admin_console/group_settings/GroupsList.tsx', () => {
             <GroupsList
                 groups={[
                     {primary_key: 'test1', name: 'test1'},
-                    {primary_key: 'test2', name: 'test2', matterfoss_group_id: 'group-id-1', has_syncables: false},
+                    {primary_key: 'test2', name: 'test2', mattermost_group_id: 'group-id-1', has_syncables: false},
                 ]}
                 total={2}
                 actions={{
@@ -85,7 +85,7 @@ describe('components/admin_console/group_settings/GroupsList.tsx', () => {
             <GroupsList
                 groups={[
                     {primary_key: 'test1', name: 'test1'},
-                    {primary_key: 'test2', name: 'test2', matterfoss_group_id: 'group-id-1', has_syncables: false},
+                    {primary_key: 'test2', name: 'test2', mattermost_group_id: 'group-id-1', has_syncables: false},
                 ]}
                 total={2}
                 actions={{
@@ -104,7 +104,7 @@ describe('components/admin_console/group_settings/GroupsList.tsx', () => {
             <GroupsList
                 groups={[
                     {primary_key: 'test1', name: 'test1'},
-                    {primary_key: 'test2', name: 'test2', matterfoss_group_id: 'group-id-1', has_syncables: false},
+                    {primary_key: 'test2', name: 'test2', mattermost_group_id: 'group-id-1', has_syncables: false},
                 ]}
                 total={2}
                 actions={{
@@ -132,7 +132,7 @@ describe('components/admin_console/group_settings/GroupsList.tsx', () => {
             <GroupsList
                 groups={[
                     {primary_key: 'test1', name: 'test1'},
-                    {primary_key: 'test2', name: 'test2', matterfoss_group_id: 'group-id-1', has_syncables: false},
+                    {primary_key: 'test2', name: 'test2', mattermost_group_id: 'group-id-1', has_syncables: false},
                 ]}
                 total={2}
                 actions={{
@@ -157,8 +157,8 @@ describe('components/admin_console/group_settings/GroupsList.tsx', () => {
             <GroupsList
                 groups={[
                     {primary_key: 'test1', name: 'test1'},
-                    {primary_key: 'test2', name: 'test2', matterfoss_group_id: 'group-id-1', has_syncables: false},
-                    {primary_key: 'test3', name: 'test3', matterfoss_group_id: 'group-id-1', has_syncables: false},
+                    {primary_key: 'test2', name: 'test2', mattermost_group_id: 'group-id-1', has_syncables: false},
+                    {primary_key: 'test3', name: 'test3', mattermost_group_id: 'group-id-1', has_syncables: false},
                     {primary_key: 'test4', name: 'test4'},
                 ]}
                 total={4}
@@ -199,8 +199,8 @@ describe('components/admin_console/group_settings/GroupsList.tsx', () => {
             <GroupsList
                 groups={[
                     {primary_key: 'test1', name: 'test1'},
-                    {primary_key: 'test2', name: 'test2', matterfoss_group_id: 'group-id-1', has_syncables: false},
-                    {primary_key: 'test3', name: 'test3', matterfoss_group_id: 'group-id-2', has_syncables: true},
+                    {primary_key: 'test2', name: 'test2', mattermost_group_id: 'group-id-1', has_syncables: false},
+                    {primary_key: 'test3', name: 'test3', mattermost_group_id: 'group-id-2', has_syncables: true},
                 ]}
                 total={3}
                 actions={{
@@ -219,8 +219,8 @@ describe('components/admin_console/group_settings/GroupsList.tsx', () => {
             <GroupsList
                 groups={[
                     {primary_key: 'test1', name: 'test1'},
-                    {primary_key: 'test2', name: 'test2', matterfoss_group_id: 'group-id-1', has_syncables: false},
-                    {primary_key: 'test3', name: 'test3', matterfoss_group_id: 'group-id-2', has_syncables: true},
+                    {primary_key: 'test2', name: 'test2', mattermost_group_id: 'group-id-1', has_syncables: false},
+                    {primary_key: 'test3', name: 'test3', mattermost_group_id: 'group-id-2', has_syncables: true},
                     {primary_key: 'test4', name: 'test4'},
                     {primary_key: 'test5', name: 'test5'},
                     {primary_key: 'test6', name: 'test6'},
@@ -246,8 +246,8 @@ describe('components/admin_console/group_settings/GroupsList.tsx', () => {
             <GroupsList
                 groups={[
                     {primary_key: 'test1', name: 'test1'},
-                    {primary_key: 'test2', name: 'test2', matterfoss_group_id: 'group-id-1', has_syncables: false},
-                    {primary_key: 'test3', name: 'test3', matterfoss_group_id: 'group-id-2', has_syncables: true},
+                    {primary_key: 'test2', name: 'test2', mattermost_group_id: 'group-id-1', has_syncables: false},
+                    {primary_key: 'test3', name: 'test3', mattermost_group_id: 'group-id-2', has_syncables: true},
                     {primary_key: 'test4', name: 'test4'},
                     {primary_key: 'test5', name: 'test5'},
                     {primary_key: 'test6', name: 'test6'},
@@ -273,8 +273,8 @@ describe('components/admin_console/group_settings/GroupsList.tsx', () => {
             <GroupsList
                 groups={[
                     {primary_key: 'test1', name: 'test1'},
-                    {primary_key: 'test2', name: 'test2', matterfoss_group_id: 'group-id-1', has_syncables: false},
-                    {primary_key: 'test3', name: 'test3', matterfoss_group_id: 'group-id-2', has_syncables: true},
+                    {primary_key: 'test2', name: 'test2', mattermost_group_id: 'group-id-1', has_syncables: false},
+                    {primary_key: 'test3', name: 'test3', mattermost_group_id: 'group-id-2', has_syncables: true},
                 ]}
                 total={13}
                 actions={{
@@ -294,8 +294,8 @@ describe('components/admin_console/group_settings/GroupsList.tsx', () => {
             <GroupsList
                 groups={[
                     {primary_key: 'test1', name: 'test1'},
-                    {primary_key: 'test2', name: 'test2', matterfoss_group_id: 'group-id-1', has_syncables: false},
-                    {primary_key: 'test3', name: 'test3', matterfoss_group_id: 'group-id-2', has_syncables: true},
+                    {primary_key: 'test2', name: 'test2', mattermost_group_id: 'group-id-1', has_syncables: false},
+                    {primary_key: 'test3', name: 'test3', mattermost_group_id: 'group-id-2', has_syncables: true},
                 ]}
                 total={13}
                 actions={{
@@ -321,8 +321,8 @@ describe('components/admin_console/group_settings/GroupsList.tsx', () => {
             <GroupsList
                 groups={[
                     {primary_key: 'test1', name: 'test1'},
-                    {primary_key: 'test2', name: 'test2', matterfoss_group_id: 'group-id-1', has_syncables: false},
-                    {primary_key: 'test3', name: 'test3', matterfoss_group_id: 'group-id-2', has_syncables: true},
+                    {primary_key: 'test2', name: 'test2', mattermost_group_id: 'group-id-1', has_syncables: false},
+                    {primary_key: 'test3', name: 'test3', mattermost_group_id: 'group-id-2', has_syncables: true},
                 ]}
                 total={3}
                 actions={{
@@ -348,8 +348,8 @@ describe('components/admin_console/group_settings/GroupsList.tsx', () => {
             <GroupsList
                 groups={[
                     {primary_key: 'test1', name: 'test1'},
-                    {primary_key: 'test2', name: 'test2', matterfoss_group_id: 'group-id-1', has_syncables: false},
-                    {primary_key: 'test3', name: 'test3', matterfoss_group_id: 'group-id-2', has_syncables: true},
+                    {primary_key: 'test2', name: 'test2', mattermost_group_id: 'group-id-1', has_syncables: false},
+                    {primary_key: 'test3', name: 'test3', mattermost_group_id: 'group-id-2', has_syncables: true},
                     {primary_key: 'test4', name: 'test4'},
                     {primary_key: 'test5', name: 'test5'},
                     {primary_key: 'test6', name: 'test6'},

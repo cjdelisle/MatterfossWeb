@@ -1189,14 +1189,14 @@ describe('Actions.Admin', () => {
 
         nock(Client4.getBaseRoute()).
             post(`/ldap/groups/${key}/link`).
-            reply(200, {display_name: 'test1', id: 'new-matterfoss-id'});
+            reply(200, {display_name: 'test1', id: 'new-mattermost-id'});
 
         await Actions.linkLdapGroup(key)(store.dispatch, store.getState);
 
         const state = store.getState();
         const groups = state.entities.admin.ldapGroups;
         assert.ok(groups[key]);
-        assert.ok(groups[key].mattermost_group_id === 'new-matterfoss-id');
+        assert.ok(groups[key].mattermost_group_id === 'new-mattermost-id');
         assert.ok(groups[key].has_syncables === false);
     });
 
@@ -1205,7 +1205,7 @@ describe('Actions.Admin', () => {
             count: 2,
             groups: [
                 {primary_key: 'test1', name: 'test1', mattermost_group_id: null, has_syncables: false},
-                {primary_key: 'test2', name: 'test2', mattermost_group_id: 'matterfoss-id', has_syncables: true},
+                {primary_key: 'test2', name: 'test2', mattermost_group_id: 'mattermost-id', has_syncables: true},
             ],
         };
 

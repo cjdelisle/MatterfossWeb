@@ -64,7 +64,7 @@ describe('Customization', () => {
         // # Exit settings
         cy.visit('/');
 
-        // # Open About Mattermost menu option
+        // # Open About MatterFOSS menu option
         cy.get('body').type('{esc}').wait(TIMEOUTS.HALF_SEC);
         cy.findByLabelText('main menu').click();
 
@@ -260,7 +260,7 @@ describe('Customization', () => {
         cy.findByTestId('TeamSettings.SiteNamelabel').scrollIntoView().should('be.visible').and('have.text', 'Site Name:');
 
         // # Update both Site Name and Description to store default or empty values
-        const siteName = 'Mattermost';
+        const siteName = 'MatterFOSS';
         cy.findByTestId('TeamSettings.SiteNameinput').clear().type(siteName);
         cy.findByTestId('TeamSettings.CustomDescriptionTextinput').clear();
 

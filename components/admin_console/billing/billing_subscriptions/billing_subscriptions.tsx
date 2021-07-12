@@ -192,7 +192,7 @@ export const infoBanner = (handleHide: () => void) => {
             message={
                 <FormattedMessage
                     id='billing.subscription.info.headsup.description'
-                    defaultMessage='You’re nearing the user limit with the free tier of Mattermost Cloud. We’ll let you know if you hit that limit.'
+                    defaultMessage='You’re nearing the user limit with the free tier of MatterFOSS. We’ll let you know if you hit that limit.'
                 />
             }
             onDismiss={() => handleHide()}

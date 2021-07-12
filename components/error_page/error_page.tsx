@@ -63,7 +63,7 @@ export default class ErrorPage extends React.PureComponent<Props> {
                 <Link to={returnTo}>
                     <FormattedMessage
                         id='error.generic.link'
-                        defaultMessage='Back to Matterfoss'
+                        defaultMessage='Back to MatterFOSS'
                     />
                 </Link>
             );

@@ -86,7 +86,7 @@
         "EnableLatex": false
     },
     "TeamSettings": {
-        "SiteName": "Matterfoss",
+        "SiteName": "MatterFOSS",
         "MaxUsersPerTeam": 2000,
         "EnableTeamCreation": true,
         "EnableUserCreation": true,
@@ -248,7 +248,7 @@
     },
     "SupportSettings": {
         "TermsOfServiceLink": "https://about.mattermost.com/default-terms/",
-        "PrivacyPolicyLink": "https://about.mattermost.com/default-privacy-policy/",
+        "PrivacyPolicyLink": "https://example.com/default-privacy-policy/",
         "AboutLink": "https://about.mattermost.com/default-about/",
         "HelpLink": "https://about.mattermost.com/default-help/",
         "ReportAProblemLink": "https://about.mattermost.com/default-report-a-problem/",
@@ -378,7 +378,7 @@
         "LoginButtonTextColor": "#ffffff"
     },
     "NativeAppSettings": {
-        "AppDownloadLink": "https://matterfoss.com/download/#matterfossApps",
+        "AppDownloadLink": "https://mattermost.com/download/#matterfossApps",
         "AndroidAppDownloadLink": "https://about.mattermost.com/matterfoss-android-app/",
         "IosAppDownloadLink": "https://about.mattermost.com/matterfoss-ios-app/"
     },
@@ -470,7 +470,7 @@
         "ClientDirectory": "./client/plugins",
         "Plugins": {},
         "PluginStates": {
-            "com.matterfoss.nps": {
+            "com.mattermost.nps": {
                 "Enable": false
             }
         },

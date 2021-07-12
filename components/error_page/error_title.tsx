@@ -20,7 +20,7 @@ const ErrorTitle: React.FC<Props> = ({type, title}: Props) => {
             errorTitle = (
                 <FormattedMessage
                     id='error.local_storage.title'
-                    defaultMessage='Cannot Load Matterfoss'
+                    defaultMessage='Cannot Load MatterFOSS'
                 />
             );
             break;
@@ -44,7 +44,7 @@ const ErrorTitle: React.FC<Props> = ({type, title}: Props) => {
             errorTitle = (
                 <FormattedMessage
                     id='error.oauth_missing_code.title'
-                    defaultMessage='Matterfoss Needs Your Help'
+                    defaultMessage='MatterFOSS Needs Your Help'
                 />
             );
             break;

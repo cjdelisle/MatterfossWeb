@@ -13,7 +13,7 @@ import OverlayTrigger from 'components/overlay_trigger';
 import * as GlobalActions from 'actions/global_actions.jsx';
 import {trackEvent} from 'actions/diagnostics_actions.jsx';
 
-const askTheCommunityUrl = 'https://matterfoss.com/pl/default-ask-matterfoss-community/';
+const askTheCommunityUrl = 'https://mattermost.com/pl/default-ask-matterfoss-community/';
 
 type Props = {
     intl: IntlShape;

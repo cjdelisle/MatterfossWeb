@@ -20,12 +20,12 @@ describe('System Console - Enterprise', () => {
             url: 'admin_console/user_management/groups',
         },
         {
-            header: 'Matterfoss Teams',
+            header: 'MatterFOSS Teams',
             sidebar: 'Teams',
             url: 'admin_console/user_management/teams',
         },
         {
-            header: 'Matterfoss Channels',
+            header: 'MatterFOSS Channels',
             sidebar: 'Channels',
             url: 'admin_console/user_management/channels',
         },
@@ -86,7 +86,7 @@ describe('System Console - Enterprise', () => {
         cy.apiRequireLicense();
 
         const newSettings = {
-            TeamSettings: {SiteName: 'Matterfoss'},
+            TeamSettings: {siteName: 'MatterFOSS'},
         };
         cy.apiUpdateConfig(newSettings);
 

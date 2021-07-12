@@ -16,7 +16,7 @@ exports[`components/SignupEmail should match snapshot 1`] = `
       />
       <SiteNameAndDescription
         customDescriptionText=""
-        siteName="Mattermost"
+        siteName="MatterFOSS"
       />
       <h4
         className="color--light"
@@ -171,13 +171,13 @@ exports[`components/SignupEmail should match snapshot 1`] = `
         id="signup_agreement"
       >
         <injectIntl(FormattedMarkdownMessage)
-          defaultMessage="By proceeding to create your account and use {siteName}, you agree to our [Terms of Service]({TermsOfServiceLink}) and [Privacy Policy]({PrivacyPolicyLink}). If you do not agree, you cannot use {siteName}."
+          defaultMessage="Welcome to your new MatterFOSS server, you can specify your own message here by changing signup_email.jsx."
           id="create_team.agreement"
           values={
             Object {
               "PrivacyPolicyLink": "!",
               "TermsOfServiceLink": "!",
-              "siteName": "Mattermost",
+              "siteName": "MatterFOSS",
             }
           }
         />

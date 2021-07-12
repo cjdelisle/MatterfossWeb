@@ -506,7 +506,7 @@ export default class AbstractCommand extends React.PureComponent {
                                 <div className='form__help'>
                                     <FormattedMessage
                                         id='add_command.method.help'
-                                        defaultMessage='Specify the type of request, either POST or GET, sent to the endpoint that Matterfoss hits to reach your application.'
+                                        defaultMessage='Specify the type of request, either POST or GET, sent to the endpoint that MatterFOSS hits to reach your application.'
                                     />
                                 </div>
                             </div>
@@ -534,7 +534,7 @@ export default class AbstractCommand extends React.PureComponent {
                                 <div className='form__help'>
                                     <FormattedMessage
                                         id='add_command.username.help'
-                                        defaultMessage='(Optional) Specify the name to use when posting responses for this slash command. Usernames can be up to 22 characters, and contain lowercase letters, numbers, and the symbols \"-\", \"_\", and \".\". If left blank, your Matterfoss username is used.'
+                                        defaultMessage='(Optional) Specify the name to use when posting responses for this slash command. Usernames can be up to 22 characters, and contain lowercase letters, numbers, and the symbols \"-\", \"_\", and \".\". If left blank, your MatterFOSS username is used.'
                                     />
                                 </div>
                             </div>

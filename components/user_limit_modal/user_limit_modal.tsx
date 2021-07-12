@@ -72,7 +72,7 @@ export default function UserLimitModal(props: Props): JSX.Element {
         >
             <FormattedMessage
                 id={'upgrade.cloud'}
-                defaultMessage={'Upgrade Mattermost Cloud'}
+                defaultMessage={'Upgrade MatterFOSS'}
             />
         </Button>
     ) : (<NotifyLink
@@ -104,7 +104,7 @@ export default function UserLimitModal(props: Props): JSX.Element {
                             <FormattedMessage
                                 id={'upgrade.cloud_modal_body'}
                                 defaultMessage={
-                                    'The free tier is limited to {num} users. Upgrade Mattermost Cloud for more users.'
+                                    'The free tier is limited to {num} users. Upgrade MatterFOSS for more users.'
                                 }
                                 values={{
                                     num: props.cloudUserLimit,

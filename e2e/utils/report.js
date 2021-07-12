@@ -157,7 +157,7 @@ function generateTestReport(summary, isUploadedToS3, reportLink, environment, te
                 color: testResult.color,
                 author_name: 'Webapp End-to-end Testing',
                 author_icon: 'https://www.mattermost.org/wp-content/uploads/2016/04/icon.png',
-                author_link: 'https://www.mattermost.com',
+                author_link: 'https://www.example.com',
                 title,
                 fields: [
                     {
@@ -194,7 +194,7 @@ function generateTestReport(summary, isUploadedToS3, reportLink, environment, te
             color: testResult.color,
             author_name: 'Webapp End-to-end Testing',
             author_icon: 'https://www.mattermost.org/wp-content/uploads/2016/04/icon.png',
-            author_link: 'https://www.mattermost.com/',
+            author_link: 'https://www.example.com/',
             title,
             text: `${quickSummary} | ${(stats.duration / (60 * 1000)).toFixed(2)} mins ${testCycleLink}\n${envValue}`,
         }],

@@ -248,7 +248,7 @@
     },
     "SupportSettings": {
         "TermsOfServiceLink": "https://about.mattermost.com/default-terms/",
-        "PrivacyPolicyLink": "https://about.mattermost.com/default-privacy-policy/",
+        "PrivacyPolicyLink": "https://example.com/default-privacy-policy/",
         "AboutLink": "https://about.mattermost.com/default-about/",
         "HelpLink": "https://about.mattermost.com/default-help/",
         "ReportAProblemLink": "https://about.mattermost.com/default-report-a-problem/",

@@ -99,8 +99,8 @@ describe('Onboarding', () => {
             cy.get('#sidebarItem_town-square').should('exist');
         });
 
-        // * Check that the 'Welcome to Mattermost' message is visible
-        cy.get('.NextStepsView__header-headerText').findByText('Welcome to Mattermost').should('be.visible');
+        // * Check that the 'Welcome to MatterFOSS' message is visible
+        cy.get('.NextStepsView__header-headerText').findByText('Welcome to MatterFOSS').should('be.visible');
     });
 
     // eslint-disable-next-line no-shadow

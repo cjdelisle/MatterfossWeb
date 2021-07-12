@@ -245,7 +245,7 @@ export default class Bots extends React.PureComponent<Props, State> {
                     <React.Fragment>
                         <FormattedMessage
                             id='bots.manage.help1'
-                            defaultMessage='Use {botAccounts} to integrate with Mattermost through plugins or the API. Bot accounts are available to everyone on your server. '
+                            defaultMessage='Use {botAccounts} to integrate with MatterFOSS through plugins or the API. Bot accounts are available to everyone on your server. '
                             values={{
                                 botAccounts: (
                                     <a

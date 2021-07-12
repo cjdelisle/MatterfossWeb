@@ -13,7 +13,7 @@ exports[`components/GetPublicLinkModal should match snapshot when link is empty 
 exports[`components/GetPublicLinkModal should match snapshot when link is not empty 1`] = `
 <GetLinkModal
   helpText="The link below allows anyone to see this file without being registered on this server."
-  link="http://matterfoss.com/files/n5bnoaz3e7g93nyipzo1bixdwr/public?h=atw9qQHI1nUPnxo1e48tPspo1Qvwd3kHtJZjysmI5zs"
+  link="https://example.com/files/n5bnoaz3e7g93nyipzo1bixdwr/public?h=atw9qQHI1nUPnxo1e48tPspo1Qvwd3kHtJZjysmI5zs"
   onHide={[Function]}
   show={false}
   title="Copy Public Link"

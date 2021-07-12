@@ -18,7 +18,7 @@ describe('SupportSettings', () => {
     const email = 'bot@mattermost.com';
 
     const defaultTosLink = 'https://about.mattermost.com/default-terms/';
-    const defaultPrivacyLink = 'https://about.mattermost.com/default-privacy-policy/';
+    const defaultPrivacyLink = 'https://example.com/default-privacy-policy/';
 
     let testTeam;
 

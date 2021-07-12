@@ -1,11 +1,11 @@
-# Matterfoss Web
+# MatterFOSS Web
 
 This is an open source webapp based on the Mattermost(tm) codebase.
-The Matterfoss name is not (to the best of our knowledge) protected under any trademark
-and you are encouraged to modify, remix and redistribute the Matterfoss project within
+The MatterFOSS name is not (to the best of our knowledge) protected under any trademark
+and you are encouraged to modify, remix and redistribute the MatterFOSS project within
 the terms of the Apache 2.0 license.
 
-This project should be used along with the [Matterfoss server](https://github.com/cjdelisle/Matterfoss)
+This project should be used along with the [MatterFOSS server](https://github.com/cjdelisle/MatterFOSS)
 in order to provide fully open source, non-trademarked, community chat server software.
 
 ## No warrantees
@@ -24,11 +24,11 @@ npm run build
 ```
 
 The result of this should be a `/dist` directory which you can configure your
-[Matterfoss server](https://github.com/cjdelisle/Matterfoss) to serve.
+[MatterFOSS server](https://github.com/cjdelisle/MatterFOSS) to serve.
 
 ## Custom Branding
-You're welcome to change the name from Matterfoss to whatever you like, but unfortunately
-it's not trivial to do so. You can easily change all instances of Matterfoss in the i18n
+You're welcome to change the name from MatterFOSS to whatever you like, but unfortunately
+it's not trivial to do so. You can easily change all instances of MatterFOSS in the i18n
 directory to your brand of choice, but in other places around the codebase it will be
 somewhat harder. If you want to change the logos, the files you will need to change are:
 
@@ -50,6 +50,6 @@ If you want to replace the matterfoss emoji, you will also need to run
 to generate the emoji files.
 
 ## Attribution
-The Matterfoss logo was created by QualityIcons ( https://thenounproject.com/nivya.becse/ ) and
+The MatterFOSS logo was created by QualityIcons ( https://thenounproject.com/nivya.becse/ ) and
 is provided under the Creative Commons Attribution license.
 

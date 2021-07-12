@@ -75,7 +75,7 @@ export default function AboutBuildModalCloud(props: Props) {
                 >
                     <FormattedMessage
                         id='about.title'
-                        values={{appTitle: config.SiteName || 'Mattermost'}}
+                        values={{appTitle: config.SiteName || 'MatterFOSS'}}
                         defaultMessage='About {appTitle}'
                     />
                 </Modal.Title>
@@ -87,14 +87,14 @@ export default function AboutBuildModalCloud(props: Props) {
                     </div>
                     <div>
                         <h3 className='about-modal__title'>
-                            {'Mattermost'} {title}
+                            {'MatterFOSS'} {title}
                         </h3>
                         <p className='subtitle'>{subTitle}</p>
                         <div className='description'>
                             <div>
                                 <FormattedMessage
                                     id='about.version'
-                                    defaultMessage='Mattermost Version:'
+                                    defaultMessage='MatterFOSS Version:'
                                 />
                                 <span id='versionString'>{'\u00a0' + mmversion}</span>
                             </div>
@@ -103,7 +103,7 @@ export default function AboutBuildModalCloud(props: Props) {
                         <div className='about-footer'>
                             <FormattedMarkdownMessage
                                 id='about.notice'
-                                defaultMessage='Mattermost is made possible by the open source software used in our [server](!https://about.mattermost.com/platform-notice-txt/), [desktop](!https://about.mattermost.com/desktop-notice-txt/) and [mobile](!https://about.mattermost.com/mobile-notice-txt/) apps.'
+                                defaultMessage='MatterFOSS is made possible by the open source software used in our [server](!https://about.mattermost.com/platform-notice-txt/), [desktop](!https://about.mattermost.com/desktop-notice-txt/) and [mobile](!https://about.mattermost.com/mobile-notice-txt/) apps.'
                             />
                             <div className='copy-right'>
                                 <FormattedMessage

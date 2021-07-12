@@ -773,7 +773,7 @@ export default class PluginManagement extends AdminSettings {
                     helpText={
                         <FormattedMarkdownMessage
                             id='admin.plugins.settings.enableDesc'
-                            defaultMessage='When true, enables plugins on your Matterfoss server. Use plugins to integrate with third-party systems, extend functionality, or customize the user interface of your Matterfoss server. See [documentation](https://about.matterfoss.com/default-plugin-uploads) to learn more.'
+                            defaultMessage='When true, enables plugins on your MatterFOSS server. Use plugins to integrate with third-party systems, extend functionality, or customize the user interface of your MatterFOSS server. See [documentation](https://about.matterfoss.com/default-plugin-uploads) to learn more.'
                         />
                     }
                     value={this.state.enable}
@@ -892,7 +892,7 @@ export default class PluginManagement extends AdminSettings {
                         <p className='help-text'>
                             <FormattedHTMLMessage
                                 id='admin.plugin.installedDesc'
-                                defaultMessage='Installed plugins on your Matterfoss server.'
+                                defaultMessage='Installed plugins on your MatterFOSS server.'
                             />
                         </p>
                         <br/>
@@ -908,7 +908,7 @@ export default class PluginManagement extends AdminSettings {
             uploadHelpText = (
                 <FormattedMarkdownMessage
                     id='admin.plugin.uploadDesc'
-                    defaultMessage='Upload a plugin for your Matterfoss server. See [documentation](!https://about.matterfoss.com/default-plugin-uploads) to learn more.'
+                    defaultMessage='Upload a plugin for your MatterFOSS server. See [documentation](!https://about.matterfoss.com/default-plugin-uploads) to learn more.'
                 />
             );
         } else if (enable && !enableUploads) {
@@ -959,7 +959,7 @@ export default class PluginManagement extends AdminSettings {
                             helpText={
                                 <FormattedMarkdownMessage
                                     id='admin.plugins.settings.requirePluginSignatureDesc'
-                                    defaultMessage='When true, uploading plugins is disabled and may only be installed through the Marketplace. Plugins are always verified during Matterfoss server startup and initialization. See [documentation](!https://matterfoss.com/pl/default-plugin-signing) to learn more.'
+                                    defaultMessage='When true, uploading plugins is disabled and may only be installed through the Marketplace. Plugins are always verified during MatterFOSS server startup and initialization. See [documentation](!https://matterfoss.com/pl/default-plugin-signing) to learn more.'
                                 />
                             }
                             value={this.state.requirePluginSignature}

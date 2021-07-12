@@ -75,7 +75,7 @@ export default function Attaching(): JSX.Element {
             <p>
                 <FormattedMessage
                     id='help.attaching.previewer.description'
-                    defaultMessage='Matterfoss has a built in file previewer that is used to view media, download files and share public links. Click the thumbnail of an attached file to open it in the file previewer.'
+                    defaultMessage='MatterFOSS has a built in file previewer that is used to view media, download files and share public links. Click the thumbnail of an attached file to open it in the file previewer.'
                 />
             </p>
 
@@ -88,7 +88,7 @@ export default function Attaching(): JSX.Element {
             <p>
                 <FormattedMarkdownMessage
                     id='help.attaching.publicLinks.description'
-                    defaultMessage='Public links allow you to share file attachments with people outside your Matterfoss team. Open the file previewer by clicking on the thumbnail of an attachment, then click **Get Public Link**. This opens a dialog box with a link to copy. When the link is shared and opened by another user, the file will automatically download.'
+                    defaultMessage='Public links allow you to share file attachments with people outside your MatterFOSS team. Open the file previewer by clicking on the thumbnail of an attachment, then click **Get Public Link**. This opens a dialog box with a link to copy. When the link is shared and opened by another user, the file will automatically download.'
                 />
             </p>
             <p>
@@ -118,7 +118,7 @@ export default function Attaching(): JSX.Element {
             <p>
                 <FormattedMessage
                     id='help.attaching.supported.description'
-                    defaultMessage='If you are trying to preview a media type that is not supported, the file previewer will open a standard media attachment icon. Supported media formats depend heavily on your browser and operating system, but the following formats are supported by Matterfoss on most browsers:'
+                    defaultMessage='If you are trying to preview a media type that is not supported, the file previewer will open a standard media attachment icon. Supported media formats depend heavily on your browser and operating system, but the following formats are supported by MatterFOSS on most browsers:'
                 />
             </p>
             <ul>
@@ -163,7 +163,7 @@ export default function Attaching(): JSX.Element {
             <p>
                 <FormattedMessage
                     id='help.attaching.limitations.description'
-                    defaultMessage='Matterfoss supports a maximum of five attached files per post, each with a maximum file size of 50Mb.'
+                    defaultMessage='MatterFOSS supports a maximum of five attached files per post, each with a maximum file size of 50Mb.'
                 />
             </p>
             <p className='links'>

@@ -234,7 +234,7 @@ export default class UserAccessTokenSection extends React.PureComponent {
                 <div className='alert alert-danger'>
                     <FormattedMarkdownMessage
                         id='user.settings.tokens.confirmDeleteMessage'
-                        defaultMessage='Any integrations using this token will no longer be able to access the Matterfoss API. You cannot undo this action. \n \nAre you sure want to delete the **{description}** token?'
+                        defaultMessage='Any integrations using this token will no longer be able to access the MatterFOSS API. You cannot undo this action. \n \nAre you sure want to delete the **{description}** token?'
                         values={{
                             description: token.description,
                         }}

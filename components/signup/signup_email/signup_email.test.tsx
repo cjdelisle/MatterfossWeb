@@ -16,7 +16,7 @@ describe('components/SignupEmail', () => {
             search: '?token=9f392f193973g11ggh398h39hg0ghH&email=test@example.com',
         },
         enableSignUpWithEmail: true,
-        siteName: 'Mattermost',
+        siteName: 'MatterFOSS',
         termsOfServiceLink: '',
         privacyPolicyLink: '',
         customDescriptionText: '',

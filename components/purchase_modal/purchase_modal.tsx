@@ -131,7 +131,7 @@ export default class PurchaseModal extends React.PureComponent<Props, State> {
         } else {
             title = (
                 <FormattedMessage
-                    defaultMessage={'Upgrade your Mattermost Cloud Susbcription'}
+                    defaultMessage={'Upgrade your MatterFOSS Susbcription'}
                     id={'admin.billing.subscription.upgradeCloudSubscription'}
                 />
             );
@@ -190,7 +190,7 @@ export default class PurchaseModal extends React.PureComponent<Props, State> {
                     <div className='price-container'>
                         <div className='bold-text'>
                             <FormattedMessage
-                                defaultMessage={'Mattermost Cloud'}
+                                defaultMessage={'MatterFOSS'}
                                 id={'admin.billing.subscription.mattermostCloud'}
                             />
                         </div>

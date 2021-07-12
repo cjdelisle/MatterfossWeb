@@ -470,7 +470,7 @@ export default class SignupEmail extends React.PureComponent {
                 <p id='signup_agreement'>
                     <FormattedMarkdownMessage
                         id='create_team.agreement'
-                        defaultMessage='Welcome to your new Matterfoss server, you can specify your own message here by changing signup_email.jsx'
+                        defaultMessage='Welcome to your new MatterFOSS server, you can specify your own message here by changing signup_email.jsx'
                     />
                 </p>
             );

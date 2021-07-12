@@ -33,7 +33,7 @@ describe('System Console - Enterprise', () => {
         cy.apiRequireLicense();
 
         const newSettings = {
-            TeamSettings: {SiteName: 'Mattermost'},
+            TeamSettings: {siteName: 'MatterFOSS'},
         };
         cy.apiUpdateConfig(newSettings);
 

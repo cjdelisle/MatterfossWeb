@@ -105,7 +105,7 @@ class TeamImportTab extends React.PureComponent {
                 <p>
                     <FormattedMessage
                         id='team_import_tab.importHelpLine1'
-                        defaultMessage="Slack import to Matterfoss supports importing of messages in your Slack team's public channels."
+                        defaultMessage="Slack import to MatterFOSS supports importing of messages in your Slack team's public channels."
                     />
                 </p>
                 <p>
@@ -170,7 +170,7 @@ class TeamImportTab extends React.PureComponent {
                     />
                     <a
                         href={this.state.link}
-                        download='MatterfossImportSummary.txt'
+                        download='MatterFOSSImportSummary.txt'
                     >
                         <FormattedMessage
                             id='team_import_tab.summary'
@@ -190,7 +190,7 @@ class TeamImportTab extends React.PureComponent {
                     />
                     <a
                         href={this.state.link}
-                        download='MatterfossImportSummary.txt'
+                        download='MatterFOSSImportSummary.txt'
                     >
                         <FormattedMessage
                             id='team_import_tab.summary'

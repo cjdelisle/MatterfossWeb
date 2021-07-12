@@ -64,7 +64,7 @@ const getDownloadButtonString = () => {
         return (
             <FormattedMessage
                 id='next_steps_view.tips.getForWindows'
-                defaultMessage='Get Mattermost for Windows'
+                defaultMessage='Get MatterFOSS for Windows'
             />
         );
     }
@@ -73,7 +73,7 @@ const getDownloadButtonString = () => {
         return (
             <FormattedMessage
                 id='next_steps_view.tips.getForMac'
-                defaultMessage='Get Mattermost for Mac'
+                defaultMessage='Get MatterFOSS for Mac'
             />
         );
     }
@@ -167,7 +167,7 @@ export default function NextStepsTips(props: Props) {
                         </h3>
                         <FormattedMessage
                             id='next_steps_view.tips.connectPlugins.text'
-                            defaultMessage='Install Mattermost plugins to connect with your favorite tools'
+                            defaultMessage='Install MatterFOSS plugins to connect with your favorite tools'
                         />
                         <button
                             className='NextStepsView__button NextStepsView__finishButton primary'
@@ -193,7 +193,7 @@ export default function NextStepsTips(props: Props) {
                         </h3>
                         <FormattedMessage
                             id='next_steps_view.tips.resolveIncidents.text'
-                            defaultMessage='Resolve incidents faster with Mattermost Incident Collaboration.'
+                            defaultMessage='Resolve incidents faster with MatterFOSS Incident Collaboration.'
                         />
                         <button
                             className='NextStepsView__button NextStepsView__finishButton primary'

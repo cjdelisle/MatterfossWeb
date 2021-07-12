@@ -21,7 +21,7 @@ exports[`components/error_page/ErrorMessage should match snapshot, channel_not_f
 exports[`components/error_page/ErrorMessage should match snapshot, local_storage type 1`] = `
 <div>
   <FormattedMessage
-    defaultMessage="Matterfoss was unable to load because a setting in your browser prevents the use of its local storage features. To allow Matterfoss to load, try the following actions:"
+    defaultMessage="MatterFOSS was unable to load because a setting in your browser prevents the use of its local storage features. To allow MatterFOSS to load, try the following actions:"
     id="error.local_storage.message"
   />
   <ul>
@@ -65,7 +65,7 @@ exports[`components/error_page/ErrorMessage should match snapshot, no type nor m
 exports[`components/error_page/ErrorMessage should match snapshot, oauth_access_denied type 1`] = `
 <p>
   <FormattedMessage
-    defaultMessage="You must authorize Matterfoss to log in with {service}."
+    defaultMessage="You must authorize MatterFOSS to log in with {service}."
     id="error.oauth_access_denied"
     values={
       Object {
@@ -118,7 +118,7 @@ exports[`components/error_page/ErrorMessage should match snapshot, oauth_missing
   </p>
   <p>
     <FormattedMessage
-      defaultMessage="For {link} make sure the administrator of your Microsoft organization has enabled the Matterfoss app."
+      defaultMessage="For {link} make sure the administrator of your Microsoft organization has enabled the MatterFOSS app."
       id="error.oauth_missing_code.office365"
       values={
         Object {

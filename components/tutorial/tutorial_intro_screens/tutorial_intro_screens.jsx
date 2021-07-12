@@ -187,7 +187,7 @@ export default class TutorialIntroScreens extends React.PureComponent {
                 <h3>
                     <FormattedMessage
                         id='tutorial_intro.screenTwo.title'
-                        defaultMessage='How Matterfoss Works:'
+                        defaultMessage='How MatterFOSS Works:'
                     />
                 </h3>
                 <p>

@@ -37,7 +37,7 @@ const FeatureFlags: React.FC<Props> = (props: Props) => {
                         <div className='banner__content'>
                             <FormattedMessage
                                 id='admin.feature_flags.introBanner'
-                                defaultMessage={'Feature flag values displayed here show the status of features enabled on this server. The values here are used only for troubleshooting by the Mattermost support team.'}
+                                defaultMessage={'Feature flag values displayed here show the status of features enabled on this server. The values here are used only for troubleshooting by the MatterFOSS support team.'}
                             />
                         </div>
                     </div>

@@ -120,7 +120,7 @@ export default function HelpFormatting(): JSX.Element {
             <p>
                 <FormattedMarkdownMessage
                     id='help.formatting.syntax.description'
-                    defaultMessage='To add syntax highlighting, type the language to be highlighted after the ``` at the beginning of the code block. Matterfoss also offers four different code themes (GitHub, Solarized Dark, Solarized Light, Monokai) that can be changed in **Account Settings** > **Display** > **Theme** > **Custom Theme** > **Center Channel Styles**'
+                    defaultMessage='To add syntax highlighting, type the language to be highlighted after the ``` at the beginning of the code block. MatterFOSS also offers four different code themes (GitHub, Solarized Dark, Solarized Light, Monokai) that can be changed in **Account Settings** > **Display** > **Theme** > **Custom Theme** > **Center Channel Styles**'
                 />
             </p>
             <p>
@@ -235,7 +235,7 @@ export default function HelpFormatting(): JSX.Element {
             </p>
             <FormattedMessage
                 id='help.formatting.linkEx'
-                defaultMessage={'[Check out Matterfoss!](https://about.mattermost.com/)'}
+                defaultMessage={'[Check out MatterFOSS!](https://about.mattermost.com/)'}
             >
                 {(example) => (
                     <div>
@@ -263,7 +263,7 @@ export default function HelpFormatting(): JSX.Element {
             </p>
             <FormattedMessage
                 id='help.formatting.imagesExample'
-                defaultMessage={'![alt text]({siteUrl}/static/images/logo-email.png "Matterfoss horizontal logo")\n\nand\n\n[![Atlassian](https://wac-cdn.atlassian.com/assets/img/favicons/atlassian/favicon.png)](https://travis-ci.org/matterfoss/matterfoss-server) [![Github](https://github.githubassets.com/favicon.ico)](https://github.com/matterfoss/matterfoss-server)'}
+                defaultMessage={'![alt text]({siteUrl}/static/images/logo-email.png "MatterFOSS horizontal logo")\n\nand\n\n[![Atlassian](https://wac-cdn.atlassian.com/assets/img/favicons/atlassian/favicon.png)](https://travis-ci.org/matterfoss/matterfoss-server) [![Github](https://github.githubassets.com/favicon.ico)](https://github.com/matterfoss/matterfoss-server)'}
                 values={{siteURL: getSiteURL()}}
             >
                 {(example) => renderRawExampleWithResult(example)}

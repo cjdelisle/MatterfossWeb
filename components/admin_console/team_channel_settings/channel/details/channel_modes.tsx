@@ -41,7 +41,7 @@ const SyncGroupsToggle: React.SFC<Props> = (props: Props): JSX.Element => {
             subTitle={(
                 <FormattedMarkdownMessage
                     id='admin.channel_settings.channel_details.syncGroupMembersDescr'
-                    defaultMessage='When enabled, adding and removing users from groups will add or remove them from this channel. The only way of inviting members to this channel is by adding the groups they belong to. [Learn More](!https://www.matterfoss.com/pl/default-ldap-group-constrained-team-channel.html)'
+                    defaultMessage='When enabled, adding and removing users from groups will add or remove them from this channel. The only way of inviting members to this channel is by adding the groups they belong to. [Learn More](!https://www.example.com/pl/default-ldap-group-constrained-team-channel.html)'
                 />
             )}
         />

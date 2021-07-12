@@ -108,7 +108,7 @@ exports[`components/ElasticSearchSettings should match snapshot, disabled 1`] = 
         }
         helpText={
           <FormattedMessage
-            defaultMessage="When true, Matterfoss will not require the Elasticsearch certificate to be signed by a trusted Certificate Authority."
+            defaultMessage="When true, MatterFOSS will not require the Elasticsearch certificate to be signed by a trusted Certificate Authority."
             id="admin.elasticsearch.skipTLSVerificationDescription"
           />
         }
@@ -216,7 +216,7 @@ exports[`components/ElasticSearchSettings should match snapshot, disabled 1`] = 
         }
         helpText={
           <FormattedMessage
-            defaultMessage="Tests if the Matterfoss server can connect to the Elasticsearch server specified. Testing the connection only saves the configuration if the test is successful. See log file for more detailed error messages."
+            defaultMessage="Tests if the MatterFOSS server can connect to the Elasticsearch server specified. Testing the connection only saves the configuration if the test is successful. See log file for more detailed error messages."
             id="admin.elasticsearch.testHelpText"
           />
         }
@@ -523,7 +523,7 @@ exports[`components/ElasticSearchSettings should match snapshot, enabled 1`] = `
         }
         helpText={
           <FormattedMessage
-            defaultMessage="When true, Matterfoss will not require the Elasticsearch certificate to be signed by a trusted Certificate Authority."
+            defaultMessage="When true, MatterFOSS will not require the Elasticsearch certificate to be signed by a trusted Certificate Authority."
             id="admin.elasticsearch.skipTLSVerificationDescription"
           />
         }
@@ -631,7 +631,7 @@ exports[`components/ElasticSearchSettings should match snapshot, enabled 1`] = `
         }
         helpText={
           <FormattedMessage
-            defaultMessage="Tests if the Matterfoss server can connect to the Elasticsearch server specified. Testing the connection only saves the configuration if the test is successful. See log file for more detailed error messages."
+            defaultMessage="Tests if the MatterFOSS server can connect to the Elasticsearch server specified. Testing the connection only saves the configuration if the test is successful. See log file for more detailed error messages."
             id="admin.elasticsearch.testHelpText"
           />
         }

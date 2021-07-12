@@ -219,7 +219,7 @@ export default class ManageLanguage extends React.PureComponent<Props, State> {
                     <br/>
                     <FormattedMarkdownMessage
                         id='user.settings.languages.promote'
-                        defaultMessage='Select which language Mattermost displays in the user interface.\n \nWould you like to help with translations? Join the [Mattermost Translation Server](!http://translate.mattermost.com/) to contribute.'
+                        defaultMessage='Select which language MatterFOSS displays in the user interface.\n \nWould you like to help with translations? Join the [Mattermost Translation Server](!http://translate.mattermost.com/) to contribute.'
                     />
                 </div>
             </div>

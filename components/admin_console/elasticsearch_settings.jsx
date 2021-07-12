@@ -214,7 +214,7 @@ export default class ElasticsearchSettings extends AdminSettings {
                     helpText={
                         <FormattedMessage
                             id='admin.elasticsearch.skipTLSVerificationDescription'
-                            defaultMessage='When true, Matterfoss will not require the Elasticsearch certificate to be signed by a trusted Certificate Authority.'
+                            defaultMessage='When true, MatterFOSS will not require the Elasticsearch certificate to be signed by a trusted Certificate Authority.'
                         />
                     }
                     value={this.state.skipTLSVerification}
@@ -287,7 +287,7 @@ export default class ElasticsearchSettings extends AdminSettings {
                     helpText={
                         <FormattedMessage
                             id='admin.elasticsearch.testHelpText'
-                            defaultMessage='Tests if the Matterfoss server can connect to the Elasticsearch server specified. Testing the connection only saves the configuration if the test is successful. See log file for more detailed error messages.'
+                            defaultMessage='Tests if the MatterFOSS server can connect to the Elasticsearch server specified. Testing the connection only saves the configuration if the test is successful. See log file for more detailed error messages.'
                         />
                     }
                     buttonText={

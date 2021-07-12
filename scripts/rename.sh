@@ -8,10 +8,10 @@ change_files() {
     while read -r x; do
         gawk -i inplace '{
             gsub(/mattermost/, "matterfoss");
-            gsub(/Mattermost/, "Matterfoss");
+            gsub(/Mattermost/, "MatterFOSS");
 
             /* Revert things that we actually dont want to change */
-            gsub(/Matterfoss, Inc. All Rights Reserved/, "Mattermost, Inc. All Rights Reserved");
+            gsub(/MatterFOSS, Inc. All Rights Reserved/, "Mattermost, Inc. All Rights Reserved");
 
             gsub(/matterfoss\/matterfoss-utilities/, "mattermost/mattermost-utilities");
             gsub(/matterfoss\/eslint-plugin-matterfoss/, "mattermost/eslint-plugin-mattermost");
@@ -27,7 +27,7 @@ change_files() {
 
 rename_themes() {
     mv images/themes/mattermost.png images/themes/matterfoss.png
-    mv images/themes/mattermost_dark.png images/themes/matterfoss_dark.png
+    mv images/themes/mattermost_dark.png images/themes/mattermost_dark.png
 }
 
 delete_files() {

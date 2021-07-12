@@ -100,7 +100,7 @@ export default class ClusterSettings extends AdminSettings {
                     <WarningIcon/>
                     <FormattedMarkdownMessage
                         id='admin.cluster.should_not_change'
-                        defaultMessage='WARNING: These settings may not sync with the other servers in the cluster. High Availability inter-node communication will not start until you modify the config.json to be identical on all servers and restart Mattermost. Please see the [documentation](!http://docs.mattermost.com/deployment/cluster.html) on how to add or remove a server from the cluster. If you are accessing the System Console through a load balancer and experiencing issues, please see the Troubleshooting Guide in our [documentation](!http://docs.mattermost.com/deployment/cluster.html).'
+                        defaultMessage='WARNING: These settings may not sync with the other servers in the cluster. High Availability inter-node communication will not start until you modify the config.json to be identical on all servers and restart MatterFOSS. Please see the [documentation](!http://docs.mattermost.com/deployment/cluster.html) on how to add or remove a server from the cluster. If you are accessing the System Console through a load balancer and experiencing issues, please see the Troubleshooting Guide in our [documentation](!http://docs.mattermost.com/deployment/cluster.html).'
                     />
                 </div>
             );
@@ -133,7 +133,7 @@ export default class ClusterSettings extends AdminSettings {
                     helpText={
                         <FormattedMarkdownMessage
                             id='admin.cluster.enableDescription'
-                            defaultMessage='When true, Mattermost will run in High Availability mode. Please see [documentation](!http://docs.mattermost.com/deployment/cluster.html) to learn more about configuring High Availability for Mattermost.'
+                            defaultMessage='When true, MatterFOSS will run in High Availability mode. Please see [documentation](!http://docs.mattermost.com/deployment/cluster.html) to learn more about configuring High Availability for MatterFOSS.'
                         />
                     }
                     value={this.state.Enable}

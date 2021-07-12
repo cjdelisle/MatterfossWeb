@@ -68,7 +68,7 @@ describe('Onboarding', () => {
         });
 
         // # Go through the initial tutorial
-        cy.get('.NextStepsView__header-headerText').findByText('Welcome to Mattermost').should('be.visible');
+        cy.get('.NextStepsView__header-headerText').findByText('Welcome to MatterFOSS').should('be.visible');
         cy.get('#tutorialNextButton').should('be.visible').click();
         cy.get('#tutorialIntroTwo').findByText('How Mattermost Works:').should('be.visible');
         cy.get('#tutorialNextButton').should('be.visible').click();
@@ -109,6 +109,6 @@ describe('Onboarding', () => {
         });
 
         // # Assert that the tutorials do not appear
-        cy.get('.NextStepsView__header-headerText').findByText('Welcome to Mattermost').should('not.exist');
+        cy.get('.NextStepsView__header-headerText').findByText('Welcome to MatterFOSS').should('not.exist');
     });
 });

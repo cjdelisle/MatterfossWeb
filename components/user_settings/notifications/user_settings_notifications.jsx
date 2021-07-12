@@ -413,7 +413,7 @@ export default class NotificationsTab extends React.PureComponent {
                             <div className='mt-5'>
                                 <FormattedMessage
                                     id='user.settings.push_notification.info'
-                                    defaultMessage='Notification alerts are pushed to your mobile device when there is activity in Matterfoss.'
+                                    defaultMessage='Notification alerts are pushed to your mobile device when there is activity in MatterFOSS.'
                                 />
                             </div>
                         </fieldset>

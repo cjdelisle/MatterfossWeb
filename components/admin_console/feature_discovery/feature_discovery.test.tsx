@@ -18,7 +18,7 @@ describe('components/feature_discovery', () => {
                     titleDefault='Foo'
                     copyID='translation.test.copy'
                     copyDefault={'Bar'}
-                    learnMoreURL='https://test.mattermost.com/secondary/'
+                    learnMoreURL='https://test.example.com/secondary/'
                     featureDiscoveryImage={<SamlSVG/>}
                     // eslint-disable-next-line @typescript-eslint/naming-convention
                     stats={{TOTAL_USERS: 20}}

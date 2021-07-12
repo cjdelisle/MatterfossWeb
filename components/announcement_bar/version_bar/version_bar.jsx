@@ -54,7 +54,7 @@ export default class VersionBar extends React.PureComponent {
                         <React.Fragment>
                             <FormattedMessage
                                 id='version_bar.new'
-                                defaultMessage='A new version of Matterfoss is available.'
+                                defaultMessage='A new version of MatterFOSS is available.'
                             />
                             {' '}
                             <a onClick={this.reloadPage}>

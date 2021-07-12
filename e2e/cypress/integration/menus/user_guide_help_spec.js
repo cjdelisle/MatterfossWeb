@@ -42,7 +42,7 @@ describe('Main menu', () => {
                 cy.get('#channelHeaderUserGuideButton').click();
                 cy.get('.dropdown-menu').should('be.visible').within(() => {
                     cy.get('#askTheCommunityLink').should('be.visible');
-                    cy.get('#askTheCommunityLink a').should('have.attr', 'href', 'https://matterfoss.com/pl/default-ask-matterfoss-community/');
+                    cy.get('#askTheCommunityLink a').should('have.attr', 'href', 'https://mattermost.com/pl/default-ask-matterfoss-community/');
 
                     cy.get('#helpResourcesLink').should('be.visible');
                     cy.get('#helpResourcesLink a').should('have.attr', 'href', testConfig.SupportSettings.HelpLink || HELP_LINK);

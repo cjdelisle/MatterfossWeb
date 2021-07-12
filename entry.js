@@ -8,7 +8,7 @@
 window.publicPath = process.env.PUBLIC_PATH || window.publicPath || '/static/'; // eslint-disable-line no-process-env
 __webpack_public_path__ = window.publicPath; // eslint-disable-line camelcase, @typescript-eslint/naming-convention, no-undef
 
-// Define the subpath at which Matterfoss is running. Extract this from the publicPath above to
+// Define the subpath at which MatterFOSS is running. Extract this from the publicPath above to
 // avoid depending on Redux state before it is even loaded. This actual global export is used
 // in a minimum of places, as it is preferred to leverage react-router, configured to use this
 // basename accordingly.

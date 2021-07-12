@@ -331,7 +331,7 @@ describe('components/AdminSidebar', () => {
             navigationBlocked: false,
             siteName: 'test snap',
             plugins: {
-                'matterfoss-autolink': samplePlugin1,
+                'mattermost-autolink': samplePlugin1,
             },
             onFilterChange: jest.fn(),
             actions: {
@@ -381,7 +381,7 @@ describe('components/AdminSidebar', () => {
             expect(generateIndex).toHaveBeenCalledTimes(0);
 
             wrapper.setProps({plugins: {
-                'matterfoss-autolink': samplePlugin1,
+                'mattermost-autolink': samplePlugin1,
             }});
             expect(generateIndex).toHaveBeenCalledTimes(0);
 
@@ -417,7 +417,7 @@ describe('components/AdminSidebar', () => {
             navigationBlocked: false,
             siteName: 'test snap',
             plugins: {
-                'matterfoss-autolink': samplePlugin1,
+                'mattermost-autolink': samplePlugin1,
             },
             onFilterChange: jest.fn(),
             actions: {
@@ -439,15 +439,15 @@ describe('components/AdminSidebar', () => {
         test('should filter plugins', () => {
             const wrapper = shallowWithIntl(<AdminSidebar {...props}/>);
 
-            idx.search.mockReturnValue(['plugin_matterfoss-autolink']);
+            idx.search.mockReturnValue(['plugin_mattermost-autolink']);
             wrapper.find('#adminSidebarFilter').simulate('change', {target: {value: 'autolink'}});
 
-            expect(wrapper.instance().state.sections).toEqual(['plugin_matterfoss-autolink']);
+            expect(wrapper.instance().state.sections).toEqual(['plugin_mattermost-autolink']);
             expect(wrapper).toMatchSnapshot();
             expect(wrapper.find('AdminSidebarCategory')).toHaveLength(1);
             expect(wrapper.find('AdminSidebarSection')).toHaveLength(1);
             const autoLinkPluginSection = wrapper.find('AdminSidebarSection').at(0);
-            expect(autoLinkPluginSection.prop('name')).toBe('plugins/plugin_matterfoss-autolink');
+            expect(autoLinkPluginSection.prop('name')).toBe('plugins/plugin_mattermost-autolink');
         });
     });
 });

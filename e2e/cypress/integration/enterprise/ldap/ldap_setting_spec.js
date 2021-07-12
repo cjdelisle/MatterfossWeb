@@ -70,7 +70,7 @@ describe('LDAP settings', () => {
                 username: 'test.two',
                 password: 'Password1',
             },
-            siteName: 'Mattermost',
+            siteName: 'MatterFOSS',
         };
 
         // # Login as a new LDAP user

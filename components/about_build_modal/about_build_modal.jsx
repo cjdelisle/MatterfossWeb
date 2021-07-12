@@ -1,4 +1,4 @@
-// Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
+// Copyright (c) 2015-present MatterFOSS All Rights Reserved.
 // See LICENSE.txt for license information.
 
 import PropTypes from 'prop-types';
@@ -77,7 +77,7 @@ export default class AboutBuildModal extends React.PureComponent {
             <div>
                 <FormattedMessage
                     id='about.teamEditionLearn'
-                    defaultMessage='Join the Matterfoss community at '
+                    defaultMessage='Join the MatterFOSS community at '
                 />
                 <a
                     target='_blank'
@@ -220,9 +220,9 @@ export default class AboutBuildModal extends React.PureComponent {
                                 defaultMessage={('Matterfoss is provided to under the terms of the GNU Affero GPL v3.0, ' +
                                 'you are entitled to access the source code of [Matterfoss](https://github.com/cjdelisle/Matterfoss) ' +
                                 'server and the [MatterfossWeb](https://github.com/cjdelisle/MatterfossWeb) front end. ' +
-                                'The Matterfoss logo is provided under Creative Commons Attribution license by ' +
+                                'The MatterFOSS logo is provided under Creative Commons Attribution license by ' +
                                 '[QualityIcons](https://thenounproject.com/nivya.becse/). If you are an administrator and ' +
-                                'you have made changes to your Matterfoss server, update this notice with links to your modified ' +
+                                'you have made changes to your MatterFOSS server, update this notice with links to your modified ' +
                                 'Matterfoss instance by editing about_build_modal.jsx')}
                             />
                         </div>
@@ -261,7 +261,7 @@ export default class AboutBuildModal extends React.PureComponent {
                             <div className='about-modal__copyright'>
                                 <FormattedMessage
                                     id='about.copyright'
-                                    defaultMessage='Copyright 2015 - {currentYear} Mattermost, Inc. and Matterfoss Developers All rights reserved'
+                                    defaultMessage='Copyright 2015 - {currentYear} MatterFOSS and MatterFOSS Developers All rights reserved'
                                     values={{
                                         currentYear: new Date().getFullYear(),
                                     }}

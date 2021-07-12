@@ -34,7 +34,7 @@ export default create({
     inputTextColor: 'black',
     inputBorderRadius: 4,
 
-    brandTitle: 'Matterfoss',
+    brandTitle: 'MatterFOSS',
     brandUrl: 'https://matterfoss.org',
     brandImage: 'https://www.matterfoss.org/wp-content/uploads/2016/03/logoHorizontal.png',
 });

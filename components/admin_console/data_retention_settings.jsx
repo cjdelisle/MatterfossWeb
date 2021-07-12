@@ -179,7 +179,7 @@ export default class DataRetentionSettingsOld extends AdminSettings {
                     helpText={
                         <FormattedMessage
                             id='admin.data_retention.messageRetentionDays.description'
-                            defaultMessage='Set how many days messages are kept in Matterfoss. Messages, including file attachments older than the duration you set will be deleted nightly. The minimum time is one day.'
+                            defaultMessage='Set how many days messages are kept in MatterFOSS. Messages, including file attachments older than the duration you set will be deleted nightly. The minimum time is one day.'
                         />
                     }
                     value={this.state.messageRetentionDays}
@@ -200,7 +200,7 @@ export default class DataRetentionSettingsOld extends AdminSettings {
                     helpText={
                         <FormattedMessage
                             id='admin.data_retention.fileRetentionDays.description'
-                            defaultMessage='Set how many days file uploads are kept in Matterfoss. Files older than the duration you set will be deleted nightly. The minimum time is one day.'
+                            defaultMessage='Set how many days file uploads are kept in MatterFOSS. Files older than the duration you set will be deleted nightly. The minimum time is one day.'
                         />
                     }
                     value={this.state.fileRetentionDays}
@@ -250,7 +250,7 @@ export default class DataRetentionSettingsOld extends AdminSettings {
                     helpText={
                         <FormattedMessage
                             id='admin.data_retention.enableMessageDeletion.description'
-                            defaultMessage='Set how long Matterfoss keeps messages in channels and direct messages.'
+                            defaultMessage='Set how long MatterFOSS keeps messages in channels and direct messages.'
                         />
                     }
                     value={this.state.enableMessageDeletion}
@@ -271,7 +271,7 @@ export default class DataRetentionSettingsOld extends AdminSettings {
                     helpText={
                         <FormattedMessage
                             id='admin.data_retention.enableFileDeletion.description'
-                            defaultMessage='Set how long Matterfoss keeps file uploads in channels and direct messages.'
+                            defaultMessage='Set how long MatterFOSS keeps file uploads in channels and direct messages.'
                         />
                     }
                     value={this.state.enableFileDeletion}

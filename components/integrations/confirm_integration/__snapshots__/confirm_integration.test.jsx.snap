@@ -34,7 +34,7 @@ exports[`components/integrations/ConfirmIntegration should match snapshot, comma
     </h4>
     <p>
       <injectIntl(FormattedMarkdownMessage)
-        defaultMessage="Your slash command is set up. The following token will be sent in the outgoing payload. Please use it to verify the request came from your Matterfoss team (details at [Slash Commands](!https://docs.matterfoss.com/developer/slash-commands.html))."
+        defaultMessage="Your slash command is set up. The following token will be sent in the outgoing payload. Please use it to verify the request came from your MatterFOSS team (details at [Slash Commands](!https://docs.matterfoss.com/developer/slash-commands.html))."
         id="add_command.doneHelp"
       />
     </p>
@@ -293,7 +293,7 @@ exports[`components/integrations/ConfirmIntegration should match snapshot, outgo
     </h4>
     <p>
       <injectIntl(FormattedMarkdownMessage)
-        defaultMessage="Your outgoing webhook is set up. The following token will be sent in the outgoing payload. Please use it to verify that the request came from your Matterfoss team (details at [Outgoing Webhooks](!https://docs.matterfoss.com/developer/webhooks-outgoing.html))."
+        defaultMessage="Your outgoing webhook is set up. The following token will be sent in the outgoing payload. Please use it to verify that the request came from your MatterFOSS team (details at [Outgoing Webhooks](!https://docs.matterfoss.com/developer/webhooks-outgoing.html))."
         id="add_outgoing_webhook.doneHelp"
       />
     </p>

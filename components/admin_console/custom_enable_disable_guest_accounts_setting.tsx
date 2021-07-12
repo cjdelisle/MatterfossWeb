@@ -71,7 +71,7 @@ export default class CustomEnableDisableGuestAccountsSetting extends React.PureC
                     message={
                         <FormattedMessage
                             id='admin.guest_access.disableConfirmMessage'
-                            defaultMessage='Disabling guest access will revoke all current Guest Account sessions. Guests will no longer be able to login and new guests cannot be invited into Matterfoss. Guest users will be marked as inactive in user lists. Enabling this feature will not reinstate previous guest accounts. Are you sure you wish to remove these users?'
+                            defaultMessage='Disabling guest access will revoke all current Guest Account sessions. Guests will no longer be able to login and new guests cannot be invited into MatterFOSS. Guest users will be marked as inactive in user lists. Enabling this feature will not reinstate previous guest accounts. Are you sure you wish to remove these users?'
                         />
                     }
                     confirmButtonText={

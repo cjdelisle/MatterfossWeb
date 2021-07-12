@@ -53,7 +53,7 @@ import LinkIcon from './link_icon';
 import LockIcon from './lock_icon';
 import MailIcon from './mail_icon';
 import MailPlusIcon from './mail_plus_icon';
-import MatterfossLogo from './matterfoss_logo';
+import MattermostLogo from './matterfoss_logo';
 import MemberIcon from './member_icon';
 import MentionsIcon from './mentions_icon';
 import MenuIcon from './menu_icon';
@@ -84,7 +84,7 @@ const icons = [
     FlagIconFilled, FlagIcon, GfycatIcon, GifReactionsIcon,
     GifSearchClearIcon, GifSearchIcon, GifTrendingIcon, GlobeIcon, InfoIcon,
     InfoSmallIcon, InviteIcon, LeaveTeamIcon, LinkIcon, LockIcon, MailIcon,
-    MailPlusIcon, MatterfossLogo, MemberIcon, MentionsIcon, MenuIcon,
+    MailPlusIcon, MattermostLogo, MemberIcon, MentionsIcon, MenuIcon,
     MessageIcon, PinIcon, ReplyIcon, ScrollToBottomIcon, SearchIcon, ShieldOutlineIcon,
     StatusAwayAvatarIcon, StatusAwayIcon, StatusDndAvatarIcon, StatusDndIcon,
     StatusOfflineAvatarIcon, StatusOfflineIcon, StatusOnlineAvatarIcon,

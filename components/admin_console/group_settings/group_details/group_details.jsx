@@ -552,7 +552,7 @@ export default class GroupDetails extends React.PureComponent {
                             titleId={t('admin.group_settings.group_detail.groupUsersTitle')}
                             titleDefault='Users'
                             subtitleId={t('admin.group_settings.group_detail.groupUsersDescription')}
-                            subtitleDefault='Listing of users in Mattermost associated with this group.'
+                            subtitleDefault='Listing of users in MatterFOSS associated with this group.'
                         >
                             <GroupUsers
                                 members={members}

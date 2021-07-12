@@ -4,13 +4,13 @@
 import React from 'react';
 import {FormattedMessage} from 'react-intl';
 
-export default class MatterfossLogo extends React.PureComponent {
+export default class MattermostLogo extends React.PureComponent {
     render() {
         return (
             <span {...this.props}>
                 <FormattedMessage
                     id='generic_icons.matterfoss'
-                    defaultMessage='Matterfoss Logo'
+                    defaultMessage='MatterFOSS Logo'
                 >
                     {(ariaLabel) => (
                         <svg

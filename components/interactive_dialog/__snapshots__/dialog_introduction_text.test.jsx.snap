@@ -31,12 +31,12 @@ exports[`components/DialogIntroductionText should render message with supported 
     }
   }
   id="testsupported"
-  value="**bold** *italic* [link](https://matterfoss.com/) <br/> [link target blank](!https://matterfoss.com/)"
+  value="**bold** *italic* [link](https://mattermost.com/) <br/> [link target blank](!https://mattermost.com/)"
 >
   <span
     dangerouslySetInnerHTML={
       Object {
-        "__html": "<p><strong>bold</strong> <em>italic</em> <a class=\\"theme markdown__link\\" href=\\"https://matterfoss.com/\\" rel=\\"noreferrer\\" target=\\"_blank\\">link</a> &lt;br/&gt; <a class=\\"theme markdown__link\\" href=\\"!https://matterfoss.com/\\" rel=\\"noreferrer\\" target=\\"_blank\\">link target blank</a></p>",
+        "__html": "<p><strong>bold</strong> <em>italic</em> <a class=\\"theme markdown__link\\" href=\\"https://mattermost.com/\\" rel=\\"noreferrer\\" target=\\"_blank\\">link</a> &lt;br/&gt; <a class=\\"theme markdown__link\\" href=\\"!https://mattermost.com/\\" rel=\\"noreferrer\\" target=\\"_blank\\">link target blank</a></p>",
       }
     }
     id="testsupported"

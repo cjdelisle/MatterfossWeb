@@ -119,7 +119,7 @@ export default class TutorialIntroScreens extends React.PureComponent<Props, Sta
                 <h1>
                     <FormattedMessage
                         id='tutorial_intro.screenOne.title2'
-                        defaultMessage='Mattermost'
+                        defaultMessage='MatterFOSS'
                     />
                 </h1>
                 <p>
@@ -192,7 +192,7 @@ export default class TutorialIntroScreens extends React.PureComponent<Props, Sta
                 <h3>
                     <FormattedMessage
                         id='tutorial_intro.screenTwo.title'
-                        defaultMessage='How Mattermost Works:'
+                        defaultMessage='How MatterFOSS Works:'
                     />
                 </h3>
                 <p>

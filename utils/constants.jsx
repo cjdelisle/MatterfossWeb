@@ -21,8 +21,8 @@ import githubIcon from 'images/themes/code_themes/github.png';
 import monokaiIcon from 'images/themes/code_themes/monokai.png';
 import solarizedDarkIcon from 'images/themes/code_themes/solarized-dark.png';
 import solarizedLightIcon from 'images/themes/code_themes/solarized-light.png';
-import matterfossThemeImage from 'images/themes/matterfoss.png';
-import matterfossDarkThemeImage from 'images/themes/matterfoss_dark.png';
+import mattermostThemeImage from 'images/themes/matterfoss.png';
+import mattermostDarkThemeImage from 'images/themes/mattermost_dark.png';
 import defaultThemeImage from 'images/themes/organization.png';
 import windows10ThemeImage from 'images/themes/windows_dark.png';
 import logoWebhook from 'images/webhook_icon.jpg';
@@ -720,7 +720,7 @@ export const DraggingStateTypes = {
 
 export const AboutLinks = {
     TERMS_OF_SERVICE: 'https://about.mattermost.com/default-terms/',
-    PRIVACY_POLICY: 'https://about.mattermost.com/default-privacy-policy/',
+    PRIVACY_POLICY: 'https://example.com/default-privacy-policy/',
 };
 
 export const CloudLinks = {
@@ -1098,7 +1098,7 @@ export const Constants = {
     EMOJI_PICKER_WIDTH_OFFSET: 295,
     THEMES: {
         default: {
-            type: 'Matterfoss',
+            type: 'Mattermost',
             sidebarBg: '#145dbf',
             sidebarText: '#ffffff',
             sidebarUnreadText: '#ffffff',
@@ -1123,7 +1123,7 @@ export const Constants = {
             mentionHighlightBg: '#ffe577',
             mentionHighlightLink: '#166de0',
             codeTheme: 'github',
-            image: matterfossThemeImage,
+            image: mattermostThemeImage,
         },
         organization: {
             type: 'Organization',
@@ -1153,8 +1153,8 @@ export const Constants = {
             codeTheme: 'github',
             image: defaultThemeImage,
         },
-        matterfossDark: {
-            type: 'Matterfoss Dark',
+        mattermostDark: {
+            type: 'Mattermost Dark',
             sidebarBg: '#1b2c3e',
             sidebarText: '#ffffff',
             sidebarUnreadText: '#ffffff',
@@ -1179,7 +1179,7 @@ export const Constants = {
             mentionHighlightBg: '#984063',
             mentionHighlightLink: '#a4ffeb',
             codeTheme: 'solarized-dark',
-            image: matterfossDarkThemeImage,
+            image: mattermostDarkThemeImage,
         },
         windows10: {
             type: 'Windows Dark',

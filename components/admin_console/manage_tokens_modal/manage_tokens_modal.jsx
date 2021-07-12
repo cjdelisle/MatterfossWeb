@@ -149,7 +149,7 @@ export default class ManageTokensModal extends React.PureComponent {
                 <div className='pt-3'>
                     <FormattedMarkdownMessage
                         id='admin.manage_tokens.userAccessTokensDescription'
-                        defaultMessage='Personal access tokens function similarly to session tokens and can be used by integrations to [interact with this Matterfoss server](!https://about.matterfoss.com/default-api-authentication). Tokens are disabled if the user is deactivated. Learn more about [personal access tokens](!https://about.matterfoss.com/default-user-access-tokens).'
+                        defaultMessage='Personal access tokens function similarly to session tokens and can be used by integrations to [interact with this MatterFOSS server](!https://about.matterfoss.com/default-api-authentication). Tokens are disabled if the user is deactivated. Learn more about [personal access tokens](!https://about.matterfoss.com/default-user-access-tokens).'
                     />
                 </div>
                 <div className='manage-teams__teams'>

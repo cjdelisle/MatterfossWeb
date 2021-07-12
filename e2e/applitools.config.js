@@ -4,7 +4,7 @@
 // See https://github.com/applitools/eyes.sdk.javascript1/tree/master/packages/eyes-cypress#advanced-configuration
 
 module.exports = {
-    appName: 'Matterfoss Webapp UI',
+    appName: 'MatterFOSS Webapp UI',
     accessibilityValidation: {level: 'AA', guidelinesVersion: 'WCAG_2_0'},
     batchName: 'Webapp - master (dev)',
     branch: 'master-dev',

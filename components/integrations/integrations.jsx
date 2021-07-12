@@ -147,7 +147,7 @@ export default class Integrations extends React.PureComponent {
                         description={
                             <FormattedMessage
                                 id='integrations.oauthApps.description'
-                                defaultMessage='Auth 2.0 allows external applications to make authorized requests to the Matterfoss API'
+                                defaultMessage='Auth 2.0 allows external applications to make authorized requests to the MatterFOSS API'
                             />
                         }
                         link={'/' + this.props.team.name + '/integrations/oauth2-apps'}
@@ -172,7 +172,7 @@ export default class Integrations extends React.PureComponent {
                     description={
                         <FormattedMessage
                             id='bots.manage.description'
-                            defaultMessage='Use bot accounts to integrate with Matterfoss through plugins or the API'
+                            defaultMessage='Use bot accounts to integrate with MatterFOSS through plugins or the API'
                         />
                     }
                     link={'/' + this.props.team.name + '/integrations/bots'}
@@ -193,7 +193,7 @@ export default class Integrations extends React.PureComponent {
                 <div className='backstage-list__help'>
                     <FormattedMessage
                         id='integrations.help'
-                        defaultMessage='Visit the {appDirectory} to find self-hosted, third-party apps and integrations for Matterfoss.'
+                        defaultMessage='Visit the {appDirectory} to find self-hosted, third-party apps and integrations for MatterFOSS.'
                         values={{
                             appDirectory: (
                                 <a

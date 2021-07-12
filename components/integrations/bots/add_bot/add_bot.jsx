@@ -644,7 +644,7 @@ export default class AddBot extends React.PureComponent {
                                 <div className='form__help'>
                                     <FormattedMessage
                                         id='bot.add.post_all.help'
-                                        defaultMessage='Bot will have access to post to all Matterfoss channels including direct messages.'
+                                        defaultMessage='Bot will have access to post to all MatterFOSS channels including direct messages.'
                                     />
                                 </div>
                             </div>
@@ -678,7 +678,7 @@ export default class AddBot extends React.PureComponent {
                                 <div className='form__help'>
                                     <FormattedMessage
                                         id='bot.add.post_channels.help'
-                                        defaultMessage='Bot will have access to post to all Matterfoss public channels.'
+                                        defaultMessage='Bot will have access to post to all MatterFOSS public channels.'
                                     />
                                 </div>
                             </div>

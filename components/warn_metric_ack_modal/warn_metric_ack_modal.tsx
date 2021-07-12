@@ -109,7 +109,7 @@ export default class WarnMetricAckModal extends React.PureComponent<Props, State
         const mailSubject = 'Mattermost Contact Us request';
         let mailBody = 'Mattermost Contact Us request.';
         if (this.props.warnMetricStatus.id === WarnMetricTypes.SYSTEM_WARN_METRIC_NUMBER_OF_ACTIVE_USERS_500) {
-            mailBody = 'Mattermost Contact Us request.\r\nMy team now has 500 users, and I am considering Matterfoss.';
+            mailBody = 'Mattermost Contact Us request.\r\nMy team now has 500 users, and I am considering MatterFOSS.';
         } else if (this.props.warnMetricStatus.id === WarnMetricTypes.SYSTEM_WARN_METRIC_NUMBER_OF_POSTS_2M) {
             mailBody = 'Mattermost Contact Us request.\r\nI am interested in learning more about improving performance with Elasticsearch.';
         }
@@ -144,7 +144,7 @@ export default class WarnMetricAckModal extends React.PureComponent<Props, State
                         values={{
                             link: (
                                 <WarnMetricAckErrorLink
-                                    url={mailToLinkText}
+                                    url=''
                                     messageId={t('warn_metric_ack_modal.mailto.link')}
                                     forceAck={true}
                                     defaultMessage='email us'
@@ -193,7 +193,7 @@ export default class WarnMetricAckModal extends React.PureComponent<Props, State
             descriptionText = (
                 <FormattedMessage
                     id='warn_metric_ack_modal.number_of_posts.description'
-                    defaultMessage='Your Mattermost system has a large number of messages. The default Mattermost database search starts to show performance degradation at around 2.5 million posts. With over 5 million posts, Elasticsearch can help avoid significant performance issues, such as timeouts, with search and at-mentions. Contact us to learn more and let us know how we can help.'
+                    defaultMessage='Your MatterFOSS system has a large number of messages. The default MatterFOSS database search starts to show performance degradation at around 2.5 million posts. With over 5 million posts, Elasticsearch can help avoid significant performance issues, such as timeouts, with search and at-mentions. Contact us to learn more and let us know how we can help.'
                     values={{
                         limit: this.props.warnMetricStatus.limit,
                     }}
@@ -208,7 +208,7 @@ export default class WarnMetricAckModal extends React.PureComponent<Props, State
             >
                 <FormattedMessage
                     id='warn_metric_ack_modal.subtext'
-                    defaultMessage='By clicking Acknowledge, you will be sharing your information with Mattermost Inc. {link}'
+                    defaultMessage='By clicking Acknowledge, you will not be sharing your information with MatterFOSS {link}'
                     values={{
                         link: (
                             <ErrorLink

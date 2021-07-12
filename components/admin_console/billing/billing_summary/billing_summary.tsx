@@ -82,7 +82,7 @@ export const upgradeFreeTierMattermostCloud = (onUpgradeMattermostCloud: () => v
         >
             <FormattedMessage
                 id='admin.billing.subscription.upgradeMattermostCloud.upgradeButton'
-                defaultMessage='Upgrade Mattermost Cloud'
+                defaultMessage='Upgrade MatterFOSS'
             />
         </button>
     </div>

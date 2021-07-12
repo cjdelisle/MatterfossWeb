@@ -22,7 +22,7 @@ exports[`components/tutorial/tutorial_intro_screens/TutorialIntroScreens should 
         </h3>
         <h1>
           <FormattedMessage
-            defaultMessage="Mattermost"
+            defaultMessage="MatterFOSS"
             id="tutorial_intro.screenOne.title2"
           />
         </h1>

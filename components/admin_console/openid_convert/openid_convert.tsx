@@ -112,7 +112,7 @@ export default class OpenIdConvert extends React.PureComponent<Props, State> {
                         </button>
                         <a
                             className='btn-secondary'
-                            href='https://www.mattermost.com/default-openid-docs'
+                            href='https://www.example.com/default-openid-docs'
                             data-testid='openIdLearnMore'
                             target='_blank'
                             rel='noopener noreferrer'

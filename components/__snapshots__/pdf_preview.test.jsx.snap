@@ -17,6 +17,6 @@ exports[`component/PDFPreview should match snapshot, not successful 1`] = `
       "extension": "pdf",
     }
   }
-  fileUrl="https://pre-release.matterfoss.com/api/v4/files/ips59w4w9jnfbrs3o94m1dbdie"
+  fileUrl="https://pre-release.example.com/api/v4/files/ips59w4w9jnfbrs3o94m1dbdie"
 />
 `;

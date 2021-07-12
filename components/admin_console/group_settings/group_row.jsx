@@ -15,7 +15,7 @@ export default class GroupRow extends React.PureComponent {
     static propTypes = {
         primary_key: PropTypes.string.isRequired,
         name: PropTypes.string.isRequired,
-        matterfoss_group_id: PropTypes.string,
+        mattermost_group_id: PropTypes.string,
         has_syncables: PropTypes.bool,
         checked: PropTypes.bool,
         failed: PropTypes.bool,
@@ -64,13 +64,13 @@ export default class GroupRow extends React.PureComponent {
     }
 
     renderActions = () => {
-        if (!this.props.matterfoss_group_id) {
+        if (!this.props.mattermost_group_id) {
             return null;
         }
         if (this.props.has_syncables) {
             return (
                 <Link
-                    to={'/admin_console/user_management/groups/' + this.props.matterfoss_group_id}
+                    to={'/admin_console/user_management/groups/' + this.props.mattermost_group_id}
                     id={`${this.props.name}_edit`}
                 >
                     <FormattedMessage
@@ -82,7 +82,7 @@ export default class GroupRow extends React.PureComponent {
         }
         return (
             <Link
-                to={'/admin_console/user_management/groups/' + this.props.matterfoss_group_id}
+                to={'/admin_console/user_management/groups/' + this.props.mattermost_group_id}
                 id={`${this.props.name}_configure`}
             >
                 <FormattedMessage
@@ -97,16 +97,16 @@ export default class GroupRow extends React.PureComponent {
         if (this.state.loading) {
             return (
                 <a href='#'>
-                    {this.props.matterfoss_group_id &&
+                    {this.props.mattermost_group_id &&
                         <LoadingSpinner text={localizeMessage('admin.group_settings.group_row.unlinking', 'Unlinking')}/>
                     }
-                    {!this.props.matterfoss_group_id &&
+                    {!this.props.mattermost_group_id &&
                         <LoadingSpinner text={localizeMessage('admin.group_settings.group_row.linking', 'Linking')}/>
                     }
                 </a>
             );
         }
-        if (this.props.matterfoss_group_id) {
+        if (this.props.mattermost_group_id) {
             if (this.props.failed) {
                 return (
                     <a

@@ -106,7 +106,7 @@ describe('Keyboard shortcut CTRL/CMD+Shift+\\ for adding reaction to last messag
     });
 
     it('MM-T4059_3 Do not open emoji picker if any modal is open', () => {
-        ['Account Settings', 'View Members', 'About Mattermost'].forEach((modal) => {
+        ['Account Settings', 'View Members', 'About MatterFOSS'].forEach((modal) => {
             // # Open the modal and do keyboard shortcut
             cy.uiOpenMainMenu(modal);
             doReactToLastMessageShortcut();

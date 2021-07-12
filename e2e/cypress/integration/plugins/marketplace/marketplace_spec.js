@@ -381,7 +381,7 @@ describe('Plugin Marketplace', () => {
             cy.get('#marketplace-plugin-github').find('.tag').should('be.visible').and('to.contain', 'OFFICIAL').trigger('mouseover');
 
             // * Verify tooltip is shown after click the label
-            cy.get('div.tooltip-inner').should('be.visible').and('contain', 'This plugin is maintained by Matterfoss');
+            cy.get('div.tooltip-inner').should('be.visible').and('contain', 'This plugin is maintained by MatterFOSS');
         });
     });
 

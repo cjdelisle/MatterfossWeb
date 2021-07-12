@@ -36,7 +36,7 @@ describe('System Console - Non-Enterprise', () => {
             url: 'admin_console/reporting/server_logs',
         },
         {
-            header: 'Matterfoss Users',
+            header: 'MatterFOSS Users',
             sidebar: 'Users',
             url: 'admin_console/user_management/users',
         },
@@ -169,7 +169,7 @@ describe('System Console - Non-Enterprise', () => {
 
     before(() => {
         const newSettings = {
-            TeamSettings: {SiteName: 'Matterfoss'},
+            TeamSettings: {siteName: 'MatterFOSS'},
         };
         cy.apiUpdateConfig(newSettings);
 

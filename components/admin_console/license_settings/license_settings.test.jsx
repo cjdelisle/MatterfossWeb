@@ -30,7 +30,7 @@ describe('components/admin_console/license_settings/LicenseSettings', () => {
             ExpiresAt: '1620335443650',
             SkuShortName: 'SkuName',
             Name: 'LicenseName',
-            Company: 'Mattermost Inc.',
+            Company: 'MatterFOSS',
             Users: '100',
         },
         upgradedFromTE: false,

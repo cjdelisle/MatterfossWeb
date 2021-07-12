@@ -164,7 +164,7 @@ class UserLimitAnnouncementBar extends React.PureComponent<Props> {
                 handleClose={this.handleClose}
                 onButtonClick={this.showModal}
                 modalButtonText={t('admin.billing.subscription.upgradeMattermostCloud.upgradeButton')}
-                modalButtonDefaultText={'Upgrade Mattermost Cloud'}
+                modalButtonDefaultText={'Upgrade MatterFOSS'}
                 message={dismissable ? t('upgrade.cloud_banner_reached') : t('upgrade.cloud_banner_over')}
                 showLinkAsButton={true}
             />

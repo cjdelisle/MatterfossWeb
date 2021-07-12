@@ -506,7 +506,7 @@ Cypress.Commands.add('minDisplaySettings', () => {
     cy.get('#languagesEdit').should('be.visible', 'contain', 'Edit');
 });
 
-// Reverts theme color changes to the default Matterfoss theme
+// Reverts theme color changes to the default MatterFOSS theme
 Cypress.Commands.add('defaultTheme', (username) => {
     cy.toAccountSettingsModal(username);
     cy.get('#displayButton').click();

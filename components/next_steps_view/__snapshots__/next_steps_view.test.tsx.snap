@@ -19,8 +19,8 @@ exports[`components/next_steps_view should match snapshot 1`] = `
           className="NextStepsView__header-headerTopText"
         >
           <FormattedMessage
-            defaultMessage="Welcome to Mattermost"
-            id="next_steps_view.welcomeToMattermost"
+            defaultMessage="Welcome to MatterFOSS"
+            id="next_steps_view.welcomeToMatterFOSS"
           />
         </h1>
         <h2

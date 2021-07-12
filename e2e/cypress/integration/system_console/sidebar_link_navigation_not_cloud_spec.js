@@ -35,7 +35,7 @@ describe('System Console - Non-Enterprise', () => {
         cy.shouldNotRunOnCloudEdition();
 
         const newSettings = {
-            TeamSettings: {SiteName: 'Mattermost'},
+            TeamSettings: {siteName: 'MatterFOSS'},
         };
         cy.apiUpdateConfig(newSettings);
 

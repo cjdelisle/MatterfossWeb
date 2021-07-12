@@ -133,14 +133,14 @@ export default class PushSettings extends AdminSettings {
             pushServerHelpText = (
                 <FormattedMarkdownMessage
                     id='admin.email.mhpnsHelp'
-                    defaultMessage='Download [Matterfoss iOS app](!https://about.mattermost.com/matterfoss-ios-app/) from iTunes. Download [Matterfoss Android app](!https://about.mattermost.com/matterfoss-android-app/) from Google Play. Learn more about the [Matterfoss Hosted Push Notification Service](!https://about.mattermost.com/default-hpns/).'
+                    defaultMessage='Download [MatterFOSS iOS app](!https://about.mattermost.com/matterfoss-ios-app/) from iTunes. Download [MatterFOSS Android app](!https://about.mattermost.com/matterfoss-android-app/) from Google Play. Learn more about the [MatterFOSS Hosted Push Notification Service](!https://about.mattermost.com/default-hpns/).'
                 />
             );
         } else if (this.state.pushNotificationServerType === PUSH_NOTIFICATIONS_MTPNS) {
             pushServerHelpText = (
                 <FormattedMarkdownMessage
                     id='admin.email.mtpnsHelp'
-                    defaultMessage='Download [Matterfoss iOS app](!https://about.mattermost.com/matterfoss-ios-app/) from iTunes. Download [Matterfoss Android app](!https://about.mattermost.com/matterfoss-android-app/) from Google Play. Learn more about the [Matterfoss Test Push Notification Service](!https://about.mattermost.com/default-tpns/).'
+                    defaultMessage='Download [MatterFOSS iOS app](!https://about.mattermost.com/matterfoss-ios-app/) from iTunes. Download [MatterFOSS Android app](!https://about.mattermost.com/matterfoss-android-app/) from Google Play. Learn more about the [MatterFOSS Test Push Notification Service](!https://about.mattermost.com/default-tpns/).'
                 />
             );
         } else {
@@ -167,7 +167,7 @@ export default class PushSettings extends AdminSettings {
                         />
                         <FormattedMarkdownMessage
                             id='admin.email.agreeHPNS'
-                            defaultMessage=' I understand and accept the Matterfoss Hosted Push Notification Service [Terms of Service](!https://about.mattermost.com/hpns-terms/) and [Privacy Policy](!https://about.mattermost.com/hpns-privacy/).'
+                            defaultMessage=' I understand and accept the MatterFOSS Hosted Push Notification Service [Terms of Service](!https://about.mattermost.com/hpns-terms/) and [Privacy Policy](!https://about.mattermost.com/hpns-privacy/).'
                         />
                     </div>
                 </div>

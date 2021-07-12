@@ -120,9 +120,9 @@ describe('Onboarding', () => {
             cy.get('#sidebarItem_town-square').should('exist');
         });
 
-        // * Check that the 'Welcome to Mattermost' message is visible
+        // * Check that the 'Welcome to MatterFOSS' message is visible
         if (isCloudLicensed) {
-            cy.get('.NextStepsView__header-headerText').findByText('Welcome to Mattermost').should('be.visible');
+            cy.get('.NextStepsView__header-headerText').findByText('Welcome to MatterFOSS').should('be.visible');
         } else {
             cy.get('#tutorialIntroOne').should('be.visible').
                 and('contain', 'Welcome to:').

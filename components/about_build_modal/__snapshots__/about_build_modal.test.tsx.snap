@@ -45,7 +45,7 @@ exports[`components/AboutBuildModal should match snapshot for cloud edition 1`] 
         id="about.title"
         values={
           Object {
-            "appTitle": "Mattermost",
+            "appTitle": "MatterFOSS",
           }
         }
       />
@@ -67,7 +67,7 @@ exports[`components/AboutBuildModal should match snapshot for cloud edition 1`] 
         <h3
           className="about-modal__title"
         >
-          Mattermost
+          MatterFOSS
            
           <FormattedMessage
             defaultMessage="Cloud"
@@ -87,7 +87,7 @@ exports[`components/AboutBuildModal should match snapshot for cloud edition 1`] 
         >
           <div>
             <FormattedMessage
-              defaultMessage="Mattermost Version:"
+              defaultMessage="MatterFOSS Version:"
               id="about.version"
             />
             <span
@@ -104,13 +104,13 @@ exports[`components/AboutBuildModal should match snapshot for cloud edition 1`] 
             defaultMessage="Licensed to:"
             id="about.licensed"
           />
-           Mattermost Inc
+           MatterFOSS
         </div>
         <div
           className="about-footer"
         >
           <injectIntl(FormattedMarkdownMessage)
-            defaultMessage="Mattermost is made possible by the open source software used in our [server](!https://about.mattermost.com/platform-notice-txt/), [desktop](!https://about.mattermost.com/desktop-notice-txt/) and [mobile](!https://about.mattermost.com/mobile-notice-txt/) apps."
+            defaultMessage="MatterFOSS is made possible by the open source software used in our [server](!https://about.mattermost.com/platform-notice-txt/), [desktop](!https://about.mattermost.com/desktop-notice-txt/) and [mobile](!https://about.mattermost.com/mobile-notice-txt/) apps."
             id="about.notice"
           />
           <div
@@ -208,7 +208,7 @@ exports[`components/AboutBuildModal should match snapshot for enterprise edition
         id="about.title"
         values={
           Object {
-            "appTitle": "Mattermost",
+            "appTitle": "MatterFOSS",
           }
         }
       />
@@ -230,7 +230,7 @@ exports[`components/AboutBuildModal should match snapshot for enterprise edition
         <h3
           className="about-modal__title"
         >
-          Mattermost
+          MatterFOSS
            
           <FormattedMessage
             defaultMessage="Enterprise Edition"
@@ -250,7 +250,7 @@ exports[`components/AboutBuildModal should match snapshot for enterprise edition
         >
           <div>
             <FormattedMessage
-              defaultMessage="Mattermost Version:"
+              defaultMessage="MatterFOSS Version:"
               id="about.version"
             />
             <span
@@ -286,7 +286,7 @@ exports[`components/AboutBuildModal should match snapshot for enterprise edition
             id="about.licensed"
           />
           <Nbsp />
-          Mattermost Inc
+          MatterFOSS
         </div>
       </div>
     </div>
@@ -338,7 +338,7 @@ exports[`components/AboutBuildModal should match snapshot for enterprise edition
           </a>
            - 
           <a
-            href="https://about.mattermost.com/default-privacy-policy/"
+            href="https://example.com/default-privacy-policy/"
             id="privacyLink"
             rel="noopener noreferrer"
             target="_blank"
@@ -356,7 +356,7 @@ exports[`components/AboutBuildModal should match snapshot for enterprise edition
     >
       <p>
         <injectIntl(FormattedMarkdownMessage)
-          defaultMessage="Mattermost is made possible by the open source software used in our [server](!https://about.mattermost.com/platform-notice-txt/), [desktop](!https://about.mattermost.com/desktop-notice-txt/) and [mobile](!https://about.mattermost.com/mobile-notice-txt/) apps."
+          defaultMessage="MatterFOSS is made possible by the open source software used in our [server](!https://about.mattermost.com/platform-notice-txt/), [desktop](!https://about.mattermost.com/desktop-notice-txt/) and [mobile](!https://about.mattermost.com/mobile-notice-txt/) apps."
           id="about.notice"
         />
       </p>
@@ -444,7 +444,7 @@ exports[`components/AboutBuildModal should match snapshot for team edition 1`] =
         id="about.title"
         values={
           Object {
-            "appTitle": "Mattermost",
+            "appTitle": "MatterFOSS",
           }
         }
       />
@@ -466,7 +466,7 @@ exports[`components/AboutBuildModal should match snapshot for team edition 1`] =
         <h3
           className="about-modal__title"
         >
-          Mattermost
+          MatterFOSS
            
           <FormattedMessage
             defaultMessage="Team Edition"
@@ -486,7 +486,7 @@ exports[`components/AboutBuildModal should match snapshot for team edition 1`] =
         >
           <div>
             <FormattedMessage
-              defaultMessage="Mattermost Version:"
+              defaultMessage="MatterFOSS Version:"
               id="about.version"
             />
             <span
@@ -521,7 +521,7 @@ exports[`components/AboutBuildModal should match snapshot for team edition 1`] =
     >
       <div>
         <FormattedMessage
-          defaultMessage="Join the Mattermost community at "
+          defaultMessage="Join the MatterFOSS community at "
           id="about.teamEditionLearn"
         />
         <a
@@ -564,7 +564,7 @@ exports[`components/AboutBuildModal should match snapshot for team edition 1`] =
           </a>
            - 
           <a
-            href="https://about.mattermost.com/default-privacy-policy/"
+            href="https://example.com/default-privacy-policy/"
             id="privacyLink"
             rel="noopener noreferrer"
             target="_blank"
@@ -582,7 +582,7 @@ exports[`components/AboutBuildModal should match snapshot for team edition 1`] =
     >
       <p>
         <injectIntl(FormattedMarkdownMessage)
-          defaultMessage="Mattermost is made possible by the open source software used in our [server](!https://about.mattermost.com/platform-notice-txt/), [desktop](!https://about.mattermost.com/desktop-notice-txt/) and [mobile](!https://about.mattermost.com/mobile-notice-txt/) apps."
+          defaultMessage="MatterFOSS is made possible by the open source software used in our [server](!https://about.mattermost.com/platform-notice-txt/), [desktop](!https://about.mattermost.com/desktop-notice-txt/) and [mobile](!https://about.mattermost.com/mobile-notice-txt/) apps."
           id="about.notice"
         />
       </p>
@@ -669,7 +669,7 @@ exports[`components/AboutBuildModal should show ci if a ci build 1`] = `
         id="about.title"
         values={
           Object {
-            "appTitle": "Mattermost",
+            "appTitle": "MatterFOSS",
           }
         }
       />
@@ -691,7 +691,7 @@ exports[`components/AboutBuildModal should show ci if a ci build 1`] = `
         <h3
           className="about-modal__title"
         >
-          Mattermost
+          MatterFOSS
            
           <FormattedMessage
             defaultMessage="Team Edition"
@@ -711,7 +711,7 @@ exports[`components/AboutBuildModal should show ci if a ci build 1`] = `
         >
           <div>
             <FormattedMessage
-              defaultMessage="Mattermost Version:"
+              defaultMessage="MatterFOSS Version:"
               id="about.version"
             />
             <span
@@ -757,7 +757,7 @@ exports[`components/AboutBuildModal should show ci if a ci build 1`] = `
     >
       <div>
         <FormattedMessage
-          defaultMessage="Join the Mattermost community at "
+          defaultMessage="Join the MatterFOSS community at "
           id="about.teamEditionLearn"
         />
         <a
@@ -800,7 +800,7 @@ exports[`components/AboutBuildModal should show ci if a ci build 1`] = `
           </a>
            - 
           <a
-            href="https://about.mattermost.com/default-privacy-policy/"
+            href="https://example.com/default-privacy-policy/"
             id="privacyLink"
             rel="noopener noreferrer"
             target="_blank"
@@ -818,7 +818,7 @@ exports[`components/AboutBuildModal should show ci if a ci build 1`] = `
     >
       <p>
         <injectIntl(FormattedMarkdownMessage)
-          defaultMessage="Mattermost is made possible by the open source software used in our [server](!https://about.mattermost.com/platform-notice-txt/), [desktop](!https://about.mattermost.com/desktop-notice-txt/) and [mobile](!https://about.mattermost.com/mobile-notice-txt/) apps."
+          defaultMessage="MatterFOSS is made possible by the open source software used in our [server](!https://about.mattermost.com/platform-notice-txt/), [desktop](!https://about.mattermost.com/desktop-notice-txt/) and [mobile](!https://about.mattermost.com/mobile-notice-txt/) apps."
           id="about.notice"
         />
       </p>
@@ -905,7 +905,7 @@ exports[`components/AboutBuildModal should show dev if this is a dev build 1`] =
         id="about.title"
         values={
           Object {
-            "appTitle": "Mattermost",
+            "appTitle": "MatterFOSS",
           }
         }
       />
@@ -927,7 +927,7 @@ exports[`components/AboutBuildModal should show dev if this is a dev build 1`] =
         <h3
           className="about-modal__title"
         >
-          Mattermost
+          MatterFOSS
            
           <FormattedMessage
             defaultMessage="Team Edition"
@@ -947,7 +947,7 @@ exports[`components/AboutBuildModal should show dev if this is a dev build 1`] =
         >
           <div>
             <FormattedMessage
-              defaultMessage="Mattermost Version:"
+              defaultMessage="MatterFOSS Version:"
               id="about.version"
             />
             <span
@@ -982,7 +982,7 @@ exports[`components/AboutBuildModal should show dev if this is a dev build 1`] =
     >
       <div>
         <FormattedMessage
-          defaultMessage="Join the Mattermost community at "
+          defaultMessage="Join the MatterFOSS community at "
           id="about.teamEditionLearn"
         />
         <a
@@ -1025,7 +1025,7 @@ exports[`components/AboutBuildModal should show dev if this is a dev build 1`] =
           </a>
            - 
           <a
-            href="https://about.mattermost.com/default-privacy-policy/"
+            href="https://example.com/default-privacy-policy/"
             id="privacyLink"
             rel="noopener noreferrer"
             target="_blank"
@@ -1043,7 +1043,7 @@ exports[`components/AboutBuildModal should show dev if this is a dev build 1`] =
     >
       <p>
         <injectIntl(FormattedMarkdownMessage)
-          defaultMessage="Mattermost is made possible by the open source software used in our [server](!https://about.mattermost.com/platform-notice-txt/), [desktop](!https://about.mattermost.com/desktop-notice-txt/) and [mobile](!https://about.mattermost.com/mobile-notice-txt/) apps."
+          defaultMessage="MatterFOSS is made possible by the open source software used in our [server](!https://about.mattermost.com/platform-notice-txt/), [desktop](!https://about.mattermost.com/desktop-notice-txt/) and [mobile](!https://about.mattermost.com/mobile-notice-txt/) apps."
           id="about.notice"
         />
       </p>
