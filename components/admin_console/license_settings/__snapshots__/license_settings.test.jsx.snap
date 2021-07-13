@@ -199,43 +199,6 @@ exports[`components/admin_console/license_settings/LicenseSettings load screen w
               <p>
                 MatterFOSS.
               </p>
-              <div>
-                <p>
-                  <button
-                    className="btn btn-primary"
-                    onClick={[Function]}
-                    type="button"
-                  >
-                    <LoadingWrapper
-                      loading={true}
-                      text={
-                        <FormattedMessage
-                          defaultMessage="Upgrading {percentage}%"
-                          id="admin.license.enterprise.upgrading"
-                          values={
-                            Object {
-                              "percentage": 42,
-                            }
-                          }
-                        />
-                      }
-                    >
-                      <FormattedMessage
-                        defaultMessage=""
-                        id="admin.license.enterprise.upgrade"
-                      />
-                    </LoadingWrapper>
-                  </button>
-                </p>
-                <p
-                  className="upgrade-legal-terms"
-                >
-                  <injectIntl(FormattedMarkdownMessage)
-                    defaultMessage=""
-                    id="admin.license.enterprise.upgrade.accept-terms"
-                  />
-                </p>
-              </div>
             </div>
           </div>
         </div>
@@ -1085,43 +1048,6 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
               <p>
                 MatterFOSS.
               </p>
-              <div>
-                <p>
-                  <button
-                    className="btn btn-primary"
-                    onClick={[Function]}
-                    type="button"
-                  >
-                    <LoadingWrapper
-                      loading={false}
-                      text={
-                        <FormattedMessage
-                          defaultMessage="Upgrading {percentage}%"
-                          id="admin.license.enterprise.upgrading"
-                          values={
-                            Object {
-                              "percentage": 0,
-                            }
-                          }
-                        />
-                      }
-                    >
-                      <FormattedMessage
-                        defaultMessage=""
-                        id="admin.license.enterprise.upgrade"
-                      />
-                    </LoadingWrapper>
-                  </button>
-                </p>
-                <p
-                  className="upgrade-legal-terms"
-                >
-                  <injectIntl(FormattedMarkdownMessage)
-                    defaultMessage=""
-                    id="admin.license.enterprise.upgrade.accept-terms"
-                  />
-                </p>
-              </div>
             </div>
           </div>
         </div>
@@ -1225,43 +1151,6 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
               <p>
                 MatterFOSS.
               </p>
-              <div>
-                <p>
-                  <button
-                    className="btn btn-primary"
-                    onClick={[Function]}
-                    type="button"
-                  >
-                    <LoadingWrapper
-                      loading={false}
-                      text={
-                        <FormattedMessage
-                          defaultMessage="Upgrading {percentage}%"
-                          id="admin.license.enterprise.upgrading"
-                          values={
-                            Object {
-                              "percentage": 0,
-                            }
-                          }
-                        />
-                      }
-                    >
-                      <FormattedMessage
-                        defaultMessage=""
-                        id="admin.license.enterprise.upgrade"
-                      />
-                    </LoadingWrapper>
-                  </button>
-                </p>
-                <p
-                  className="upgrade-legal-terms"
-                >
-                  <injectIntl(FormattedMarkdownMessage)
-                    defaultMessage=""
-                    id="admin.license.enterprise.upgrade.accept-terms"
-                  />
-                </p>
-              </div>
             </div>
           </div>
         </div>
