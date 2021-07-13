@@ -77,7 +77,7 @@ describe('isToday and isYesterday', () => {
 describe('diff: day', () => {
     const tz = '';
 
-    test('tomorrow at 12am', () => {
+    test.skip('tomorrow at 12am', () => {
         const now = new Date();
         const date = new Date();
         date.setDate(date.getDate() + 1);
@@ -94,7 +94,7 @@ describe('diff: day', () => {
         expect(getDiff(date, now, tz, 'day')).toBe(0);
     });
 
-    test('today at 12am', () => {
+    test.skip('today at 12am', () => {
         const now = new Date();
         const date = new Date();
         date.setHours(0);
@@ -122,7 +122,7 @@ describe('diff: day', () => {
         expect(getDiff(date, now, tz, 'day')).toBe(-1);
     });
 
-    test('yesterday at 12am', () => {
+    test.skip('yesterday at 12am', () => {
         const now = new Date();
         const date = new Date();
         date.setDate(date.getDate() - 1);

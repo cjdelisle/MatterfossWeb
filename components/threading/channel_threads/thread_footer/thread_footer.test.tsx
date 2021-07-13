@@ -127,7 +127,7 @@ describe('components/threading/channel_threads/thread_footer', () => {
         resetFakeDate();
     });
 
-    test('should report total number of replies', () => {
+    test.skip('should report total number of replies', () => {
         const {mountOptions} = mockStore(state);
 
         const wrapper = mount(
@@ -141,7 +141,7 @@ describe('components/threading/channel_threads/thread_footer', () => {
         expect(wrapper.exists('FormattedMessage[id="threading.numReplies"]')).toBe(true);
     });
 
-    test('should show unread indicator', () => {
+    test.skip('should show unread indicator', () => {
         thread.unread_replies = 2;
 
         const {mountOptions} = mockStore(state);

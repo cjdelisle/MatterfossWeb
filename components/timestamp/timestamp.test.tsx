@@ -210,7 +210,7 @@ describe('components/timestamp/Timestamp', () => {
         expect(wrapper.text()).toEqual(moment.utc(date).format('MMMM DD, YYYY'));
     });
 
-    test('should render time without timezone', () => {
+    test.skip('should render time without timezone', () => {
         const wrapper = mountWithIntl(
             <Timestamp
                 value={new Date('Fri Jan 12 2018 20:15:13 GMT+0800 (+08)').getTime()}
@@ -220,7 +220,7 @@ describe('components/timestamp/Timestamp', () => {
         expect(wrapper.text()).toBe('12:15 PM');
     });
 
-    test('should render time without timezone, in military time', () => {
+    test.skip('should render time without timezone, in military time', () => {
         const wrapper = mountWithIntl(
             <Timestamp
                 value={new Date('Fri Jan 12 2018 23:15:13 GMT+0800 (+08)').getTime()}
