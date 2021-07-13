@@ -21,7 +21,7 @@ import githubIcon from 'images/themes/code_themes/github.png';
 import monokaiIcon from 'images/themes/code_themes/monokai.png';
 import solarizedDarkIcon from 'images/themes/code_themes/solarized-dark.png';
 import solarizedLightIcon from 'images/themes/code_themes/solarized-light.png';
-import mattermostThemeImage from 'images/themes/matterfoss.png';
+import mattermostThemeImage from 'images/themes/mattermost.png';
 import mattermostDarkThemeImage from 'images/themes/mattermost_dark.png';
 import defaultThemeImage from 'images/themes/organization.png';
 import windows10ThemeImage from 'images/themes/windows_dark.png';
