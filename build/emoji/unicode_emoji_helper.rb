@@ -1,10 +1,10 @@
-module Matterfoss
+module Mattermost
   class UnicodeEmojiHelper
     GENDER_MALE = "\u{2642}"
     GENDER_FEMALE = "\u{2640}"
     ZERO_WIDTH_JOINER = "\u{200D}"
     VARIATION_SELECTOR_16 = "\u{FE0F}"
-    
+
     SKIN_TONE_MAP = {
       "\u{1F3FB}" => 'light skin tone',
       "\u{1F3FC}" => 'medium-light skin tone',
