@@ -231,7 +231,7 @@ exports[`components/admin_console/license_settings/LicenseSettings load screen w
                   className="upgrade-legal-terms"
                 >
                   <injectIntl(FormattedMarkdownMessage)
-                    defaultMessage="By clicking **Upgrade to Enterprise Edition**, I agree to the terms of the MatterFOSS License."
+                    defaultMessage=""
                     id="admin.license.enterprise.upgrade.accept-terms"
                   />
                 </p>
@@ -1117,7 +1117,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
                   className="upgrade-legal-terms"
                 >
                   <injectIntl(FormattedMarkdownMessage)
-                    defaultMessage="By clicking **Upgrade to Enterprise Edition**, I agree to the terms of the MatterFOSS License."
+                    defaultMessage=""
                     id="admin.license.enterprise.upgrade.accept-terms"
                   />
                 </p>
@@ -1257,7 +1257,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
                   className="upgrade-legal-terms"
                 >
                   <injectIntl(FormattedMarkdownMessage)
-                    defaultMessage="By clicking **Upgrade to Enterprise Edition**, I agree to the terms of the MatterFOSS License."
+                    defaultMessage=""
                     id="admin.license.enterprise.upgrade.accept-terms"
                   />
                 </p>

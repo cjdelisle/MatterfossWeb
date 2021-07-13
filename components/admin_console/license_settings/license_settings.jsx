@@ -250,7 +250,7 @@ export default class LicenseSettings extends React.PureComponent {
                             <p className='upgrade-legal-terms'>
                                 <FormattedMarkdownMessage
                                     id='admin.license.enterprise.upgrade.accept-terms'
-                                    defaultMessage='By clicking **Upgrade to Enterprise Edition**, I agree to the terms of the MatterFOSS License.'
+                                    defaultMessage=''
                                 />
                             </p>
                             {this.state.upgradeError &&
