@@ -242,7 +242,7 @@ export default class LicenseSettings extends React.PureComponent {
                                     >
                                         <FormattedMessage
                                             id='admin.license.enterprise.upgrade'
-                                            defaultMessage='Upgrade to Enterprise Edition'
+                                            defaultMessage=''
                                         />
                                     </LoadingWrapper>
                                 </button>

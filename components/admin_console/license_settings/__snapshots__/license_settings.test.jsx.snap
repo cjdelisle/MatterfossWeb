@@ -221,7 +221,7 @@ exports[`components/admin_console/license_settings/LicenseSettings load screen w
                       }
                     >
                       <FormattedMessage
-                        defaultMessage="Upgrade to Enterprise Edition"
+                        defaultMessage=""
                         id="admin.license.enterprise.upgrade"
                       />
                     </LoadingWrapper>
@@ -1107,7 +1107,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
                       }
                     >
                       <FormattedMessage
-                        defaultMessage="Upgrade to Enterprise Edition"
+                        defaultMessage=""
                         id="admin.license.enterprise.upgrade"
                       />
                     </LoadingWrapper>
@@ -1247,7 +1247,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
                       }
                     >
                       <FormattedMessage
-                        defaultMessage="Upgrade to Enterprise Edition"
+                        defaultMessage=""
                         id="admin.license.enterprise.upgrade"
                       />
                     </LoadingWrapper>
