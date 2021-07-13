@@ -300,7 +300,7 @@ export default class LicenseSettings extends React.PureComponent {
             licenseType = (
                 <div>
                     <p>{'When using MatterFOSS Team Edition, the software is offered under a MatterFOSS MIT Compiled License. See MIT-COMPILED-LICENSE.md in your root install directory for details.'}</p>
-                    <p>{'When using MatterFOSS, the software is offered under a commercial license. See below for “Enterprise Edition License” for details.'}</p>
+                    <p>{'When using MatterFOSS, the software is offered under a commercial license.'}</p>
                     <p>{'See NOTICE.txt for information about open source software used in the system.'}</p>
                 </div>
             );
@@ -393,7 +393,7 @@ export default class LicenseSettings extends React.PureComponent {
             if (upgradedFromTE) {
                 licenseType = (
                     <div>
-                        <p>{'When using MatterFOSS, the software is offered under a commercial license. See below for “Enterprise Edition License” for details.'}</p>
+                        <p>{'When using MatterFOSS, the software is offered under a commercial license.'}</p>
                         <p>{'See NOTICE.txt for information about open source software used in the system.'}</p>
                     </div>
                 );
