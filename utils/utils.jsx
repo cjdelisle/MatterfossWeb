@@ -184,6 +184,13 @@ export function isGuest(user) {
     return false;
 }
 
+export function isCurrentUserGuest() {
+    const getState = store.getState;
+    const currentUser = getCurrentUser(getState());
+
+    return isGuest(currentUser);
+}
+
 export function getTeamRelativeUrl(team) {
     if (!team) {
         return '';
