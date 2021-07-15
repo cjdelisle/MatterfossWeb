@@ -19,7 +19,7 @@ import {DraggingState} from 'types/store';
 
 import Constants, {A11yCustomEventTypes, DraggingStateTypes, DraggingStates} from 'utils/constants';
 import {t} from 'utils/i18n';
-import {isKeyPressed} from 'utils/utils';
+import {isKeyPressed, isCurrentUserGuest} from 'utils/utils';
 
 import SidebarChannel from '../sidebar_channel';
 import {SidebarCategoryHeader} from '../sidebar_category_header';
@@ -293,19 +293,20 @@ export default class SidebarCategory extends React.PureComponent<Props, State> {
                         isMenuOpen={this.state.isMenuOpen}
                         onToggleMenu={this.handleMenuToggle}
                     />
-                    <OverlayTrigger
-                        delayShow={500}
-                        placement='top'
-                        overlay={addTooltip}
-                    >
-                        <button
-                            className='SidebarChannelGroupHeader_addButton'
-                            onClick={this.handleOpenDirectMessagesModal}
-                            aria-label={addHelpLabel}
+                    {!isCurrentUserGuest() &&
+                        (<OverlayTrigger
+                            delayShow={500}
+                            placement='top'
+                            overlay={addTooltip}
                         >
-                            <i className='icon-plus'/>
-                        </button>
-                    </OverlayTrigger>
+                            <button
+                                className='SidebarChannelGroupHeader_addButton'
+                                onClick={this.handleOpenDirectMessagesModal}
+                                aria-label={addHelpLabel}
+                            >
+                                <i className='icon-plus'/>
+                            </button>
+                        </OverlayTrigger>)}
                 </React.Fragment>
             );
 
