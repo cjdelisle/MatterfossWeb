@@ -137,6 +137,11 @@ class LegacySidebar extends React.PureComponent {
         canCreatePrivateChannel: PropTypes.bool.isRequired,
 
         /**
+         * Permission to send direct messages
+         */
+        canSendDirectMessages: PropTypes.bool,
+
+        /**
          * Flag to display the Switch channel shortcut
          */
         channelSwitcherOption: PropTypes.bool.isRequired,
@@ -155,6 +160,7 @@ class LegacySidebar extends React.PureComponent {
 
     static defaultProps = {
         currentChannel: {},
+        canSendDirectMessages: !Utils.isCurrentUserGuest(),
     }
 
     constructor(props) {
@@ -588,6 +594,7 @@ class LegacySidebar extends React.PureComponent {
                                         sectionType={section.type}
                                         canCreatePublicChannel={this.props.canCreatePublicChannel}
                                         canCreatePrivateChannel={this.props.canCreatePrivateChannel}
+                                        canSendDirectMessage={this.props.canSendDirectMessages}
                                         createPublicChannel={this.showNewPublicChannelModal}
                                         createPrivateChannel={this.showNewPrivateChannelModal}
                                         createDirectMessage={this.handleOpenMoreDirectChannelsModal}

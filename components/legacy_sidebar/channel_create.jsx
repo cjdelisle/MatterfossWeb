@@ -17,6 +17,7 @@ export default class ChannelCreate extends React.PureComponent {
         createPrivateChannel: PropTypes.func.isRequired,
         createDirectMessage: PropTypes.func.isRequired,
         createPublicDirectChannel: PropTypes.func.isRequired,
+        canSendDirectMessage: PropTypes.bool.isRequired,
         canCreatePublicChannel: PropTypes.bool.isRequired,
         canCreatePrivateChannel: PropTypes.bool.isRequired,
     };
@@ -92,6 +93,10 @@ export default class ChannelCreate extends React.PureComponent {
     };
 
     renderDirect = () => {
+        if (!this.props.canSendDirectMessage) {
+            return null;
+        }
+
         const ariaLabelDM = Utils.localizeMessage('sidebar.createDirectMessage', 'Write a direct message').toLowerCase();
         const tooltip = (
             <Tooltip
