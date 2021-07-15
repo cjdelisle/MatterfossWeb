@@ -1233,7 +1233,7 @@
   "admin.license.enterprise-edition-license": "Enterprise Edition License:",
   "admin.license.enterprise.restart": "Restart Server",
   "admin.license.enterprise.restarting": "Restarting",
-  "admin.license.enterprise.upgrade": "Upgrade to Enterprise Edition",
+  "admin.license.enterprise.upgrade": "",
   "admin.license.enterprise.upgrade.accept-terms": "",
   "admin.license.enterprise.upgrading": "Upgrading {percentage}%",
   "admin.license.key": "License Key: ",
