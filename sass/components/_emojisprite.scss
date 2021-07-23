@@ -6,16 +6,15 @@
     cursor: pointer;
     height: 64px;
     max-width: none;
+    padding: 0 10px 0 0;
     transform-origin: 0 0;
     width: 64px;
-    padding: 0 10px 0 0;
 }
 .emojisprite {
     zoom: 0.35;
     -moz-transform: scale(0.35);
     background-repeat: no-repeat;
     border-radius: 18px;
-    cursor: pointer;
     height: 64px;
     max-width: none;
     width: 64px;
@@ -186,7 +185,7 @@
 .emoji-1f468-200d-1f4bb { background-position: -64px -192px; }
 .emoji-1f468-200d-1f4bc { background-position: -128px -192px; }
 .emoji-1f468-200d-1f527 { background-position: -192px -192px; }
-.emoji-1f468-200d-2695 { background-position: -256px -0px; }
+.emoji-1f468-200d-2695-fe0f { background-position: -256px -0px; }
 .emoji-1f469 { background-position: -256px -64px; }
 .emoji-1f469-200d-1f33e { background-position: -256px -128px; }
 .emoji-1f469-200d-1f373 { background-position: -256px -192px; }
@@ -197,73 +196,73 @@
 .emoji-1f469-200d-1f4bb { background-position: -256px -256px; }
 .emoji-1f469-200d-1f4bc { background-position: -320px -0px; }
 .emoji-1f469-200d-1f527 { background-position: -320px -64px; }
-.emoji-1f469-200d-2695 { background-position: -320px -128px; }
+.emoji-1f469-200d-2695-fe0f { background-position: -320px -128px; }
 .emoji-1f46e { background-position: -320px -192px; }
-.emoji-1f46e-200d-2640 { background-position: -320px -256px; }
+.emoji-1f46e-200d-2640-fe0f { background-position: -320px -256px; }
 .emoji-1f471 { background-position: -0px -320px; }
-.emoji-1f471-200d-2640 { background-position: -64px -320px; }
+.emoji-1f471-200d-2640-fe0f { background-position: -64px -320px; }
 .emoji-1f472 { background-position: -128px -320px; }
 .emoji-1f473 { background-position: -192px -320px; }
-.emoji-1f473-200d-2640 { background-position: -256px -320px; }
+.emoji-1f473-200d-2640-fe0f { background-position: -256px -320px; }
 .emoji-1f474 { background-position: -320px -320px; }
 .emoji-1f475 { background-position: -384px -0px; }
 .emoji-1f476 { background-position: -384px -64px; }
 .emoji-1f477 { background-position: -384px -128px; }
-.emoji-1f477-200d-2640 { background-position: -384px -192px; }
+.emoji-1f477-200d-2640-fe0f { background-position: -384px -192px; }
 .emoji-1f482 { background-position: -384px -256px; }
-.emoji-1f482-200d-2640 { background-position: -384px -320px; }
-.emoji-1f575 { background-position: -0px -384px; }
+.emoji-1f482-200d-2640-fe0f { background-position: -384px -320px; }
+.emoji-1f575-fe0f { background-position: -0px -384px; }
 .emoji-1f575-fe0f-200d-2640-fe0f { background-position: -64px -384px; }
 .emoji-1f440 { background-position: -128px -384px; }
 .emoji-category-people-5 { background-image: url('../images/emoji-sheets/people-5.png'); }
-.emoji-1f937-200d-2642 { background-position: -0px -0px; }
+.emoji-1f937-200d-2642-fe0f { background-position: -0px -0px; }
 .emoji-1f468-200d-1f3a8 { background-position: -64px -0px; }
 .emoji-1f468-200d-1f52c { background-position: -0px -64px; }
 .emoji-1f468-200d-1f680 { background-position: -64px -64px; }
 .emoji-1f468-200d-1f692 { background-position: -128px -0px; }
-.emoji-1f468-200d-2696 { background-position: -128px -64px; }
-.emoji-1f468-200d-2708 { background-position: -0px -128px; }
+.emoji-1f468-200d-2696-fe0f { background-position: -128px -64px; }
+.emoji-1f468-200d-2708-fe0f { background-position: -0px -128px; }
 .emoji-1f469-200d-1f3a8 { background-position: -64px -128px; }
 .emoji-1f469-200d-1f52c { background-position: -128px -128px; }
 .emoji-1f469-200d-1f680 { background-position: -192px -0px; }
 .emoji-1f469-200d-1f692 { background-position: -192px -64px; }
-.emoji-1f469-200d-2696 { background-position: -192px -128px; }
-.emoji-1f469-200d-2708 { background-position: -0px -192px; }
+.emoji-1f469-200d-2696-fe0f { background-position: -192px -128px; }
+.emoji-1f469-200d-2708-fe0f { background-position: -0px -192px; }
 .emoji-1f470 { background-position: -64px -192px; }
 .emoji-1f478 { background-position: -128px -192px; }
 .emoji-1f47c { background-position: -192px -192px; }
 .emoji-1f481 { background-position: -256px -0px; }
-.emoji-1f481-200d-2642 { background-position: -256px -64px; }
+.emoji-1f481-200d-2642-fe0f { background-position: -256px -64px; }
 .emoji-1f483 { background-position: -256px -128px; }
 .emoji-1f486 { background-position: -256px -192px; }
-.emoji-1f486-200d-2642 { background-position: -0px -256px; }
+.emoji-1f486-200d-2642-fe0f { background-position: -0px -256px; }
 .emoji-1f487 { background-position: -64px -256px; }
-.emoji-1f487-200d-2642 { background-position: -128px -256px; }
+.emoji-1f487-200d-2642-fe0f { background-position: -128px -256px; }
 .emoji-1f574 { background-position: -192px -256px; }
 .emoji-1f57a { background-position: -256px -256px; }
 .emoji-1f645 { background-position: -320px -0px; }
-.emoji-1f645-200d-2642 { background-position: -320px -64px; }
+.emoji-1f645-200d-2642-fe0f { background-position: -320px -64px; }
 .emoji-1f646 { background-position: -320px -128px; }
-.emoji-1f646-200d-2642 { background-position: -320px -192px; }
+.emoji-1f646-200d-2642-fe0f { background-position: -320px -192px; }
 .emoji-1f647 { background-position: -320px -256px; }
-.emoji-1f647-200d-2640 { background-position: -0px -320px; }
+.emoji-1f647-200d-2640-fe0f { background-position: -0px -320px; }
 .emoji-1f64b { background-position: -64px -320px; }
-.emoji-1f64b-200d-2642 { background-position: -128px -320px; }
+.emoji-1f64b-200d-2642-fe0f { background-position: -128px -320px; }
 .emoji-1f64d { background-position: -192px -320px; }
-.emoji-1f64d-200d-2642 { background-position: -256px -320px; }
+.emoji-1f64d-200d-2642-fe0f { background-position: -256px -320px; }
 .emoji-1f64e { background-position: -320px -320px; }
-.emoji-1f64e-200d-2642 { background-position: -384px -0px; }
-.emoji-1f926-200d-2640 { background-position: -384px -64px; }
-.emoji-1f926-200d-2642 { background-position: -384px -128px; }
+.emoji-1f64e-200d-2642-fe0f { background-position: -384px -0px; }
+.emoji-1f926-200d-2640-fe0f { background-position: -384px -64px; }
+.emoji-1f926-200d-2642-fe0f { background-position: -384px -128px; }
 .emoji-1f930 { background-position: -384px -192px; }
 .emoji-1f934 { background-position: -384px -256px; }
 .emoji-1f935 { background-position: -384px -320px; }
 .emoji-1f936 { background-position: -0px -384px; }
-.emoji-1f937-200d-2640 { background-position: -64px -384px; }
+.emoji-1f937-200d-2640-fe0f { background-position: -64px -384px; }
 .emoji-1f385 { background-position: -128px -384px; }
 .emoji-category-people-6 { background-image: url('../images/emoji-sheets/people-6.png'); }
-.emoji-1f6b6-200d-2640 { background-position: -0px -0px; }
-.emoji-1f3c3-200d-2640 { background-position: -64px -0px; }
+.emoji-1f6b6-200d-2640-fe0f { background-position: -0px -0px; }
+.emoji-1f3c3-200d-2640-fe0f { background-position: -64px -0px; }
 .emoji-1f454 { background-position: -0px -64px; }
 .emoji-1f455 { background-position: -64px -64px; }
 .emoji-1f456 { background-position: -128px -0px; }
@@ -302,7 +301,7 @@
 .emoji-1f46c { background-position: -384px -64px; }
 .emoji-1f46d { background-position: -384px -128px; }
 .emoji-1f46f { background-position: -384px -192px; }
-.emoji-1f46f-200d-2642 { background-position: -384px -256px; }
+.emoji-1f46f-200d-2642-fe0f { background-position: -384px -256px; }
 .emoji-1f48f { background-position: -384px -320px; }
 .emoji-1f491 { background-position: -0px -384px; }
 .emoji-1f6b6 { background-position: -64px -384px; }
@@ -486,7 +485,7 @@
 .emoji-2600-fe0f { background-position: -192px -192px; }
 .emoji-2601-fe0f { background-position: -256px -0px; }
 .emoji-2603-fe0f { background-position: -256px -64px; }
-.emoji-2604 { background-position: -256px -128px; }
+.emoji-2604-fe0f { background-position: -256px -128px; }
 .emoji-2614-fe0f { background-position: -256px -192px; }
 .emoji-26c4-fe0f { background-position: -0px -256px; }
 .emoji-26c5-fe0f { background-position: -64px -256px; }
@@ -588,15 +587,15 @@
 .emoji-1f3c0 { background-position: -128px -0px; }
 .emoji-1f3c2 { background-position: -128px -64px; }
 .emoji-1f3c4 { background-position: -0px -128px; }
-.emoji-1f3c4-200d-2640 { background-position: -64px -128px; }
+.emoji-1f3c4-200d-2640-fe0f { background-position: -64px -128px; }
 .emoji-1f3c7 { background-position: -128px -128px; }
 .emoji-1f3c8 { background-position: -192px -0px; }
 .emoji-1f3c9 { background-position: -192px -64px; }
 .emoji-1f3ca { background-position: -192px -128px; }
-.emoji-1f3ca-200d-2640 { background-position: -0px -192px; }
-.emoji-1f3cb { background-position: -64px -192px; }
+.emoji-1f3ca-200d-2640-fe0f { background-position: -0px -192px; }
+.emoji-1f3cb-fe0f { background-position: -64px -192px; }
 .emoji-1f3cb-fe0f-200d-2640-fe0f { background-position: -128px -192px; }
-.emoji-1f3cc { background-position: -192px -192px; }
+.emoji-1f3cc-fe0f { background-position: -192px -192px; }
 .emoji-1f3cc-fe0f-200d-2640-fe0f { background-position: -256px -0px; }
 .emoji-1f3cf { background-position: -256px -64px; }
 .emoji-1f3d0 { background-position: -256px -128px; }
@@ -606,16 +605,16 @@
 .emoji-1f3f8 { background-position: -128px -256px; }
 .emoji-1f3f9 { background-position: -192px -256px; }
 .emoji-1f6a3 { background-position: -256px -256px; }
-.emoji-1f6a3-200d-2640 { background-position: -320px -0px; }
-.emoji-1f938-200d-2640 { background-position: -320px -64px; }
-.emoji-1f938-200d-2642 { background-position: -320px -128px; }
+.emoji-1f6a3-200d-2640-fe0f { background-position: -320px -0px; }
+.emoji-1f938-200d-2640-fe0f { background-position: -320px -64px; }
+.emoji-1f938-200d-2642-fe0f { background-position: -320px -128px; }
 .emoji-1f93a { background-position: -320px -192px; }
-.emoji-1f93c-200d-2640 { background-position: -320px -256px; }
-.emoji-1f93c-200d-2642 { background-position: -0px -320px; }
-.emoji-1f93d-200d-2640 { background-position: -64px -320px; }
-.emoji-1f93d-200d-2642 { background-position: -128px -320px; }
-.emoji-1f93e-200d-2640 { background-position: -192px -320px; }
-.emoji-1f93e-200d-2642 { background-position: -256px -320px; }
+.emoji-1f93c-200d-2640-fe0f { background-position: -320px -256px; }
+.emoji-1f93c-200d-2642-fe0f { background-position: -0px -320px; }
+.emoji-1f93d-200d-2640-fe0f { background-position: -64px -320px; }
+.emoji-1f93d-200d-2642-fe0f { background-position: -128px -320px; }
+.emoji-1f93e-200d-2640-fe0f { background-position: -192px -320px; }
+.emoji-1f93e-200d-2642-fe0f { background-position: -256px -320px; }
 .emoji-1f945 { background-position: -320px -320px; }
 .emoji-1f94a { background-position: -384px -0px; }
 .emoji-1f94b { background-position: -384px -64px; }
@@ -624,7 +623,7 @@
 .emoji-26f3-fe0f { background-position: -384px -256px; }
 .emoji-26f7 { background-position: -384px -320px; }
 .emoji-26f8 { background-position: -0px -384px; }
-.emoji-26f9 { background-position: -64px -384px; }
+.emoji-26f9-fe0f { background-position: -64px -384px; }
 .emoji-1f3a3 { background-position: -128px -384px; }
 .emoji-category-activity-2 { background-image: url('../images/emoji-sheets/activity-2.png'); }
 .emoji-1f949 { background-position: -0px -0px; }
@@ -653,11 +652,11 @@
 .emoji-1f3c6 { background-position: -192px -256px; }
 .emoji-1f3f5 { background-position: -256px -256px; }
 .emoji-1f6b4 { background-position: -320px -0px; }
-.emoji-1f6b4-200d-2640 { background-position: -320px -64px; }
+.emoji-1f6b4-200d-2640-fe0f { background-position: -320px -64px; }
 .emoji-1f6b5 { background-position: -320px -128px; }
-.emoji-1f6b5-200d-2640 { background-position: -320px -192px; }
-.emoji-1f939-200d-2640 { background-position: -320px -256px; }
-.emoji-1f939-200d-2642 { background-position: -0px -320px; }
+.emoji-1f6b5-200d-2640-fe0f { background-position: -320px -192px; }
+.emoji-1f939-200d-2640-fe0f { background-position: -320px -256px; }
+.emoji-1f939-200d-2642-fe0f { background-position: -0px -320px; }
 .emoji-1f941 { background-position: -64px -320px; }
 .emoji-1f947 { background-position: -128px -320px; }
 .emoji-1f948 { background-position: -192px -320px; }
@@ -1503,7 +1502,7 @@
 .emoji-goberserk { background-position: -64px -75px; }
 .emoji-godmode { background-position: -139px -0px; }
 .emoji-hurtrealbad { background-position: -139px -64px; }
-.emoji-matterfoss { background-position: -0px -139px; }
+.emoji-mattermost { background-position: -0px -139px; }
 .emoji-neckbeard { background-position: -64px -139px; }
 .emoji-octocat { background-position: -128px -139px; }
 .emoji-rage1 { background-position: -203px -0px; }
