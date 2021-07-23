@@ -30,6 +30,7 @@ import CustomStatusModal from 'components/custom_status/custom_status_modal';
 import CustomStatusText from 'components/custom_status/custom_status_text';
 
 import './profile_popover.scss';
+import {isCurrentUserGuest} from "utils/utils.jsx";
 
 /**
  * The profile popover, or hovercard, that appears with user information when clicking
@@ -548,7 +549,7 @@ class ProfilePopover extends React.PureComponent {
             );
         }
 
-        if (this.props.user.id !== this.props.currentUserId && !haveOverrideProp) {
+        if (this.props.user.id !== this.props.currentUserId && !haveOverrideProp && !Utils.isCurrentUserGuest()) {
             dataContent.push(
                 <div
                     data-toggle='tooltip'

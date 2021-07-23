@@ -10,6 +10,8 @@ import {Permissions} from 'matterfoss-redux/constants';
 import TeamPermissionGate from 'components/permissions_gates/team_permission_gate';
 import {intlShape} from 'utils/react_intl';
 
+import {isCurrentUserGuest} from "../../utils/utils";
+
 class ChannelMore extends React.PureComponent {
     static propTypes = {
         currentTeamId: PropTypes.string.isRequired,
@@ -92,7 +94,7 @@ class ChannelMore extends React.PureComponent {
             return null;
         case 'direct':
             return (
-                <li
+                !isCurrentUserGuest() && <li
                     key='dm-more'
                     id='moreDMButton'
                 >
