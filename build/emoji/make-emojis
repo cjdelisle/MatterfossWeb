@@ -34,8 +34,8 @@ custom_aliases.each do |custom, original|
 end
 
 ### Extract and create all of the emoji skin tones ###
-unicode_emoji_helper = Mattermost::UnicodeEmojiHelper.new
-apple_extractor = Mattermost::AppleEmojiExtractor.new(64)
+unicode_emoji_helper = Matterfoss::UnicodeEmojiHelper.new
+apple_extractor = Matterfoss::AppleEmojiExtractor.new(64)
 emoji_added = []
 
 Emoji.all.clone.each do |emoji|
@@ -49,7 +49,7 @@ Emoji.all.clone.each do |emoji|
     next unless pngbytes
 
     modifier = sequence.split('')[1]
-    short_name = Mattermost::UnicodeEmojiHelper::SKIN_TONE_MAP[modifier]
+    short_name = Matterfoss::UnicodeEmojiHelper::SKIN_TONE_MAP[modifier]
     new_name = "#{emoji.name}_#{short_name.gsub(/[\s-]/, '_')}"
     new_emoji = Emoji.create(new_name) do |char|
       char.category = 'skintone'
@@ -169,6 +169,8 @@ end
 # the server directory
 if ENV.key?('SERVER_DIR')
   server_dir = File.join(ENV['SERVER_DIR'], 'model')
+  #print(server_dir)
+  #print(File.join(project_root, 'emoji_data.go'))
   FileUtils.mv(File.join(project_root, 'emoji_data.go'), server_dir)
 end
 
