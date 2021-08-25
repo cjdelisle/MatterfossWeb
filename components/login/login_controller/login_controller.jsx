@@ -33,6 +33,7 @@ import LocalizedInput from 'components/localized_input/localized_input';
 import Markdown from 'components/markdown';
 
 import LoginMfa from '../login_mfa.jsx';
+import {redirectToBotChannel} from 'actions/global_actions';
 
 class LoginController extends React.PureComponent {
     static propTypes = {
@@ -96,6 +97,11 @@ class LoginController extends React.PureComponent {
         this.configureTitle();
 
         if (this.props.currentUser) {
+            if (Utils.isGuest(this.props.currentUser)) {
+                GlobalActions.redirectToBotChannel();
+                return;
+            }
+
             GlobalActions.redirectUserToDefaultTeam();
             return;
         }

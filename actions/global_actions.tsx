@@ -2,6 +2,7 @@
 // See LICENSE.txt for license information.
 
 import {batchActions} from 'redux-batched-actions';
+import {History} from 'history';
 
 import {
     createDirectChannel,
@@ -43,6 +44,7 @@ import {ActionTypes, Constants, PostTypes, RHSStates, ModalIdentifiers} from 'ut
 import {filterAndSortTeamsByDisplayName} from 'utils/team_utils.jsx';
 import * as Utils from 'utils/utils.jsx';
 import SubMenuModal from '../components/widgets/menu/menu_modals/submenu_modal/submenu_modal';
+import {goToChannelByChannelName} from '../components/channel_layout/channel_identifier_router/actions';
 
 import {openModal} from './views/modals';
 
@@ -399,4 +401,42 @@ export async function redirectUserToDefaultTeam() {
     }
 
     browserHistory.push('/select_team');
+}
+
+export async function redirectToBotChannel() {
+    let state = getState();
+
+    // Assume we need to load the user if they don't have any team memberships loaded or the user loaded
+    let user = getCurrentUser(state);
+    const shouldLoadUser = Utils.isEmptyObject(getTeamMemberships(state)) || !user;
+
+    if (shouldLoadUser) {
+        await dispatch(loadMe());
+        state = getState();
+        user = getCurrentUser(state);
+    }
+
+    if (!user) {
+        return;
+    }
+
+    const teamId = LocalStorageStore.getPreviousTeamId(user.id);
+
+    let team: Team | undefined;
+    if (teamId) {
+        team = getTeam(state, teamId);
+        dispatch(
+            goToChannelByChannelName(
+                {
+                    params: {
+                        team: team.name,
+                        identifier: process.env.BOT_ACCOUNT || '',//eslint-disable-line no-process-env
+                        path: '/',
+                    },
+                    url: '',
+                },
+                {} as History,
+            ),
+        );
+    }
 }
