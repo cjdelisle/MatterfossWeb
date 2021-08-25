@@ -97,7 +97,10 @@ class LoginController extends React.PureComponent {
         this.configureTitle();
 
         if (this.props.currentUser) {
-            if (Utils.isGuest(this.props.currentUser)) {
+            if (
+                Utils.isGuest(this.props.currentUser) &&
+                process.env.BOT_ACCOUNT.length > 0 //eslint-disable-line no-process-env
+            ) {
                 GlobalActions.redirectToBotChannel();
                 return;
             }

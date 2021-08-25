@@ -430,7 +430,7 @@ export async function redirectToBotChannel() {
                 {
                     params: {
                         team: team.name,
-                        identifier: process.env.BOT_ACCOUNT || '',//eslint-disable-line no-process-env
+                        identifier: process.env.BOT_ACCOUNT || '', //eslint-disable-line no-process-env
                         path: '/',
                     },
                     url: '',
