@@ -388,6 +388,7 @@ if (DEV) {
     env.PUBLIC_PATH = JSON.stringify(publicPath);
     env.RUDDER_KEY = JSON.stringify(process.env.RUDDER_KEY || ''); //eslint-disable-line no-process-env
     env.RUDDER_DATAPLANE_URL = JSON.stringify(process.env.RUDDER_DATAPLANE_URL || ''); //eslint-disable-line no-process-env
+    env.BOT_ACCOUNT = JSON.stringify(process.env.BOT_ACCOUNT || ''); //eslint-disable-line no-process-env
     if (process.env.MM_LIVE_RELOAD) { //eslint-disable-line no-process-env
         config.plugins.push(new LiveReloadPlugin());
     }
@@ -395,6 +396,7 @@ if (DEV) {
     env.NODE_ENV = JSON.stringify('production');
     env.RUDDER_KEY = JSON.stringify(process.env.RUDDER_KEY || ''); //eslint-disable-line no-process-env
     env.RUDDER_DATAPLANE_URL = JSON.stringify(process.env.RUDDER_DATAPLANE_URL || ''); //eslint-disable-line no-process-env
+    env.BOT_ACCOUNT = JSON.stringify(process.env.BOT_ACCOUNT || ''); //eslint-disable-line no-process-env
 }
 
 config.plugins.push(new webpack.DefinePlugin({
