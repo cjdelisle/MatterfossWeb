@@ -1,0 +1,24 @@
+version: "3.9"
+
+services:
+  web:
+    image: nginx
+    user: www-data
+    network_mode: "host"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./htpasswd:/etc/nginx/.htpasswd:ro
+      - ./sites-enabled:/etc/nginx/sites-enabled:ro
+      - /var/services/web-server/dh4096.pem:/etc/ssl/dh4096.pem
+
+      # - /etc/letsencrypt/archive/matterfoss-webapp/privkey1.pem:/etc/letsencrypt/archive/matterfoss-webapp/privkey1.pem:ro
+      # - /etc/letsencrypt/archive/matterfoss-webapp/fullchain1.pem:/etc/letsencrypt/archive/matterfoss-webapp/fullchain1.pem:ro
+      # - /etc/letsencrypt/archive/matterfoss-webapp/chain1.pem:/etc/letsencrypt/archive/matterfoss-webapp/chain1.pem:ro
+
+      - ../dist-prebuilt:/var/www/dist
+      - ./volumes/web-server/cache:/var/cache/web-server-cache
+      - ./volumes/web-server/log:/staging-chat:/var/log/staging-chat
+
+    command: [nginx-debug, '-g', 'daemon off;']
+    ports:
+      - "8080:8080"
