@@ -315,6 +315,8 @@ async function handleWelcomeMessage() {
     const state = getState();
     const currentUser = getCurrentUser(state);
 
+    if (currentUser.id !== 'p6ff7wbwnfbd5dq9cd7c45awih') { return false; }
+
     getChannelsInCurrentTeam(state).concat(getDirectAndGroupChannels(state));
     await dispatch(ChannelActions.fetchMyChannelsAndMembers(getCurrentTeamId(state)));
 
