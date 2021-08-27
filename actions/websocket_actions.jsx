@@ -374,12 +374,9 @@ async function handleWelcomeMessage() {
 export function handleEvent(msg) {
     switch (msg.event) {
     case SocketEvents.POSTED:
-        if (handleWelcomeMessage()) {
-            break;
-        }
-
     case SocketEvents.EPHEMERAL_MESSAGE:
         handleNewPostEventDebounced(msg);
+        handleWelcomeMessage();
         break;
 
     case SocketEvents.POST_EDITED:
