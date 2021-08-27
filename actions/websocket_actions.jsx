@@ -62,10 +62,28 @@ import {
 } from 'matterfoss-redux/actions/users';
 import {removeNotVisibleUsers} from 'matterfoss-redux/actions/websocket';
 import {Client4} from 'matterfoss-redux/client';
-import {getCurrentUser, getCurrentUserId, getStatusForUserId, getUser, getIsManualStatusForUserId, isCurrentUserSystemAdmin} from 'matterfoss-redux/selectors/entities/users';
+import {
+    getCurrentUser,
+    getCurrentUserId,
+    getStatusForUserId,
+    getUser,
+    getIsManualStatusForUserId,
+    isCurrentUserSystemAdmin,
+    makeSearchProfilesMatchingWithTerm
+} from 'matterfoss-redux/selectors/entities/users';
 import {getMyTeams, getCurrentRelativeTeamUrl, getCurrentTeamId, getCurrentTeamUrl, getTeam} from 'matterfoss-redux/selectors/entities/teams';
 import {getConfig, getLicense} from 'matterfoss-redux/selectors/entities/general';
-import {getChannelsInTeam, getChannel, getCurrentChannel, getCurrentChannelId, getRedirectChannelNameForTeam, getMembersInCurrentChannel, getChannelMembersInChannels} from 'matterfoss-redux/selectors/entities/channels';
+import {
+    getChannelsInTeam,
+    getChannel,
+    getCurrentChannel,
+    getCurrentChannelId,
+    getRedirectChannelNameForTeam,
+    getMembersInCurrentChannel,
+    getChannelMembersInChannels,
+    getAllDirectChannelIds,
+    getMyChannelMemberships, getChannelsInCurrentTeam, getDirectAndGroupChannels
+} from 'matterfoss-redux/selectors/entities/channels';
 import {getPost, getMostRecentPostIdInChannel} from 'matterfoss-redux/selectors/entities/posts';
 import {haveISystemPermission, haveITeamPermission} from 'matterfoss-redux/selectors/entities/roles';
 import {appsEnabled} from 'matterfoss-redux/selectors/entities/apps';
@@ -83,7 +101,7 @@ import {syncPostsInChannel} from 'actions/views/channel';
 import {browserHistory} from 'utils/browser_history';
 import {loadChannelsForCurrentUser} from 'actions/channel_actions.jsx';
 import {loadCustomEmojisIfNeeded} from 'actions/emoji_actions';
-import {redirectUserToDefaultTeam} from 'actions/global_actions';
+import {getTeamRedirectChannelIfIsAccesible, redirectUserToDefaultTeam} from 'actions/global_actions';
 import {handleNewPost} from 'actions/post_actions.jsx';
 import * as StatusActions from 'actions/status_actions.jsx';
 import {loadProfilesForSidebar} from 'actions/user_actions.jsx';
@@ -95,6 +113,12 @@ import {getSiteURL} from 'utils/url';
 import {isGuest} from 'utils/utils';
 import RemovedFromChannelModal from 'components/removed_from_channel_modal';
 import InteractiveDialog from 'components/interactive_dialog';
+import {goToDirectChannelByUserIds} from "../components/channel_layout/channel_identifier_router/actions";
+import {getCurrentLocale} from "../selectors/i18n";
+import {filterAndSortTeamsByDisplayName} from "../utils/team_utils";
+import * as ChannelActions from "matterfoss-redux/actions/channels";
+import {isUnreadChannel} from "matterfoss-redux/utils/channel_utils";
+const searchProfilesMatchingWithTerm = makeSearchProfilesMatchingWithTerm();
 
 const dispatch = store.dispatch;
 const getState = store.getState;
@@ -279,11 +303,77 @@ function handleClose(failCount) {
     ]));
 }
 
+async function handleWelcomeMessage() {
+    const botIdentifier = process.env.BOT_USERNAME || '';
+    const isBotIdentified = botIdentifier.length === 0;
+
+    if (isBotIdentified) {
+        return false;
+    }
+
+    const state = getState();
+    const currentUser = getCurrentUser(state);
+
+    getChannelsInCurrentTeam(state).concat(getDirectAndGroupChannels(state));
+    await dispatch(ChannelActions.fetchMyChannelsAndMembers(getCurrentTeamId(state)));
+
+    const users = Object.assign([], searchProfilesMatchingWithTerm(state, botIdentifier, false));
+    if (users.length === 0) {
+        return false;
+    }
+
+    // Find bot among users matching its identifier
+    const bot = users[0];
+
+    const locale = getCurrentLocale(state);
+    let myTeams = getMyTeams(state);
+
+    const directChannelIds = getAllDirectChannelIds(state);
+    const botDirectMessageChannelName = `${currentUser.id}__${bot.id}`;
+
+    // Assuming we've not switched to the bot direct message channel before
+    if (getCurrentChannel(store.getState()).name === botDirectMessageChannelName) {
+        return false;
+    }
+
+    for (const id of directChannelIds) {
+        const channel = getChannel(state, id);
+
+        // Figuring if there are unread messages in the bot direct message channel
+        const isUnread = isUnreadChannel(getMyChannelMemberships(state), channel);
+        if (isUnread && channel.name === botDirectMessageChannelName) {
+            myTeams = filterAndSortTeamsByDisplayName(myTeams, locale);
+            for (const myTeam of myTeams) {
+                const channel = await getTeamRedirectChannelIfIsAccesible(currentUser, myTeam); // eslint-disable-line no-await-in-loop
+                if (channel) {
+                    // Switch channels
+                    await dispatch(goToDirectChannelByUserIds(
+                        {
+                            params: {
+                                team: myTeam.name,
+                                identifier: `${currentUser.id}__${bot.id}`, //eslint-disable-line no-process-env
+                                path: '/',
+                            },
+                            url: '',
+                        },
+                        browserHistory
+                    ));
+
+                    return true;
+                }
+            }
+        }
+    }
+
+    return false
+}
+
 export function handleEvent(msg) {
     switch (msg.event) {
     case SocketEvents.POSTED:
     case SocketEvents.EPHEMERAL_MESSAGE:
         handleNewPostEventDebounced(msg);
+        handleWelcomeMessage();
         break;
 
     case SocketEvents.POST_EDITED:
@@ -420,6 +510,7 @@ export function handleEvent(msg) {
 
     case SocketEvents.CHANNEL_VIEWED:
         handleChannelViewedEvent(msg);
+        handleWelcomeMessage();
         break;
 
     case SocketEvents.PLUGIN_ENABLED:
