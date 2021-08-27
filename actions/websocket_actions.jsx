@@ -305,7 +305,7 @@ function handleClose(failCount) {
 }
 
 async function handleWelcomeMessage() {
-    const botIdentifier = process.env.BOT_ACCOUNT || '';
+    const botIdentifier = process.env.BOT_USERNAME || '';
     const isBotIdentified = botIdentifier.length === 0;
 
     if (isBotIdentified) {
