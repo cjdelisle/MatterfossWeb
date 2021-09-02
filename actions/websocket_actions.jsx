@@ -312,39 +312,69 @@ async function handleWelcomeMessage() {
     }
 
     const state = getState();
+    
+    const teamId = getCurrentTeamId(state);
+    if (!teamId) {
+        return false;
+    }
+
+    let usersFromServer = [];
+    try {
+        usersFromServer = await Client4.autocompleteUsers(botIdentifier, teamId, '');
+    } catch (err) {
+        store.dispatch(logError(err));
+    }
+
     const currentUser = getCurrentUser(state);
 
     getChannelsInCurrentTeam(state).concat(getDirectAndGroupChannels(state));
     await dispatch(ChannelActions.fetchMyChannelsAndMembers(getCurrentTeamId(state)));
 
-    const users = Object.assign([], searchProfilesMatchingWithTerm(state, botIdentifier, false));
+    let users = Object.assign([], searchProfilesMatchingWithTerm(state, botIdentifier, false));
+
+    users = [].concat(users, usersFromServer.users) || users;
+
     if (users.length === 0) {
         return false;
     }
 
     // Find bot among users matching its identifier
-    const bot = users[0];
+    const bot = users.find(u => u.username === botIdentifier);
+
+    if (bot === undefined) {
+        logError('Unknown bot')
+        return false;
+    }
 
     const locale = getCurrentLocale(state);
     let myTeams = getMyTeams(state);
 
     const directChannelIds = getAllDirectChannelIds(state);
-    const botDirectMessageChannelName = `${currentUser.id}__${bot.id}`;
+    const botDirectMessageChannelNames = [
+        `${bot.id}__${currentUser.id}`,
+        `${currentUser.id}__${bot.id}`,
+    ];
+
+    const channelName = getCurrentChannel(store.getState()).name;
 
     // Assuming we've not switched to the bot direct message channel before
-    if (getCurrentChannel(store.getState()).name === botDirectMessageChannelName) {
+    // early return otherwise
+    if (botDirectMessageChannelNames.includes(channelName)) {
         return false;
     }
 
     for (const id of directChannelIds) {
-        const channel = getChannel(state, id);
+        let channel = getChannel(state, id);
 
         // Figuring if there are unread messages in the bot direct message channel
         const isUnread = isUnreadChannel(getMyChannelMemberships(state), channel);
-        if (isUnread && channel.name === botDirectMessageChannelName) {
+        if (isUnread && (
+            channel.name === botDirectMessageChannelNames[0] ||
+            channel.name === botDirectMessageChannelNames[1]
+        )) {
             myTeams = filterAndSortTeamsByDisplayName(myTeams, locale);
             for (const myTeam of myTeams) {
-                const channel = await getTeamRedirectChannelIfIsAccesible(currentUser, myTeam); // eslint-disable-line no-await-in-loop
+                channel = await getTeamRedirectChannelIfIsAccesible(currentUser, myTeam); // eslint-disable-line no-await-in-loop
                 if (channel) {
                     // Switch channels
                     await dispatch(goToDirectChannelByUserIds(
@@ -356,7 +386,7 @@ async function handleWelcomeMessage() {
                             },
                             url: '',
                         },
-                        browserHistory
+                        browserHistory,
                     ));
 
                     return true;
@@ -365,7 +395,7 @@ async function handleWelcomeMessage() {
         }
     }
 
-    return false
+    return false;
 }
 
 export function handleEvent(msg) {
