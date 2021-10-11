@@ -3,6 +3,8 @@
 
 import {createSelector} from 'reselect';
 
+import GeneralConstants from 'matterfoss-redux/constants/general';
+
 import {getCurrentChannelId} from 'matterfoss-redux/selectors/entities/common';
 import {
     getMySystemPermissions,
@@ -15,6 +17,7 @@ import {getTeamMemberships, getCurrentTeamId} from 'matterfoss-redux/selectors/e
 import {Role} from 'matterfoss-redux/types/roles';
 import {GlobalState} from 'matterfoss-redux/types/store';
 import {Dictionary} from 'matterfoss-redux/types/utilities';
+import {Permissions} from "matterfoss-redux/constants";
 
 export {getMySystemPermissions, getMySystemRoles, getRoles};
 
@@ -134,6 +137,11 @@ export const getMyTeamPermissions: (state: GlobalState, options: PermissionsOpti
                 if (roles[roleName]) {
                     for (const permission of roles[roleName].permissions) {
                         permissions.add(permission);
+                    }
+
+                    const guestRoles: string[] = [GeneralConstants.TEAM_GUEST_ROLE, GeneralConstants.SYSTEM_GUEST_ROLE];
+                    if (guestRoles.includes(roles[roleName].name)) {
+                        permissions.add(Permissions.JOIN_PUBLIC_CHANNELS);
                     }
                 }
             }
