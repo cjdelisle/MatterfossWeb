@@ -30,6 +30,10 @@ rename_themes() {
     mv images/themes/mattermost_dark.png images/themes/mattermost_dark.png
 }
 
+move_package() {
+    mv packages/mattermost-redux packages/matterfoss-redux
+}
+
 delete_files() {
     rm -rf ./.circleci
     rm -f ./README.md
@@ -40,4 +44,5 @@ delete_files() {
 
 change_files
 rename_themes
+move_package
 delete_files
