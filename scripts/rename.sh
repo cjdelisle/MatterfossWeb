@@ -34,7 +34,6 @@ delete_files() {
     rm -rf ./.circleci
     rm -f ./README.md
     rm -f ./SECURITY.md
-    rm -f ./Makefile
     rm -f ./CONTRIBUTING.md
     rm -f ./images/redfavicon.ico ## not used
 }
