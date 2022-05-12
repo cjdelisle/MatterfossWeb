@@ -63,8 +63,8 @@ function publish() {
   dist_archive="${release_name}_dist.tar.gz"
 
   tar \
-  --create "./${dist_archive}" \
-  --file  \
+  --create \
+  --file "./${dist_archive}" \
   --gzip \
   --verbose \
   --files-from <(find ./dist)
