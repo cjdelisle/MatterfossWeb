@@ -5,8 +5,8 @@ import React from 'react';
 import {Modal} from 'react-bootstrap';
 import {FormattedMessage} from 'react-intl';
 
-import {Channel} from 'mattermost-redux/types/channels';
-import {ActionResult} from 'mattermost-redux/types/actions';
+import {Channel} from 'matterfoss-redux/types/channels';
+import {ActionResult} from 'matterfoss-redux/types/actions';
 
 import {NoResultsVariant} from 'components/no_results_indicator/types';
 

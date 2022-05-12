@@ -3,11 +3,11 @@
 
 import assert from 'assert';
 
-import {WebsocketEvents} from 'mattermost-redux/constants';
+import {WebsocketEvents} from 'matterfoss-redux/constants';
 
-import typingReducer from 'mattermost-redux/reducers/entities/typing';
+import typingReducer from 'matterfoss-redux/reducers/entities/typing';
 
-import TestHelper from 'mattermost-redux/test/test_helper';
+import TestHelper from 'matterfoss-redux/test/test_helper';
 
 describe('Reducers.Typing', () => {
     it('initial state', async () => {

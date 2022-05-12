@@ -8,7 +8,7 @@ import moment from 'moment';
 
 import {fakeDate} from 'tests/helpers/date';
 
-import {LicenseSkus} from 'mattermost-redux/types/general';
+import {LicenseSkus} from 'matterfoss-redux/types/general';
 
 import LicenseSettings from './license_settings.tsx';
 
@@ -34,7 +34,7 @@ describe('components/admin_console/license_settings/LicenseSettings', () => {
             ExpiresAt: '1620335443650',
             SkuShortName: LicenseSkus.E20,
             Name: 'LicenseName',
-            Company: 'Mattermost Inc.',
+            Company: 'MatterFOSS Inc.',
             Users: '100',
         },
         prevTrialLicense: {

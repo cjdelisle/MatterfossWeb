@@ -6,9 +6,9 @@ import {connect} from 'react-redux';
 
 import {bindActionCreators, Dispatch} from 'redux';
 
-import {setStatus} from 'mattermost-redux/actions/users';
+import {setStatus} from 'matterfoss-redux/actions/users';
 
-import {getCurrentUserId} from 'mattermost-redux/selectors/entities/users';
+import {getCurrentUserId} from 'matterfoss-redux/selectors/entities/users';
 
 import {GlobalState} from 'types/store';
 import {makeAsyncComponent} from 'components/async_load';

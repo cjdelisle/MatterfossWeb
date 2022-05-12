@@ -6,10 +6,10 @@ import {useIntl} from 'react-intl';
 import {useSelector, useDispatch} from 'react-redux';
 import tinycolor from 'tinycolor2';
 
-import {UserProfile} from 'mattermost-redux/types/users';
-import {getUser as selectUser, makeDisplayNameGetter} from 'mattermost-redux/selectors/entities/users';
-import {getTheme} from 'mattermost-redux/selectors/entities/preferences';
-import {getMissingProfilesByIds} from 'mattermost-redux/actions/users';
+import {UserProfile} from 'matterfoss-redux/types/users';
+import {getUser as selectUser, makeDisplayNameGetter} from 'matterfoss-redux/selectors/entities/users';
+import {getTheme} from 'matterfoss-redux/selectors/entities/preferences';
+import {getMissingProfilesByIds} from 'matterfoss-redux/actions/users';
 
 import {GlobalState} from 'types/store';
 

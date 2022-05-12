@@ -10,7 +10,7 @@ exports[`components/SystemNotice should match snapshot for admin, admin notice 1
     <div
       className="system-notice__logo"
     >
-      <MattermostLogo />
+      <MatterFOSSLogo />
     </div>
     <div
       className="system-notice__title"
@@ -77,7 +77,7 @@ exports[`components/SystemNotice should match snapshot for admin, regular notice
     <div
       className="system-notice__logo"
     >
-      <MattermostLogo />
+      <MatterFOSSLogo />
     </div>
     <div
       className="system-notice__title"
@@ -127,7 +127,7 @@ exports[`components/SystemNotice should match snapshot for regular user, admin a
     <div
       className="system-notice__logo"
     >
-      <MattermostLogo />
+      <MatterFOSSLogo />
     </div>
     <div
       className="system-notice__title"
@@ -185,7 +185,7 @@ exports[`components/SystemNotice should match snapshot for regular user, regular
     <div
       className="system-notice__logo"
     >
-      <MattermostLogo />
+      <MatterFOSSLogo />
     </div>
     <div
       className="system-notice__title"
@@ -237,7 +237,7 @@ exports[`components/SystemNotice should match snapshot for show function returni
     <div
       className="system-notice__logo"
     >
-      <MattermostLogo />
+      <MatterFOSSLogo />
     </div>
     <div
       className="system-notice__title"
@@ -287,7 +287,7 @@ exports[`components/SystemNotice should match snapshot for with allowForget equa
     <div
       className="system-notice__logo"
     >
-      <MattermostLogo />
+      <MatterFOSSLogo />
     </div>
     <div
       className="system-notice__title"

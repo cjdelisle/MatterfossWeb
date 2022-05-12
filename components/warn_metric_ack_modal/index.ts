@@ -4,11 +4,11 @@
 import {ActionCreatorsMapObject, bindActionCreators, Dispatch} from 'redux';
 import {connect} from 'react-redux';
 
-import {Action, ActionResult} from 'mattermost-redux/types/actions';
-import {getStandardAnalytics, sendWarnMetricAck} from 'mattermost-redux/actions/admin';
+import {Action, ActionResult} from 'matterfoss-redux/types/actions';
+import {getStandardAnalytics, sendWarnMetricAck} from 'matterfoss-redux/actions/admin';
 
-import {getCurrentUser} from 'mattermost-redux/selectors/entities/common';
-import {getConfig} from 'mattermost-redux/selectors/entities/general';
+import {getCurrentUser} from 'matterfoss-redux/selectors/entities/common';
+import {getConfig} from 'matterfoss-redux/selectors/entities/general';
 
 import {closeModal} from 'actions/views/modals';
 import {GlobalState} from 'types/store';

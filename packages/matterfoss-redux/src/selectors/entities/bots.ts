@@ -3,11 +3,11 @@
 
 import {createSelector} from 'reselect';
 
-import {Bot} from 'mattermost-redux/types/bots';
-import {GlobalState} from 'mattermost-redux/types/store';
-import {getUsers} from 'mattermost-redux/selectors/entities/common';
+import {Bot} from 'matterfoss-redux/types/bots';
+import {GlobalState} from 'matterfoss-redux/types/store';
+import {getUsers} from 'matterfoss-redux/selectors/entities/common';
 
-export const ExternalBotAccountNames: string[] = ['mattermost-advisor'];
+export const ExternalBotAccountNames: string[] = ['matterfoss-advisor'];
 
 export function getBotAccounts(state: GlobalState) {
     return state.entities.bots.accounts;

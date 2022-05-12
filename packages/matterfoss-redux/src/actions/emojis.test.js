@@ -6,12 +6,12 @@ import fs from 'fs';
 import assert from 'assert';
 import nock from 'nock';
 
-import * as Actions from 'mattermost-redux/actions/emojis';
-import {Client4} from 'mattermost-redux/client';
+import * as Actions from 'matterfoss-redux/actions/emojis';
+import {Client4} from 'matterfoss-redux/client';
 
-import {GeneralTypes} from 'mattermost-redux/action_types';
-import TestHelper from 'mattermost-redux/test/test_helper';
-import configureStore from 'mattermost-redux/test/test_store';
+import {GeneralTypes} from 'matterfoss-redux/action_types';
+import TestHelper from 'matterfoss-redux/test/test_helper';
+import configureStore from 'matterfoss-redux/test/test_store';
 
 const OK_RESPONSE = {status: 'OK'};
 
@@ -30,7 +30,7 @@ describe('Actions.Emojis', () => {
     });
 
     it('createCustomEmoji', async () => {
-        const testImageData = fs.createReadStream('packages/mattermost-redux/test/assets/images/test.png');
+        const testImageData = fs.createReadStream('packages/matterfoss-redux/test/assets/images/test.png');
 
         nock(Client4.getBaseRoute()).
             post('/emoji').
@@ -52,7 +52,7 @@ describe('Actions.Emojis', () => {
     });
 
     it('getCustomEmojis', async () => {
-        const testImageData = fs.createReadStream('packages/mattermost-redux/test/assets/images/test.png');
+        const testImageData = fs.createReadStream('packages/matterfoss-redux/test/assets/images/test.png');
 
         nock(Client4.getBaseRoute()).
             post('/emoji').
@@ -91,7 +91,7 @@ describe('Actions.Emojis', () => {
                 name: TestHelper.generateId(),
                 creator_id: TestHelper.basicUser.id,
             },
-            fs.createReadStream('packages/mattermost-redux/test/assets/images/test.png'),
+            fs.createReadStream('packages/matterfoss-redux/test/assets/images/test.png'),
         )(store.dispatch, store.getState);
 
         nock(Client4.getBaseRoute()).
@@ -102,7 +102,7 @@ describe('Actions.Emojis', () => {
                 name: TestHelper.generateId(),
                 creator_id: TestHelper.basicUser.id,
             },
-            fs.createReadStream('packages/mattermost-redux/test/assets/images/test.png'),
+            fs.createReadStream('packages/matterfoss-redux/test/assets/images/test.png'),
         )(store.dispatch, store.getState);
 
         nock(Client4.getBaseRoute()).
@@ -162,7 +162,7 @@ describe('Actions.Emojis', () => {
     });
 
     it('deleteCustomEmoji', async () => {
-        const testImageData = fs.createReadStream('packages/mattermost-redux/test/assets/images/test.png');
+        const testImageData = fs.createReadStream('packages/matterfoss-redux/test/assets/images/test.png');
 
         nock(Client4.getBaseRoute()).
             post('/emoji').
@@ -223,7 +223,7 @@ describe('Actions.Emojis', () => {
     });
 
     it('searchCustomEmojis', async () => {
-        const testImageData = fs.createReadStream('packages/mattermost-redux/test/assets/images/test.png');
+        const testImageData = fs.createReadStream('packages/matterfoss-redux/test/assets/images/test.png');
 
         nock(Client4.getBaseRoute()).
             post('/emoji').
@@ -251,7 +251,7 @@ describe('Actions.Emojis', () => {
     });
 
     it('autocompleteCustomEmojis', async () => {
-        const testImageData = fs.createReadStream('packages/mattermost-redux/test/assets/images/test.png');
+        const testImageData = fs.createReadStream('packages/matterfoss-redux/test/assets/images/test.png');
 
         nock(Client4.getBaseRoute()).
             post('/emoji').
@@ -280,7 +280,7 @@ describe('Actions.Emojis', () => {
     });
 
     it('getCustomEmoji', async () => {
-        const testImageData = fs.createReadStream('packages/mattermost-redux/test/assets/images/test.png');
+        const testImageData = fs.createReadStream('packages/matterfoss-redux/test/assets/images/test.png');
 
         nock(Client4.getBaseRoute()).
             post('/emoji').
@@ -308,7 +308,7 @@ describe('Actions.Emojis', () => {
     });
 
     it('getCustomEmojiByName', async () => {
-        const testImageData = fs.createReadStream('packages/mattermost-redux/test/assets/images/test.png');
+        const testImageData = fs.createReadStream('packages/matterfoss-redux/test/assets/images/test.png');
 
         nock(Client4.getBaseRoute()).
             post('/emoji').
@@ -347,7 +347,7 @@ describe('Actions.Emojis', () => {
     });
 
     it('getCustomEmojisByName', async () => {
-        const testImageData = fs.createReadStream('packages/mattermost-redux/test/assets/images/test.png');
+        const testImageData = fs.createReadStream('packages/matterfoss-redux/test/assets/images/test.png');
 
         nock(Client4.getBaseRoute()).
             post('/emoji').
@@ -379,7 +379,7 @@ describe('Actions.Emojis', () => {
     });
 
     it('getCustomEmojisInText', async () => {
-        const testImageData = fs.createReadStream('packages/mattermost-redux/test/assets/images/test.png');
+        const testImageData = fs.createReadStream('packages/matterfoss-redux/test/assets/images/test.png');
 
         nock(Client4.getBaseRoute()).
             post('/emoji').

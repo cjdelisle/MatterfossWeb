@@ -1,8 +1,8 @@
 .PHONY: build test run clean stop check-style fix-style run-unit emojis help package-ci storybook build-storybook update-dependencies
 
-BUILD_SERVER_DIR = ../mattermost-server
-BUILD_WEBAPP_DIR = ../mattermost-webapp
-MM_UTILITIES_DIR = ../mattermost-utilities
+BUILD_SERVER_DIR = ../matterfoss-server
+BUILD_WEBAPP_DIR = ../matterfoss-webapp
+MM_UTILITIES_DIR = ../matterfoss-utilities
 EMOJI_TOOLS_DIR = ./build/emoji
 export NODE_OPTIONS=--max-old-space-size=4096
 
@@ -58,12 +58,12 @@ package: build ## Packages app
 
 	mkdir tmp
 	mv dist tmp/client
-	tar -C tmp -czf mattermost-webapp.tar.gz client
+	tar -C tmp -czf matterfoss-webapp.tar.gz client
 	mv tmp/client dist
 	rmdir tmp
 
 package-ci: ## used in the CI to build the package and bypass the npm install
-	@echo Building mattermost Webapp
+	@echo Building matterfoss Webapp
 
 	rm -rf dist
 	npm run build
@@ -72,19 +72,19 @@ package-ci: ## used in the CI to build the package and bypass the npm install
 
 	mkdir tmp
 	mv dist tmp/client
-	tar -C tmp -czf mattermost-webapp.tar.gz client
+	tar -C tmp -czf matterfoss-webapp.tar.gz client
 	mv tmp/client dist
 	rmdir tmp
 
 build: node_modules ## Builds the app
-	@echo Building mattermost Webapp
+	@echo Building matterfoss Webapp
 
 	rm -rf dist
 
 	npm run build
 
 run: node_modules ## Runs app
-	@echo Running mattermost Webapp for development
+	@echo Running matterfoss Webapp for development
 
 	npm run run $(RUN_IN_BACKGROUND)
 
@@ -92,7 +92,7 @@ dev: node_modules ## Runs webpack-dev-server
 	npm run dev-server
 
 run-fullmap: node_modules ## Legacy alias to run
-	@echo Running mattermost Webapp for development
+	@echo Running matterfoss Webapp for development
 
 	npm run run $(RUN_IN_BACKGROUND)
 
@@ -114,14 +114,14 @@ clean: ## Clears cached; deletes node_modules and dist directories
 	rm -rf node_modules
 
 e2e-test: node_modules
-	@echo E2E: Running mattermost-mysql-e2e
-	@if [ $(shell docker ps -a | grep -ci mattermost-mysql-e2e) -eq 0 ]; then \
-		echo starting mattermost-mysql-e2e; \
-		docker run --name mattermost-mysql-e2e -p 35476:3306 -e MYSQL_ROOT_PASSWORD=mostest \
-		-e MYSQL_USER=mmuser -e MYSQL_PASSWORD=mostest -e MYSQL_DATABASE=mattermost_test -d mysql:5.7 > /dev/null; \
-	elif [ $(shell docker ps | grep -ci mattermost-mysql-e2e) -eq 0 ]; then \
-		echo restarting mattermost-mysql-e2e; \
-		docker start mattermost-mysql-e2e > /dev/null; \
+	@echo E2E: Running matterfoss-mysql-e2e
+	@if [ $(shell docker ps -a | grep -ci matterfoss-mysql-e2e) -eq 0 ]; then \
+		echo starting matterfoss-mysql-e2e; \
+		docker run --name matterfoss-mysql-e2e -p 35476:3306 -e MYSQL_ROOT_PASSWORD=mostest \
+		-e MYSQL_USER=mmuser -e MYSQL_PASSWORD=mostest -e MYSQL_DATABASE=matterfoss_test -d mysql:5.7 > /dev/null; \
+	elif [ $(shell docker ps | grep -ci matterfoss-mysql-e2e) -eq 0 ]; then \
+		echo restarting matterfoss-mysql-e2e; \
+		docker start matterfoss-mysql-e2e > /dev/null; \
 	fi
 
 	cd $(BUILD_SERVER_DIR) && [[ -f config/config.json ]] && \
@@ -140,24 +140,24 @@ e2e-test: node_modules
 	@echo E2E: Stoppping the server
 	cd $(BUILD_SERVER_DIR) && $(MAKE) stop
 
-	@echo E2E: stopping mattermost-mysql-e2e
-	docker stop mattermost-mysql-e2e > /dev/null
+	@echo E2E: stopping matterfoss-mysql-e2e
+	docker stop matterfoss-mysql-e2e > /dev/null
 
 	cd $(BUILD_SERVER_DIR) && [[ -f config/config-backup.json ]] && \
 		cp config/config-backup.json config/config.json && echo "revert local config.json" || \
-		echo "config-backup.json not found" && sed -i'' -e 's|"DataSource": ".*"|"DataSource": "mmuser:mostest@tcp(dockerhost:3306)/mattermost_test?charset=utf8mb4,utf8\u0026readTimeout=30s\u0026writeTimeout=30s"|g' config/config.json
+		echo "config-backup.json not found" && sed -i'' -e 's|"DataSource": ".*"|"DataSource": "mmuser:mostest@tcp(dockerhost:3306)/matterfoss_test?charset=utf8mb4,utf8\u0026readTimeout=30s\u0026writeTimeout=30s"|g' config/config.json
 
 	@echo E2E: Tests completed
 
 clean-e2e:
-	@if [ $(shell docker ps -a | grep -ci mattermost-mysql-e2e) -eq 1 ]; then \
-		echo stopping mattermost-mysql-e2e; \
-		docker stop mattermost-mysql-e2e > /dev/null; \
+	@if [ $(shell docker ps -a | grep -ci matterfoss-mysql-e2e) -eq 1 ]; then \
+		echo stopping matterfoss-mysql-e2e; \
+		docker stop matterfoss-mysql-e2e > /dev/null; \
 	fi
 
 	cd $(BUILD_SERVER_DIR) && [[ -f config/config-backup.json ]] && \
 		cp config/config-backup.json config/config.json && echo "revert local config.json" || \
-		echo "config-backup.json not found" && sed -i'' -e 's|"DataSource": ".*"|"DataSource": "mmuser:mostest@tcp(dockerhost:3306)/mattermost_test?charset=utf8mb4,utf8\u0026readTimeout=30s\u0026writeTimeout=30s"|g' config/config.json
+		echo "config-backup.json not found" && sed -i'' -e 's|"DataSource": ".*"|"DataSource": "mmuser:mostest@tcp(dockerhost:3306)/matterfoss_test?charset=utf8mb4,utf8\u0026readTimeout=30s\u0026writeTimeout=30s"|g' config/config.json
 
 emojis: ## Creates emoji JSON, JSX and Go files and extracts emoji images from the system font
 	SERVER_DIR=$(BUILD_SERVER_DIR) npm run make-emojis

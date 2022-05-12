@@ -4,8 +4,8 @@
 import {connect} from 'react-redux';
 import {bindActionCreators, Dispatch} from 'redux';
 
-import {revokeUserAccessToken} from 'mattermost-redux/actions/users';
-import {GenericAction} from 'mattermost-redux/types/actions';
+import {revokeUserAccessToken} from 'matterfoss-redux/actions/users';
+import {GenericAction} from 'matterfoss-redux/types/actions';
 
 import RevokeTokenButton from './revoke_token_button';
 

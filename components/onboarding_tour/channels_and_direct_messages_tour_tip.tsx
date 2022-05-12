@@ -6,7 +6,7 @@ import {FormattedMessage} from 'react-intl';
 import {useSelector} from 'react-redux';
 
 import {useMeasurePunchouts} from 'components/widgets/tour_tip';
-import {getChannelsNameMapInCurrentTeam} from 'mattermost-redux/selectors/entities/channels';
+import {getChannelsNameMapInCurrentTeam} from 'matterfoss-redux/selectors/entities/channels';
 import FormattedMarkdownMessage from 'components/formatted_markdown_message.jsx';
 import {GlobalState} from 'types/store';
 import Constants from 'utils/constants';

@@ -3,7 +3,7 @@
 
 // *****************************************************************************
 // Schemes
-// https://api.mattermost.com/#tag/schemes
+// https://api.matterfoss.com/#tag/schemes
 // *****************************************************************************
 
 Cypress.Commands.add('apiGetSchemes', (scope) => {

@@ -4,19 +4,19 @@
 import {connect} from 'react-redux';
 import {ActionCreatorsMapObject, bindActionCreators, Dispatch} from 'redux';
 
-import {getDataRetentionCustomPolicyTeams, searchDataRetentionCustomPolicyTeams as searchTeams} from 'mattermost-redux/actions/admin';
-import {getTeamsInPolicy, searchTeamsInPolicy} from 'mattermost-redux/selectors/entities/teams';
-import {getDataRetentionCustomPolicy} from 'mattermost-redux/selectors/entities/admin';
-import {teamListToMap, filterTeamsStartingWithTerm} from 'mattermost-redux/utils/team_utils';
+import {getDataRetentionCustomPolicyTeams, searchDataRetentionCustomPolicyTeams as searchTeams} from 'matterfoss-redux/actions/admin';
+import {getTeamsInPolicy, searchTeamsInPolicy} from 'matterfoss-redux/selectors/entities/teams';
+import {getDataRetentionCustomPolicy} from 'matterfoss-redux/selectors/entities/admin';
+import {teamListToMap, filterTeamsStartingWithTerm} from 'matterfoss-redux/utils/team_utils';
 
-import {ActionFunc, ActionResult, GenericAction} from 'mattermost-redux/types/actions';
+import {ActionFunc, ActionResult, GenericAction} from 'matterfoss-redux/types/actions';
 
-import {Team, TeamSearchOpts} from 'mattermost-redux/types/teams';
+import {Team, TeamSearchOpts} from 'matterfoss-redux/types/teams';
 
 import {GlobalState} from 'types/store';
 import {setTeamListSearch} from 'actions/views/search';
 
-import {DataRetentionCustomPolicy} from 'mattermost-redux/types/data_retention';
+import {DataRetentionCustomPolicy} from 'matterfoss-redux/types/data_retention';
 
 import TeamList from './team_list';
 

@@ -63,7 +63,7 @@ exports[`components/admin_console/permission_schemes_settings/permission_team_sc
         >
           <span>
             <injectIntl(FormattedMarkdownMessage)
-              defaultMessage="[Team Override Schemes](!https://docs.mattermost.com/onboard/advanced-permissions.html) set the permissions for Team Admins, Channel Admins and other members in specific teams. Use a Team Override Scheme when specific teams need permission exceptions to the [System Scheme](!https://docs.mattermost.com/onboard/advanced-permissions.html)."
+              defaultMessage="[Team Override Schemes](!https://docs.matterfoss.com/onboard/advanced-permissions.html) set the permissions for Team Admins, Channel Admins and other members in specific teams. Use a Team Override Scheme when specific teams need permission exceptions to the [System Scheme](!https://docs.matterfoss.com/onboard/advanced-permissions.html)."
               id="admin.permissions.teamScheme.introBanner"
             />
           </span>
@@ -388,7 +388,7 @@ exports[`components/admin_console/permission_schemes_settings/permission_team_sc
         >
           <span>
             <injectIntl(FormattedMarkdownMessage)
-              defaultMessage="[Team Override Schemes](!https://docs.mattermost.com/onboard/advanced-permissions.html) set the permissions for Team Admins, Channel Admins and other members in specific teams. Use a Team Override Scheme when specific teams need permission exceptions to the [System Scheme](!https://docs.mattermost.com/onboard/advanced-permissions.html)."
+              defaultMessage="[Team Override Schemes](!https://docs.matterfoss.com/onboard/advanced-permissions.html) set the permissions for Team Admins, Channel Admins and other members in specific teams. Use a Team Override Scheme when specific teams need permission exceptions to the [System Scheme](!https://docs.matterfoss.com/onboard/advanced-permissions.html)."
               id="admin.permissions.teamScheme.introBanner"
             />
           </span>
@@ -737,7 +737,7 @@ exports[`components/admin_console/permission_schemes_settings/permission_team_sc
         >
           <span>
             <injectIntl(FormattedMarkdownMessage)
-              defaultMessage="[Team Override Schemes](!https://docs.mattermost.com/onboard/advanced-permissions.html) set the permissions for Team Admins, Channel Admins and other members in specific teams. Use a Team Override Scheme when specific teams need permission exceptions to the [System Scheme](!https://docs.mattermost.com/onboard/advanced-permissions.html)."
+              defaultMessage="[Team Override Schemes](!https://docs.matterfoss.com/onboard/advanced-permissions.html) set the permissions for Team Admins, Channel Admins and other members in specific teams. Use a Team Override Scheme when specific teams need permission exceptions to the [System Scheme](!https://docs.matterfoss.com/onboard/advanced-permissions.html)."
               id="admin.permissions.teamScheme.introBanner"
             />
           </span>
@@ -1159,7 +1159,7 @@ exports[`components/admin_console/permission_schemes_settings/permission_team_sc
         >
           <span>
             <injectIntl(FormattedMarkdownMessage)
-              defaultMessage="[Team Override Schemes](!https://docs.mattermost.com/onboard/advanced-permissions.html) set the permissions for Team Admins, Channel Admins and other members in specific teams. Use a Team Override Scheme when specific teams need permission exceptions to the [System Scheme](!https://docs.mattermost.com/onboard/advanced-permissions.html)."
+              defaultMessage="[Team Override Schemes](!https://docs.matterfoss.com/onboard/advanced-permissions.html) set the permissions for Team Admins, Channel Admins and other members in specific teams. Use a Team Override Scheme when specific teams need permission exceptions to the [System Scheme](!https://docs.matterfoss.com/onboard/advanced-permissions.html)."
               id="admin.permissions.teamScheme.introBanner"
             />
           </span>

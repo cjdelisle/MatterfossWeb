@@ -3,9 +3,9 @@
 
 import assert from 'assert';
 
-import {Client4} from 'mattermost-redux/client';
+import {Client4} from 'matterfoss-redux/client';
 
-import * as FileUtils from 'mattermost-redux/utils/file_utils';
+import * as FileUtils from 'matterfoss-redux/utils/file_utils';
 
 describe('FileUtils', () => {
     const serverUrl = Client4.getUrl();

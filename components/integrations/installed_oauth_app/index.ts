@@ -3,7 +3,7 @@
 
 import {connect} from 'react-redux';
 
-import {getUser} from 'mattermost-redux/selectors/entities/users';
+import {getUser} from 'matterfoss-redux/selectors/entities/users';
 
 import {GlobalState} from 'types/store';
 

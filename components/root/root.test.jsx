@@ -7,12 +7,12 @@ import rudderAnalytics from 'rudder-sdk-js';
 
 import matchMedia from 'tests/helpers/match_media.mock.ts';
 
-import {Client4} from 'mattermost-redux/client';
+import {Client4} from 'matterfoss-redux/client';
 
 import Root from 'components/root/root';
 import * as GlobalActions from 'actions/global_actions';
 import Constants, {StoragePrefixes, WindowSizes} from 'utils/constants';
-import {GeneralTypes} from 'mattermost-redux/action_types';
+import {GeneralTypes} from 'matterfoss-redux/action_types';
 
 jest.mock('rudder-sdk-js', () => ({
     identify: jest.fn(),
@@ -36,7 +36,7 @@ jest.mock('utils/utils', () => ({
     makeIsEligibleForClick: jest.fn(),
 }));
 
-jest.mock('mattermost-redux/actions/general', () => ({
+jest.mock('matterfoss-redux/actions/general', () => ({
     setUrl: () => {},
 }));
 

@@ -8,7 +8,7 @@
 // See https://jsdoc.app/index.html for reference.
 // Basic requirements for documentation are the following:
 // - Meaningful description
-// - Specific link to https://api.mattermost.com
+// - Specific link to https://api.matterfoss.com
 // - Each parameter with `@params`
 // - Return value with `@returns`
 // - Example usage with `@example`
@@ -20,7 +20,7 @@ declare namespace Cypress {
 
         /**
          * Get a role from the provided role name.
-         * See https://api.mattermost.com/#tag/roles/paths/~1roles~1name~1{role_name}/get
+         * See https://api.matterfoss.com/#tag/roles/paths/~1roles~1name~1{role_name}/get
          * @param {string} name - role name, e.g. 'system_user'
          * @returns {Role} `out.role` as `Role`
          *
@@ -33,7 +33,7 @@ declare namespace Cypress {
 
         /**
          * Get a list of roles by name.
-         * See https://api.mattermost.com/#tag/roles/paths/~1roles~1names/post
+         * See https://api.matterfoss.com/#tag/roles/paths/~1roles~1names/post
          * @param {string[]} names - list of role names, e.g. ['system_user']
          * @returns {Role[]} `out.roles` as list of `Role` objects
          *
@@ -46,7 +46,7 @@ declare namespace Cypress {
 
         /**
          * Patch a role by ID.
-         * See https://api.mattermost.com/#tag/roles/paths/~1roles~1{role_id}~1patch/put
+         * See https://api.matterfoss.com/#tag/roles/paths/~1roles~1{role_id}~1patch/put
          * @param {string} id - role ID
          * @param {Permissions} patch.permissions - permissions
          * @returns {Role} `out.role` as `Role`

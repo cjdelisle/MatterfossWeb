@@ -9,7 +9,7 @@ import {Elements} from '@stripe/react-stripe-js';
 
 import {isEmpty} from 'lodash';
 
-import {CloudCustomer, Product} from 'mattermost-redux/types/cloud';
+import {CloudCustomer, Product} from 'matterfoss-redux/types/cloud';
 
 import {trackEvent, pageVisited} from 'actions/telemetry_actions';
 import {
@@ -32,7 +32,7 @@ import Tooltip from 'components/tooltip';
 import LoadingSpinner from 'components/widgets/loading/loading_spinner';
 import UpgradeSvg from 'components/common/svg_images_components/upgrade_svg';
 import BackgroundSvg from 'components/common/svg_images_components/background_svg';
-import MattermostCloudSvg from 'components/common/svg_images_components/mattermost_cloud_svg';
+import MatterFOSSCloudSvg from 'components/common/svg_images_components/matterfoss_cloud_svg';
 
 import {getNextBillingDate} from 'utils/utils';
 
@@ -447,7 +447,7 @@ export default class PurchaseModal extends React.PureComponent<Props, State> {
         } else {
             title = (
                 <FormattedMessage
-                    defaultMessage={'Upgrade your Mattermost Cloud Susbcription'}
+                    defaultMessage={'Upgrade your MatterFOSS Cloud Susbcription'}
                     id={'admin.billing.subscription.upgradeCloudSubscription'}
                 />
             );
@@ -648,7 +648,7 @@ export default class PurchaseModal extends React.PureComponent<Props, State> {
                         />,
                     )}
                     <div className='logo'>
-                        <MattermostCloudSvg
+                        <MatterFOSSCloudSvg
                             width={250}
                             height={28}
                         />

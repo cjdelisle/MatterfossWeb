@@ -4,12 +4,12 @@
 import {connect} from 'react-redux';
 import {bindActionCreators, Dispatch} from 'redux';
 
-import {moveCategory} from 'mattermost-redux/actions/channel_categories';
-import {getCurrentChannelId, getUnreadChannelIds} from 'mattermost-redux/selectors/entities/channels';
-import {shouldShowUnreadsCategory, isCollapsedThreadsEnabled} from 'mattermost-redux/selectors/entities/preferences';
-import {getThreadCountsInCurrentTeam} from 'mattermost-redux/selectors/entities/threads';
-import {getCurrentTeam} from 'mattermost-redux/selectors/entities/teams';
-import {GenericAction} from 'mattermost-redux/types/actions';
+import {moveCategory} from 'matterfoss-redux/actions/channel_categories';
+import {getCurrentChannelId, getUnreadChannelIds} from 'matterfoss-redux/selectors/entities/channels';
+import {shouldShowUnreadsCategory, isCollapsedThreadsEnabled} from 'matterfoss-redux/selectors/entities/preferences';
+import {getThreadCountsInCurrentTeam} from 'matterfoss-redux/selectors/entities/threads';
+import {getCurrentTeam} from 'matterfoss-redux/selectors/entities/teams';
+import {GenericAction} from 'matterfoss-redux/types/actions';
 
 import {switchToChannelById} from 'actions/views/channel';
 import {switchToGlobalThreads} from 'actions/views/threads';

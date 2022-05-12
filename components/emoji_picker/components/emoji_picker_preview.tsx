@@ -4,8 +4,8 @@
 import React, {memo} from 'react';
 import {FormattedMessage} from 'react-intl';
 
-import {Emoji} from 'mattermost-redux/types/emojis';
-import {getEmojiImageUrl, isSystemEmoji} from 'mattermost-redux/utils/emoji_utils';
+import {Emoji} from 'matterfoss-redux/types/emojis';
+import {getEmojiImageUrl, isSystemEmoji} from 'matterfoss-redux/utils/emoji_utils';
 
 import imgTrans from 'images/img_trans.gif';
 

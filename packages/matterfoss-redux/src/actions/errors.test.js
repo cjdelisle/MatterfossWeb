@@ -4,11 +4,11 @@
 import assert from 'assert';
 import nock from 'nock';
 
-import {logError} from 'mattermost-redux/actions/errors';
-import {Client4} from 'mattermost-redux/client';
+import {logError} from 'matterfoss-redux/actions/errors';
+import {Client4} from 'matterfoss-redux/client';
 
-import TestHelper from 'mattermost-redux/test/test_helper';
-import configureStore from 'mattermost-redux/test/test_store';
+import TestHelper from 'matterfoss-redux/test/test_helper';
+import configureStore from 'matterfoss-redux/test/test_store';
 
 describe('Actions.Errors', () => {
     let store;

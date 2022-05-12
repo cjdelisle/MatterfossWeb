@@ -5,8 +5,8 @@ import React, {ClipboardEventHandler, memo, useCallback, useEffect, useRef, useS
 import classNames from 'classnames';
 import {useIntl} from 'react-intl';
 
-import {Post} from 'mattermost-redux/types/posts';
-import {Emoji, SystemEmoji} from 'mattermost-redux/types/emojis';
+import {Post} from 'matterfoss-redux/types/posts';
+import {Emoji, SystemEmoji} from 'matterfoss-redux/types/emojis';
 
 import {AppEvents, Constants, ModalIdentifiers} from 'utils/constants';
 import {

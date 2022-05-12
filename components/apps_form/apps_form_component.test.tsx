@@ -10,7 +10,7 @@ import {Modal} from 'react-bootstrap';
 
 import {mountWithIntl} from 'tests/helpers/intl-test-helper';
 
-import {AppCallResponseTypes} from 'mattermost-redux/constants/apps';
+import {AppCallResponseTypes} from 'matterfoss-redux/constants/apps';
 
 import Markdown from 'components/markdown';
 

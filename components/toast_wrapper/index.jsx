@@ -7,12 +7,12 @@ import {withRouter} from 'react-router-dom';
 
 import {createSelector} from 'reselect';
 
-import {Posts} from 'mattermost-redux/constants';
-import {getAllPosts, getPostIdsInChannel} from 'mattermost-redux/selectors/entities/posts';
-import {getCurrentUserId} from 'mattermost-redux/selectors/entities/users';
-import {makePreparePostIdsForPostList} from 'mattermost-redux/utils/post_list';
-import {getCurrentChannel, countCurrentChannelUnreadMessages, isManuallyUnread} from 'mattermost-redux/selectors/entities/channels';
-import {isCollapsedThreadsEnabled} from 'mattermost-redux/selectors/entities/preferences';
+import {Posts} from 'matterfoss-redux/constants';
+import {getAllPosts, getPostIdsInChannel} from 'matterfoss-redux/selectors/entities/posts';
+import {getCurrentUserId} from 'matterfoss-redux/selectors/entities/users';
+import {makePreparePostIdsForPostList} from 'matterfoss-redux/utils/post_list';
+import {getCurrentChannel, countCurrentChannelUnreadMessages, isManuallyUnread} from 'matterfoss-redux/selectors/entities/channels';
+import {isCollapsedThreadsEnabled} from 'matterfoss-redux/selectors/entities/preferences';
 
 import {updateToastStatus} from 'actions/views/channel';
 

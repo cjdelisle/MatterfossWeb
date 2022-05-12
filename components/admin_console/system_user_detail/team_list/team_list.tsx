@@ -3,9 +3,9 @@
 
 import React from 'react';
 
-import {ActionResult} from 'mattermost-redux/types/actions';
+import {ActionResult} from 'matterfoss-redux/types/actions';
 
-import {Team, TeamMembership} from 'mattermost-redux/types/teams';
+import {Team, TeamMembership} from 'matterfoss-redux/types/teams';
 
 import {filterAndSortTeamsByDisplayName} from 'utils/team_utils';
 import {t} from 'utils/i18n';

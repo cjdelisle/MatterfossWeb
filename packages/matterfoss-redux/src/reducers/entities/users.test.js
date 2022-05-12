@@ -3,8 +3,8 @@
 
 import assert from 'assert';
 
-import {UserTypes, ChannelTypes} from 'mattermost-redux/action_types';
-import reducer from 'mattermost-redux/reducers/entities/users';
+import {UserTypes, ChannelTypes} from 'matterfoss-redux/action_types';
+import reducer from 'matterfoss-redux/reducers/entities/users';
 
 describe('Reducers.users', () => {
     describe('profilesInChannel', () => {

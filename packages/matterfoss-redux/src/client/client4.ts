@@ -3,14 +3,14 @@
 
 /* eslint-disable max-lines */
 
-import {SystemSetting} from 'mattermost-redux/types/general';
-import {ClusterInfo, AnalyticsRow, SchemaMigration} from 'mattermost-redux/types/admin';
-import type {AppBinding, AppCallRequest, AppCallResponse} from 'mattermost-redux/types/apps';
-import {Audit} from 'mattermost-redux/types/audits';
-import {UserAutocomplete, AutocompleteSuggestion} from 'mattermost-redux/types/autocomplete';
-import {Bot, BotPatch} from 'mattermost-redux/types/bots';
-import {Product, Subscription, CloudCustomer, Address, CloudCustomerPatch, Invoice, SubscriptionStats} from 'mattermost-redux/types/cloud';
-import {ChannelCategory, OrderedChannelCategories} from 'mattermost-redux/types/channel_categories';
+import {SystemSetting} from 'matterfoss-redux/types/general';
+import {ClusterInfo, AnalyticsRow, SchemaMigration} from 'matterfoss-redux/types/admin';
+import type {AppBinding, AppCallRequest, AppCallResponse} from 'matterfoss-redux/types/apps';
+import {Audit} from 'matterfoss-redux/types/audits';
+import {UserAutocomplete, AutocompleteSuggestion} from 'matterfoss-redux/types/autocomplete';
+import {Bot, BotPatch} from 'matterfoss-redux/types/bots';
+import {Product, Subscription, CloudCustomer, Address, CloudCustomerPatch, Invoice, SubscriptionStats} from 'matterfoss-redux/types/cloud';
+import {ChannelCategory, OrderedChannelCategories} from 'matterfoss-redux/types/channel_categories';
 import {
     Channel,
     ChannelMemberCountsByGroup,
@@ -24,9 +24,9 @@ import {
     ChannelWithTeamData,
     ChannelSearchOpts,
     ServerChannel,
-} from 'mattermost-redux/types/channels';
-import {Options, StatusOK, ClientResponse, LogLevel} from 'mattermost-redux/types/client4';
-import {Compliance} from 'mattermost-redux/types/compliance';
+} from 'matterfoss-redux/types/channels';
+import {Options, StatusOK, ClientResponse, LogLevel} from 'matterfoss-redux/types/client4';
+import {Compliance} from 'matterfoss-redux/types/compliance';
 import {
     ClientConfig,
     ClientLicense,
@@ -34,10 +34,10 @@ import {
     License,
     AdminConfig,
     EnvironmentConfig,
-} from 'mattermost-redux/types/config';
-import {CustomEmoji} from 'mattermost-redux/types/emojis';
-import {ServerError} from 'mattermost-redux/types/errors';
-import {FileInfo, FileUploadResponse, FileSearchResults} from 'mattermost-redux/types/files';
+} from 'matterfoss-redux/types/config';
+import {CustomEmoji} from 'matterfoss-redux/types/emojis';
+import {ServerError} from 'matterfoss-redux/types/errors';
+import {FileInfo, FileUploadResponse, FileSearchResults} from 'matterfoss-redux/types/files';
 import {
     Group,
     GroupPatch,
@@ -49,8 +49,8 @@ import {
     GroupCreateWithUserIds,
     GroupSearachParams,
     CustomGroupPatch,
-} from 'mattermost-redux/types/groups';
-import {PostActionResponse} from 'mattermost-redux/types/integration_actions';
+} from 'matterfoss-redux/types/groups';
+import {PostActionResponse} from 'matterfoss-redux/types/integration_actions';
 import {
     Command,
     CommandArgs,
@@ -60,26 +60,26 @@ import {
     OAuthApp,
     OutgoingWebhook,
     SubmitDialogResponse,
-} from 'mattermost-redux/types/integrations';
-import {Job} from 'mattermost-redux/types/jobs';
-import {MfaSecret} from 'mattermost-redux/types/mfa';
+} from 'matterfoss-redux/types/integrations';
+import {Job} from 'matterfoss-redux/types/jobs';
+import {MfaSecret} from 'matterfoss-redux/types/mfa';
 import {
     ClientPluginManifest,
     PluginManifest,
     PluginsResponse,
     PluginStatus,
-} from 'mattermost-redux/types/plugins';
+} from 'matterfoss-redux/types/plugins';
 import type {
     MarketplaceApp,
     MarketplacePlugin,
-} from 'mattermost-redux/types/marketplace';
-import {Post, PostList, PostSearchResults, OpenGraphMetadata} from 'mattermost-redux/types/posts';
-import {PreferenceType} from 'mattermost-redux/types/preferences';
-import {Reaction} from 'mattermost-redux/types/reactions';
-import {Role} from 'mattermost-redux/types/roles';
-import {SamlCertificateStatus, SamlMetadataResponse} from 'mattermost-redux/types/saml';
-import {Scheme} from 'mattermost-redux/types/schemes';
-import {Session} from 'mattermost-redux/types/sessions';
+} from 'matterfoss-redux/types/marketplace';
+import {Post, PostList, PostSearchResults, OpenGraphMetadata} from 'matterfoss-redux/types/posts';
+import {PreferenceType} from 'matterfoss-redux/types/preferences';
+import {Reaction} from 'matterfoss-redux/types/reactions';
+import {Role} from 'matterfoss-redux/types/roles';
+import {SamlCertificateStatus, SamlMetadataResponse} from 'matterfoss-redux/types/saml';
+import {Scheme} from 'matterfoss-redux/types/schemes';
+import {Session} from 'matterfoss-redux/types/sessions';
 import {
     GetTeamMembersOpts,
     Team,
@@ -90,8 +90,8 @@ import {
     TeamsWithCount,
     TeamUnread,
     TeamSearchOpts,
-} from 'mattermost-redux/types/teams';
-import {TermsOfService} from 'mattermost-redux/types/terms_of_service';
+} from 'matterfoss-redux/types/teams';
+import {TermsOfService} from 'matterfoss-redux/types/terms_of_service';
 import {
     AuthChangeResponse,
     UserAccessToken,
@@ -100,21 +100,21 @@ import {
     UserStatus,
     GetFilteredUsersStatsOpts,
     UserCustomStatus,
-} from 'mattermost-redux/types/users';
-import {RelationOneToOne} from 'mattermost-redux/types/utilities';
-import {ProductNotices} from 'mattermost-redux/types/product_notices';
+} from 'matterfoss-redux/types/users';
+import {RelationOneToOne} from 'matterfoss-redux/types/utilities';
+import {ProductNotices} from 'matterfoss-redux/types/product_notices';
 import {
     DataRetentionCustomPolicies,
     CreateDataRetentionCustomPolicy,
     PatchDataRetentionCustomPolicy,
     GetDataRetentionCustomPoliciesRequest,
-} from 'mattermost-redux/types/data_retention';
-import {CompleteOnboardingRequest} from 'mattermost-redux/types/setup';
+} from 'matterfoss-redux/types/data_retention';
+import {CompleteOnboardingRequest} from 'matterfoss-redux/types/setup';
 
-import {buildQueryString} from 'mattermost-redux/utils/helpers_client';
-import {cleanUrlForLogging} from 'mattermost-redux/utils/sentry';
-import {isSystemAdmin} from 'mattermost-redux/utils/user_utils';
-import {UserThreadList, UserThread, UserThreadWithPost} from 'mattermost-redux/types/threads';
+import {buildQueryString} from 'matterfoss-redux/utils/helpers_client';
+import {cleanUrlForLogging} from 'matterfoss-redux/utils/sentry';
+import {isSystemAdmin} from 'matterfoss-redux/utils/user_utils';
+import {UserThreadList, UserThread, UserThreadWithPost} from 'matterfoss-redux/types/threads';
 
 import {General} from '../constants';
 
@@ -231,7 +231,7 @@ export default class Client4 {
     // Apps Framework feature is experimental, and this function is susceptible
     // to breaking changes without pushing the major version of this package.
     getAppsProxyRoute() {
-        return `${this.url}/plugins/com.mattermost.apps`;
+        return `${this.url}/plugins/com.matterfoss.apps`;
     }
 
     getUsersRoute() {

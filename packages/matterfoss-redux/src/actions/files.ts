@@ -1,11 +1,11 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
-import {Client4} from 'mattermost-redux/client';
-import {FileTypes} from 'mattermost-redux/action_types';
+import {Client4} from 'matterfoss-redux/client';
+import {FileTypes} from 'matterfoss-redux/action_types';
 
-import {batchActions, DispatchFunc, GetStateFunc, ActionFunc, Action} from 'mattermost-redux/types/actions';
+import {batchActions, DispatchFunc, GetStateFunc, ActionFunc, Action} from 'matterfoss-redux/types/actions';
 
-import {FileUploadResponse, FileSearchResultItem} from 'mattermost-redux/types/files';
+import {FileUploadResponse, FileSearchResultItem} from 'matterfoss-redux/types/files';
 
 import {logError} from './errors';
 import {bindClientFunc, forceLogoutIfNecessary} from './helpers';

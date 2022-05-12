@@ -39,7 +39,7 @@ describe('Customization', () => {
         cy.findByTestId('SupportSettings.ReportAProblemLinkhelp-text').find('span').should('be.visible').and('have.text', 'The URL for the Report a Problem link in the Help Menu. If this field is empty, the link is removed from the Help Menu.');
 
         // # Enter a problem link
-        const reportAProblemLink = 'https://mattermost.com/default-report-a-problem/';
+        const reportAProblemLink = 'https://matterfoss.com/default-report-a-problem/';
         cy.findByTestId('SupportSettings.ReportAProblemLinkinput').clear().type(reportAProblemLink);
 
         // # Save setting
@@ -130,15 +130,15 @@ describe('Customization', () => {
         });
     });
 
-    it('MM-T1215 - Can change Mattermost Apps Download Page Link setting', () => {
-        // * Verify Mattermost Apps Download Page Link's setting name is visible and matches the text
-        cy.findByTestId('NativeAppSettings.AppDownloadLinklabel').scrollIntoView().should('be.visible').and('have.text', 'Mattermost Apps Download Page Link:');
+    it('MM-T1215 - Can change MatterFOSS Apps Download Page Link setting', () => {
+        // * Verify MatterFOSS Apps Download Page Link's setting name is visible and matches the text
+        cy.findByTestId('NativeAppSettings.AppDownloadLinklabel').scrollIntoView().should('be.visible').and('have.text', 'MatterFOSS Apps Download Page Link:');
 
-        // * Verify the Mattermost Apps Download Page Link input box has default value. The default value depends on the setup before running the test.
+        // * Verify the MatterFOSS Apps Download Page Link input box has default value. The default value depends on the setup before running the test.
         cy.findByTestId('NativeAppSettings.AppDownloadLinkinput').should('have.value', origConfig.NativeAppSettings.AppDownloadLink);
 
         // * Verify the site name's help text is visible and matches the text
-        cy.findByTestId('NativeAppSettings.AppDownloadLinkhelp-text').find('span').should('be.visible').and('have.text', 'Add a link to a download page for the Mattermost apps. When a link is present, an option to "Download Mattermost Apps" will be added in the Product Menu so users can find the download page. Leave this field blank to hide the option from the Product Menu.');
+        cy.findByTestId('NativeAppSettings.AppDownloadLinkhelp-text').find('span').should('be.visible').and('have.text', 'Add a link to a download page for the MatterFOSS apps. When a link is present, an option to "Download MatterFOSS Apps" will be added in the Product Menu so users can find the download page. Leave this field blank to hide the option from the Product Menu.');
 
         // # Enter new App download link
         const newAppDownloadLink = 'https://example.com/app-download-link/';
@@ -156,7 +156,7 @@ describe('Customization', () => {
 
     it('MM-T1209 - Can change Help Link setting', () => {
         // * Verify that setting is visible and matches text content
-        const contents = ['The URL for the Help link on the Mattermost login page, sign-up pages, and Help Menu. If this field is empty, the Help link is hidden from users.'];
+        const contents = ['The URL for the Help link on the MatterFOSS login page, sign-up pages, and Help Menu. If this field is empty, the Help link is hidden from users.'];
         cy.findByTestId('SupportSettings.HelpLinklabel').scrollIntoView().should('be.visible').and('have.text', 'Help Link:');
 
         // * Verify that help setting is visible and matches text content
@@ -179,13 +179,13 @@ describe('Customization', () => {
     });
 
     it('MM-T1213 Can change About Link setting', () => {
-        const newAboutLink = 'https://mattermost.com/';
+        const newAboutLink = 'https://matterfoss.com/';
 
         // * Verify that setting is visible and has the correct label text
         cy.findByTestId('SupportSettings.AboutLinklabel').scrollIntoView().should('be.visible').and('have.text', 'About Link:');
 
         // * Verify that the help text is visible and matches text content
-        cy.findByTestId('SupportSettings.AboutLinkhelp-text').should('be.visible').and('have.text', 'The URL for the About link on the Mattermost login and sign-up pages. If this field is empty, the About link is hidden from users.');
+        cy.findByTestId('SupportSettings.AboutLinkhelp-text').should('be.visible').and('have.text', 'The URL for the About link on the MatterFOSS login and sign-up pages. If this field is empty, the About link is hidden from users.');
 
         // * Verify that the existing is visible and has default value
         cy.findByTestId('SupportSettings.AboutLinkinput').should('be.visible').and('have.value', origConfig.SupportSettings.AboutLink);
@@ -211,10 +211,10 @@ describe('Customization', () => {
         // * Verify the site name's help text is visible and matches the text
         cy.findByTestId('SupportSettings.TermsOfServiceLinkhelp-text').find('span').should('be.visible').and('have.text',
             'Link to the terms under which users may use your online service. By default, this includes the ' +
-            '"Mattermost Acceptable Use Policy" explaining the terms under which Mattermost software is ' +
+            '"MatterFOSS Acceptable Use Policy" explaining the terms under which MatterFOSS software is ' +
             'provided to end users. If you change the default link to add your own terms for using the service you ' +
-            'provide, your new terms must include a link to the default terms so end users are aware of the Mattermost ' +
-            'Acceptable Use Policy for Mattermost software.');
+            'provide, your new terms must include a link to the default terms so end users are aware of the MatterFOSS ' +
+            'Acceptable Use Policy for MatterFOSS software.');
 
         // # Enter a new help link
         const newValue = 'https://test.com';

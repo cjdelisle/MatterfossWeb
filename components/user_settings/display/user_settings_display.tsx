@@ -9,8 +9,8 @@ import {FormattedMessage} from 'react-intl';
 
 import {Timezone} from 'timezones.json';
 
-import {PreferenceType} from 'mattermost-redux/types/preferences';
-import {UserProfile, UserTimezone} from 'mattermost-redux/types/users';
+import {PreferenceType} from 'matterfoss-redux/types/preferences';
+import {UserProfile, UserTimezone} from 'matterfoss-redux/types/users';
 
 import {trackEvent} from 'actions/telemetry_actions';
 
@@ -802,7 +802,7 @@ export default class UserSettingsDisplay extends React.PureComponent<Props, Stat
                 },
                 description: {
                     id: t('user.settings.display.collapsedReplyThreadsDescription'),
-                    message: 'When enabled, reply messages are not shown in the channel and you\'ll be notified about threads you\'re following in the "Threads" view.\nPlease review our [documentation for known issues](!https://docs.mattermost.com/messaging/organizing-conversations.html) and help provide feedback in our [community channel](!https://community-daily.mattermost.com/core/channels/folded-reply-threads).',
+                    message: 'When enabled, reply messages are not shown in the channel and you\'ll be notified about threads you\'re following in the "Threads" view.\nPlease review our [documentation for known issues](!https://docs.matterfoss.com/messaging/organizing-conversations.html) and help provide feedback in our [community channel](!https://community-daily.matterfoss.com/core/channels/folded-reply-threads).',
                 },
             });
         }

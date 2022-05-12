@@ -5,12 +5,12 @@ import {connect} from 'react-redux';
 import {Dispatch, bindActionCreators} from 'redux';
 import {withRouter} from 'react-router-dom';
 
-import {savePreferences} from 'mattermost-redux/actions/preferences';
-import {makeGetCategory, getUseCaseOnboarding} from 'mattermost-redux/selectors/entities/preferences';
-import {getCurrentUserId, getCurrentUser, isFirstAdmin, isCurrentUserSystemAdmin} from 'mattermost-redux/selectors/entities/users';
-import {getConfig} from 'mattermost-redux/selectors/entities/general';
+import {savePreferences} from 'matterfoss-redux/actions/preferences';
+import {makeGetCategory, getUseCaseOnboarding} from 'matterfoss-redux/selectors/entities/preferences';
+import {getCurrentUserId, getCurrentUser, isFirstAdmin, isCurrentUserSystemAdmin} from 'matterfoss-redux/selectors/entities/users';
+import {getConfig} from 'matterfoss-redux/selectors/entities/general';
 
-import {getCurrentRelativeTeamUrl} from 'mattermost-redux/selectors/entities/teams';
+import {getCurrentRelativeTeamUrl} from 'matterfoss-redux/selectors/entities/teams';
 
 import {getSteps} from '../../next_steps_view/steps';
 

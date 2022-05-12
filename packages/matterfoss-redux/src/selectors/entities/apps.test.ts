@@ -1,10 +1,10 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
-import * as Selectors from 'mattermost-redux/selectors/entities/apps';
+import * as Selectors from 'matterfoss-redux/selectors/entities/apps';
 import {GlobalState} from 'types/store';
-import {AppBinding} from 'mattermost-redux/types/apps';
-import {AppBindingLocations} from 'mattermost-redux/constants/apps';
+import {AppBinding} from 'matterfoss-redux/types/apps';
+import {AppBindingLocations} from 'matterfoss-redux/constants/apps';
 
 const makeNewState = (pluginEnabled: boolean, flag?: string, bindings?: AppBinding[]) => ({
     entities: {

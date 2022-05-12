@@ -61,7 +61,7 @@ describe('Authentication', () => {
         // # Go back and view the original session app/browser, and wait until you see a desktop notification (may take up to a minute)
         // * Desktop notification is sent (may take up to 1 min)
         cy.wait(timeouts.HALF_MIN);
-        cy.get('@withNotification').should('have.been.calledOnce').and('have.been.calledWithMatch', 'Mattermost', ({body}) => {
+        cy.get('@withNotification').should('have.been.calledOnce').and('have.been.calledWithMatch', 'MatterFOSS', ({body}) => {
             const expected = 'Session Expired: Please sign in to continue receiving notifications.';
             expect(body, `Notification body: "${body}" should match: "${expected}"`).to.equal(expected);
             return true;

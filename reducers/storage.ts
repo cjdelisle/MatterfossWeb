@@ -5,10 +5,10 @@ import localForage from 'localforage';
 import {combineReducers} from 'redux';
 import {persistReducer, REHYDRATE} from 'redux-persist';
 
-import {General} from 'mattermost-redux/constants';
+import {General} from 'matterfoss-redux/constants';
 
-import {UserTypes} from 'mattermost-redux/action_types';
-import type {GenericAction} from 'mattermost-redux/types/actions';
+import {UserTypes} from 'matterfoss-redux/action_types';
+import type {GenericAction} from 'matterfoss-redux/types/actions';
 
 import {StorageTypes} from 'utils/constants';
 

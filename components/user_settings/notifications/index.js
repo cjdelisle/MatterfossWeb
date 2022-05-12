@@ -4,9 +4,9 @@
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 
-import {updateMe} from 'mattermost-redux/actions/users';
-import {getConfig} from 'mattermost-redux/selectors/entities/general';
-import {isCollapsedThreadsEnabled} from 'mattermost-redux/selectors/entities/preferences';
+import {updateMe} from 'matterfoss-redux/actions/users';
+import {getConfig} from 'matterfoss-redux/selectors/entities/general';
+import {isCollapsedThreadsEnabled} from 'matterfoss-redux/selectors/entities/preferences';
 
 import UserSettingsNotifications from './user_settings_notifications.jsx';
 

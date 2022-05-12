@@ -3,8 +3,8 @@
 
 import {connect} from 'react-redux';
 
-import {getPost, makeGetCommentCountForPost} from 'mattermost-redux/selectors/entities/posts';
-import {isCollapsedThreadsEnabled} from 'mattermost-redux/selectors/entities/preferences';
+import {getPost, makeGetCommentCountForPost} from 'matterfoss-redux/selectors/entities/posts';
+import {isCollapsedThreadsEnabled} from 'matterfoss-redux/selectors/entities/preferences';
 
 import {GlobalState} from 'types/store';
 

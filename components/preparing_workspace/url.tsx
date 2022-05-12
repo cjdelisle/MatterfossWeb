@@ -97,11 +97,11 @@ const Url = (props: Props) => {
                         <Description>
                             <FormattedMessage
                                 id={'onboarding_wizard.url.description'}
-                                defaultMessage='This is the URL that users will use to access Mattermost. <a>See Documentation</a> for more.'
+                                defaultMessage='This is the URL that users will use to access MatterFOSS. <a>See Documentation</a> for more.'
                                 values={{
                                     a: (chunks: React.ReactNode | React.ReactNodeArray) => (
                                         <a
-                                            href='https://docs.mattermost.com/configure/configuration-settings.html#site-url'
+                                            href='https://docs.matterfoss.com/configure/configuration-settings.html#site-url'
                                             target='_blank'
                                             rel='noreferrer'
                                         >

@@ -14,10 +14,10 @@ const GroupsFeatureDiscovery: React.FC = () => {
         <FeatureDiscovery
             featureName='groups'
             titleID='admin.groups_feature_discovery.title'
-            titleDefault='Synchronize your Active Directory/LDAP groups with Mattermost Enterprise'
+            titleDefault='Synchronize your Active Directory/LDAP groups with MatterFOSS Enterprise'
             copyID='admin.groups_feature_discovery.copy'
             copyDefault={'Use AD/LDAP groups to organize and apply actions to multiple users at once. Manage team and channel memberships, permissions, and more.'}
-            learnMoreURL='https://docs.mattermost.com/deployment/ldap-group-sync.html'
+            learnMoreURL='https://docs.matterfoss.com/deployment/ldap-group-sync.html'
             featureDiscoveryImage={<GroupsSVG/>}
         />
     );

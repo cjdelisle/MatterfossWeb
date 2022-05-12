@@ -6,12 +6,12 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import {FormattedMessage} from 'react-intl';
 
-import {Posts, Preferences} from 'mattermost-redux/constants/index';
+import {Posts, Preferences} from 'matterfoss-redux/constants/index';
 import {
     isPostEphemeral,
     isPostPendingOrFailed,
     isMeMessage as checkIsMeMessage,
-} from 'mattermost-redux/utils/post_utils';
+} from 'matterfoss-redux/utils/post_utils';
 
 import Constants, {Locations, A11yCustomEventTypes, AppEvents} from 'utils/constants';
 import * as PostUtils from 'utils/post_utils';
@@ -36,7 +36,7 @@ import InfoSmallIcon from 'components/widgets/icons/info_small_icon';
 import PostPreHeader from 'components/post_view/post_pre_header';
 import UserProfile from 'components/user_profile';
 import CustomStatusEmoji from 'components/custom_status/custom_status_emoji';
-import {Emoji} from 'mattermost-redux/types/emojis';
+import {Emoji} from 'matterfoss-redux/types/emojis';
 import EditPost from 'components/edit_post';
 import AutoHeightSwitcher, {AutoHeightSlots} from 'components/common/auto_height_switcher';
 

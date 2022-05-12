@@ -4,7 +4,7 @@
 import {connect} from 'react-redux';
 import {bindActionCreators, Dispatch} from 'redux';
 
-import {GenericAction} from 'mattermost-redux/types/actions';
+import {GenericAction} from 'matterfoss-redux/types/actions';
 
 import {incrementAnnouncementBarCount, decrementAnnouncementBarCount} from 'actions/views/announcement_bar';
 import {getAnnouncementBarCount} from 'selectors/views/announcement_bar';

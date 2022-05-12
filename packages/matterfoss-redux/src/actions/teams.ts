@@ -1,21 +1,21 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
-import {Client4} from 'mattermost-redux/client';
+import {Client4} from 'matterfoss-redux/client';
 import {General} from '../constants';
-import {ChannelTypes, TeamTypes, UserTypes} from 'mattermost-redux/action_types';
-import EventEmitter from 'mattermost-redux/utils/event_emitter';
+import {ChannelTypes, TeamTypes, UserTypes} from 'matterfoss-redux/action_types';
+import EventEmitter from 'matterfoss-redux/utils/event_emitter';
 
-import {isCompatibleWithJoinViewTeamPermissions} from 'mattermost-redux/selectors/entities/general';
+import {isCompatibleWithJoinViewTeamPermissions} from 'matterfoss-redux/selectors/entities/general';
 
-import {getCurrentTeamId} from 'mattermost-redux/selectors/entities/teams';
+import {getCurrentTeamId} from 'matterfoss-redux/selectors/entities/teams';
 
-import {getCurrentUserId} from 'mattermost-redux/selectors/entities/users';
+import {getCurrentUserId} from 'matterfoss-redux/selectors/entities/users';
 
-import {GetStateFunc, DispatchFunc, ActionFunc, ActionResult, batchActions, Action} from 'mattermost-redux/types/actions';
+import {GetStateFunc, DispatchFunc, ActionFunc, ActionResult, batchActions, Action} from 'matterfoss-redux/types/actions';
 
-import {Team, TeamMembership, TeamMemberWithError, GetTeamMembersOpts, TeamsWithCount, TeamSearchOpts} from 'mattermost-redux/types/teams';
+import {Team, TeamMembership, TeamMemberWithError, GetTeamMembersOpts, TeamsWithCount, TeamSearchOpts} from 'matterfoss-redux/types/teams';
 
-import {UserProfile} from 'mattermost-redux/types/users';
+import {UserProfile} from 'matterfoss-redux/types/users';
 
 import {isCollapsedThreadsEnabled} from '../selectors/entities/preferences';
 

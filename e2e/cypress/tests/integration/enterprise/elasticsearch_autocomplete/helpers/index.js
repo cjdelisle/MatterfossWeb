@@ -11,7 +11,7 @@ function withTimestamp(string, timestamp) {
 }
 
 function createEmail(name, timestamp) {
-    return name + timestamp + '@sample.mattermost.com';
+    return name + timestamp + '@sample.matterfoss.com';
 }
 
 // Helper function to start @mention

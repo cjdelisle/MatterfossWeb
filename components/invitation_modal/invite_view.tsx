@@ -5,10 +5,10 @@ import React, {useEffect, useMemo} from 'react';
 import {Modal} from 'react-bootstrap';
 import {FormattedMessage, useIntl} from 'react-intl';
 
-import deepFreeze from 'mattermost-redux/utils/deep_freeze';
-import {Channel} from 'mattermost-redux/types/channels';
-import {UserProfile} from 'mattermost-redux/types/users';
-import {Team} from 'mattermost-redux/types/teams';
+import deepFreeze from 'matterfoss-redux/utils/deep_freeze';
+import {Channel} from 'matterfoss-redux/types/channels';
+import {UserProfile} from 'matterfoss-redux/types/users';
+import {Team} from 'matterfoss-redux/types/teams';
 
 import {getSiteURL} from 'utils/url';
 import {Constants} from 'utils/constants';
@@ -20,7 +20,7 @@ import UsersEmailsInput from 'components/widgets/inputs/users_emails_input';
 import UpgradeLink from 'components/widgets/links/upgrade_link';
 import NotifyLink from 'components/widgets/links/notify_link';
 import {t} from 'utils/i18n.jsx';
-import {SubscriptionStats} from 'mattermost-redux/types/cloud';
+import {SubscriptionStats} from 'matterfoss-redux/types/cloud';
 
 import AddToChannels, {CustomMessageProps, InviteChannels, defaultCustomMessage, defaultInviteChannels} from './add_to_channels';
 import InviteAs, {InviteType} from './invite_as';

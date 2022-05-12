@@ -4,8 +4,8 @@
 import {connect} from 'react-redux';
 import {bindActionCreators, Dispatch} from 'redux';
 
-import {GenericAction} from 'mattermost-redux/types/actions';
-import {PostAction} from 'mattermost-redux/types/integration_actions';
+import {GenericAction} from 'matterfoss-redux/types/actions';
+import {PostAction} from 'matterfoss-redux/types/integration_actions';
 
 import {GlobalState} from 'types/store';
 import {autocompleteChannels} from 'actions/channel_actions';

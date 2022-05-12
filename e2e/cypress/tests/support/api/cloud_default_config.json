@@ -32,7 +32,7 @@
         "CollapsedThreads": "disabled"
     },
     "TeamSettings": {
-        "SiteName": "Mattermost",
+        "SiteName": "MatterFOSS",
         "MaxUsersPerTeam": 2000,
         "EnableUserCreation": true,
         "EnableOpenServer": true,
@@ -71,7 +71,7 @@
         "FeedbackName": "",
         "FeedbackOrganization": "",
         "SendPushNotifications": true,
-        "PushNotificationServer": "https://push-test.mattermost.com",
+        "PushNotificationServer": "https://push-test.matterfoss.com",
         "PushNotificationContents": "generic",
         "EnableEmailBatching": false,
         "EmailBatchingBufferSize": 256,
@@ -246,13 +246,13 @@
         "Enable": true,
         "Plugins": {},
         "PluginStates": {
-            "com.mattermost.nps": {
+            "com.matterfoss.nps": {
                 "Enable": false
             },
-            "com.mattermost.plugin-incident-response": {
+            "com.matterfoss.plugin-incident-response": {
                 "Enable": false
             },
-            "com.mattermost.plugin-incident-management": {
+            "com.matterfoss.plugin-incident-management": {
                 "Enable": false
             }
         }

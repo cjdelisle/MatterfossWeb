@@ -3,8 +3,8 @@
 
 import assert from 'assert';
 
-import reducer from 'mattermost-redux/reducers/entities/general';
-import {GeneralTypes} from 'mattermost-redux/action_types';
+import reducer from 'matterfoss-redux/reducers/entities/general';
+import {GeneralTypes} from 'matterfoss-redux/action_types';
 
 describe('reducers.entities.general', () => {
     describe('firstAdminVisitMarketplaceStatus', () => {

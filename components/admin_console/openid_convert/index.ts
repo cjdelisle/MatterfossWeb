@@ -4,9 +4,9 @@
 import {connect} from 'react-redux';
 import {bindActionCreators, Dispatch, ActionCreatorsMapObject} from 'redux';
 
-import {updateConfig} from 'mattermost-redux/actions/admin';
-import {ActionFunc, GenericAction} from 'mattermost-redux/types/actions';
-import {AdminConfig} from 'mattermost-redux/types/config';
+import {updateConfig} from 'matterfoss-redux/actions/admin';
+import {ActionFunc, GenericAction} from 'matterfoss-redux/types/actions';
+import {AdminConfig} from 'matterfoss-redux/types/config';
 
 import OpenIdConvert from './openid_convert';
 

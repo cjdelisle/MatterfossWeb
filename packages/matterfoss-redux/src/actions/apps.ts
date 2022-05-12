@@ -1,14 +1,14 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
-import {AppsTypes} from 'mattermost-redux/action_types';
-import {Client4} from 'mattermost-redux/client';
+import {AppsTypes} from 'matterfoss-redux/action_types';
+import {Client4} from 'matterfoss-redux/client';
 
-import {ActionFunc, DispatchFunc, GetStateFunc} from 'mattermost-redux/types/actions';
+import {ActionFunc, DispatchFunc, GetStateFunc} from 'matterfoss-redux/types/actions';
 
-import {getChannel, getCurrentChannelId} from 'mattermost-redux/selectors/entities/channels';
-import {getCurrentTeamId} from 'mattermost-redux/selectors/entities/teams';
-import {getCurrentUserId} from 'mattermost-redux/selectors/entities/common';
+import {getChannel, getCurrentChannelId} from 'matterfoss-redux/selectors/entities/channels';
+import {getCurrentTeamId} from 'matterfoss-redux/selectors/entities/teams';
+import {getCurrentUserId} from 'matterfoss-redux/selectors/entities/common';
 
 import {bindClientFunc} from './helpers';
 

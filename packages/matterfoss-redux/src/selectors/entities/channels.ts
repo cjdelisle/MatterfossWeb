@@ -5,34 +5,34 @@
 
 import {createSelector} from 'reselect';
 
-import {General, Permissions, Preferences} from 'mattermost-redux/constants';
-import {CategoryTypes} from 'mattermost-redux/constants/channel_categories';
+import {General, Permissions, Preferences} from 'matterfoss-redux/constants';
+import {CategoryTypes} from 'matterfoss-redux/constants/channel_categories';
 
-import {getCategoryInTeamByType} from 'mattermost-redux/selectors/entities/channel_categories';
+import {getCategoryInTeamByType} from 'matterfoss-redux/selectors/entities/channel_categories';
 import {
     getCurrentChannelId,
     getCurrentUser,
     getUsers,
     getMyChannelMemberships,
     getMyCurrentChannelMembership,
-} from 'mattermost-redux/selectors/entities/common';
+} from 'matterfoss-redux/selectors/entities/common';
 import {
     getTeammateNameDisplaySetting,
     isCollapsedThreadsEnabled,
-} from 'mattermost-redux/selectors/entities/preferences';
-import {haveICurrentChannelPermission, haveIChannelPermission, haveITeamPermission} from 'mattermost-redux/selectors/entities/roles';
+} from 'matterfoss-redux/selectors/entities/preferences';
+import {haveICurrentChannelPermission, haveIChannelPermission, haveITeamPermission} from 'matterfoss-redux/selectors/entities/roles';
 import {
     getCurrentTeamId,
     getMyTeams,
     getTeamMemberships,
-} from 'mattermost-redux/selectors/entities/teams';
+} from 'matterfoss-redux/selectors/entities/teams';
 import {
     getCurrentUserId,
     getStatusForUserId,
     getUser,
     getUserIdsInChannels,
     isCurrentUserSystemAdmin,
-} from 'mattermost-redux/selectors/entities/users';
+} from 'matterfoss-redux/selectors/entities/users';
 
 import {
     Channel,
@@ -42,16 +42,16 @@ import {
     ChannelModeration,
     ChannelSearchOpts,
     ChannelStats,
-} from 'mattermost-redux/types/channels';
-import {GlobalState} from 'mattermost-redux/types/store';
-import {Team} from 'mattermost-redux/types/teams';
-import {UsersState, UserProfile} from 'mattermost-redux/types/users';
+} from 'matterfoss-redux/types/channels';
+import {GlobalState} from 'matterfoss-redux/types/store';
+import {Team} from 'matterfoss-redux/types/teams';
+import {UsersState, UserProfile} from 'matterfoss-redux/types/users';
 import {
     IDMappedObjects,
     RelationOneToMany,
     RelationOneToManyUnique,
     RelationOneToOne,
-} from 'mattermost-redux/types/utilities';
+} from 'matterfoss-redux/types/utilities';
 
 import {
     completeDirectChannelInfo,
@@ -66,9 +66,9 @@ import {
     isDirectChannel,
     filterChannelsMatchingTerm,
     calculateUnreadCount,
-} from 'mattermost-redux/utils/channel_utils';
-import {createIdsSelector} from 'mattermost-redux/utils/helpers';
-import {getDataRetentionCustomPolicy} from 'mattermost-redux/selectors/entities/admin';
+} from 'matterfoss-redux/utils/channel_utils';
+import {createIdsSelector} from 'matterfoss-redux/utils/helpers';
+import {getDataRetentionCustomPolicy} from 'matterfoss-redux/selectors/entities/admin';
 
 import {getThreadCounts, getThreadCountsIncludingDirect} from './threads';
 

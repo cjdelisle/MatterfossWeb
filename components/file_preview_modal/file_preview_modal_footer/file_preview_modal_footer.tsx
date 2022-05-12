@@ -3,8 +3,8 @@
 
 import React, {memo} from 'react';
 
-import {FileInfo} from 'mattermost-redux/types/files';
-import {Post} from 'mattermost-redux/types/posts';
+import {FileInfo} from 'matterfoss-redux/types/files';
+import {Post} from 'matterfoss-redux/types/posts';
 
 import FilePreviewModalInfo from '../file_preview_modal_info/file_preview_modal_info';
 import FilePreviewModalMainActions from '../file_preview_modal_main_actions/file_preview_modal_main_actions';

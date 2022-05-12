@@ -26,8 +26,8 @@ describe('Team Settings', () => {
         });
     });
 
-    it('MM-T388 - Invite new user to closed team with "Allow only users with a specific email domain to join this team" set to "sample.mattermost.com" AND include a non-sample.mattermost.com email address in the invites', () => {
-        const emailDomain = 'sample.mattermost.com';
+    it('MM-T388 - Invite new user to closed team with "Allow only users with a specific email domain to join this team" set to "sample.matterfoss.com" AND include a non-sample.matterfoss.com email address in the invites', () => {
+        const emailDomain = 'sample.matterfoss.com';
         const invalidEmail = `user.${getRandomId()}@invalid.com`;
         const userDetailsString = `@${newUser.username} - ${newUser.first_name} ${newUser.last_name} (${newUser.nickname})`;
         const inviteSuccessMessage = 'This member has been added to the team.';
@@ -41,7 +41,7 @@ describe('Team Settings', () => {
             // # Click on the 'Allow only users with a specific email domain to join this team' edit button
             cy.get('#allowed_domainsEdit').should('be.visible').click();
 
-            // # Set 'sample.mattermost.com' as the only allowed email domain and save
+            // # Set 'sample.matterfoss.com' as the only allowed email domain and save
             cy.wait(TIMEOUTS.HALF_SEC);
             cy.focused().type(emailDomain);
             cy.findByText('Save').should('be.visible').click();
@@ -65,7 +65,7 @@ describe('Team Settings', () => {
         // # Click on the 'Invite More People button'
         cy.findByTestId('invite-more').click();
 
-        // # Invite a user with an invalid email domain (not sample.mattermost.com)
+        // # Invite a user with an invalid email domain (not sample.matterfoss.com)
         inviteNewMemberToTeam(invalidEmail);
 
         // * Assert that the invite failed and the correct error message is shown

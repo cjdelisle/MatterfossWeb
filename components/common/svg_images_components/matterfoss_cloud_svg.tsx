@@ -8,7 +8,7 @@ type SvgProps = {
     height: number;
 };
 
-const MattermostCloudSvg = ({width, height}: SvgProps) => (
+const MatterFOSSCloudSvg = ({width, height}: SvgProps) => (
     <svg
         width={width ? width.toString() : '250'}
         height={height ? height.toString() : '28'}
@@ -76,4 +76,4 @@ const MattermostCloudSvg = ({width, height}: SvgProps) => (
     </svg>
 );
 
-export default MattermostCloudSvg;
+export default MatterFOSSCloudSvg;

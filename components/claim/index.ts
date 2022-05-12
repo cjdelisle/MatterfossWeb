@@ -4,10 +4,10 @@
 import {connect} from 'react-redux';
 import {bindActionCreators, Dispatch} from 'redux';
 
-import {switchLdapToEmail} from 'mattermost-redux/actions/users';
-import {getConfig} from 'mattermost-redux/selectors/entities/general';
-import {GlobalState} from 'mattermost-redux/types/store';
-import {GenericAction} from 'mattermost-redux/types/actions';
+import {switchLdapToEmail} from 'matterfoss-redux/actions/users';
+import {getConfig} from 'matterfoss-redux/selectors/entities/general';
+import {GlobalState} from 'matterfoss-redux/types/store';
+import {GenericAction} from 'matterfoss-redux/types/actions';
 
 import {getPasswordConfig} from 'utils/utils.jsx';
 

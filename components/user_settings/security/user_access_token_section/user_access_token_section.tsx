@@ -4,8 +4,8 @@
 import React from 'react';
 import {FormattedMessage} from 'react-intl';
 
-import * as UserUtils from 'mattermost-redux/utils/user_utils';
-import {UserProfile} from 'mattermost-redux/types/users';
+import * as UserUtils from 'matterfoss-redux/utils/user_utils';
+import {UserProfile} from 'matterfoss-redux/types/users';
 
 import {trackEvent} from 'actions/telemetry_actions.jsx';
 import Constants from 'utils/constants';
@@ -267,7 +267,7 @@ export default class UserAccessTokenSection extends React.PureComponent<Props, S
                 <div className='alert alert-danger'>
                     <FormattedMarkdownMessage
                         id='user.settings.tokens.confirmDeleteMessage'
-                        defaultMessage='Any integrations using this token will no longer be able to access the Mattermost API. You cannot undo this action. \n \nAre you sure want to delete the **{description}** token?'
+                        defaultMessage='Any integrations using this token will no longer be able to access the MatterFOSS API. You cannot undo this action. \n \nAre you sure want to delete the **{description}** token?'
                         values={{
                             description: token.description,
                         }}
@@ -438,7 +438,7 @@ export default class UserAccessTokenSection extends React.PureComponent<Props, S
                 <span>
                     <FormattedMarkdownMessage
                         id='user.settings.tokens.description_mobile'
-                        defaultMessage='[Personal access tokens](!https://developers.mattermost.com/integrate/admin-guide/admin-personal-access-token/) function similarly to session tokens and can be used by integrations to [authenticate against the REST API](!https://api.mattermost.com/#tag/authentication). Create new tokens on your desktop.'
+                        defaultMessage='[Personal access tokens](!https://developers.matterfoss.com/integrate/admin-guide/admin-personal-access-token/) function similarly to session tokens and can be used by integrations to [authenticate against the REST API](!https://api.matterfoss.com/#tag/authentication). Create new tokens on your desktop.'
                     />
                 </span>
             );
@@ -447,7 +447,7 @@ export default class UserAccessTokenSection extends React.PureComponent<Props, S
                 <span>
                     <FormattedMarkdownMessage
                         id='user.settings.tokens.description'
-                        defaultMessage='[Personal access tokens](!https://developers.mattermost.com/integrate/admin-guide/admin-personal-access-token/) function similarly to session tokens and can be used by integrations to [authenticate against the REST API](!https://api.mattermost.com/#tag/authentication).'
+                        defaultMessage='[Personal access tokens](!https://developers.matterfoss.com/integrate/admin-guide/admin-personal-access-token/) function similarly to session tokens and can be used by integrations to [authenticate against the REST API](!https://api.matterfoss.com/#tag/authentication).'
                     />
                 </span>
             );

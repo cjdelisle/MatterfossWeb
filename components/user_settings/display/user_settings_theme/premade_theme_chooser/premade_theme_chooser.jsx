@@ -4,9 +4,9 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import {Preferences} from 'mattermost-redux/constants';
+import {Preferences} from 'matterfoss-redux/constants';
 import * as Utils from 'utils/utils.jsx';
-import {changeOpacity} from 'mattermost-redux/utils/theme_utils';
+import {changeOpacity} from 'matterfoss-redux/utils/theme_utils';
 
 import ThemeThumbnail from '../theme_thumbnail';
 

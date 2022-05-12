@@ -5,10 +5,10 @@ import React from 'react';
 
 import {injectIntl, IntlShape} from 'react-intl';
 
-import {AppCallResponseTypes} from 'mattermost-redux/constants/apps';
-import {AppBinding} from 'mattermost-redux/types/apps';
-import {Channel, ChannelMembership} from 'mattermost-redux/types/channels';
-import {Theme} from 'mattermost-redux/types/themes';
+import {AppCallResponseTypes} from 'matterfoss-redux/constants/apps';
+import {AppBinding} from 'matterfoss-redux/types/apps';
+import {Channel, ChannelMembership} from 'matterfoss-redux/types/channels';
+import {Theme} from 'matterfoss-redux/types/themes';
 
 import {PluginComponent} from 'types/store/plugins';
 import {createCallContext} from 'utils/apps';

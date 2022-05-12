@@ -3,8 +3,8 @@
 
 import isEmpty from 'lodash/isEmpty';
 
-import {isSystemEmoji} from 'mattermost-redux/utils/emoji_utils';
-import {Emoji, EmojiCategory, SystemEmoji} from 'mattermost-redux/types/emojis';
+import {isSystemEmoji} from 'matterfoss-redux/utils/emoji_utils';
+import {Emoji, EmojiCategory, SystemEmoji} from 'matterfoss-redux/types/emojis';
 
 import {
     Categories,

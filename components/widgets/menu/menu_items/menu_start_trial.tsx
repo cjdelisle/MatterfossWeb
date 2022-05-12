@@ -10,9 +10,9 @@ import {isTrialLicense} from 'utils/license_utils';
 
 import {trackEvent} from 'actions/telemetry_actions';
 import {openModal} from 'actions/views/modals';
-import {getPrevTrialLicense} from 'mattermost-redux/actions/admin';
-import {getLicense} from 'mattermost-redux/selectors/entities/general';
-import {GlobalState} from 'mattermost-redux/types/store';
+import {getPrevTrialLicense} from 'matterfoss-redux/actions/admin';
+import {getLicense} from 'matterfoss-redux/selectors/entities/general';
+import {GlobalState} from 'matterfoss-redux/types/store';
 
 import {makeAsyncComponent} from 'components/async_load';
 

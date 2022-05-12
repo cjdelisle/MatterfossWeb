@@ -6,12 +6,12 @@ import fs from 'fs';
 import assert from 'assert';
 import nock from 'nock';
 
-import * as Actions from 'mattermost-redux/actions/admin';
-import {Client4} from 'mattermost-redux/client';
+import * as Actions from 'matterfoss-redux/actions/admin';
+import {Client4} from 'matterfoss-redux/client';
 
 import {RequestStatus, Stats} from '../constants';
-import TestHelper from 'mattermost-redux/test/test_helper';
-import configureStore from 'mattermost-redux/test/test_store';
+import TestHelper from 'matterfoss-redux/test/test_helper';
+import configureStore from 'matterfoss-redux/test/test_store';
 
 const OK_RESPONSE = {status: 'OK'};
 const NO_GROUPS_RESPONSE = {count: 0, groups: []};
@@ -92,7 +92,7 @@ describe('Actions.Admin', () => {
             get('/config').
             reply(200, {
                 TeamSettings: {
-                    SiteName: 'Mattermost',
+                    SiteName: 'MatterFOSS',
                 },
             });
 
@@ -116,7 +116,7 @@ describe('Actions.Admin', () => {
         const config = state.entities.admin.config;
         assert.ok(config);
         assert.ok(config.TeamSettings);
-        assert.ok(config.TeamSettings.SiteName === 'Mattermost');
+        assert.ok(config.TeamSettings.SiteName === 'MatterFOSS');
     });
 
     it('updateConfig', async () => {
@@ -124,7 +124,7 @@ describe('Actions.Admin', () => {
             get('/config').
             reply(200, {
                 TeamSettings: {
-                    SiteName: 'Mattermost',
+                    SiteName: 'MatterFOSS',
                 },
             });
 
@@ -140,7 +140,7 @@ describe('Actions.Admin', () => {
         const {data} = await Actions.getConfig()(store.dispatch, store.getState);
         const updated = JSON.parse(JSON.stringify(data));
         const oldSiteName = updated.TeamSettings.SiteName;
-        const testSiteName = 'MattermostReduxTest';
+        const testSiteName = 'MatterFOSSReduxTest';
         updated.TeamSettings.SiteName = testSiteName;
 
         nock(Client4.getBaseRoute()).
@@ -421,7 +421,7 @@ describe('Actions.Admin', () => {
     });
 
     it('uploadBrandImage', async () => {
-        const testImageData = fs.createReadStream('packages/mattermost-redux/test/assets/images/test.png');
+        const testImageData = fs.createReadStream('packages/matterfoss-redux/test/assets/images/test.png');
 
         nock(Client4.getBaseRoute()).
             post('/brand/image').
@@ -527,7 +527,7 @@ describe('Actions.Admin', () => {
     });
 
     it('uploadPublicSamlCertificate', async () => {
-        const testFileData = fs.createReadStream('packages/mattermost-redux/test/assets/images/test.png');
+        const testFileData = fs.createReadStream('packages/matterfoss-redux/test/assets/images/test.png');
 
         nock(Client4.getBaseRoute()).
             post('/saml/certificate/public').
@@ -543,7 +543,7 @@ describe('Actions.Admin', () => {
     });
 
     it('uploadPrivateSamlCertificate', async () => {
-        const testFileData = fs.createReadStream('packages/mattermost-redux/test/assets/images/test.png');
+        const testFileData = fs.createReadStream('packages/matterfoss-redux/test/assets/images/test.png');
 
         nock(Client4.getBaseRoute()).
             post('/saml/certificate/private').
@@ -559,7 +559,7 @@ describe('Actions.Admin', () => {
     });
 
     it('uploadIdpSamlCertificate', async () => {
-        const testFileData = fs.createReadStream('packages/mattermost-redux/test/assets/images/test.png');
+        const testFileData = fs.createReadStream('packages/matterfoss-redux/test/assets/images/test.png');
 
         nock(Client4.getBaseRoute()).
             post('/saml/certificate/idp').
@@ -617,7 +617,7 @@ describe('Actions.Admin', () => {
     });
 
     it('uploadPublicLdapCertificate', async () => {
-        const testFileData = fs.createReadStream('packages/mattermost-redux/test/assets/images/test.png');
+        const testFileData = fs.createReadStream('packages/matterfoss-redux/test/assets/images/test.png');
 
         nock(Client4.getBaseRoute()).
             post('/ldap/certificate/public').
@@ -630,7 +630,7 @@ describe('Actions.Admin', () => {
     });
 
     it('uploadPrivateLdapCertificate', async () => {
-        const testFileData = fs.createReadStream('packages/mattermost-redux/test/assets/images/test.png');
+        const testFileData = fs.createReadStream('packages/matterfoss-redux/test/assets/images/test.png');
 
         nock(Client4.getBaseRoute()).
             post('/ldap/certificate/private').
@@ -693,7 +693,7 @@ describe('Actions.Admin', () => {
     });
 
     it('uploadLicense', async () => {
-        const testFileData = fs.createReadStream('packages/mattermost-redux/test/assets/images/test.png');
+        const testFileData = fs.createReadStream('packages/matterfoss-redux/test/assets/images/test.png');
 
         nock(Client4.getBaseRoute()).
             post('/license').
@@ -853,7 +853,7 @@ describe('Actions.Admin', () => {
     });
 
     it('uploadPlugin', async () => {
-        const testFileData = fs.createReadStream('packages/mattermost-redux/test/assets/images/test.png');
+        const testFileData = fs.createReadStream('packages/matterfoss-redux/test/assets/images/test.png');
         const testPlugin = {id: 'testplugin', webapp: {bundle_path: '/static/somebundle.js'}};
 
         nock(Client4.getBaseRoute()).
@@ -1069,8 +1069,8 @@ describe('Actions.Admin', () => {
         const ldapGroups = {
             count: 2,
             groups: [
-                {primary_key: 'test1', name: 'test1', mattermost_group_id: null, has_syncables: false},
-                {primary_key: 'test2', name: 'test2', mattermost_group_id: 'mattermost-id', has_syncables: true},
+                {primary_key: 'test1', name: 'test1', matterfoss_group_id: null, has_syncables: false},
+                {primary_key: 'test2', name: 'test2', matterfoss_group_id: 'matterfoss-id', has_syncables: true},
             ],
         };
 
@@ -1174,8 +1174,8 @@ describe('Actions.Admin', () => {
         const ldapGroups = {
             count: 2,
             groups: [
-                {primary_key: 'test1', name: 'test1', mattermost_group_id: null, has_syncables: false},
-                {primary_key: 'test2', name: 'test2', mattermost_group_id: 'mattermost-id', has_syncables: true},
+                {primary_key: 'test1', name: 'test1', matterfoss_group_id: null, has_syncables: false},
+                {primary_key: 'test2', name: 'test2', matterfoss_group_id: 'matterfoss-id', has_syncables: true},
             ],
         };
 
@@ -1189,14 +1189,14 @@ describe('Actions.Admin', () => {
 
         nock(Client4.getBaseRoute()).
             post(`/ldap/groups/${key}/link`).
-            reply(200, {display_name: 'test1', id: 'new-mattermost-id'});
+            reply(200, {display_name: 'test1', id: 'new-matterfoss-id'});
 
         await Actions.linkLdapGroup(key)(store.dispatch, store.getState);
 
         const state = store.getState();
         const groups = state.entities.admin.ldapGroups;
         assert.ok(groups[key]);
-        assert.ok(groups[key].mattermost_group_id === 'new-mattermost-id');
+        assert.ok(groups[key].matterfoss_group_id === 'new-matterfoss-id');
         assert.ok(groups[key].has_syncables === false);
     });
 
@@ -1204,8 +1204,8 @@ describe('Actions.Admin', () => {
         const ldapGroups = {
             count: 2,
             groups: [
-                {primary_key: 'test1', name: 'test1', mattermost_group_id: null, has_syncables: false},
-                {primary_key: 'test2', name: 'test2', mattermost_group_id: 'mattermost-id', has_syncables: true},
+                {primary_key: 'test1', name: 'test1', matterfoss_group_id: null, has_syncables: false},
+                {primary_key: 'test2', name: 'test2', matterfoss_group_id: 'matterfoss-id', has_syncables: true},
             ],
         };
 
@@ -1226,7 +1226,7 @@ describe('Actions.Admin', () => {
         const state = store.getState();
         const groups = state.entities.admin.ldapGroups;
         assert.ok(groups[key]);
-        assert.ok(groups[key].mattermost_group_id === undefined);
+        assert.ok(groups[key].matterfoss_group_id === undefined);
         assert.ok(groups[key].has_syncables === undefined);
     });
 

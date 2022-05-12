@@ -3,8 +3,8 @@
 
 import assert from 'assert';
 
-import reducerRegistry from 'mattermost-redux/store/reducer_registry';
-import configureStore from 'mattermost-redux/test/test_store';
+import reducerRegistry from 'matterfoss-redux/store/reducer_registry';
+import configureStore from 'matterfoss-redux/test/test_store';
 
 describe('ReducerRegistry', () => {
     let store;

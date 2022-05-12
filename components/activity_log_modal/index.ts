@@ -4,9 +4,9 @@
 import {connect} from 'react-redux';
 import {ActionCreatorsMapObject, bindActionCreators, Dispatch} from 'redux';
 
-import {getSessions, revokeSession} from 'mattermost-redux/actions/users';
-import {getCurrentUserId, getUserSessions} from 'mattermost-redux/selectors/entities/users';
-import {ActionFunc, GenericAction} from 'mattermost-redux/types/actions';
+import {getSessions, revokeSession} from 'matterfoss-redux/actions/users';
+import {getCurrentUserId, getUserSessions} from 'matterfoss-redux/selectors/entities/users';
+import {ActionFunc, GenericAction} from 'matterfoss-redux/types/actions';
 
 import {getCurrentLocale} from 'selectors/i18n';
 import {GlobalState} from 'types/store';

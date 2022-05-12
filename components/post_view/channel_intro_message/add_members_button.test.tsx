@@ -9,9 +9,9 @@ import thunk from 'redux-thunk';
 
 import {mount} from 'enzyme';
 
-import * as teams from 'mattermost-redux/selectors/entities/teams';
+import * as teams from 'matterfoss-redux/selectors/entities/teams';
 
-import {Channel} from 'mattermost-redux/types/channels';
+import {Channel} from 'matterfoss-redux/types/channels';
 
 import AddMembersButton from './add_members_button';
 

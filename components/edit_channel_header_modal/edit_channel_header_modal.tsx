@@ -5,9 +5,9 @@ import React from 'react';
 import {Modal} from 'react-bootstrap';
 import {FormattedMessage} from 'react-intl';
 
-import {ActionResult} from 'mattermost-redux/types/actions';
-import {Channel} from 'mattermost-redux/types/channels';
-import {ServerError} from 'mattermost-redux/types/errors';
+import {ActionResult} from 'matterfoss-redux/types/actions';
+import {Channel} from 'matterfoss-redux/types/channels';
+import {ServerError} from 'matterfoss-redux/types/errors';
 
 import Textbox from 'components/textbox';
 import TextboxClass from 'components/textbox/textbox';

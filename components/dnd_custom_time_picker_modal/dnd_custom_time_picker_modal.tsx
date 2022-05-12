@@ -5,8 +5,8 @@ import React from 'react';
 import {FormattedMessage} from 'react-intl';
 import DayPickerInput from 'react-day-picker/DayPickerInput';
 
-import {ActionFunc} from 'mattermost-redux/types/actions';
-import {UserStatus} from 'mattermost-redux/types/users';
+import {ActionFunc} from 'matterfoss-redux/types/actions';
+import {UserStatus} from 'matterfoss-redux/types/users';
 
 import GenericModal from 'components/generic_modal';
 

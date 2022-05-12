@@ -3,7 +3,7 @@
 
 import assert from 'assert';
 
-import {checkDialogElementForError, checkIfErrorsMatchElements} from 'mattermost-redux/utils/integration_utils';
+import {checkDialogElementForError, checkIfErrorsMatchElements} from 'matterfoss-redux/utils/integration_utils';
 
 describe('integration utils', () => {
     describe('checkDialogElementForError', () => {
@@ -32,7 +32,7 @@ describe('integration utils', () => {
         });
 
         it('should return null on good email element', () => {
-            assert.equal(checkDialogElementForError({type: 'text', subtype: 'email'}, 'joram@mattermost.com'), null);
+            assert.equal(checkDialogElementForError({type: 'text', subtype: 'email'}, 'joram@matterfoss.com'), null);
         });
 
         it('should return error on bad email element', () => {
@@ -40,8 +40,8 @@ describe('integration utils', () => {
         });
 
         it('should return null on good url element', () => {
-            assert.equal(checkDialogElementForError({type: 'text', subtype: 'url'}, 'http://mattermost.com'), null);
-            assert.equal(checkDialogElementForError({type: 'text', subtype: 'url'}, 'https://mattermost.com'), null);
+            assert.equal(checkDialogElementForError({type: 'text', subtype: 'url'}, 'http://matterfoss.com'), null);
+            assert.equal(checkDialogElementForError({type: 'text', subtype: 'url'}, 'https://matterfoss.com'), null);
         });
 
         it('should return error on bad url element', () => {

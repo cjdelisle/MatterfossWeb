@@ -3,10 +3,10 @@
 
 import assert from 'assert';
 
-import deepFreezeAndThrowOnMutation from 'mattermost-redux/utils/deep_freeze';
-import TestHelper from 'mattermost-redux/test/test_helper';
-import * as Selectors from 'mattermost-redux/selectors/entities/schemes';
-import {ScopeTypes} from 'mattermost-redux/constants/schemes';
+import deepFreezeAndThrowOnMutation from 'matterfoss-redux/utils/deep_freeze';
+import TestHelper from 'matterfoss-redux/test/test_helper';
+import * as Selectors from 'matterfoss-redux/selectors/entities/schemes';
+import {ScopeTypes} from 'matterfoss-redux/constants/schemes';
 
 describe('Selectors.Schemes', () => {
     const scheme1 = TestHelper.mockSchemeWithId();

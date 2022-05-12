@@ -3,10 +3,10 @@
 
 import {connect} from 'react-redux';
 
-import {savePreferences} from 'mattermost-redux/actions/preferences';
-import {Preferences} from 'mattermost-redux/constants';
-import {getInt} from 'mattermost-redux/selectors/entities/preferences';
-import {getCurrentUserId} from 'mattermost-redux/selectors/entities/users';
+import {savePreferences} from 'matterfoss-redux/actions/preferences';
+import {Preferences} from 'matterfoss-redux/constants';
+import {getInt} from 'matterfoss-redux/selectors/entities/preferences';
+import {getCurrentUserId} from 'matterfoss-redux/selectors/entities/users';
 
 import {GlobalState} from 'types/store';
 

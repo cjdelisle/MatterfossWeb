@@ -21,9 +21,9 @@ describe('Onboarding', () => {
     const usernameOne = `user${getRandomId()}`;
     const usernameTwo = `user${getRandomId()}`;
     const usernameThree = `user${getRandomId()}`;
-    const emailOne = `${usernameOne}@sample.mattermost.com`;
-    const emailTwo = `${usernameTwo}@sample.mattermost.com`;
-    const emailThree = `${usernameThree}@sample.mattermost.com`;
+    const emailOne = `${usernameOne}@sample.matterfoss.com`;
+    const emailTwo = `${usernameTwo}@sample.matterfoss.com`;
+    const emailThree = `${usernameThree}@sample.matterfoss.com`;
     const password = 'passwd';
 
     let testTeam;

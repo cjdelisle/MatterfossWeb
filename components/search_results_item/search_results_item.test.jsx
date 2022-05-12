@@ -4,7 +4,7 @@
 import {shallow} from 'enzyme';
 import React from 'react';
 
-import {Posts} from 'mattermost-redux/constants';
+import {Posts} from 'matterfoss-redux/constants';
 
 import {Locations} from 'utils/constants';
 import {browserHistory} from 'utils/browser_history';

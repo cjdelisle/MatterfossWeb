@@ -3,14 +3,14 @@
 
 import {combineReducers} from 'redux';
 
-import {ChannelCategoryTypes, TeamTypes, UserTypes, ChannelTypes} from 'mattermost-redux/action_types';
+import {ChannelCategoryTypes, TeamTypes, UserTypes, ChannelTypes} from 'matterfoss-redux/action_types';
 
-import {GenericAction} from 'mattermost-redux/types/actions';
-import {ChannelCategory} from 'mattermost-redux/types/channel_categories';
-import {Team} from 'mattermost-redux/types/teams';
-import {IDMappedObjects, RelationOneToOne} from 'mattermost-redux/types/utilities';
+import {GenericAction} from 'matterfoss-redux/types/actions';
+import {ChannelCategory} from 'matterfoss-redux/types/channel_categories';
+import {Team} from 'matterfoss-redux/types/teams';
+import {IDMappedObjects, RelationOneToOne} from 'matterfoss-redux/types/utilities';
 
-import {removeItem} from 'mattermost-redux/utils/array_utils';
+import {removeItem} from 'matterfoss-redux/utils/array_utils';
 
 export function byId(state: IDMappedObjects<ChannelCategory> = {}, action: GenericAction) {
     switch (action.type) {

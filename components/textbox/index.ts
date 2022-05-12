@@ -4,18 +4,18 @@
 import {bindActionCreators, Dispatch} from 'redux';
 import {connect} from 'react-redux';
 
-import {getAssociatedGroupsForReference} from 'mattermost-redux/selectors/entities/groups';
-import {getLicense} from 'mattermost-redux/selectors/entities/general';
-import {getCurrentTeamId} from 'mattermost-redux/selectors/entities/teams';
-import {makeGetProfilesForThread} from 'mattermost-redux/selectors/entities/posts';
+import {getAssociatedGroupsForReference} from 'matterfoss-redux/selectors/entities/groups';
+import {getLicense} from 'matterfoss-redux/selectors/entities/general';
+import {getCurrentTeamId} from 'matterfoss-redux/selectors/entities/teams';
+import {makeGetProfilesForThread} from 'matterfoss-redux/selectors/entities/posts';
 
-import {haveIChannelPermission} from 'mattermost-redux/selectors/entities/roles';
-import Permissions from 'mattermost-redux/constants/permissions';
+import {haveIChannelPermission} from 'matterfoss-redux/selectors/entities/roles';
+import Permissions from 'matterfoss-redux/constants/permissions';
 
-import {getCurrentUserId} from 'mattermost-redux/selectors/entities/users';
+import {getCurrentUserId} from 'matterfoss-redux/selectors/entities/users';
 
-import {GlobalState} from 'mattermost-redux/types/store';
-import {GenericAction} from 'mattermost-redux/types/actions';
+import {GlobalState} from 'matterfoss-redux/types/store';
+import {GenericAction} from 'matterfoss-redux/types/actions';
 
 import {autocompleteUsersInChannel} from 'actions/views/channel';
 import {searchAssociatedGroupsForReference} from 'actions/views/group';

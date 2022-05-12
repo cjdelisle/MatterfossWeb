@@ -4,11 +4,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import {Permissions} from 'mattermost-redux/constants';
+import {Permissions} from 'matterfoss-redux/constants';
 
 import {Constants, ModalIdentifiers} from 'utils/constants';
 import {localizeMessage} from 'utils/utils';
-import {isGuest} from 'mattermost-redux/utils/user_utils';
+import {isGuest} from 'matterfoss-redux/utils/user_utils';
 
 import MobileChannelHeaderPlug from 'plugins/mobile_channel_header_plug';
 

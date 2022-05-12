@@ -1,10 +1,10 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
-import {Client4} from 'mattermost-redux/client';
-import {UserTypes} from 'mattermost-redux/action_types';
+import {Client4} from 'matterfoss-redux/client';
+import {UserTypes} from 'matterfoss-redux/action_types';
 
-import {Client4Error} from 'mattermost-redux/types/client4';
-import {batchActions, Action, ActionFunc, GenericAction, DispatchFunc, GetStateFunc} from 'mattermost-redux/types/actions';
+import {Client4Error} from 'matterfoss-redux/types/client4';
+import {batchActions, Action, ActionFunc, GenericAction, DispatchFunc, GetStateFunc} from 'matterfoss-redux/types/actions';
 
 import {logError} from './errors';
 type ActionType = string;

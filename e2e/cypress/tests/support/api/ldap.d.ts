@@ -8,7 +8,7 @@
 // See https://jsdoc.app/index.html for reference.
 // Basic requirements for documentation are the following:
 // - Meaningful description
-// - Specific link to https://api.mattermost.com
+// - Specific link to https://api.matterfoss.com
 // - Each parameter with `@params`
 // - Return value with `@returns`
 // - Example usage with `@example`
@@ -19,8 +19,8 @@ declare namespace Cypress {
     interface Chainable {
 
         /**
-         * Synchronize any user attribute changes in the configured AD/LDAP server with Mattermost.
-         * See https://api.mattermost.com/#operation/SyncLdap
+         * Synchronize any user attribute changes in the configured AD/LDAP server with MatterFOSS.
+         * See https://api.matterfoss.com/#operation/SyncLdap
          *
          * @example
          *   cy.apiLDAPSync();
@@ -29,7 +29,7 @@ declare namespace Cypress {
 
         /**
          * Test the current AD/LDAP configuration to see if the AD/LDAP server can be contacted successfully.
-         * See https://api.mattermost.com/#operation/TestLdap
+         * See https://api.matterfoss.com/#operation/TestLdap
          *
          * @example
          *   cy.apiLDAPTest();

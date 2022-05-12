@@ -3,8 +3,8 @@
 
 import {connect} from 'react-redux';
 
-import {getCurrentChannelId, makeGetChannel, makeGetChannelUnreadCount} from 'mattermost-redux/selectors/entities/channels';
-import {getCurrentTeam} from 'mattermost-redux/selectors/entities/teams';
+import {getCurrentChannelId, makeGetChannel, makeGetChannelUnreadCount} from 'matterfoss-redux/selectors/entities/channels';
+import {getCurrentTeam} from 'matterfoss-redux/selectors/entities/teams';
 
 import {getAutoSortedCategoryIds, getDraggingState, isChannelSelected} from 'selectors/views/channel_sidebar';
 import {GlobalState} from 'types/store';

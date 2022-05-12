@@ -30,7 +30,7 @@ export default class BackstageNavbar extends React.PureComponent {
                     <span>
                         {teamExists ? (
                             <FormattedMessage
-                                id='backstage_navbar.backToMattermost'
+                                id='backstage_navbar.backToMatterFOSS'
                                 defaultMessage='Back to {siteName}'
                                 values={{
                                     siteName: this.props.siteName ? this.props.siteName : this.props.team.name,

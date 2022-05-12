@@ -2,10 +2,10 @@
 // See LICENSE.txt for license information.
 import {combineReducers} from 'redux';
 
-import {TeamTypes} from 'mattermost-redux/action_types';
+import {TeamTypes} from 'matterfoss-redux/action_types';
 
-import {GenericAction} from 'mattermost-redux/types/actions';
-import {TeamsRequestsStatuses, RequestStatusType} from 'mattermost-redux/types/requests';
+import {GenericAction} from 'matterfoss-redux/types/actions';
+import {TeamsRequestsStatuses, RequestStatusType} from 'matterfoss-redux/types/requests';
 
 import {handleRequest, initialRequestState} from './helpers';
 

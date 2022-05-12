@@ -7,17 +7,17 @@ import {Modal} from 'react-bootstrap';
 
 import {FormattedMessage} from 'react-intl';
 
-import {UserProfile} from 'mattermost-redux/types/users';
+import {UserProfile} from 'matterfoss-redux/types/users';
 
 import * as Utils from 'utils/utils.jsx';
-import {GroupCreateWithUserIds} from 'mattermost-redux/types/groups';
+import {GroupCreateWithUserIds} from 'matterfoss-redux/types/groups';
 
 import 'components/user_groups_modal/user_groups_modal.scss';
 import './create_user_groups_modal.scss';
 import {ModalData} from 'types/actions';
 import Input from 'components/input';
 import AddUserToGroupMultiSelect from 'components/add_user_to_group_multiselect';
-import {ActionResult} from 'mattermost-redux/types/actions';
+import {ActionResult} from 'matterfoss-redux/types/actions';
 import LocalizedIcon from 'components/localized_icon';
 import {t} from 'utils/i18n';
 import {localizeMessage} from 'utils/utils';

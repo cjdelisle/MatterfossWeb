@@ -72,7 +72,7 @@ describe('Onboarding', () => {
         cy.get('#password').should('be.visible').type(password);
         cy.get('#createAccountButton').should('be.visible').click();
 
-        cy.findByText('Mattermost: You are almost done').should('be.visible');
+        cy.findByText('MatterFOSS: You are almost done').should('be.visible');
 
         // # Get invitation email and go to the provided link
         getEmail(username, email);
@@ -95,7 +95,7 @@ describe('Onboarding', () => {
             cy.get('#sidebarItem_town-square').should('exist');
         });
 
-        // * Check that the 'Welcome to Mattermost' message is visible
+        // * Check that the 'Welcome to MatterFOSS' message is visible
         cy.findByText(`Welcome to ${siteName}`).should('be.visible');
     });
 

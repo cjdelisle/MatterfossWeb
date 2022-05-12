@@ -4,12 +4,12 @@
 import {connect} from 'react-redux';
 import {bindActionCreators, Dispatch, ActionCreatorsMapObject} from 'redux';
 
-import {GenericAction, ActionFunc, ActionResult} from 'mattermost-redux/types/actions';
-import {Role} from 'mattermost-redux/types/roles';
-import {updateUserRoles} from 'mattermost-redux/actions/users';
-import {editRole} from 'mattermost-redux/actions/roles';
-import {getRolesById} from 'mattermost-redux/selectors/entities/roles';
-import {getLicense} from 'mattermost-redux/selectors/entities/general';
+import {GenericAction, ActionFunc, ActionResult} from 'matterfoss-redux/types/actions';
+import {Role} from 'matterfoss-redux/types/roles';
+import {updateUserRoles} from 'matterfoss-redux/actions/users';
+import {editRole} from 'matterfoss-redux/actions/roles';
+import {getRolesById} from 'matterfoss-redux/selectors/entities/roles';
+import {getLicense} from 'matterfoss-redux/selectors/entities/general';
 
 import {GlobalState} from 'types/store';
 import {setNavigationBlocked} from 'actions/admin_actions.jsx';

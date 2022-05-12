@@ -25,16 +25,16 @@ import GuestPermissionsTree, {GUEST_INCLUDED_PERMISSIONS} from '../guest_permiss
 
 import LocalizedInput from 'components/localized_input/localized_input';
 
-import {Scheme, SchemePatch} from 'mattermost-redux/types/schemes';
-import {Role} from 'mattermost-redux/types/roles';
-import {ClientConfig, ClientLicense} from 'mattermost-redux/types/config';
-import {Team} from 'mattermost-redux/types/teams';
-import {ActionFunc, ActionResult} from 'mattermost-redux/types/actions';
-import {ServerError} from 'mattermost-redux/types/errors';
+import {Scheme, SchemePatch} from 'matterfoss-redux/types/schemes';
+import {Role} from 'matterfoss-redux/types/roles';
+import {ClientConfig, ClientLicense} from 'matterfoss-redux/types/config';
+import {Team} from 'matterfoss-redux/types/teams';
+import {ActionFunc, ActionResult} from 'matterfoss-redux/types/actions';
+import {ServerError} from 'matterfoss-redux/types/errors';
 
 import PermissionsTreePlaybooks from '../permissions_tree_playbooks';
 
-import GeneralConstants from 'mattermost-redux/constants/general';
+import GeneralConstants from 'matterfoss-redux/constants/general';
 
 import TeamInList from './team_in_list';
 
@@ -611,7 +611,7 @@ export default class PermissionTeamSchemeSettings extends React.PureComponent<Pr
                                 <span>
                                     <FormattedMarkdownMessage
                                         id='admin.permissions.teamScheme.introBanner'
-                                        defaultMessage='[Team Override Schemes](!https://docs.mattermost.com/onboard/advanced-permissions.html) set the permissions for Team Admins, Channel Admins and other members in specific teams. Use a Team Override Scheme when specific teams need permission exceptions to the [System Scheme](!https://docs.mattermost.com/onboard/advanced-permissions.html).'
+                                        defaultMessage='[Team Override Schemes](!https://docs.matterfoss.com/onboard/advanced-permissions.html) set the permissions for Team Admins, Channel Admins and other members in specific teams. Use a Team Override Scheme when specific teams need permission exceptions to the [System Scheme](!https://docs.matterfoss.com/onboard/advanced-permissions.html).'
                                     />
                                 </span>
                             </div>

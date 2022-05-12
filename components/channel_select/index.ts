@@ -5,11 +5,11 @@ import {connect} from 'react-redux';
 
 import {createSelector} from 'reselect';
 
-import {getMyChannels} from 'mattermost-redux/selectors/entities/channels';
-import {getCurrentUserLocale} from 'mattermost-redux/selectors/entities/i18n';
-import {sortChannelsByTypeAndDisplayName} from 'mattermost-redux/utils/channel_utils';
+import {getMyChannels} from 'matterfoss-redux/selectors/entities/channels';
+import {getCurrentUserLocale} from 'matterfoss-redux/selectors/entities/i18n';
+import {sortChannelsByTypeAndDisplayName} from 'matterfoss-redux/utils/channel_utils';
 
-import {GlobalState} from 'mattermost-redux/types/store';
+import {GlobalState} from 'matterfoss-redux/types/store';
 
 import ChannelSelect from './channel_select';
 

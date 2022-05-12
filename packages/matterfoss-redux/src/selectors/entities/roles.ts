@@ -3,21 +3,21 @@
 
 import {createSelector} from 'reselect';
 
-import {getCurrentChannelId} from 'mattermost-redux/selectors/entities/common';
+import {getCurrentChannelId} from 'matterfoss-redux/selectors/entities/common';
 import {
     getMySystemPermissions,
     getMySystemRoles,
     getRoles,
     PermissionsOptions,
-} from 'mattermost-redux/selectors/entities/roles_helpers';
-import {getTeamMemberships, getCurrentTeamId} from 'mattermost-redux/selectors/entities/teams';
-import {getCurrentUserId} from 'mattermost-redux/selectors/entities/users';
+} from 'matterfoss-redux/selectors/entities/roles_helpers';
+import {getTeamMemberships, getCurrentTeamId} from 'matterfoss-redux/selectors/entities/teams';
+import {getCurrentUserId} from 'matterfoss-redux/selectors/entities/users';
 
-import {General, Permissions} from 'mattermost-redux/constants';
+import {General, Permissions} from 'matterfoss-redux/constants';
 
-import {Role} from 'mattermost-redux/types/roles';
-import {GlobalState} from 'mattermost-redux/types/store';
-import {GroupMembership, GroupPermissions} from 'mattermost-redux/types/groups';
+import {Role} from 'matterfoss-redux/types/roles';
+import {GlobalState} from 'matterfoss-redux/types/store';
+import {GroupMembership, GroupPermissions} from 'matterfoss-redux/types/groups';
 
 export {getMySystemPermissions, getMySystemRoles, getRoles};
 

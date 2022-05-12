@@ -5,12 +5,12 @@ import configureStore from 'redux-mock-store';
 
 import thunk from 'redux-thunk';
 
-import {Client4} from 'mattermost-redux/client';
+import {Client4} from 'matterfoss-redux/client';
 
-import * as Channels from 'mattermost-redux/selectors/entities/channels';
-import * as Teams from 'mattermost-redux/selectors/entities/teams';
+import * as Channels from 'matterfoss-redux/selectors/entities/channels';
+import * as Teams from 'matterfoss-redux/selectors/entities/teams';
 
-import {AppCallResponseTypes} from 'mattermost-redux/constants/apps';
+import {AppCallResponseTypes} from 'matterfoss-redux/constants/apps';
 
 import * as GlobalActions from 'actions/global_actions';
 
@@ -30,7 +30,7 @@ const initialState = {
     entities: {
         admin: {
             pluginStatuses: {
-                'com.mattermost.apps': {
+                'com.matterfoss.apps': {
                     state: 2,
                 },
             },

@@ -4,7 +4,7 @@
 import React from 'react';
 import {FormattedMessage} from 'react-intl';
 
-import {OAuthApp} from 'mattermost-redux/types/integrations';
+import {OAuthApp} from 'matterfoss-redux/types/integrations';
 
 import {localizeMessage} from 'utils/utils.jsx';
 import BackstageList from 'components/backstage/components/backstage_list.jsx';
@@ -139,13 +139,13 @@ export default class InstalledOAuthApps extends React.PureComponent<Props, State
                 helpText={
                     <FormattedMessage
                         id='installed_oauth_apps.help'
-                        defaultMessage='Create {oauthApplications} to securely integrate bots and third-party apps with Mattermost. Visit the {appDirectory} to find available self-hosted apps.'
+                        defaultMessage='Create {oauthApplications} to securely integrate bots and third-party apps with MatterFOSS. Visit the {appDirectory} to find available self-hosted apps.'
                         values={{
                             oauthApplications: (
                                 <a
                                     target='_blank'
                                     rel='noopener noreferrer'
-                                    href='https://developers.mattermost.com/integrate/admin-guide/admin-oauth2/'
+                                    href='https://developers.matterfoss.com/integrate/admin-guide/admin-oauth2/'
                                 >
                                     <FormattedMessage
                                         id='installed_oauth_apps.help.oauthApplications'
@@ -157,7 +157,7 @@ export default class InstalledOAuthApps extends React.PureComponent<Props, State
                                 <a
                                     target='_blank'
                                     rel='noopener noreferrer'
-                                    href='https://mattermost.com/marketplace/'
+                                    href='https://matterfoss.com/marketplace/'
                                 >
                                     <FormattedMessage
                                         id='installed_oauth_apps.help.appDirectory'

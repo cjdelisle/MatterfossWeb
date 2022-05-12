@@ -4,7 +4,7 @@
 import React from 'react';
 import {FormattedMessage} from 'react-intl';
 
-import {Client4} from 'mattermost-redux/client';
+import {Client4} from 'matterfoss-redux/client';
 import Avatar from 'components/widgets/users/avatar';
 
 type Props = {

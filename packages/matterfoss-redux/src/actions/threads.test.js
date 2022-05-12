@@ -6,17 +6,17 @@ import nock from 'nock';
 import {
     getThread as fetchThread,
     getThreads as fetchThreads,
-} from 'mattermost-redux/actions/threads';
+} from 'matterfoss-redux/actions/threads';
 
 import {
     getThread,
     getThreadsInCurrentTeam,
-} from 'mattermost-redux/selectors/entities/threads';
+} from 'matterfoss-redux/selectors/entities/threads';
 
-import {Client4} from 'mattermost-redux/client';
+import {Client4} from 'matterfoss-redux/client';
 
-import TestHelper from 'mattermost-redux/test/test_helper';
-import configureStore from 'mattermost-redux/test/test_store';
+import TestHelper from 'matterfoss-redux/test/test_helper';
+import configureStore from 'matterfoss-redux/test/test_store';
 
 const ID_PAD = 'a0b1c2z9n7';
 

@@ -16,7 +16,7 @@ export type {
     AutocompleteChannelSelect,
     AppLookupResponse,
     AppSelectOption,
-} from 'mattermost-redux/types/apps';
+} from 'matterfoss-redux/types/apps';
 
 export type {
     DoAppCallResult,
@@ -24,12 +24,12 @@ export type {
 
 import type {
     AutocompleteSuggestion,
-} from 'mattermost-redux/types/integrations';
+} from 'matterfoss-redux/types/integrations';
 export type {AutocompleteSuggestion};
 
 import type {
     Channel,
-} from 'mattermost-redux/types/channels';
+} from 'matterfoss-redux/types/channels';
 export type {Channel};
 
 import {
@@ -38,34 +38,34 @@ import {
 
 import type {
     DispatchFunc,
-} from 'mattermost-redux/types/actions';
+} from 'matterfoss-redux/types/actions';
 
 export type {
     UserAutocomplete,
-} from 'mattermost-redux/types/autocomplete';
+} from 'matterfoss-redux/types/autocomplete';
 
 import type {
     UserProfile,
-} from 'mattermost-redux/types/users';
+} from 'matterfoss-redux/types/users';
 export type {UserProfile};
 
 export {
     AppBindingLocations,
     AppFieldTypes,
     AppCallResponseTypes,
-} from 'mattermost-redux/constants/apps';
+} from 'matterfoss-redux/constants/apps';
 
 export {autocompleteUsersInChannel} from 'actions/views/channel';
 
-export {makeAppBindingsSelector, makeRHSAppBindingSelector, getAppCommandForm, getAppRHSCommandForm} from 'mattermost-redux/selectors/entities/apps';
+export {makeAppBindingsSelector, makeRHSAppBindingSelector, getAppCommandForm, getAppRHSCommandForm} from 'matterfoss-redux/selectors/entities/apps';
 
-export {getPost} from 'mattermost-redux/selectors/entities/posts';
-export {getChannel as selectChannel, getCurrentChannel, getChannelByName as selectChannelByName} from 'mattermost-redux/selectors/entities/channels';
-export {getCurrentTeamId, getCurrentTeam} from 'mattermost-redux/selectors/entities/teams';
-export {getUserByUsername as selectUserByUsername, getUser as selectUser} from 'mattermost-redux/selectors/entities/users';
+export {getPost} from 'matterfoss-redux/selectors/entities/posts';
+export {getChannel as selectChannel, getCurrentChannel, getChannelByName as selectChannelByName} from 'matterfoss-redux/selectors/entities/channels';
+export {getCurrentTeamId, getCurrentTeam} from 'matterfoss-redux/selectors/entities/teams';
+export {getUserByUsername as selectUserByUsername, getUser as selectUser} from 'matterfoss-redux/selectors/entities/users';
 
-export {getUserByUsername, getUser} from 'mattermost-redux/actions/users';
-export {getChannelByNameAndTeamName, getChannel, autocompleteChannels} from 'mattermost-redux/actions/channels';
+export {getUserByUsername, getUser} from 'matterfoss-redux/actions/users';
+export {getChannelByNameAndTeamName, getChannel, autocompleteChannels} from 'matterfoss-redux/actions/channels';
 
 export {doAppFetchForm, doAppLookup} from 'actions/apps';
 import {sendEphemeralPost} from 'actions/global_actions';
@@ -98,7 +98,7 @@ export const COMMAND_SUGGESTION_CHANNEL = Constants.Integrations.COMMAND_SUGGEST
 export const COMMAND_SUGGESTION_USER = Constants.Integrations.COMMAND_SUGGESTION_USER;
 
 import type {ParsedCommand} from './app_command_parser';
-export {AppsTypes} from 'mattermost-redux/action_types';
+export {AppsTypes} from 'matterfoss-redux/action_types';
 
 export const getExecuteSuggestion = (parsed: ParsedCommand): AutocompleteSuggestion | null => {
     let key = 'Ctrl';

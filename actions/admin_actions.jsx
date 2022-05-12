@@ -1,11 +1,11 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
-import * as AdminActions from 'mattermost-redux/actions/admin';
-import * as UserActions from 'mattermost-redux/actions/users';
-import * as TeamActions from 'mattermost-redux/actions/teams';
-import {Client4} from 'mattermost-redux/client';
-import {bindClientFunc} from 'mattermost-redux/actions/helpers';
+import * as AdminActions from 'matterfoss-redux/actions/admin';
+import * as UserActions from 'matterfoss-redux/actions/users';
+import * as TeamActions from 'matterfoss-redux/actions/teams';
+import {Client4} from 'matterfoss-redux/client';
+import {bindClientFunc} from 'matterfoss-redux/actions/helpers';
 
 import {trackEvent} from 'actions/telemetry_actions.jsx';
 

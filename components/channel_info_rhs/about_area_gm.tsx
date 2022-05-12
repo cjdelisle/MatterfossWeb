@@ -5,11 +5,11 @@ import React from 'react';
 import styled from 'styled-components';
 import {useIntl} from 'react-intl';
 
-import {Channel} from 'mattermost-redux/types/channels';
+import {Channel} from 'matterfoss-redux/types/channels';
 import Markdown from 'components/markdown';
-import {UserProfile} from 'mattermost-redux/types/users';
+import {UserProfile} from 'matterfoss-redux/types/users';
 import ProfilePicture from 'components/profile_picture';
-import {Client4} from 'mattermost-redux/client';
+import {Client4} from 'matterfoss-redux/client';
 import UserProfileElement from 'components/user_profile';
 
 import EditableArea from './components/editable_area';

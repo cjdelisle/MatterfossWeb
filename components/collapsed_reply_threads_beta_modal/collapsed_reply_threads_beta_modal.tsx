@@ -45,7 +45,7 @@ function CollapsedReplyThreadsBetaModal(props: Props) {
                     title={(
                         <FormattedMarkdownMessage
                             id='collapsed_reply_threads_beta_modal.banner.title'
-                            defaultMessage='Please  [review the list of known issues](!https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues) as we work on stabilizing the feature.'
+                            defaultMessage='Please  [review the list of known issues](!https://docs.matterfoss.com/messaging/organizing-conversations.html#known-issues) as we work on stabilizing the feature.'
                         />
                     )}
                     message={(

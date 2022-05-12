@@ -6,13 +6,13 @@ import fs from 'fs';
 import assert from 'assert';
 import nock from 'nock';
 
-import * as Actions from 'mattermost-redux/actions/teams';
-import {login} from 'mattermost-redux/actions/users';
-import {Client4} from 'mattermost-redux/client';
+import * as Actions from 'matterfoss-redux/actions/teams';
+import {login} from 'matterfoss-redux/actions/users';
+import {Client4} from 'matterfoss-redux/client';
 import {General, RequestStatus} from '../constants';
-import {GeneralTypes} from 'mattermost-redux/action_types';
-import TestHelper from 'mattermost-redux/test/test_helper';
-import configureStore from 'mattermost-redux/test/test_store';
+import {GeneralTypes} from 'matterfoss-redux/action_types';
+import TestHelper from 'matterfoss-redux/test/test_helper';
+import configureStore from 'matterfoss-redux/test/test_store';
 
 const OK_RESPONSE = {status: 'OK'};
 
@@ -732,7 +732,7 @@ describe('Actions.Teams', () => {
         await login(TestHelper.basicUser.email, 'password1')(store.dispatch, store.getState);
 
         const team = TestHelper.basicTeam;
-        const imageData = fs.createReadStream('packages/mattermost-redux/test/assets/images/test.png');
+        const imageData = fs.createReadStream('packages/matterfoss-redux/test/assets/images/test.png');
 
         nock(Client4.getTeamRoute(team.id)).
             post('/image').

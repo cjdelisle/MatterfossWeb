@@ -6,7 +6,7 @@ import {shallow} from 'enzyme';
 
 import RadioGroup from 'components/common/radio_group';
 
-import deepFreeze from 'mattermost-redux/utils/deep_freeze';
+import deepFreeze from 'matterfoss-redux/utils/deep_freeze';
 
 import InviteAs, {Props, InviteType} from './invite_as';
 

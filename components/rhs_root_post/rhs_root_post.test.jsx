@@ -4,7 +4,7 @@
 import {shallow} from 'enzyme';
 import React from 'react';
 
-import {Posts} from 'mattermost-redux/constants';
+import {Posts} from 'matterfoss-redux/constants';
 
 import RhsRootPost from 'components/rhs_root_post/rhs_root_post.jsx';
 import EmojiMap from 'utils/emoji_map';

@@ -1,12 +1,12 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
-import {ChannelTypes, PostTypes, ThreadTypes, UserTypes} from 'mattermost-redux/action_types';
-import {GenericAction} from 'mattermost-redux/types/actions';
-import {Post} from 'mattermost-redux/types/posts';
-import {ThreadsState, UserThread} from 'mattermost-redux/types/threads';
-import {UserProfile} from 'mattermost-redux/types/users';
-import {IDMappedObjects} from 'mattermost-redux/types/utilities';
+import {ChannelTypes, PostTypes, ThreadTypes, UserTypes} from 'matterfoss-redux/action_types';
+import {GenericAction} from 'matterfoss-redux/types/actions';
+import {Post} from 'matterfoss-redux/types/posts';
+import {ThreadsState, UserThread} from 'matterfoss-redux/types/threads';
+import {UserProfile} from 'matterfoss-redux/types/users';
+import {IDMappedObjects} from 'matterfoss-redux/types/utilities';
 
 import {threadsInTeamReducer, unreadThreadsInTeamReducer} from './threadsInTeam';
 import {countsReducer, countsIncludingDirectReducer} from './counts';

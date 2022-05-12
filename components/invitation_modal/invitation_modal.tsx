@@ -6,19 +6,19 @@ import {Modal} from 'react-bootstrap';
 
 import {injectIntl, IntlShape} from 'react-intl';
 
-import deepFreeze from 'mattermost-redux/utils/deep_freeze';
-import {debounce} from 'mattermost-redux/actions/helpers';
-import {ActionFunc} from 'mattermost-redux/types/actions';
-import {SubscriptionStats} from 'mattermost-redux/types/cloud';
+import deepFreeze from 'matterfoss-redux/utils/deep_freeze';
+import {debounce} from 'matterfoss-redux/actions/helpers';
+import {ActionFunc} from 'matterfoss-redux/types/actions';
+import {SubscriptionStats} from 'matterfoss-redux/types/cloud';
 
-import {Team} from 'mattermost-redux/types/teams';
+import {Team} from 'matterfoss-redux/types/teams';
 
-import {Channel} from 'mattermost-redux/types/channels';
-import {UserProfile} from 'mattermost-redux/types/users';
+import {Channel} from 'matterfoss-redux/types/channels';
+import {UserProfile} from 'matterfoss-redux/types/users';
 
 import {trackEvent} from 'actions/telemetry_actions';
 
-import {isEmail} from 'mattermost-redux/utils/helpers';
+import {isEmail} from 'matterfoss-redux/utils/helpers';
 
 import ResultView, {ResultState, defaultResultState, InviteResults} from './result_view';
 import InviteView, {InviteState, defaultInviteState} from './invite_view';

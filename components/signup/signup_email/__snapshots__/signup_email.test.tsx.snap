@@ -16,7 +16,7 @@ exports[`components/SignupEmail should match snapshot 1`] = `
       />
       <SiteNameAndDescription
         customDescriptionText=""
-        siteName="Mattermost"
+        siteName="MatterFOSS"
       />
       <h4
         className="color--light"
@@ -177,7 +177,7 @@ exports[`components/SignupEmail should match snapshot 1`] = `
             Object {
               "PrivacyPolicyLink": "!",
               "TermsOfServiceLink": "!",
-              "siteName": "Mattermost",
+              "siteName": "MatterFOSS",
             }
           }
         />

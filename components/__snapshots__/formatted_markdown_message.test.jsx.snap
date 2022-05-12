@@ -9,7 +9,7 @@ exports[`components/FormattedMarkdownMessage should allow to disable links 1`] =
   messages={
     Object {
       "test.bar": "<b>hello</b> <script>var malicious = true;</script> world!",
-      "test.foo": "**bold** *italic* [link](https://mattermost.com/) <br/> [link target blank](!https://mattermost.com/)",
+      "test.foo": "**bold** *italic* [link](https://matterfoss.com/) <br/> [link target blank](!https://matterfoss.com/)",
       "test.vals": "*Hi* {petName}!",
     }
   }
@@ -22,7 +22,7 @@ exports[`components/FormattedMarkdownMessage should allow to disable links 1`] =
     id="test.vals"
     values={
       Object {
-        "petName": "http://www.mattermost.com",
+        "petName": "http://www.matterfoss.com",
       }
     }
   >
@@ -61,7 +61,7 @@ exports[`components/FormattedMarkdownMessage should allow to disable links 1`] =
           "locale": "en",
           "messages": Object {
             "test.bar": "<b>hello</b> <script>var malicious = true;</script> world!",
-            "test.foo": "**bold** *italic* [link](https://mattermost.com/) <br/> [link target blank](!https://mattermost.com/)",
+            "test.foo": "**bold** *italic* [link](https://matterfoss.com/) <br/> [link target blank](!https://matterfoss.com/)",
             "test.vals": "*Hi* {petName}!",
           },
           "onError": [Function],
@@ -72,14 +72,14 @@ exports[`components/FormattedMarkdownMessage should allow to disable links 1`] =
       }
       values={
         Object {
-          "petName": "http://www.mattermost.com",
+          "petName": "http://www.matterfoss.com",
         }
       }
     >
       <span
         dangerouslySetInnerHTML={
           Object {
-            "__html": "<em>Hi</em> http://www.mattermost.com!",
+            "__html": "<em>Hi</em> http://www.matterfoss.com!",
           }
         }
       />
@@ -97,7 +97,7 @@ exports[`components/FormattedMarkdownMessage should backup to default 1`] = `
   messages={
     Object {
       "test.bar": "<b>hello</b> <script>var malicious = true;</script> world!",
-      "test.foo": "**bold** *italic* [link](https://mattermost.com/) <br/> [link target blank](!https://mattermost.com/)",
+      "test.foo": "**bold** *italic* [link](https://matterfoss.com/) <br/> [link target blank](!https://matterfoss.com/)",
       "test.vals": "*Hi* {petName}!",
     }
   }
@@ -143,7 +143,7 @@ exports[`components/FormattedMarkdownMessage should backup to default 1`] = `
           "locale": "en",
           "messages": Object {
             "test.bar": "<b>hello</b> <script>var malicious = true;</script> world!",
-            "test.foo": "**bold** *italic* [link](https://mattermost.com/) <br/> [link target blank](!https://mattermost.com/)",
+            "test.foo": "**bold** *italic* [link](https://matterfoss.com/) <br/> [link target blank](!https://matterfoss.com/)",
             "test.vals": "*Hi* {petName}!",
           },
           "onError": [Function],
@@ -174,7 +174,7 @@ exports[`components/FormattedMarkdownMessage should escape non-BR 1`] = `
   messages={
     Object {
       "test.bar": "<b>hello</b> <script>var malicious = true;</script> world!",
-      "test.foo": "**bold** *italic* [link](https://mattermost.com/) <br/> [link target blank](!https://mattermost.com/)",
+      "test.foo": "**bold** *italic* [link](https://matterfoss.com/) <br/> [link target blank](!https://matterfoss.com/)",
       "test.vals": "*Hi* {petName}!",
     }
   }
@@ -226,7 +226,7 @@ exports[`components/FormattedMarkdownMessage should escape non-BR 1`] = `
           "locale": "en",
           "messages": Object {
             "test.bar": "<b>hello</b> <script>var malicious = true;</script> world!",
-            "test.foo": "**bold** *italic* [link](https://mattermost.com/) <br/> [link target blank](!https://mattermost.com/)",
+            "test.foo": "**bold** *italic* [link](https://matterfoss.com/) <br/> [link target blank](!https://matterfoss.com/)",
             "test.vals": "*Hi* {petName}!",
           },
           "onError": [Function],
@@ -263,7 +263,7 @@ exports[`components/FormattedMarkdownMessage should render message 1`] = `
   messages={
     Object {
       "test.bar": "<b>hello</b> <script>var malicious = true;</script> world!",
-      "test.foo": "**bold** *italic* [link](https://mattermost.com/) <br/> [link target blank](!https://mattermost.com/)",
+      "test.foo": "**bold** *italic* [link](https://matterfoss.com/) <br/> [link target blank](!https://matterfoss.com/)",
       "test.vals": "*Hi* {petName}!",
     }
   }
@@ -271,11 +271,11 @@ exports[`components/FormattedMarkdownMessage should render message 1`] = `
   textComponent={Symbol(react.fragment)}
 >
   <injectIntl(FormattedMarkdownMessage)
-    defaultMessage="**bold** *italic* [link](https://mattermost.com/) <br/> [link target blank](!https://mattermost.com/)"
+    defaultMessage="**bold** *italic* [link](https://matterfoss.com/) <br/> [link target blank](!https://matterfoss.com/)"
     id="test.foo"
   >
     <FormattedMarkdownMessage
-      defaultMessage="**bold** *italic* [link](https://mattermost.com/) <br/> [link target blank](!https://mattermost.com/)"
+      defaultMessage="**bold** *italic* [link](https://matterfoss.com/) <br/> [link target blank](!https://matterfoss.com/)"
       disableLinks={false}
       id="test.foo"
       intl={
@@ -309,7 +309,7 @@ exports[`components/FormattedMarkdownMessage should render message 1`] = `
           "locale": "en",
           "messages": Object {
             "test.bar": "<b>hello</b> <script>var malicious = true;</script> world!",
-            "test.foo": "**bold** *italic* [link](https://mattermost.com/) <br/> [link target blank](!https://mattermost.com/)",
+            "test.foo": "**bold** *italic* [link](https://matterfoss.com/) <br/> [link target blank](!https://matterfoss.com/)",
             "test.vals": "*Hi* {petName}!",
           },
           "onError": [Function],
@@ -322,7 +322,7 @@ exports[`components/FormattedMarkdownMessage should render message 1`] = `
       <span
         dangerouslySetInnerHTML={
           Object {
-            "__html": "<strong>bold</strong> <em>italic</em> <a href=\\"https://mattermost.com/\\">link</a> &lt;br/&gt; <a href=\\"https://mattermost.com/\\" rel=\\"noopener noreferrer\\" target=\\"_blank\\">link target blank</a>",
+            "__html": "<strong>bold</strong> <em>italic</em> <a href=\\"https://matterfoss.com/\\">link</a> &lt;br/&gt; <a href=\\"https://matterfoss.com/\\" rel=\\"noopener noreferrer\\" target=\\"_blank\\">link target blank</a>",
           }
         }
       />
@@ -340,7 +340,7 @@ exports[`components/FormattedMarkdownMessage values should work 1`] = `
   messages={
     Object {
       "test.bar": "<b>hello</b> <script>var malicious = true;</script> world!",
-      "test.foo": "**bold** *italic* [link](https://mattermost.com/) <br/> [link target blank](!https://mattermost.com/)",
+      "test.foo": "**bold** *italic* [link](https://matterfoss.com/) <br/> [link target blank](!https://matterfoss.com/)",
       "test.vals": "*Hi* {petName}!",
     }
   }
@@ -391,7 +391,7 @@ exports[`components/FormattedMarkdownMessage values should work 1`] = `
           "locale": "en",
           "messages": Object {
             "test.bar": "<b>hello</b> <script>var malicious = true;</script> world!",
-            "test.foo": "**bold** *italic* [link](https://mattermost.com/) <br/> [link target blank](!https://mattermost.com/)",
+            "test.foo": "**bold** *italic* [link](https://matterfoss.com/) <br/> [link target blank](!https://matterfoss.com/)",
             "test.vals": "*Hi* {petName}!",
           },
           "onError": [Function],

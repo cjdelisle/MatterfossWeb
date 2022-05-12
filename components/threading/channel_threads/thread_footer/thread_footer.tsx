@@ -9,16 +9,16 @@ import './thread_footer.scss';
 
 import {GlobalState} from 'types/store';
 
-import {Post} from 'mattermost-redux/types/posts';
-import {threadIsSynthetic, UserThread} from 'mattermost-redux/types/threads';
+import {Post} from 'matterfoss-redux/types/posts';
+import {threadIsSynthetic, UserThread} from 'matterfoss-redux/types/threads';
 
-import {setThreadFollow, getThread as fetchThread} from 'mattermost-redux/actions/threads';
+import {setThreadFollow, getThread as fetchThread} from 'matterfoss-redux/actions/threads';
 import {selectPost} from 'actions/views/rhs';
 
-import {getCurrentTeamId} from 'mattermost-redux/selectors/entities/teams';
-import {getCurrentUserId} from 'mattermost-redux/selectors/entities/users';
-import {getThreadOrSynthetic} from 'mattermost-redux/selectors/entities/threads';
-import {getPost} from 'mattermost-redux/selectors/entities/posts';
+import {getCurrentTeamId} from 'matterfoss-redux/selectors/entities/teams';
+import {getCurrentUserId} from 'matterfoss-redux/selectors/entities/users';
+import {getThreadOrSynthetic} from 'matterfoss-redux/selectors/entities/threads';
+import {getPost} from 'matterfoss-redux/selectors/entities/posts';
 
 import Avatars from 'components/widgets/users/avatars';
 import Timestamp from 'components/timestamp';

@@ -7,8 +7,8 @@ import {components, InputActionMeta, FormatOptionLabelMeta} from 'react-select';
 import {Props as AsyncSelectProps} from 'react-select/async';
 import classNames from 'classnames';
 
-import {isEmail} from 'mattermost-redux/utils/helpers';
-import {UserProfile} from 'mattermost-redux/types/users';
+import {isEmail} from 'matterfoss-redux/utils/helpers';
+import {UserProfile} from 'matterfoss-redux/types/users';
 
 import FormattedMarkdownMessage from 'components/formatted_markdown_message';
 import MailIcon from 'components/widgets/icons/mail_icon';
@@ -21,7 +21,7 @@ import Avatar from 'components/widgets/users/avatar';
 import {imageURLForUser, getDisplayName, getLongDisplayNameParts} from 'utils/utils.jsx';
 
 import {t} from 'utils/i18n.jsx';
-import {isGuest} from 'mattermost-redux/utils/user_utils';
+import {isGuest} from 'matterfoss-redux/utils/user_utils';
 
 import './users_emails_input.scss';
 

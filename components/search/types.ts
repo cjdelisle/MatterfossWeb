@@ -4,8 +4,8 @@
 import React from 'react';
 import {Action} from 'redux';
 
-import {ActionFunc, DispatchFunc} from 'mattermost-redux/types/actions';
-import {Channel} from 'mattermost-redux/types/channels';
+import {ActionFunc, DispatchFunc} from 'matterfoss-redux/types/actions';
+import {Channel} from 'matterfoss-redux/types/channels';
 
 import {SearchType} from 'types/store/rhs';
 

@@ -3,8 +3,8 @@
 
 import {connect} from 'react-redux';
 
-import {getConfig, getLicense} from 'mattermost-redux/selectors/entities/general';
-import {getCurrentUser} from 'mattermost-redux/selectors/entities/users';
+import {getConfig, getLicense} from 'matterfoss-redux/selectors/entities/general';
+import {getCurrentUser} from 'matterfoss-redux/selectors/entities/users';
 
 import {GlobalState} from 'types/store';
 

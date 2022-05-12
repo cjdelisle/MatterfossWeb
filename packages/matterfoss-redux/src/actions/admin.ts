@@ -1,23 +1,23 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
-import {AdminTypes} from 'mattermost-redux/action_types';
+import {AdminTypes} from 'matterfoss-redux/action_types';
 import {General} from '../constants';
-import {Client4} from 'mattermost-redux/client';
+import {Client4} from 'matterfoss-redux/client';
 
-import {Action, ActionFunc, batchActions, DispatchFunc, GetStateFunc} from 'mattermost-redux/types/actions';
-import {Compliance} from 'mattermost-redux/types/compliance';
-import {GroupSearchOpts} from 'mattermost-redux/types/groups';
+import {Action, ActionFunc, batchActions, DispatchFunc, GetStateFunc} from 'matterfoss-redux/types/actions';
+import {Compliance} from 'matterfoss-redux/types/compliance';
+import {GroupSearchOpts} from 'matterfoss-redux/types/groups';
 import {
     CreateDataRetentionCustomPolicy,
-} from 'mattermost-redux/types/data_retention';
+} from 'matterfoss-redux/types/data_retention';
 import {
     TeamSearchOpts,
-} from 'mattermost-redux/types/teams';
+} from 'matterfoss-redux/types/teams';
 import {
     ChannelSearchOpts,
-} from 'mattermost-redux/types/channels';
+} from 'matterfoss-redux/types/channels';
 
-import {CompleteOnboardingRequest} from 'mattermost-redux/types/setup';
+import {CompleteOnboardingRequest} from 'matterfoss-redux/types/setup';
 
 import {bindClientFunc, forceLogoutIfNecessary} from './helpers';
 import {logError} from './errors';
@@ -263,7 +263,7 @@ export function linkLdapGroup(key: string): ActionFunc {
                 data: {
                     primary_key: key,
                     name: data.display_name,
-                    mattermost_group_id: data.id,
+                    matterfoss_group_id: data.id,
                     has_syncables: false,
                 },
             },

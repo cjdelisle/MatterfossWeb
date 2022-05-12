@@ -4,15 +4,15 @@
 import {ActionCreatorsMapObject, bindActionCreators, Dispatch} from 'redux';
 import {connect} from 'react-redux';
 
-import {getGroupsAssociatedToTeam, unlinkGroupSyncable, patchGroupSyncable} from 'mattermost-redux/actions/groups';
-import {getMyTeamMembers} from 'mattermost-redux/actions/teams';
+import {getGroupsAssociatedToTeam, unlinkGroupSyncable, patchGroupSyncable} from 'matterfoss-redux/actions/groups';
+import {getMyTeamMembers} from 'matterfoss-redux/actions/teams';
 
 import {closeModal, openModal} from 'actions/views/modals';
 
-import {GlobalState} from 'mattermost-redux/types/store';
-import {Action} from 'mattermost-redux/types/actions';
-import {Group, SyncablePatch, SyncableType} from 'mattermost-redux/types/groups';
-import {TeamMembership} from 'mattermost-redux/types/teams';
+import {GlobalState} from 'matterfoss-redux/types/store';
+import {Action} from 'matterfoss-redux/types/actions';
+import {Group, SyncablePatch, SyncableType} from 'matterfoss-redux/types/groups';
+import {TeamMembership} from 'matterfoss-redux/types/teams';
 
 import {ModalData} from 'types/actions';
 

@@ -4,7 +4,7 @@
 import assert from 'assert';
 
 import {Preferences} from '../constants';
-import {getEmailInterval} from 'mattermost-redux/utils/notify_props';
+import {getEmailInterval} from 'matterfoss-redux/utils/notify_props';
 
 describe('user utils', () => {
     it('getEmailInterval should return correct interval', () => {

@@ -3,12 +3,12 @@
 
 import regeneratorRuntime from 'regenerator-runtime';
 
-import {Client4} from 'mattermost-redux/client';
+import {Client4} from 'matterfoss-redux/client';
 
-import {Preferences} from 'mattermost-redux/constants';
+import {Preferences} from 'matterfoss-redux/constants';
 
-import {getConfig, isPerformanceDebuggingEnabled} from 'mattermost-redux/selectors/entities/general';
-import {getBool} from 'mattermost-redux/selectors/entities/preferences';
+import {getConfig, isPerformanceDebuggingEnabled} from 'matterfoss-redux/selectors/entities/general';
+import {getBool} from 'matterfoss-redux/selectors/entities/preferences';
 
 import store from 'stores/redux_store.jsx';
 import {ActionTypes} from 'utils/constants.jsx';

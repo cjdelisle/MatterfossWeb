@@ -3,10 +3,10 @@
 
 import React from 'react';
 
-import {Client4} from 'mattermost-redux/client';
+import {Client4} from 'matterfoss-redux/client';
 
 import * as Utils from 'utils/utils.jsx';
-import {isGuest} from 'mattermost-redux/utils/user_utils';
+import {isGuest} from 'matterfoss-redux/utils/user_utils';
 
 import GuestBadge from 'components/widgets/badges/guest_badge';
 import BotBadge from 'components/widgets/badges/bot_badge';

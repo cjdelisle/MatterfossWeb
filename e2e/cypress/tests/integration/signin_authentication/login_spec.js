@@ -94,7 +94,7 @@ describe('Login page', () => {
             const currentYear = todaysDate.getFullYear();
 
             // * Check if copyright footer is present
-            cy.findByText(`© 2015-${currentYear} Mattermost, Inc.`).should('exist');
+            cy.findByText(`© 2015-${currentYear} MatterFOSS, Inc.`).should('exist');
         });
     });
 

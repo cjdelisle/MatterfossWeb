@@ -79,7 +79,7 @@ const getDownloadButtonString = () => {
         return (
             <FormattedMessage
                 id='next_steps_view.tips.getForWindows'
-                defaultMessage='Get Mattermost for Windows'
+                defaultMessage='Get MatterFOSS for Windows'
             />
         );
     }
@@ -88,7 +88,7 @@ const getDownloadButtonString = () => {
         return (
             <FormattedMessage
                 id='next_steps_view.tips.getForMac'
-                defaultMessage='Get Mattermost for Mac'
+                defaultMessage='Get MatterFOSS for Mac'
             />
         );
     }
@@ -98,18 +98,18 @@ const getDownloadButtonString = () => {
     return (
         <FormattedMessage
             id='next_steps_view.tips.getForDefault'
-            defaultMessage='Get Mattermost'
+            defaultMessage='Get MatterFOSS'
         />
     );
 };
 
 const seeAllApps = (isAdmin: boolean) => {
     trackEvent(getAnalyticsCategory(isAdmin), 'cloud_see_all_apps');
-    window.open('https://mattermost.com/download/#mattermostApps', '_blank');
+    window.open('https://matterfoss.com/download/#matterfossApps', '_blank');
 };
 
 const downloadLatest = (isAdmin: boolean) => {
-    const baseLatestURL = 'https://latest.mattermost.com/mattermost-desktop-';
+    const baseLatestURL = 'https://latest.matterfoss.com/matterfoss-desktop-';
 
     if (isWindows()) {
         trackEvent(getAnalyticsCategory(isAdmin), 'click_download_app', {app: 'windows'});

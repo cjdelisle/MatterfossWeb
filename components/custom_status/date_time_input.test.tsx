@@ -6,7 +6,7 @@ import configureStore from 'redux-mock-store';
 import {Provider} from 'react-redux';
 import moment from 'moment-timezone';
 
-import {General} from 'mattermost-redux/constants';
+import {General} from 'matterfoss-redux/constants';
 import * as i18Selectors from 'selectors/i18n';
 
 import DateTimeInput from './date_time_input';

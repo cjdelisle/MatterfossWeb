@@ -3,8 +3,8 @@
 
 import assert from 'assert';
 
-import {GroupTypes} from 'mattermost-redux/action_types';
-import reducer from 'mattermost-redux/reducers/entities/groups';
+import {GroupTypes} from 'matterfoss-redux/action_types';
+import reducer from 'matterfoss-redux/reducers/entities/groups';
 
 describe('reducers/entities/groups', () => {
     describe('syncables', () => {

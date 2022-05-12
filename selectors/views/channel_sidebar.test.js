@@ -1,11 +1,11 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
-import {Preferences} from 'mattermost-redux/constants';
+import {Preferences} from 'matterfoss-redux/constants';
 
-import mergeObjects from 'mattermost-redux/test/merge_objects';
+import mergeObjects from 'matterfoss-redux/test/merge_objects';
 
-import {getPreferenceKey} from 'mattermost-redux/utils/preference_utils';
+import {getPreferenceKey} from 'matterfoss-redux/utils/preference_utils';
 
 import {TestHelper} from 'utils/test_helper';
 

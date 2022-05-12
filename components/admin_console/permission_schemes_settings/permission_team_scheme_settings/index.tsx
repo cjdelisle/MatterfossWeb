@@ -4,23 +4,23 @@
 import {connect} from 'react-redux';
 import {ActionCreatorsMapObject, bindActionCreators, Dispatch} from 'redux';
 
-import {loadRolesIfNeeded, editRole} from 'mattermost-redux/actions/roles';
+import {loadRolesIfNeeded, editRole} from 'matterfoss-redux/actions/roles';
 
-import {getRoles} from 'mattermost-redux/selectors/entities/roles';
-import {getLicense, getConfig} from 'mattermost-redux/selectors/entities/general';
-import {getScheme, makeGetSchemeTeams} from 'mattermost-redux/selectors/entities/schemes';
+import {getRoles} from 'matterfoss-redux/selectors/entities/roles';
+import {getLicense, getConfig} from 'matterfoss-redux/selectors/entities/general';
+import {getScheme, makeGetSchemeTeams} from 'matterfoss-redux/selectors/entities/schemes';
 
-import {getScheme as loadScheme, patchScheme, createScheme, getSchemeTeams as loadSchemeTeams} from 'mattermost-redux/actions/schemes';
+import {getScheme as loadScheme, patchScheme, createScheme, getSchemeTeams as loadSchemeTeams} from 'matterfoss-redux/actions/schemes';
 
-import {updateTeamScheme} from 'mattermost-redux/actions/teams';
+import {updateTeamScheme} from 'matterfoss-redux/actions/teams';
 
 import {setNavigationBlocked} from 'actions/admin_actions';
 
-import {ActionFunc, ActionResult, GenericAction} from 'mattermost-redux/types/actions';
-import {Role} from 'mattermost-redux/types/roles';
-import {Scheme, SchemePatch} from 'mattermost-redux/types/schemes';
-import {GlobalState} from 'mattermost-redux/types/store';
-import {ServerError} from 'mattermost-redux/types/errors';
+import {ActionFunc, ActionResult, GenericAction} from 'matterfoss-redux/types/actions';
+import {Role} from 'matterfoss-redux/types/roles';
+import {Scheme, SchemePatch} from 'matterfoss-redux/types/schemes';
+import {GlobalState} from 'matterfoss-redux/types/store';
+import {ServerError} from 'matterfoss-redux/types/errors';
 
 import PermissionTeamSchemeSettings, {Props} from './permission_team_scheme_settings';
 

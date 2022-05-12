@@ -5,10 +5,10 @@ import React from 'react';
 import {Modal} from 'react-bootstrap';
 import {FormattedMessage} from 'react-intl';
 
-import {UserProfile} from 'mattermost-redux/types/users';
-import {ActionResult} from 'mattermost-redux/types/actions';
+import {UserProfile} from 'matterfoss-redux/types/users';
+import {ActionResult} from 'matterfoss-redux/types/actions';
 
-import {isEmail} from 'mattermost-redux/utils/helpers';
+import {isEmail} from 'matterfoss-redux/utils/helpers';
 
 type State = {
     error: JSX.Element|string|null;

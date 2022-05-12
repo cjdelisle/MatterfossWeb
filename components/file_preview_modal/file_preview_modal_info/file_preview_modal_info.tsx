@@ -5,13 +5,13 @@ import React, {memo} from 'react';
 import {FormattedMessage} from 'react-intl';
 import {useSelector} from 'react-redux';
 
-import {makeGetChannel} from 'mattermost-redux/selectors/entities/channels';
+import {makeGetChannel} from 'matterfoss-redux/selectors/entities/channels';
 import {
     getUser as selectUser,
     makeGetDisplayName,
-} from 'mattermost-redux/selectors/entities/users';
-import {Post} from 'mattermost-redux/types/posts';
-import {UserProfile} from 'mattermost-redux/types/users';
+} from 'matterfoss-redux/selectors/entities/users';
+import {Post} from 'matterfoss-redux/types/posts';
+import {UserProfile} from 'matterfoss-redux/types/users';
 
 import Avatar from 'components/widgets/users/avatar/avatar';
 

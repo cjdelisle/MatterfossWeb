@@ -36,13 +36,13 @@ describe('System console', () => {
                 Enable: true,
                 EnableMarketplace: true,
                 EnableRemoteMarketplace: true,
-                MarketplaceURL: 'https://api.integrations.mattermost.com',
+                MarketplaceURL: 'https://api.integrations.matterfoss.com',
             },
         });
 
-        cy.apiInstallPluginFromUrl('https://github.com/mattermost/mattermost-plugin-antivirus/releases/download/v0.1.2/antivirus-0.1.2.tar.gz', true);
-        cy.apiInstallPluginFromUrl('https://github.com/mattermost/mattermost-plugin-autolink/releases/download/v1.2.1/mattermost-autolink-1.2.1.tar.gz', true);
-        cy.apiInstallPluginFromUrl('https://github.com/mattermost/mattermost-plugin-aws-SNS/releases/download/v1.1.0/com.mattermost.aws-sns-1.1.0.tar.gz', true);
+        cy.apiInstallPluginFromUrl('https://github.com/matterfoss/matterfoss-plugin-antivirus/releases/download/v0.1.2/antivirus-0.1.2.tar.gz', true);
+        cy.apiInstallPluginFromUrl('https://github.com/matterfoss/matterfoss-plugin-autolink/releases/download/v1.2.1/matterfoss-autolink-1.2.1.tar.gz', true);
+        cy.apiInstallPluginFromUrl('https://github.com/matterfoss/matterfoss-plugin-aws-SNS/releases/download/v1.1.0/com.matterfoss.aws-sns-1.1.0.tar.gz', true);
 
         // # A bug with the endpoint used for downloading plugins which doesn't send websocket events out so state is not updated
         // # Therefore, we visit town-square to update the state of our app then re-visit admin console
@@ -63,7 +63,7 @@ describe('System console', () => {
         cy.wait(TIMEOUTS.ONE_SEC);
 
         // * Ensure autolink plugin is highlighted
-        cy.get('#plugins\\/plugin_mattermost-autolink').then((el) => {
+        cy.get('#plugins\\/plugin_matterfoss-autolink').then((el) => {
             expect(el[0].innerHTML).includes('markjs');
         });
 
@@ -72,7 +72,7 @@ describe('System console', () => {
         cy.wait(TIMEOUTS.ONE_SEC);
 
         // * Ensure aws sns plugin is highlighted
-        cy.get('#plugins\\/plugin_com\\.mattermost\\.aws-sns').then((el) => {
+        cy.get('#plugins\\/plugin_com\\.matterfoss\\.aws-sns').then((el) => {
             expect(el[0].innerHTML).includes('markjs');
         });
 

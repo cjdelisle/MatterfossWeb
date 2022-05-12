@@ -9,10 +9,10 @@ import {
     GeneralTypes,
     PostTypes,
     ThreadTypes,
-} from 'mattermost-redux/action_types';
-import {Posts} from 'mattermost-redux/constants';
-import * as reducers from 'mattermost-redux/reducers/entities/posts';
-import deepFreeze from 'mattermost-redux/utils/deep_freeze';
+} from 'matterfoss-redux/action_types';
+import {Posts} from 'matterfoss-redux/constants';
+import * as reducers from 'matterfoss-redux/reducers/entities/posts';
+import deepFreeze from 'matterfoss-redux/utils/deep_freeze';
 
 describe('posts', () => {
     for (const actionType of [

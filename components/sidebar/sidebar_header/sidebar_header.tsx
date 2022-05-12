@@ -8,7 +8,7 @@ import styled from 'styled-components';
 import Flex from '@mattermost/compass-components/utilities/layout/Flex';
 import Heading from '@mattermost/compass-components/components/heading';
 
-import {getCurrentTeam} from 'mattermost-redux/selectors/entities/teams';
+import {getCurrentTeam} from 'matterfoss-redux/selectors/entities/teams';
 import {GlobalState} from 'types/store';
 import Constants from 'utils/constants';
 

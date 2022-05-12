@@ -4,14 +4,14 @@
 import React from 'react';
 import {defineMessages, FormattedDate, FormattedMessage, FormattedTime, injectIntl, IntlShape} from 'react-intl';
 
-import {UserProfile} from 'mattermost-redux/types/users';
-import {ActionFunc} from 'mattermost-redux/types/actions';
-import {Audit} from 'mattermost-redux/types/audits';
-import {Channel} from 'mattermost-redux/types/channels';
+import {UserProfile} from 'matterfoss-redux/types/users';
+import {ActionFunc} from 'matterfoss-redux/types/actions';
+import {Audit} from 'matterfoss-redux/types/audits';
+import {Channel} from 'matterfoss-redux/types/channels';
 
 import {t} from 'utils/i18n';
 import {toTitleCase} from 'utils/utils.jsx';
-import {isSystemAdmin} from 'mattermost-redux/utils/user_utils';
+import {isSystemAdmin} from 'matterfoss-redux/utils/user_utils';
 
 const holders = defineMessages({
     sessionRevoked: {

@@ -7,8 +7,8 @@ import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import classNames from 'classnames';
 
-import {UserTypes} from 'mattermost-redux/action_types';
-import {Client4} from 'mattermost-redux/client';
+import {UserTypes} from 'matterfoss-redux/action_types';
+import {Client4} from 'matterfoss-redux/client';
 import {
     getDirectAndGroupChannels,
     getGroupChannels,
@@ -17,17 +17,17 @@ import {
     getCurrentChannel,
     getDirectTeammate,
     getChannelsInAllTeams,
-} from 'mattermost-redux/selectors/entities/channels';
+} from 'matterfoss-redux/selectors/entities/channels';
 
 import ProfilePicture from '../profile_picture';
 
-import {getMyPreferences, isGroupChannelManuallyVisible, isCollapsedThreadsEnabled} from 'mattermost-redux/selectors/entities/preferences';
-import {getConfig} from 'mattermost-redux/selectors/entities/general';
+import {getMyPreferences, isGroupChannelManuallyVisible, isCollapsedThreadsEnabled} from 'matterfoss-redux/selectors/entities/preferences';
+import {getConfig} from 'matterfoss-redux/selectors/entities/general';
 import {
     getCurrentTeamId,
     getMyTeams,
     getTeam,
-} from 'mattermost-redux/selectors/entities/teams';
+} from 'matterfoss-redux/selectors/entities/teams';
 import {
     getCurrentUserId,
     getUserIdsInChannels,
@@ -35,10 +35,10 @@ import {
     makeSearchProfilesMatchingWithTerm,
     getStatusForUserId,
     getUserByUsername,
-} from 'mattermost-redux/selectors/entities/users';
-import {fetchAllMyTeamsChannelsAndChannelMembers, searchAllChannels} from 'mattermost-redux/actions/channels';
-import {logError} from 'mattermost-redux/actions/errors';
-import {sortChannelsByTypeAndDisplayName} from 'mattermost-redux/utils/channel_utils';
+} from 'matterfoss-redux/selectors/entities/users';
+import {fetchAllMyTeamsChannelsAndChannelMembers, searchAllChannels} from 'matterfoss-redux/actions/channels';
+import {logError} from 'matterfoss-redux/actions/errors';
+import {sortChannelsByTypeAndDisplayName} from 'matterfoss-redux/utils/channel_utils';
 
 import SharedChannelIndicator from 'components/shared_channel_indicator';
 import BotBadge from 'components/widgets/badges/bot_badge';
@@ -49,10 +49,10 @@ import {getPostDraft} from 'selectors/rhs';
 import store from 'stores/redux_store.jsx';
 import {Constants, StoragePrefixes} from 'utils/constants';
 import * as Utils from 'utils/utils.jsx';
-import {isGuest} from 'mattermost-redux/utils/user_utils';
+import {isGuest} from 'matterfoss-redux/utils/user_utils';
 
-import {Preferences} from 'mattermost-redux/constants';
-import {getPreferenceKey} from 'mattermost-redux/utils/preference_utils';
+import {Preferences} from 'matterfoss-redux/constants';
+import {getPreferenceKey} from 'matterfoss-redux/utils/preference_utils';
 
 import Provider from './provider.jsx';
 import Suggestion from './suggestion.jsx';

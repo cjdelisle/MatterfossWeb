@@ -6,11 +6,11 @@ import {FormattedMessage} from 'react-intl';
 
 import ActionsMenu from 'components/actions_menu';
 
-import {Posts, Preferences} from 'mattermost-redux/constants';
-import * as ReduxPostUtils from 'mattermost-redux/utils/post_utils';
+import {Posts, Preferences} from 'matterfoss-redux/constants';
+import * as ReduxPostUtils from 'matterfoss-redux/utils/post_utils';
 
-import {Post} from 'mattermost-redux/types/posts';
-import {ExtendedPost} from 'mattermost-redux/actions/posts';
+import {Post} from 'matterfoss-redux/types/posts';
+import {ExtendedPost} from 'matterfoss-redux/actions/posts';
 
 import {trackEvent} from 'actions/telemetry_actions';
 import * as PostUtils from 'utils/post_utils';
@@ -25,7 +25,7 @@ import PostReaction from 'components/post_view/post_reaction';
 import PostRecentReactions from 'components/post_view/post_recent_reactions';
 import PostTime from 'components/post_view/post_time';
 import InfoSmallIcon from 'components/widgets/icons/info_small_icon';
-import {Emoji} from 'mattermost-redux/types/emojis';
+import {Emoji} from 'matterfoss-redux/types/emojis';
 
 type Props = {
 

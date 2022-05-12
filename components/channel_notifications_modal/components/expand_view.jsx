@@ -6,7 +6,7 @@ import React from 'react';
 import {FormattedMessage} from 'react-intl';
 import {useSelector} from 'react-redux';
 
-import {isCollapsedThreadsEnabled} from 'mattermost-redux/selectors/entities/preferences';
+import {isCollapsedThreadsEnabled} from 'matterfoss-redux/selectors/entities/preferences';
 
 import {IgnoreChannelMentions, NotificationLevels, NotificationSections} from 'utils/constants';
 

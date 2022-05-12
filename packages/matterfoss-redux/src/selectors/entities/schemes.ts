@@ -3,15 +3,15 @@
 
 import {createSelector} from 'reselect';
 
-import {ScopeTypes} from 'mattermost-redux/constants/schemes';
+import {ScopeTypes} from 'matterfoss-redux/constants/schemes';
 
-import {getAllChannels} from 'mattermost-redux/selectors/entities/channels';
-import {getTeams} from 'mattermost-redux/selectors/entities/teams';
+import {getAllChannels} from 'matterfoss-redux/selectors/entities/channels';
+import {getTeams} from 'matterfoss-redux/selectors/entities/teams';
 
-import {Channel} from 'mattermost-redux/types/channels';
-import {Scheme} from 'mattermost-redux/types/schemes';
-import {GlobalState} from 'mattermost-redux/types/store';
-import {Team} from 'mattermost-redux/types/teams';
+import {Channel} from 'matterfoss-redux/types/channels';
+import {Scheme} from 'matterfoss-redux/types/schemes';
+import {GlobalState} from 'matterfoss-redux/types/store';
+import {Team} from 'matterfoss-redux/types/teams';
 
 export function getSchemes(state: GlobalState): {
     [x: string]: Scheme;

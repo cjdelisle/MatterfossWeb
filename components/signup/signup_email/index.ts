@@ -4,13 +4,13 @@
 import {connect} from 'react-redux';
 import {ActionCreatorsMapObject, bindActionCreators, Dispatch} from 'redux';
 
-import {GenericAction, ActionFunc} from 'mattermost-redux/types/actions';
+import {GenericAction, ActionFunc} from 'matterfoss-redux/types/actions';
 
-import {createUser} from 'mattermost-redux/actions/users';
-import {getConfig} from 'mattermost-redux/selectors/entities/general';
-import {getUseCaseOnboarding} from 'mattermost-redux/selectors/entities/preferences';
+import {createUser} from 'matterfoss-redux/actions/users';
+import {getConfig} from 'matterfoss-redux/selectors/entities/general';
+import {getUseCaseOnboarding} from 'matterfoss-redux/selectors/entities/preferences';
 
-import {getTeamInviteInfo} from 'mattermost-redux/actions/teams';
+import {getTeamInviteInfo} from 'matterfoss-redux/actions/teams';
 
 import {setGlobalItem} from 'actions/storage';
 import {loginById} from 'actions/views/login';

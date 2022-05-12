@@ -4,7 +4,7 @@
 import {shallow} from 'enzyme';
 import React from 'react';
 
-import mattermostIcon from 'images/icon50x50.png';
+import matterfossIcon from 'images/icon50x50.png';
 
 import SystemNotice from 'components/system_notice/system_notice';
 
@@ -14,7 +14,7 @@ describe('components/SystemNotice', () => {
         preferences: {},
         dismissedNotices: {},
         isSystemAdmin: false,
-        notices: [{name: 'notice1', adminOnly: false, title: 'some title', icon: mattermostIcon, body: 'some body', allowForget: true, show: () => true}],
+        notices: [{name: 'notice1', adminOnly: false, title: 'some title', icon: matterfossIcon, body: 'some body', allowForget: true, show: () => true}],
         serverVersion: '5.1',
         license: {IsLicensed: 'true'},
         config: {},
@@ -38,13 +38,13 @@ describe('components/SystemNotice', () => {
     });
 
     test('should match snapshot for regular user, admin notice', () => {
-        const props = {...baseProps, notices: [{name: 'notice1', adminOnly: true, title: 'some title', icon: mattermostIcon, body: 'some body', allowForget: true, show: () => true}]};
+        const props = {...baseProps, notices: [{name: 'notice1', adminOnly: true, title: 'some title', icon: matterfossIcon, body: 'some body', allowForget: true, show: () => true}]};
         const wrapper = shallow(<SystemNotice {...props}/>);
         expect(wrapper).toMatchSnapshot();
     });
 
     test('should match snapshot for regular user, admin and regular notice', () => {
-        const props = {...baseProps, notices: [{name: 'notice1', adminOnly: true, title: 'some title', icon: mattermostIcon, body: 'some body', allowForget: true}, {name: 'notice2', adminOnly: false, title: 'some title2', icon: mattermostIcon, body: 'some body2', allowForget: true, show: () => true}]};
+        const props = {...baseProps, notices: [{name: 'notice1', adminOnly: true, title: 'some title', icon: matterfossIcon, body: 'some body', allowForget: true}, {name: 'notice2', adminOnly: false, title: 'some title2', icon: matterfossIcon, body: 'some body2', allowForget: true, show: () => true}]};
         const wrapper = shallow(<SystemNotice {...props}/>);
         expect(wrapper).toMatchSnapshot();
     });
@@ -56,7 +56,7 @@ describe('components/SystemNotice', () => {
     });
 
     test('should match snapshot for admin, admin notice', () => {
-        const props = {...baseProps, isSystemAdmin: true, notices: [{name: 'notice1', adminOnly: true, title: 'some title', icon: mattermostIcon, body: 'some body', allowForget: true, show: () => true}]};
+        const props = {...baseProps, isSystemAdmin: true, notices: [{name: 'notice1', adminOnly: true, title: 'some title', icon: matterfossIcon, body: 'some body', allowForget: true, show: () => true}]};
         const wrapper = shallow(<SystemNotice {...props}/>);
         expect(wrapper).toMatchSnapshot();
     });
@@ -74,19 +74,19 @@ describe('components/SystemNotice', () => {
     });
 
     test('should match snapshot for show function returning false', () => {
-        const props = {...baseProps, notices: [{name: 'notice1', adminOnly: false, title: 'some title', icon: mattermostIcon, body: 'some body', allowForget: true, show: () => false}]};
+        const props = {...baseProps, notices: [{name: 'notice1', adminOnly: false, title: 'some title', icon: matterfossIcon, body: 'some body', allowForget: true, show: () => false}]};
         const wrapper = shallow(<SystemNotice {...props}/>);
         expect(wrapper).toMatchSnapshot();
     });
 
     test('should match snapshot for show function returning true', () => {
-        const props = {...baseProps, notices: [{name: 'notice1', adminOnly: false, title: 'some title', icon: mattermostIcon, body: 'some body', allowForget: true, show: () => true}]};
+        const props = {...baseProps, notices: [{name: 'notice1', adminOnly: false, title: 'some title', icon: matterfossIcon, body: 'some body', allowForget: true, show: () => true}]};
         const wrapper = shallow(<SystemNotice {...props}/>);
         expect(wrapper).toMatchSnapshot();
     });
 
     test('should match snapshot for with allowForget equal false', () => {
-        const props = {...baseProps, notices: [{name: 'notice1', adminOnly: false, title: 'some title', icon: mattermostIcon, body: 'some body', allowForget: false, show: () => true}]};
+        const props = {...baseProps, notices: [{name: 'notice1', adminOnly: false, title: 'some title', icon: matterfossIcon, body: 'some body', allowForget: false, show: () => true}]};
         const wrapper = shallow(<SystemNotice {...props}/>);
         expect(wrapper).toMatchSnapshot();
     });

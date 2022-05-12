@@ -1,16 +1,16 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
-import {SearchTypes} from 'mattermost-redux/action_types';
-import {getMyChannelMember} from 'mattermost-redux/actions/channels';
-import {getChannel, getMyChannelMember as getMyChannelMemberSelector} from 'mattermost-redux/selectors/entities/channels';
-import {isCollapsedThreadsEnabled} from 'mattermost-redux/selectors/entities/preferences';
-import * as ThreadActions from 'mattermost-redux/actions/threads';
-import * as PostActions from 'mattermost-redux/actions/posts';
-import * as PostSelectors from 'mattermost-redux/selectors/entities/posts';
-import {getCurrentUserId} from 'mattermost-redux/selectors/entities/users';
-import {getCurrentTeamId} from 'mattermost-redux/selectors/entities/teams';
-import {canEditPost, comparePosts} from 'mattermost-redux/utils/post_utils';
+import {SearchTypes} from 'matterfoss-redux/action_types';
+import {getMyChannelMember} from 'matterfoss-redux/actions/channels';
+import {getChannel, getMyChannelMember as getMyChannelMemberSelector} from 'matterfoss-redux/selectors/entities/channels';
+import {isCollapsedThreadsEnabled} from 'matterfoss-redux/selectors/entities/preferences';
+import * as ThreadActions from 'matterfoss-redux/actions/threads';
+import * as PostActions from 'matterfoss-redux/actions/posts';
+import * as PostSelectors from 'matterfoss-redux/selectors/entities/posts';
+import {getCurrentUserId} from 'matterfoss-redux/selectors/entities/users';
+import {getCurrentTeamId} from 'matterfoss-redux/selectors/entities/teams';
+import {canEditPost, comparePosts} from 'matterfoss-redux/utils/post_utils';
 
 import {addRecentEmoji} from 'actions/emoji_actions';
 import * as StorageActions from 'actions/storage';

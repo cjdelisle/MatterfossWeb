@@ -15,11 +15,11 @@ import {TERMS_OF_SERVICE_LINK} from '../../../utils/constants';
 import {backToTeam, saveSetting} from './helper';
 
 describe('SupportSettings', () => {
-    const tosLink = 'https://github.com/mattermost/platform/blob/master/README.md';
-    const privacyLink = 'https://github.com/mattermost/platform/blob/master/README.md';
-    const aboutLink = 'https://mattermost.com/default-about/';
-    const helpLink = 'https://github.com/mattermost/platform/blob/master/doc/help/README.md';
-    const problemLink = 'https://forum.mattermost.com/c/trouble-shoot';
+    const tosLink = 'https://github.com/matterfoss/platform/blob/master/README.md';
+    const privacyLink = 'https://github.com/matterfoss/platform/blob/master/README.md';
+    const aboutLink = 'https://matterfoss.com/default-about/';
+    const helpLink = 'https://github.com/matterfoss/platform/blob/master/doc/help/README.md';
+    const problemLink = 'https://forum.matterfoss.com/c/trouble-shoot';
 
     before(() => {
         cy.shouldNotRunOnCloudEdition();
@@ -149,7 +149,7 @@ describe('SupportSettings', () => {
         cy.findByTestId('SupportSettings.EnableAskCommunityLinktrue').should('be.checked');
 
         // * Verify the help text
-        cy.findByTestId('SupportSettings.EnableAskCommunityLinkhelp-text').should('contain', 'When true, "Ask the community" link appears on the Mattermost user interface and Help Menu, which allows users to join the Mattermost Community to ask questions and help others troubleshoot issues. When false, the link is hidden from users.');
+        cy.findByTestId('SupportSettings.EnableAskCommunityLinkhelp-text').should('contain', 'When true, "Ask the community" link appears on the MatterFOSS user interface and Help Menu, which allows users to join the MatterFOSS Community to ask questions and help others troubleshoot issues. When false, the link is hidden from users.');
 
         // # Back to team view
         backToTeam();
@@ -174,7 +174,7 @@ describe('SupportSettings', () => {
             // * Verify default link of Ask the community
             cy.findByText('Ask the community').
                 parent().
-                should('have.attr', 'href', 'https://mattermost.com/pl/default-ask-mattermost-community/');
+                should('have.attr', 'href', 'https://matterfoss.com/pl/default-ask-matterfoss-community/');
         });
     });
 

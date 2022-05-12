@@ -3,8 +3,8 @@
 
 import {combineReducers} from 'redux';
 
-import {GifTypes} from 'mattermost-redux/action_types';
-import {GenericAction} from 'mattermost-redux/types/actions';
+import {GifTypes} from 'matterfoss-redux/action_types';
+import {GenericAction} from 'matterfoss-redux/types/actions';
 
 type ReducerMap = {[actionType: string]: (state: any, action: GenericAction) => any};
 

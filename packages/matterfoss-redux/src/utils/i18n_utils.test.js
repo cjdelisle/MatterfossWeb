@@ -3,7 +3,7 @@
 
 import assert from 'assert';
 
-import {setLocalizeFunction, localizeMessage} from 'mattermost-redux/utils/i18n_utils';
+import {setLocalizeFunction, localizeMessage} from 'matterfoss-redux/utils/i18n_utils';
 
 describe('i18n utils', () => {
     afterEach(() => {

@@ -4,7 +4,7 @@
 import {connect, ConnectedProps} from 'react-redux';
 import {bindActionCreators, Dispatch} from 'redux';
 
-import {GenericAction} from 'mattermost-redux/types/actions';
+import {GenericAction} from 'matterfoss-redux/types/actions';
 
 import {GlobalState} from 'types/store';
 

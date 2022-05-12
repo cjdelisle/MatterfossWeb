@@ -5,21 +5,21 @@ import {ComponentProps} from 'react';
 import {connect} from 'react-redux';
 import {ActionCreatorsMapObject, bindActionCreators, Dispatch} from 'redux';
 
-import {getCurrentUser, getCurrentUserId} from 'mattermost-redux/selectors/entities/users';
-import {getCurrentTeamId} from 'mattermost-redux/selectors/entities/teams';
-import {appsEnabled, makeGetPostOptionBinding} from 'mattermost-redux/selectors/entities/apps';
+import {getCurrentUser, getCurrentUserId} from 'matterfoss-redux/selectors/entities/users';
+import {getCurrentTeamId} from 'matterfoss-redux/selectors/entities/teams';
+import {appsEnabled, makeGetPostOptionBinding} from 'matterfoss-redux/selectors/entities/apps';
 
-import {AppBindingLocations} from 'mattermost-redux/constants/apps';
+import {AppBindingLocations} from 'matterfoss-redux/constants/apps';
 
-import {isSystemAdmin} from 'mattermost-redux/utils/user_utils';
-import {isSystemMessage} from 'mattermost-redux/utils/post_utils';
-import {isCombinedUserActivityPost} from 'mattermost-redux/utils/post_list';
+import {isSystemAdmin} from 'matterfoss-redux/utils/user_utils';
+import {isSystemMessage} from 'matterfoss-redux/utils/post_utils';
+import {isCombinedUserActivityPost} from 'matterfoss-redux/utils/post_list';
 
-import {GenericAction} from 'mattermost-redux/types/actions';
+import {GenericAction} from 'matterfoss-redux/types/actions';
 import {ModalData} from 'types/actions';
 import {getIsMobileView} from 'selectors/views/browser';
-import {AppBinding} from 'mattermost-redux/types/apps';
-import {Post} from 'mattermost-redux/types/posts';
+import {AppBinding} from 'matterfoss-redux/types/apps';
+import {Post} from 'matterfoss-redux/types/posts';
 import {HandleBindingClick, OpenAppsModal, PostEphemeralCallResponseForPost} from 'types/apps';
 import {GlobalState} from 'types/store';
 

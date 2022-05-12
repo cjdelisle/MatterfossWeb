@@ -86,11 +86,11 @@ exports[`components/app_bar/app_bar should match snapshot on mount 1`] = `
     <AppBarBinding
       binding={
         Object {
-          "app_id": "com.mattermost.zendesk",
+          "app_id": "com.matterfoss.zendesk",
           "label": "Create Subscription",
         }
       }
-      key="com.mattermost.zendesk_Create Subscription"
+      key="com.matterfoss.zendesk_Create Subscription"
     >
       <OverlayTrigger
         defaultOverlayShown={false}
@@ -98,7 +98,7 @@ exports[`components/app_bar/app_bar should match snapshot on mount 1`] = `
         overlay={
           <Tooltip
             bsClass="tooltip"
-            id="tooltip-app-bar-icon-com.mattermost.zendesk"
+            id="tooltip-app-bar-icon-com.matterfoss.zendesk"
             placement="right"
           >
             <span>
@@ -120,7 +120,7 @@ exports[`components/app_bar/app_bar should match snapshot on mount 1`] = `
           overlay={
             <OverlayWrapper
               bsClass="tooltip"
-              id="tooltip-app-bar-icon-com.mattermost.zendesk"
+              id="tooltip-app-bar-icon-com.matterfoss.zendesk"
               intl={null}
               placement="right"
             >
@@ -140,7 +140,7 @@ exports[`components/app_bar/app_bar should match snapshot on mount 1`] = `
           <div
             aria-label="Create Subscription"
             className="app-bar__icon"
-            id="app-bar-icon-com.mattermost.zendesk"
+            id="app-bar-icon-com.matterfoss.zendesk"
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}

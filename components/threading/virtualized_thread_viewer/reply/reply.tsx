@@ -5,9 +5,9 @@ import React, {memo, useCallback} from 'react';
 
 import {useDispatch} from 'react-redux';
 
-import {removePost} from 'mattermost-redux/actions/posts';
+import {removePost} from 'matterfoss-redux/actions/posts';
 
-import {Post} from 'mattermost-redux/types/posts';
+import {Post} from 'matterfoss-redux/types/posts';
 
 import RhsComment from 'components/rhs_comment';
 import {Props as TimestampProps} from 'components/timestamp/timestamp';

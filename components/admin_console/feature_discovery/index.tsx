@@ -4,10 +4,10 @@
 import {connect} from 'react-redux';
 import {bindActionCreators, Dispatch, ActionCreatorsMapObject} from 'redux';
 
-import {getLicenseConfig} from 'mattermost-redux/actions/general';
-import {getPrevTrialLicense} from 'mattermost-redux/actions/admin';
-import {Action, GenericAction} from 'mattermost-redux/types/actions';
-import {getLicense} from 'mattermost-redux/selectors/entities/general';
+import {getLicenseConfig} from 'matterfoss-redux/actions/general';
+import {getPrevTrialLicense} from 'matterfoss-redux/actions/admin';
+import {Action, GenericAction} from 'matterfoss-redux/types/actions';
+import {getLicense} from 'matterfoss-redux/selectors/entities/general';
 import {isCloudLicense} from 'utils/license_utils';
 
 import {openModal} from 'actions/views/modals';

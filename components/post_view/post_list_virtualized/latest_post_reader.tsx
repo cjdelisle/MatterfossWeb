@@ -5,9 +5,9 @@ import React, {useMemo, useRef} from 'react';
 import {useIntl} from 'react-intl';
 import {useSelector} from 'react-redux';
 
-import {getPost} from 'mattermost-redux/selectors/entities/posts';
+import {getPost} from 'matterfoss-redux/selectors/entities/posts';
 
-import {Post} from 'mattermost-redux/types/posts';
+import {Post} from 'matterfoss-redux/types/posts';
 
 import {GlobalState} from 'types/store';
 

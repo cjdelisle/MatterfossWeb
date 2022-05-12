@@ -102,7 +102,7 @@ describe('Notifications', () => {
         const randomId = getRandomId();
 
         return {
-            email: `${username}${randomId}@sample.mattermost.com`,
+            email: `${username}${randomId}@sample.matterfoss.com`,
             username,
             password: 'passwd',
             first_name: `First${randomId}`,

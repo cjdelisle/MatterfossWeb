@@ -3,12 +3,12 @@
 
 import {createSelector} from 'reselect';
 
-import {getCurrentTeamId} from 'mattermost-redux/selectors/entities/teams';
-import {GlobalState} from 'mattermost-redux/types/store';
-import {Team} from 'mattermost-redux/types/teams';
-import {UserThread, ThreadsState, UserThreadType, UserThreadSynthetic} from 'mattermost-redux/types/threads';
-import {Post} from 'mattermost-redux/types/posts';
-import {IDMappedObjects, RelationOneToMany} from 'mattermost-redux/types/utilities';
+import {getCurrentTeamId} from 'matterfoss-redux/selectors/entities/teams';
+import {GlobalState} from 'matterfoss-redux/types/store';
+import {Team} from 'matterfoss-redux/types/teams';
+import {UserThread, ThreadsState, UserThreadType, UserThreadSynthetic} from 'matterfoss-redux/types/threads';
+import {Post} from 'matterfoss-redux/types/posts';
+import {IDMappedObjects, RelationOneToMany} from 'matterfoss-redux/types/utilities';
 
 export function getThreadsInTeam(state: GlobalState): RelationOneToMany<Team, UserThread> {
     return state.entities.threads.threadsInTeam;

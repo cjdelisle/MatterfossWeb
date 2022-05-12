@@ -3,8 +3,8 @@
 
 import assert from 'assert';
 
-import TestHelper from 'mattermost-redux/test/test_helper';
-import deepFreezeAndThrowOnMutation from 'mattermost-redux/utils/deep_freeze';
+import TestHelper from 'matterfoss-redux/test/test_helper';
+import deepFreezeAndThrowOnMutation from 'matterfoss-redux/utils/deep_freeze';
 
 import {getAllCommands, getAutocompleteCommandsList, getOutgoingHooksInCurrentTeam} from './integrations';
 

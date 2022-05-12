@@ -2,12 +2,12 @@
 // See LICENSE.txt for license information.
 import {combineReducers} from 'redux';
 
-import {PostTypes, PreferenceTypes, SearchTypes, UserTypes} from 'mattermost-redux/action_types';
-import {Preferences} from 'mattermost-redux/constants';
-import {PreferenceType} from 'mattermost-redux/types/preferences';
-import {GenericAction} from 'mattermost-redux/types/actions';
-import {Post} from 'mattermost-redux/types/posts';
-import {Search} from 'mattermost-redux/types/search';
+import {PostTypes, PreferenceTypes, SearchTypes, UserTypes} from 'matterfoss-redux/action_types';
+import {Preferences} from 'matterfoss-redux/constants';
+import {PreferenceType} from 'matterfoss-redux/types/preferences';
+import {GenericAction} from 'matterfoss-redux/types/actions';
+import {Post} from 'matterfoss-redux/types/posts';
+import {Search} from 'matterfoss-redux/types/search';
 
 function results(state: string[] = [], action: GenericAction) {
     switch (action.type) {

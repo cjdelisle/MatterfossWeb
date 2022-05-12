@@ -38,14 +38,14 @@ describe('Markdown', () => {
         // Note we check width and height to verify that img element is actually loaded
         cy.getLastPostId().then((postId) => {
             cy.get(`#postMessageText_${postId}`).find('div.markdown-inline-img__container').
-                should('contain', 'Mattermost/platform build status:  ');
+                should('contain', 'MatterFOSS/platform build status:  ');
 
             cy.get(`#postMessageText_${postId}`).find('img').
                 should('have.class', 'markdown-inline-img').
                 and('have.class', 'markdown-inline-img--hover').
                 and('have.class', 'markdown-inline-img--no-border').
                 and('have.attr', 'alt', 'Build Status').
-                and('have.attr', 'src', `${baseUrl}/api/v4/image?url=https%3A%2F%2Fdocs.mattermost.com%2F_images%2Ficon-76x76.png`).
+                and('have.attr', 'src', `${baseUrl}/api/v4/image?url=https%3A%2F%2Fdocs.matterfoss.com%2F_images%2Ficon-76x76.png`).
                 and((inlineImg) => {
                     expect(inlineImg.height()).to.be.closeTo(76, 76);
                 }).

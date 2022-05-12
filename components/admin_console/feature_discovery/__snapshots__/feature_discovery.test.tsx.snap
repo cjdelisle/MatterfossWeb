@@ -43,7 +43,7 @@ exports[`components/feature_discovery FeatureDiscovery should match snapshot 1`]
     <a
       className="btn btn-secondary"
       data-testid="featureDiscovery_secondaryCallToAction"
-      href="https://test.mattermost.com/secondary/"
+      href="https://test.matterfoss.com/secondary/"
       rel="noopener noreferrer"
       target="_blank"
     >
@@ -56,7 +56,7 @@ exports[`components/feature_discovery FeatureDiscovery should match snapshot 1`]
       className="trial-legal-terms"
     >
       <injectIntl(FormattedMarkdownMessage)
-        defaultMessage="By clicking **Start trial**, I agree to the [Mattermost Software Evaluation Agreement](!https://mattermost.com/software-evaluation-agreement/), [Privacy Policy](!https://mattermost.com/privacy-policy/), and receiving product emails."
+        defaultMessage="By clicking **Start trial**, I agree to the [MatterFOSS Software Evaluation Agreement](!https://matterfoss.com/software-evaluation-agreement/), [Privacy Policy](!https://matterfoss.com/privacy-policy/), and receiving product emails."
         id="admin.license.trial-request.accept-terms"
       />
     </p>

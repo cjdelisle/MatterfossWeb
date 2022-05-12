@@ -5,7 +5,7 @@ import React from 'react';
 
 import {FormattedMessage, injectIntl, IntlShape} from 'react-intl';
 
-import {ClientConfig, WarnMetricStatus} from 'mattermost-redux/types/config';
+import {ClientConfig, WarnMetricStatus} from 'matterfoss-redux/types/config';
 
 import {daysToLicenseExpire, isLicenseExpired, isLicenseExpiring, isLicensePastGracePeriod, isTrialLicense} from 'utils/license_utils.jsx';
 import {AnnouncementBarTypes, AnnouncementBarMessages, WarnMetricTypes} from 'utils/constants';
@@ -92,7 +92,7 @@ const ConfigurationAnnouncementBar: React.FC<Props> = (props: Props) => {
                     />
                     <FormattedMessage
                         id='announcement_bar.warn_metric_status_ack.text'
-                        defaultMessage='Thank you for contacting Mattermost. We will follow up with you soon.'
+                        defaultMessage='Thank you for contacting MatterFOSS. We will follow up with you soon.'
                     />
                 </>
             );
@@ -252,7 +252,7 @@ const ConfigurationAnnouncementBar: React.FC<Props> = (props: Props) => {
                         />
                         <FormattedMarkdownMessage
                             id='announcement_bar.error.trial_license_expiring_last_day'
-                            defaultMessage={'**This is the last day of your free trial. Purchase a license now to continue using Mattermost Professional and Enterprise features.**'}
+                            defaultMessage={'**This is the last day of your free trial. Purchase a license now to continue using MatterFOSS Professional and Enterprise features.**'}
                         />
                     </>
                 );
@@ -374,10 +374,10 @@ const ConfigurationAnnouncementBar: React.FC<Props> = (props: Props) => {
         let defaultMessage;
         if (props.config?.EnableSignUpWithGitLab === 'true') {
             id = t('announcement_bar.error.site_url_gitlab.full');
-            defaultMessage = 'Please configure your [site URL](https://docs.mattermost.com/administration/config-settings.html#site-url) either on the [System Console](/admin_console/environment/web_server) or, if you\'re using GitLab Mattermost, in gitlab.rb.';
+            defaultMessage = 'Please configure your [site URL](https://docs.matterfoss.com/administration/config-settings.html#site-url) either on the [System Console](/admin_console/environment/web_server) or, if you\'re using GitLab MatterFOSS, in gitlab.rb.';
         } else {
             id = t('announcement_bar.error.site_url.full');
-            defaultMessage = 'Please configure your [site URL](https://docs.mattermost.com/administration/config-settings.html#site-url) on the [System Console](/admin_console/environment/web_server).';
+            defaultMessage = 'Please configure your [site URL](https://docs.matterfoss.com/administration/config-settings.html#site-url) on the [System Console](/admin_console/environment/web_server).';
         }
 
         const values = {siteURL: props.siteURL};

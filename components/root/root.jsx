@@ -11,14 +11,14 @@ import throttle from 'lodash/throttle';
 
 import classNames from 'classnames';
 
-import {rudderAnalytics, RudderTelemetryHandler} from 'mattermost-redux/client/rudder';
-import {Client4} from 'mattermost-redux/client';
-import {setUrl} from 'mattermost-redux/actions/general';
-import {General} from 'mattermost-redux/constants';
-import {setSystemEmojis} from 'mattermost-redux/actions/emojis';
-import {getConfig} from 'mattermost-redux/selectors/entities/general';
-import {getCurrentUser, isCurrentUserSystemAdmin, checkIsFirstAdmin} from 'mattermost-redux/selectors/entities/users';
-import {getUseCaseOnboarding} from 'mattermost-redux/selectors/entities/preferences';
+import {rudderAnalytics, RudderTelemetryHandler} from 'matterfoss-redux/client/rudder';
+import {Client4} from 'matterfoss-redux/client';
+import {setUrl} from 'matterfoss-redux/actions/general';
+import {General} from 'matterfoss-redux/constants';
+import {setSystemEmojis} from 'matterfoss-redux/actions/emojis';
+import {getConfig} from 'matterfoss-redux/selectors/entities/general';
+import {getCurrentUser, isCurrentUserSystemAdmin, checkIsFirstAdmin} from 'matterfoss-redux/selectors/entities/users';
+import {getUseCaseOnboarding} from 'matterfoss-redux/selectors/entities/preferences';
 
 import {loadRecentlyUsedCustomEmojis} from 'actions/emoji_actions';
 import * as GlobalActions from 'actions/global_actions';

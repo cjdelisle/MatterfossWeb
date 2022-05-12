@@ -3,12 +3,12 @@
 
 import {connect} from 'react-redux';
 
-import {getConfig} from 'mattermost-redux/selectors/entities/general';
-import {getCurrentUser} from 'mattermost-redux/selectors/entities/common';
+import {getConfig} from 'matterfoss-redux/selectors/entities/general';
+import {getCurrentUser} from 'matterfoss-redux/selectors/entities/common';
 
 import {GlobalState} from 'types/store';
 
-import {isGuest} from 'mattermost-redux/utils/user_utils';
+import {isGuest} from 'matterfoss-redux/utils/user_utils';
 
 import ErrorPage from './error_page';
 

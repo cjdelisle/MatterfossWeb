@@ -3,11 +3,11 @@
 
 import {createSelector} from 'reselect';
 
-import {ChannelMembership, Channel} from 'mattermost-redux/types/channels';
-import {TeamMembership} from 'mattermost-redux/types/teams';
-import {GlobalState} from 'mattermost-redux/types/store';
-import {UserProfile} from 'mattermost-redux/types/users';
-import {RelationOneToOne, IDMappedObjects} from 'mattermost-redux/types/utilities';
+import {ChannelMembership, Channel} from 'matterfoss-redux/types/channels';
+import {TeamMembership} from 'matterfoss-redux/types/teams';
+import {GlobalState} from 'matterfoss-redux/types/store';
+import {UserProfile} from 'matterfoss-redux/types/users';
+import {RelationOneToOne, IDMappedObjects} from 'matterfoss-redux/types/utilities';
 
 // Channels
 

@@ -6,20 +6,20 @@ import {bindActionCreators, Dispatch} from 'redux';
 
 import {createSelector} from 'reselect';
 
-import {removeReaction} from 'mattermost-redux/actions/posts';
-import {getMissingProfilesByIds} from 'mattermost-redux/actions/users';
+import {removeReaction} from 'matterfoss-redux/actions/posts';
+import {getMissingProfilesByIds} from 'matterfoss-redux/actions/users';
 
-import {getCustomEmojisByName} from 'mattermost-redux/selectors/entities/emojis';
-import {canAddReactions, canRemoveReactions} from 'mattermost-redux/selectors/entities/reactions';
-import {getCurrentUserId} from 'mattermost-redux/selectors/entities/users';
+import {getCustomEmojisByName} from 'matterfoss-redux/selectors/entities/emojis';
+import {canAddReactions, canRemoveReactions} from 'matterfoss-redux/selectors/entities/reactions';
+import {getCurrentUserId} from 'matterfoss-redux/selectors/entities/users';
 
-import {GenericAction} from 'mattermost-redux/types/actions';
-import {Emoji as EmojiType} from 'mattermost-redux/types/emojis';
-import {Post} from 'mattermost-redux/types/posts';
-import {Reaction as ReactionType} from 'mattermost-redux/types/reactions';
-import {GlobalState} from 'mattermost-redux/types/store';
+import {GenericAction} from 'matterfoss-redux/types/actions';
+import {Emoji as EmojiType} from 'matterfoss-redux/types/emojis';
+import {Post} from 'matterfoss-redux/types/posts';
+import {Reaction as ReactionType} from 'matterfoss-redux/types/reactions';
+import {GlobalState} from 'matterfoss-redux/types/store';
 
-import {getEmojiImageUrl} from 'mattermost-redux/utils/emoji_utils';
+import {getEmojiImageUrl} from 'matterfoss-redux/utils/emoji_utils';
 
 import {addReaction} from 'actions/post_actions.jsx';
 

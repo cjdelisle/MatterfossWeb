@@ -3,12 +3,12 @@
 
 import {createSelector} from 'reselect';
 
-import {getCurrentUserLocale} from 'mattermost-redux/selectors/entities/i18n';
+import {getCurrentUserLocale} from 'matterfoss-redux/selectors/entities/i18n';
 
-import {FileInfo, FileSearchResultItem} from 'mattermost-redux/types/files';
-import {GlobalState} from 'mattermost-redux/types/store';
+import {FileInfo, FileSearchResultItem} from 'matterfoss-redux/types/files';
+import {GlobalState} from 'matterfoss-redux/types/store';
 
-import {sortFileInfos} from 'mattermost-redux/utils/file_utils';
+import {sortFileInfos} from 'matterfoss-redux/utils/file_utils';
 
 function getAllFiles(state: GlobalState) {
     return state.entities.files.files;

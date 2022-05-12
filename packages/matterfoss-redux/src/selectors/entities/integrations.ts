@@ -3,11 +3,11 @@
 
 import {createSelector} from 'reselect';
 
-import {getCurrentTeamId} from 'mattermost-redux/selectors/entities/teams';
+import {getCurrentTeamId} from 'matterfoss-redux/selectors/entities/teams';
 
-import {OutgoingWebhook, Command} from 'mattermost-redux/types/integrations';
-import {GlobalState} from 'mattermost-redux/types/store';
-import {IDMappedObjects} from 'mattermost-redux/types/utilities';
+import {OutgoingWebhook, Command} from 'matterfoss-redux/types/integrations';
+import {GlobalState} from 'matterfoss-redux/types/store';
+import {IDMappedObjects} from 'matterfoss-redux/types/utilities';
 
 import {appsEnabled} from './apps';
 

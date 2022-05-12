@@ -3,9 +3,9 @@
 
 import {connect} from 'react-redux';
 
-import {getLicense} from 'mattermost-redux/selectors/entities/general';
+import {getLicense} from 'matterfoss-redux/selectors/entities/general';
 
-import {GlobalState} from 'mattermost-redux/types/store';
+import {GlobalState} from 'matterfoss-redux/types/store';
 
 import SystemAnalytics from './system_analytics';
 

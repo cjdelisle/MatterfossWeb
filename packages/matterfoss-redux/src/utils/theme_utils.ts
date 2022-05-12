@@ -1,7 +1,7 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
-import {Theme, ThemeTypeMap} from 'mattermost-redux/types/themes';
+import {Theme, ThemeTypeMap} from 'matterfoss-redux/types/themes';
 import {Preferences} from '../constants';
 
 export function makeStyleFromTheme(getStyleFromTheme: (a: any) => any): (a: any) => any {
@@ -119,9 +119,9 @@ export const blendColors = (background: string, foreground: string, opacity: num
 // object mapping theme types to their respective keys for retrieving the source themes directly
 // - supports mapping old themes to new themes
 const themeTypeMap: ThemeTypeMap = {
-    Mattermost: 'denim',
+    MatterFOSS: 'denim',
     Organization: 'sapphire',
-    'Mattermost Dark': 'indigo',
+    'MatterFOSS Dark': 'indigo',
     'Windows Dark': 'onyx',
     Denim: 'denim',
     Sapphire: 'sapphire',

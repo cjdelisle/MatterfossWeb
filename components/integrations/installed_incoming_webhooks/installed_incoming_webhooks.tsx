@@ -4,12 +4,12 @@
 import React from 'react';
 import {FormattedMessage} from 'react-intl';
 
-import {Team} from 'mattermost-redux/types/teams';
-import {Channel} from 'mattermost-redux/types/channels';
-import {IncomingWebhook} from 'mattermost-redux/types/integrations';
-import {ActionResult} from 'mattermost-redux/types/actions';
-import {UserProfile} from 'mattermost-redux/types/users';
-import {IDMappedObjects} from 'mattermost-redux/types/utilities';
+import {Team} from 'matterfoss-redux/types/teams';
+import {Channel} from 'matterfoss-redux/types/channels';
+import {IncomingWebhook} from 'matterfoss-redux/types/integrations';
+import {ActionResult} from 'matterfoss-redux/types/actions';
+import {UserProfile} from 'matterfoss-redux/types/users';
+import {IDMappedObjects} from 'matterfoss-redux/types/utilities';
 
 import BackstageList from 'components/backstage/components/backstage_list.jsx';
 import InstalledIncomingWebhook, {matchesFilter} from 'components/integrations/installed_incoming_webhook.jsx';
@@ -129,13 +129,13 @@ export default class InstalledIncomingWebhooks extends React.PureComponent<Props
                 helpText={
                     <FormattedMessage
                         id='installed_incoming_webhooks.help'
-                        defaultMessage='Use incoming webhooks to connect external tools to Mattermost. {buildYourOwn} or visit the {appDirectory} to find self-hosted, third-party apps and integrations.'
+                        defaultMessage='Use incoming webhooks to connect external tools to MatterFOSS. {buildYourOwn} or visit the {appDirectory} to find self-hosted, third-party apps and integrations.'
                         values={{
                             buildYourOwn: (
                                 <a
                                     target='_blank'
                                     rel='noopener noreferrer'
-                                    href='https://developers.mattermost.com/integrate/admin-guide/admin-webhooks-incoming/'
+                                    href='https://developers.matterfoss.com/integrate/admin-guide/admin-webhooks-incoming/'
                                 >
                                     <FormattedMessage
                                         id='installed_incoming_webhooks.help.buildYourOwn'
@@ -147,7 +147,7 @@ export default class InstalledIncomingWebhooks extends React.PureComponent<Props
                                 <a
                                     target='_blank'
                                     rel='noopener noreferrer'
-                                    href='https://mattermost.com/marketplace'
+                                    href='https://matterfoss.com/marketplace'
                                 >
                                     <FormattedMessage
                                         id='installed_incoming_webhooks.help.appDirectory'

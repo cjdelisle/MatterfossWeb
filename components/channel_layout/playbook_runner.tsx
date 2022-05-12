@@ -6,12 +6,12 @@ import {AnyAction, Dispatch} from 'redux';
 import {useDispatch, useSelector} from 'react-redux';
 import {useRouteMatch} from 'react-router-dom';
 
-import {getChannelByName} from 'mattermost-redux/selectors/entities/channels';
-import {Client4} from 'mattermost-redux/client';
-import {IntegrationTypes} from 'mattermost-redux/action_types';
-import {Channel} from 'mattermost-redux/types/channels';
-import {getTeamByName} from 'mattermost-redux/selectors/entities/teams';
-import {generateId} from 'mattermost-redux/utils/helpers';
+import {getChannelByName} from 'matterfoss-redux/selectors/entities/channels';
+import {Client4} from 'matterfoss-redux/client';
+import {IntegrationTypes} from 'matterfoss-redux/action_types';
+import {Channel} from 'matterfoss-redux/types/channels';
+import {getTeamByName} from 'matterfoss-redux/selectors/entities/teams';
+import {generateId} from 'matterfoss-redux/utils/helpers';
 
 import {switchToChannel} from 'actions/views/channel';
 import {getLastViewedChannelNameByTeamName} from 'selectors/local_storage';

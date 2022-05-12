@@ -9,8 +9,8 @@ import {useIntl} from 'react-intl';
 import {useSelector} from 'react-redux';
 import styled from 'styled-components';
 
-import {GlobalState} from 'mattermost-redux/types/store';
-import {getServerVersion} from 'mattermost-redux/selectors/entities/general';
+import {GlobalState} from 'matterfoss-redux/types/store';
+import {getServerVersion} from 'matterfoss-redux/selectors/entities/general';
 import Accordion, {AccordionItemType} from 'components/common/accordion/accordion';
 
 import {elasticsearchTest, ldapTest, testSiteURL} from '../../../actions/admin_actions';
@@ -170,7 +170,7 @@ const WorkspaceOptimizationDashboard = (props: Props) => {
     };
 
     // commented out for now.
-    // @see discussion here: https://github.com/mattermost/mattermost-webapp/pull/9822#discussion_r806879385
+    // @see discussion here: https://github.com/matterfoss/matterfoss-webapp/pull/9822#discussion_r806879385
     // const fetchGuestAccounts = async () => {
     //     if (TeamSettings?.EnableOpenServer && GuestAccountsSettings?.Enable) {
     //         let usersArray = await fetch('/api/v4/users/invalid_emails').then((result) => result.json());

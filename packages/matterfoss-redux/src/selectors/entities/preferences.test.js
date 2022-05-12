@@ -3,16 +3,16 @@
 
 import assert from 'assert';
 
-import {General, Preferences} from 'mattermost-redux/constants';
+import {General, Preferences} from 'matterfoss-redux/constants';
 
-import * as Selectors from 'mattermost-redux/selectors/entities/preferences';
+import * as Selectors from 'matterfoss-redux/selectors/entities/preferences';
 
-import mergeObjects from 'mattermost-redux/test/merge_objects';
+import mergeObjects from 'matterfoss-redux/test/merge_objects';
 
-import * as ThemeUtils from 'mattermost-redux/utils/theme_utils';
+import * as ThemeUtils from 'matterfoss-redux/utils/theme_utils';
 
-import deepFreezeAndThrowOnMutation from 'mattermost-redux/utils/deep_freeze';
-import {getPreferenceKey} from 'mattermost-redux/utils/preference_utils';
+import deepFreezeAndThrowOnMutation from 'matterfoss-redux/utils/deep_freeze';
+import {getPreferenceKey} from 'matterfoss-redux/utils/preference_utils';
 
 describe('Selectors.Preferences', () => {
     const category1 = 'testcategory1';

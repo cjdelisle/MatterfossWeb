@@ -5,8 +5,8 @@ import React, {ChangeEvent} from 'react';
 import {Modal} from 'react-bootstrap';
 import {FormattedMessage, injectIntl, IntlShape} from 'react-intl';
 
-import {Channel} from 'mattermost-redux/types/channels';
-import {ActionResult} from 'mattermost-redux/types/actions';
+import {Channel} from 'matterfoss-redux/types/channels';
+import {ActionResult} from 'matterfoss-redux/types/actions';
 
 import Constants from 'utils/constants';
 import * as Utils from 'utils/utils.jsx';

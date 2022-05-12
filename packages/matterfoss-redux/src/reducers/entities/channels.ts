@@ -6,12 +6,12 @@
 import {combineReducers} from 'redux';
 import shallowEquals from 'shallow-equals';
 
-import {AdminTypes, ChannelTypes, UserTypes, SchemeTypes, GroupTypes, PostTypes} from 'mattermost-redux/action_types';
+import {AdminTypes, ChannelTypes, UserTypes, SchemeTypes, GroupTypes, PostTypes} from 'matterfoss-redux/action_types';
 
-import {General} from 'mattermost-redux/constants';
-import {MarkUnread} from 'mattermost-redux/constants/channels';
+import {General} from 'matterfoss-redux/constants';
+import {MarkUnread} from 'matterfoss-redux/constants/channels';
 
-import {GenericAction} from 'mattermost-redux/types/actions';
+import {GenericAction} from 'matterfoss-redux/types/actions';
 import {
     Channel,
     ChannelMembership,
@@ -19,15 +19,15 @@ import {
     ChannelMemberCountByGroup,
     ChannelMemberCountsByGroup,
     ServerChannel,
-} from 'mattermost-redux/types/channels';
+} from 'matterfoss-redux/types/channels';
 import {
     RelationOneToMany,
     RelationOneToOne,
     IDMappedObjects,
-} from 'mattermost-redux/types/utilities';
+} from 'matterfoss-redux/types/utilities';
 
-import {Team} from 'mattermost-redux/types/teams';
-import {channelListToMap, splitRoles} from 'mattermost-redux/utils/channel_utils';
+import {Team} from 'matterfoss-redux/types/teams';
+import {channelListToMap, splitRoles} from 'matterfoss-redux/utils/channel_utils';
 
 import messageCounts from './channels/message_counts';
 

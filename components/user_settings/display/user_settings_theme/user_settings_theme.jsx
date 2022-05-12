@@ -225,7 +225,7 @@ export default class ThemeSetting extends React.PureComponent {
                         <br/>
                         <a
                             id='otherThemes'
-                            href='http://docs.mattermost.com/help/settings/theme-colors.html#custom-theme-examples'
+                            href='http://docs.matterfoss.com/help/settings/theme-colors.html#custom-theme-examples'
                             target='_blank'
                             rel='noopener noreferrer'
                         >

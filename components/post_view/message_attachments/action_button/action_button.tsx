@@ -3,9 +3,9 @@
 
 import React from 'react';
 
-import {changeOpacity} from 'mattermost-redux/utils/theme_utils';
-import {Theme} from 'mattermost-redux/types/themes';
-import {PostAction, PostActionOption} from 'mattermost-redux/types/integration_actions';
+import {changeOpacity} from 'matterfoss-redux/utils/theme_utils';
+import {Theme} from 'matterfoss-redux/types/themes';
+import {PostAction, PostActionOption} from 'matterfoss-redux/types/integration_actions';
 
 import LoadingWrapper from 'components/widgets/loading/loading_wrapper';
 import Markdown from 'components/markdown';

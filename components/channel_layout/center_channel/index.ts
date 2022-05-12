@@ -4,17 +4,17 @@
 import {connect} from 'react-redux';
 import {ActionCreatorsMapObject, bindActionCreators, Dispatch} from 'redux';
 
-import {getProfiles} from 'mattermost-redux/actions/users';
-import {Action, ActionFunc, GenericAction} from 'mattermost-redux/types/actions';
-import {getTeamByName} from 'mattermost-redux/selectors/entities/teams';
-import {getRedirectChannelNameForTeam} from 'mattermost-redux/selectors/entities/channels';
-import {isCollapsedThreadsEnabled, getUseCaseOnboarding} from 'mattermost-redux/selectors/entities/preferences';
-import {getCurrentUserId, isFirstAdmin} from 'mattermost-redux/selectors/entities/users';
+import {getProfiles} from 'matterfoss-redux/actions/users';
+import {Action, ActionFunc, GenericAction} from 'matterfoss-redux/types/actions';
+import {getTeamByName} from 'matterfoss-redux/selectors/entities/teams';
+import {getRedirectChannelNameForTeam} from 'matterfoss-redux/selectors/entities/channels';
+import {isCollapsedThreadsEnabled, getUseCaseOnboarding} from 'matterfoss-redux/selectors/entities/preferences';
+import {getCurrentUserId, isFirstAdmin} from 'matterfoss-redux/selectors/entities/users';
 import {setShowNextStepsView} from 'actions/views/next_steps';
 import {getIsRhsOpen, getIsRhsMenuOpen} from 'selectors/rhs';
 import {getIsLhsOpen} from 'selectors/lhs';
 import {getLastViewedChannelNameByTeamName} from 'selectors/local_storage';
-import {getConfig} from 'mattermost-redux/selectors/entities/general';
+import {getConfig} from 'matterfoss-redux/selectors/entities/general';
 import {showNextSteps} from 'components/next_steps_view/steps';
 
 import {GlobalState} from 'types/store';

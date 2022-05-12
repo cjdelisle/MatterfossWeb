@@ -6,8 +6,8 @@ import React, {createRef} from 'react';
 import {FormattedMessage} from 'react-intl';
 import classNames from 'classnames';
 
-import {Posts, Preferences} from 'mattermost-redux/constants';
-import * as ReduxPostUtils from 'mattermost-redux/utils/post_utils';
+import {Posts, Preferences} from 'matterfoss-redux/constants';
+import * as ReduxPostUtils from 'matterfoss-redux/utils/post_utils';
 
 import Constants, {Locations, A11yCustomEventTypes, AppEvents} from 'utils/constants';
 import * as PostUtils from 'utils/post_utils';
@@ -31,7 +31,7 @@ import InfoSmallIcon from 'components/widgets/icons/info_small_icon';
 import UserProfile from 'components/user_profile';
 import PostPreHeader from 'components/post_view/post_pre_header';
 import CustomStatusEmoji from 'components/custom_status/custom_status_emoji';
-import {Emoji} from 'mattermost-redux/types/emojis';
+import {Emoji} from 'matterfoss-redux/types/emojis';
 import EditPost from 'components/edit_post';
 import AutoHeightSwitcher, {AutoHeightSlots} from 'components/common/auto_height_switcher';
 
@@ -151,7 +151,7 @@ export default class RhsRootPost extends React.PureComponent {
             if (isPostHeaderVisibleToUser) {
                 if (!isEphemeralPost && !isSystemMessage && !isDeletedPost && !isFailedPost && !isMobileView &&
                     !channelIsArchived && !isPostsFakeParentDeleted && enableEmojiPicker) {
-                    // As per issue in #2 of mattermost-webapp/pull/4478#pullrequestreview-339313236
+                    // As per issue in #2 of matterfoss-webapp/pull/4478#pullrequestreview-339313236
                     // We are not not handling focus condition as we did for rhs_comment as the dot menu is already in dom and not visible
                     this.toggleEmojiPicker(isLastPost);
                 }

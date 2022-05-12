@@ -2,9 +2,9 @@
 // See LICENSE.txt for license information.
 import {combineReducers} from 'redux';
 
-import {BotTypes, UserTypes} from 'mattermost-redux/action_types';
-import {GenericAction} from 'mattermost-redux/types/actions';
-import {Bot} from 'mattermost-redux/types/bots';
+import {BotTypes, UserTypes} from 'matterfoss-redux/action_types';
+import {GenericAction} from 'matterfoss-redux/types/actions';
+import {Bot} from 'matterfoss-redux/types/bots';
 
 function accounts(state: Record<string, Bot> = {}, action: GenericAction) {
     switch (action.type) {

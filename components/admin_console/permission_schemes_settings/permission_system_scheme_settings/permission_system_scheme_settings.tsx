@@ -4,10 +4,10 @@
 import React from 'react';
 import {FormattedMessage} from 'react-intl';
 
-import GeneralConstants from 'mattermost-redux/constants/general';
-import {ClientConfig, ClientLicense} from 'mattermost-redux/types/config';
-import {Role} from 'mattermost-redux/types/roles';
-import {ActionResult} from 'mattermost-redux/types/actions';
+import GeneralConstants from 'matterfoss-redux/constants/general';
+import {ClientConfig, ClientLicense} from 'matterfoss-redux/types/config';
+import {Role} from 'matterfoss-redux/types/roles';
+import {ActionResult} from 'matterfoss-redux/types/actions';
 
 import {PermissionsScope, DefaultRolePermissions} from 'utils/constants';
 import {localizeMessage} from 'utils/utils.jsx';
@@ -371,7 +371,7 @@ export default class PermissionSystemSchemeSettings extends React.PureComponent<
                                 <span>
                                     <FormattedMarkdownMessage
                                         id='admin.permissions.systemScheme.introBanner'
-                                        defaultMessage='Configure the default permissions for Team Admins, Channel Admins and other members. This scheme is inherited by all teams unless a [Team Override Scheme](!https://docs.mattermost.com/onboard/advanced-permissions.html) is applied in specific teams.'
+                                        defaultMessage='Configure the default permissions for Team Admins, Channel Admins and other members. This scheme is inherited by all teams unless a [Team Override Scheme](!https://docs.matterfoss.com/onboard/advanced-permissions.html) is applied in specific teams.'
                                     />
                                 </span>
                             </div>

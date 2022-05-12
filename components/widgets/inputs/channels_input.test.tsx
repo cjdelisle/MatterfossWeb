@@ -4,7 +4,7 @@
 import {shallow} from 'enzyme';
 import React from 'react';
 
-import {Channel} from 'mattermost-redux/types/channels';
+import {Channel} from 'matterfoss-redux/types/channels';
 
 import ChannelsInput from './channels_input';
 

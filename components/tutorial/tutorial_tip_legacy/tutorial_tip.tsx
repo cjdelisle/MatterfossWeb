@@ -5,7 +5,7 @@ import React from 'react';
 import {Overlay} from 'react-bootstrap';
 import {FormattedMessage} from 'react-intl';
 
-import {DispatchFunc} from 'mattermost-redux/types/actions';
+import {DispatchFunc} from 'matterfoss-redux/types/actions';
 
 import {trackEvent} from 'actions/telemetry_actions.jsx';
 

@@ -10,13 +10,13 @@ import {Tooltip} from 'react-bootstrap';
 
 import FormattedMarkdownMessage from 'components/formatted_markdown_message.jsx';
 
-import {Post} from 'mattermost-redux/types/posts';
-import {AppBinding} from 'mattermost-redux/types/apps';
-import {AppCallResponseTypes} from 'mattermost-redux/constants/apps';
+import {Post} from 'matterfoss-redux/types/posts';
+import {AppBinding} from 'matterfoss-redux/types/apps';
+import {AppCallResponseTypes} from 'matterfoss-redux/constants/apps';
 
 import {HandleBindingClick, PostEphemeralCallResponseForPost, OpenAppsModal} from 'types/apps';
 import {Locations, Constants, ModalIdentifiers} from 'utils/constants';
-import Permissions from 'mattermost-redux/constants/permissions';
+import Permissions from 'matterfoss-redux/constants/permissions';
 import {ActionsTutorialTip} from 'components/actions_menu/actions_menu_tutorial_tip';
 import {ModalData} from 'types/actions';
 import MarketplaceModal from 'components/plugin_marketplace';

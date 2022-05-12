@@ -7,8 +7,8 @@ import {useSelector} from 'react-redux';
 
 import UpgradeLink from 'components/widgets/links/upgrade_link';
 
-import {GlobalState} from 'mattermost-redux/types/store';
-import {getLicense} from 'mattermost-redux/selectors/entities/general';
+import {GlobalState} from 'matterfoss-redux/types/store';
+import {getLicense} from 'matterfoss-redux/selectors/entities/general';
 
 import {getRemainingDaysFromFutureTimestamp} from 'utils/utils.jsx';
 import {TrialPeriodDays} from 'utils/constants';

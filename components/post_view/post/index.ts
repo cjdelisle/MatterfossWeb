@@ -4,17 +4,17 @@
 import {connect} from 'react-redux';
 import {bindActionCreators, Dispatch} from 'redux';
 
-import {getChannel} from 'mattermost-redux/selectors/entities/channels';
-import {getPost, makeIsPostCommentMention, makeGetCommentCountForPost} from 'mattermost-redux/selectors/entities/posts';
+import {getChannel} from 'matterfoss-redux/selectors/entities/channels';
+import {getPost, makeIsPostCommentMention, makeGetCommentCountForPost} from 'matterfoss-redux/selectors/entities/posts';
 
 import {
     get,
     isCollapsedThreadsEnabled,
-} from 'mattermost-redux/selectors/entities/preferences';
-import {getCurrentUserId} from 'mattermost-redux/selectors/entities/users';
+} from 'matterfoss-redux/selectors/entities/preferences';
+import {getCurrentUserId} from 'matterfoss-redux/selectors/entities/users';
 
-import {GenericAction} from 'mattermost-redux/types/actions';
-import {Post} from 'mattermost-redux/types/posts';
+import {GenericAction} from 'matterfoss-redux/types/actions';
+import {Post} from 'matterfoss-redux/types/posts';
 
 import {markPostAsUnread} from 'actions/post_actions';
 import {selectPost, selectPostCard} from 'actions/views/rhs';

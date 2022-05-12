@@ -3,11 +3,11 @@
 
 import PQueue from 'p-queue';
 
-import {getChannelAndMyMember, getChannelMembersByIds} from 'mattermost-redux/actions/channels';
-import {savePreferences} from 'mattermost-redux/actions/preferences';
-import {getTeamMembersByIds} from 'mattermost-redux/actions/teams';
-import * as UserActions from 'mattermost-redux/actions/users';
-import {Preferences as PreferencesRedux, General} from 'mattermost-redux/constants';
+import {getChannelAndMyMember, getChannelMembersByIds} from 'matterfoss-redux/actions/channels';
+import {savePreferences} from 'matterfoss-redux/actions/preferences';
+import {getTeamMembersByIds} from 'matterfoss-redux/actions/teams';
+import * as UserActions from 'matterfoss-redux/actions/users';
+import {Preferences as PreferencesRedux, General} from 'matterfoss-redux/constants';
 import {
     getChannel,
     getChannelMembersInChannels,
@@ -15,12 +15,12 @@ import {
     getCurrentChannelId,
     getMyChannelMember,
     getMyChannels,
-} from 'mattermost-redux/selectors/entities/channels';
-import {getBool, isCollapsedThreadsEnabled} from 'mattermost-redux/selectors/entities/preferences';
-import {getCurrentTeamId, getTeamMember} from 'mattermost-redux/selectors/entities/teams';
-import * as Selectors from 'mattermost-redux/selectors/entities/users';
+} from 'matterfoss-redux/selectors/entities/channels';
+import {getBool, isCollapsedThreadsEnabled} from 'matterfoss-redux/selectors/entities/preferences';
+import {getCurrentTeamId, getTeamMember} from 'matterfoss-redux/selectors/entities/teams';
+import * as Selectors from 'matterfoss-redux/selectors/entities/users';
 
-import {calculateUnreadCount} from 'mattermost-redux/utils/channel_utils';
+import {calculateUnreadCount} from 'matterfoss-redux/utils/channel_utils';
 
 import {loadCustomEmojisForCustomStatusesByUserIds} from 'actions/emoji_actions';
 import {loadStatusesForProfilesList, loadStatusesForProfilesMap} from 'actions/status_actions.jsx';

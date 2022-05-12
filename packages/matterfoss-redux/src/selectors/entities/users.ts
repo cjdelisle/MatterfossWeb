@@ -13,9 +13,9 @@ import {
     getUsers,
     getMembersInTeam,
     getMembersInChannel,
-} from 'mattermost-redux/selectors/entities/common';
-import {getConfig, getLicense} from 'mattermost-redux/selectors/entities/general';
-import {getDirectShowPreferences, getTeammateNameDisplaySetting} from 'mattermost-redux/selectors/entities/preferences';
+} from 'matterfoss-redux/selectors/entities/common';
+import {getConfig, getLicense} from 'matterfoss-redux/selectors/entities/general';
+import {getDirectShowPreferences, getTeammateNameDisplaySetting} from 'matterfoss-redux/selectors/entities/preferences';
 
 import {
     displayUsername,
@@ -26,20 +26,20 @@ import {
     profileListToMap,
     sortByUsername,
     applyRolesFilters,
-} from 'mattermost-redux/utils/user_utils';
+} from 'matterfoss-redux/utils/user_utils';
 
-import {Channel, ChannelMembership} from 'mattermost-redux/types/channels';
-import {Reaction} from 'mattermost-redux/types/reactions';
-import {GlobalState} from 'mattermost-redux/types/store';
-import {Team, TeamMembership} from 'mattermost-redux/types/teams';
-import {Group} from 'mattermost-redux/types/groups';
-import {UserProfile} from 'mattermost-redux/types/users';
+import {Channel, ChannelMembership} from 'matterfoss-redux/types/channels';
+import {Reaction} from 'matterfoss-redux/types/reactions';
+import {GlobalState} from 'matterfoss-redux/types/store';
+import {Team, TeamMembership} from 'matterfoss-redux/types/teams';
+import {Group} from 'matterfoss-redux/types/groups';
+import {UserProfile} from 'matterfoss-redux/types/users';
 import {
     IDMappedObjects,
     RelationOneToMany,
     RelationOneToManyUnique,
     RelationOneToOne,
-} from 'mattermost-redux/types/utilities';
+} from 'matterfoss-redux/types/utilities';
 
 export {getCurrentUser, getCurrentUserId, getUsers};
 

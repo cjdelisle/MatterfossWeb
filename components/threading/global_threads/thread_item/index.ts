@@ -5,11 +5,11 @@ import {memo} from 'react';
 import {compose} from 'redux';
 import {connect} from 'react-redux';
 
-import {getPost, makeGetPostsForThread} from 'mattermost-redux/selectors/entities/posts';
-import {makeGetChannel} from 'mattermost-redux/selectors/entities/channels';
-import {makeGetDisplayName} from 'mattermost-redux/selectors/entities/users';
-import {getThread} from 'mattermost-redux/selectors/entities/threads';
-import {getCurrentRelativeTeamUrl} from 'mattermost-redux/selectors/entities/teams';
+import {getPost, makeGetPostsForThread} from 'matterfoss-redux/selectors/entities/posts';
+import {makeGetChannel} from 'matterfoss-redux/selectors/entities/channels';
+import {makeGetDisplayName} from 'matterfoss-redux/selectors/entities/users';
+import {getThread} from 'matterfoss-redux/selectors/entities/threads';
+import {getCurrentRelativeTeamUrl} from 'matterfoss-redux/selectors/entities/teams';
 
 import {GlobalState} from 'types/store';
 

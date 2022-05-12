@@ -4,11 +4,11 @@
 import React from 'react';
 import {FormattedMessage} from 'react-intl';
 
-import {Team} from 'mattermost-redux/types/teams';
-import {UserProfile} from 'mattermost-redux/types/users';
-import {RelationOneToOne} from 'mattermost-redux/types/utilities';
-import {Command} from 'mattermost-redux/types/integrations';
-import {ActionResult} from 'mattermost-redux/types/actions';
+import {Team} from 'matterfoss-redux/types/teams';
+import {UserProfile} from 'matterfoss-redux/types/users';
+import {RelationOneToOne} from 'matterfoss-redux/types/utilities';
+import {Command} from 'matterfoss-redux/types/integrations';
+import {ActionResult} from 'matterfoss-redux/types/actions';
 
 import * as Utils from 'utils/utils.jsx';
 import BackstageList from 'components/backstage/components/backstage_list.jsx';
@@ -110,13 +110,13 @@ export default class InstalledCommands extends React.PureComponent<Props> {
                 helpText={
                     <FormattedMessage
                         id='installed_commands.help'
-                        defaultMessage='Use slash commands to connect external tools to Mattermost. {buildYourOwn} or visit the {appDirectory} to find self-hosted, third-party apps and integrations.'
+                        defaultMessage='Use slash commands to connect external tools to MatterFOSS. {buildYourOwn} or visit the {appDirectory} to find self-hosted, third-party apps and integrations.'
                         values={{
                             buildYourOwn: (
                                 <a
                                     target='_blank'
                                     rel='noopener noreferrer'
-                                    href='https://developers.mattermost.com/integrate/admin-guide/admin-slash-commands/'
+                                    href='https://developers.matterfoss.com/integrate/admin-guide/admin-slash-commands/'
                                 >
                                     <FormattedMessage
                                         id='installed_commands.help.buildYourOwn'
@@ -128,7 +128,7 @@ export default class InstalledCommands extends React.PureComponent<Props> {
                                 <a
                                     target='_blank'
                                     rel='noopener noreferrer'
-                                    href='https://mattermost.com/marketplace'
+                                    href='https://matterfoss.com/marketplace'
                                 >
                                     <FormattedMessage
                                         id='installed_commands.help.appDirectory'

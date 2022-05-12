@@ -3,8 +3,8 @@
 
 import {connect} from 'react-redux';
 
-import {Preferences} from 'mattermost-redux/constants';
-import {getBool} from 'mattermost-redux/selectors/entities/preferences';
+import {Preferences} from 'matterfoss-redux/constants';
+import {getBool} from 'matterfoss-redux/selectors/entities/preferences';
 
 import NewChannelModal from './new_channel_modal.jsx';
 

@@ -4,7 +4,7 @@
 import React, {ReactNode} from 'react';
 import {FormattedMessage} from 'react-intl';
 
-import {OAuthApp} from 'mattermost-redux/types/integrations';
+import {OAuthApp} from 'matterfoss-redux/types/integrations';
 
 import icon50 from 'images/icon50x50.png';
 import FormError from 'components/form_error';
@@ -128,7 +128,7 @@ export default class Authorize extends React.PureComponent<Props, State> {
                         <div className='text'>
                             <FormattedMarkdownMessage
                                 id='authorize.title'
-                                defaultMessage='Authorize **{appName}** to Connect to Your **Mattermost** User Account'
+                                defaultMessage='Authorize **{appName}** to Connect to Your **MatterFOSS** User Account'
                                 values={{
                                     appName: app.name,
                                 }}

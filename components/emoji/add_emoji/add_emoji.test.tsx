@@ -4,9 +4,9 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 
-import {Team} from 'mattermost-redux/types/teams';
-import {CustomEmoji} from 'mattermost-redux/types/emojis';
-import {UserProfile} from 'mattermost-redux/types/users';
+import {Team} from 'matterfoss-redux/types/teams';
+import {CustomEmoji} from 'matterfoss-redux/types/emojis';
+import {UserProfile} from 'matterfoss-redux/types/users';
 
 import EmojiMap from 'utils/emoji_map.js';
 

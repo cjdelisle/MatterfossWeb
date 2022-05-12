@@ -4,8 +4,8 @@
 import {bindActionCreators, Dispatch} from 'redux';
 import {connect} from 'react-redux';
 
-import {favoriteChannel, unfavoriteChannel} from 'mattermost-redux/actions/channels';
-import {GenericAction} from 'mattermost-redux/types/actions';
+import {favoriteChannel, unfavoriteChannel} from 'matterfoss-redux/actions/channels';
+import {GenericAction} from 'matterfoss-redux/types/actions';
 
 import ToggleFavoriteChannel from './toggle_favorite_channel';
 

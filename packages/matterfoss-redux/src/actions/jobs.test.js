@@ -4,12 +4,12 @@
 import assert from 'assert';
 import nock from 'nock';
 
-import * as Actions from 'mattermost-redux/actions/jobs';
-import {Client4} from 'mattermost-redux/client';
+import * as Actions from 'matterfoss-redux/actions/jobs';
+import {Client4} from 'matterfoss-redux/client';
 
 import {RequestStatus} from '../constants';
-import TestHelper from 'mattermost-redux/test/test_helper';
-import configureStore from 'mattermost-redux/test/test_store';
+import TestHelper from 'matterfoss-redux/test/test_helper';
+import configureStore from 'matterfoss-redux/test/test_store';
 
 const OK_RESPONSE = {status: 'OK'};
 

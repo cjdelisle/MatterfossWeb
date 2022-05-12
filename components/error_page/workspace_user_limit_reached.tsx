@@ -4,11 +4,11 @@
 import React, {useEffect} from 'react';
 import {FormattedMessage} from 'react-intl';
 
-import {Client4} from 'mattermost-redux/client';
+import {Client4} from 'matterfoss-redux/client';
 
 import computerWithAlert from 'images/cloud/computer-with-alert.svg';
 
-import MattermostCloudSvg from 'components/common/svg_images_components/mattermost_cloud_svg';
+import MatterFOSSCloudSvg from 'components/common/svg_images_components/matterfoss_cloud_svg';
 import BackgroundSvg from 'components/common/svg_images_components/background_svg';
 
 const WorkspaceUserLimitReached: React.FC = () => {
@@ -18,8 +18,8 @@ const WorkspaceUserLimitReached: React.FC = () => {
 
     return (
         <div className='ErrorPage__container_max_free_users'>
-            <header className='ErrorPage__mattermostCloudImg'>
-                <MattermostCloudSvg
+            <header className='ErrorPage__matterfossCloudImg'>
+                <MatterFOSSCloudSvg
                     width={250}
                     height={28}
                 />
@@ -40,7 +40,7 @@ const WorkspaceUserLimitReached: React.FC = () => {
                         <div className='ErrorPage__maxFreeUsersReachedDescription'>
                             <FormattedMessage
                                 id='error.maxFreeUsersReached.description'
-                                defaultMessage='New users cannot be added to this workspace because it has reached the user limit for the free version of Mattermost Cloud. The system administrator has been notified'
+                                defaultMessage='New users cannot be added to this workspace because it has reached the user limit for the free version of MatterFOSS Cloud. The system administrator has been notified'
                             />
                         </div>
                     </article>

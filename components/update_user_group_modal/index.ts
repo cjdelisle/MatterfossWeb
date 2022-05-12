@@ -4,15 +4,15 @@
 import {connect} from 'react-redux';
 import {ActionCreatorsMapObject, bindActionCreators, Dispatch} from 'redux';
 
-import {Action, ActionResult} from 'mattermost-redux/types/actions';
+import {Action, ActionResult} from 'matterfoss-redux/types/actions';
 
 import {GlobalState} from 'types/store';
 
-import {CustomGroupPatch} from 'mattermost-redux/types/groups';
-import {patchGroup} from 'mattermost-redux/actions/groups';
+import {CustomGroupPatch} from 'matterfoss-redux/types/groups';
+import {patchGroup} from 'matterfoss-redux/actions/groups';
 import {ModalData} from 'types/actions';
 import {openModal} from 'actions/views/modals';
-import {getGroup} from 'mattermost-redux/selectors/entities/groups';
+import {getGroup} from 'matterfoss-redux/selectors/entities/groups';
 
 import UpdateUserGroupModal from './update_user_group_modal';
 

@@ -1,17 +1,17 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
-import {Client4} from 'mattermost-redux/client';
-import {SearchTypes} from 'mattermost-redux/action_types';
-import {getCurrentTeamId} from 'mattermost-redux/selectors/entities/teams';
-import {getCurrentUserId} from 'mattermost-redux/selectors/entities/users';
+import {Client4} from 'matterfoss-redux/client';
+import {SearchTypes} from 'matterfoss-redux/action_types';
+import {getCurrentTeamId} from 'matterfoss-redux/selectors/entities/teams';
+import {getCurrentUserId} from 'matterfoss-redux/selectors/entities/users';
 
-import {ActionResult, batchActions, DispatchFunc, GetStateFunc, ActionFunc} from 'mattermost-redux/types/actions';
+import {ActionResult, batchActions, DispatchFunc, GetStateFunc, ActionFunc} from 'matterfoss-redux/types/actions';
 
-import {Post} from 'mattermost-redux/types/posts';
+import {Post} from 'matterfoss-redux/types/posts';
 
-import {FileSearchResults, FileSearchResultItem} from 'mattermost-redux/types/files';
+import {FileSearchResults, FileSearchResultItem} from 'matterfoss-redux/types/files';
 
-import {SearchParameter} from 'mattermost-redux/types/search';
+import {SearchParameter} from 'matterfoss-redux/types/search';
 
 import {getChannelAndMyMember, getChannelMembers} from './channels';
 import {forceLogoutIfNecessary} from './helpers';

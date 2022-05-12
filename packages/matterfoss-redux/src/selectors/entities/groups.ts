@@ -3,12 +3,12 @@
 
 import {createSelector} from 'reselect';
 
-import {Group} from 'mattermost-redux/types/groups';
-import {filterGroupsMatchingTerm, sortGroups} from 'mattermost-redux/utils/group_utils';
-import {getChannel} from 'mattermost-redux/selectors/entities/channels';
-import {getTeam} from 'mattermost-redux/selectors/entities/teams';
-import {UserMentionKey} from 'mattermost-redux/selectors/entities/users';
-import {GlobalState} from 'mattermost-redux/types/store';
+import {Group} from 'matterfoss-redux/types/groups';
+import {filterGroupsMatchingTerm, sortGroups} from 'matterfoss-redux/utils/group_utils';
+import {getChannel} from 'matterfoss-redux/selectors/entities/channels';
+import {getTeam} from 'matterfoss-redux/selectors/entities/teams';
+import {UserMentionKey} from 'matterfoss-redux/selectors/entities/users';
+import {GlobalState} from 'matterfoss-redux/types/store';
 
 import Constants from 'utils/constants';
 

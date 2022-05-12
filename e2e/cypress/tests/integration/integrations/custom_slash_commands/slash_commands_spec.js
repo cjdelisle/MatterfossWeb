@@ -151,7 +151,7 @@ describe('Slash commands page', () => {
         cy.get('a[href*="/edit"]').click();
 
         // # Change url
-        cy.get('#url').clear().type('http://mattermost.com');
+        cy.get('#url').clear().type('http://matterfoss.com');
 
         // # Click on Cancel
         cy.get('a').contains('Cancel').click();

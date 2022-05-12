@@ -1,13 +1,13 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
-import {createCategory as createCategoryRedux, moveChannelsToCategory} from 'mattermost-redux/actions/channel_categories';
-import {General} from 'mattermost-redux/constants';
-import {CategoryTypes} from 'mattermost-redux/constants/channel_categories';
-import {getCategory, makeGetChannelIdsForCategory} from 'mattermost-redux/selectors/entities/channel_categories';
-import {getCurrentChannelId} from 'mattermost-redux/selectors/entities/channels';
-import {DispatchFunc, GetStateFunc} from 'mattermost-redux/types/actions';
-import {insertMultipleWithoutDuplicates} from 'mattermost-redux/utils/array_utils';
+import {createCategory as createCategoryRedux, moveChannelsToCategory} from 'matterfoss-redux/actions/channel_categories';
+import {General} from 'matterfoss-redux/constants';
+import {CategoryTypes} from 'matterfoss-redux/constants/channel_categories';
+import {getCategory, makeGetChannelIdsForCategory} from 'matterfoss-redux/selectors/entities/channel_categories';
+import {getCurrentChannelId} from 'matterfoss-redux/selectors/entities/channels';
+import {DispatchFunc, GetStateFunc} from 'matterfoss-redux/types/actions';
+import {insertMultipleWithoutDuplicates} from 'matterfoss-redux/utils/array_utils';
 
 import {getCategoriesForCurrentTeam, getChannelsInCategoryOrder, getDisplayedChannels} from 'selectors/views/channel_sidebar';
 import {DraggingState, GlobalState} from 'types/store';

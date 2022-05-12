@@ -4,10 +4,10 @@
 import configureStore from 'redux-mock-store';
 
 import {sendMembersInvites, sendGuestsInvites} from 'actions/invite_actions';
-import {DispatchFunc, GetStateFunc} from 'mattermost-redux/types/actions';
+import {DispatchFunc, GetStateFunc} from 'matterfoss-redux/types/actions';
 
-import {Channel} from 'mattermost-redux/types/channels';
-import {UserProfile} from 'mattermost-redux/types/users';
+import {Channel} from 'matterfoss-redux/types/channels';
+import {UserProfile} from 'matterfoss-redux/types/users';
 
 jest.mock('actions/team_actions', () => ({
     addUsersToTeam: () => ({ // since we are using addUsersToTeamGracefully, this call will always succeed
@@ -15,7 +15,7 @@ jest.mock('actions/team_actions', () => ({
     }),
 }));
 
-jest.mock('mattermost-redux/actions/channels', () => ({
+jest.mock('matterfoss-redux/actions/channels', () => ({
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     joinChannel: (_userId: string, _teamId: string, channelId: string, _channelName: string) => {
         if (channelId === 'correct') {
@@ -32,7 +32,7 @@ jest.mock('mattermost-redux/actions/channels', () => ({
     },
 }));
 
-jest.mock('mattermost-redux/actions/teams', () => ({
+jest.mock('matterfoss-redux/actions/teams', () => ({
     getTeamMembersByIds: () => ({type: 'MOCK_RECEIVED_ME'}),
     sendEmailInvitesToTeamGracefully: (team: string, emails: string[]) => {
         // Poor attempt to mock rate limiting.

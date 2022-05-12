@@ -97,7 +97,7 @@ describe('Guest Account - Guest User Invitation Flow', () => {
 
     it('MM-T1340 Invite Guests - New User not in the system', () => {
         // # Search and add a new guest by email, who is not part of the team
-        const email = `temp-${getRandomId()}@mattermost.com`;
+        const email = `temp-${getRandomId()}@matterfoss.com`;
         invitePeople(email, 1, email);
 
         // * Verify the content and message in next screen
@@ -113,7 +113,7 @@ describe('Guest Account - Guest User Invitation Flow', () => {
         cy.visit(`/${testTeam.name}/channels/town-square`);
 
         // # Invite a Guest by email
-        const email = `temp-${getRandomId()}@mattermost.com`;
+        const email = `temp-${getRandomId()}@matterfoss.com`;
         invitePeople(email, 1, email);
 
         // * Verify the content and message in next screen

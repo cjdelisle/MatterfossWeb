@@ -6,8 +6,8 @@ import {Modal} from 'react-bootstrap';
 import {FormattedMessage} from 'react-intl';
 import {debounce} from 'lodash';
 
-import {UserProfile} from 'mattermost-redux/types/users';
-import {GenericAction} from 'mattermost-redux/types/actions';
+import {UserProfile} from 'matterfoss-redux/types/users';
+import {GenericAction} from 'matterfoss-redux/types/actions';
 
 import {browserHistory} from 'utils/browser_history';
 import Constants from 'utils/constants';

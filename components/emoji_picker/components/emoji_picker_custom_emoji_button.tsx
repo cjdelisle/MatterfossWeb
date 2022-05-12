@@ -5,7 +5,7 @@ import React, {memo} from 'react';
 import {FormattedMessage} from 'react-intl';
 import {Link} from 'react-router-dom';
 
-import Permissions from 'mattermost-redux/constants/permissions';
+import Permissions from 'matterfoss-redux/constants/permissions';
 
 import AnyTeamPermissionGate from 'components/permissions_gates/any_team_permission_gate';
 

@@ -4,31 +4,31 @@
 import * as Redux from 'redux';
 import {batchActions} from 'redux-batched-actions';
 
-import {isCollapsedThreadsEnabled} from 'mattermost-redux/selectors/entities/preferences';
+import {isCollapsedThreadsEnabled} from 'matterfoss-redux/selectors/entities/preferences';
 
 import {
     actionsToMarkChannelAsRead,
     actionsToMarkChannelAsUnread,
     actionsToMarkChannelAsViewed,
     markChannelAsReadOnServer,
-} from 'mattermost-redux/actions/channels';
-import * as PostActions from 'mattermost-redux/actions/posts';
+} from 'matterfoss-redux/actions/channels';
+import * as PostActions from 'matterfoss-redux/actions/posts';
 
-import {WebsocketEvents} from 'mattermost-redux/constants';
+import {WebsocketEvents} from 'matterfoss-redux/constants';
 
-import {getCurrentChannelId, isManuallyUnread} from 'mattermost-redux/selectors/entities/channels';
-import * as PostSelectors from 'mattermost-redux/selectors/entities/posts';
-import {getCurrentUserId} from 'mattermost-redux/selectors/entities/users';
-import {getThread} from 'mattermost-redux/selectors/entities/threads';
+import {getCurrentChannelId, isManuallyUnread} from 'matterfoss-redux/selectors/entities/channels';
+import * as PostSelectors from 'matterfoss-redux/selectors/entities/posts';
+import {getCurrentUserId} from 'matterfoss-redux/selectors/entities/users';
+import {getThread} from 'matterfoss-redux/selectors/entities/threads';
 
-import {ActionFunc, DispatchFunc, GetStateFunc} from 'mattermost-redux/types/actions';
-import {Post} from 'mattermost-redux/types/posts';
+import {ActionFunc, DispatchFunc, GetStateFunc} from 'matterfoss-redux/types/actions';
+import {Post} from 'matterfoss-redux/types/posts';
 
 import {
     isFromWebhook,
     isSystemMessage,
     shouldIgnorePost,
-} from 'mattermost-redux/utils/post_utils';
+} from 'matterfoss-redux/utils/post_utils';
 
 import {GlobalState} from 'types/store';
 

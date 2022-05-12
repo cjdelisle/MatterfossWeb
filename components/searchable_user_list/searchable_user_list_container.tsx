@@ -3,9 +3,9 @@
 
 import React, {useState} from 'react';
 
-import {UserProfile} from 'mattermost-redux/types/users';
-import {Channel, ChannelMembership} from 'mattermost-redux/types/channels';
-import {TeamMembership} from 'mattermost-redux/types/teams';
+import {UserProfile} from 'matterfoss-redux/types/users';
+import {Channel, ChannelMembership} from 'matterfoss-redux/types/channels';
+import {TeamMembership} from 'matterfoss-redux/types/teams';
 
 import SearchableUserList from './searchable_user_list';
 

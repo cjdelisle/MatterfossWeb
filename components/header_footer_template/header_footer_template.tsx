@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import {FormattedMessage} from 'react-intl';
 
-import {ClientConfig} from 'mattermost-redux/types/config';
+import {ClientConfig} from 'matterfoss-redux/types/config';
 
 type Props = {
     config: Partial<ClientConfig> | undefined;
@@ -20,7 +20,7 @@ export default class NotLoggedIn extends React.PureComponent<Props> {
         children: PropTypes.object,
 
         /*
-         * Mattermost configuration
+         * MatterFOSS configuration
          */
         config: PropTypes.object,
     };
@@ -122,7 +122,7 @@ export default class NotLoggedIn extends React.PureComponent<Props> {
                                 id='company_name'
                                 className='pull-right footer-site-name'
                             >
-                                {'Mattermost'}
+                                {'MatterFOSS'}
                             </span>
                         </div>
                         <div className='col-xs-12'>
@@ -130,7 +130,7 @@ export default class NotLoggedIn extends React.PureComponent<Props> {
                                 id='copyright'
                                 className='pull-right footer-link copyright'
                             >
-                                {`© 2015-${new Date().getFullYear()} Mattermost, Inc.`}
+                                {`© 2015-${new Date().getFullYear()} MatterFOSS, Inc.`}
                             </span>
                             <span className='pull-right'>
                                 {content}

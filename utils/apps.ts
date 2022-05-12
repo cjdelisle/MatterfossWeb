@@ -1,10 +1,10 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
-import {AppCallResponseTypes} from 'mattermost-redux/constants/apps';
-import {AppCall, AppCallRequest, AppCallResponse, AppCallValues, AppContext, AppExpand, AppSelectOption} from 'mattermost-redux/types/apps';
+import {AppCallResponseTypes} from 'matterfoss-redux/constants/apps';
+import {AppCall, AppCallRequest, AppCallResponse, AppCallValues, AppContext, AppExpand, AppSelectOption} from 'matterfoss-redux/types/apps';
 
-export const appsPluginID = 'com.mattermost.apps';
+export const appsPluginID = 'com.matterfoss.apps';
 
 export function createCallContext(
     appID: string,

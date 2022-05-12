@@ -4,14 +4,14 @@
 import React, {useEffect, useState} from 'react';
 import {useDispatch, useStore, useSelector} from 'react-redux';
 
-import {getStandardAnalytics} from 'mattermost-redux/actions/admin';
-import {getCloudSubscription, getCloudProducts, getCloudCustomer} from 'mattermost-redux/actions/cloud';
-import {savePreferences} from 'mattermost-redux/actions/preferences';
-import {getConfig, getLicense} from 'mattermost-redux/selectors/entities/general';
-import {makeGetCategory} from 'mattermost-redux/selectors/entities/preferences';
-import {getCurrentUser} from 'mattermost-redux/selectors/entities/users';
-import {DispatchFunc} from 'mattermost-redux/types/actions';
-import {PreferenceType} from 'mattermost-redux/types/preferences';
+import {getStandardAnalytics} from 'matterfoss-redux/actions/admin';
+import {getCloudSubscription, getCloudProducts, getCloudCustomer} from 'matterfoss-redux/actions/cloud';
+import {savePreferences} from 'matterfoss-redux/actions/preferences';
+import {getConfig, getLicense} from 'matterfoss-redux/selectors/entities/general';
+import {makeGetCategory} from 'matterfoss-redux/selectors/entities/preferences';
+import {getCurrentUser} from 'matterfoss-redux/selectors/entities/users';
+import {DispatchFunc} from 'matterfoss-redux/types/actions';
+import {PreferenceType} from 'matterfoss-redux/types/preferences';
 
 import {pageVisited, trackEvent} from 'actions/telemetry_actions';
 import {openModal} from 'actions/views/modals';
@@ -78,8 +78,8 @@ const BillingSubscriptions: React.FC = () => {
     });
 
     // show the upgrade section when is a free tier customer
-    const onUpgradeMattermostCloud = () => {
-        trackEvent('cloud_admin', 'click_upgrade_mattermost_cloud');
+    const onUpgradeMatterFOSSCloud = () => {
+        trackEvent('cloud_admin', 'click_upgrade_matterfoss_cloud');
         dispatch(openModal({
             modalId: ModalIdentifiers.CLOUD_PURCHASE,
             dialogType: PurchaseModal,
@@ -115,7 +115,7 @@ const BillingSubscriptions: React.FC = () => {
         }
 
         if (actionQueryParam === 'show_purchase_modal') {
-            onUpgradeMattermostCloud();
+            onUpgradeMatterFOSSCloud();
         }
     }, []);
 
@@ -177,10 +177,10 @@ const BillingSubscriptions: React.FC = () => {
                             isPaidTier={isPaidTier}
                             isFreeTrial={isFreeTrial}
                             daysLeftOnTrial={daysLeftOnTrial}
-                            onUpgradeMattermostCloud={onUpgradeMattermostCloud}
+                            onUpgradeMatterFOSSCloud={onUpgradeMatterFOSSCloud}
                         />
                     </div>
-                    {contactSalesCard(contactSalesLink, isFreeTrial, trialQuestionsLink, product?.sku, onUpgradeMattermostCloud, productsLength)}
+                    {contactSalesCard(contactSalesLink, isFreeTrial, trialQuestionsLink, product?.sku, onUpgradeMatterFOSSCloud, productsLength)}
                     {cancelSubscription(cancelAccountLink, isFreeTrial, isPaidTier)}
                 </div>
             </div>

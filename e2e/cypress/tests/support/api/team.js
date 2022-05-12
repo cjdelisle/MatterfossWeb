@@ -5,7 +5,7 @@ import {getRandomId} from '../../utils';
 
 // *****************************************************************************
 // Teams
-// https://api.mattermost.com/#tag/teams
+// https://api.matterfoss.com/#tag/teams
 // *****************************************************************************
 
 export function createTeamPatch(name = 'team', displayName = 'Team', type = 'O', unique = true) {

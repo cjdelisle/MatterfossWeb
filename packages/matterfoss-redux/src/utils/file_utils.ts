@@ -2,8 +2,8 @@
 // See LICENSE.txt for license information.
 
 import {Files, General} from '../constants';
-import {Client4} from 'mattermost-redux/client';
-import {FileInfo} from 'mattermost-redux/types/files';
+import {Client4} from 'matterfoss-redux/client';
+import {FileInfo} from 'matterfoss-redux/types/files';
 
 const mimeDB = require('mime-db');
 

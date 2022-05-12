@@ -1,15 +1,15 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
-import {ChannelCategoryTypes, ChannelTypes} from 'mattermost-redux/action_types';
+import {ChannelCategoryTypes, ChannelTypes} from 'matterfoss-redux/action_types';
 
-import {Client4} from 'mattermost-redux/client';
+import {Client4} from 'matterfoss-redux/client';
 
-import {logError} from 'mattermost-redux/actions/errors';
-import {forceLogoutIfNecessary} from 'mattermost-redux/actions/helpers';
+import {logError} from 'matterfoss-redux/actions/errors';
+import {forceLogoutIfNecessary} from 'matterfoss-redux/actions/helpers';
 
 import {General} from '../constants';
-import {CategoryTypes} from 'mattermost-redux/constants/channel_categories';
+import {CategoryTypes} from 'matterfoss-redux/constants/channel_categories';
 
 import {
     getAllCategoriesByIds,
@@ -17,19 +17,19 @@ import {
     getCategoryIdsForTeam,
     getCategoryInTeamByType,
     getCategoryInTeamWithChannel,
-} from 'mattermost-redux/selectors/entities/channel_categories';
-import {getCurrentUserId} from 'mattermost-redux/selectors/entities/users';
+} from 'matterfoss-redux/selectors/entities/channel_categories';
+import {getCurrentUserId} from 'matterfoss-redux/selectors/entities/users';
 
 import {
     ActionFunc,
     batchActions,
     DispatchFunc,
     GetStateFunc,
-} from 'mattermost-redux/types/actions';
-import {CategorySorting, OrderedChannelCategories, ChannelCategory} from 'mattermost-redux/types/channel_categories';
-import {Channel} from 'mattermost-redux/types/channels';
+} from 'matterfoss-redux/types/actions';
+import {CategorySorting, OrderedChannelCategories, ChannelCategory} from 'matterfoss-redux/types/channel_categories';
+import {Channel} from 'matterfoss-redux/types/channels';
 
-import {insertMultipleWithoutDuplicates, insertWithoutDuplicates, removeItem} from 'mattermost-redux/utils/array_utils';
+import {insertMultipleWithoutDuplicates, insertWithoutDuplicates, removeItem} from 'matterfoss-redux/utils/array_utils';
 
 export function expandCategory(categoryId: string) {
     return setCategoryCollapsed(categoryId, false);

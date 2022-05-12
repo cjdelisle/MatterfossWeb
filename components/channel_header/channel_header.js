@@ -7,9 +7,9 @@ import {Overlay} from 'react-bootstrap';
 import {FormattedMessage, injectIntl} from 'react-intl';
 import classNames from 'classnames';
 
-import {Permissions} from 'mattermost-redux/constants';
-import {memoizeResult} from 'mattermost-redux/utils/helpers';
-import {displayUsername, isGuest} from 'mattermost-redux/utils/user_utils';
+import {Permissions} from 'matterfoss-redux/constants';
+import {memoizeResult} from 'matterfoss-redux/utils/helpers';
+import {displayUsername, isGuest} from 'matterfoss-redux/utils/user_utils';
 
 import EditChannelHeaderModal from 'components/edit_channel_header_modal';
 import Markdown from 'components/markdown';

@@ -7,7 +7,7 @@ import classNames from 'classnames';
 
 import {useSelector} from 'react-redux';
 
-import {getCurrentChannelNameForSearchShortcut} from 'mattermost-redux/selectors/entities/channels';
+import {getCurrentChannelNameForSearchShortcut} from 'matterfoss-redux/selectors/entities/channels';
 import {isServerVersionGreaterThanOrEqualTo} from 'utils/server_version';
 import {isDesktopApp, getDesktopVersion, isMacApp} from 'utils/user_agent';
 import Constants, {searchHintOptions, RHSStates, searchFilesHintOptions} from 'utils/constants';

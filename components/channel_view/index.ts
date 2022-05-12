@@ -5,17 +5,17 @@ import {ActionCreatorsMapObject, bindActionCreators, Dispatch} from 'redux';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 
-import {getCurrentChannel, getDirectTeammate} from 'mattermost-redux/selectors/entities/channels';
-import {getMyChannelRoles} from 'mattermost-redux/selectors/entities/roles';
-import {getRoles} from 'mattermost-redux/selectors/entities/roles_helpers';
-import {getConfig, getLicense} from 'mattermost-redux/selectors/entities/general';
+import {getCurrentChannel, getDirectTeammate} from 'matterfoss-redux/selectors/entities/channels';
+import {getMyChannelRoles} from 'matterfoss-redux/selectors/entities/roles';
+import {getRoles} from 'matterfoss-redux/selectors/entities/roles_helpers';
+import {getConfig, getLicense} from 'matterfoss-redux/selectors/entities/general';
 import {showNextSteps} from 'components/next_steps_view/steps';
 
-import {ActionFunc, GenericAction} from 'mattermost-redux/types/actions';
+import {ActionFunc, GenericAction} from 'matterfoss-redux/types/actions';
 import {setShowNextStepsView} from 'actions/views/next_steps';
-import {getCurrentRelativeTeamUrl} from 'mattermost-redux/selectors/entities/teams';
-import {getUseCaseOnboarding} from 'mattermost-redux/selectors/entities/preferences';
-import {isFirstAdmin} from 'mattermost-redux/selectors/entities/users';
+import {getCurrentRelativeTeamUrl} from 'matterfoss-redux/selectors/entities/teams';
+import {getUseCaseOnboarding} from 'matterfoss-redux/selectors/entities/preferences';
+import {isFirstAdmin} from 'matterfoss-redux/selectors/entities/users';
 
 import {goToLastViewedChannel} from 'actions/views/channel';
 

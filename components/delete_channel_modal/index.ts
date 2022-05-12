@@ -4,10 +4,10 @@
 import {ActionCreatorsMapObject, bindActionCreators, Dispatch} from 'redux';
 import {connect} from 'react-redux';
 
-import {getCurrentTeam} from 'mattermost-redux/selectors/entities/teams';
-import {getConfig} from 'mattermost-redux/selectors/entities/general';
-import {GlobalState} from 'mattermost-redux/types/store';
-import {ActionFunc} from 'mattermost-redux/types/actions';
+import {getCurrentTeam} from 'matterfoss-redux/selectors/entities/teams';
+import {getConfig} from 'matterfoss-redux/selectors/entities/general';
+import {GlobalState} from 'matterfoss-redux/types/store';
+import {ActionFunc} from 'matterfoss-redux/types/actions';
 
 import {deleteChannel} from 'actions/views/channel';
 

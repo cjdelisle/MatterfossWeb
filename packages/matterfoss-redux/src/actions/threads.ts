@@ -3,28 +3,28 @@
 
 import {uniq} from 'lodash';
 
-import {ThreadTypes, PostTypes, UserTypes} from 'mattermost-redux/action_types';
-import {Client4} from 'mattermost-redux/client';
+import {ThreadTypes, PostTypes, UserTypes} from 'matterfoss-redux/action_types';
+import {Client4} from 'matterfoss-redux/client';
 
-import ThreadConstants from 'mattermost-redux/constants/threads';
+import ThreadConstants from 'matterfoss-redux/constants/threads';
 
-import {DispatchFunc, GetStateFunc, batchActions} from 'mattermost-redux/types/actions';
+import {DispatchFunc, GetStateFunc, batchActions} from 'matterfoss-redux/types/actions';
 
-import type {UserThread, UserThreadList} from 'mattermost-redux/types/threads';
+import type {UserThread, UserThreadList} from 'matterfoss-redux/types/threads';
 
-import {Post} from 'mattermost-redux/types/posts';
+import {Post} from 'matterfoss-redux/types/posts';
 
-import {getMissingProfilesByIds} from 'mattermost-redux/actions/users';
+import {getMissingProfilesByIds} from 'matterfoss-redux/actions/users';
 
-import {getCurrentUserId} from 'mattermost-redux/selectors/entities/users';
+import {getCurrentUserId} from 'matterfoss-redux/selectors/entities/users';
 
-import {getCurrentTeamId} from 'mattermost-redux/selectors/entities/teams';
+import {getCurrentTeamId} from 'matterfoss-redux/selectors/entities/teams';
 
-import {getThreadsInChannel, getThread as getThreadSelector} from 'mattermost-redux/selectors/entities/threads';
+import {getThreadsInChannel, getThread as getThreadSelector} from 'matterfoss-redux/selectors/entities/threads';
 
-import {getChannel} from 'mattermost-redux/selectors/entities/channels';
+import {getChannel} from 'matterfoss-redux/selectors/entities/channels';
 
-import {isCollapsedThreadsEnabled} from 'mattermost-redux/selectors/entities/preferences';
+import {isCollapsedThreadsEnabled} from 'matterfoss-redux/selectors/entities/preferences';
 
 import {logError} from './errors';
 import {forceLogoutIfNecessary} from './helpers';

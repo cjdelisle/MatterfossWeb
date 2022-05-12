@@ -5,8 +5,8 @@ import {cloneDeep} from 'lodash';
 
 import {createSelector} from 'reselect';
 
-import {getMySystemPermissions} from 'mattermost-redux/selectors/entities/roles_helpers';
-import {ResourceToSysConsolePermissionsTable, RESOURCE_KEYS} from 'mattermost-redux/constants/permissions_sysconsole';
+import {getMySystemPermissions} from 'matterfoss-redux/selectors/entities/roles_helpers';
+import {ResourceToSysConsolePermissionsTable, RESOURCE_KEYS} from 'matterfoss-redux/constants/permissions_sysconsole';
 
 import AdminDefinition from 'components/admin_console/admin_definition.jsx';
 

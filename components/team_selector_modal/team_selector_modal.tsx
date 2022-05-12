@@ -5,9 +5,9 @@ import React from 'react';
 import {Modal} from 'react-bootstrap';
 import {FormattedMessage} from 'react-intl';
 
-import {ActionResult} from 'mattermost-redux/types/actions';
+import {ActionResult} from 'matterfoss-redux/types/actions';
 
-import {Team} from 'mattermost-redux/types/teams';
+import {Team} from 'matterfoss-redux/types/teams';
 
 import Constants, {ModalIdentifiers} from 'utils/constants';
 import {localizeMessage} from 'utils/utils.jsx';

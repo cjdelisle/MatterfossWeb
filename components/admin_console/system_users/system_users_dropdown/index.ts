@@ -4,16 +4,16 @@
 import {connect} from 'react-redux';
 import {bindActionCreators, Dispatch, ActionCreatorsMapObject} from 'redux';
 
-import {ActionFunc} from 'mattermost-redux/types/actions';
+import {ActionFunc} from 'matterfoss-redux/types/actions';
 
-import {updateUserActive, revokeAllSessionsForUser, promoteGuestToUser, demoteUserToGuest} from 'mattermost-redux/actions/users';
-import {getCurrentUser} from 'mattermost-redux/selectors/entities/users';
-import {getExternalBotAccounts} from 'mattermost-redux/selectors/entities/bots';
-import {loadBots} from 'mattermost-redux/actions/bots';
+import {updateUserActive, revokeAllSessionsForUser, promoteGuestToUser, demoteUserToGuest} from 'matterfoss-redux/actions/users';
+import {getCurrentUser} from 'matterfoss-redux/selectors/entities/users';
+import {getExternalBotAccounts} from 'matterfoss-redux/selectors/entities/bots';
+import {loadBots} from 'matterfoss-redux/actions/bots';
 
-import {getLicense} from 'mattermost-redux/selectors/entities/general';
+import {getLicense} from 'matterfoss-redux/selectors/entities/general';
 
-import * as Selectors from 'mattermost-redux/selectors/entities/admin';
+import * as Selectors from 'matterfoss-redux/selectors/entities/admin';
 
 import {GlobalState} from 'types/store';
 

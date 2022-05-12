@@ -15,21 +15,21 @@ import {
     removeDataRetentionCustomPolicyTeams,
     addDataRetentionCustomPolicyChannels,
     removeDataRetentionCustomPolicyChannels,
-} from 'mattermost-redux/actions/admin';
-import {getDataRetentionCustomPolicy} from 'mattermost-redux/selectors/entities/admin';
-import {GenericAction, ActionFunc} from 'mattermost-redux/types/actions';
+} from 'matterfoss-redux/actions/admin';
+import {getDataRetentionCustomPolicy} from 'matterfoss-redux/selectors/entities/admin';
+import {GenericAction, ActionFunc} from 'matterfoss-redux/types/actions';
 import {
     DataRetentionCustomPolicy,
     CreateDataRetentionCustomPolicy,
     PatchDataRetentionCustomPolicy,
-} from 'mattermost-redux/types/data_retention';
-import {Team} from 'mattermost-redux/types/teams';
+} from 'matterfoss-redux/types/data_retention';
+import {Team} from 'matterfoss-redux/types/teams';
 
 import {GlobalState} from 'types/store';
 
 import {setNavigationBlocked} from 'actions/admin_actions.jsx';
 
-import {getTeamsInPolicy} from 'mattermost-redux/selectors/entities/teams';
+import {getTeamsInPolicy} from 'matterfoss-redux/selectors/entities/teams';
 
 import CustomPolicyForm from './custom_policy_form';
 

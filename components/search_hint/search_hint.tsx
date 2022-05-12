@@ -7,7 +7,7 @@ import {useSelector} from 'react-redux';
 import {FormattedMessage, MessageDescriptor} from 'react-intl';
 import classNames from 'classnames';
 
-import {getConfig} from 'mattermost-redux/selectors/entities/general';
+import {getConfig} from 'matterfoss-redux/selectors/entities/general';
 import {isFileAttachmentsEnabled} from 'utils/file_utils';
 
 interface SearchTerm {

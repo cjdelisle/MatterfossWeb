@@ -1,20 +1,20 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
-import {PreferenceTypes} from 'mattermost-redux/action_types';
+import {PreferenceTypes} from 'matterfoss-redux/action_types';
 
-import {Client4} from 'mattermost-redux/client';
+import {Client4} from 'matterfoss-redux/client';
 
 import {Preferences} from '../constants';
 
-import {getMyPreferences as getMyPreferencesSelector, makeGetCategory} from 'mattermost-redux/selectors/entities/preferences';
-import {getCurrentUserId} from 'mattermost-redux/selectors/entities/users';
+import {getMyPreferences as getMyPreferencesSelector, makeGetCategory} from 'matterfoss-redux/selectors/entities/preferences';
+import {getCurrentUserId} from 'matterfoss-redux/selectors/entities/users';
 
-import {GetStateFunc, DispatchFunc, ActionFunc} from 'mattermost-redux/types/actions';
-import {PreferenceType} from 'mattermost-redux/types/preferences';
-import {Theme} from 'mattermost-redux/types/themes';
+import {GetStateFunc, DispatchFunc, ActionFunc} from 'matterfoss-redux/types/actions';
+import {PreferenceType} from 'matterfoss-redux/types/preferences';
+import {Theme} from 'matterfoss-redux/types/themes';
 
-import {getPreferenceKey} from 'mattermost-redux/utils/preference_utils';
+import {getPreferenceKey} from 'matterfoss-redux/utils/preference_utils';
 
 import {getChannelAndMyMember, getMyChannelMember} from './channels';
 import {bindClientFunc} from './helpers';

@@ -6,12 +6,12 @@ import fs from 'fs';
 import assert from 'assert';
 import nock from 'nock';
 
-import {FileTypes} from 'mattermost-redux/action_types';
-import * as Actions from 'mattermost-redux/actions/files';
-import {Client4} from 'mattermost-redux/client';
+import {FileTypes} from 'matterfoss-redux/action_types';
+import * as Actions from 'matterfoss-redux/actions/files';
+import {Client4} from 'matterfoss-redux/client';
 import {RequestStatus} from '../constants';
-import TestHelper from 'mattermost-redux/test/test_helper';
-import configureStore from 'mattermost-redux/test/test_store';
+import TestHelper from 'matterfoss-redux/test/test_helper';
+import configureStore from 'matterfoss-redux/test/test_store';
 
 const FormData = require('form-data');
 
@@ -32,7 +32,7 @@ describe('Actions.Files', () => {
     it('uploadFile', async () => {
         const {basicChannel} = TestHelper;
         const testFileName = 'test.png';
-        const testImageData = fs.createReadStream(`packages/mattermost-redux/test/assets/images/${testFileName}`);
+        const testImageData = fs.createReadStream(`packages/matterfoss-redux/test/assets/images/${testFileName}`);
         const clientId = TestHelper.generateId();
 
         const imageFormData = new FormData();
@@ -61,7 +61,7 @@ describe('Actions.Files', () => {
     it('getFilesForPost', async () => {
         const {basicClient4, basicChannel} = TestHelper;
         const testFileName = 'test.png';
-        const testImageData = fs.createReadStream(`packages/mattermost-redux/test/assets/images/${testFileName}`);
+        const testImageData = fs.createReadStream(`packages/matterfoss-redux/test/assets/images/${testFileName}`);
         const clientId = TestHelper.generateId();
 
         const imageFormData = new FormData();
@@ -110,7 +110,7 @@ describe('Actions.Files', () => {
             get(`/files/${fileId}/link`).
             query(true).
             reply(200, {
-                link: 'https://mattermost.com/files/ndans23ry2rtjd1z73g6i5f3fc/public?h=rE1-b2N1VVVMsAQssjwlfNawbVOwUy1TRDuTeGC_tys',
+                link: 'https://matterfoss.com/files/ndans23ry2rtjd1z73g6i5f3fc/public?h=rE1-b2N1VVVMsAQssjwlfNawbVOwUy1TRDuTeGC_tys',
             });
 
         await Actions.getFilePublicLink(fileId)(store.dispatch, store.getState);
@@ -118,7 +118,7 @@ describe('Actions.Files', () => {
         const state = store.getState();
 
         const filePublicLink = state.entities.files.filePublicLink.link;
-        assert.equal('https://mattermost.com/files/ndans23ry2rtjd1z73g6i5f3fc/public?h=rE1-b2N1VVVMsAQssjwlfNawbVOwUy1TRDuTeGC_tys', filePublicLink);
+        assert.equal('https://matterfoss.com/files/ndans23ry2rtjd1z73g6i5f3fc/public?h=rE1-b2N1VVVMsAQssjwlfNawbVOwUy1TRDuTeGC_tys', filePublicLink);
         assert.ok(filePublicLink);
         assert.ok(filePublicLink.length > 0);
     });

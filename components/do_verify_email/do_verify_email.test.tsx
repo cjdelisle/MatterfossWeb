@@ -11,7 +11,7 @@ describe('components/DoVerifyEmail', () => {
         location: {
             search: '?token=9f392f193973g11ggh398h39hg0ghH&email=test@example.com',
         },
-        siteName: 'Mattermost',
+        siteName: 'MatterFOSS',
         actions: {
             verifyUserEmail: jest.fn().mockResolvedValue({data: true}),
             getMe: jest.fn().mockResolvedValue({data: true}),

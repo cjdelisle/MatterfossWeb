@@ -2,12 +2,12 @@
 // See LICENSE.txt for license information.
 import {combineReducers} from 'redux';
 
-import {AdminTypes, ChannelTypes, TeamTypes, UserTypes, SchemeTypes, GroupTypes} from 'mattermost-redux/action_types';
-import {teamListToMap} from 'mattermost-redux/utils/team_utils';
-import {Team, TeamMembership, TeamUnread} from 'mattermost-redux/types/teams';
-import {UserProfile} from 'mattermost-redux/types/users';
-import {RelationOneToOne, IDMappedObjects} from 'mattermost-redux/types/utilities';
-import {GenericAction} from 'mattermost-redux/types/actions';
+import {AdminTypes, ChannelTypes, TeamTypes, UserTypes, SchemeTypes, GroupTypes} from 'matterfoss-redux/action_types';
+import {teamListToMap} from 'matterfoss-redux/utils/team_utils';
+import {Team, TeamMembership, TeamUnread} from 'matterfoss-redux/types/teams';
+import {UserProfile} from 'matterfoss-redux/types/users';
+import {RelationOneToOne, IDMappedObjects} from 'matterfoss-redux/types/utilities';
+import {GenericAction} from 'matterfoss-redux/types/actions';
 
 function currentTeamId(state = '', action: GenericAction) {
     switch (action.type) {

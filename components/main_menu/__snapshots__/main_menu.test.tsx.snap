@@ -978,7 +978,7 @@ exports[`components/Menu should match snapshot with most of the thing disabled i
       id="about"
       modalId="about"
       show={true}
-      text="About Mattermost"
+      text="About MatterFOSS"
     />
   </MenuGroup>
   <MenuGroup>
@@ -1590,7 +1590,7 @@ exports[`components/Menu should match snapshot with most of the thing enabled in
       id="about"
       modalId="about"
       show={true}
-      text="About Mattermost"
+      text="About MatterFOSS"
     />
   </MenuGroup>
   <MenuGroup>
@@ -2213,7 +2213,7 @@ exports[`components/Menu should match snapshot with plugins in mobile 1`] = `
       id="about"
       modalId="about"
       show={true}
-      text="About Mattermost"
+      text="About MatterFOSS"
     />
   </MenuGroup>
   <MenuGroup>

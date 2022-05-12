@@ -4,14 +4,14 @@
 import {ComponentProps} from 'react';
 import {connect} from 'react-redux';
 
-import {getInt, isCollapsedThreadsEnabled} from 'mattermost-redux/selectors/entities/preferences';
+import {getInt, isCollapsedThreadsEnabled} from 'matterfoss-redux/selectors/entities/preferences';
 
-import {getCurrentTeamId, getCurrentRelativeTeamUrl} from 'mattermost-redux/selectors/entities/teams';
-import {getCurrentUserId, getCurrentUserMentionKeys} from 'mattermost-redux/selectors/entities/users';
+import {getCurrentTeamId, getCurrentRelativeTeamUrl} from 'matterfoss-redux/selectors/entities/teams';
+import {getCurrentUserId, getCurrentUserMentionKeys} from 'matterfoss-redux/selectors/entities/users';
 
-import {setThreadFollow} from 'mattermost-redux/actions/threads';
-import {getThreadOrSynthetic} from 'mattermost-redux/selectors/entities/threads';
-import {getPost} from 'mattermost-redux/selectors/entities/posts';
+import {setThreadFollow} from 'matterfoss-redux/actions/threads';
+import {getThreadOrSynthetic} from 'matterfoss-redux/selectors/entities/threads';
+import {getPost} from 'matterfoss-redux/selectors/entities/posts';
 
 import {GlobalState} from 'types/store';
 

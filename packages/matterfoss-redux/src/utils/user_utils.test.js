@@ -12,9 +12,9 @@ import {
     getSuggestionsSplitByMultiple,
     includesAnAdminRole,
     applyRolesFilters,
-} from 'mattermost-redux/utils/user_utils';
+} from 'matterfoss-redux/utils/user_utils';
 
-import TestHelper from 'mattermost-redux/test/test_helper';
+import TestHelper from 'matterfoss-redux/test/test_helper';
 
 describe('user utils', () => {
     describe('displayUsername', () => {

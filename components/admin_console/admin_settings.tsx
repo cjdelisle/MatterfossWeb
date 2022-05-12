@@ -4,7 +4,7 @@
 import React from 'react';
 import {Overlay} from 'react-bootstrap';
 
-import {AdminConfig, EnvironmentConfig} from 'mattermost-redux/types/config';
+import {AdminConfig, EnvironmentConfig} from 'matterfoss-redux/types/config';
 
 import {localizeMessage} from 'utils/utils.jsx';
 import SaveButton from 'components/save_button';

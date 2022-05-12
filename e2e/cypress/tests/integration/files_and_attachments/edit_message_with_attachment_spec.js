@@ -29,7 +29,7 @@ describe('Edit Message with Attachment', () => {
 
     it('MM-T2268 - Edit Message with Attachment', () => {
         // # Upload file
-        cy.get('#fileUploadInput').attachFile('mattermost-icon.png');
+        cy.get('#fileUploadInput').attachFile('matterfoss-icon.png');
 
         // # Wait for file to upload
         cy.wait(TIMEOUTS.TWO_SEC);

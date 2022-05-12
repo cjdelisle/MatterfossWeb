@@ -61,7 +61,7 @@ const LearnMoreTrialModalStep = (
                 <span>
                     <FormattedMarkdownMessage
                         id='start_trial.modal.disclaimer'
-                        defaultMessage='By clicking “Start trial”, I agree to the [Mattermost Software Evaluation Agreement,](!https://mattermost.com/software-evaluation-agreement) [privacy policy,](!https://mattermost.com/privacy-policy/) and receiving product emails.'
+                        defaultMessage='By clicking “Start trial”, I agree to the [MatterFOSS Software Evaluation Agreement,](!https://matterfoss.com/software-evaluation-agreement) [privacy policy,](!https://matterfoss.com/privacy-policy/) and receiving product emails.'
                     />
                 </span>
             </div>

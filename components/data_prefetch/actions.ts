@@ -3,7 +3,7 @@
 
 import {Dispatch} from 'redux';
 
-import {getChannelIdsForCurrentTeam} from 'mattermost-redux/selectors/entities/channels';
+import {getChannelIdsForCurrentTeam} from 'matterfoss-redux/selectors/entities/channels';
 
 import {trackEvent} from 'actions/telemetry_actions';
 

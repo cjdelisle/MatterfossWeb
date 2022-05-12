@@ -3,8 +3,8 @@
 
 import {createSelector} from 'reselect';
 
-import {AppBinding} from 'mattermost-redux/types/apps';
-import {appBarEnabled, getAppBarAppBindings} from 'mattermost-redux/selectors/entities/apps';
+import {AppBinding} from 'matterfoss-redux/types/apps';
+import {appBarEnabled, getAppBarAppBindings} from 'matterfoss-redux/selectors/entities/apps';
 
 import {GlobalState} from 'types/store';
 import {FileDropdownPluginComponent, PluginComponent} from '../types/store/plugins';

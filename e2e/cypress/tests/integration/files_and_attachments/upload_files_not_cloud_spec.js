@@ -131,7 +131,7 @@ describe('Upload Files', () => {
             // * Verify that we land on attachment not found page
             cy.findByText('Error');
             cy.findByText('Unable to get the file info.');
-            cy.findByText('Back to Mattermost').
+            cy.findByText('Back to MatterFOSS').
                 parent().
                 should('have.attr', 'href', '/').
                 click();

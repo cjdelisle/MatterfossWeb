@@ -3,9 +3,9 @@
 
 import {connect} from 'react-redux';
 
-import {getCurrentChannelId} from 'mattermost-redux/selectors/entities/channels';
-import {getConfig} from 'mattermost-redux/selectors/entities/general';
-import {getOpenGraphMetadataForUrl} from 'mattermost-redux/selectors/entities/posts';
+import {getCurrentChannelId} from 'matterfoss-redux/selectors/entities/channels';
+import {getConfig} from 'matterfoss-redux/selectors/entities/general';
+import {getOpenGraphMetadataForUrl} from 'matterfoss-redux/selectors/entities/posts';
 
 import {GlobalState} from 'types/store';
 

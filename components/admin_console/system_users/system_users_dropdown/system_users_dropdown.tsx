@@ -4,12 +4,12 @@
 import React from 'react';
 import {FormattedMessage} from 'react-intl';
 
-import * as UserUtils from 'mattermost-redux/utils/user_utils';
-import {Permissions} from 'mattermost-redux/constants';
-import {AdminConfig} from 'mattermost-redux/types/config';
-import {UserProfile} from 'mattermost-redux/types/users';
-import {ServerError} from 'mattermost-redux/types/errors';
-import {Bot} from 'mattermost-redux/types/bots';
+import * as UserUtils from 'matterfoss-redux/utils/user_utils';
+import {Permissions} from 'matterfoss-redux/constants';
+import {AdminConfig} from 'matterfoss-redux/types/config';
+import {UserProfile} from 'matterfoss-redux/types/users';
+import {ServerError} from 'matterfoss-redux/types/errors';
+import {Bot} from 'matterfoss-redux/types/bots';
 
 import {adminResetMfa} from 'actions/admin_actions.jsx';
 import FormattedMarkdownMessage from 'components/formatted_markdown_message.jsx';
@@ -193,7 +193,7 @@ export default class SystemUsersDropdown extends React.PureComponent<Props, Stat
                     messageForUsersWithBotAccounts = (
                         <FormattedMarkdownMessage
                             id='deactivate_member_modal.desc.for_users_with_bot_accounts'
-                            defaultMessage='This action deactivates {username}.\n \n * They will be logged out and not have access to any teams or channels on this system.\n * Bot accounts they manage will be disabled along with their integrations. To enable them again, go to [Integrations > Bot Accounts]({siteURL}/_redirect/integrations/bots). [Learn more about bot accounts](!https://mattermost.com/pl/default-bot-accounts).\n \n \n'
+                            defaultMessage='This action deactivates {username}.\n \n * They will be logged out and not have access to any teams or channels on this system.\n * Bot accounts they manage will be disabled along with their integrations. To enable them again, go to [Integrations > Bot Accounts]({siteURL}/_redirect/integrations/bots). [Learn more about bot accounts](!https://matterfoss.com/pl/default-bot-accounts).\n \n \n'
                             values={{
                                 username: user.username,
                                 siteURL: getSiteURL(),

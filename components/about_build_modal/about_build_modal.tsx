@@ -5,10 +5,10 @@ import React from 'react';
 import {Modal} from 'react-bootstrap';
 import {FormattedMessage} from 'react-intl';
 
-import {ClientConfig, ClientLicense} from 'mattermost-redux/types/config';
+import {ClientConfig, ClientLicense} from 'matterfoss-redux/types/config';
 
 import FormattedMarkdownMessage from 'components/formatted_markdown_message';
-import MattermostLogo from 'components/widgets/icons/mattermost_logo';
+import MatterFOSSLogo from 'components/widgets/icons/matterfoss_logo';
 import Nbsp from 'components/html_entities/nbsp';
 
 import {AboutLinks} from 'utils/constants';
@@ -87,14 +87,14 @@ export default class AboutBuildModal extends React.PureComponent<Props, State> {
             <div>
                 <FormattedMessage
                     id='about.teamEditionLearn'
-                    defaultMessage='Join the Mattermost community at '
+                    defaultMessage='Join the MatterFOSS community at '
                 />
                 <a
                     target='_blank'
                     rel='noopener noreferrer'
-                    href='https://mattermost.com/community/'
+                    href='https://matterfoss.com/community/'
                 >
-                    {'mattermost.com/community/'}
+                    {'matterfoss.com/community/'}
                 </a>
             </div>
         );
@@ -124,9 +124,9 @@ export default class AboutBuildModal extends React.PureComponent<Props, State> {
                     <a
                         target='_blank'
                         rel='noopener noreferrer'
-                        href='https://mattermost.com/'
+                        href='https://matterfoss.com/'
                     >
-                        {'mattermost.com'}
+                        {'matterfoss.com'}
                     </a>
                 </div>
             );
@@ -213,7 +213,7 @@ export default class AboutBuildModal extends React.PureComponent<Props, State> {
                     >
                         <FormattedMessage
                             id='about.title'
-                            values={{appTitle: config.SiteName || 'Mattermost'}}
+                            values={{appTitle: config.SiteName || 'MatterFOSS'}}
                             defaultMessage='About {appTitle}'
                         />
                     </Modal.Title>
@@ -221,18 +221,18 @@ export default class AboutBuildModal extends React.PureComponent<Props, State> {
                 <Modal.Body>
                     <div className='about-modal__content'>
                         <div className='about-modal__logo'>
-                            <MattermostLogo/>
+                            <MatterFOSSLogo/>
                         </div>
                         <div>
                             <h3 className='about-modal__title'>
-                                <strong>{'Mattermost'} {title}</strong>
+                                <strong>{'MatterFOSS'} {title}</strong>
                             </h3>
                             <p className='about-modal__subtitle pb-2'>{subTitle}</p>
                             <div className='form-group less'>
                                 <div>
                                     <FormattedMessage
                                         id='about.version'
-                                        defaultMessage='Mattermost Version:'
+                                        defaultMessage='MatterFOSS Version:'
                                     />
                                     <span id='versionString'>{'\u00a0' + mmversion}</span>
                                 </div>
@@ -261,7 +261,7 @@ export default class AboutBuildModal extends React.PureComponent<Props, State> {
                             <div className='about-modal__copyright'>
                                 <FormattedMessage
                                     id='about.copyright'
-                                    defaultMessage='Copyright 2015 - {currentYear} Mattermost, Inc. All rights reserved'
+                                    defaultMessage='Copyright 2015 - {currentYear} MatterFOSS, Inc. All rights reserved'
                                     values={{
                                         currentYear: new Date().getFullYear(),
                                     }}
@@ -278,7 +278,7 @@ export default class AboutBuildModal extends React.PureComponent<Props, State> {
                         <p>
                             <FormattedMarkdownMessage
                                 id='about.notice'
-                                defaultMessage='Mattermost is made possible by the open source software used in our [server](!https://github.com/mattermost/mattermost-server/blob/master/NOTICE.txt), [desktop](!https://github.com/mattermost/desktop/blob/master/NOTICE.txt) and [mobile](!https://github.com/mattermost/mattermost-mobile/blob/master/NOTICE.txt) apps.'
+                                defaultMessage='MatterFOSS is made possible by the open source software used in our [server](!https://github.com/matterfoss/matterfoss-server/blob/master/NOTICE.txt), [desktop](!https://github.com/matterfoss/desktop/blob/master/NOTICE.txt) and [mobile](!https://github.com/matterfoss/matterfoss-mobile/blob/master/NOTICE.txt) apps.'
                             />
                         </p>
                     </div>

@@ -5,11 +5,11 @@ import {useMemo, useCallback} from 'react';
 import {useParams, useHistory} from 'react-router-dom';
 import {useSelector, shallowEqual} from 'react-redux';
 
-import {UserThread} from 'mattermost-redux/types/threads';
-import {Team} from 'mattermost-redux/types/teams';
+import {UserThread} from 'matterfoss-redux/types/threads';
+import {Team} from 'matterfoss-redux/types/teams';
 
-import {getCurrentUserId} from 'mattermost-redux/selectors/entities/users';
-import {getCurrentTeamId} from 'mattermost-redux/selectors/entities/teams';
+import {getCurrentUserId} from 'matterfoss-redux/selectors/entities/users';
+import {getCurrentTeamId} from 'matterfoss-redux/selectors/entities/teams';
 
 /**
  * GlobalThreads-specific hook for nav/routing, selection, and common data needed for actions.

@@ -1,10 +1,10 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
-import {ChannelTypes, UserTypes, PostTypes, AdminTypes} from 'mattermost-redux/action_types';
-import deepFreeze from 'mattermost-redux/utils/deep_freeze';
+import {ChannelTypes, UserTypes, PostTypes, AdminTypes} from 'matterfoss-redux/action_types';
+import deepFreeze from 'matterfoss-redux/utils/deep_freeze';
 
-import {General, Permissions} from 'mattermost-redux/constants';
+import {General, Permissions} from 'matterfoss-redux/constants';
 
 import channelsReducer, * as Reducers from './channels';
 

@@ -23,7 +23,7 @@ describe('Team Settings', () => {
     const sysadmin = getAdminAccount();
     const randomId = getRandomId();
     const username = `user${randomId}`;
-    const email = `user${randomId}@sample.mattermost.com`;
+    const email = `user${randomId}@sample.matterfoss.com`;
     const password = 'passwd';
 
     let testTeam;
@@ -114,7 +114,7 @@ describe('Team Settings', () => {
         // * Check that the display name of the team the user was invited to is being correctly displayed
         cy.uiGetLHSHeader().findByText(testTeam.display_name);
 
-        // * Check that the 'Welcome to Mattermost' message is visible
+        // * Check that the 'Welcome to MatterFOSS' message is visible
         cy.findByText(`Welcome to ${siteName}`).should('be.visible');
     });
 });

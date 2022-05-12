@@ -1,26 +1,26 @@
 # Testing with subpath servers
-Some tests need multiple servers running in subpath mode. These tests have the cypress `Group: @subpath` metadata near the top of the test file. Instructions on running a server under subpath can be found here: [https://developers.mattermost.com/blog/subpath/](https://developers.mattermost.com/blog/subpath/)
+Some tests need multiple servers running in subpath mode. These tests have the cypress `Group: @subpath` metadata near the top of the test file. Instructions on running a server under subpath can be found here: [https://developers.matterfoss.com/blog/subpath/](https://developers.matterfoss.com/blog/subpath/)
 
 In the `cypress.json` configuration file, the `baseURL` setting will need to be updated with the subpath URL of the first server, and the `secondServerURL` setting with the subpath URL of the second server.
 
 ### Running subpath tests on local machine
-Two mattermost servers running on the same machine must be served from different ports. To have the servers respond on the same URL and the same port under different subpaths, you will need to use a reverse proxy (nginx or apache) to proxy the same local url to both mattermost servers under different subpaths.
+Two matterfoss servers running on the same machine must be served from different ports. To have the servers respond on the same URL and the same port under different subpaths, you will need to use a reverse proxy (nginx or apache) to proxy the same local url to both matterfoss servers under different subpaths.
 
 #### Example set up using NGINX:
 
-You'll need to run two Mattermost servers.
+You'll need to run two MatterFOSS servers.
 
 1. Set the `SiteURL` and the listening port for the first server:
 
 ```
-"SiteURL": "http://localhost/company/mattermost1"
+"SiteURL": "http://localhost/company/matterfoss1"
 "ListenAddress": ":8065",
 ```
 
 2. Set the `SiteURL` and the listening port for the second server:
 
 ```
-"SiteURL": "http://localhost/company/mattermost2"
+"SiteURL": "http://localhost/company/matterfoss2"
 "ListenAddress": ":8066",
 ```
 
@@ -28,7 +28,7 @@ The DB `DataSource` will need to be different for both servers.
 
 3. Install NGINX -  exact steps depend on your OS
 
-4. Update your NGINX site configuration. The specific details for each setting can be found in the [Mattermost docs](https://docs.mattermost.com/install/config-proxy-nginx.html)
+4. Update your NGINX site configuration. The specific details for each setting can be found in the [MatterFOSS docs](https://docs.matterfoss.com/install/config-proxy-nginx.html)
 
 ```
 upstream backend1 {
@@ -45,7 +45,7 @@ server {
         listen 80 default_server;
         listen [::]:80 default_server;
 
-        location ~ /company/mattermost1/api/v[0-9]+/(users/)?websocket$ {
+        location ~ /company/matterfoss1/api/v[0-9]+/(users/)?websocket$ {
                client_body_timeout 60;
                client_max_body_size 50M;
                lingering_timeout 5;
@@ -65,7 +65,7 @@ server {
                send_timeout 300;
         }
 
-        location /company/mattermost1 {
+        location /company/matterfoss1 {
                 client_max_body_size 50M;
                 proxy_buffer_size 16k;
                 proxy_buffers 256 16k;
@@ -84,7 +84,7 @@ server {
                 proxy_set_header X-Real-IP $remote_addr;
         }
 
-        location ~ /company/mattermost2/api/v[0-9]+/(users/)?websocket$ {
+        location ~ /company/matterfoss2/api/v[0-9]+/(users/)?websocket$ {
                client_body_timeout 60;
                client_max_body_size 50M;
                lingering_timeout 5;
@@ -104,7 +104,7 @@ server {
                send_timeout 300;
         }
 
-        location /company/mattermost2 {
+        location /company/matterfoss2 {
                 proxy_buffer_size 16k;
                 proxy_buffers 256 16k;
                 proxy_cache_lock on;
@@ -127,6 +127,6 @@ server {
 
 5. Restart NGINX to reload the configuration. Exact steps depend on your OS/distribution. On most Linux distributions you can run `sudo systemctl restart nginx`
 
-6. In the `cypress.json` file, set `baseURL` to  `"http://localhost/company/mattermost1"` and `secondServerURL` to `"http://localhost/company/mattermost2"`
+6. In the `cypress.json` file, set `baseURL` to  `"http://localhost/company/matterfoss1"` and `secondServerURL` to `"http://localhost/company/matterfoss2"`
 
-7. Start both Mattermost tests and run the e2e tests.
+7. Start both MatterFOSS tests and run the e2e tests.

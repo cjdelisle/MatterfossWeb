@@ -1,10 +1,10 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
-import mergeObjects from 'mattermost-redux/test/merge_objects';
-import TestHelper from 'mattermost-redux/test/test_helper';
+import mergeObjects from 'matterfoss-redux/test/merge_objects';
+import TestHelper from 'matterfoss-redux/test/test_helper';
 
-import deepFreezeAndThrowOnMutation from 'mattermost-redux/utils/deep_freeze';
+import deepFreezeAndThrowOnMutation from 'matterfoss-redux/utils/deep_freeze';
 
 import * as Selectors from './emojis';
 

@@ -7,7 +7,7 @@ import {FormattedMessage} from 'react-intl';
 
 import {Constants} from 'utils/constants';
 import * as Utils from 'utils/utils.jsx';
-import * as UserUtils from 'mattermost-redux/utils/user_utils';
+import * as UserUtils from 'matterfoss-redux/utils/user_utils';
 
 import DropdownIcon from 'components/widgets/icons/fa_dropdown_icon';
 import Menu from 'components/widgets/menu/menu';

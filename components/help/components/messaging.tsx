@@ -22,7 +22,7 @@ export default function Messaging(): JSX.Element {
             <p>
                 <FormattedMarkdownMessage
                     id='help.messaging.write'
-                    defaultMessage='**Write Messages:** Use the text input box at the bottom of the Mattermost interface to write a message. Press **ENTER** to send the message. Use **SHIFT+ENTER** to create a new line without sending a message.'
+                    defaultMessage='**Write Messages:** Use the text input box at the bottom of the MatterFOSS interface to write a message. Press **ENTER** to send the message. Use **SHIFT+ENTER** to create a new line without sending a message.'
                 />
             </p>
             <p>
@@ -33,7 +33,7 @@ export default function Messaging(): JSX.Element {
             </p>
             <p>
                 <img
-                    src='https://docs.mattermost.com/_images/reply-icon.png'
+                    src='https://docs.matterfoss.com/_images/reply-icon.png'
                     alt='Reply Arrow icon'
                     className='markdown-inline-img'
                 />
@@ -52,7 +52,7 @@ export default function Messaging(): JSX.Element {
             </p>
             <p>
                 <img
-                    src='https://docs.mattermost.com/_images/messagesTable1.png'
+                    src='https://docs.matterfoss.com/_images/messagesTable1.png'
                     alt='Use Markdown in your messages'
                     className='markdown-inline-img'
                 />
@@ -60,13 +60,13 @@ export default function Messaging(): JSX.Element {
             <p>
                 <FormattedMarkdownMessage
                     id='help.messaging.emoji'
-                    defaultMessage={'**Add Emoji:** Type ":" to open an emoji autocomplete. If the existing emojis don\'t say what you want to express, you can also create your own [Custom Emoji](!https://docs.mattermost.com/messaging/using-emoji.html#creating-custom-emojis).'}
+                    defaultMessage={'**Add Emoji:** Type ":" to open an emoji autocomplete. If the existing emojis don\'t say what you want to express, you can also create your own [Custom Emoji](!https://docs.matterfoss.com/messaging/using-emoji.html#creating-custom-emojis).'}
                 />
             </p>
             <p>
                 <FormattedMarkdownMessage
                     id='help.messaging.attach'
-                    defaultMessage='**Attach Files:** Drag and drop files into Mattermost, or select the **Attachment** icon in the text input box.'
+                    defaultMessage='**Attach Files:** Drag and drop files into MatterFOSS, or select the **Attachment** icon in the text input box.'
                 />
             </p>
             <HelpLinks excludedLinks={[HelpLink.Messaging]}/>

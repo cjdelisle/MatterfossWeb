@@ -3,11 +3,11 @@
 
 import assert from 'assert';
 
-import deepFreezeAndThrowOnMutation from 'mattermost-redux/utils/deep_freeze';
-import TestHelper from 'mattermost-redux/test/test_helper';
-import * as Selectors from 'mattermost-redux/selectors/entities/roles';
-import {General, Permissions} from 'mattermost-redux/constants';
-import {getMySystemPermissions, getMySystemRoles, getRoles} from 'mattermost-redux/selectors/entities/roles_helpers';
+import deepFreezeAndThrowOnMutation from 'matterfoss-redux/utils/deep_freeze';
+import TestHelper from 'matterfoss-redux/test/test_helper';
+import * as Selectors from 'matterfoss-redux/selectors/entities/roles';
+import {General, Permissions} from 'matterfoss-redux/constants';
+import {getMySystemPermissions, getMySystemRoles, getRoles} from 'matterfoss-redux/selectors/entities/roles_helpers';
 
 describe('Selectors.Roles', () => {
     const team1 = TestHelper.fakeTeamWithId();

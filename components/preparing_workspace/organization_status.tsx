@@ -46,7 +46,7 @@ const OrganizationStatus = (props: {
                     values={{
                         a: (chunks: React.ReactNode | React.ReactNodeArray) => (
                             <a
-                                href='https://docs.mattermost.com/messaging/creating-teams.html#team-url'
+                                href='https://docs.matterfoss.com/messaging/creating-teams.html#team-url'
                                 target='_blank'
                                 rel='noreferrer'
                             >

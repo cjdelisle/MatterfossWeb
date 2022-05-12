@@ -5,10 +5,10 @@ import React from 'react';
 import {Modal} from 'react-bootstrap';
 import {FormattedMessage} from 'react-intl';
 
-import {ActionFunc} from 'mattermost-redux/types/actions';
-import {UserProfile} from 'mattermost-redux/types/users';
+import {ActionFunc} from 'matterfoss-redux/types/actions';
+import {UserProfile} from 'matterfoss-redux/types/users';
 
-import * as UserUtils from 'mattermost-redux/utils/user_utils';
+import * as UserUtils from 'matterfoss-redux/utils/user_utils';
 import FormattedMarkdownMessage from 'components/formatted_markdown_message.jsx';
 
 import Constants from 'utils/constants';

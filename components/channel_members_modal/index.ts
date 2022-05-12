@@ -4,8 +4,8 @@
 import {bindActionCreators, Dispatch, ActionCreatorsMapObject} from 'redux';
 import {connect} from 'react-redux';
 
-import {canManageChannelMembers} from 'mattermost-redux/selectors/entities/channels';
-import {Action} from 'mattermost-redux/types/actions';
+import {canManageChannelMembers} from 'matterfoss-redux/selectors/entities/channels';
+import {Action} from 'matterfoss-redux/types/actions';
 
 import {openModal} from 'actions/views/modals';
 

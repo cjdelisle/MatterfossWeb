@@ -1,14 +1,14 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
-import * as EmojiActions from 'mattermost-redux/actions/emojis';
-import {getCustomEmojisByName} from 'mattermost-redux/selectors/entities/emojis';
-import {getConfig} from 'mattermost-redux/selectors/entities/general';
-import {getCurrentUserId} from 'mattermost-redux/selectors/entities/users';
+import * as EmojiActions from 'matterfoss-redux/actions/emojis';
+import {getCustomEmojisByName} from 'matterfoss-redux/selectors/entities/emojis';
+import {getConfig} from 'matterfoss-redux/selectors/entities/general';
+import {getCurrentUserId} from 'matterfoss-redux/selectors/entities/users';
 
 import {getEmojiMap, getRecentEmojis, isCustomEmojiEnabled} from 'selectors/emojis';
 import {isCustomStatusEnabled, makeGetCustomStatus} from 'selectors/views/custom_status';
-import {savePreferences} from 'mattermost-redux/actions/preferences';
+import {savePreferences} from 'matterfoss-redux/actions/preferences';
 import LocalStorageStore from 'stores/local_storage_store';
 
 import {ActionTypes, Preferences} from 'utils/constants';

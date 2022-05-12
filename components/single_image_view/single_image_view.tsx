@@ -5,8 +5,8 @@ import React from 'react';
 
 import classNames from 'classnames';
 
-import {getFilePreviewUrl, getFileUrl} from 'mattermost-redux/utils/file_utils';
-import {FileInfo} from 'mattermost-redux/types/files';
+import {getFilePreviewUrl, getFileUrl} from 'matterfoss-redux/utils/file_utils';
+import {FileInfo} from 'matterfoss-redux/types/files';
 
 import SizeAwareImage from 'components/size_aware_image';
 import {FileTypes, ModalIdentifiers} from 'utils/constants';

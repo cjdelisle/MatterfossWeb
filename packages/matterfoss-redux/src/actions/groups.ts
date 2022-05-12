@@ -1,11 +1,11 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
-import {GroupTypes, UserTypes} from 'mattermost-redux/action_types';
+import {GroupTypes, UserTypes} from 'matterfoss-redux/action_types';
 import {General, Groups} from '../constants';
-import {Client4} from 'mattermost-redux/client';
+import {Client4} from 'matterfoss-redux/client';
 
-import {Action, ActionFunc, batchActions, DispatchFunc, GetStateFunc} from 'mattermost-redux/types/actions';
-import {GroupPatch, SyncableType, SyncablePatch, GroupCreateWithUserIds, CustomGroupPatch, GroupSearachParams} from 'mattermost-redux/types/groups';
+import {Action, ActionFunc, batchActions, DispatchFunc, GetStateFunc} from 'matterfoss-redux/types/actions';
+import {GroupPatch, SyncableType, SyncablePatch, GroupCreateWithUserIds, CustomGroupPatch, GroupSearachParams} from 'matterfoss-redux/types/groups';
 
 import Constants from 'utils/constants';
 

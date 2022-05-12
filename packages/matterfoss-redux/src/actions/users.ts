@@ -1,20 +1,20 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
-import {Action, ActionFunc, ActionResult, batchActions, DispatchFunc, GetStateFunc} from 'mattermost-redux/types/actions';
-import {UserProfile, UserStatus, GetFilteredUsersStatsOpts, UsersStats, UserCustomStatus} from 'mattermost-redux/types/users';
-import {TeamMembership} from 'mattermost-redux/types/teams';
-import {Client4} from 'mattermost-redux/client';
+import {Action, ActionFunc, ActionResult, batchActions, DispatchFunc, GetStateFunc} from 'matterfoss-redux/types/actions';
+import {UserProfile, UserStatus, GetFilteredUsersStatsOpts, UsersStats, UserCustomStatus} from 'matterfoss-redux/types/users';
+import {TeamMembership} from 'matterfoss-redux/types/teams';
+import {Client4} from 'matterfoss-redux/client';
 import {General} from '../constants';
-import {UserTypes, TeamTypes, AdminTypes} from 'mattermost-redux/action_types';
+import {UserTypes, TeamTypes, AdminTypes} from 'matterfoss-redux/action_types';
 
-import {removeUserFromList} from 'mattermost-redux/utils/user_utils';
+import {removeUserFromList} from 'matterfoss-redux/utils/user_utils';
 
-import {isMinimumServerVersion} from 'mattermost-redux/utils/helpers';
+import {isMinimumServerVersion} from 'matterfoss-redux/utils/helpers';
 
-import {getConfig, getServerVersion} from 'mattermost-redux/selectors/entities/general';
+import {getConfig, getServerVersion} from 'matterfoss-redux/selectors/entities/general';
 
-import {getCurrentUserId, getUsers} from 'mattermost-redux/selectors/entities/users';
+import {getCurrentUserId, getUsers} from 'matterfoss-redux/selectors/entities/users';
 
 import {isCollapsedThreadsEnabled} from '../selectors/entities/preferences';
 

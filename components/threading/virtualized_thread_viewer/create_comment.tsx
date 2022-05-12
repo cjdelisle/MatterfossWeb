@@ -4,15 +4,15 @@
 import React, {memo, forwardRef, useMemo} from 'react';
 import {useSelector} from 'react-redux';
 
-import {makeGetChannel} from 'mattermost-redux/selectors/entities/channels';
-import {getPost} from 'mattermost-redux/selectors/entities/posts';
-import {UserProfile} from 'mattermost-redux/types/users';
-import {Post} from 'mattermost-redux/types/posts';
+import {makeGetChannel} from 'matterfoss-redux/selectors/entities/channels';
+import {getPost} from 'matterfoss-redux/selectors/entities/posts';
+import {UserProfile} from 'matterfoss-redux/types/users';
+import {Post} from 'matterfoss-redux/types/posts';
 
 import GenericCreateComment from 'components/create_comment';
 import FormattedMarkdownMessage from 'components/formatted_markdown_message';
 import Constants from 'utils/constants';
-import {Posts} from 'mattermost-redux/constants';
+import {Posts} from 'matterfoss-redux/constants';
 import {GlobalState} from 'types/store';
 
 type Props = {

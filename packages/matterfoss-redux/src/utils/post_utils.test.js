@@ -3,7 +3,7 @@
 
 import assert from 'assert';
 
-import {PostTypes} from 'mattermost-redux/constants/posts';
+import {PostTypes} from 'matterfoss-redux/constants/posts';
 import {Permissions} from '../constants';
 
 import {
@@ -17,7 +17,7 @@ import {
     getEmbedFromMetadata,
     shouldUpdatePost,
     isPermalink,
-} from 'mattermost-redux/utils/post_utils';
+} from 'matterfoss-redux/utils/post_utils';
 
 describe('PostUtils', () => {
     describe('shouldFilterJoinLeavePost', () => {

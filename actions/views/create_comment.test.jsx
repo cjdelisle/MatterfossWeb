@@ -8,8 +8,8 @@ import {
     removeReaction,
     addMessageIntoHistory,
     moveHistoryIndexBack,
-} from 'mattermost-redux/actions/posts';
-import {Posts} from 'mattermost-redux/constants';
+} from 'matterfoss-redux/actions/posts';
+import {Posts} from 'matterfoss-redux/constants';
 
 import {
     clearCommentDraftUploads,
@@ -31,7 +31,7 @@ import {StoragePrefixes} from 'utils/constants';
 
 const mockStore = configureStore([thunk]);
 
-jest.mock('mattermost-redux/actions/posts', () => ({
+jest.mock('matterfoss-redux/actions/posts', () => ({
     removeReaction: (...args) => ({type: 'MOCK_REMOVE_REACTION', args}),
     addMessageIntoHistory: (...args) => ({type: 'MOCK_ADD_MESSAGE_INTO_HISTORY', args}),
     moveHistoryIndexBack: (...args) => ({type: 'MOCK_MOVE_MESSAGE_HISTORY_BACK', args}),

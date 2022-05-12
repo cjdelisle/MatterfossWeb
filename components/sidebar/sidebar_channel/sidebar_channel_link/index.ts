@@ -4,14 +4,14 @@
 import {connect} from 'react-redux';
 import {bindActionCreators, Dispatch} from 'redux';
 
-import {isFirstAdmin} from 'mattermost-redux/selectors/entities/users';
-import {getCurrentUserId, getMyChannelMemberships} from 'mattermost-redux/selectors/entities/common';
-import {getInt} from 'mattermost-redux/selectors/entities/preferences';
-import {Channel} from 'mattermost-redux/types/channels';
-import {GenericAction} from 'mattermost-redux/types/actions';
-import {isChannelMuted} from 'mattermost-redux/utils/channel_utils';
-import {makeGetChannelUnreadCount} from 'mattermost-redux/selectors/entities/channels';
-import {getConfig} from 'mattermost-redux/selectors/entities/general';
+import {isFirstAdmin} from 'matterfoss-redux/selectors/entities/users';
+import {getCurrentUserId, getMyChannelMemberships} from 'matterfoss-redux/selectors/entities/common';
+import {getInt} from 'matterfoss-redux/selectors/entities/preferences';
+import {Channel} from 'matterfoss-redux/types/channels';
+import {GenericAction} from 'matterfoss-redux/types/actions';
+import {isChannelMuted} from 'matterfoss-redux/utils/channel_utils';
+import {makeGetChannelUnreadCount} from 'matterfoss-redux/selectors/entities/channels';
+import {getConfig} from 'matterfoss-redux/selectors/entities/general';
 import {clearChannelSelection, multiSelectChannelAdd, multiSelectChannelTo} from 'actions/views/channel_sidebar';
 import {getFirstChannelName} from 'selectors/onboarding';
 import {unsetEditingPost} from 'actions/post_actions';

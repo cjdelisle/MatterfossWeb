@@ -1,9 +1,9 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
-import {EmojiTypes, PostTypes} from 'mattermost-redux/action_types';
-import {customEmoji as customEmojiReducer} from 'mattermost-redux/reducers/entities/emojis';
-import deepFreeze from 'mattermost-redux/utils/deep_freeze';
+import {EmojiTypes, PostTypes} from 'matterfoss-redux/action_types';
+import {customEmoji as customEmojiReducer} from 'matterfoss-redux/reducers/entities/emojis';
+import deepFreeze from 'matterfoss-redux/utils/deep_freeze';
 
 describe('reducers/entities/emojis', () => {
     describe('customEmoji', () => {

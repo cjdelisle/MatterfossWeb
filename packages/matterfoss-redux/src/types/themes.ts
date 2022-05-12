@@ -1,11 +1,11 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
-export type LegacyThemeKey = 'default' | 'organization' | 'mattermostDark' | 'windows10';
+export type LegacyThemeKey = 'default' | 'organization' | 'matterfossDark' | 'windows10';
 
 export type ThemeKey = 'denim' | 'sapphire' | 'quartz' | 'indigo' | 'onyx';
 
-export type LegacyThemeType = 'Mattermost' | 'Organization' | 'Mattermost Dark' | 'Windows Dark';
+export type LegacyThemeType = 'MatterFOSS' | 'Organization' | 'MatterFOSS Dark' | 'Windows Dark';
 
 export type ThemeType = 'Denim' | 'Sapphire' | 'Quartz' | 'Indigo' | 'Onyx';
 

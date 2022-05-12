@@ -4,7 +4,7 @@
 import React from 'react';
 import {useIntl} from 'react-intl';
 
-import {Job} from 'mattermost-redux/types/jobs';
+import {Job} from 'matterfoss-redux/types/jobs';
 
 import {JobStatuses} from 'utils/constants';
 

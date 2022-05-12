@@ -6,7 +6,7 @@ import {Redirect} from 'react-router';
 
 import semver from 'semver';
 
-import {viewChannel} from 'mattermost-redux/actions/channels';
+import {viewChannel} from 'matterfoss-redux/actions/channels';
 
 import * as GlobalActions from 'actions/global_actions';
 import * as WebSocketActions from 'actions/websocket_actions.jsx';
@@ -16,8 +16,8 @@ import {getBrowserTimezone} from 'utils/timezone.jsx';
 import store from 'stores/redux_store.jsx';
 import WebSocketClient from 'client/web_websocket_client.jsx';
 import BrowserStore from 'stores/browser_store';
-import {UserProfile} from 'mattermost-redux/types/users';
-import {Channel} from 'mattermost-redux/types/channels';
+import {UserProfile} from 'matterfoss-redux/types/users';
+import {Channel} from 'matterfoss-redux/types/channels';
 
 const dispatch = store.dispatch;
 const getState = store.getState;

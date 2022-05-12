@@ -5,7 +5,7 @@ import * as TIMEOUTS from '../../fixtures/timeouts';
 
 // *****************************************************************************
 // Plugins
-// https://api.mattermost.com/#tag/plugins
+// https://api.matterfoss.com/#tag/plugins
 // *****************************************************************************
 
 Cypress.Commands.add('apiGetAllPlugins', () => {
@@ -136,17 +136,17 @@ Cypress.Commands.add('apiDisablePluginById', (pluginId) => {
 
 const prepackagedPlugins = [
     'antivirus',
-    'mattermost-autolink',
-    'com.mattermost.aws-sns',
-    'com.mattermost.plugin-channel-export',
-    'com.mattermost.custom-attributes',
+    'matterfoss-autolink',
+    'com.matterfoss.aws-sns',
+    'com.matterfoss.plugin-channel-export',
+    'com.matterfoss.custom-attributes',
     'github',
-    'com.github.manland.mattermost-plugin-gitlab',
-    'com.mattermost.plugin-incident-management',
+    'com.github.manland.matterfoss-plugin-gitlab',
+    'com.matterfoss.plugin-incident-management',
     'jenkins',
     'jira',
-    'com.mattermost.nps',
-    'com.mattermost.welcomebot',
+    'com.matterfoss.nps',
+    'com.matterfoss.welcomebot',
     'zoom',
 ];
 

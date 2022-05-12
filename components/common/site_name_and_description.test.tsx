@@ -10,7 +10,7 @@ import SiteNameAndDescription from 'components/common/site_name_and_description'
 describe('/components/common/SiteNameAndDescription', () => {
     const baseProps = {
         customDescriptionText: '',
-        siteName: 'Mattermost',
+        siteName: 'MatterFOSS',
     };
 
     test('should match snapshot, default', () => {

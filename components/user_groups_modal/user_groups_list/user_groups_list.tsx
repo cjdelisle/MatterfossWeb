@@ -4,7 +4,7 @@ import React from 'react';
 
 import {FormattedMessage} from 'react-intl';
 
-import {Group, GroupPermissions} from 'mattermost-redux/types/groups';
+import {Group, GroupPermissions} from 'matterfoss-redux/types/groups';
 
 import NoResultsIndicator from 'components/no_results_indicator';
 import {NoResultsVariant} from 'components/no_results_indicator/types';
@@ -13,7 +13,7 @@ import MenuWrapper from 'components/widgets/menu/menu_wrapper';
 import Menu from 'components/widgets/menu/menu';
 
 import * as Utils from 'utils/utils.jsx';
-import {ActionResult} from 'mattermost-redux/types/actions';
+import {ActionResult} from 'matterfoss-redux/types/actions';
 import {ModalData} from 'types/actions';
 import {ModalIdentifiers} from 'utils/constants';
 import ViewUserGroupModal from 'components/view_user_group_modal';

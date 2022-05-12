@@ -3,8 +3,8 @@
 
 import assert from 'assert';
 
-import TestHelper from 'mattermost-redux/test/test_helper';
-import * as Selectors from 'mattermost-redux/selectors/entities/i18n';
+import TestHelper from 'matterfoss-redux/test/test_helper';
+import * as Selectors from 'matterfoss-redux/selectors/entities/i18n';
 
 describe('Selectors.I18n', () => {
     describe('getCurrentUserLocale', () => {

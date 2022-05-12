@@ -7,8 +7,8 @@ import {
     PostTypes,
     SearchTypes,
     UserTypes,
-} from 'mattermost-redux/action_types';
-import reducer from 'mattermost-redux/reducers/entities/search';
+} from 'matterfoss-redux/action_types';
+import reducer from 'matterfoss-redux/reducers/entities/search';
 
 describe('reducers.entities.search', () => {
     describe('results', () => {

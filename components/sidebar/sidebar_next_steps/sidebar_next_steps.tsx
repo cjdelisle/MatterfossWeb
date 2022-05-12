@@ -8,7 +8,7 @@ import {matchPath} from 'react-router-dom';
 
 import {browserHistory} from 'utils/browser_history';
 
-import {PreferenceType} from 'mattermost-redux/types/preferences';
+import {PreferenceType} from 'matterfoss-redux/types/preferences';
 
 import {trackEvent} from 'actions/telemetry_actions';
 

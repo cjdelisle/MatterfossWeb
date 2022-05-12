@@ -8,11 +8,11 @@ import {FormattedDate, FormattedMessage} from 'react-intl';
 
 import marked from 'marked';
 
-import {DispatchFunc} from 'mattermost-redux/types/actions';
-import {uploadLicense} from 'mattermost-redux/actions/admin';
-import {getLicenseConfig} from 'mattermost-redux/actions/general';
-import {getLicense} from 'mattermost-redux/selectors/entities/general';
-import {ClientLicense} from 'mattermost-redux/types/config';
+import {DispatchFunc} from 'matterfoss-redux/types/actions';
+import {uploadLicense} from 'matterfoss-redux/actions/admin';
+import {getLicenseConfig} from 'matterfoss-redux/actions/general';
+import {getLicense} from 'matterfoss-redux/selectors/entities/general';
+import {ClientLicense} from 'matterfoss-redux/types/config';
 import {getCurrentLocale} from 'selectors/i18n';
 
 import {GlobalState} from 'types/store';
@@ -127,7 +127,7 @@ const UploadLicenseModal = (props: Props): JSX.Element | null => {
                 <div className='subtitle'>
                     <FormattedMessage
                         id='admin.license.upload-modal.subtitle'
-                        defaultMessage='Upload a license key for Mattermost Enterprise Edition to upgrade this server. '
+                        defaultMessage='Upload a license key for MatterFOSS Enterprise Edition to upgrade this server. '
                     />
                 </div>
                 <div className='file-upload'>

@@ -20,7 +20,7 @@ export enum HostingType {
 }
 
 export enum AuthorType {
-    Mattermost = 'mattermost',
+    MatterFOSS = 'matterfoss',
     Partner = 'partner',
     Community = 'community',
 }

@@ -6,10 +6,10 @@ import {bindActionCreators} from 'redux';
 
 import {createSelector} from 'reselect';
 
-import {getAllChannelStats} from 'mattermost-redux/selectors/entities/channels';
-import {getCurrentRelativeTeamUrl} from 'mattermost-redux/selectors/entities/teams';
-import {getCurrentUserId, getUserStatuses, makeGetProfilesInChannel} from 'mattermost-redux/selectors/entities/users';
-import {getTeammateNameDisplaySetting, getAddMembersToChannel} from 'mattermost-redux/selectors/entities/preferences';
+import {getAllChannelStats} from 'matterfoss-redux/selectors/entities/channels';
+import {getCurrentRelativeTeamUrl} from 'matterfoss-redux/selectors/entities/teams';
+import {getCurrentUserId, getUserStatuses, makeGetProfilesInChannel} from 'matterfoss-redux/selectors/entities/users';
+import {getTeammateNameDisplaySetting, getAddMembersToChannel} from 'matterfoss-redux/selectors/entities/preferences';
 
 import {openDirectChannelToUserId} from 'actions/channel_actions.jsx';
 import {loadProfilesAndStatusesInChannel} from 'actions/user_actions.jsx';

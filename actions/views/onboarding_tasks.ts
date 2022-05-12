@@ -1,8 +1,8 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
-import {getCurrentTeamId, getTeam} from 'mattermost-redux/selectors/entities/teams';
-import {getCurrentUserId} from 'mattermost-redux/selectors/entities/common';
-import {DispatchFunc, GetStateFunc} from 'mattermost-redux/types/actions';
+import {getCurrentTeamId, getTeam} from 'matterfoss-redux/selectors/entities/teams';
+import {getCurrentUserId} from 'matterfoss-redux/selectors/entities/common';
+import {DispatchFunc, GetStateFunc} from 'matterfoss-redux/types/actions';
 import {GlobalState} from 'types/store';
 import {browserHistory} from 'utils/browser_history';
 import InvitationModal from 'components/invitation_modal';

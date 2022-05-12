@@ -3,10 +3,10 @@
 
 import {useSelector} from 'react-redux';
 
-import {getCurrentUserId} from 'mattermost-redux/selectors/entities/users';
+import {getCurrentUserId} from 'matterfoss-redux/selectors/entities/users';
 
 import {GlobalState} from 'types/store';
-import {getInt} from 'mattermost-redux/selectors/entities/preferences';
+import {getInt} from 'matterfoss-redux/selectors/entities/preferences';
 
 import {TutorialTourName} from './constant';
 

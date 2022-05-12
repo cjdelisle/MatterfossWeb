@@ -3,7 +3,7 @@
 
 import assert from 'assert';
 
-import {isMinimumServerVersion, isEmail} from 'mattermost-redux/utils/helpers';
+import {isMinimumServerVersion, isEmail} from 'matterfoss-redux/utils/helpers';
 
 describe('Helpers', () => {
     it('isMinimumServerVersion', () => {

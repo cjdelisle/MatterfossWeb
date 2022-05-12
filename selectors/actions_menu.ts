@@ -2,8 +2,8 @@
 // See LICENSE.txt for license information.
 
 import {GlobalState} from 'types/store';
-import {get} from 'mattermost-redux/selectors/entities/preferences';
-import {Preferences} from 'mattermost-redux/constants';
+import {get} from 'matterfoss-redux/selectors/entities/preferences';
+import {Preferences} from 'matterfoss-redux/constants';
 import {getIsMobileView} from 'selectors/views/browser';
 
 export function showActionsDropdownPulsatingDot(state: GlobalState): boolean {

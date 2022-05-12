@@ -4,13 +4,13 @@
 import {connect} from 'react-redux';
 import {ActionCreatorsMapObject, bindActionCreators, Dispatch} from 'redux';
 
-import {ActionFunc, GenericAction} from 'mattermost-redux/types/actions';
-import {Channel} from 'mattermost-redux/types/channels';
-import {UserProfile} from 'mattermost-redux/types/users';
+import {ActionFunc, GenericAction} from 'matterfoss-redux/types/actions';
+import {Channel} from 'matterfoss-redux/types/channels';
+import {UserProfile} from 'matterfoss-redux/types/users';
 
-import {getTeammateNameDisplaySetting} from 'mattermost-redux/selectors/entities/preferences';
+import {getTeammateNameDisplaySetting} from 'matterfoss-redux/selectors/entities/preferences';
 
-import {GlobalState} from 'mattermost-redux/types/store';
+import {GlobalState} from 'matterfoss-redux/types/store';
 
 import {autocompleteChannels} from 'actions/channel_actions';
 import {autocompleteUsers} from 'actions/user_actions';

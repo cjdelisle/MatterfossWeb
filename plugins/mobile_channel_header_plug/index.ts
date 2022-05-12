@@ -4,13 +4,13 @@
 import {connect} from 'react-redux';
 import {ActionCreatorsMapObject, bindActionCreators, Dispatch} from 'redux';
 
-import {getTheme} from 'mattermost-redux/selectors/entities/preferences';
-import {getMyCurrentChannelMembership} from 'mattermost-redux/selectors/entities/channels';
+import {getTheme} from 'matterfoss-redux/selectors/entities/preferences';
+import {getMyCurrentChannelMembership} from 'matterfoss-redux/selectors/entities/channels';
 
-import {appsEnabled, makeAppBindingsSelector} from 'mattermost-redux/selectors/entities/apps';
-import {AppBindingLocations} from 'mattermost-redux/constants/apps';
+import {appsEnabled, makeAppBindingsSelector} from 'matterfoss-redux/selectors/entities/apps';
+import {AppBindingLocations} from 'matterfoss-redux/constants/apps';
 import {GlobalState} from 'types/store';
-import {GenericAction} from 'mattermost-redux/types/actions';
+import {GenericAction} from 'matterfoss-redux/types/actions';
 import {handleBindingClick, openAppsModal, postEphemeralCallResponseForChannel} from 'actions/apps';
 
 import {HandleBindingClick, OpenAppsModal, PostEphemeralCallResponseForChannel} from 'types/apps';

@@ -2,8 +2,8 @@
 // See LICENSE.txt for license information.
 import assert from 'assert';
 
-import TestHelper from 'mattermost-redux/test/test_helper.js';
-import deepFreezeAndThrowOnMutation from 'mattermost-redux/utils/deep_freeze';
+import TestHelper from 'matterfoss-redux/test/test_helper.js';
+import deepFreezeAndThrowOnMutation from 'matterfoss-redux/utils/deep_freeze';
 
 import {UserStatuses} from 'utils/constants';
 

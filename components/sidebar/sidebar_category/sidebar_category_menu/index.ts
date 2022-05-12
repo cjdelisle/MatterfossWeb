@@ -4,11 +4,11 @@
 import {connect} from 'react-redux';
 import {Dispatch, bindActionCreators, ActionCreatorsMapObject} from 'redux';
 
-import {setCategoryMuted, setCategorySorting} from 'mattermost-redux/actions/channel_categories';
-import {getCurrentTeam} from 'mattermost-redux/selectors/entities/teams';
-import {Action} from 'mattermost-redux/types/actions';
-import {CategorySorting} from 'mattermost-redux/types/channel_categories';
-import {GlobalState} from 'mattermost-redux/types/store';
+import {setCategoryMuted, setCategorySorting} from 'matterfoss-redux/actions/channel_categories';
+import {getCurrentTeam} from 'matterfoss-redux/selectors/entities/teams';
+import {Action} from 'matterfoss-redux/types/actions';
+import {CategorySorting} from 'matterfoss-redux/types/channel_categories';
+import {GlobalState} from 'matterfoss-redux/types/store';
 
 import {openModal} from 'actions/views/modals';
 

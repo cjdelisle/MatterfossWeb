@@ -4,20 +4,20 @@
 import {connect} from 'react-redux';
 import {bindActionCreators, Dispatch} from 'redux';
 
-import {makeGetChannel} from 'mattermost-redux/selectors/entities/channels';
-import {getCurrentTeamId} from 'mattermost-redux/selectors/entities/teams';
-import {getCurrentUserId} from 'mattermost-redux/selectors/entities/users';
-import {getPost, makeGetPostIdsForThread} from 'mattermost-redux/selectors/entities/posts';
-import {getThread} from 'mattermost-redux/selectors/entities/threads';
-import {isCollapsedThreadsEnabled} from 'mattermost-redux/selectors/entities/preferences';
-import {appsEnabled} from 'mattermost-redux/selectors/entities/apps';
+import {makeGetChannel} from 'matterfoss-redux/selectors/entities/channels';
+import {getCurrentTeamId} from 'matterfoss-redux/selectors/entities/teams';
+import {getCurrentUserId} from 'matterfoss-redux/selectors/entities/users';
+import {getPost, makeGetPostIdsForThread} from 'matterfoss-redux/selectors/entities/posts';
+import {getThread} from 'matterfoss-redux/selectors/entities/threads';
+import {isCollapsedThreadsEnabled} from 'matterfoss-redux/selectors/entities/preferences';
+import {appsEnabled} from 'matterfoss-redux/selectors/entities/apps';
 
-import {removePost, getPostThread} from 'mattermost-redux/actions/posts';
-import {getThread as fetchThread, updateThreadRead} from 'mattermost-redux/actions/threads';
+import {removePost, getPostThread} from 'matterfoss-redux/actions/posts';
+import {getThread as fetchThread, updateThreadRead} from 'matterfoss-redux/actions/threads';
 
-import {GenericAction} from 'mattermost-redux/types/actions';
-import {UserThread} from 'mattermost-redux/types/threads';
-import {Channel} from 'mattermost-redux/types/channels';
+import {GenericAction} from 'matterfoss-redux/types/actions';
+import {UserThread} from 'matterfoss-redux/types/threads';
+import {Channel} from 'matterfoss-redux/types/channels';
 
 import {getSocketStatus} from 'selectors/views/websocket';
 import {selectPostCard} from 'actions/views/rhs';
@@ -25,7 +25,7 @@ import {getHighlightedPostId, getSelectedPostFocussedAt} from 'selectors/rhs';
 import {updateThreadLastOpened} from 'actions/views/threads';
 import {GlobalState} from 'types/store';
 
-import {fetchRHSAppsBindings} from 'mattermost-redux/actions/apps';
+import {fetchRHSAppsBindings} from 'matterfoss-redux/actions/apps';
 
 import ThreadViewer from './thread_viewer';
 

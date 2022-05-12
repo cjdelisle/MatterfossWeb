@@ -4,14 +4,14 @@
 import {connect} from 'react-redux';
 import {bindActionCreators, Dispatch, ActionCreatorsMapObject} from 'redux';
 
-import {ActionFunc, GenericAction} from 'mattermost-redux/types/actions';
+import {ActionFunc, GenericAction} from 'matterfoss-redux/types/actions';
 
 import {GlobalState} from 'types/store';
 
-import {getCurrentUserId} from 'mattermost-redux/selectors/entities/users';
-import {getAllAssociatedGroupsForReference, getMyAllowReferencedGroups, searchAllowReferencedGroups, searchMyAllowReferencedGroups} from 'mattermost-redux/selectors/entities/groups';
-import {getGroups, getGroupsByUserIdPaginated, searchGroups} from 'mattermost-redux/actions/groups';
-import {Group, GroupSearachParams} from 'mattermost-redux/types/groups';
+import {getCurrentUserId} from 'matterfoss-redux/selectors/entities/users';
+import {getAllAssociatedGroupsForReference, getMyAllowReferencedGroups, searchAllowReferencedGroups, searchMyAllowReferencedGroups} from 'matterfoss-redux/selectors/entities/groups';
+import {getGroups, getGroupsByUserIdPaginated, searchGroups} from 'matterfoss-redux/actions/groups';
+import {Group, GroupSearachParams} from 'matterfoss-redux/types/groups';
 import {ModalIdentifiers} from 'utils/constants';
 import {isModalOpen} from 'selectors/views/modals';
 import {setModalSearchTerm} from 'actions/views/search';

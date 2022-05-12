@@ -1,8 +1,8 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
-import {ThreadTypes} from 'mattermost-redux/action_types';
-import deepFreeze from 'mattermost-redux/utils/deep_freeze';
+import {ThreadTypes} from 'matterfoss-redux/action_types';
+import deepFreeze from 'matterfoss-redux/utils/deep_freeze';
 
 import {ExtraData} from './types';
 import {handleFollowChanged} from './threadsInTeam';

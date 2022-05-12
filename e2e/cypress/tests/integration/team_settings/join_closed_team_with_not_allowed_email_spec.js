@@ -15,7 +15,7 @@ import * as TIMEOUTS from '../../fixtures/timeouts';
 
 describe('Team Settings', () => {
     const randomId = getRandomId();
-    const emailDomain = 'sample.mattermost.com';
+    const emailDomain = 'sample.matterfoss.com';
     let testTeam;
 
     before(() => {
@@ -39,7 +39,7 @@ describe('Team Settings', () => {
         });
     });
 
-    it('MM-T387 - Try to join a closed team from a NON-mattermost email address via "Get Team Invite Link" while "Allow only users with a specific email domain to join this team" set to "sample.mattermost.com"', () => {
+    it('MM-T387 - Try to join a closed team from a NON-matterfoss email address via "Get Team Invite Link" while "Allow only users with a specific email domain to join this team" set to "sample.matterfoss.com"', () => {
         stubClipboard().as('clipboard');
 
         // # Open team menu and click 'Team Settings'
@@ -50,7 +50,7 @@ describe('Team Settings', () => {
             // # Click on the 'Allow only users with a specific email domain to join this team' edit button
             cy.get('#allowed_domainsEdit').should('be.visible').click();
 
-            // # Set 'sample.mattermost.com' as the only allowed email domain, save then close
+            // # Set 'sample.matterfoss.com' as the only allowed email domain, save then close
             cy.wait(TIMEOUTS.HALF_SEC);
             cy.focused().type(emailDomain);
             cy.uiSaveAndClose();
@@ -105,7 +105,7 @@ describe('Team Settings', () => {
             // # Click on the 'Allow only users with a specific email domain to join this team' edit button
             cy.get('#allowed_domainsEdit').should('be.visible').click();
 
-            // # Set 'sample.mattermost.com' as the only allowed email domain and save
+            // # Set 'sample.matterfoss.com' as the only allowed email domain and save
             cy.wait(TIMEOUTS.HALF_SEC);
             cy.findByRole('textbox', {name: 'Allowed Domains'}).should('be.visible').and('be.focused').type(emailDomain);
 

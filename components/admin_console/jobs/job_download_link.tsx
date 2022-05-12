@@ -4,8 +4,8 @@
 import React from 'react';
 import {FormattedMessage} from 'react-intl';
 
-import {Client4} from 'mattermost-redux/client';
-import {Job} from 'mattermost-redux/types/jobs';
+import {Client4} from 'matterfoss-redux/client';
+import {Job} from 'matterfoss-redux/types/jobs';
 
 import {exportFormats} from 'utils/constants';
 

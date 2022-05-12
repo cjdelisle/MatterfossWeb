@@ -11,7 +11,7 @@ import {trackEvent} from 'actions/telemetry_actions';
 
 import {ModalIdentifiers, TELEMETRY_CATEGORIES} from 'utils/constants';
 
-import {getLicense} from 'mattermost-redux/selectors/entities/general';
+import {getLicense} from 'matterfoss-redux/selectors/entities/general';
 
 import {isModalOpen} from 'selectors/views/modals';
 import {GlobalState} from 'types/store';
@@ -135,7 +135,7 @@ const TrialBenefitsModal = ({
             <>
                 <FormattedMessage
                     id='trial_benefits.modal.trialStartedDescriptionIntro'
-                    defaultMessage='Welcome to your Mattermost Enterprise trial! It expires on {trialExpirationDate}. '
+                    defaultMessage='Welcome to your MatterFOSS Enterprise trial! It expires on {trialExpirationDate}. '
                     values={{
                         trialExpirationDate: trialEndDate,
                     }}

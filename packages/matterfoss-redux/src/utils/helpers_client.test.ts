@@ -3,7 +3,7 @@
 
 import assert from 'assert';
 
-import {buildQueryString} from 'mattermost-redux/utils/helpers_client';
+import {buildQueryString} from 'matterfoss-redux/utils/helpers_client';
 
 describe('Helpers', () => {
     it('buildQueryString', () => {

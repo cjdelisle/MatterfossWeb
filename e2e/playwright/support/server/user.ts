@@ -1,7 +1,7 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
-import {UserProfile} from '../../../../packages/mattermost-redux/src/types/users';
+import {UserProfile} from '../../../../packages/matterfoss-redux/src/types/users';
 import testConfig from '../../test.config';
 
 import {getRandomId} from '../utils';
@@ -10,7 +10,7 @@ export function createRandomUser(prefix = 'user') {
     const randomId = getRandomId();
 
     const user = {
-        email: `${prefix}${randomId}@sample.mattermost.com`,
+        email: `${prefix}${randomId}@sample.matterfoss.com`,
         username: `${prefix}${randomId}`,
         password: 'passwd',
         first_name: `First${randomId}`,

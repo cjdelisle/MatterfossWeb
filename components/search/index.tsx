@@ -4,8 +4,8 @@
 import {connect} from 'react-redux';
 import {AnyAction, bindActionCreators, Dispatch} from 'redux';
 
-import {getMorePostsForSearch, getMoreFilesForSearch} from 'mattermost-redux/actions/search';
-import {getCurrentChannel} from 'mattermost-redux/selectors/entities/channels';
+import {getMorePostsForSearch, getMoreFilesForSearch} from 'matterfoss-redux/actions/search';
+import {getCurrentChannel} from 'matterfoss-redux/selectors/entities/channels';
 
 import {
     updateSearchTerms,

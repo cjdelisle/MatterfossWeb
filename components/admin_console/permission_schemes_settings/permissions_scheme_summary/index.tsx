@@ -6,12 +6,12 @@ import {ActionCreatorsMapObject, bindActionCreators, Dispatch} from 'redux';
 
 import {RouteComponentProps} from 'react-router';
 
-import {deleteScheme} from 'mattermost-redux/actions/schemes';
+import {deleteScheme} from 'matterfoss-redux/actions/schemes';
 
-import {makeGetSchemeTeams} from 'mattermost-redux/selectors/entities/schemes';
+import {makeGetSchemeTeams} from 'matterfoss-redux/selectors/entities/schemes';
 
-import {ActionFunc, ActionResult, GenericAction} from 'mattermost-redux/types/actions';
-import {GlobalState} from 'mattermost-redux/types/store';
+import {ActionFunc, ActionResult, GenericAction} from 'matterfoss-redux/types/actions';
+import {GlobalState} from 'matterfoss-redux/types/store';
 
 import PermissionsSchemeSummary, {Props} from './permissions_scheme_summary';
 

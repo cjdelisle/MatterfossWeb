@@ -5,11 +5,11 @@ import React, {memo, useCallback, ReactNode} from 'react';
 import {useIntl} from 'react-intl';
 import {useDispatch, useSelector, shallowEqual} from 'react-redux';
 
-import {Preferences} from 'mattermost-redux/constants';
-import {UserThread} from 'mattermost-redux/types/threads';
-import {get} from 'mattermost-redux/selectors/entities/preferences';
+import {Preferences} from 'matterfoss-redux/constants';
+import {UserThread} from 'matterfoss-redux/types/threads';
+import {get} from 'matterfoss-redux/selectors/entities/preferences';
 
-import {setThreadFollow, updateThreadRead} from 'mattermost-redux/actions/threads';
+import {setThreadFollow, updateThreadRead} from 'matterfoss-redux/actions/threads';
 import {manuallyMarkThreadAsUnread} from 'actions/views/threads';
 
 import {

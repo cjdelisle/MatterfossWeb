@@ -97,31 +97,31 @@ export type ClientPluginManifest = {
     };
 }
 
-export type MarketplaceLabel = { // TODO remove this in favour of the definition in types/marketplace after the mattermost-redux migration
+export type MarketplaceLabel = { // TODO remove this in favour of the definition in types/marketplace after the matterfoss-redux migration
     name: string;
     description?: string;
     url?: string;
     color?: string;
 }
 
-export enum HostingType { // TODO remove this in favour of the definition in types/marketplace after the mattermost-redux migration
+export enum HostingType { // TODO remove this in favour of the definition in types/marketplace after the matterfoss-redux migration
     OnPrem = 'on-prem',
     Cloud = 'cloud',
 }
 
-export enum AuthorType { // TODO remove this in favour of the definition in types/marketplace after the mattermost-redux migration
-    Mattermost = 'mattermost',
+export enum AuthorType { // TODO remove this in favour of the definition in types/marketplace after the matterfoss-redux migration
+    MatterFOSS = 'matterfoss',
     Partner = 'partner',
     Community = 'community',
 }
 
-export enum ReleaseStage { // TODO remove this in favour of the definition in types/marketplace after the mattermost-redux migration
+export enum ReleaseStage { // TODO remove this in favour of the definition in types/marketplace after the matterfoss-redux migration
     Production = 'production',
     Beta = 'beta',
     Experimental = 'experimental',
 }
 
-export type MarketplacePlugin = { // TODO remove this in favour of the definition in types/marketplace after the mattermost-redux migration
+export type MarketplacePlugin = { // TODO remove this in favour of the definition in types/marketplace after the matterfoss-redux migration
     homepage_url?: string;
     icon_data?: string;
     download_url?: string;

@@ -3,7 +3,7 @@
 
 import {connect} from 'react-redux';
 
-import {getStatusForUserId} from 'mattermost-redux/selectors/entities/users';
+import {getStatusForUserId} from 'matterfoss-redux/selectors/entities/users';
 
 import UserListRow from './user_list_row.jsx';
 

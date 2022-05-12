@@ -273,7 +273,7 @@ function getWebhookResponse(body, {responseType, username, iconUrl}) {
 \`\`\`
 #### Outgoing Webhook Payload
 ${payload}
-#### Webhook override to Mattermost instance
+#### Webhook override to MatterFOSS instance
 - response_type: "${responseType}"
 - type: ""
 - username: "${username}"

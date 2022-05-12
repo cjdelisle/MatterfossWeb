@@ -3,8 +3,8 @@
 
 import assert from 'assert';
 
-import deepFreezeAndThrowOnMutation from 'mattermost-redux/utils/deep_freeze';
-import * as Selectors from 'mattermost-redux/selectors/entities/bots';
+import deepFreezeAndThrowOnMutation from 'matterfoss-redux/utils/deep_freeze';
+import * as Selectors from 'matterfoss-redux/selectors/entities/bots';
 
 describe('Selectors.Bots', () => {
     const userID1 = 'currentUser';
@@ -13,7 +13,7 @@ describe('Selectors.Bots', () => {
 
     const currentUser = {id: userID1, username: 'currentUser', first_name: 'Current', last_name: 'User', locale: 'en'};
     const otherUser1 = {id: userID2, username: 'otherUser1', first_name: 'Other', last_name: 'User', locale: 'en'};
-    const otherUser2 = {id: userID3, username: 'mattermost-advisor', first_name: 'Another', last_name: 'User', locale: 'en'};
+    const otherUser2 = {id: userID3, username: 'matterfoss-advisor', first_name: 'Another', last_name: 'User', locale: 'en'};
 
     const bot1 = {
         user_id: userID1,
@@ -27,7 +27,7 @@ describe('Selectors.Bots', () => {
     };
     const bot2 = {
         user_id: userID3,
-        username: 'mattermost-advisor',
+        username: 'matterfoss-advisor',
         display_name: 'xyz',
         description: '',
         owner_id: 'xyz',

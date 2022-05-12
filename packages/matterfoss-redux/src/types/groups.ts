@@ -100,7 +100,7 @@ export type GroupSearchOpts = {
 };
 
 export type MixedUnlinkedGroup = {
-    mattermost_group_id?: string;
+    matterfoss_group_id?: string;
     name: string;
     primary_key: string;
     has_syncables?: boolean;

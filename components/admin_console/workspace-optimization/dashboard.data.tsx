@@ -14,9 +14,9 @@ import {
     AccountMultipleOutlineIcon,
 } from '@mattermost/compass-icons/components';
 
-import {getLicense} from 'mattermost-redux/selectors/entities/general';
+import {getLicense} from 'matterfoss-redux/selectors/entities/general';
 
-import {GlobalState} from 'mattermost-redux/types/store';
+import {GlobalState} from 'matterfoss-redux/types/store';
 
 import {CloudLinks, ConsolePages, DocLinks, LicenseLinks} from 'utils/constants';
 import {daysToLicenseExpire, isEnterpriseOrE20License, getIsStarterLicense} from '../../../utils/license_utils';
@@ -166,7 +166,7 @@ const useMetricsData = () => {
                 }),
                 description: formatMessage({
                     id: 'admin.reporting.workspace_optimization.configuration.ssl.description',
-                    defaultMessage: 'We strongly recommend securing your Mattermost workspace by configuring SSL in production environments.',
+                    defaultMessage: 'We strongly recommend securing your MatterFOSS workspace by configuring SSL in production environments.',
                 }),
                 infoUrl: DocLinks.SSL_CERTIFICATE,
                 infoText: formatMessage({id: 'admin.reporting.workspace_optimization.cta.learnMore', defaultMessage: 'Learn more'}),
@@ -210,7 +210,7 @@ const useMetricsData = () => {
         }),
         description: formatMessage({
             id: 'admin.reporting.workspace_optimization.access.description',
-            defaultMessage: 'Web server configuration may be affecting access to your Mattermost workspace.',
+            defaultMessage: 'Web server configuration may be affecting access to your MatterFOSS workspace.',
         }),
         descriptionOk: formatMessage({
             id: 'admin.reporting.workspace_optimization.access.descriptionOk',
@@ -369,7 +369,7 @@ const useMetricsData = () => {
         }),
         description: formatMessage({
             id: 'admin.reporting.workspace_optimization.ease_of_management.description',
-            defaultMessage: 'Make it easier to manage your Mattermost workspace.',
+            defaultMessage: 'Make it easier to manage your MatterFOSS workspace.',
         }),
         descriptionOk: formatMessage({
             id: 'admin.reporting.workspace_optimization.ease_of_management.descriptionOk',
@@ -407,7 +407,7 @@ const useMetricsData = () => {
             },
 
             // commented out for now.
-            // @see discussion here: https://github.com/mattermost/mattermost-webapp/pull/9822#discussion_r806879385
+            // @see discussion here: https://github.com/matterfoss/matterfoss-webapp/pull/9822#discussion_r806879385
             // {
             //     id: 'guest-accounts',
             //     title: formatMessage({
@@ -419,7 +419,7 @@ const useMetricsData = () => {
             //         defaultMessage: 'Several user accounts are using different domains than your Site URL. You can control user access to channels and teams with guest accounts. We recommend starting an Enterprise trial and enabling Guest Access.',
             //     }),
             //     ...trialOrEnterpriseCtaConfig,
-            //     infoUrl: 'https://docs.mattermost.com/onboard/guest-accounts.html',
+            //     infoUrl: 'https://docs.matterfoss.com/onboard/guest-accounts.html',
             //     infoText: formatMessage({id: 'admin.reporting.workspace_optimization.cta.learnMore', defaultMessage: 'Learn more'}),
             //     telemetryAction: 'guest-accounts',
             //     status: data.guestAccounts.status,

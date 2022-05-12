@@ -6,10 +6,10 @@ import {connect} from 'react-redux';
 import {bindActionCreators, Dispatch, ActionCreatorsMapObject} from 'redux';
 import {Stripe} from '@stripe/stripe-js';
 
-import {getConfig} from 'mattermost-redux/selectors/entities/general';
-import {getClientConfig} from 'mattermost-redux/actions/general';
-import {getCloudProducts, getCloudSubscription} from 'mattermost-redux/actions/cloud';
-import {Action} from 'mattermost-redux/types/actions';
+import {getConfig} from 'matterfoss-redux/selectors/entities/general';
+import {getClientConfig} from 'matterfoss-redux/actions/general';
+import {getCloudProducts, getCloudSubscription} from 'matterfoss-redux/actions/cloud';
+import {Action} from 'matterfoss-redux/types/actions';
 
 import {makeAsyncComponent} from 'components/async_load';
 

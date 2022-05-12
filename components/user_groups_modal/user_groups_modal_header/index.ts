@@ -4,14 +4,14 @@
 import {connect} from 'react-redux';
 import {bindActionCreators, Dispatch, ActionCreatorsMapObject} from 'redux';
 
-import {ActionFunc, GenericAction} from 'mattermost-redux/types/actions';
+import {ActionFunc, GenericAction} from 'matterfoss-redux/types/actions';
 
 import {GlobalState} from 'types/store';
 
 import {ModalData} from 'types/actions';
-import {Permissions} from 'mattermost-redux/constants';
+import {Permissions} from 'matterfoss-redux/constants';
 import {openModal} from 'actions/views/modals';
-import {haveISystemPermission} from 'mattermost-redux/selectors/entities/roles';
+import {haveISystemPermission} from 'matterfoss-redux/selectors/entities/roles';
 
 import UserGroupsModalHeader from './user_groups_modal_header';
 

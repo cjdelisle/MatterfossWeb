@@ -4,9 +4,9 @@
 import {bindActionCreators, Dispatch} from 'redux';
 import {connect, ConnectedProps} from 'react-redux';
 
-import {GenericAction} from 'mattermost-redux/types/actions';
-import {getChannel} from 'mattermost-redux/selectors/entities/channels';
-import {FileInfo} from 'mattermost-redux/types/files';
+import {GenericAction} from 'matterfoss-redux/types/actions';
+import {getChannel} from 'matterfoss-redux/selectors/entities/channels';
+import {FileInfo} from 'matterfoss-redux/types/files';
 
 import {GlobalState} from 'types/store';
 import {FileDropdownPluginComponent} from 'types/store/plugins';

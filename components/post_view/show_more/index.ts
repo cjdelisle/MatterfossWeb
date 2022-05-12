@@ -3,7 +3,7 @@
 
 import {connect} from 'react-redux';
 
-import {get} from 'mattermost-redux/selectors/entities/preferences';
+import {get} from 'matterfoss-redux/selectors/entities/preferences';
 
 import {getIsRhsExpanded, getIsRhsOpen} from 'selectors/rhs';
 import {Preferences} from 'utils/constants';

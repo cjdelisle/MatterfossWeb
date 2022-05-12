@@ -1,15 +1,15 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
-import {haveIChannelPermission} from 'mattermost-redux/selectors/entities/roles';
-import Permissions from 'mattermost-redux/constants/permissions';
+import {haveIChannelPermission} from 'matterfoss-redux/selectors/entities/roles';
+import Permissions from 'matterfoss-redux/constants/permissions';
 
-import {Channel, ChannelType} from 'mattermost-redux/types/channels';
-import {Team} from 'mattermost-redux/types/teams';
-import {GetStateFunc, DispatchFunc, ActionFunc} from 'mattermost-redux/types/actions';
-import {removeUserFromTeam} from 'mattermost-redux/actions/teams';
-import {TeamTypes} from 'mattermost-redux/action_types';
-import {getRedirectChannelNameForTeam} from 'mattermost-redux/selectors/entities/channels';
-import {getCurrentUserId} from 'mattermost-redux/selectors/entities/users';
+import {Channel, ChannelType} from 'matterfoss-redux/types/channels';
+import {Team} from 'matterfoss-redux/types/teams';
+import {GetStateFunc, DispatchFunc, ActionFunc} from 'matterfoss-redux/types/actions';
+import {removeUserFromTeam} from 'matterfoss-redux/actions/teams';
+import {TeamTypes} from 'matterfoss-redux/action_types';
+import {getRedirectChannelNameForTeam} from 'matterfoss-redux/selectors/entities/channels';
+import {getCurrentUserId} from 'matterfoss-redux/selectors/entities/users';
 
 import {openModal} from 'actions/views/modals';
 

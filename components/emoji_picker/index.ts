@@ -4,17 +4,17 @@
 import {connect, ConnectedProps} from 'react-redux';
 import {bindActionCreators, Dispatch, ActionCreatorsMapObject} from 'redux';
 
-import {ActionFunc, GenericAction} from 'mattermost-redux/types/actions';
-import {getCustomEmojisEnabled} from 'mattermost-redux/selectors/entities/emojis';
-import {getCustomEmojis, searchCustomEmojis} from 'mattermost-redux/actions/emojis';
-import {CustomEmoji} from 'mattermost-redux/types/emojis';
-import {ServerError} from 'mattermost-redux/types/errors';
+import {ActionFunc, GenericAction} from 'matterfoss-redux/types/actions';
+import {getCustomEmojisEnabled} from 'matterfoss-redux/selectors/entities/emojis';
+import {getCustomEmojis, searchCustomEmojis} from 'matterfoss-redux/actions/emojis';
+import {CustomEmoji} from 'matterfoss-redux/types/emojis';
+import {ServerError} from 'matterfoss-redux/types/errors';
 
 import {GlobalState} from 'types/store';
 
 import {incrementEmojiPickerPage, setUserSkinTone} from 'actions/emoji_actions';
 import {getEmojiMap, getRecentEmojis, getUserSkinTone} from 'selectors/emojis';
-import {getCurrentTeam} from 'mattermost-redux/selectors/entities/teams';
+import {getCurrentTeam} from 'matterfoss-redux/selectors/entities/teams';
 
 import EmojiPicker from './emoji_picker';
 

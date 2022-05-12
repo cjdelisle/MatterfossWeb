@@ -16,7 +16,7 @@ const config: TestConfig = {
     baseURL: process.env.PW_BASE_URL || 'http://localhost:8065',
     adminUsername: process.env.PW_ADMIN_USERNAME || 'sysadmin',
     adminPassword: process.env.PW_ADMIN_PASSWORD || 'Sys@dmin-sample1',
-    adminEmail: process.env.PW_ADMIN_EMAIL || 'sysadmin@sample.mattermost.com',
+    adminEmail: process.env.PW_ADMIN_EMAIL || 'sysadmin@sample.matterfoss.com',
     applitoolsEnabled: process.env.APPLITOOLS_ENABLE === 'true',
     percyEnabled: process.env.PERCY_ENABLE === 'true',
     lessThanCloudUserLimit: process.env.LESS_THAN_CLOUD_USER_LIMIT === 'true',

@@ -5,9 +5,9 @@ import React from 'react';
 import {Modal} from 'react-bootstrap';
 import {FormattedMessage} from 'react-intl';
 
-import {ActionResult} from 'mattermost-redux/types/actions';
-import {Channel} from 'mattermost-redux/types/channels';
-import Permissions from 'mattermost-redux/constants/permissions';
+import {ActionResult} from 'matterfoss-redux/types/actions';
+import {Channel} from 'matterfoss-redux/types/channels';
+import Permissions from 'matterfoss-redux/constants/permissions';
 
 import NewChannelFlow from 'components/new_channel_flow';
 import SearchableChannelList from 'components/searchable_channel_list.jsx';

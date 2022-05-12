@@ -5,10 +5,10 @@ import React from 'react';
 import {Modal} from 'react-bootstrap';
 import {FormattedMessage} from 'react-intl';
 
-import {Client4} from 'mattermost-redux/client';
-import {UserAccessToken, UserProfile} from 'mattermost-redux/types/users';
-import {ActionFunc} from 'mattermost-redux/types/actions';
-import * as UserUtils from 'mattermost-redux/utils/user_utils';
+import {Client4} from 'matterfoss-redux/client';
+import {UserAccessToken, UserProfile} from 'matterfoss-redux/types/users';
+import {ActionFunc} from 'matterfoss-redux/types/actions';
+import * as UserUtils from 'matterfoss-redux/utils/user_utils';
 
 import RevokeTokenButton from 'components/admin_console/revoke_token_button';
 import LoadingScreen from 'components/loading_screen';
@@ -156,7 +156,7 @@ export default class ManageTokensModal extends React.PureComponent<Props, State>
                 <div className='pt-3'>
                     <FormattedMarkdownMessage
                         id='admin.manage_tokens.userAccessTokensDescription'
-                        defaultMessage='Personal access tokens function similarly to session tokens and can be used by integrations to [interact with this Mattermost server](!https://api.mattermost.com/#tag/authentication). Tokens are disabled if the user is deactivated. Learn more about [personal access tokens](!https://developers.mattermost.com/integrate/admin-guide/admin-personal-access-token/).'
+                        defaultMessage='Personal access tokens function similarly to session tokens and can be used by integrations to [interact with this MatterFOSS server](!https://api.matterfoss.com/#tag/authentication). Tokens are disabled if the user is deactivated. Learn more about [personal access tokens](!https://developers.matterfoss.com/integrate/admin-guide/admin-personal-access-token/).'
                     />
                 </div>
                 <div className='manage-teams__teams'>

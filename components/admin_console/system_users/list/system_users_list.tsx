@@ -4,10 +4,10 @@
 import React from 'react';
 import {FormattedMessage} from 'react-intl';
 
-import {UserProfile} from 'mattermost-redux/types/users';
-import {getUserAccessTokensForUser} from 'mattermost-redux/actions/users';
+import {UserProfile} from 'matterfoss-redux/types/users';
+import {getUserAccessTokensForUser} from 'matterfoss-redux/actions/users';
 
-import {Team} from 'mattermost-redux/types/teams';
+import {Team} from 'matterfoss-redux/types/teams';
 
 import {Constants} from 'utils/constants';
 import * as Utils from 'utils/utils.jsx';

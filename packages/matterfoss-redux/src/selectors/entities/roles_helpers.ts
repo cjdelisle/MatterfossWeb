@@ -3,10 +3,10 @@
 
 import {createSelector} from 'reselect';
 
-import {getCurrentUser} from 'mattermost-redux/selectors/entities/common';
+import {getCurrentUser} from 'matterfoss-redux/selectors/entities/common';
 
-import {GlobalState} from 'mattermost-redux/types/store';
-import {UserProfile} from 'mattermost-redux/types/users';
+import {GlobalState} from 'matterfoss-redux/types/store';
+import {UserProfile} from 'matterfoss-redux/types/users';
 
 export type PermissionsOptions = {
     channel?: string;

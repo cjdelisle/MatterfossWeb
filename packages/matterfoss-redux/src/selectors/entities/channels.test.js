@@ -3,14 +3,14 @@
 
 import assert from 'assert';
 
-import {General, Permissions} from 'mattermost-redux/constants';
-import {CategoryTypes} from 'mattermost-redux/constants/channel_categories';
+import {General, Permissions} from 'matterfoss-redux/constants';
+import {CategoryTypes} from 'matterfoss-redux/constants/channel_categories';
 
-import mergeObjects from 'mattermost-redux/test/merge_objects';
-import TestHelper from 'mattermost-redux/test/test_helper';
+import mergeObjects from 'matterfoss-redux/test/merge_objects';
+import TestHelper from 'matterfoss-redux/test/test_helper';
 
-import {sortChannelsByDisplayName, getDirectChannelName} from 'mattermost-redux/utils/channel_utils';
-import deepFreezeAndThrowOnMutation from 'mattermost-redux/utils/deep_freeze';
+import {sortChannelsByDisplayName, getDirectChannelName} from 'matterfoss-redux/utils/channel_utils';
+import deepFreezeAndThrowOnMutation from 'matterfoss-redux/utils/deep_freeze';
 
 import * as Selectors from './channels';
 

@@ -3,33 +3,33 @@
 
 import * as Redux from 'redux';
 
-import {ChannelTypes, PreferenceTypes, UserTypes} from 'mattermost-redux/action_types';
+import {ChannelTypes, PreferenceTypes, UserTypes} from 'matterfoss-redux/action_types';
 
-import {Client4} from 'mattermost-redux/client';
+import {Client4} from 'matterfoss-redux/client';
 
 import {General, Preferences} from '../constants';
-import {CategoryTypes} from 'mattermost-redux/constants/channel_categories';
-import {MarkUnread} from 'mattermost-redux/constants/channels';
+import {CategoryTypes} from 'matterfoss-redux/constants/channel_categories';
+import {MarkUnread} from 'matterfoss-redux/constants/channels';
 
-import {getCategoryInTeamByType} from 'mattermost-redux/selectors/entities/channel_categories';
+import {getCategoryInTeamByType} from 'matterfoss-redux/selectors/entities/channel_categories';
 import {
     getChannel as getChannelSelector,
     getChannelsNameMapInTeam,
     getMyChannelMember as getMyChannelMemberSelector,
     getRedirectChannelNameForTeam,
     isManuallyUnread,
-} from 'mattermost-redux/selectors/entities/channels';
-import {getConfig, getServerVersion} from 'mattermost-redux/selectors/entities/general';
-import {getCurrentTeamId} from 'mattermost-redux/selectors/entities/teams';
+} from 'matterfoss-redux/selectors/entities/channels';
+import {getConfig, getServerVersion} from 'matterfoss-redux/selectors/entities/general';
+import {getCurrentTeamId} from 'matterfoss-redux/selectors/entities/teams';
 
-import {Action, ActionFunc, batchActions, DispatchFunc, GetStateFunc} from 'mattermost-redux/types/actions';
+import {Action, ActionFunc, batchActions, DispatchFunc, GetStateFunc} from 'matterfoss-redux/types/actions';
 
-import {Channel, ChannelNotifyProps, ChannelMembership, ChannelModerationPatch, ChannelsWithTotalCount, ChannelSearchOpts} from 'mattermost-redux/types/channels';
+import {Channel, ChannelNotifyProps, ChannelMembership, ChannelModerationPatch, ChannelsWithTotalCount, ChannelSearchOpts} from 'matterfoss-redux/types/channels';
 
-import {PreferenceType} from 'mattermost-redux/types/preferences';
+import {PreferenceType} from 'matterfoss-redux/types/preferences';
 
-import {getChannelsIdForTeam, getChannelByName} from 'mattermost-redux/utils/channel_utils';
-import {isMinimumServerVersion} from 'mattermost-redux/utils/helpers';
+import {getChannelsIdForTeam, getChannelByName} from 'matterfoss-redux/utils/channel_utils';
+import {isMinimumServerVersion} from 'matterfoss-redux/utils/helpers';
 
 import {addChannelToInitialCategory, addChannelToCategory} from './channel_categories';
 import {logError} from './errors';

@@ -34,7 +34,7 @@ export default create({
     inputTextColor: 'black',
     inputBorderRadius: 4,
 
-    brandTitle: 'Mattermost',
-    brandUrl: 'https://mattermost.com',
-    brandImage: 'https://mattermost.com/wp-content/uploads/2022/02/logoHorizontal.png',
+    brandTitle: 'MatterFOSS',
+    brandUrl: 'https://matterfoss.com',
+    brandImage: 'https://matterfoss.com/wp-content/uploads/2022/02/logoHorizontal.png',
 });

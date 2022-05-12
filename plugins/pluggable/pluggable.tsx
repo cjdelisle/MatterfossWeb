@@ -3,7 +3,7 @@
 
 import React from 'react';
 
-import {Theme} from 'mattermost-redux/types/themes';
+import {Theme} from 'matterfoss-redux/types/themes';
 
 import {ProductComponent} from 'types/store/plugins';
 import {GlobalState} from 'types/store';

@@ -3,7 +3,7 @@
 
 import {combineReducers} from 'redux';
 
-import type {GenericAction} from 'mattermost-redux/types/actions';
+import type {GenericAction} from 'matterfoss-redux/types/actions';
 
 import type {Translations} from 'types/store/i18n';
 

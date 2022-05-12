@@ -4,8 +4,8 @@
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 
-import {addChannelMember, getChannelMember, autocompleteChannelsForSearch} from 'mattermost-redux/actions/channels';
-import {getChannelMembersInChannels} from 'mattermost-redux/selectors/entities/channels';
+import {addChannelMember, getChannelMember, autocompleteChannelsForSearch} from 'matterfoss-redux/actions/channels';
+import {getChannelMembersInChannels} from 'matterfoss-redux/selectors/entities/channels';
 
 import AddUserToChannelModal from './add_user_to_channel_modal.jsx';
 

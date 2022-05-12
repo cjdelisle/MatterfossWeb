@@ -3,12 +3,12 @@
 
 import {createSelector} from 'reselect';
 
-import {getMyChannelMemberships, getAllDmChannels} from 'mattermost-redux/selectors/entities/channels';
-import {getCurrentUserId, getUserStatuses} from 'mattermost-redux/selectors/entities/users';
+import {getMyChannelMemberships, getAllDmChannels} from 'matterfoss-redux/selectors/entities/channels';
+import {getCurrentUserId, getUserStatuses} from 'matterfoss-redux/selectors/entities/users';
 
-import {GlobalState} from 'mattermost-redux/types/store';
-import {UserProfile, UserProfileWithLastViewAt} from 'mattermost-redux/types/users';
-import {getDirectChannelName} from 'mattermost-redux/utils/channel_utils';
+import {GlobalState} from 'matterfoss-redux/types/store';
+import {UserProfile, UserProfileWithLastViewAt} from 'matterfoss-redux/types/users';
+import {getDirectChannelName} from 'matterfoss-redux/utils/channel_utils';
 
 export function makeAddLastViewAtToProfiles(): (state: GlobalState, profiles: UserProfile[]) => UserProfileWithLastViewAt[] {
     return createSelector(

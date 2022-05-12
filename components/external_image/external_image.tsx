@@ -3,7 +3,7 @@
 
 import React from 'react';
 
-import {PostImage} from 'mattermost-redux/types/posts';
+import {PostImage} from 'matterfoss-redux/types/posts';
 
 import {getImageSrc} from 'utils/post_utils';
 

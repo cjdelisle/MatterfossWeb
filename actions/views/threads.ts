@@ -3,8 +3,8 @@
 
 import {batchActions} from 'redux-batched-actions';
 
-import {getCurrentRelativeTeamUrl} from 'mattermost-redux/selectors/entities/teams';
-import {GetStateFunc, DispatchFunc} from 'mattermost-redux/types/actions';
+import {getCurrentRelativeTeamUrl} from 'matterfoss-redux/selectors/entities/teams';
+import {GetStateFunc, DispatchFunc} from 'matterfoss-redux/types/actions';
 
 import {browserHistory} from 'utils/browser_history';
 

@@ -16,9 +16,9 @@ import TeamSelectorModal from 'components/team_selector_modal';
 import AdminPanel from 'components/widgets/admin_console/admin_panel';
 import Menu from 'components/widgets/menu/menu';
 import MenuWrapper from 'components/widgets/menu/menu_wrapper';
-import {Groups} from 'mattermost-redux/constants';
-import {ActionResult} from 'mattermost-redux/types/actions';
-import {ChannelWithTeamData} from 'mattermost-redux/types/channels';
+import {Groups} from 'matterfoss-redux/constants';
+import {ActionResult} from 'matterfoss-redux/types/actions';
+import {ChannelWithTeamData} from 'matterfoss-redux/types/channels';
 import {
     Group,
     GroupChannel,
@@ -26,9 +26,9 @@ import {
     GroupTeam,
     SyncablePatch,
     SyncableType,
-} from 'mattermost-redux/types/groups';
-import {Team} from 'mattermost-redux/types/teams';
-import {UserProfile} from 'mattermost-redux/types/users';
+} from 'matterfoss-redux/types/groups';
+import {Team} from 'matterfoss-redux/types/teams';
+import {UserProfile} from 'matterfoss-redux/types/users';
 
 import {t} from 'utils/i18n';
 import {localizeMessage} from 'utils/utils';
@@ -772,7 +772,7 @@ export default class GroupDetails extends React.PureComponent<Props, State> {
                             subtitleId={t(
                                 'admin.group_settings.group_detail.groupUsersDescription',
                             )}
-                            subtitleDefault='Listing of users in Mattermost associated with this group.'
+                            subtitleDefault='Listing of users in MatterFOSS associated with this group.'
                         >
                             <GroupUsers
                                 members={members}

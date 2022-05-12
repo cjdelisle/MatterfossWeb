@@ -4,7 +4,7 @@
 import assert from 'assert';
 
 import {General, Users} from '../constants';
-import TestHelper from 'mattermost-redux/test/test_helper';
+import TestHelper from 'matterfoss-redux/test/test_helper';
 
 import {
     areChannelMentionsIgnored,
@@ -12,7 +12,7 @@ import {
     sortChannelsByRecency,
     sortChannelsByDisplayName,
     sortChannelsByTypeListAndDisplayName,
-} from 'mattermost-redux/utils/channel_utils';
+} from 'matterfoss-redux/utils/channel_utils';
 
 describe('ChannelUtils', () => {
     it('areChannelMentionsIgnored', () => {

@@ -1,24 +1,24 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
-import {Client4, DEFAULT_LIMIT_AFTER, DEFAULT_LIMIT_BEFORE} from 'mattermost-redux/client';
+import {Client4, DEFAULT_LIMIT_AFTER, DEFAULT_LIMIT_BEFORE} from 'matterfoss-redux/client';
 import {General, Preferences, Posts} from '../constants';
-import {PostTypes, ChannelTypes, FileTypes, IntegrationTypes} from 'mattermost-redux/action_types';
+import {PostTypes, ChannelTypes, FileTypes, IntegrationTypes} from 'matterfoss-redux/action_types';
 
-import {getCurrentChannelId, getMyChannelMember as getMyChannelMemberSelector} from 'mattermost-redux/selectors/entities/channels';
-import {getCustomEmojisByName as selectCustomEmojisByName} from 'mattermost-redux/selectors/entities/emojis';
-import * as Selectors from 'mattermost-redux/selectors/entities/posts';
-import {getCurrentUserId, getUsersByUsername} from 'mattermost-redux/selectors/entities/users';
+import {getCurrentChannelId, getMyChannelMember as getMyChannelMemberSelector} from 'matterfoss-redux/selectors/entities/channels';
+import {getCustomEmojisByName as selectCustomEmojisByName} from 'matterfoss-redux/selectors/entities/emojis';
+import * as Selectors from 'matterfoss-redux/selectors/entities/posts';
+import {getCurrentUserId, getUsersByUsername} from 'matterfoss-redux/selectors/entities/users';
 
-import {isCombinedUserActivityPost} from 'mattermost-redux/utils/post_list';
+import {isCombinedUserActivityPost} from 'matterfoss-redux/utils/post_list';
 
-import {Action, ActionResult, batchActions, DispatchFunc, GetStateFunc} from 'mattermost-redux/types/actions';
-import {ChannelUnread} from 'mattermost-redux/types/channels';
-import {GlobalState} from 'mattermost-redux/types/store';
-import {Post, PostList} from 'mattermost-redux/types/posts';
-import {Reaction} from 'mattermost-redux/types/reactions';
-import {UserProfile} from 'mattermost-redux/types/users';
-import {isCollapsedThreadsEnabled} from 'mattermost-redux/selectors/entities/preferences';
+import {Action, ActionResult, batchActions, DispatchFunc, GetStateFunc} from 'matterfoss-redux/types/actions';
+import {ChannelUnread} from 'matterfoss-redux/types/channels';
+import {GlobalState} from 'matterfoss-redux/types/store';
+import {Post, PostList} from 'matterfoss-redux/types/posts';
+import {Reaction} from 'matterfoss-redux/types/reactions';
+import {UserProfile} from 'matterfoss-redux/types/users';
+import {isCollapsedThreadsEnabled} from 'matterfoss-redux/selectors/entities/preferences';
 
 import {getProfilesByIds, getProfilesByUsernames, getStatusesByIds} from './users';
 import {

@@ -5,9 +5,9 @@ import React from 'react';
 import classNames from 'classnames';
 import {FormattedMessage, injectIntl, IntlShape} from 'react-intl';
 
-import Permissions from 'mattermost-redux/constants/permissions';
-import {Post} from 'mattermost-redux/types/posts';
-import {UserThread} from 'mattermost-redux/types/threads';
+import Permissions from 'matterfoss-redux/constants/permissions';
+import {Post} from 'matterfoss-redux/types/posts';
+import {UserThread} from 'matterfoss-redux/types/threads';
 
 import {Locations, ModalIdentifiers, Constants, TELEMETRY_LABELS} from 'utils/constants';
 import DeletePostModal from 'components/delete_post_modal';

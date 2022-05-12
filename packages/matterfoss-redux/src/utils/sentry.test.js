@@ -3,13 +3,13 @@
 
 import assert from 'assert';
 
-import Client4 from 'mattermost-redux/client/client4';
+import Client4 from 'matterfoss-redux/client/client4';
 
-import {cleanUrlForLogging} from 'mattermost-redux/utils/sentry';
+import {cleanUrlForLogging} from 'matterfoss-redux/utils/sentry';
 
 describe('utils/sentry', () => {
     describe('cleanUrlForLogging', () => {
-        const baseUrl = 'https://mattermost.example.com/subpath';
+        const baseUrl = 'https://matterfoss.example.com/subpath';
 
         const client = new Client4();
         client.setUrl(baseUrl);

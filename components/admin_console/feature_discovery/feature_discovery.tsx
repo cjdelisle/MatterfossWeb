@@ -4,8 +4,8 @@
 import React from 'react';
 import {FormattedMessage} from 'react-intl';
 
-import {AnalyticsRow} from 'mattermost-redux/types/admin';
-import {ClientLicense} from 'mattermost-redux/types/config';
+import {AnalyticsRow} from 'matterfoss-redux/types/admin';
+import {ClientLicense} from 'matterfoss-redux/types/config';
 
 import {ModalIdentifiers, TELEMETRY_CATEGORIES} from 'utils/constants';
 import * as Utils from 'utils/utils.jsx';
@@ -143,7 +143,7 @@ export default class FeatureDiscovery extends React.PureComponent<Props, State> 
                 {!this.props.isCloud && <p className='trial-legal-terms'>
                     <FormattedMarkdownMessage
                         id='admin.license.trial-request.accept-terms'
-                        defaultMessage='By clicking **Start trial**, I agree to the [Mattermost Software Evaluation Agreement](!https://mattermost.com/software-evaluation-agreement/), [Privacy Policy](!https://mattermost.com/privacy-policy/), and receiving product emails.'
+                        defaultMessage='By clicking **Start trial**, I agree to the [MatterFOSS Software Evaluation Agreement](!https://matterfoss.com/software-evaluation-agreement/), [Privacy Policy](!https://matterfoss.com/privacy-policy/), and receiving product emails.'
                     />
                 </p>}
             </React.Fragment>
@@ -166,7 +166,7 @@ export default class FeatureDiscovery extends React.PureComponent<Props, State> 
                 <p className='trial-error'>
                     <FormattedMarkdownMessage
                         id='admin.license.trial-request.error'
-                        defaultMessage='Trial license could not be retrieved. Visit [https://mattermost.com/trial/](https://mattermost.com/trial/) to request a license.'
+                        defaultMessage='Trial license could not be retrieved. Visit [https://matterfoss.com/trial/](https://matterfoss.com/trial/) to request a license.'
                     />
                 </p>
             );

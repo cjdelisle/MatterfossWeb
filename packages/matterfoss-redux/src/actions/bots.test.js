@@ -4,12 +4,12 @@
 import assert from 'assert';
 import nock from 'nock';
 
-import * as BotActions from 'mattermost-redux/actions/bots';
-import * as UserActions from 'mattermost-redux/actions/users';
-import {Client4} from 'mattermost-redux/client';
+import * as BotActions from 'matterfoss-redux/actions/bots';
+import * as UserActions from 'matterfoss-redux/actions/users';
+import {Client4} from 'matterfoss-redux/client';
 
-import TestHelper from 'mattermost-redux/test/test_helper';
-import configureStore from 'mattermost-redux/test/test_store';
+import TestHelper from 'matterfoss-redux/test/test_helper';
+import configureStore from 'matterfoss-redux/test/test_store';
 
 describe('Actions.Bots', () => {
     let store;

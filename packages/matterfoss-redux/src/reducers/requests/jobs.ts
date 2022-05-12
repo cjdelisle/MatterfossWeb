@@ -2,10 +2,10 @@
 // See LICENSE.txt for license information.
 import {combineReducers} from 'redux';
 
-import {JobTypes} from 'mattermost-redux/action_types';
+import {JobTypes} from 'matterfoss-redux/action_types';
 
-import {GenericAction} from 'mattermost-redux/types/actions';
-import {JobsRequestsStatuses, RequestStatusType} from 'mattermost-redux/types/requests';
+import {GenericAction} from 'matterfoss-redux/types/actions';
+import {JobsRequestsStatuses, RequestStatusType} from 'matterfoss-redux/types/requests';
 
 import {handleRequest, initialRequestState} from './helpers';
 

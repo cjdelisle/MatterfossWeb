@@ -10,7 +10,7 @@ import {
     OpenGraphMetadataImage,
     Post,
     PostImage,
-} from 'mattermost-redux/types/posts';
+} from 'matterfoss-redux/types/posts';
 
 import SizeAwareImage from 'components/size_aware_image';
 import ExternalImage from 'components/external_image';

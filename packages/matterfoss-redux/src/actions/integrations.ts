@@ -1,15 +1,15 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
-import {IntegrationTypes} from 'mattermost-redux/action_types';
+import {IntegrationTypes} from 'matterfoss-redux/action_types';
 import {General} from '../constants';
-import {Client4} from 'mattermost-redux/client';
-import {getCurrentUserId} from 'mattermost-redux/selectors/entities/users';
-import {getCurrentChannelId} from 'mattermost-redux/selectors/entities/channels';
-import {getCurrentTeamId} from 'mattermost-redux/selectors/entities/teams';
+import {Client4} from 'matterfoss-redux/client';
+import {getCurrentUserId} from 'matterfoss-redux/selectors/entities/users';
+import {getCurrentChannelId} from 'matterfoss-redux/selectors/entities/channels';
+import {getCurrentTeamId} from 'matterfoss-redux/selectors/entities/teams';
 
-import {batchActions, DispatchFunc, GetStateFunc, ActionFunc} from 'mattermost-redux/types/actions';
+import {batchActions, DispatchFunc, GetStateFunc, ActionFunc} from 'matterfoss-redux/types/actions';
 
-import {Command, CommandArgs, DialogSubmission, IncomingWebhook, OAuthApp, OutgoingWebhook} from 'mattermost-redux/types/integrations';
+import {Command, CommandArgs, DialogSubmission, IncomingWebhook, OAuthApp, OutgoingWebhook} from 'matterfoss-redux/types/integrations';
 
 import {logError} from './errors';
 import {bindClientFunc, forceLogoutIfNecessary} from './helpers';

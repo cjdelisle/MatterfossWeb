@@ -15,7 +15,7 @@ import EmptyBillingHistorySvg from 'components/common/svg_images_components/empt
 
 import {trackEvent} from 'actions/telemetry_actions';
 
-import {Client4} from 'mattermost-redux/client';
+import {Client4} from 'matterfoss-redux/client';
 
 export const noBillingHistory = (
     <div className='BillingSummary__noBillingHistory'>
@@ -50,48 +50,48 @@ export const noBillingHistory = (
     </div>
 );
 
-export const upgradeFreeTierMattermostCloud = (onUpgradeMattermostCloud: () => void) => (
-    <div className='UpgradeMattermostCloud'>
-        <div className='UpgradeMattermostCloud__image'>
+export const upgradeFreeTierMatterFOSSCloud = (onUpgradeMatterFOSSCloud: () => void) => (
+    <div className='UpgradeMatterFOSSCloud'>
+        <div className='UpgradeMatterFOSSCloud__image'>
             <UpgradeSvg
                 width={234}
                 height={167}
             />
         </div>
-        <div className='UpgradeMattermostCloud__title'>
+        <div className='UpgradeMatterFOSSCloud__title'>
             <FormattedMessage
-                id='admin.billing.subscription.upgradeMattermostCloud.title'
-                defaultMessage='Subscribe to Mattermost'
+                id='admin.billing.subscription.upgradeMatterFOSSCloud.title'
+                defaultMessage='Subscribe to MatterFOSS'
             />
         </div>
-        <div className='UpgradeMattermostCloud__description'>
+        <div className='UpgradeMatterFOSSCloud__description'>
             <FormattedMessage
-                id='admin.billing.subscription.upgradeMattermostCloud.description'
+                id='admin.billing.subscription.upgradeMatterFOSSCloud.description'
                 defaultMessage='The free tier is limited to 10 users. Get access to more users, teams and other great features.'
             />
         </div>
         <button
             type='button'
-            onClick={onUpgradeMattermostCloud}
-            className='UpgradeMattermostCloud__upgradeButton'
+            onClick={onUpgradeMatterFOSSCloud}
+            className='UpgradeMatterFOSSCloud__upgradeButton'
         >
             <FormattedMessage
-                id='admin.billing.subscription.upgradeMattermostCloud.upgradeButton'
+                id='admin.billing.subscription.upgradeMatterFOSSCloud.upgradeButton'
                 defaultMessage='Subscribe Now'
             />
         </button>
     </div>
 );
 
-export const freeTrial = (onUpgradeMattermostCloud: () => void, daysLeftOnTrial: number) => (
-    <div className='UpgradeMattermostCloud'>
-        <div className='UpgradeMattermostCloud__image'>
+export const freeTrial = (onUpgradeMatterFOSSCloud: () => void, daysLeftOnTrial: number) => (
+    <div className='UpgradeMatterFOSSCloud'>
+        <div className='UpgradeMatterFOSSCloud__image'>
             <UpgradeSvg
                 height={167}
                 width={234}
             />
         </div>
-        <div className='UpgradeMattermostCloud__title'>
+        <div className='UpgradeMatterFOSSCloud__title'>
             {daysLeftOnTrial > TrialPeriodDays.TRIAL_1_DAY &&
                 <FormattedMessage
                     id='admin.billing.subscription.freeTrial.title'
@@ -105,7 +105,7 @@ export const freeTrial = (onUpgradeMattermostCloud: () => void, daysLeftOnTrial:
                 />
             }
         </div>
-        <div className='UpgradeMattermostCloud__description'>
+        <div className='UpgradeMatterFOSSCloud__description'>
             {daysLeftOnTrial > TrialPeriodDays.TRIAL_WARNING_THRESHOLD &&
                 <FormattedMarkdownMessage
                     id='admin.billing.subscription.freeTrial.description'
@@ -129,8 +129,8 @@ export const freeTrial = (onUpgradeMattermostCloud: () => void, daysLeftOnTrial:
         </div>
         <button
             type='button'
-            onClick={onUpgradeMattermostCloud}
-            className='UpgradeMattermostCloud__upgradeButton'
+            onClick={onUpgradeMatterFOSSCloud}
+            className='UpgradeMatterFOSSCloud__upgradeButton'
         >
             <FormattedMessage
                 id='admin.billing.subscription.cloudTrial.subscribeButton'

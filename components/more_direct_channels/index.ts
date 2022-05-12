@@ -9,8 +9,8 @@ import {
     getProfilesInTeam,
     getTotalUsersStats,
     searchProfiles,
-} from 'mattermost-redux/actions/users';
-import {searchGroupChannels} from 'mattermost-redux/actions/channels';
+} from 'matterfoss-redux/actions/users';
+import {searchGroupChannels} from 'matterfoss-redux/actions/channels';
 import {
     getCurrentUserId,
     getProfiles as selectProfiles,
@@ -19,12 +19,12 @@ import {
     makeSearchProfilesStartingWithTerm,
     searchProfilesInCurrentTeam,
     getTotalUsersStats as getTotalUsersStatsSelector,
-} from 'mattermost-redux/selectors/entities/users';
+} from 'matterfoss-redux/selectors/entities/users';
 
-import {getConfig} from 'mattermost-redux/selectors/entities/general';
-import {getCurrentTeam} from 'mattermost-redux/selectors/entities/teams';
-import {ActionFunc, GenericAction} from 'mattermost-redux/types/actions';
-import {UserProfile} from 'mattermost-redux/types/users';
+import {getConfig} from 'matterfoss-redux/selectors/entities/general';
+import {getCurrentTeam} from 'matterfoss-redux/selectors/entities/teams';
+import {ActionFunc, GenericAction} from 'matterfoss-redux/types/actions';
+import {UserProfile} from 'matterfoss-redux/types/users';
 
 import {openDirectChannelToUserId, openGroupChannelToUserIds} from 'actions/channel_actions';
 import {loadStatusesForProfilesList, loadProfilesMissingStatus} from 'actions/status_actions.jsx';

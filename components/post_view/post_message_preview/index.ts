@@ -7,13 +7,13 @@ import {bindActionCreators, Dispatch} from 'redux';
 
 import {GlobalState} from 'types/store';
 
-import {GenericAction} from 'mattermost-redux/types/actions';
-import {Post, PostPreviewMetadata} from 'mattermost-redux/types/posts';
+import {GenericAction} from 'matterfoss-redux/types/actions';
+import {Post, PostPreviewMetadata} from 'matterfoss-redux/types/posts';
 
-import {get} from 'mattermost-redux/selectors/entities/preferences';
-import {getConfig} from 'mattermost-redux/selectors/entities/general';
-import {getUser} from 'mattermost-redux/selectors/entities/users';
-import {getPost} from 'mattermost-redux/selectors/entities/posts';
+import {get} from 'matterfoss-redux/selectors/entities/preferences';
+import {getConfig} from 'matterfoss-redux/selectors/entities/general';
+import {getUser} from 'matterfoss-redux/selectors/entities/users';
+import {getPost} from 'matterfoss-redux/selectors/entities/posts';
 
 import {isEmbedVisible} from 'selectors/posts';
 

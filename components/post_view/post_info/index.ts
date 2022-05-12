@@ -5,20 +5,20 @@ import {connect} from 'react-redux';
 import {AnyAction, bindActionCreators, Dispatch} from 'redux';
 
 import {showActionsDropdownPulsatingDot} from 'selectors/actions_menu';
-import {setActionsMenuInitialisationState} from 'mattermost-redux/actions/preferences';
+import {setActionsMenuInitialisationState} from 'matterfoss-redux/actions/preferences';
 
-import {DispatchFunc, GetStateFunc} from 'mattermost-redux/types/actions';
-import {removePost, ExtendedPost} from 'mattermost-redux/actions/posts';
-import {getCurrentTeamId} from 'mattermost-redux/selectors/entities/teams';
-import {makeGetCommentCountForPost} from 'mattermost-redux/selectors/entities/posts';
+import {DispatchFunc, GetStateFunc} from 'matterfoss-redux/types/actions';
+import {removePost, ExtendedPost} from 'matterfoss-redux/actions/posts';
+import {getCurrentTeamId} from 'matterfoss-redux/selectors/entities/teams';
+import {makeGetCommentCountForPost} from 'matterfoss-redux/selectors/entities/posts';
 
 import {
     get,
     isCollapsedThreadsEnabled,
-} from 'mattermost-redux/selectors/entities/preferences';
-import {getConfig} from 'mattermost-redux/selectors/entities/general';
+} from 'matterfoss-redux/selectors/entities/preferences';
+import {getConfig} from 'matterfoss-redux/selectors/entities/general';
 
-import {Post} from 'mattermost-redux/types/posts';
+import {Post} from 'matterfoss-redux/types/posts';
 
 import {GlobalState} from 'types/store';
 

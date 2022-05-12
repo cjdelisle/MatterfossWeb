@@ -4,9 +4,9 @@
 import {ActionCreatorsMapObject, bindActionCreators, Dispatch} from 'redux';
 import {connect} from 'react-redux';
 
-import {ActionFunc, GenericAction} from 'mattermost-redux/types/actions';
+import {ActionFunc, GenericAction} from 'matterfoss-redux/types/actions';
 
-import {unarchiveChannel} from 'mattermost-redux/actions/channels';
+import {unarchiveChannel} from 'matterfoss-redux/actions/channels';
 
 import UnarchiveChannelModal, {ChannelDetailsActions} from './unarchive_channel_modal';
 

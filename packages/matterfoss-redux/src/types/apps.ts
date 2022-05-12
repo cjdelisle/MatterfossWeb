@@ -187,7 +187,7 @@ export type AppSelectOption = {
 
 export type AppFieldType = string;
 
-// This should go in mattermost-redux
+// This should go in matterfoss-redux
 export type AppField = {
 
     // Name is the name of the JSON field to use.

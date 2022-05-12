@@ -3,22 +3,22 @@
 
 import {createSelector} from 'reselect';
 
-import {getCurrentUserId} from 'mattermost-redux/selectors/entities/users';
-import {getCurrentTeamId} from 'mattermost-redux/selectors/entities/teams';
+import {getCurrentUserId} from 'matterfoss-redux/selectors/entities/users';
+import {getCurrentTeamId} from 'matterfoss-redux/selectors/entities/teams';
 import {
     makeGetMessageInHistoryItem,
     getPost,
     makeGetPostIdsForThread,
-} from 'mattermost-redux/selectors/entities/posts';
-import {getCustomEmojisByName} from 'mattermost-redux/selectors/entities/emojis';
+} from 'matterfoss-redux/selectors/entities/posts';
+import {getCustomEmojisByName} from 'matterfoss-redux/selectors/entities/emojis';
 import {
     removeReaction,
     addMessageIntoHistory,
     moveHistoryIndexBack,
     moveHistoryIndexForward,
-} from 'mattermost-redux/actions/posts';
-import {Posts} from 'mattermost-redux/constants';
-import {isPostPendingOrFailed} from 'mattermost-redux/utils/post_utils';
+} from 'matterfoss-redux/actions/posts';
+import {Posts} from 'matterfoss-redux/constants';
+import {isPostPendingOrFailed} from 'matterfoss-redux/utils/post_utils';
 
 import * as PostActions from 'actions/post_actions.jsx';
 import {executeCommand} from 'actions/command';
@@ -31,7 +31,7 @@ import * as Utils from 'utils/utils.jsx';
 import {Constants, StoragePrefixes} from 'utils/constants';
 import {PostDraft} from 'types/store/rhs';
 import {GlobalState} from 'types/store';
-import {DispatchFunc, GetStateFunc} from 'mattermost-redux/types/actions';
+import {DispatchFunc, GetStateFunc} from 'matterfoss-redux/types/actions';
 
 export function clearCommentDraftUploads() {
     return actionOnGlobalItemsWithPrefix(StoragePrefixes.COMMENT_DRAFT, (_key: string, draft: PostDraft) => {

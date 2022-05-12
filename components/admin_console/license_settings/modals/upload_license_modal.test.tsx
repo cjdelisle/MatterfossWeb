@@ -12,7 +12,7 @@ import {shallow} from 'enzyme';
 
 import {mountWithIntl} from 'tests/helpers/intl-test-helper';
 
-import {General} from 'mattermost-redux/constants';
+import {General} from 'matterfoss-redux/constants';
 
 import * as i18Selectors from 'selectors/i18n';
 
@@ -31,7 +31,7 @@ describe('components/admin_console/license_settings/modals/upload_license_modal'
         ExpiresAt: '1620335443650',
         SkuShortName: 'Enterprise',
         Name: 'LicenseName',
-        Company: 'Mattermost Inc.',
+        Company: 'MatterFOSS Inc.',
         Users: '100',
     };
 
@@ -102,7 +102,7 @@ describe('components/admin_console/license_settings/modals/upload_license_modal'
 
     test('should display upload btn Enabled when file is loaded', () => {
         const realUseState = React.useState;
-        const initialStateForFileObj = {name: 'testing.mattermost-license', size: 10240000} as File;
+        const initialStateForFileObj = {name: 'testing.matterfoss-license', size: 10240000} as File;
 
         jest.spyOn(React, 'useState').mockImplementationOnce(() => realUseState(initialStateForFileObj as any));
         const wrapper = mountWithIntl(
@@ -126,7 +126,7 @@ describe('components/admin_console/license_settings/modals/upload_license_modal'
 
     test('should display the file name when is selected', () => {
         const realUseState = React.useState;
-        const initialStateForFileObj = {name: 'testing.mattermost-license', size: (5 * 1024)} as File;
+        const initialStateForFileObj = {name: 'testing.matterfoss-license', size: (5 * 1024)} as File;
 
         jest.spyOn(React, 'useState').mockImplementationOnce(() => realUseState(initialStateForFileObj as any));
         const wrapper = mountWithIntl(
@@ -137,7 +137,7 @@ describe('components/admin_console/license_settings/modals/upload_license_modal'
         const fileTextName = wrapper.find('UploadLicenseModal').find('.file-name-section span.file-name');
         const fileTextSize = wrapper.find('UploadLicenseModal').find('.file-name-section span.file-size');
 
-        expect(fileTextName.text()).toEqual('testing.mattermost-license');
+        expect(fileTextName.text()).toEqual('testing.matterfoss-license');
         expect(fileTextSize.text()).toEqual('5KB');
     });
 

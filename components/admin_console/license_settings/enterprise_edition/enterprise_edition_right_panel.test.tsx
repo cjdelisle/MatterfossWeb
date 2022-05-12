@@ -3,7 +3,7 @@
 
 import React from 'react';
 
-import {LicenseSkus} from 'mattermost-redux/types/general';
+import {LicenseSkus} from 'matterfoss-redux/types/general';
 
 import {mountWithIntl} from 'tests/helpers/intl-test-helper';
 
@@ -17,7 +17,7 @@ describe('components/admin_console/license_settings/enterprise_edition/enterpris
         ExpiresAt: '1620335443650',
         SkuShortName: LicenseSkus.Starter,
         Name: 'LicenseName',
-        Company: 'Mattermost Inc.',
+        Company: 'MatterFOSS Inc.',
         Users: '1000000',
         IsGovSku: 'false',
     };

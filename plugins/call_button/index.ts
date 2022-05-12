@@ -3,7 +3,7 @@
 
 import {connect} from 'react-redux';
 
-import {getCurrentChannel, getMyCurrentChannelMembership} from 'mattermost-redux/selectors/entities/channels';
+import {getCurrentChannel, getMyCurrentChannelMembership} from 'matterfoss-redux/selectors/entities/channels';
 
 import {GlobalState} from 'types/store/index';
 

@@ -2,10 +2,10 @@
 // See LICENSE.txt for license information.
 import {combineReducers} from 'redux';
 
-import {JobTypes} from 'mattermost-redux/action_types';
-import {JobsState, JobType, Job, JobsByType} from 'mattermost-redux/types/jobs';
-import {GenericAction} from 'mattermost-redux/types/actions';
-import {IDMappedObjects} from 'mattermost-redux/types/utilities';
+import {JobTypes} from 'matterfoss-redux/action_types';
+import {JobsState, JobType, Job, JobsByType} from 'matterfoss-redux/types/jobs';
+import {GenericAction} from 'matterfoss-redux/types/actions';
+import {IDMappedObjects} from 'matterfoss-redux/types/utilities';
 
 function jobs(state: IDMappedObjects<Job> = {}, action: GenericAction): IDMappedObjects<Job> {
     switch (action.type) {

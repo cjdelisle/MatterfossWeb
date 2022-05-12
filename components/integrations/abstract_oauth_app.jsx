@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import {FormattedMessage} from 'react-intl';
 import {Link} from 'react-router-dom';
 
-import {Permissions} from 'mattermost-redux/constants';
+import {Permissions} from 'matterfoss-redux/constants';
 
 import {localizeMessage} from 'utils/utils.jsx';
 import BackstageHeader from 'components/backstage/components/backstage_header.jsx';
@@ -274,7 +274,7 @@ export default class AbstractOAuthApp extends React.PureComponent {
                         <div className='form__help'>
                             <FormattedMessage
                                 id='add_oauth_app.trusted.help'
-                                defaultMessage='If true, the OAuth 2.0 application is considered trusted by the Mattermost server and does not require the user to accept authorization. If false, a window opens to ask the user to accept or deny the authorization.'
+                                defaultMessage='If true, the OAuth 2.0 application is considered trusted by the MatterFOSS server and does not require the user to accept authorization. If false, a window opens to ask the user to accept or deny the authorization.'
                             />
                         </div>
                     </div>

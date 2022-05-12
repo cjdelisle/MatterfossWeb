@@ -4,7 +4,7 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 
-import {Team} from 'mattermost-redux/types/teams';
+import {Team} from 'matterfoss-redux/types/teams';
 
 import SelectTeam, {TEAMS_PER_PAGE} from 'components/select_team/select_team';
 
@@ -27,7 +27,7 @@ describe('components/select_team/SelectTeam', () => {
             {id: 'team_id_1', delete_at: 0, name: 'team-a', display_name: 'Team A', allow_open_invite: true} as Team,
             {id: 'team_id_2', delete_at: 0, name: 'b-team', display_name: 'B Team', allow_open_invite: true} as Team,
         ],
-        siteName: 'Mattermost',
+        siteName: 'MatterFOSS',
         canCreateTeams: false,
         canManageSystem: true,
         canJoinPublicTeams: true,

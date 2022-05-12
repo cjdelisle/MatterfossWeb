@@ -6,14 +6,14 @@ import {ActionCreatorsMapObject, bindActionCreators, Dispatch} from 'redux';
 
 import {createSelector} from 'reselect';
 
-import {createComplianceReport, getComplianceReports} from 'mattermost-redux/actions/admin';
-import {getComplianceReports as selectComplianceReports, getConfig} from 'mattermost-redux/selectors/entities/admin';
-import {getLicense} from 'mattermost-redux/selectors/entities/general';
+import {createComplianceReport, getComplianceReports} from 'matterfoss-redux/actions/admin';
+import {getComplianceReports as selectComplianceReports, getConfig} from 'matterfoss-redux/selectors/entities/admin';
+import {getLicense} from 'matterfoss-redux/selectors/entities/general';
 
-import {ActionFunc, GenericAction} from 'mattermost-redux/types/actions';
-import {Compliance} from 'mattermost-redux/types/compliance';
-import {GlobalState} from 'mattermost-redux/types/store';
-import {UserProfile} from 'mattermost-redux/types/users';
+import {ActionFunc, GenericAction} from 'matterfoss-redux/types/actions';
+import {Compliance} from 'matterfoss-redux/types/compliance';
+import {GlobalState} from 'matterfoss-redux/types/store';
+import {UserProfile} from 'matterfoss-redux/types/users';
 
 import ComplianceReports from './compliance_reports';
 

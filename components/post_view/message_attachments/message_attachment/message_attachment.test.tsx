@@ -4,9 +4,9 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 
-import {MessageAttachment as MessageAttachmentType} from 'mattermost-redux/types/message_attachments';
-import {PostImage} from 'mattermost-redux/types/posts';
-import {PostAction} from 'mattermost-redux/types/integration_actions';
+import {MessageAttachment as MessageAttachmentType} from 'matterfoss-redux/types/message_attachments';
+import {PostImage} from 'matterfoss-redux/types/posts';
+import {PostAction} from 'matterfoss-redux/types/integration_actions';
 
 import {Constants} from 'utils/constants';
 
@@ -189,7 +189,7 @@ describe('components/post_view/MessageAttachment', () => {
         const props = {
             ...baseProps,
             attachment: {
-                title: 'Do you like https://mattermost.com?',
+                title: 'Do you like https://matterfoss.com?',
             } as MessageAttachmentType,
         };
 

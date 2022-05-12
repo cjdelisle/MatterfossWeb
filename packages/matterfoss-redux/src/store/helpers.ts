@@ -4,7 +4,7 @@
 import {AnyAction, combineReducers, Reducer} from 'redux';
 import {enableBatching} from 'redux-batched-actions';
 
-import deepFreezeAndThrowOnMutation from 'mattermost-redux/utils/deep_freeze';
+import deepFreezeAndThrowOnMutation from 'matterfoss-redux/utils/deep_freeze';
 
 export function createReducer(...reducerSets: Array<Record<string, Reducer>>) {
     // Merge each dictionary of reducers into a single combined reducer

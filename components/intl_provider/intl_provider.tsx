@@ -6,13 +6,13 @@ import {IntlProvider as BaseIntlProvider} from 'react-intl';
 
 import {MessageFormatElement} from '@formatjs/icu-messageformat-parser';
 
-import {Client4} from 'mattermost-redux/client';
-import {setLocalizeFunction} from 'mattermost-redux/utils/i18n_utils';
+import {Client4} from 'matterfoss-redux/client';
+import {setLocalizeFunction} from 'matterfoss-redux/utils/i18n_utils';
 
 import * as I18n from 'i18n/i18n';
 
 import {localizeMessage} from 'utils/utils';
-import {ActionFunc} from 'mattermost-redux/types/actions';
+import {ActionFunc} from 'matterfoss-redux/types/actions';
 
 type Props = {
     children: ReactNode;
@@ -25,7 +25,7 @@ type Props = {
 
 export default class IntlProvider extends React.PureComponent<Props> {
     componentDidMount() {
-        // Pass localization function back to mattermost-redux
+        // Pass localization function back to matterfoss-redux
         setLocalizeFunction(localizeMessage);
 
         this.handleLocaleChange(this.props.locale);

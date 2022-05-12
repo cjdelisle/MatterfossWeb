@@ -3,12 +3,12 @@
 
 import {createSelector} from 'reselect';
 
-import {GlobalState} from 'mattermost-redux/types/store';
-import {AppBinding} from 'mattermost-redux/types/apps';
-import {ClientConfig} from 'mattermost-redux/types/config';
+import {GlobalState} from 'matterfoss-redux/types/store';
+import {AppBinding} from 'matterfoss-redux/types/apps';
+import {ClientConfig} from 'matterfoss-redux/types/config';
 
-import {getConfig} from 'mattermost-redux/selectors/entities/general';
-import {AppBindingLocations} from 'mattermost-redux/constants/apps';
+import {getConfig} from 'matterfoss-redux/selectors/entities/general';
+import {AppBindingLocations} from 'matterfoss-redux/constants/apps';
 
 import {Locations} from 'utils/constants';
 

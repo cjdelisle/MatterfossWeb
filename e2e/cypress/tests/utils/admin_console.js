@@ -48,7 +48,7 @@ export const adminConsoleNavigation = [
     },
     {
         type: ['team', 'e20', 'cloud_enterprise'],
-        header: 'Mattermost Users',
+        header: 'MatterFOSS Users',
         sidebar: 'Users',
         url: 'admin_console/user_management/users',
     },
@@ -60,13 +60,13 @@ export const adminConsoleNavigation = [
     },
     {
         type: ['team', 'e20', 'cloud_enterprise'],
-        header: 'Mattermost Teams',
+        header: 'MatterFOSS Teams',
         sidebar: 'Teams',
         url: 'admin_console/user_management/teams',
     },
     {
         type: ['team', 'e20', 'cloud_enterprise'],
-        header: 'Mattermost Channels',
+        header: 'MatterFOSS Channels',
         team_header: 'Channels',
         sidebar: 'Channels',
         url: 'admin_console/user_management/channels',

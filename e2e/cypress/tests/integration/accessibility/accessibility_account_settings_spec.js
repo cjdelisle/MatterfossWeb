@@ -237,7 +237,7 @@ describe('Verify Accessibility Support in different sections in Settings and Pro
         cy.findByTestId('cancelSettingPicture').should('have.attr', 'aria-label', 'Cancel');
 
         // # Upload a pic and save
-        cy.findByTestId('uploadPicture').attachFile('mattermost-icon.png');
+        cy.findByTestId('uploadPicture').attachFile('matterfoss-icon.png');
         cy.uiSave();
 
         // # Click on Edit Profile Picture

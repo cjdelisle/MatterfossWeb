@@ -4,14 +4,14 @@
 import React from 'react';
 import {FormattedMessage} from 'react-intl';
 
-import {Team, TeamMembership} from 'mattermost-redux/types/teams';
-import {UserProfile} from 'mattermost-redux/types/users';
-import {ActionFunc} from 'mattermost-redux/types/actions';
-import type {isCollapsedThreadsEnabled} from 'mattermost-redux/selectors/entities/preferences';
+import {Team, TeamMembership} from 'matterfoss-redux/types/teams';
+import {UserProfile} from 'matterfoss-redux/types/users';
+import {ActionFunc} from 'matterfoss-redux/types/actions';
+import type {isCollapsedThreadsEnabled} from 'matterfoss-redux/selectors/entities/preferences';
 
 import {browserHistory} from 'utils/browser_history';
 import * as Utils from 'utils/utils.jsx';
-import {isGuest, isAdmin, isSystemAdmin} from 'mattermost-redux/utils/user_utils';
+import {isGuest, isAdmin, isSystemAdmin} from 'matterfoss-redux/utils/user_utils';
 import ConfirmModal from 'components/confirm_modal';
 import DropdownIcon from 'components/widgets/icons/fa_dropdown_icon';
 
@@ -204,7 +204,7 @@ export default class TeamMembersDropdown extends React.PureComponent<Props, Stat
                 <div>
                     <FormattedMessage
                         id='team_members_dropdown.confirmDemoteDescription'
-                        defaultMessage="If you demote yourself from the System Admin role and there is not another user with System Admin privileges, you'll need to re-assign a System Admin by accessing the Mattermost server through a terminal and running the following command."
+                        defaultMessage="If you demote yourself from the System Admin role and there is not another user with System Admin privileges, you'll need to re-assign a System Admin by accessing the MatterFOSS server through a terminal and running the following command."
                     />
                     <br/>
                     <br/>

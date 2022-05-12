@@ -6,16 +6,16 @@ import fs from 'fs';
 import assert from 'assert';
 import nock from 'nock';
 
-import * as Actions from 'mattermost-redux/actions/posts';
-import {getChannelStats} from 'mattermost-redux/actions/channels';
-import {login} from 'mattermost-redux/actions/users';
-import {createCustomEmoji} from 'mattermost-redux/actions/emojis';
-import {Client4} from 'mattermost-redux/client';
+import * as Actions from 'matterfoss-redux/actions/posts';
+import {getChannelStats} from 'matterfoss-redux/actions/channels';
+import {login} from 'matterfoss-redux/actions/users';
+import {createCustomEmoji} from 'matterfoss-redux/actions/emojis';
+import {Client4} from 'matterfoss-redux/client';
 import {Preferences, Posts, RequestStatus} from '../constants';
-import {PostTypes} from 'mattermost-redux/action_types';
-import TestHelper from 'mattermost-redux/test/test_helper';
-import configureStore from 'mattermost-redux/test/test_store';
-import {getPreferenceKey} from 'mattermost-redux/utils/preference_utils';
+import {PostTypes} from 'matterfoss-redux/action_types';
+import TestHelper from 'matterfoss-redux/test/test_helper';
+import configureStore from 'matterfoss-redux/test/test_store';
+import {getPreferenceKey} from 'matterfoss-redux/utils/preference_utils';
 
 const OK_RESPONSE = {status: 'OK'};
 
@@ -1167,7 +1167,7 @@ describe('Actions.Posts', () => {
     });
 
     it('getCustomEmojiForReaction', async () => {
-        const testImageData = fs.createReadStream('packages/mattermost-redux/test/assets/images/test.png');
+        const testImageData = fs.createReadStream('packages/matterfoss-redux/test/assets/images/test.png');
         const {dispatch, getState} = store;
 
         nock(Client4.getBaseRoute()).
@@ -1204,12 +1204,12 @@ describe('Actions.Posts', () => {
     it('getOpenGraphMetadata', async () => {
         const {dispatch, getState} = store;
 
-        const url = 'https://mattermost.com';
-        const docs = 'https://docs.mattermost.com/';
+        const url = 'https://matterfoss.com';
+        const docs = 'https://docs.matterfoss.com/';
 
         nock(Client4.getBaseRoute()).
             post('/opengraph').
-            reply(200, {type: 'article', url: 'https://mattermost.com/', title: 'Mattermost private cloud messaging', description: 'Open source,  private cloud\nSlack-alternative, \nWorkplace messaging for web, PCs and phones.'});
+            reply(200, {type: 'article', url: 'https://matterfoss.com/', title: 'MatterFOSS private cloud messaging', description: 'Open source,  private cloud\nSlack-alternative, \nWorkplace messaging for web, PCs and phones.'});
         await dispatch(Actions.getOpenGraphMetadata(url));
 
         nock(Client4.getBaseRoute()).

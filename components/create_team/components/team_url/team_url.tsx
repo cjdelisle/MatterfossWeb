@@ -6,8 +6,8 @@ import React from 'react';
 import {Button} from 'react-bootstrap';
 import {FormattedMessage} from 'react-intl';
 
-import {Team} from 'mattermost-redux/types/teams';
-import {Client4Error} from 'mattermost-redux/types/client4';
+import {Team} from 'matterfoss-redux/types/teams';
+import {Client4Error} from 'matterfoss-redux/types/client4';
 
 import {trackEvent} from 'actions/telemetry_actions.jsx';
 
@@ -128,7 +128,7 @@ export default class TeamUrl extends React.PureComponent<Props, State> {
                 this.setState({nameError: (
                     <FormattedMarkdownMessage
                         id='create_team.team_url.taken'
-                        defaultMessage='This URL [starts with a reserved word](!https://docs.mattermost.com/help/getting-started/creating-teams.html#team-url) or is unavailable. Please try another.'
+                        defaultMessage='This URL [starts with a reserved word](!https://docs.matterfoss.com/help/getting-started/creating-teams.html#team-url) or is unavailable. Please try another.'
                     />),
                 });
                 return;

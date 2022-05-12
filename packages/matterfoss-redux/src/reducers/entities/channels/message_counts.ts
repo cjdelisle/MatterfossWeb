@@ -6,17 +6,17 @@ import {
     ChannelTypes,
     UserTypes,
     SchemeTypes,
-} from 'mattermost-redux/action_types';
+} from 'matterfoss-redux/action_types';
 
-import {General} from 'mattermost-redux/constants';
+import {General} from 'matterfoss-redux/constants';
 
-import {GenericAction} from 'mattermost-redux/types/actions';
+import {GenericAction} from 'matterfoss-redux/types/actions';
 import {
     Channel,
     ChannelMessageCount,
     ServerChannel,
-} from 'mattermost-redux/types/channels';
-import {RelationOneToOne} from 'mattermost-redux/types/utilities';
+} from 'matterfoss-redux/types/channels';
+import {RelationOneToOne} from 'matterfoss-redux/types/utilities';
 
 export default function messageCounts(state: RelationOneToOne<Channel, ChannelMessageCount> = {}, action: GenericAction): RelationOneToOne<Channel, ChannelMessageCount> {
     switch (action.type) {

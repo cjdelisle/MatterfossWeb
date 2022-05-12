@@ -5,9 +5,9 @@ import {combineReducers} from 'redux';
 
 import {Timezone} from 'timezones.json';
 
-import {GeneralTypes, UserTypes} from 'mattermost-redux/action_types';
-import {GenericAction} from 'mattermost-redux/types/actions';
-import {ClientLicense, ClientConfig} from 'mattermost-redux/types/config';
+import {GeneralTypes, UserTypes} from 'matterfoss-redux/action_types';
+import {GenericAction} from 'matterfoss-redux/types/actions';
+import {ClientLicense, ClientConfig} from 'matterfoss-redux/types/config';
 
 function config(state: Partial<ClientConfig> = {}, action: GenericAction) {
     switch (action.type) {

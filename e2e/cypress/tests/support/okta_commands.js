@@ -31,7 +31,7 @@ Cypress.Commands.add('oktaCreateUser', (user = {}) => {
                 password: {value: user.password},
                 recovery_question: {
                     question: 'What is the best open source messaging platform for developers?',
-                    answer: 'Mattermost',
+                    answer: 'MatterFOSS',
                 },
             },
         },

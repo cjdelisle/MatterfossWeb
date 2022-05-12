@@ -4,9 +4,9 @@
 import {bindActionCreators, Dispatch, ActionCreatorsMapObject} from 'redux';
 import {connect} from 'react-redux';
 
-import {sendPasswordResetEmail} from 'mattermost-redux/actions/users';
-import {GenericAction, ActionFunc} from 'mattermost-redux/types/actions';
-import {ServerError} from 'mattermost-redux/types/errors';
+import {sendPasswordResetEmail} from 'matterfoss-redux/actions/users';
+import {GenericAction, ActionFunc} from 'matterfoss-redux/types/actions';
+import {ServerError} from 'matterfoss-redux/types/errors';
 
 import PasswordResetSendLink from './password_reset_send_link';
 

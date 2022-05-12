@@ -4,8 +4,8 @@
 import React from 'react';
 import classNames from 'classnames';
 
-import {getFileThumbnailUrl, getFileUrl} from 'mattermost-redux/utils/file_utils';
-import {FileInfo} from 'mattermost-redux/types/files';
+import {getFileThumbnailUrl, getFileUrl} from 'matterfoss-redux/utils/file_utils';
+import {FileInfo} from 'matterfoss-redux/types/files';
 
 import OverlayTrigger from 'components/overlay_trigger';
 import Tooltip from 'components/tooltip';

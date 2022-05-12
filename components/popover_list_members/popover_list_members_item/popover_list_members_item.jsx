@@ -4,12 +4,12 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import {Client4} from 'mattermost-redux/client';
+import {Client4} from 'matterfoss-redux/client';
 
 import ProfilePicture from 'components/profile_picture';
 import MessageIcon from 'components/widgets/icons/message_icon';
 import {UserStatuses} from 'utils/constants';
-import {isGuest} from 'mattermost-redux/utils/user_utils';
+import {isGuest} from 'matterfoss-redux/utils/user_utils';
 import BotBadge from 'components/widgets/badges/bot_badge';
 import GuestBadge from 'components/widgets/badges/guest_badge';
 import SharedUserIndicator from 'components/shared_user_indicator';

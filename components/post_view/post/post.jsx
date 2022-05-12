@@ -4,8 +4,8 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import {Posts} from 'mattermost-redux/constants';
-import {isMeMessage as checkIsMeMessage} from 'mattermost-redux/utils/post_utils';
+import {Posts} from 'matterfoss-redux/constants';
+import {isMeMessage as checkIsMeMessage} from 'matterfoss-redux/utils/post_utils';
 
 import {makeIsEligibleForClick} from 'utils/utils';
 import * as PostUtils from 'utils/post_utils';

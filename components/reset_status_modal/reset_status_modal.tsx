@@ -4,14 +4,14 @@
 import React from 'react';
 import {FormattedMessage} from 'react-intl';
 
-import {Preferences} from 'mattermost-redux/constants';
+import {Preferences} from 'matterfoss-redux/constants';
 
 import ConfirmModal from 'components/confirm_modal';
 import {toTitleCase} from 'utils/utils.jsx';
 import {UserStatuses} from 'utils/constants';
 import {t} from 'utils/i18n';
-import {UserStatus} from 'mattermost-redux/types/users';
-import {PreferenceType} from 'mattermost-redux/types/preferences';
+import {UserStatus} from 'matterfoss-redux/types/users';
+import {PreferenceType} from 'matterfoss-redux/types/preferences';
 
 t('modal.manual_status.auto_responder.message_');
 t('modal.manual_status.auto_responder.message_away');

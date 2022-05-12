@@ -15,7 +15,7 @@ describe('components/GetLinkModal', () => {
         onHide,
         onExited: jest.fn(),
         title: 'title',
-        link: 'https://mattermost.com',
+        link: 'https://matterfoss.com',
     };
 
     test('should match snapshot when all props is set', () => {

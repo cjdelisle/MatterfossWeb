@@ -4,7 +4,7 @@
 import React from 'react';
 import {FormattedMessage} from 'react-intl';
 
-import {Channel} from 'mattermost-redux/types/channels';
+import {Channel} from 'matterfoss-redux/types/channels';
 import PrewrittenChips from 'components/create_post/prewritten_chips';
 import {useMeasurePunchouts} from 'components/widgets/tour_tip';
 

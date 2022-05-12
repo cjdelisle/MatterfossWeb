@@ -1,9 +1,9 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
-import {Permissions} from 'mattermost-redux/constants';
+import {Permissions} from 'matterfoss-redux/constants';
 
-import {GlobalState} from 'mattermost-redux/types/store';
+import {GlobalState} from 'matterfoss-redux/types/store';
 
 import {getChannel} from './channels';
 import {haveIChannelPermission} from './roles';

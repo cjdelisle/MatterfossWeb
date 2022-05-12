@@ -1,11 +1,11 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 import {General, Preferences} from '../constants';
-import {localizeMessage} from 'mattermost-redux/utils/i18n_utils';
-import {ChannelMembership} from 'mattermost-redux/types/channels';
-import {TeamMembership} from 'mattermost-redux/types/teams';
-import {UserProfile} from 'mattermost-redux/types/users';
-import {IDMappedObjects} from 'mattermost-redux/types/utilities';
+import {localizeMessage} from 'matterfoss-redux/utils/i18n_utils';
+import {ChannelMembership} from 'matterfoss-redux/types/channels';
+import {TeamMembership} from 'matterfoss-redux/types/teams';
+import {UserProfile} from 'matterfoss-redux/types/users';
+import {IDMappedObjects} from 'matterfoss-redux/types/utilities';
 export function getFullName(user: UserProfile): string {
     if (user.first_name && user.last_name) {
         return user.first_name + ' ' + user.last_name;

@@ -6,12 +6,12 @@ import fs from 'fs';
 import assert from 'assert';
 import nock from 'nock';
 
-import * as Actions from 'mattermost-redux/actions/users';
-import {Client4} from 'mattermost-redux/client';
+import * as Actions from 'matterfoss-redux/actions/users';
+import {Client4} from 'matterfoss-redux/client';
 import {RequestStatus} from '../constants';
-import TestHelper from 'mattermost-redux/test/test_helper';
-import configureStore from 'mattermost-redux/test/test_store';
-import deepFreeze from 'mattermost-redux/utils/deep_freeze';
+import TestHelper from 'matterfoss-redux/test/test_helper';
+import configureStore from 'matterfoss-redux/test/test_store';
+import deepFreeze from 'matterfoss-redux/utils/deep_freeze';
 
 const OK_RESPONSE = {status: 'OK'};
 
@@ -1080,7 +1080,7 @@ describe('Actions.Users', () => {
         TestHelper.mockLogin();
         await Actions.login(TestHelper.basicUser.email, 'password1')(store.dispatch, store.getState);
 
-        const testImageData = fs.createReadStream('packages/mattermost-redux/test/assets/images/test.png');
+        const testImageData = fs.createReadStream('packages/matterfoss-redux/test/assets/images/test.png');
 
         const beforeTime = new Date().getTime();
         const currentUserId = store.getState().entities.users.currentUserId;

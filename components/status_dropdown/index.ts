@@ -4,14 +4,14 @@
 import {connect} from 'react-redux';
 import {bindActionCreators, Dispatch} from 'redux';
 
-import {savePreferences} from 'mattermost-redux/actions/preferences';
+import {savePreferences} from 'matterfoss-redux/actions/preferences';
 
-import {setStatus, unsetCustomStatus} from 'mattermost-redux/actions/users';
-import {Client4} from 'mattermost-redux/client';
-import {Preferences} from 'mattermost-redux/constants';
+import {setStatus, unsetCustomStatus} from 'matterfoss-redux/actions/users';
+import {Client4} from 'matterfoss-redux/client';
+import {Preferences} from 'matterfoss-redux/constants';
 
-import {get, getBool, getInt} from 'mattermost-redux/selectors/entities/preferences';
-import {getCurrentUser, getStatusForUserId} from 'mattermost-redux/selectors/entities/users';
+import {get, getBool, getInt} from 'matterfoss-redux/selectors/entities/preferences';
+import {getCurrentUser, getStatusForUserId} from 'matterfoss-redux/selectors/entities/users';
 
 import {openModal} from 'actions/views/modals';
 import {setStatusDropdown} from 'actions/views/status_dropdown';
@@ -19,7 +19,7 @@ import {setStatusDropdown} from 'actions/views/status_dropdown';
 import {getCurrentUserTimezone} from 'selectors/general';
 import {makeGetCustomStatus, isCustomStatusEnabled, showStatusDropdownPulsatingDot, isCustomStatusExpired} from 'selectors/views/custom_status';
 import {isStatusDropdownOpen} from 'selectors/views/status_dropdown';
-import {GenericAction} from 'mattermost-redux/types/actions';
+import {GenericAction} from 'matterfoss-redux/types/actions';
 import {GlobalState} from 'types/store';
 import {
     OnboardingTaskCategory,

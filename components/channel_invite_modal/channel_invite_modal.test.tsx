@@ -5,9 +5,9 @@ import React from 'react';
 import {shallow} from 'enzyme';
 import {Modal} from 'react-bootstrap';
 
-import {UserProfile} from 'mattermost-redux/types/users';
-import {Channel} from 'mattermost-redux/types/channels';
-import {RelationOneToOne} from 'mattermost-redux/types/utilities';
+import {UserProfile} from 'matterfoss-redux/types/users';
+import {Channel} from 'matterfoss-redux/types/channels';
+import {RelationOneToOne} from 'matterfoss-redux/types/utilities';
 
 import {Value} from 'components/multiselect/multiselect';
 

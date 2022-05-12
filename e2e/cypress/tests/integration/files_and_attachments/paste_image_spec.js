@@ -26,7 +26,7 @@ describe('Paste Image', () => {
     });
 
     it('MM-T2263 - Paste image in message box and post', () => {
-        const filename = 'mattermost-icon.png';
+        const filename = 'matterfoss-icon.png';
 
         // # Paste image
         cy.fixture(filename).then((img) => {

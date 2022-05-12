@@ -5,21 +5,21 @@ import {ComponentProps} from 'react';
 import {connect} from 'react-redux';
 import {ActionCreatorsMapObject, bindActionCreators, Dispatch} from 'redux';
 
-import {getLicense, getConfig} from 'mattermost-redux/selectors/entities/general';
-import {getChannel} from 'mattermost-redux/selectors/entities/channels';
-import {getCurrentUserId, getCurrentUserMentionKeys} from 'mattermost-redux/selectors/entities/users';
-import {getCurrentTeamId, getCurrentTeam, getTeam} from 'mattermost-redux/selectors/entities/teams';
-import {getThreadOrSynthetic} from 'mattermost-redux/selectors/entities/threads';
-import {getPost} from 'mattermost-redux/selectors/entities/posts';
-import {isCollapsedThreadsEnabled} from 'mattermost-redux/selectors/entities/preferences';
+import {getLicense, getConfig} from 'matterfoss-redux/selectors/entities/general';
+import {getChannel} from 'matterfoss-redux/selectors/entities/channels';
+import {getCurrentUserId, getCurrentUserMentionKeys} from 'matterfoss-redux/selectors/entities/users';
+import {getCurrentTeamId, getCurrentTeam, getTeam} from 'matterfoss-redux/selectors/entities/teams';
+import {getThreadOrSynthetic} from 'matterfoss-redux/selectors/entities/threads';
+import {getPost} from 'matterfoss-redux/selectors/entities/posts';
+import {isCollapsedThreadsEnabled} from 'matterfoss-redux/selectors/entities/preferences';
 
-import {isSystemMessage} from 'mattermost-redux/utils/post_utils';
+import {isSystemMessage} from 'matterfoss-redux/utils/post_utils';
 
-import {GenericAction} from 'mattermost-redux/types/actions';
+import {GenericAction} from 'matterfoss-redux/types/actions';
 
-import {Post} from 'mattermost-redux/types/posts';
+import {Post} from 'matterfoss-redux/types/posts';
 
-import {setThreadFollow} from 'mattermost-redux/actions/threads';
+import {setThreadFollow} from 'matterfoss-redux/actions/threads';
 
 import {ModalData} from 'types/actions';
 import {GlobalState} from 'types/store';

@@ -4,7 +4,7 @@
 import React from 'react';
 import {FormattedMessage} from 'react-intl';
 
-import {Channel} from 'mattermost-redux/types/channels';
+import {Channel} from 'matterfoss-redux/types/channels';
 
 import ConfirmModal from 'components/confirm_modal';
 

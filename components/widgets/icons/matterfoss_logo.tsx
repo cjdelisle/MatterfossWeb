@@ -4,7 +4,7 @@
 import React, {CSSProperties} from 'react';
 import {useIntl} from 'react-intl';
 
-export default function MattermostLogo(props: React.HTMLAttributes<HTMLSpanElement>) {
+export default function MatterFOSSLogo(props: React.HTMLAttributes<HTMLSpanElement>) {
     const {formatMessage} = useIntl();
     return (
         <span {...props}>
@@ -15,7 +15,7 @@ export default function MattermostLogo(props: React.HTMLAttributes<HTMLSpanEleme
                 viewBox='0 0 500 500'
                 enableBackground='new 0 0 500 500'
                 role='img'
-                aria-label={formatMessage({id: 'generic_icons.mattermost', defaultMessage: 'Mattermost Logo'})}
+                aria-label={formatMessage({id: 'generic_icons.matterfoss', defaultMessage: 'MatterFOSS Logo'})}
             >
                 <g>
                     <g>

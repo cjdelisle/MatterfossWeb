@@ -1,10 +1,10 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
-import {Client4} from 'mattermost-redux/client';
-import {Preferences} from 'mattermost-redux/constants';
-import {getConfig, isPerformanceDebuggingEnabled} from 'mattermost-redux/selectors/entities/general';
-import {getBool} from 'mattermost-redux/selectors/entities/preferences';
+import {Client4} from 'matterfoss-redux/client';
+import {Preferences} from 'matterfoss-redux/constants';
+import {getConfig, isPerformanceDebuggingEnabled} from 'matterfoss-redux/selectors/entities/general';
+import {getBool} from 'matterfoss-redux/selectors/entities/preferences';
 
 import store from 'stores/redux_store.jsx';
 
@@ -92,7 +92,7 @@ export function measure(name1, name2) {
         return [-1, ''];
     }
 
-    const displayPrefix = '🐐 Mattermost: ';
+    const displayPrefix = '🐐 MatterFOSS: ';
     const measurementName = `${displayPrefix}${name1} - ${name2}`;
     performance.measure(measurementName, name1, name2);
     const lastDuration = mostRecentDurationByEntryName(measurementName);

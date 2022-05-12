@@ -3,9 +3,9 @@
 
 import {connect} from 'react-redux';
 
-import {getCurrentUserId, getStatusForUserId} from 'mattermost-redux/selectors/entities/users';
+import {getCurrentUserId, getStatusForUserId} from 'matterfoss-redux/selectors/entities/users';
 
-import {UserProfile} from 'mattermost-redux/types/users';
+import {UserProfile} from 'matterfoss-redux/types/users';
 
 import {GlobalState} from 'types/store';
 

@@ -10,10 +10,10 @@ import {isModalOpen} from 'selectors/views/modals';
 import {GlobalState} from 'types/store';
 import {ModalIdentifiers} from 'utils/constants';
 import {closeModal, openModal} from 'actions/views/modals';
-import {getLicenseConfig} from 'mattermost-redux/actions/general';
+import {getLicenseConfig} from 'matterfoss-redux/actions/general';
 import {requestTrialLicense} from 'actions/admin_actions';
-import {getStandardAnalytics} from 'mattermost-redux/actions/admin';
-import {DispatchFunc} from 'mattermost-redux/types/actions';
+import {getStandardAnalytics} from 'matterfoss-redux/actions/admin';
+import {DispatchFunc} from 'matterfoss-redux/types/actions';
 import FormattedMarkdownMessage from 'components/formatted_markdown_message';
 import {makeAsyncComponent} from 'components/async_load';
 
@@ -140,7 +140,7 @@ function StartTrialModal(props: Props): JSX.Element | null {
                     <span>
                         <FormattedMarkdownMessage
                             id='start_trial.modal.disclaimer'
-                            defaultMessage='By clicking “Start 30-day trial”, I agree to the [Mattermost Software Evaluation Agreement,](!https://mattermost.com/software-evaluation-agreement) [privacy policy,](!https://mattermost.com/privacy-policy/) and receiving product emails.'
+                            defaultMessage='By clicking “Start 30-day trial”, I agree to the [MatterFOSS Software Evaluation Agreement,](!https://matterfoss.com/software-evaluation-agreement) [privacy policy,](!https://matterfoss.com/privacy-policy/) and receiving product emails.'
                         />
                     </span>
                 </div>

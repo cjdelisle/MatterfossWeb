@@ -7,7 +7,7 @@ import classNames from 'classnames';
 
 import {Tooltip} from 'react-bootstrap';
 
-import {getCurrentChannel, getMyCurrentChannelMembership} from 'mattermost-redux/selectors/entities/channels';
+import {getCurrentChannel, getMyCurrentChannelMembership} from 'matterfoss-redux/selectors/entities/channels';
 
 import {getActivePluginId} from 'selectors/rhs';
 

@@ -4,12 +4,12 @@
 import assert from 'assert';
 import nock from 'nock';
 
-import {GeneralTypes} from 'mattermost-redux/action_types';
-import * as Actions from 'mattermost-redux/actions/general';
-import {Client4} from 'mattermost-redux/client';
+import {GeneralTypes} from 'matterfoss-redux/action_types';
+import * as Actions from 'matterfoss-redux/actions/general';
+import {Client4} from 'matterfoss-redux/client';
 
-import TestHelper from 'mattermost-redux/test/test_helper';
-import configureStore from 'mattermost-redux/test/test_store';
+import TestHelper from 'matterfoss-redux/test/test_helper';
+import configureStore from 'matterfoss-redux/test/test_store';
 
 import {FormattedError} from './helpers.ts';
 

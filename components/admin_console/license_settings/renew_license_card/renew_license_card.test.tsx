@@ -7,7 +7,7 @@ import {act} from 'react-dom/test-utils';
 import {Provider} from 'react-redux';
 import configureStore from 'redux-mock-store';
 
-import {Client4} from 'mattermost-redux/client';
+import {Client4} from 'matterfoss-redux/client';
 import {mountWithIntl} from 'tests/helpers/intl-test-helper';
 
 import RenewalLicenseCard from './renew_license_card';

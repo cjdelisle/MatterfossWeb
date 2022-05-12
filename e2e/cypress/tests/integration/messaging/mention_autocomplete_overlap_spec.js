@@ -94,7 +94,7 @@ describe('Messaging', () => {
 
 function uploadFileAndAddAutocompleteThenVerifyNoOverlap() {
     // # Upload file
-    cy.get('#fileUploadInput').attachFile('mattermost-icon.png');
+    cy.get('#fileUploadInput').attachFile('matterfoss-icon.png');
 
     // # Create and then type message to use
     cy.get('#post_textbox').clear();

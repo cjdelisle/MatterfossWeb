@@ -6,11 +6,11 @@ import React from 'react';
 import {Modal} from 'react-bootstrap';
 import {FormattedMessage} from 'react-intl';
 
-import {Client4} from 'mattermost-redux/client';
-import {General} from 'mattermost-redux/constants';
-import {ActionResult} from 'mattermost-redux/types/actions';
-import {UserProfile} from 'mattermost-redux/types/users';
-import * as UserUtils from 'mattermost-redux/utils/user_utils';
+import {Client4} from 'matterfoss-redux/client';
+import {General} from 'matterfoss-redux/constants';
+import {ActionResult} from 'matterfoss-redux/types/actions';
+import {UserProfile} from 'matterfoss-redux/types/users';
+import * as UserUtils from 'matterfoss-redux/utils/user_utils';
 
 import {trackEvent} from 'actions/telemetry_actions.jsx';
 
@@ -169,7 +169,7 @@ export default class ManageRolesModal extends React.PureComponent<Props, State> 
                     <p>
                         <FormattedMarkdownMessage
                             id='admin.manage_roles.additionalRoles'
-                            defaultMessage='Select additional permissions for the account. [Read more about roles and permissions](!https://developers.mattermost.com/integrate/admin-guide/admin-personal-access-token/).'
+                            defaultMessage='Select additional permissions for the account. [Read more about roles and permissions](!https://developers.matterfoss.com/integrate/admin-guide/admin-personal-access-token/).'
                         />
                     </p>
                     <div className='checkbox'>
@@ -189,7 +189,7 @@ export default class ManageRolesModal extends React.PureComponent<Props, State> 
                             </strong>
                             <FormattedMessage
                                 id='admin.manage_roles.postAllRole'
-                                defaultMessage='Access to post to all Mattermost channels including direct messages.'
+                                defaultMessage='Access to post to all MatterFOSS channels including direct messages.'
                             />
                         </label>
                     </div>
@@ -210,7 +210,7 @@ export default class ManageRolesModal extends React.PureComponent<Props, State> 
                             </strong>
                             <FormattedMessage
                                 id='admin.manage_roles.postAllPublicRole'
-                                defaultMessage='Access to post to all Mattermost public channels.'
+                                defaultMessage='Access to post to all MatterFOSS public channels.'
                             />
                         </label>
                     </div>
@@ -242,7 +242,7 @@ export default class ManageRolesModal extends React.PureComponent<Props, State> 
                                 />
                                 <FormattedMarkdownMessage
                                     id='admin.manage_roles.allowUserAccessTokens'
-                                    defaultMessage='Allow this account to generate [personal access tokens](!https://developers.mattermost.com/integrate/admin-guide/admin-personal-access-token/).'
+                                    defaultMessage='Allow this account to generate [personal access tokens](!https://developers.matterfoss.com/integrate/admin-guide/admin-personal-access-token/).'
                                 />
                                 <span className='d-block pt-2 pb-2 light'>
                                     <FormattedMessage

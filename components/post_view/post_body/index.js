@@ -3,8 +3,8 @@
 
 import {connect} from 'react-redux';
 
-import {getPost} from 'mattermost-redux/selectors/entities/posts';
-import {getUser} from 'mattermost-redux/selectors/entities/users';
+import {getPost} from 'matterfoss-redux/selectors/entities/posts';
+import {getUser} from 'matterfoss-redux/selectors/entities/users';
 
 import {getIsPostBeingEdited, getIsPostBeingEditedInRHS} from '../../../selectors/posts';
 

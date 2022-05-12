@@ -4,21 +4,21 @@
 import assert from 'assert';
 import nock from 'nock';
 
-import * as Actions from 'mattermost-redux/actions/channels';
-import {addUserToTeam} from 'mattermost-redux/actions/teams';
-import {getProfilesByIds, login} from 'mattermost-redux/actions/users';
-import {createIncomingHook, createOutgoingHook} from 'mattermost-redux/actions/integrations';
+import * as Actions from 'matterfoss-redux/actions/channels';
+import {addUserToTeam} from 'matterfoss-redux/actions/teams';
+import {getProfilesByIds, login} from 'matterfoss-redux/actions/users';
+import {createIncomingHook, createOutgoingHook} from 'matterfoss-redux/actions/integrations';
 
-import {Client4} from 'mattermost-redux/client';
+import {Client4} from 'matterfoss-redux/client';
 
 import {General, RequestStatus, Preferences, Permissions} from '../constants';
 import {CategoryTypes} from '../constants/channel_categories';
 import {MarkUnread} from '../constants/channels';
 
-import TestHelper from 'mattermost-redux/test/test_helper';
-import configureStore from 'mattermost-redux/test/test_store';
+import TestHelper from 'matterfoss-redux/test/test_helper';
+import configureStore from 'matterfoss-redux/test/test_store';
 
-import {getPreferenceKey} from 'mattermost-redux/utils/preference_utils';
+import {getPreferenceKey} from 'matterfoss-redux/utils/preference_utils';
 
 const OK_RESPONSE = {status: 'OK'};
 

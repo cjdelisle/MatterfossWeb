@@ -3,22 +3,22 @@
 
 import {combineReducers} from 'redux';
 
-import {AdminTypes, UserTypes} from 'mattermost-redux/action_types';
-import {Stats} from 'mattermost-redux/constants';
-import PluginState from 'mattermost-redux/constants/plugins';
+import {AdminTypes, UserTypes} from 'matterfoss-redux/action_types';
+import {Stats} from 'matterfoss-redux/constants';
+import PluginState from 'matterfoss-redux/constants/plugins';
 
-import {GenericAction} from 'mattermost-redux/types/actions';
-import {ClusterInfo, AnalyticsRow} from 'mattermost-redux/types/admin';
-import {Audit} from 'mattermost-redux/types/audits';
-import {Compliance} from 'mattermost-redux/types/compliance';
-import {AdminConfig, EnvironmentConfig} from 'mattermost-redux/types/config';
-import {MixedUnlinkedGroupRedux} from 'mattermost-redux/types/groups';
-import {PluginRedux, PluginStatusRedux} from 'mattermost-redux/types/plugins';
-import {SamlCertificateStatus, SamlMetadataResponse} from 'mattermost-redux/types/saml';
-import {Team} from 'mattermost-redux/types/teams';
-import {UserAccessToken, UserProfile} from 'mattermost-redux/types/users';
-import {RelationOneToOne, IDMappedObjects} from 'mattermost-redux/types/utilities';
-import {DataRetentionCustomPolicy} from 'mattermost-redux/types/data_retention';
+import {GenericAction} from 'matterfoss-redux/types/actions';
+import {ClusterInfo, AnalyticsRow} from 'matterfoss-redux/types/admin';
+import {Audit} from 'matterfoss-redux/types/audits';
+import {Compliance} from 'matterfoss-redux/types/compliance';
+import {AdminConfig, EnvironmentConfig} from 'matterfoss-redux/types/config';
+import {MixedUnlinkedGroupRedux} from 'matterfoss-redux/types/groups';
+import {PluginRedux, PluginStatusRedux} from 'matterfoss-redux/types/plugins';
+import {SamlCertificateStatus, SamlMetadataResponse} from 'matterfoss-redux/types/saml';
+import {Team} from 'matterfoss-redux/types/teams';
+import {UserAccessToken, UserProfile} from 'matterfoss-redux/types/users';
+import {RelationOneToOne, IDMappedObjects} from 'matterfoss-redux/types/utilities';
+import {DataRetentionCustomPolicy} from 'matterfoss-redux/types/data_retention';
 
 function logs(state: string[] = [], action: GenericAction) {
     switch (action.type) {
@@ -550,7 +550,7 @@ function ldapGroups(state: Record<string, MixedUnlinkedGroupRedux> = {}, action:
         if (nextState[action.data]) {
             nextState[action.data] = {
                 ...nextState[action.data],
-                mattermost_group_id: undefined,
+                matterfoss_group_id: undefined,
                 has_syncables: undefined,
                 failed: false,
             };

@@ -5,20 +5,20 @@ import {connect} from 'react-redux';
 
 import {createSelector} from 'reselect';
 
-import {Preferences} from 'mattermost-redux/constants';
-import {getChannelNameToDisplayNameMap} from 'mattermost-redux/selectors/entities/channels';
-import {getAutolinkedUrlSchemes, getConfig, getManagedResourcePaths} from 'mattermost-redux/selectors/entities/general';
-import {getBool} from 'mattermost-redux/selectors/entities/preferences';
-import {getCurrentTeam} from 'mattermost-redux/selectors/entities/teams';
-import {getAllUserMentionKeys} from 'mattermost-redux/selectors/entities/search';
+import {Preferences} from 'matterfoss-redux/constants';
+import {getChannelNameToDisplayNameMap} from 'matterfoss-redux/selectors/entities/channels';
+import {getAutolinkedUrlSchemes, getConfig, getManagedResourcePaths} from 'matterfoss-redux/selectors/entities/general';
+import {getBool} from 'matterfoss-redux/selectors/entities/preferences';
+import {getCurrentTeam} from 'matterfoss-redux/selectors/entities/teams';
+import {getAllUserMentionKeys} from 'matterfoss-redux/selectors/entities/search';
 
-import {GlobalState} from 'mattermost-redux/types/store';
+import {GlobalState} from 'matterfoss-redux/types/store';
 
 import {getEmojiMap} from 'selectors/emojis';
 import {getSiteURL} from 'utils/url';
 import {ChannelNamesMap, MentionKey} from 'utils/text_formatting';
 
-import {getPost} from 'mattermost-redux/selectors/entities/posts';
+import {getPost} from 'matterfoss-redux/selectors/entities/posts';
 
 import Markdown from './markdown';
 

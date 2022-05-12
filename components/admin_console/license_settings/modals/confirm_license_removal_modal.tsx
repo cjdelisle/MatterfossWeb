@@ -6,7 +6,7 @@ import {useSelector, useDispatch} from 'react-redux';
 
 import {FormattedMessage} from 'react-intl';
 
-import {DispatchFunc} from 'mattermost-redux/types/actions';
+import {DispatchFunc} from 'matterfoss-redux/types/actions';
 import {GlobalState} from 'types/store';
 
 import {isModalOpen} from 'selectors/views/modals';

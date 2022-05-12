@@ -296,5 +296,5 @@ function withPrefix(name, prefix) {
 }
 
 function createEmail(name, prefix) {
-    return `${prefix}${name}@sample.mattermost.com`;
+    return `${prefix}${name}@sample.matterfoss.com`;
 }

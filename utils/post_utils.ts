@@ -5,28 +5,28 @@ import {IntlShape} from 'react-intl';
 
 import {createSelector} from 'reselect';
 
-import {Client4} from 'mattermost-redux/client';
+import {Client4} from 'matterfoss-redux/client';
 
-import {Permissions, Posts} from 'mattermost-redux/constants';
+import {Permissions, Posts} from 'matterfoss-redux/constants';
 
-import {getChannel} from 'mattermost-redux/selectors/entities/channels';
-import {getConfig} from 'mattermost-redux/selectors/entities/general';
-import {makeGetReactionsForPost} from 'mattermost-redux/selectors/entities/posts';
-import {get, isCollapsedThreadsEnabled} from 'mattermost-redux/selectors/entities/preferences';
-import {haveIChannelPermission} from 'mattermost-redux/selectors/entities/roles';
-import {getCurrentTeamId, getTeam} from 'mattermost-redux/selectors/entities/teams';
-import {makeGetDisplayName, getCurrentUserId, getUser, UserMentionKey} from 'mattermost-redux/selectors/entities/users';
+import {getChannel} from 'matterfoss-redux/selectors/entities/channels';
+import {getConfig} from 'matterfoss-redux/selectors/entities/general';
+import {makeGetReactionsForPost} from 'matterfoss-redux/selectors/entities/posts';
+import {get, isCollapsedThreadsEnabled} from 'matterfoss-redux/selectors/entities/preferences';
+import {haveIChannelPermission} from 'matterfoss-redux/selectors/entities/roles';
+import {getCurrentTeamId, getTeam} from 'matterfoss-redux/selectors/entities/teams';
+import {makeGetDisplayName, getCurrentUserId, getUser, UserMentionKey} from 'matterfoss-redux/selectors/entities/users';
 
-import {Channel} from 'mattermost-redux/types/channels';
-import {ClientConfig, ClientLicense} from 'mattermost-redux/types/config';
-import {ServerError} from 'mattermost-redux/types/errors';
-import {Group} from 'mattermost-redux/types/groups';
-import {Post} from 'mattermost-redux/types/posts';
-import {Reaction} from 'mattermost-redux/types/reactions';
+import {Channel} from 'matterfoss-redux/types/channels';
+import {ClientConfig, ClientLicense} from 'matterfoss-redux/types/config';
+import {ServerError} from 'matterfoss-redux/types/errors';
+import {Group} from 'matterfoss-redux/types/groups';
+import {Post} from 'matterfoss-redux/types/posts';
+import {Reaction} from 'matterfoss-redux/types/reactions';
 
-import {getUserIdFromChannelName} from 'mattermost-redux/utils/channel_utils';
-import * as PostListUtils from 'mattermost-redux/utils/post_list';
-import {canEditPost as canEditPostRedux} from 'mattermost-redux/utils/post_utils';
+import {getUserIdFromChannelName} from 'matterfoss-redux/utils/channel_utils';
+import * as PostListUtils from 'matterfoss-redux/utils/post_list';
+import {canEditPost as canEditPostRedux} from 'matterfoss-redux/utils/post_utils';
 
 import {getEmojiMap} from 'selectors/emojis';
 import {getIsMobileView} from 'selectors/views/browser';
@@ -343,7 +343,7 @@ export function isIdNotPost(postId: string): boolean {
 }
 
 // getOldestPostId returns the oldest valid post ID in the given list of post IDs. This function is copied from
-// mattermost-redux, except it also includes additional special IDs that are only used in the web app.
+// matterfoss-redux, except it also includes additional special IDs that are only used in the web app.
 export function getOldestPostId(postIds: string[]): string {
     for (let i = postIds.length - 1; i >= 0; i--) {
         const item = postIds[i];
@@ -391,7 +391,7 @@ export function getPreviousPostId(postIds: string[], startIndex: number): string
 }
 
 // getLatestPostId returns the most recent valid post ID in the given list of post IDs. This function is copied from
-// mattermost-redux, except it also includes additional special IDs that are only used in the web app.
+// matterfoss-redux, except it also includes additional special IDs that are only used in the web app.
 export function getLatestPostId(postIds: string[]): string {
     for (let i = 0; i < postIds.length; i++) {
         const item = postIds[i];

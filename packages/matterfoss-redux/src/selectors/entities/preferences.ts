@@ -3,18 +3,18 @@
 
 import {createSelector} from 'reselect';
 
-import {General, Preferences} from 'mattermost-redux/constants';
+import {General, Preferences} from 'matterfoss-redux/constants';
 
-import {getConfig, getFeatureFlagValue, getLicense} from 'mattermost-redux/selectors/entities/general';
+import {getConfig, getFeatureFlagValue, getLicense} from 'matterfoss-redux/selectors/entities/general';
 
-import {AddMembersToChanneltreatments} from 'mattermost-redux/constants/config';
-import {PreferenceType} from 'mattermost-redux/types/preferences';
-import {GlobalState} from 'mattermost-redux/types/store';
-import {Theme} from 'mattermost-redux/types/themes';
+import {AddMembersToChanneltreatments} from 'matterfoss-redux/constants/config';
+import {PreferenceType} from 'matterfoss-redux/types/preferences';
+import {GlobalState} from 'matterfoss-redux/types/store';
+import {Theme} from 'matterfoss-redux/types/themes';
 
-import {createShallowSelector} from 'mattermost-redux/utils/helpers';
-import {getPreferenceKey} from 'mattermost-redux/utils/preference_utils';
-import {setThemeDefaults} from 'mattermost-redux/utils/theme_utils';
+import {createShallowSelector} from 'matterfoss-redux/utils/helpers';
+import {getPreferenceKey} from 'matterfoss-redux/utils/preference_utils';
+import {setThemeDefaults} from 'matterfoss-redux/utils/theme_utils';
 
 export function getMyPreferences(state: GlobalState): { [x: string]: PreferenceType } {
     return state.entities.preferences.myPreferences;

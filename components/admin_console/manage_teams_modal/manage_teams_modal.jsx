@@ -6,11 +6,11 @@ import React from 'react';
 import {Modal} from 'react-bootstrap';
 import {FormattedMessage} from 'react-intl';
 
-import {Client4} from 'mattermost-redux/client';
+import {Client4} from 'matterfoss-redux/client';
 
 import {filterAndSortTeamsByDisplayName} from 'utils/team_utils';
 import * as Utils from 'utils/utils.jsx';
-import {isAdmin} from 'mattermost-redux/utils/user_utils';
+import {isAdmin} from 'matterfoss-redux/utils/user_utils';
 import LoadingScreen from 'components/loading_screen';
 import Avatar from 'components/widgets/users/avatar';
 

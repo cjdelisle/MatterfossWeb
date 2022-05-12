@@ -6,8 +6,8 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import {FormattedMessage} from 'react-intl';
 
-import * as UserUtils from 'mattermost-redux/utils/user_utils';
-import {General} from 'mattermost-redux/constants';
+import * as UserUtils from 'matterfoss-redux/utils/user_utils';
+import {General} from 'matterfoss-redux/constants';
 
 import BotDefaultIcon from 'images/bot_default_icon.png';
 
@@ -611,7 +611,7 @@ export default class AddBot extends React.PureComponent {
                             <div className='col-md-5 col-sm-8 col-sm-offset-4'>
                                 <FormattedMarkdownMessage
                                     id='admin.manage_roles.additionalRoles'
-                                    defaultMessage='Select additional permissions for the account. [Read more about roles and permissions](!https://developers.mattermost.com/integrate/admin-guide/admin-personal-access-token/).'
+                                    defaultMessage='Select additional permissions for the account. [Read more about roles and permissions](!https://developers.matterfoss.com/integrate/admin-guide/admin-personal-access-token/).'
                                 />
                             </div>
                         </div>
@@ -644,7 +644,7 @@ export default class AddBot extends React.PureComponent {
                                 <div className='form__help'>
                                     <FormattedMessage
                                         id='bot.add.post_all.help'
-                                        defaultMessage='Bot will have access to post to all Mattermost channels including direct messages.'
+                                        defaultMessage='Bot will have access to post to all MatterFOSS channels including direct messages.'
                                     />
                                 </div>
                             </div>
@@ -678,7 +678,7 @@ export default class AddBot extends React.PureComponent {
                                 <div className='form__help'>
                                     <FormattedMessage
                                         id='bot.add.post_channels.help'
-                                        defaultMessage='Bot will have access to post to all Mattermost public channels.'
+                                        defaultMessage='Bot will have access to post to all MatterFOSS public channels.'
                                     />
                                 </div>
                             </div>

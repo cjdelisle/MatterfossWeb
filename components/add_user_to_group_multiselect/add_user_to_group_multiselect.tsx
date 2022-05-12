@@ -3,11 +3,11 @@
 
 import React from 'react';
 
-import {RelationOneToOne} from 'mattermost-redux/types/utilities';
-import {ActionResult} from 'mattermost-redux/types/actions';
-import {UserProfile} from 'mattermost-redux/types/users';
+import {RelationOneToOne} from 'matterfoss-redux/types/utilities';
+import {ActionResult} from 'matterfoss-redux/types/actions';
+import {UserProfile} from 'matterfoss-redux/types/users';
 
-import {filterProfilesStartingWithTerm} from 'mattermost-redux/utils/user_utils';
+import {filterProfilesStartingWithTerm} from 'matterfoss-redux/utils/user_utils';
 import {localizeMessage} from 'utils/utils.jsx';
 import MultiSelect, {Value} from 'components/multiselect/multiselect';
 

@@ -14,10 +14,10 @@ const AnnouncementBannerFeatureDiscovery: React.FC = () => {
         <FeatureDiscovery
             featureName='announcement_banner'
             titleID='admin.announcement_banner_feature_discovery.title'
-            titleDefault='Create custom announcement banners with Mattermost Professional'
+            titleDefault='Create custom announcement banners with MatterFOSS Professional'
             copyID='admin.announcement_banner_feature_discovery.copy'
             copyDefault={'Create announcement banners to notify all members of important information.'}
-            learnMoreURL='https://docs.mattermost.com/administration/announcement-banner.html'
+            learnMoreURL='https://docs.matterfoss.com/administration/announcement-banner.html'
             featureDiscoveryImage={<AnnouncementBannerSVG/>}
         />
     );

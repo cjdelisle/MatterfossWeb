@@ -3,10 +3,10 @@
 
 import React, {PureComponent} from 'react';
 
-import {UserProfile as UserProfileType} from 'mattermost-redux/types/users';
+import {UserProfile as UserProfileType} from 'matterfoss-redux/types/users';
 
 import {imageURLForUser, isMobile} from 'utils/utils.jsx';
-import {isGuest} from 'mattermost-redux/utils/user_utils';
+import {isGuest} from 'matterfoss-redux/utils/user_utils';
 
 import OverlayTrigger, {BaseOverlayTrigger} from 'components/overlay_trigger';
 import ProfilePopover from 'components/profile_popover';

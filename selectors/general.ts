@@ -3,9 +3,9 @@
 
 import {createSelector} from 'reselect';
 
-import {getCurrentUser} from 'mattermost-redux/selectors/entities/common';
-import {getConfig} from 'mattermost-redux/selectors/entities/general';
-import {getTimezoneForUserProfile} from 'mattermost-redux/selectors/entities/timezone';
+import {getCurrentUser} from 'matterfoss-redux/selectors/entities/common';
+import {getConfig} from 'matterfoss-redux/selectors/entities/general';
+import {getTimezoneForUserProfile} from 'matterfoss-redux/selectors/entities/timezone';
 
 import * as UserAgent from 'utils/user_agent';
 

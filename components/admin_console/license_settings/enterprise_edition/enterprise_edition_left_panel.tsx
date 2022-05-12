@@ -4,8 +4,8 @@ import React from 'react';
 
 import {FormattedMessage, FormattedNumber} from 'react-intl';
 
-import {ClientLicense} from 'mattermost-redux/types/config';
-import {LicenseSkus} from 'mattermost-redux/types/general';
+import {ClientLicense} from 'matterfoss-redux/types/config';
+import {LicenseSkus} from 'matterfoss-redux/types/general';
 
 import {getRemainingDaysFromFutureTimestamp, toTitleCase} from 'utils/utils';
 
@@ -73,12 +73,12 @@ const EnterpriseEditionLeftPanel: React.FC<EnterpriseEditionProps> = ({
                 />
             </div>
             <div className='title'>
-                {`Mattermost ${skuName}`}{freeTrialBadge(isTrialLicense)}
+                {`MatterFOSS ${skuName}`}{freeTrialBadge(isTrialLicense)}
             </div>
             <div className='subtitle'>
                 <FormattedMessage
                     id='admin.license.enterpriseEdition.subtitle'
-                    defaultMessage='This is an Enterprise Edition for the Mattermost {skuName} plan'
+                    defaultMessage='This is an Enterprise Edition for the MatterFOSS {skuName} plan'
                     values={{skuName}}
                 />
             </div>
@@ -108,7 +108,7 @@ const EnterpriseEditionLeftPanel: React.FC<EnterpriseEditionProps> = ({
             <div className='license-notices'>
                 {upgradedFromTE ? <>
                     <p>
-                        {'When using Mattermost Enterprise Edition, the software is offered under a commercial license. See '}
+                        {'When using MatterFOSS Enterprise Edition, the software is offered under a commercial license. See '}
                         <a
                             role='button'
                             onClick={openEELicenseModal}
@@ -141,7 +141,7 @@ const renderLicenseContent = (
 ) => {
     // Note: DO NOT LOCALISE THESE STRINGS. Legally we can not since the license is in English.
 
-    const sku = license.SkuShortName ? <>{`Mattermost ${toTitleCase(skuName)}${isTrialLicense ? ' License Trial' : ''}`}</> : null;
+    const sku = license.SkuShortName ? <>{`MatterFOSS ${toTitleCase(skuName)}${isTrialLicense ? ' License Trial' : ''}`}</> : null;
 
     const users = <FormattedNumber value={parseInt(license.Users, 10)}/>;
 

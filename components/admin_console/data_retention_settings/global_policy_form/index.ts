@@ -8,13 +8,13 @@ import {bindActionCreators, Dispatch, ActionCreatorsMapObject} from 'redux';
 
 import {
     updateConfig,
-} from 'mattermost-redux/actions/admin';
-import {GenericAction, ActionFunc} from 'mattermost-redux/types/actions';
+} from 'matterfoss-redux/actions/admin';
+import {GenericAction, ActionFunc} from 'matterfoss-redux/types/actions';
 
 import {setNavigationBlocked} from 'actions/admin_actions.jsx';
 
-import {AdminConfig} from 'mattermost-redux/types/config';
-import {ServerError} from 'mattermost-redux/types/errors';
+import {AdminConfig} from 'matterfoss-redux/types/config';
+import {ServerError} from 'matterfoss-redux/types/errors';
 
 import GlobalPolicyForm from './global_policy_form';
 

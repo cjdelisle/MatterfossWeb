@@ -3,7 +3,7 @@
 
 import React from 'react';
 
-import {Channel} from 'mattermost-redux/types/channels';
+import {Channel} from 'matterfoss-redux/types/channels';
 import {localizeMessage} from 'utils/utils';
 import Menu from 'components/widgets/menu/menu';
 

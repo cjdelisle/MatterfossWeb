@@ -4,17 +4,17 @@
 import {connect} from 'react-redux';
 import {ActionCreatorsMapObject, bindActionCreators, Dispatch} from 'redux';
 
-import {Action} from 'mattermost-redux/types/actions';
+import {Action} from 'matterfoss-redux/types/actions';
 
-import {getInt, isCustomGroupsEnabled} from 'mattermost-redux/selectors/entities/preferences';
+import {getInt, isCustomGroupsEnabled} from 'matterfoss-redux/selectors/entities/preferences';
 import {
     getConfig,
     getFirstAdminVisitMarketplaceStatus,
-} from 'mattermost-redux/selectors/entities/general';
-import {getCurrentTeam} from 'mattermost-redux/selectors/entities/teams';
-import {getCurrentUser} from 'mattermost-redux/selectors/entities/users';
-import {haveICurrentTeamPermission, haveISystemPermission} from 'mattermost-redux/selectors/entities/roles';
-import {Permissions} from 'mattermost-redux/constants';
+} from 'matterfoss-redux/selectors/entities/general';
+import {getCurrentTeam} from 'matterfoss-redux/selectors/entities/teams';
+import {getCurrentUser} from 'matterfoss-redux/selectors/entities/users';
+import {haveICurrentTeamPermission, haveISystemPermission} from 'matterfoss-redux/selectors/entities/roles';
+import {Permissions} from 'matterfoss-redux/constants';
 import {GlobalState} from 'types/store';
 import {OnboardingTaskCategory, OnboardingTasksName, TaskNameMapToSteps} from 'components/onboarding_tasks';
 import {openModal} from 'actions/views/modals';
@@ -33,7 +33,7 @@ function mapStateToProps(state: GlobalState) {
 
     const appDownloadLink = config.AppDownloadLink || '';
     const enableCommands = config.EnableCommands === 'true';
-    const siteName = config.SiteName || 'Mattermost';
+    const siteName = config.SiteName || 'MatterFOSS';
     const enableIncomingWebhooks = config.EnableIncomingWebhooks === 'true';
     const enableOAuthServiceProvider = config.EnableOAuthServiceProvider === 'true';
     const enableOutgoingWebhooks = config.EnableOutgoingWebhooks === 'true';

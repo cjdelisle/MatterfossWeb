@@ -3,10 +3,10 @@
 
 import assert from 'assert';
 
-import deepFreezeAndThrowOnMutation from 'mattermost-redux/utils/deep_freeze';
-import {AdminTypes, UserTypes} from 'mattermost-redux/action_types';
-import reducer, {convertAnalyticsRowsToStats} from 'mattermost-redux/reducers/entities/admin';
-import PluginState from 'mattermost-redux/constants/plugins';
+import deepFreezeAndThrowOnMutation from 'matterfoss-redux/utils/deep_freeze';
+import {AdminTypes, UserTypes} from 'matterfoss-redux/action_types';
+import reducer, {convertAnalyticsRowsToStats} from 'matterfoss-redux/reducers/entities/admin';
+import PluginState from 'matterfoss-redux/constants/plugins';
 
 describe('reducers.entities.admin', () => {
     describe('pluginStatuses', () => {
@@ -606,13 +606,13 @@ describe('reducers.entities.admin', () => {
                         {
                             primary_key: 'test1',
                             name: 'test1',
-                            mattermost_group_id: null,
+                            matterfoss_group_id: null,
                             has_syncables: null,
                         },
                         {
                             primary_key: 'test2',
                             name: 'test2',
-                            mattermost_group_id: 'mattermost-id',
+                            matterfoss_group_id: 'matterfoss-id',
                             has_syncables: true,
                         },
                     ],
@@ -622,13 +622,13 @@ describe('reducers.entities.admin', () => {
                 test1: {
                     primary_key: 'test1',
                     name: 'test1',
-                    mattermost_group_id: null,
+                    matterfoss_group_id: null,
                     has_syncables: null,
                 },
                 test2: {
                     primary_key: 'test2',
                     name: 'test2',
-                    mattermost_group_id: 'mattermost-id',
+                    matterfoss_group_id: 'matterfoss-id',
                     has_syncables: true,
                 },
             };
@@ -642,13 +642,13 @@ describe('reducers.entities.admin', () => {
                 test1: {
                     primary_key: 'test1',
                     name: 'test1',
-                    mattermost_group_id: null,
+                    matterfoss_group_id: null,
                     has_syncables: null,
                 },
                 test2: {
                     primary_key: 'test2',
                     name: 'test2',
-                    mattermost_group_id: 'mattermost-id',
+                    matterfoss_group_id: 'matterfoss-id',
                     has_syncables: true,
                 },
             };
@@ -660,13 +660,13 @@ describe('reducers.entities.admin', () => {
                         {
                             primary_key: 'test3',
                             name: 'test3',
-                            mattermost_group_id: null,
+                            matterfoss_group_id: null,
                             has_syncables: null,
                         },
                         {
                             primary_key: 'test4',
                             name: 'test4',
-                            mattermost_group_id: 'mattermost-id',
+                            matterfoss_group_id: 'matterfoss-id',
                             has_syncables: false,
                         },
                     ],
@@ -676,13 +676,13 @@ describe('reducers.entities.admin', () => {
                 test3: {
                     primary_key: 'test3',
                     name: 'test3',
-                    mattermost_group_id: null,
+                    matterfoss_group_id: null,
                     has_syncables: null,
                 },
                 test4: {
                     primary_key: 'test4',
                     name: 'test4',
-                    mattermost_group_id: 'mattermost-id',
+                    matterfoss_group_id: 'matterfoss-id',
                     has_syncables: false,
                 },
             };
@@ -696,13 +696,13 @@ describe('reducers.entities.admin', () => {
                 test1: {
                     primary_key: 'test1',
                     name: 'test1',
-                    mattermost_group_id: null,
+                    matterfoss_group_id: null,
                     has_syncables: null,
                 },
                 test2: {
                     primary_key: 'test2',
                     name: 'test2',
-                    mattermost_group_id: 'mattermost-id',
+                    matterfoss_group_id: 'matterfoss-id',
                     has_syncables: true,
                 },
             };
@@ -711,7 +711,7 @@ describe('reducers.entities.admin', () => {
                 data: {
                     primary_key: 'test1',
                     name: 'test1',
-                    mattermost_group_id: 'new-mattermost-id',
+                    matterfoss_group_id: 'new-matterfoss-id',
                     has_syncables: false,
                 },
             };
@@ -719,13 +719,13 @@ describe('reducers.entities.admin', () => {
                 test1: {
                     primary_key: 'test1',
                     name: 'test1',
-                    mattermost_group_id: 'new-mattermost-id',
+                    matterfoss_group_id: 'new-matterfoss-id',
                     has_syncables: false,
                 },
                 test2: {
                     primary_key: 'test2',
                     name: 'test2',
-                    mattermost_group_id: 'mattermost-id',
+                    matterfoss_group_id: 'matterfoss-id',
                     has_syncables: true,
                 },
             };
@@ -739,13 +739,13 @@ describe('reducers.entities.admin', () => {
                 test1: {
                     primary_key: 'test1',
                     name: 'test1',
-                    mattermost_group_id: null,
+                    matterfoss_group_id: null,
                     has_syncables: null,
                 },
                 test2: {
                     primary_key: 'test2',
                     name: 'test2',
-                    mattermost_group_id: 'mattermost-id',
+                    matterfoss_group_id: 'matterfoss-id',
                     has_syncables: true,
                 },
             };
@@ -757,13 +757,13 @@ describe('reducers.entities.admin', () => {
                 test1: {
                     primary_key: 'test1',
                     name: 'test1',
-                    mattermost_group_id: null,
+                    matterfoss_group_id: null,
                     has_syncables: null,
                 },
                 test2: {
                     primary_key: 'test2',
                     name: 'test2',
-                    mattermost_group_id: null,
+                    matterfoss_group_id: null,
                     has_syncables: null,
                     failed: false,
                 },
@@ -778,13 +778,13 @@ describe('reducers.entities.admin', () => {
                 test1: {
                     primary_key: 'test1',
                     name: 'test1',
-                    mattermost_group_id: null,
+                    matterfoss_group_id: null,
                     has_syncables: null,
                 },
                 test2: {
                     primary_key: 'test2',
                     name: 'test2',
-                    mattermost_group_id: 'mattermost-id',
+                    matterfoss_group_id: 'matterfoss-id',
                     has_syncables: true,
                 },
             };
@@ -796,14 +796,14 @@ describe('reducers.entities.admin', () => {
                 test1: {
                     primary_key: 'test1',
                     name: 'test1',
-                    mattermost_group_id: null,
+                    matterfoss_group_id: null,
                     has_syncables: null,
                     failed: true,
                 },
                 test2: {
                     primary_key: 'test2',
                     name: 'test2',
-                    mattermost_group_id: 'mattermost-id',
+                    matterfoss_group_id: 'matterfoss-id',
                     has_syncables: true,
                 },
             };
@@ -817,13 +817,13 @@ describe('reducers.entities.admin', () => {
                 test1: {
                     primary_key: 'test1',
                     name: 'test1',
-                    mattermost_group_id: null,
+                    matterfoss_group_id: null,
                     has_syncables: null,
                 },
                 test2: {
                     primary_key: 'test2',
                     name: 'test2',
-                    mattermost_group_id: 'mattermost-id',
+                    matterfoss_group_id: 'matterfoss-id',
                     has_syncables: true,
                 },
             };
@@ -835,13 +835,13 @@ describe('reducers.entities.admin', () => {
                 test1: {
                     primary_key: 'test1',
                     name: 'test1',
-                    mattermost_group_id: null,
+                    matterfoss_group_id: null,
                     has_syncables: null,
                 },
                 test2: {
                     primary_key: 'test2',
                     name: 'test2',
-                    mattermost_group_id: 'mattermost-id',
+                    matterfoss_group_id: 'matterfoss-id',
                     has_syncables: true,
                     failed: true,
                 },

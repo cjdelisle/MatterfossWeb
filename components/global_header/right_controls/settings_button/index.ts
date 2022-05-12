@@ -4,7 +4,7 @@
 import {bindActionCreators, Dispatch} from 'redux';
 import {connect} from 'react-redux';
 
-import {GenericAction} from 'mattermost-redux/types/actions';
+import {GenericAction} from 'matterfoss-redux/types/actions';
 import {openModal} from 'actions/views/modals';
 
 import SettingsButton from './settings_button';

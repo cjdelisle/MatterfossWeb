@@ -51,7 +51,7 @@ exports[`UserGuideDropdown should match snapshot 1`] = `
         onClick={[Function]}
         show={true}
         text="Ask the community"
-        url="https://mattermost.com/pl/default-ask-mattermost-community/"
+        url="https://matterfoss.com/pl/default-ask-matterfoss-community/"
       />
       <MenuItemExternalLink
         id="helpResourcesLink"

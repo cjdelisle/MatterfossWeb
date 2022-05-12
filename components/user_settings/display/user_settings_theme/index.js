@@ -4,10 +4,10 @@
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 
-import {getTheme, makeGetCategory} from 'mattermost-redux/selectors/entities/preferences';
-import {getCurrentTeamId, getMyTeamsCount} from 'mattermost-redux/selectors/entities/teams';
+import {getTheme, makeGetCategory} from 'matterfoss-redux/selectors/entities/preferences';
+import {getCurrentTeamId, getMyTeamsCount} from 'matterfoss-redux/selectors/entities/teams';
 
-import {saveTheme, deleteTeamSpecificThemes} from 'mattermost-redux/actions/preferences';
+import {saveTheme, deleteTeamSpecificThemes} from 'matterfoss-redux/actions/preferences';
 import {openModal} from 'actions/views/modals';
 
 import {Preferences} from 'utils/constants';

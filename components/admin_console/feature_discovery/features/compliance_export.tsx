@@ -14,10 +14,10 @@ const ComplianceExportFeatureDiscovery: React.FC = () => {
         <FeatureDiscovery
             featureName='compliance_export'
             titleID='admin.compliance_export_feature_discovery.title'
-            titleDefault='Run compliance exports with Mattermost Enterprise'
+            titleDefault='Run compliance exports with MatterFOSS Enterprise'
             copyID='admin.compliance_export_feature_discovery.copy'
             copyDefault={'Run daily compliance reports and export them to a variety of formats consumable by third-party integration tools such as Smarsh (Actiance).'}
-            learnMoreURL='https://docs.mattermost.com/administration/compliance-export.html'
+            learnMoreURL='https://docs.matterfoss.com/administration/compliance-export.html'
             featureDiscoveryImage={<ComplianceExportSVG/>}
         />
     );

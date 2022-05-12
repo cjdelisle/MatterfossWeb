@@ -2,9 +2,9 @@
 // See LICENSE.txt for license information.
 import {combineReducers} from 'redux';
 
-import {SchemeTypes, UserTypes} from 'mattermost-redux/action_types';
-import {GenericAction} from 'mattermost-redux/types/actions';
-import {SchemesState, Scheme} from 'mattermost-redux/types/schemes';
+import {SchemeTypes, UserTypes} from 'matterfoss-redux/action_types';
+import {GenericAction} from 'matterfoss-redux/types/actions';
+import {SchemesState, Scheme} from 'matterfoss-redux/types/schemes';
 
 function schemes(state: {
     [x: string]: Scheme;

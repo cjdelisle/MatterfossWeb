@@ -3,11 +3,11 @@
 
 import assert from 'assert';
 
-import {UserTypes} from 'mattermost-redux/action_types';
-import {forceLogoutIfNecessary} from 'mattermost-redux/actions/helpers';
-import {Client4} from 'mattermost-redux/client';
-import {ClientError} from 'mattermost-redux/client/client4';
-import configureStore, {mockDispatch} from 'mattermost-redux/test/test_store';
+import {UserTypes} from 'matterfoss-redux/action_types';
+import {forceLogoutIfNecessary} from 'matterfoss-redux/actions/helpers';
+import {Client4} from 'matterfoss-redux/client';
+import {ClientError} from 'matterfoss-redux/client/client4';
+import configureStore, {mockDispatch} from 'matterfoss-redux/test/test_store';
 
 describe('Actions.Helpers', () => {
     describe('forceLogoutIfNecessary', () => {

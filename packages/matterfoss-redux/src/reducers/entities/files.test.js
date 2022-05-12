@@ -3,13 +3,13 @@
 
 import assert from 'assert';
 
-import {PostTypes} from 'mattermost-redux/action_types';
+import {PostTypes} from 'matterfoss-redux/action_types';
 import {
     files as filesReducer,
     filesFromSearch as filesFromSearchReducer,
     fileIdsByPostId as fileIdsByPostIdReducer,
-} from 'mattermost-redux/reducers/entities/files';
-import deepFreeze from 'mattermost-redux/utils/deep_freeze';
+} from 'matterfoss-redux/reducers/entities/files';
+import deepFreeze from 'matterfoss-redux/utils/deep_freeze';
 
 describe('reducers/entities/files', () => {
     describe('files', () => {

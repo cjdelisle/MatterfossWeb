@@ -4,10 +4,10 @@
 import React from 'react';
 import {FormattedMessage} from 'react-intl';
 
-import {Posts} from 'mattermost-redux/constants';
-import {Post} from 'mattermost-redux/types/posts';
+import {Posts} from 'matterfoss-redux/constants';
+import {Post} from 'matterfoss-redux/types/posts';
 
-import {Theme} from 'mattermost-redux/types/themes';
+import {Theme} from 'matterfoss-redux/types/themes';
 
 import * as Utils from 'utils/utils';
 

@@ -6,21 +6,21 @@ import {useDispatch, useSelector} from 'react-redux';
 import {RouterProps} from 'react-router-dom';
 import {FormattedMessage, useIntl} from 'react-intl';
 
-import {GeneralTypes} from 'mattermost-redux/action_types';
-import {General} from 'mattermost-redux/constants';
-import {savePreferences} from 'mattermost-redux/actions/preferences';
-import {createChannel} from 'mattermost-redux/actions/channels';
-import {getFirstAdminSetupComplete as getFirstAdminSetupCompleteAction} from 'mattermost-redux/actions/general';
-import {ActionResult} from 'mattermost-redux/types/actions';
-import {Team} from 'mattermost-redux/types/teams';
-import {Channel} from 'mattermost-redux/types/channels';
-import {sendEmailInvitesToTeamGracefully} from 'mattermost-redux/actions/teams';
-import {getUseCaseOnboarding} from 'mattermost-redux/selectors/entities/preferences';
-import {getCurrentUser} from 'mattermost-redux/selectors/entities/common';
-import {getCurrentTeam, getMyTeams} from 'mattermost-redux/selectors/entities/teams';
-import {isFirstAdmin} from 'mattermost-redux/selectors/entities/users';
-import {getFirstAdminSetupComplete, getLicense, getConfig} from 'mattermost-redux/selectors/entities/general';
-import {Client4} from 'mattermost-redux/client';
+import {GeneralTypes} from 'matterfoss-redux/action_types';
+import {General} from 'matterfoss-redux/constants';
+import {savePreferences} from 'matterfoss-redux/actions/preferences';
+import {createChannel} from 'matterfoss-redux/actions/channels';
+import {getFirstAdminSetupComplete as getFirstAdminSetupCompleteAction} from 'matterfoss-redux/actions/general';
+import {ActionResult} from 'matterfoss-redux/types/actions';
+import {Team} from 'matterfoss-redux/types/teams';
+import {Channel} from 'matterfoss-redux/types/channels';
+import {sendEmailInvitesToTeamGracefully} from 'matterfoss-redux/actions/teams';
+import {getUseCaseOnboarding} from 'matterfoss-redux/selectors/entities/preferences';
+import {getCurrentUser} from 'matterfoss-redux/selectors/entities/common';
+import {getCurrentTeam, getMyTeams} from 'matterfoss-redux/selectors/entities/teams';
+import {isFirstAdmin} from 'matterfoss-redux/selectors/entities/users';
+import {getFirstAdminSetupComplete, getLicense, getConfig} from 'matterfoss-redux/selectors/entities/general';
+import {Client4} from 'matterfoss-redux/client';
 
 import {OnboardingTaskCategory, OnboardingTaskList} from 'components/onboarding_tasks/constants';
 

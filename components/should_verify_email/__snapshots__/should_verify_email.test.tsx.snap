@@ -19,7 +19,7 @@ exports[`components/ShouldVerifyEmail should match snapshot 1`] = `
           id="email_verify.almost"
           values={
             Object {
-              "siteName": "Mattermost",
+              "siteName": "MatterFOSS",
             }
           }
         />

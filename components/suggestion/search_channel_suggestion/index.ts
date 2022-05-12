@@ -2,9 +2,9 @@
 // See LICENSE.txt for license information.
 import {connect} from 'react-redux';
 
-import {getDirectTeammate} from 'mattermost-redux/selectors/entities/channels';
-import {getCurrentUserId} from 'mattermost-redux/selectors/entities/users';
-import {Channel} from 'mattermost-redux/types/channels';
+import {getDirectTeammate} from 'matterfoss-redux/selectors/entities/channels';
+import {getCurrentUserId} from 'matterfoss-redux/selectors/entities/users';
+import {Channel} from 'matterfoss-redux/types/channels';
 
 import {GlobalState} from 'types/store';
 

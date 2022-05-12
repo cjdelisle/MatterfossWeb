@@ -1,11 +1,11 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
-import {JobTypes} from 'mattermost-redux/action_types';
-import {Client4} from 'mattermost-redux/client';
+import {JobTypes} from 'matterfoss-redux/action_types';
+import {Client4} from 'matterfoss-redux/client';
 import {General} from '../constants';
 
-import {ActionFunc} from 'mattermost-redux/types/actions';
-import {JobType, Job} from 'mattermost-redux/types/jobs';
+import {ActionFunc} from 'matterfoss-redux/types/actions';
+import {JobType, Job} from 'matterfoss-redux/types/jobs';
 
 import {bindClientFunc} from './helpers';
 export function createJob(job: Job): ActionFunc {

@@ -5,11 +5,11 @@
 
 import keyMirror from 'key-mirror';
 
-import Permissions from 'mattermost-redux/constants/permissions';
+import Permissions from 'matterfoss-redux/constants/permissions';
 
-import {CustomStatusDuration} from 'mattermost-redux/types/users';
+import {CustomStatusDuration} from 'matterfoss-redux/types/users';
 
-import * as PostListUtils from 'mattermost-redux/utils/post_list';
+import * as PostListUtils from 'matterfoss-redux/utils/post_list';
 
 import audioIcon from 'images/icons/audio.svg';
 import codeIcon from 'images/icons/code.svg';
@@ -492,9 +492,9 @@ export const SocketEvents = {
     SIDEBAR_CATEGORY_ORDER_UPDATED: 'sidebar_category_order_updated',
     USER_ACTIVATION_STATUS_CHANGED: 'user_activation_status_change',
     CLOUD_PAYMENT_STATUS_UPDATED: 'cloud_payment_status_updated',
-    APPS_FRAMEWORK_REFRESH_BINDINGS: 'custom_com.mattermost.apps_refresh_bindings',
-    APPS_FRAMEWORK_PLUGIN_ENABLED: 'custom_com.mattermost.apps_plugin_enabled',
-    APPS_FRAMEWORK_PLUGIN_DISABLED: 'custom_com.mattermost.apps_plugin_disabled',
+    APPS_FRAMEWORK_REFRESH_BINDINGS: 'custom_com.matterfoss.apps_refresh_bindings',
+    APPS_FRAMEWORK_PLUGIN_ENABLED: 'custom_com.matterfoss.apps_plugin_enabled',
+    APPS_FRAMEWORK_PLUGIN_DISABLED: 'custom_com.matterfoss.apps_plugin_disabled',
     FIRST_ADMIN_VISIT_MARKETPLACE_STATUS_RECEIVED: 'first_admin_visit_marketplace_status_received',
     THREAD_UPDATED: 'thread_updated',
     THREAD_FOLLOW_CHANGED: 'thread_follow_changed',
@@ -711,7 +711,7 @@ export const StoragePrefixes = {
 };
 
 export const LandingPreferenceTypes = {
-    MATTERMOSTAPP: 'mattermostapp',
+    MATTERMOSTAPP: 'matterfossapp',
     BROWSER: 'browser',
 };
 
@@ -789,7 +789,7 @@ export const FileTypes = {
     PATCH: 'patch',
     SVG: 'svg',
     OTHER: 'other',
-    LICENSE_EXTENSION: '.mattermost-license',
+    LICENSE_EXTENSION: '.matterfoss-license',
 };
 
 export const NotificationLevels = {
@@ -862,31 +862,31 @@ export const DraggingStateTypes = {
 };
 
 export const AboutLinks = {
-    TERMS_OF_SERVICE: 'https://mattermost.com/terms-of-use/',
-    PRIVACY_POLICY: 'https://mattermost.com/privacy-policy/',
+    TERMS_OF_SERVICE: 'https://matterfoss.com/terms-of-use/',
+    PRIVACY_POLICY: 'https://matterfoss.com/privacy-policy/',
 };
 
 export const CloudLinks = {
-    BILLING_DOCS: 'https://docs.mattermost.com/cloud/cloud-billing/cloud-billing.html',
-    PRICING: 'https://mattermost.com/pricing/',
-    PRORATED_PAYMENT: 'https://mattermost.com/pl/mattermost-cloud-prorate-documentation',
-    DEPLOYMENT_OPTIONS: 'https://mattermost.com/deploy/',
-    DOWNLOAD_UPDATE: 'https://mattermost.com/deploy/',
+    BILLING_DOCS: 'https://docs.matterfoss.com/cloud/cloud-billing/cloud-billing.html',
+    PRICING: 'https://matterfoss.com/pricing/',
+    PRORATED_PAYMENT: 'https://matterfoss.com/pl/matterfoss-cloud-prorate-documentation',
+    DEPLOYMENT_OPTIONS: 'https://matterfoss.com/deploy/',
+    DOWNLOAD_UPDATE: 'https://matterfoss.com/deploy/',
 };
 
 export const DocLinks = {
-    AD_LDAP: 'https://docs.mattermost.com/configure/configuration-settings.html#ad-ldap',
-    DATA_RETENTION_POLICY: 'https://docs.mattermost.com/comply/data-retention-policy.html',
-    ELASTICSEARCH: 'https://docs.mattermost.com/scale/elasticsearch.html',
-    GUEST_ACCOUNTS: 'https://docs.mattermost.com/onboard/guest-accounts.html',
-    SESSION_LENGTHS: 'https://docs.mattermost.com/configure/configuration-settings.html#session-lengths',
-    SITE_URL: 'https://docs.mattermost.com/configure/configuration-settings.html#site-url',
-    SSL_CERTIFICATE: 'https://docs.mattermost.com/onboard/ssl-client-certificate.html',
-    UPGRADE_SERVER: 'https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html',
+    AD_LDAP: 'https://docs.matterfoss.com/configure/configuration-settings.html#ad-ldap',
+    DATA_RETENTION_POLICY: 'https://docs.matterfoss.com/comply/data-retention-policy.html',
+    ELASTICSEARCH: 'https://docs.matterfoss.com/scale/elasticsearch.html',
+    GUEST_ACCOUNTS: 'https://docs.matterfoss.com/onboard/guest-accounts.html',
+    SESSION_LENGTHS: 'https://docs.matterfoss.com/configure/configuration-settings.html#session-lengths',
+    SITE_URL: 'https://docs.matterfoss.com/configure/configuration-settings.html#site-url',
+    SSL_CERTIFICATE: 'https://docs.matterfoss.com/onboard/ssl-client-certificate.html',
+    UPGRADE_SERVER: 'https://docs.matterfoss.com/upgrade/upgrading-matterfoss-server.html',
 };
 
 export const LicenseLinks = {
-    CONTACT_SALES: 'https://mattermost.com/contact-sales/',
+    CONTACT_SALES: 'https://matterfoss.com/contact-sales/',
 };
 
 export const BillingSchemes = {
@@ -1167,10 +1167,10 @@ export const Constants = {
         POST: 5,
     },
 
-    // This is the same limit set https://github.com/mattermost/mattermost-server/blob/master/model/config.go#L105
+    // This is the same limit set https://github.com/matterfoss/matterfoss-server/blob/master/model/config.go#L105
     MAXIMUM_LOGIN_ATTEMPTS_DEFAULT: 10,
 
-    // This is the same limit set https://github.com/mattermost/mattermost-server/blob/master/api4/team.go#L23
+    // This is the same limit set https://github.com/matterfoss/matterfoss-server/blob/master/api4/team.go#L23
     MAX_ADD_MEMBERS_BATCH: 256,
 
     SPECIAL_MENTIONS: ['all', 'channel', 'here'],
@@ -1659,7 +1659,7 @@ export const Constants = {
     FeatureTogglePrefix: 'feature_enabled_',
     PRE_RELEASE_FEATURES: {
         MARKDOWN_PREVIEW: {
-            label: 'markdown_preview', // github issue: https://github.com/mattermost/platform/pull/1389
+            label: 'markdown_preview', // github issue: https://github.com/matterfoss/platform/pull/1389
             description: 'Show markdown preview option in message input box',
         },
     },
@@ -1692,8 +1692,8 @@ export const Constants = {
     EMOJI_PATH: '/static/emoji',
     RECENT_EMOJI_KEY: 'recentEmojis',
     DEFAULT_WEBHOOK_LOGO: logoWebhook,
-    MHPNS: 'https://push.mattermost.com',
-    MTPNS: 'https://push-test.mattermost.com',
+    MHPNS: 'https://push.matterfoss.com',
+    MTPNS: 'https://push-test.matterfoss.com',
     MAX_PREV_MSGS: 100,
     POST_COLLAPSE_TIMEOUT: 1000 * 60 * 5, // five minutes
     PERMISSIONS_ALL: 'all',

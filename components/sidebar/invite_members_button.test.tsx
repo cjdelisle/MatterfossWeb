@@ -12,7 +12,7 @@ import {mountWithIntl} from 'tests/helpers/intl-test-helper';
 
 import InviteMembersButton from 'components/sidebar/invite_members_button';
 
-import * as teams from 'mattermost-redux/selectors/entities/teams';
+import * as teams from 'matterfoss-redux/selectors/entities/teams';
 
 describe('components/sidebar/invite_members_button', () => {
     // required state to mount using the provider

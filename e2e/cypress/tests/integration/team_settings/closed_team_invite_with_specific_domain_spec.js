@@ -17,7 +17,7 @@ import {allowOnlyUserFromSpecificDomain, inviteUserByEmail, verifyEmailInviteAnd
 describe('Team Settings', () => {
     const sysadmin = getAdminAccount();
     const {username, email, password} = generateRandomUser();
-    const emailDomain = 'sample.mattermost.com';
+    const emailDomain = 'sample.matterfoss.com';
 
     let testTeam;
     let siteName;
@@ -41,8 +41,8 @@ describe('Team Settings', () => {
         });
     });
 
-    it('MM-T386 Invite new user to closed team with \'Allow only users with a specific email domain to join this team\' set to \'sample.mattermost.com\'', () => {
-        // # Allow only users from 'sample.mattermost.com' domain
+    it('MM-T386 Invite new user to closed team with \'Allow only users with a specific email domain to join this team\' set to \'sample.matterfoss.com\'', () => {
+        // # Allow only users from 'sample.matterfoss.com' domain
         allowOnlyUserFromSpecificDomain(emailDomain);
 
         // # Invite user via email

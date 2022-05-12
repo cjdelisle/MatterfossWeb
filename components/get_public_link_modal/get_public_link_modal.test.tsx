@@ -9,7 +9,7 @@ import GetLinkModal from 'components/get_link_modal';
 
 describe('components/GetPublicLinkModal', () => {
     const baseProps = {
-        link: 'http://mattermost.com/files/n5bnoaz3e7g93nyipzo1bixdwr/public?h=atw9qQHI1nUPnxo1e48tPspo1Qvwd3kHtJZjysmI5zs',
+        link: 'http://matterfoss.com/files/n5bnoaz3e7g93nyipzo1bixdwr/public?h=atw9qQHI1nUPnxo1e48tPspo1Qvwd3kHtJZjysmI5zs',
         fileId: 'n5bnoaz3e7g93nyipzo1bixdwr',
         onExited: jest.fn(),
         actions: {

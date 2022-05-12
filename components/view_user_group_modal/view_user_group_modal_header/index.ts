@@ -4,16 +4,16 @@
 import {connect} from 'react-redux';
 import {bindActionCreators, Dispatch, ActionCreatorsMapObject} from 'redux';
 
-import {ActionFunc, ActionResult, GenericAction} from 'mattermost-redux/types/actions';
+import {ActionFunc, ActionResult, GenericAction} from 'matterfoss-redux/types/actions';
 
 import {GlobalState} from 'types/store';
 import {ModalData} from 'types/actions';
 import {openModal} from 'actions/views/modals';
-import {getGroup as getGroupById, isMyGroup} from 'mattermost-redux/selectors/entities/groups';
-import {addUsersToGroup, archiveGroup, removeUsersFromGroup} from 'mattermost-redux/actions/groups';
-import {haveIGroupPermission} from 'mattermost-redux/selectors/entities/roles';
-import {getCurrentUserId} from 'mattermost-redux/selectors/entities/users';
-import {Permissions} from 'mattermost-redux/constants';
+import {getGroup as getGroupById, isMyGroup} from 'matterfoss-redux/selectors/entities/groups';
+import {addUsersToGroup, archiveGroup, removeUsersFromGroup} from 'matterfoss-redux/actions/groups';
+import {haveIGroupPermission} from 'matterfoss-redux/selectors/entities/roles';
+import {getCurrentUserId} from 'matterfoss-redux/selectors/entities/users';
+import {Permissions} from 'matterfoss-redux/constants';
 
 import ViewUserGroupModalHeader from './view_user_group_modal_header';
 

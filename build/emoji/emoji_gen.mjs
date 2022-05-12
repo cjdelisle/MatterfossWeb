@@ -4,10 +4,10 @@
 /*
 * This function will generate the emoji files for both the webapp and server to use emojis from emoji-datasource
 * It will generate the following files:
-* 'mattermost-webapp/utils/emoji.jsx'
-* 'mattermost-webapp/sass/components/_emojisprite.scss'
-* 'mattermost-webapp/utils/emoji.json'
-* 'mattermost-server/model/emoji_data.go', (if server-dir argument is passed with path to server, otherwise it will be generated in './emoji_data.go'")
+* 'matterfoss-webapp/utils/emoji.jsx'
+* 'matterfoss-webapp/sass/components/_emojisprite.scss'
+* 'matterfoss-webapp/utils/emoji.json'
+* 'matterfoss-server/model/emoji_data.go', (if server-dir argument is passed with path to server, otherwise it will be generated in './emoji_data.go'")
 *
 * For help on how to use this script, run:
 * npm run make-emojis -- --help
@@ -32,9 +32,9 @@ const argv = yargs(process.argv.slice(2))
     .scriptName('make-emojis')
     .usage('Usage : npm run $0 -- [args]')
     .example('npm run $0 -- --excluded-emoji-file ./excludedEmojis.txt', 'removes mentioned emojis from the app')
-    .example('npm run $0 -- --server-dir ../mattermost-server', 'path to mattermost-server for copying emoji_data.go file')
+    .example('npm run $0 -- --server-dir ../matterfoss-server', 'path to matterfoss-server for copying emoji_data.go file')
     .option('server-dir', {
-        description: 'Path to mattermost-server',
+        description: 'Path to matterfoss-server',
         type: 'string',
     })
     .option('excluded-emoji-file', {
@@ -67,7 +67,7 @@ readDirPromise.then((images) => {
                 catch((err) => log(errorLogColor, `[ERROR] Failed to copy ${imageFile}: ${err}`)));
     }
 });
-Fs.copyFile('images/icon64x64.png', 'images/emoji/mattermost.png');
+Fs.copyFile('images/icon64x64.png', 'images/emoji/matterfoss.png');
 
 // copy sheet image
 const sheetSource = `node_modules/emoji-datasource-apple/img/apple/sheets/${EMOJI_SIZE}.png`;
@@ -248,12 +248,12 @@ fullEmoji.forEach((emoji) => {
 
 // add built-in custom emojis
 fullEmoji.push({
-    id: 'mattermost',
-    name: 'Mattermost',
+    id: 'matterfoss',
+    name: 'MatterFOSS',
     unified: '',
-    image: 'mattermost.png',
-    short_name: 'mattermost',
-    short_names: ['mattermost'],
+    image: 'matterfoss.png',
+    short_name: 'matterfoss',
+    short_names: ['matterfoss'],
     category: 'custom',
 });
 

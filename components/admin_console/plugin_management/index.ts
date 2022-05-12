@@ -12,10 +12,10 @@ import {
     installPluginFromUrl,
     enablePlugin,
     disablePlugin,
-} from 'mattermost-redux/actions/admin';
+} from 'matterfoss-redux/actions/admin';
 
-import {GenericAction} from 'mattermost-redux/types/actions';
-import {appsFeatureFlagEnabled} from 'mattermost-redux/selectors/entities/apps';
+import {GenericAction} from 'matterfoss-redux/types/actions';
+import {appsFeatureFlagEnabled} from 'matterfoss-redux/selectors/entities/apps';
 
 import PluginManagement from './plugin_management';
 

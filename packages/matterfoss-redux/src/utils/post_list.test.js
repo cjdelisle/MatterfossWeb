@@ -4,8 +4,8 @@
 import assert from 'assert';
 
 import {Posts, Preferences} from '../constants';
-import deepFreeze from 'mattermost-redux/utils/deep_freeze';
-import {getPreferenceKey} from 'mattermost-redux/utils/preference_utils';
+import deepFreeze from 'matterfoss-redux/utils/deep_freeze';
+import {getPreferenceKey} from 'matterfoss-redux/utils/preference_utils';
 
 import {
     COMBINED_USER_ACTIVITY,

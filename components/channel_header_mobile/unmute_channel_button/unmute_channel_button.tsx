@@ -3,7 +3,7 @@
 
 import React from 'react';
 
-import {ChannelNotifyProps} from 'mattermost-redux/types/channels';
+import {ChannelNotifyProps} from 'matterfoss-redux/types/channels';
 
 import {NotificationLevels} from 'utils/constants';
 

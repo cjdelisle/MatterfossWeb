@@ -68,7 +68,7 @@ describe('Guest Account - Guest User Invitation Flow', () => {
         cy.get('#inviteGuestButton').scrollIntoView().should('be.visible').and('be.disabled');
 
         // * Verify Invite People field
-        const email = `temp-${getRandomId()}@mattermost.com`;
+        const email = `temp-${getRandomId()}@matterfoss.com`;
         cy.get('.users-emails-input__control').should('be.visible').within(() => {
             // * Verify the input placeholder text
             cy.get('.users-emails-input__placeholder').should('have.text', 'Enter a name or email address');
@@ -138,7 +138,7 @@ describe('Guest Account - Guest User Invitation Flow', () => {
         // # Reload the current page
         cy.reload();
 
-        const email = `temp-${getRandomId()}@mattermost.com`;
+        const email = `temp-${getRandomId()}@matterfoss.com`;
         invitePeople(email, 1, email, 'Town Square', false);
 
         // * Verify Invite Guests button is disabled
@@ -153,7 +153,7 @@ describe('Guest Account - Guest User Invitation Flow', () => {
         cy.visit(`/${testTeam.name}/channels/town-square`);
 
         // # Invite a email containing uppercase letters
-        const email = `tEMp-${getRandomId()}@mattermost.com`;
+        const email = `tEMp-${getRandomId()}@matterfoss.com`;
         invitePeople(email, 1, email);
 
         // * Verify the content and message in next screen
@@ -211,7 +211,7 @@ describe('Guest Account - Guest User Invitation Flow', () => {
         });
 
         // * Verify the email field is empty
-        const email = `temp-${getRandomId()}@mattermost.com`;
+        const email = `temp-${getRandomId()}@matterfoss.com`;
         cy.get('.users-emails-input__control').should('be.visible').within(() => {
             cy.get('.users-emails-input__multi-value').should('not.exist');
             cy.get('input').type(email, {force: true});

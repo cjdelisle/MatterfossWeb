@@ -18,12 +18,12 @@ exports[` 1`] = `
         >
           <a
             className="attachment__title-link attachment__title-link--opengraph"
-            href="http://mattermost.com"
+            href="http://matterfoss.com"
             rel="noopener noreferrer"
             target="_blank"
-            title="Mattermost Private Cloud Messaging"
+            title="MatterFOSS Private Cloud Messaging"
           >
-            Mattermost Private Cloud Messaging
+            MatterFOSS Private Cloud Messaging
           </a>
         </h1>
         <div

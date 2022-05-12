@@ -3,10 +3,10 @@
 
 import assert from 'assert';
 
-import deepFreezeAndThrowOnMutation from 'mattermost-redux/utils/deep_freeze';
-import TestHelper from 'mattermost-redux/test/test_helper';
-import * as Selectors from 'mattermost-redux/selectors/entities/teams';
-import {General} from 'mattermost-redux/constants';
+import deepFreezeAndThrowOnMutation from 'matterfoss-redux/utils/deep_freeze';
+import TestHelper from 'matterfoss-redux/test/test_helper';
+import * as Selectors from 'matterfoss-redux/selectors/entities/teams';
+import {General} from 'matterfoss-redux/constants';
 
 describe('Selectors.Teams', () => {
     TestHelper.initMockEntities();

@@ -3,9 +3,9 @@
 
 import {connect} from 'react-redux';
 
-import {savePreferences} from 'mattermost-redux/actions/preferences';
-import {shouldShowUnreadsCategory} from 'mattermost-redux/selectors/entities/preferences';
-import {getCurrentUserId} from 'mattermost-redux/selectors/entities/users';
+import {savePreferences} from 'matterfoss-redux/actions/preferences';
+import {shouldShowUnreadsCategory} from 'matterfoss-redux/selectors/entities/preferences';
+import {getCurrentUserId} from 'matterfoss-redux/selectors/entities/users';
 
 import {GlobalState} from 'types/store';
 

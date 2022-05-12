@@ -184,8 +184,8 @@ describe('TextFormatting.Hashtags with default setting', () => {
         );
 
         assert.equal(
-            TextFormatting.formatText('#:mattermost:').trim(),
-            '<p>#<span data-emoticon="mattermost">:mattermost:</span></p>',
+            TextFormatting.formatText('#:matterfoss:').trim(),
+            '<p>#<span data-emoticon="matterfoss">:matterfoss:</span></p>',
         );
 
         assert.equal(

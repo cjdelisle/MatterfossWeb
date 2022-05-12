@@ -5,9 +5,9 @@ import React from 'react';
 
 import {mount} from 'enzyme';
 
-jest.mock('mattermost-redux/actions/users', () => {
+jest.mock('matterfoss-redux/actions/users', () => {
     return {
-        ...jest.requireActual('mattermost-redux/actions/users'),
+        ...jest.requireActual('matterfoss-redux/actions/users'),
         getMissingProfilesByIds: jest.fn((ids) => {
             return {
                 type: 'MOCK_GET_MISSING_PROFILES_BY_IDS',

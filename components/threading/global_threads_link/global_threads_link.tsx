@@ -9,9 +9,9 @@ import {useSelector, useDispatch} from 'react-redux';
 
 import {
     getThreadCountsInCurrentTeam, getThreadsInCurrentTeam,
-} from 'mattermost-redux/selectors/entities/threads';
-import {getInt, isCollapsedThreadsEnabled} from 'mattermost-redux/selectors/entities/preferences';
-import {getThreads} from 'mattermost-redux/actions/threads';
+} from 'matterfoss-redux/selectors/entities/threads';
+import {getInt, isCollapsedThreadsEnabled} from 'matterfoss-redux/selectors/entities/preferences';
+import {getThreads} from 'matterfoss-redux/actions/threads';
 
 import {t} from 'utils/i18n';
 

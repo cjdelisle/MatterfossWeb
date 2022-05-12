@@ -10,6 +10,6 @@
     "release"
   ],
   "excludes": "/.git$|/node_modules$",
-  "url": "https://deptrack.security.internal.mattermost.com/",
+  "url": "https://deptrack.security.internal.matterfoss.com/",
   "verbose": 3
 }

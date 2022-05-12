@@ -4,10 +4,10 @@
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 
-import {getChannelStats, updateChannelMemberSchemeRoles, removeChannelMember, getChannelMember} from 'mattermost-redux/actions/channels';
-import {haveIChannelPermission} from 'mattermost-redux/selectors/entities/roles';
-import {Permissions} from 'mattermost-redux/constants';
-import {getCurrentUserId} from 'mattermost-redux/selectors/entities/users';
+import {getChannelStats, updateChannelMemberSchemeRoles, removeChannelMember, getChannelMember} from 'matterfoss-redux/actions/channels';
+import {haveIChannelPermission} from 'matterfoss-redux/selectors/entities/roles';
+import {Permissions} from 'matterfoss-redux/constants';
+import {getCurrentUserId} from 'matterfoss-redux/selectors/entities/users';
 
 import {canManageMembers} from 'utils/channel_utils';
 

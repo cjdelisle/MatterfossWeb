@@ -1,7 +1,7 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
-import {AppBindingLocations, AppFieldTypes} from 'mattermost-redux/constants/apps';
-import {AppBinding, AppCall, AppField, AppForm, AppSelectOption} from 'mattermost-redux/types/apps';
+import {AppBindingLocations, AppFieldTypes} from 'matterfoss-redux/constants/apps';
+import {AppBinding, AppCall, AppField, AppForm, AppSelectOption} from 'matterfoss-redux/types/apps';
 
 import {cleanForm, cleanBinding} from './apps';
 

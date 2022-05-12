@@ -1,17 +1,17 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
-import {Channel, ChannelMembership, ChannelNotifyProps, ChannelWithTeamData} from 'mattermost-redux/types/channels';
-import {Bot} from 'mattermost-redux/types/bots';
-import {Role} from 'mattermost-redux/types/roles';
-import {UserProfile, UserAccessToken} from 'mattermost-redux/types/users';
-import {Team, TeamMembership} from 'mattermost-redux/types/teams';
-import {Group} from 'mattermost-redux/types/groups';
-import {FileInfo} from 'mattermost-redux/types/files';
-import {Post} from 'mattermost-redux/types/posts';
-import {CategorySorting, ChannelCategory} from 'mattermost-redux/types/channel_categories';
-import {Command, IncomingWebhook} from 'mattermost-redux/types/integrations';
-import {CategoryTypes} from 'mattermost-redux/constants/channel_categories';
-import {Session} from 'mattermost-redux/types/sessions';
+import {Channel, ChannelMembership, ChannelNotifyProps, ChannelWithTeamData} from 'matterfoss-redux/types/channels';
+import {Bot} from 'matterfoss-redux/types/bots';
+import {Role} from 'matterfoss-redux/types/roles';
+import {UserProfile, UserAccessToken} from 'matterfoss-redux/types/users';
+import {Team, TeamMembership} from 'matterfoss-redux/types/teams';
+import {Group} from 'matterfoss-redux/types/groups';
+import {FileInfo} from 'matterfoss-redux/types/files';
+import {Post} from 'matterfoss-redux/types/posts';
+import {CategorySorting, ChannelCategory} from 'matterfoss-redux/types/channel_categories';
+import {Command, IncomingWebhook} from 'matterfoss-redux/types/integrations';
+import {CategoryTypes} from 'matterfoss-redux/constants/channel_categories';
+import {Session} from 'matterfoss-redux/types/sessions';
 import {ProductComponent} from 'types/store/plugins';
 
 export class TestHelper {

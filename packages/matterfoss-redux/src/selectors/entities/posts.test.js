@@ -3,14 +3,14 @@
 
 import assert from 'assert';
 
-import {Posts, Preferences} from 'mattermost-redux/constants';
+import {Posts, Preferences} from 'matterfoss-redux/constants';
 
-import * as Selectors from 'mattermost-redux/selectors/entities/posts';
-import {makeGetProfilesForReactions} from 'mattermost-redux/selectors/entities/users';
+import * as Selectors from 'matterfoss-redux/selectors/entities/posts';
+import {makeGetProfilesForReactions} from 'matterfoss-redux/selectors/entities/users';
 
-import TestHelper from 'mattermost-redux/test/test_helper';
+import TestHelper from 'matterfoss-redux/test/test_helper';
 
-import deepFreezeAndThrowOnMutation from 'mattermost-redux/utils/deep_freeze';
+import deepFreezeAndThrowOnMutation from 'matterfoss-redux/utils/deep_freeze';
 
 describe('Selectors.Posts', () => {
     const user1 = TestHelper.fakeUserWithId();

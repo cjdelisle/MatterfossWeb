@@ -57781,12 +57781,12 @@
         ]
     },
     {
-        "id": "mattermost",
-        "name": "Mattermost",
+        "id": "matterfoss",
+        "name": "MatterFOSS",
         "unified": "",
-        "short_name": "mattermost",
+        "short_name": "matterfoss",
         "short_names": [
-            "mattermost"
+            "matterfoss"
         ],
         "category": "custom"
     }

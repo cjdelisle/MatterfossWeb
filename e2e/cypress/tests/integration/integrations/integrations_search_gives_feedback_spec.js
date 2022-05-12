@@ -36,7 +36,7 @@ describe('Integrations', () => {
                     team_id: team.id,
                     display_name: `Test ${i} `,
                     trigger_words: [`test-trigger-${i}`],
-                    callback_urls: ['https://mattermost.com'],
+                    callback_urls: ['https://matterfoss.com'],
                 };
                 cy.apiCreateWebhook(newOutgoingHook, false);
             });

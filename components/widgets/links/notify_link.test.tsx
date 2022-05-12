@@ -6,9 +6,9 @@ import {ReactWrapper} from 'enzyme';
 
 import {act} from 'react-dom/test-utils';
 
-import {Client4} from 'mattermost-redux/client';
+import {Client4} from 'matterfoss-redux/client';
 
-import {StatusOK} from 'mattermost-redux/types/client4';
+import {StatusOK} from 'matterfoss-redux/types/client4';
 
 import {mountWithIntl} from 'tests/helpers/intl-test-helper';
 

@@ -8,7 +8,7 @@
 // See https://jsdoc.app/index.html for reference.
 // Basic requirements for documentation are the following:
 // - Meaningful description
-// - Specific link to https://api.mattermost.com
+// - Specific link to https://api.matterfoss.com
 // - Each parameter with `@params`
 // - Return value with `@returns`
 // - Example usage with `@example`
@@ -20,7 +20,7 @@ declare namespace Cypress {
 
         /**
          * Create a bot.
-         * See https://api.mattermost.com/#tag/bots/paths/~1bots/post
+         * See https://api.matterfoss.com/#tag/bots/paths/~1bots/post
          * @param {string} options.bot - predefined `bot` object instead of random bot
          * @param {string} options.prefix - 'bot' (default) or any prefix to easily identify a bot
          * @returns {Bot} out.bot: `Bot` object
@@ -34,7 +34,7 @@ declare namespace Cypress {
 
         /**
          * Get bots.
-         * See https://api.mattermost.com/#tag/bots/paths/~1bots/get
+         * See https://api.matterfoss.com/#tag/bots/paths/~1bots/get
          * @returns {Bot[]} out.bots: `Bot[]` object
          *
          * @example

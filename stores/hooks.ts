@@ -6,8 +6,8 @@ import {useSelector, useDispatch, shallowEqual} from 'react-redux';
 
 import {createSelector} from 'reselect';
 
-import {getCurrentTeamId} from 'mattermost-redux/selectors/entities/teams';
-import {getCurrentUserId} from 'mattermost-redux/selectors/entities/users';
+import {getCurrentTeamId} from 'matterfoss-redux/selectors/entities/teams';
+import {getCurrentUserId} from 'matterfoss-redux/selectors/entities/users';
 
 import {makeGetGlobalItem} from 'selectors/storage';
 import {setGlobalItem} from 'actions/storage';

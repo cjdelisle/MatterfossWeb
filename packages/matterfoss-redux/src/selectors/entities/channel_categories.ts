@@ -5,28 +5,28 @@ import shallowEquals from 'shallow-equals';
 
 import {createSelector} from 'reselect';
 
-import {General, Preferences} from 'mattermost-redux/constants';
-import {CategoryTypes} from 'mattermost-redux/constants/channel_categories';
+import {General, Preferences} from 'matterfoss-redux/constants';
+import {CategoryTypes} from 'matterfoss-redux/constants/channel_categories';
 
-import {getChannelMessageCounts, getCurrentChannelId, getMyChannelMemberships, makeGetChannelsForIds} from 'mattermost-redux/selectors/entities/channels';
-import {getCurrentUserLocale} from 'mattermost-redux/selectors/entities/i18n';
-import {getLastPostPerChannel} from 'mattermost-redux/selectors/entities/posts';
-import {getMyPreferences, getTeammateNameDisplaySetting, getInt, isCollapsedThreadsEnabled} from 'mattermost-redux/selectors/entities/preferences';
-import {getCurrentUserId} from 'mattermost-redux/selectors/entities/users';
+import {getChannelMessageCounts, getCurrentChannelId, getMyChannelMemberships, makeGetChannelsForIds} from 'matterfoss-redux/selectors/entities/channels';
+import {getCurrentUserLocale} from 'matterfoss-redux/selectors/entities/i18n';
+import {getLastPostPerChannel} from 'matterfoss-redux/selectors/entities/posts';
+import {getMyPreferences, getTeammateNameDisplaySetting, getInt, isCollapsedThreadsEnabled} from 'matterfoss-redux/selectors/entities/preferences';
+import {getCurrentUserId} from 'matterfoss-redux/selectors/entities/users';
 
-import {Channel, ChannelMembership, ChannelMessageCount} from 'mattermost-redux/types/channels';
-import {ChannelCategory, ChannelCategoryType, CategorySorting} from 'mattermost-redux/types/channel_categories';
-import {GlobalState} from 'mattermost-redux/types/store';
-import {UserProfile} from 'mattermost-redux/types/users';
-import {IDMappedObjects, RelationOneToOne} from 'mattermost-redux/types/utilities';
+import {Channel, ChannelMembership, ChannelMessageCount} from 'matterfoss-redux/types/channels';
+import {ChannelCategory, ChannelCategoryType, CategorySorting} from 'matterfoss-redux/types/channel_categories';
+import {GlobalState} from 'matterfoss-redux/types/store';
+import {UserProfile} from 'matterfoss-redux/types/users';
+import {IDMappedObjects, RelationOneToOne} from 'matterfoss-redux/types/utilities';
 
 import {
     calculateUnreadCount,
     getUserIdFromChannelName,
     isChannelMuted,
-} from 'mattermost-redux/utils/channel_utils';
-import {getPreferenceKey} from 'mattermost-redux/utils/preference_utils';
-import {displayUsername} from 'mattermost-redux/utils/user_utils';
+} from 'matterfoss-redux/utils/channel_utils';
+import {getPreferenceKey} from 'matterfoss-redux/utils/preference_utils';
+import {displayUsername} from 'matterfoss-redux/utils/user_utils';
 
 export function getAllCategoriesByIds(state: GlobalState) {
     return state.entities.channelCategories.byId;

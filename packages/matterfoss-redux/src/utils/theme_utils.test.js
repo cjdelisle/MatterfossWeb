@@ -3,7 +3,7 @@
 
 import assert from 'assert';
 
-import * as ThemeUtils from 'mattermost-redux/utils/theme_utils';
+import * as ThemeUtils from 'matterfoss-redux/utils/theme_utils';
 import {Preferences} from '../constants';
 
 describe('ThemeUtils', () => {

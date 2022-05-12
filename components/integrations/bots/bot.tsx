@@ -6,10 +6,10 @@ import {Link} from 'react-router-dom';
 
 import {FormattedMessage} from 'react-intl';
 
-import {ActionResult} from 'mattermost-redux/types/actions';
-import {Bot as BotType} from 'mattermost-redux/types/bots';
-import {UserProfile, UserAccessToken} from 'mattermost-redux/types/users';
-import {Team} from 'mattermost-redux/types/teams';
+import {ActionResult} from 'matterfoss-redux/types/actions';
+import {Bot as BotType} from 'matterfoss-redux/types/bots';
+import {UserProfile, UserAccessToken} from 'matterfoss-redux/types/users';
+import {Team} from 'matterfoss-redux/types/teams';
 
 import ConfirmModal from 'components/confirm_modal';
 import Markdown from 'components/markdown';

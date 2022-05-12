@@ -1,28 +1,28 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
-import {ChannelTypes, GeneralTypes, PostTypes, UserTypes, ThreadTypes} from 'mattermost-redux/action_types';
+import {ChannelTypes, GeneralTypes, PostTypes, UserTypes, ThreadTypes} from 'matterfoss-redux/action_types';
 
-import {Posts} from 'mattermost-redux/constants';
+import {Posts} from 'matterfoss-redux/constants';
 import {PostTypes as PostConstant} from 'utils/constants';
 
-import {GenericAction} from 'mattermost-redux/types/actions';
+import {GenericAction} from 'matterfoss-redux/types/actions';
 import {
     OpenGraphMetadata,
     Post,
     PostsState,
     PostOrderBlock,
     MessageHistory,
-} from 'mattermost-redux/types/posts';
-import {UserProfile} from 'mattermost-redux/types/users';
-import {Reaction} from 'mattermost-redux/types/reactions';
+} from 'matterfoss-redux/types/posts';
+import {UserProfile} from 'matterfoss-redux/types/users';
+import {Reaction} from 'matterfoss-redux/types/reactions';
 import {
     RelationOneToOne,
     IDMappedObjects,
     RelationOneToMany,
-} from 'mattermost-redux/types/utilities';
+} from 'matterfoss-redux/types/utilities';
 
-import {comparePosts, isPermalink, shouldUpdatePost} from 'mattermost-redux/utils/post_utils';
+import {comparePosts, isPermalink, shouldUpdatePost} from 'matterfoss-redux/utils/post_utils';
 
 export function removeUnneededMetadata(post: Post) {
     if (!post.metadata) {

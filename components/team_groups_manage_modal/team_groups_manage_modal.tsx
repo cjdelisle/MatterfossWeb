@@ -4,7 +4,7 @@
 import React from 'react';
 import {FormattedMessage, injectIntl, IntlShape} from 'react-intl';
 
-import {Groups} from 'mattermost-redux/constants';
+import {Groups} from 'matterfoss-redux/constants';
 
 import ConfirmModal from 'components/confirm_modal';
 
@@ -23,8 +23,8 @@ import Menu from 'components/widgets/menu/menu';
 import {ModalData} from 'types/actions';
 
 import * as Utils from 'utils/utils.jsx';
-import {Team, TeamMembership} from 'mattermost-redux/types/teams';
-import {Group, SyncablePatch, SyncableType} from 'mattermost-redux/types/groups';
+import {Team, TeamMembership} from 'matterfoss-redux/types/teams';
+import {Group, SyncablePatch, SyncableType} from 'matterfoss-redux/types/groups';
 
 type Props = {
     intl: IntlShape;

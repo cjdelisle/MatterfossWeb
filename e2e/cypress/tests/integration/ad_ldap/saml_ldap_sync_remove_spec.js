@@ -9,7 +9,7 @@
 
 // - Requires openldap and keycloak running
 // - Requires keycloak certificate at fixtures folder
-//  -> copy ./mattermost-server/build/docker/keycloak/keycloak.crt to ./mattermost-webapp/e2e/cypress/tests/fixtures/keycloak.crt
+//  -> copy ./matterfoss-server/build/docker/keycloak/keycloak.crt to ./matterfoss-webapp/e2e/cypress/tests/fixtures/keycloak.crt
 // - Requires Cypress' chromeWebSecurity to be false
 
 // Group: @enterprise @ldap @saml @keycloak

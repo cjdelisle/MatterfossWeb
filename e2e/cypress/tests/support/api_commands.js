@@ -6,12 +6,12 @@ import {getAdminAccount} from './env';
 // *****************************************************************************
 // Read more:
 // - https://on.cypress.io/custom-commands on writing Cypress commands
-// - https://api.mattermost.com/ for Mattermost API reference
+// - https://api.matterfoss.com/ for MatterFOSS API reference
 // *****************************************************************************
 
 // *****************************************************************************
 // Commands
-// https://api.mattermost.com/#tag/commands
+// https://api.matterfoss.com/#tag/commands
 // *****************************************************************************
 
 /**
@@ -53,7 +53,7 @@ Cypress.Commands.add('apiEmailTest', () => {
 
 // *****************************************************************************
 // Posts
-// https://api.mattermost.com/#tag/posts
+// https://api.matterfoss.com/#tag/posts
 // *****************************************************************************
 
 /**
@@ -119,7 +119,7 @@ Cypress.Commands.add('apiUnpinPosts', (postId) => {
 
 // *****************************************************************************
 // Webhooks
-// https://api.mattermost.com/#tag/webhooks
+// https://api.matterfoss.com/#tag/webhooks
 // *****************************************************************************
 
 Cypress.Commands.add('apiCreateWebhook', (hook = {}, isIncoming = true) => {
@@ -200,7 +200,7 @@ Cypress.Commands.add('apiGetLDAPSync', () => {
 
 // *****************************************************************************
 // Groups
-// https://api.mattermost.com/#tag/groups
+// https://api.matterfoss.com/#tag/groups
 // *****************************************************************************
 
 /**

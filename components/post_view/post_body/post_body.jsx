@@ -4,7 +4,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import {Posts} from 'mattermost-redux/constants';
+import {Posts} from 'matterfoss-redux/constants';
 
 import * as PostUtils from 'utils/post_utils';
 import * as Utils from 'utils/utils.jsx';

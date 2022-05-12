@@ -4,7 +4,7 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
 
-import {getAppBarAppBindings} from 'mattermost-redux/selectors/entities/apps';
+import {getAppBarAppBindings} from 'matterfoss-redux/selectors/entities/apps';
 
 import {getAppBarPluginComponents, shouldShowAppBar} from 'selectors/plugins';
 

@@ -7,10 +7,10 @@ import styled, {css} from 'styled-components';
 import Icon from '@mattermost/compass-components/foundations/icon/Icon';
 import {FormattedMessage} from 'react-intl';
 
-import {getPrevTrialLicense} from 'mattermost-redux/actions/admin';
-import {getBool} from 'mattermost-redux/selectors/entities/preferences';
-import {savePreferences} from 'mattermost-redux/actions/preferences';
-import {getCurrentUserId} from 'mattermost-redux/selectors/entities/users';
+import {getPrevTrialLicense} from 'matterfoss-redux/actions/admin';
+import {getBool} from 'matterfoss-redux/selectors/entities/preferences';
+import {savePreferences} from 'matterfoss-redux/actions/preferences';
+import {getCurrentUserId} from 'matterfoss-redux/selectors/entities/users';
 import {trackEvent} from 'actions/telemetry_actions';
 import checklistImg from 'images/onboarding-checklist.svg';
 import {
@@ -248,8 +248,8 @@ const OnBoardingTaskList = (): JSX.Element => {
                         <>
                             <h1>
                                 <FormattedMessage
-                                    id='next_steps_view.welcomeToMattermost'
-                                    defaultMessage='Welcome to Mattermost'
+                                    id='next_steps_view.welcomeToMatterFOSS'
+                                    defaultMessage='Welcome to MatterFOSS'
                                 />
                             </h1>
                             <p>

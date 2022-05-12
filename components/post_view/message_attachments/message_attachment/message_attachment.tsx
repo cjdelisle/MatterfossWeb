@@ -5,13 +5,13 @@
 import React, {CSSProperties} from 'react';
 import truncate from 'lodash/truncate';
 
-import {ActionResult} from 'mattermost-redux/types/actions';
-import {PostAction, PostActionOption} from 'mattermost-redux/types/integration_actions';
+import {ActionResult} from 'matterfoss-redux/types/actions';
+import {PostAction, PostActionOption} from 'matterfoss-redux/types/integration_actions';
 import {
     MessageAttachment as MessageAttachmentType,
     MessageAttachmentField,
-} from 'mattermost-redux/types/message_attachments';
-import {PostImage} from 'mattermost-redux/types/posts';
+} from 'matterfoss-redux/types/message_attachments';
+import {PostImage} from 'matterfoss-redux/types/posts';
 
 import {isUrlSafe} from 'utils/url';
 import {Constants, ModalIdentifiers} from 'utils/constants';

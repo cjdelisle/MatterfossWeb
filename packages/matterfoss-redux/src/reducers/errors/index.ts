@@ -1,7 +1,7 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
-import {ErrorTypes} from 'mattermost-redux/action_types';
-import {GenericAction} from 'mattermost-redux/types/actions';
+import {ErrorTypes} from 'matterfoss-redux/action_types';
+import {GenericAction} from 'matterfoss-redux/types/actions';
 export default ((state: Array<{error: any;displayable?: boolean;date: string}> = [], action: GenericAction) => {
     switch (action.type) {
     case ErrorTypes.DISMISS_ERROR: {

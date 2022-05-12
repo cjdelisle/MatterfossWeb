@@ -55,7 +55,7 @@ function getProfilePictureId() {
 }
 
 function setInitialPicture(user) {
-    cy.apiUploadFile('image', 'mattermost-icon.png', {
+    cy.apiUploadFile('image', 'matterfoss-icon.png', {
         url: `/api/v4/users/${user.id}/image`,
         method: 'POST',
         successStatus: 200,

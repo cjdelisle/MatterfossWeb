@@ -2,7 +2,7 @@
 // See LICENSE.txt for license information.
 import React from 'react';
 
-import {Channel} from 'mattermost-redux/types/channels';
+import {Channel} from 'matterfoss-redux/types/channels';
 
 import {shallowWithIntl} from 'tests/helpers/intl-test-helper';
 import {testComponentForLineBreak} from 'tests/helpers/line_break_helpers';

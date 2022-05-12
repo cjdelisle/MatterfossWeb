@@ -4,13 +4,13 @@
 import assert from 'assert';
 import nock from 'nock';
 
-import * as Actions from 'mattermost-redux/actions/preferences';
-import {login} from 'mattermost-redux/actions/users';
-import {Client4} from 'mattermost-redux/client';
+import * as Actions from 'matterfoss-redux/actions/preferences';
+import {login} from 'matterfoss-redux/actions/users';
+import {Client4} from 'matterfoss-redux/client';
 import {Preferences} from '../constants';
 
-import TestHelper from 'mattermost-redux/test/test_helper';
-import configureStore from 'mattermost-redux/test/test_store';
+import TestHelper from 'matterfoss-redux/test/test_helper';
+import configureStore from 'matterfoss-redux/test/test_store';
 
 const OK_RESPONSE = {status: 'OK'};
 
@@ -240,7 +240,7 @@ describe('Actions.Preferences', () => {
                 category: 'theme',
                 name: team.id,
                 value: JSON.stringify({
-                    type: 'Mattermost',
+                    type: 'MatterFOSS',
                 }),
             },
         ];
@@ -256,7 +256,7 @@ describe('Actions.Preferences', () => {
         await Actions.getMyPreferences()(store.dispatch, store.getState);
 
         const newTheme = {
-            type: 'Mattermost Dark',
+            type: 'MatterFOSS Dark',
         };
         nock(Client4.getUsersRoute()).
             put(`/${TestHelper.basicUser.id}/preferences`).
@@ -276,7 +276,7 @@ describe('Actions.Preferences', () => {
         await login(user.email, user.password)(store.dispatch, store.getState);
 
         const theme = {
-            type: 'Mattermost Dark',
+            type: 'MatterFOSS Dark',
         };
         const existingPreferences = [
             {
@@ -290,7 +290,7 @@ describe('Actions.Preferences', () => {
                 category: 'theme',
                 name: TestHelper.generateId(),
                 value: JSON.stringify({
-                    type: 'Mattermost',
+                    type: 'MatterFOSS',
                 }),
             },
             {
@@ -298,7 +298,7 @@ describe('Actions.Preferences', () => {
                 category: 'theme',
                 name: TestHelper.generateId(),
                 value: JSON.stringify({
-                    type: 'Mattermost',
+                    type: 'MatterFOSS',
                 }),
             },
         ];

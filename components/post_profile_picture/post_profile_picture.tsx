@@ -4,14 +4,14 @@
 import React from 'react';
 
 import ProfilePicture from 'components/profile_picture';
-import MattermostLogo from 'components/widgets/icons/mattermost_logo';
+import MatterFOSSLogo from 'components/widgets/icons/matterfoss_logo';
 
 import Constants, {UserStatuses} from 'utils/constants';
 import * as PostUtils from 'utils/post_utils';
 import * as Utils from 'utils/utils';
 
-import {Post} from 'mattermost-redux/types/posts';
-import {UserProfile} from 'mattermost-redux/types/users';
+import {Post} from 'matterfoss-redux/types/posts';
+import {UserProfile} from 'matterfoss-redux/types/users';
 
 type Props = {
     availabilityStatusOnPosts: string;
@@ -93,7 +93,7 @@ export default class PostProfilePicture extends React.PureComponent<Props> {
         const fromWebhook = PostUtils.isFromWebhook(post);
 
         if (isSystemMessage && !compactDisplay && !fromWebhook && !isBot) {
-            return <MattermostLogo className='icon'/>;
+            return <MatterFOSSLogo className='icon'/>;
         }
         const fromAutoResponder = PostUtils.fromAutoResponder(post);
 

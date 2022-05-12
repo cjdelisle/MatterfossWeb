@@ -5,11 +5,11 @@
 import React from 'react';
 import {FormattedMessage} from 'react-intl';
 
-import Permissions from 'mattermost-redux/constants/permissions';
-import {Post} from 'mattermost-redux/types/posts';
-import {Reaction as ReactionType} from 'mattermost-redux/types/reactions';
-import {Emoji} from 'mattermost-redux/types/emojis';
-import {isSystemEmoji} from 'mattermost-redux/utils/emoji_utils';
+import Permissions from 'matterfoss-redux/constants/permissions';
+import {Post} from 'matterfoss-redux/types/posts';
+import {Reaction as ReactionType} from 'matterfoss-redux/types/reactions';
+import {Emoji} from 'matterfoss-redux/types/emojis';
+import {isSystemEmoji} from 'matterfoss-redux/utils/emoji_utils';
 
 import Constants from 'utils/constants';
 import Reaction from 'components/post_view/reaction';

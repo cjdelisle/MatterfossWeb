@@ -2,7 +2,7 @@
 // See LICENSE.txt for license information.
 // *****************************************************************************
 // Data Retention
-// https://api.mattermost.com/#tag/data-retention
+// https://api.matterfoss.com/#tag/data-retention
 // *****************************************************************************
 
 /**

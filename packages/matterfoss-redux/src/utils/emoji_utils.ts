@@ -1,8 +1,8 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
-import {Client4} from 'mattermost-redux/client';
-import {Emoji, SystemEmoji, CustomEmoji} from 'mattermost-redux/types/emojis';
+import {Client4} from 'matterfoss-redux/client';
+import {Emoji, SystemEmoji, CustomEmoji} from 'matterfoss-redux/types/emojis';
 
 export function isSystemEmoji(emoji: Emoji): emoji is SystemEmoji {
     if ('category' in emoji) {
@@ -13,9 +13,9 @@ export function isSystemEmoji(emoji: Emoji): emoji is SystemEmoji {
 }
 
 export function getEmojiImageUrl(emoji: Emoji): string {
-    // If its the mattermost custom emoji
-    if (!isSystemEmoji(emoji) && emoji.id === 'mattermost') {
-        return Client4.getSystemEmojiImageUrl('mattermost');
+    // If its the matterfoss custom emoji
+    if (!isSystemEmoji(emoji) && emoji.id === 'matterfoss') {
+        return Client4.getSystemEmojiImageUrl('matterfoss');
     }
 
     if (isSystemEmoji(emoji)) {

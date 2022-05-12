@@ -74,15 +74,15 @@
     line-height: 20px;
 }
 
-.UpgradeMattermostCloud {
+.UpgradeMatterFOSSCloud {
     text-align: center;
 }
 
-.UpgradeMattermostCloud__image {
+.UpgradeMatterFOSSCloud__image {
     flex: 0 0 auto;
 }
 
-.UpgradeMattermostCloud__title {
+.UpgradeMatterFOSSCloud__title {
     align-self: flex-start;
     margin-top: 16px;
     color: var(--sys-center-channel-color);
@@ -92,7 +92,7 @@
     text-align: left;
 }
 
-.UpgradeMattermostCloud__description {
+.UpgradeMatterFOSSCloud__description {
     margin-top: 12px;
     color: var(--sys-center-channel-color);
     font-size: 14px;
@@ -100,7 +100,7 @@
     text-align: left;
 }
 
-.UpgradeMattermostCloud__upgradeButton {
+.UpgradeMatterFOSSCloud__upgradeButton {
     width: 100%;
     padding: 13px 0;
     border: none;
@@ -140,7 +140,7 @@
     border-radius: 4px;
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.08);
 
-    .UpgradeMattermostCloud__upgradeButton {
+    .UpgradeMatterFOSSCloud__upgradeButton {
         max-width: 200px;
     }
 }

@@ -4,8 +4,8 @@
 import React from 'react';
 import {FormattedMessage} from 'react-intl';
 
-import {ServerError} from 'mattermost-redux/types/errors';
-import {isEmail} from 'mattermost-redux/utils/helpers';
+import {ServerError} from 'matterfoss-redux/types/errors';
+import {isEmail} from 'matterfoss-redux/utils/helpers';
 
 import BackButton from 'components/common/back_button';
 import LocalizedInput from 'components/localized_input/localized_input';

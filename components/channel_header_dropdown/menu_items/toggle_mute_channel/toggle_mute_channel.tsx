@@ -3,9 +3,9 @@
 
 import React from 'react';
 
-import {UserProfile} from 'mattermost-redux/types/users';
-import {Channel, ChannelNotifyProps} from 'mattermost-redux/types/channels';
-import {ActionFunc} from 'mattermost-redux/types/actions';
+import {UserProfile} from 'matterfoss-redux/types/users';
+import {Channel, ChannelNotifyProps} from 'matterfoss-redux/types/channels';
+import {ActionFunc} from 'matterfoss-redux/types/actions';
 
 import {Constants, NotificationLevels} from 'utils/constants';
 import {localizeMessage} from 'utils/utils';

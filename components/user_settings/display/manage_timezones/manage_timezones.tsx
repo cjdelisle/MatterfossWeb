@@ -6,12 +6,12 @@ import {FormattedMessage} from 'react-intl';
 import ReactSelect, {ValueType} from 'react-select';
 import {Timezone} from 'timezones.json';
 
-import {UserProfile} from 'mattermost-redux/types/users';
-import {ActionResult} from 'mattermost-redux/types/actions';
+import {UserProfile} from 'matterfoss-redux/types/users';
+import {ActionResult} from 'matterfoss-redux/types/actions';
 
 import SettingItemMax from 'components/setting_item_max.jsx';
 import {getBrowserTimezone} from 'utils/timezone';
-import {getTimezoneLabel} from 'mattermost-redux/utils/timezone_utils';
+import {getTimezoneLabel} from 'matterfoss-redux/utils/timezone_utils';
 
 type Actions = {
     updateMe: (user: UserProfile) => Promise<ActionResult>;

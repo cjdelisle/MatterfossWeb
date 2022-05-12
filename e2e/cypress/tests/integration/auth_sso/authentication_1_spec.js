@@ -41,7 +41,7 @@ describe('Authentication', () => {
         // # Enable open server and turn on user account creation and set restricted domain
         cy.apiUpdateConfig({
             TeamSettings: {
-                RestrictCreationToDomains: 'mattermost.com, test.com',
+                RestrictCreationToDomains: 'matterfoss.com, test.com',
                 EnableUserCreation: true,
                 EnableOpenServer: true,
             },
@@ -57,7 +57,7 @@ describe('Authentication', () => {
             // # Go to sign up with email page
             cy.visit('/signup_email');
 
-            cy.get('#email', {timeout: TIMEOUTS.ONE_MIN}).type(`Hossein2Cool4School${getRandomId()}@mattermost.com`);
+            cy.get('#email', {timeout: TIMEOUTS.ONE_MIN}).type(`Hossein2Cool4School${getRandomId()}@matterfoss.com`);
 
             cy.get('#password').type('Test123456!');
 
@@ -74,7 +74,7 @@ describe('Authentication', () => {
         // # Enable open server and turn on user account creation
         cy.apiUpdateConfig({
             TeamSettings: {
-                RestrictCreationToDomains: 'mattermost.com, test.com',
+                RestrictCreationToDomains: 'matterfoss.com, test.com',
                 EnableUserCreation: true,
                 EnableOpenServer: true,
             },
@@ -105,7 +105,7 @@ describe('Authentication', () => {
         // # Enable open server and turn off user account creation and set restricted domain
         cy.apiUpdateConfig({
             TeamSettings: {
-                RestrictCreationToDomains: 'mattermost.com, test.com',
+                RestrictCreationToDomains: 'matterfoss.com, test.com',
                 EnableUserCreation: true,
                 EnableOpenServer: true,
             },

@@ -3,7 +3,7 @@
 
 import {combineReducers} from 'redux';
 
-import {GenericAction} from 'mattermost-redux/types/actions';
+import {GenericAction} from 'matterfoss-redux/types/actions';
 
 import {ActionTypes} from 'utils/constants';
 

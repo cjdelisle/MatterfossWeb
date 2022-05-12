@@ -1,15 +1,15 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
-import {General, Preferences} from 'mattermost-redux/constants';
-import {CategoryTypes} from 'mattermost-redux/constants/channel_categories';
-import {MarkUnread} from 'mattermost-redux/constants/channels';
+import {General, Preferences} from 'matterfoss-redux/constants';
+import {CategoryTypes} from 'matterfoss-redux/constants/channel_categories';
+import {MarkUnread} from 'matterfoss-redux/constants/channels';
 
-import mergeObjects from 'mattermost-redux/test/merge_objects';
+import mergeObjects from 'matterfoss-redux/test/merge_objects';
 
-import {CategorySorting} from 'mattermost-redux/types/channel_categories';
+import {CategorySorting} from 'matterfoss-redux/types/channel_categories';
 
-import {getPreferenceKey} from 'mattermost-redux/utils/preference_utils';
+import {getPreferenceKey} from 'matterfoss-redux/utils/preference_utils';
 
 import * as Selectors from './channel_categories';
 

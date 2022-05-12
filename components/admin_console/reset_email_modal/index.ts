@@ -4,10 +4,10 @@
 import {connect} from 'react-redux';
 import {bindActionCreators, Dispatch, ActionCreatorsMapObject} from 'redux';
 
-import {UserProfile} from 'mattermost-redux/types/users';
+import {UserProfile} from 'matterfoss-redux/types/users';
 
-import {patchUser} from 'mattermost-redux/actions/users';
-import {ActionFunc, ActionResult} from 'mattermost-redux/types/actions';
+import {patchUser} from 'matterfoss-redux/actions/users';
+import {ActionFunc, ActionResult} from 'matterfoss-redux/types/actions';
 
 import ResetEmailModal from './reset_email_modal';
 

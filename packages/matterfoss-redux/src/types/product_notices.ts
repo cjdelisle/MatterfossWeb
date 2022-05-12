@@ -9,10 +9,10 @@ export type ProductNotice = {
     /** Unique identifier for this notice. Can be a running number. Used for storing 'viewed' state on the server. */
     id: string;
 
-    /** Notice title. Use {{Mattermost}} instead of plain text to support white-labeling. Text supports Markdown. */
+    /** Notice title. Use {{MatterFOSS}} instead of plain text to support white-labeling. Text supports Markdown. */
     title: string;
 
-    /** Notice content. Use {{Mattermost}} instead of plain text to support white-labeling. Text supports Markdown. */
+    /** Notice content. Use {{MatterFOSS}} instead of plain text to support white-labeling. Text supports Markdown. */
     description: string;
     image?: string;
 

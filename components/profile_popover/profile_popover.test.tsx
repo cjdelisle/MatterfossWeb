@@ -3,7 +3,7 @@
 
 import React from 'react';
 
-import {CustomStatusDuration} from 'mattermost-redux/types/users';
+import {CustomStatusDuration} from 'matterfoss-redux/types/users';
 
 import ProfilePopover from 'components/profile_popover/profile_popover';
 

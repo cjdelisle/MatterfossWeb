@@ -4,9 +4,9 @@
 import React from 'react';
 import {FormattedMessage} from 'react-intl';
 
-import {UserProfile} from 'mattermost-redux/types/users';
+import {UserProfile} from 'matterfoss-redux/types/users';
 import {imageURLForUser, getLongDisplayName} from 'utils/utils';
-import {isGuest} from 'mattermost-redux/utils/user_utils';
+import {isGuest} from 'matterfoss-redux/utils/user_utils';
 
 import EmailIcon from 'components/widgets/icons/mail_icon';
 import AlertIcon from 'components/widgets/icons/alert_icon';

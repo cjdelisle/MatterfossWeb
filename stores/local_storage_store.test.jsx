@@ -37,7 +37,7 @@ describe('stores/LocalStorageStore', () => {
         const userId1 = 'userId1';
         const userId2 = 'userId2';
         const recentEmojis1 = ['smile', 'joy', 'grin'];
-        const recentEmojis2 = ['customEmoji', '+1', 'mattermost'];
+        const recentEmojis2 = ['customEmoji', '+1', 'matterfoss'];
 
         assert.equal(LocalStorageStore.getRecentEmojis(userId1), null);
         assert.equal(LocalStorageStore.getRecentEmojis(userId2), null);
@@ -95,7 +95,7 @@ describe('stores/LocalStorageStore', () => {
 
             const userId = 'userId';
             const recentEmojis1 = ['smile', 'joy', 'grin'];
-            const recentEmojis2 = ['customEmoji', '+1', 'mattermost'];
+            const recentEmojis2 = ['customEmoji', '+1', 'matterfoss'];
 
             // Initially empty
             assert.equal(LocalStorageStore.getRecentEmojis(userId), null);

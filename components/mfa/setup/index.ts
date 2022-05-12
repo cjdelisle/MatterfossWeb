@@ -4,10 +4,10 @@
 import {connect} from 'react-redux';
 import {bindActionCreators, Dispatch, ActionCreatorsMapObject} from 'redux';
 
-import {getConfig} from 'mattermost-redux/selectors/entities/general';
-import {getCurrentUser} from 'mattermost-redux/selectors/entities/users';
-import {GlobalState} from 'mattermost-redux/types/store';
-import {GenericAction, ActionFunc} from 'mattermost-redux/types/actions';
+import {getConfig} from 'matterfoss-redux/selectors/entities/general';
+import {getCurrentUser} from 'matterfoss-redux/selectors/entities/users';
+import {GlobalState} from 'matterfoss-redux/types/store';
+import {GenericAction, ActionFunc} from 'matterfoss-redux/types/actions';
 
 import {activateMfa, generateMfaSecret} from 'actions/views/mfa';
 

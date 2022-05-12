@@ -94,7 +94,7 @@ describe('Guest Accounts', () => {
         // # Click "Save".
         cy.get('#saveSetting').scrollIntoView().click();
 
-        const guestEmail = `${username}@sample.mattermost.com`;
+        const guestEmail = `${username}@sample.matterfoss.com`;
 
         // # From the main page, invite a Guest user and click on the Join Team in the email sent to the guest user.
         cy.visit(`/${testTeam.name}/channels/town-square`);

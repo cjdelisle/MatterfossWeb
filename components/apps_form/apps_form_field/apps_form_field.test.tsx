@@ -4,7 +4,7 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 
-import {AppField} from 'mattermost-redux/types/apps';
+import {AppField} from 'matterfoss-redux/types/apps';
 
 import TextSetting from 'components/widgets/settings/text_setting';
 

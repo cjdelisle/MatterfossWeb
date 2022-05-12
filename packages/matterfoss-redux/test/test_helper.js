@@ -4,10 +4,10 @@
 import assert from 'assert';
 import nock from 'nock';
 
-import Client4 from 'mattermost-redux/client/client4';
+import Client4 from 'matterfoss-redux/client/client4';
 
-import {DEFAULT_LOCALE} from 'mattermost-redux/constants/general';
-import {generateId} from 'mattermost-redux/utils/helpers';
+import {DEFAULT_LOCALE} from 'matterfoss-redux/constants/general';
+import {generateId} from 'matterfoss-redux/utils/helpers';
 
 import {UserStatuses} from 'utils/constants';
 
@@ -224,7 +224,7 @@ class TestHelper {
             download_signature_url: 'http://github.myplugin.tar.gz.asc',
             manifest:
                 {
-                    id: 'com.mattermost.fake-plugin',
+                    id: 'com.matterfoss.fake-plugin',
                     name: 'Fake Plugin',
                     description: 'This plugin is for Redux testing purposes',
                     version: '0.1.0',

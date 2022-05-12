@@ -23,7 +23,7 @@ export default function HelpCommands(): JSX.Element {
             <p>
                 <FormattedMarkdownMessage
                     id='help.commands.intro1'
-                    defaultMessage='You can execute commands, called slash commands, by typing into the text input box to perform operations in Mattermost. To run a slash command, type `/` followed by a command and some arguments to perform actions.'
+                    defaultMessage='You can execute commands, called slash commands, by typing into the text input box to perform operations in MatterFOSS. To run a slash command, type `/` followed by a command and some arguments to perform actions.'
                 />
             </p>
 
@@ -37,7 +37,7 @@ export default function HelpCommands(): JSX.Element {
             <p>
                 <FormattedMarkdownMessage
                     id='help.commands.intro2'
-                    defaultMessage='Built-in slash commands come with all Mattermost installations. See the [product documentation](!https://docs.mattermost.com/messaging/executing-slash-commands.html) for a list of available built-in slash commands.'
+                    defaultMessage='Built-in slash commands come with all MatterFOSS installations. See the [product documentation](!https://docs.matterfoss.com/messaging/executing-slash-commands.html) for a list of available built-in slash commands.'
                 />
             </p>
             <p>
@@ -49,7 +49,7 @@ export default function HelpCommands(): JSX.Element {
 
             <p>
                 <img
-                    src='https://docs.mattermost.com/_images/slash-commands.gif'
+                    src='https://docs.matterfoss.com/_images/slash-commands.gif'
                     alt='Slash command autocomplete'
                     className='markdown-inline-img'
                 />
@@ -72,7 +72,7 @@ export default function HelpCommands(): JSX.Element {
             <p>
                 <FormattedMarkdownMessage
                     id='help.commands.custom2'
-                    defaultMessage='Custom slash commands are disabled by default and can be enabled by the System Admin in the System Console by going to **Integrations > Integration Management**. Learn about configuring custom slash commands in the [developer   documentation](!https://developers.mattermost.com/integrate/slash-commands/).'
+                    defaultMessage='Custom slash commands are disabled by default and can be enabled by the System Admin in the System Console by going to **Integrations > Integration Management**. Learn about configuring custom slash commands in the [developer   documentation](!https://developers.matterfoss.com/integrate/slash-commands/).'
                 />
             </p>
 

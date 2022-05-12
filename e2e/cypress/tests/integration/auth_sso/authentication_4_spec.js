@@ -76,7 +76,7 @@ describe('Authentication', () => {
         // * Assert that email verification has been sent and then resend to make sure it gets resent
         cy.findByText('Resend Email').should('be.visible').and('exist').click();
         cy.findByText('Verification email sent.').should('be.visible').and('exist');
-        cy.findByText('Mattermost: You are almost done').should('be.visible').and('exist');
+        cy.findByText('MatterFOSS: You are almost done').should('be.visible').and('exist');
         cy.findByText('Please verify your email address. Check your inbox for an email.').should('be.visible').and('exist');
 
         cy.getRecentEmail(testUser).then(({body}) => {
@@ -277,7 +277,7 @@ describe('Authentication', () => {
         cy.findByText('Copy invite link').click();
 
         // # Input email, select member
-        cy.findByText('Enter a name or email address').type('HosseinTheBestProgrammer@Mattermost.com{downarrow}{downarrow}{enter}');
+        cy.findByText('Enter a name or email address').type('HosseinTheBestProgrammer@MatterFOSS.com{downarrow}{downarrow}{enter}');
 
         // # Click invite members button
         cy.findByRole('button', {name: 'Invite'}).click({force: true});

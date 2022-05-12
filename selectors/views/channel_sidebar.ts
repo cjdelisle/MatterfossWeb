@@ -8,20 +8,20 @@ import {
     getCurrentChannelId,
     getMyChannelMemberships,
     getUnreadChannelIds,
-} from 'mattermost-redux/selectors/entities/channels';
+} from 'matterfoss-redux/selectors/entities/channels';
 import {
     makeGetCategoriesForTeam,
     makeGetChannelsByCategory,
     makeGetChannelIdsForCategory,
-} from 'mattermost-redux/selectors/entities/channel_categories';
-import {getLastPostPerChannel} from 'mattermost-redux/selectors/entities/posts';
-import {shouldShowUnreadsCategory, isCollapsedThreadsEnabled} from 'mattermost-redux/selectors/entities/preferences';
-import {getCurrentTeamId} from 'mattermost-redux/selectors/entities/teams';
-import {Channel} from 'mattermost-redux/types/channels';
-import {CategorySorting, ChannelCategory} from 'mattermost-redux/types/channel_categories';
-import {RelationOneToOne} from 'mattermost-redux/types/utilities';
-import {isChannelMuted} from 'mattermost-redux/utils/channel_utils';
-import {memoizeResult} from 'mattermost-redux/utils/helpers';
+} from 'matterfoss-redux/selectors/entities/channel_categories';
+import {getLastPostPerChannel} from 'matterfoss-redux/selectors/entities/posts';
+import {shouldShowUnreadsCategory, isCollapsedThreadsEnabled} from 'matterfoss-redux/selectors/entities/preferences';
+import {getCurrentTeamId} from 'matterfoss-redux/selectors/entities/teams';
+import {Channel} from 'matterfoss-redux/types/channels';
+import {CategorySorting, ChannelCategory} from 'matterfoss-redux/types/channel_categories';
+import {RelationOneToOne} from 'matterfoss-redux/types/utilities';
+import {isChannelMuted} from 'matterfoss-redux/utils/channel_utils';
+import {memoizeResult} from 'matterfoss-redux/utils/helpers';
 
 import {DraggingState, GlobalState} from 'types/store';
 

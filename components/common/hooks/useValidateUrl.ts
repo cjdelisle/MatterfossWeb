@@ -5,7 +5,7 @@ import {useState, useRef, useEffect} from 'react';
 
 import debounce from 'lodash/debounce';
 
-import {Client4} from 'mattermost-redux/client';
+import {Client4} from 'matterfoss-redux/client';
 
 function makeIdGetter() {
     let id = Number.MIN_SAFE_INTEGER;

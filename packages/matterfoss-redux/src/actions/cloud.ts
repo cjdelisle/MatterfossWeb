@@ -1,10 +1,10 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
-import {CloudTypes} from 'mattermost-redux/action_types';
-import {Client4} from 'mattermost-redux/client';
+import {CloudTypes} from 'matterfoss-redux/action_types';
+import {Client4} from 'matterfoss-redux/client';
 
-import {ActionFunc} from 'mattermost-redux/types/actions';
-import {Address, CloudCustomerPatch} from 'mattermost-redux/types/cloud';
+import {ActionFunc} from 'matterfoss-redux/types/actions';
+import {Address, CloudCustomerPatch} from 'matterfoss-redux/types/cloud';
 
 import {bindClientFunc} from './helpers';
 

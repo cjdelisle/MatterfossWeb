@@ -4,12 +4,12 @@
 import {connect} from 'react-redux';
 import {bindActionCreators, Dispatch} from 'redux';
 
-import {getUser, getCurrentUserId} from 'mattermost-redux/selectors/entities/users';
-import {getCurrentTeam} from 'mattermost-redux/selectors/entities/teams';
+import {getUser, getCurrentUserId} from 'matterfoss-redux/selectors/entities/users';
+import {getCurrentTeam} from 'matterfoss-redux/selectors/entities/teams';
 
-import {deleteCustomEmoji} from 'mattermost-redux/actions/emojis';
+import {deleteCustomEmoji} from 'matterfoss-redux/actions/emojis';
 
-import {GenericAction} from 'mattermost-redux/types/actions';
+import {GenericAction} from 'matterfoss-redux/types/actions';
 
 import {getDisplayNameByUser} from 'utils/utils';
 

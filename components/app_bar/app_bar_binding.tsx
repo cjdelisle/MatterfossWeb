@@ -6,10 +6,10 @@ import {useDispatch, useSelector} from 'react-redux';
 import {useIntl} from 'react-intl';
 import {Tooltip} from 'react-bootstrap';
 
-import {AppCallResponseTypes} from 'mattermost-redux/constants/apps';
-import {getCurrentChannelId} from 'mattermost-redux/selectors/entities/common';
-import {getCurrentTeamId} from 'mattermost-redux/selectors/entities/teams';
-import {AppBinding, AppCallResponse} from 'mattermost-redux/types/apps';
+import {AppCallResponseTypes} from 'matterfoss-redux/constants/apps';
+import {getCurrentChannelId} from 'matterfoss-redux/selectors/entities/common';
+import {getCurrentTeamId} from 'matterfoss-redux/selectors/entities/teams';
+import {AppBinding, AppCallResponse} from 'matterfoss-redux/types/apps';
 
 import {handleBindingClick, openAppsModal, postEphemeralCallResponseForContext} from 'actions/apps';
 

@@ -1,21 +1,21 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
-import * as TeamActions from 'mattermost-redux/actions/teams';
-import {getTeamMember} from 'mattermost-redux/selectors/entities/teams';
-import {TeamMemberWithError, TeamInviteWithError} from 'mattermost-redux/types/teams';
+import * as TeamActions from 'matterfoss-redux/actions/teams';
+import {getTeamMember} from 'matterfoss-redux/selectors/entities/teams';
+import {TeamMemberWithError, TeamInviteWithError} from 'matterfoss-redux/types/teams';
 
-import {RelationOneToOne} from 'mattermost-redux/types/utilities';
-import {ActionFunc, DispatchFunc, GetStateFunc, ActionResult} from 'mattermost-redux/types/actions';
-import {UserProfile} from 'mattermost-redux/types/users';
-import {getChannelMembersInChannels} from 'mattermost-redux/selectors/entities/channels';
-import {joinChannel, getChannelMembersByIds} from 'mattermost-redux/actions/channels';
-import {Channel, ChannelMembership} from 'mattermost-redux/types/channels';
+import {RelationOneToOne} from 'matterfoss-redux/types/utilities';
+import {ActionFunc, DispatchFunc, GetStateFunc, ActionResult} from 'matterfoss-redux/types/actions';
+import {UserProfile} from 'matterfoss-redux/types/users';
+import {getChannelMembersInChannels} from 'matterfoss-redux/selectors/entities/channels';
+import {joinChannel, getChannelMembersByIds} from 'matterfoss-redux/actions/channels';
+import {Channel, ChannelMembership} from 'matterfoss-redux/types/channels';
 
 import {addUsersToTeam} from 'actions/team_actions';
 import {t} from 'utils/i18n';
 import {localizeMessage} from 'utils/utils';
-import {isGuest} from 'mattermost-redux/utils/user_utils';
+import {isGuest} from 'matterfoss-redux/utils/user_utils';
 
 export function sendMembersInvites(teamId: string, users: UserProfile[], emails: string[]): ActionFunc {
     return async (dispatch: DispatchFunc, getState: GetStateFunc) => {

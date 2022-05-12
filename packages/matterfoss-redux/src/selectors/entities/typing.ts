@@ -3,15 +3,15 @@
 
 import {createSelector} from 'reselect';
 
-import {getCurrentChannelId, getUsers} from 'mattermost-redux/selectors/entities/common';
-import {getTeammateNameDisplaySetting} from 'mattermost-redux/selectors/entities/preferences';
+import {getCurrentChannelId, getUsers} from 'matterfoss-redux/selectors/entities/common';
+import {getTeammateNameDisplaySetting} from 'matterfoss-redux/selectors/entities/preferences';
 
-import {GlobalState} from 'mattermost-redux/types/store';
-import {Typing} from 'mattermost-redux/types/typing';
-import {UserProfile} from 'mattermost-redux/types/users';
-import {IDMappedObjects} from 'mattermost-redux/types/utilities';
+import {GlobalState} from 'matterfoss-redux/types/store';
+import {Typing} from 'matterfoss-redux/types/typing';
+import {UserProfile} from 'matterfoss-redux/types/users';
+import {IDMappedObjects} from 'matterfoss-redux/types/utilities';
 
-import {displayUsername} from 'mattermost-redux/utils/user_utils';
+import {displayUsername} from 'matterfoss-redux/utils/user_utils';
 
 const getUsersTypingImpl = (profiles: IDMappedObjects<UserProfile>, teammateNameDisplay: string, channelId: string, parentPostId: string, typing: Typing): string[] => {
     const id = channelId + parentPostId;

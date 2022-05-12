@@ -7,7 +7,7 @@ import {FormattedMessage} from 'react-intl';
 
 import {trackEvent} from 'actions/telemetry_actions.jsx';
 import Constants from 'utils/constants';
-import {General} from 'mattermost-redux/constants';
+import {General} from 'matterfoss-redux/constants';
 
 import FormattedMarkdownMessage from 'components/formatted_markdown_message.jsx';
 

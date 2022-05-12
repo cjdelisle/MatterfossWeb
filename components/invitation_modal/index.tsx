@@ -5,25 +5,25 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {ActionCreatorsMapObject, bindActionCreators, Dispatch} from 'redux';
 
-import {getCurrentTeam} from 'mattermost-redux/selectors/entities/teams';
-import {getCurrentChannel, getChannelsInCurrentTeam, getChannelsNameMapInCurrentTeam} from 'mattermost-redux/selectors/entities/channels';
-import {haveIChannelPermission, haveICurrentTeamPermission} from 'mattermost-redux/selectors/entities/roles';
-import {getConfig, getLicense, getSubscriptionStats} from 'mattermost-redux/selectors/entities/general';
-import {getProfiles, searchProfiles as reduxSearchProfiles} from 'mattermost-redux/actions/users';
-import {getCurrentUser} from 'mattermost-redux/selectors/entities/users';
-import {searchChannels as reduxSearchChannels} from 'mattermost-redux/actions/channels';
-import {regenerateTeamInviteId} from 'mattermost-redux/actions/teams';
-import {Permissions} from 'mattermost-redux/constants';
+import {getCurrentTeam} from 'matterfoss-redux/selectors/entities/teams';
+import {getCurrentChannel, getChannelsInCurrentTeam, getChannelsNameMapInCurrentTeam} from 'matterfoss-redux/selectors/entities/channels';
+import {haveIChannelPermission, haveICurrentTeamPermission} from 'matterfoss-redux/selectors/entities/roles';
+import {getConfig, getLicense, getSubscriptionStats} from 'matterfoss-redux/selectors/entities/general';
+import {getProfiles, searchProfiles as reduxSearchProfiles} from 'matterfoss-redux/actions/users';
+import {getCurrentUser} from 'matterfoss-redux/selectors/entities/users';
+import {searchChannels as reduxSearchChannels} from 'matterfoss-redux/actions/channels';
+import {regenerateTeamInviteId} from 'matterfoss-redux/actions/teams';
+import {Permissions} from 'matterfoss-redux/constants';
 
 import {CloseModalType} from 'actions/views/modals';
 import {Constants} from 'utils/constants';
-import {isAdmin} from 'mattermost-redux/utils/user_utils';
+import {isAdmin} from 'matterfoss-redux/utils/user_utils';
 import {sendMembersInvites, sendGuestsInvites} from 'actions/invite_actions';
 import {makeAsyncComponent} from 'components/async_load';
 
-import {Channel} from 'mattermost-redux/types/channels';
-import {UserProfile} from 'mattermost-redux/types/users';
-import {ActionFunc, GenericAction} from 'mattermost-redux/types/actions';
+import {Channel} from 'matterfoss-redux/types/channels';
+import {UserProfile} from 'matterfoss-redux/types/users';
+import {ActionFunc, GenericAction} from 'matterfoss-redux/types/actions';
 
 import {GlobalState} from 'types/store';
 

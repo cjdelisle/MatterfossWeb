@@ -7,8 +7,8 @@ import {mount} from 'enzyme';
 import {PluginComponent} from 'types/store/plugins';
 import {GlobalState} from 'types/store';
 
-import {AppBinding} from 'mattermost-redux/types/apps';
-import {AppBindingLocations} from 'mattermost-redux/constants/apps';
+import {AppBinding} from 'matterfoss-redux/types/apps';
+import {AppBindingLocations} from 'matterfoss-redux/constants/apps';
 
 import AppBar from './app_bar';
 
@@ -98,7 +98,7 @@ describe('components/app_bar/app_bar', () => {
             location: AppBindingLocations.CHANNEL_HEADER_ICON,
             bindings: [
                 {
-                    app_id: 'com.mattermost.zendesk',
+                    app_id: 'com.matterfoss.zendesk',
                     label: 'Create Subscription',
                 },
             ],

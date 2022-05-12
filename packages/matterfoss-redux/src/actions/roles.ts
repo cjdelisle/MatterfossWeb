@@ -1,11 +1,11 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
-import {Client4} from 'mattermost-redux/client';
-import {RoleTypes} from 'mattermost-redux/action_types';
-import {getRoles} from 'mattermost-redux/selectors/entities/roles_helpers';
+import {Client4} from 'matterfoss-redux/client';
+import {RoleTypes} from 'matterfoss-redux/action_types';
+import {getRoles} from 'matterfoss-redux/selectors/entities/roles_helpers';
 
-import {DispatchFunc, GetStateFunc, ActionFunc} from 'mattermost-redux/types/actions';
-import {Role} from 'mattermost-redux/types/roles';
+import {DispatchFunc, GetStateFunc, ActionFunc} from 'matterfoss-redux/types/actions';
+import {Role} from 'matterfoss-redux/types/roles';
 
 import {bindClientFunc} from './helpers';
 

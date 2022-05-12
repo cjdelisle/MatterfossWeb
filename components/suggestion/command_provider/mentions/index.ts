@@ -1,15 +1,15 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
-import type {UserAutocomplete} from 'mattermost-redux/types/autocomplete';
-import type {AutocompleteSuggestion} from 'mattermost-redux/types/integrations';
-import type {Channel} from 'mattermost-redux/types/channels';
-import type {UserProfile} from 'mattermost-redux/types/users';
-import type {DispatchFunc} from 'mattermost-redux/types/actions';
+import type {UserAutocomplete} from 'matterfoss-redux/types/autocomplete';
+import type {AutocompleteSuggestion} from 'matterfoss-redux/types/integrations';
+import type {Channel} from 'matterfoss-redux/types/channels';
+import type {UserProfile} from 'matterfoss-redux/types/users';
+import type {DispatchFunc} from 'matterfoss-redux/types/actions';
 import type {GlobalState} from 'types/store';
 
 import {autocompleteUsersInChannel} from 'actions/views/channel';
-import {autocompleteChannels} from 'mattermost-redux/actions/channels';
+import {autocompleteChannels} from 'matterfoss-redux/actions/channels';
 
 import {Constants} from 'utils/constants';
 

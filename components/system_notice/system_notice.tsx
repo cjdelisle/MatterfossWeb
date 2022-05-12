@@ -4,16 +4,16 @@
 import React from 'react';
 import {FormattedMessage} from 'react-intl';
 
-import {ClientConfig, ClientLicense} from 'mattermost-redux/types/config';
+import {ClientConfig, ClientLicense} from 'matterfoss-redux/types/config';
 
-import {AnalyticsRow} from 'mattermost-redux/types/admin';
+import {AnalyticsRow} from 'matterfoss-redux/types/admin';
 
-import {PreferenceType} from 'mattermost-redux/types/preferences';
+import {PreferenceType} from 'matterfoss-redux/types/preferences';
 
 import {Preferences} from 'utils/constants';
 import {t} from 'utils/i18n';
 import LocalizedIcon from 'components/localized_icon';
-import MattermostLogo from 'components/widgets/icons/mattermost_logo';
+import MatterFOSSLogo from 'components/widgets/icons/matterfoss_logo';
 import {Notice} from 'components/system_notice/types';
 
 type Props = {
@@ -125,7 +125,7 @@ export default class SystemNotice extends React.PureComponent<Props> {
             >
                 <div className='system-notice__header'>
                     <div className='system-notice__logo'>
-                        <MattermostLogo/>
+                        <MatterFOSSLogo/>
                     </div>
                     <div className='system-notice__title'>
                         {notice.title}

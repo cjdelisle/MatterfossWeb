@@ -3,8 +3,8 @@
 
 import {connect} from 'react-redux';
 
-import {getCurrentRelativeTeamUrl} from 'mattermost-redux/selectors/entities/teams';
-import {GlobalState} from 'mattermost-redux/types/store';
+import {getCurrentRelativeTeamUrl} from 'matterfoss-redux/selectors/entities/teams';
+import {GlobalState} from 'matterfoss-redux/types/store';
 
 import EmbeddedBinding from './embedded_binding';
 

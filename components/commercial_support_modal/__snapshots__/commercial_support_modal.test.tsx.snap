@@ -56,11 +56,11 @@ exports[`components/CommercialSupportModal should match snapshot 1`] = `
  
 **Download Support Packet**
  
-We recommend that you download additional environment details about your Mattermost environment to help with troubleshooting. Once downloaded, attach the packet to your support ticket to share with our Customer Support team."
+We recommend that you download additional environment details about your MatterFOSS environment to help with troubleshooting. Once downloaded, attach the packet to your support ticket to share with our Customer Support team."
         id="commercial_support.description"
         values={
           Object {
-            "supportLink": "https://support.mattermost.com/hc/en-us/requests/new",
+            "supportLink": "https://support.matterfoss.com/hc/en-us/requests/new",
           }
         }
       />

@@ -18,11 +18,11 @@ import {
     TutorialTourName,
 } from 'components/onboarding_tour';
 import LearnMoreTrialModal from 'components/learn_more_trial_modal/learn_more_trial_modal';
-import {savePreferences} from 'mattermost-redux/actions/preferences';
-import {getCurrentUserId} from 'mattermost-redux/selectors/entities/common';
+import {savePreferences} from 'matterfoss-redux/actions/preferences';
+import {getCurrentUserId} from 'matterfoss-redux/selectors/entities/common';
 
-import {get, makeGetCategory} from 'mattermost-redux/selectors/entities/preferences';
-import {getLicense} from 'mattermost-redux/selectors/entities/general';
+import {get, makeGetCategory} from 'matterfoss-redux/selectors/entities/preferences';
+import {getLicense} from 'matterfoss-redux/selectors/entities/general';
 
 import {GlobalState} from 'types/store';
 import {browserHistory} from 'utils/browser_history';
@@ -244,7 +244,7 @@ export const useHandleOnBoardingTaskTrigger = () => {
                 value: 'true',
             }];
             dispatch(savePreferences(currentUserId, preferences));
-            window.open('https://mattermost.com/download/', '_blank', 'noopener,noreferrer');
+            window.open('https://matterfoss.com/download/', '_blank', 'noopener,noreferrer');
             break;
         }
         case OnboardingTasksName.START_TRIAL: {

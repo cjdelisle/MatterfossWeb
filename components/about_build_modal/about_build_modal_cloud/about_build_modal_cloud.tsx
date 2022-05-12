@@ -7,7 +7,7 @@ import {FormattedMessage} from 'react-intl';
 import classNames from 'classnames';
 
 import FormattedMarkdownMessage from 'components/formatted_markdown_message';
-import MattermostLogo from 'components/widgets/icons/mattermost_logo';
+import MatterFOSSLogo from 'components/widgets/icons/matterfoss_logo';
 
 import './about_build_modal_cloud.scss';
 
@@ -71,7 +71,7 @@ export default function AboutBuildModalCloud(props: Props) {
                 >
                     <FormattedMessage
                         id='about.title'
-                        values={{appTitle: config.SiteName || 'Mattermost'}}
+                        values={{appTitle: config.SiteName || 'MatterFOSS'}}
                         defaultMessage='About {appTitle}'
                     />
                 </Modal.Title>
@@ -79,18 +79,18 @@ export default function AboutBuildModalCloud(props: Props) {
             <Modal.Body>
                 <div className='about-modal__content'>
                     <div className='about-modal__logo'>
-                        <MattermostLogo/>
+                        <MatterFOSSLogo/>
                     </div>
                     <div>
                         <h3 className='about-modal__title'>
-                            <strong>{'Mattermost'} {title}</strong>
+                            <strong>{'MatterFOSS'} {title}</strong>
                         </h3>
                         <p className='subtitle'>{subTitle}</p>
                         <div className='description'>
                             <div>
                                 <FormattedMessage
                                     id='about.version'
-                                    defaultMessage='Mattermost Version:'
+                                    defaultMessage='MatterFOSS Version:'
                                 />
                                 <span id='versionString'>{'\u00a0' + mmversion}</span>
                             </div>
@@ -99,12 +99,12 @@ export default function AboutBuildModalCloud(props: Props) {
                         <div className='about-footer'>
                             <FormattedMarkdownMessage
                                 id='about.notice'
-                                defaultMessage='Mattermost is made possible by the open source software used in our [server](!https://github.com/mattermost/mattermost-server/blob/master/NOTICE.txt), [desktop](!https://github.com/mattermost/desktop/blob/master/NOTICE.txt) and [mobile](!https://github.com/mattermost/mattermost-mobile/blob/master/NOTICE.txt) apps.'
+                                defaultMessage='MatterFOSS is made possible by the open source software used in our [server](!https://github.com/matterfoss/matterfoss-server/blob/master/NOTICE.txt), [desktop](!https://github.com/matterfoss/desktop/blob/master/NOTICE.txt) and [mobile](!https://github.com/matterfoss/matterfoss-mobile/blob/master/NOTICE.txt) apps.'
                             />
                             <div className='copy-right'>
                                 <FormattedMessage
                                     id='about.copyright'
-                                    defaultMessage='Copyright 2015 - {currentYear} Mattermost, Inc. All rights reserved'
+                                    defaultMessage='Copyright 2015 - {currentYear} MatterFOSS, Inc. All rights reserved'
                                     values={{
                                         currentYear: new Date().getFullYear(),
                                     }}

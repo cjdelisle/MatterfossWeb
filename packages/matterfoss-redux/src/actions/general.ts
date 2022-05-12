@@ -1,14 +1,14 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
-import {Client4} from 'mattermost-redux/client';
+import {Client4} from 'matterfoss-redux/client';
 
-import {GeneralTypes} from 'mattermost-redux/action_types';
+import {GeneralTypes} from 'matterfoss-redux/action_types';
 
-import {getServerVersion} from 'mattermost-redux/selectors/entities/general';
-import {isMinimumServerVersion} from 'mattermost-redux/utils/helpers';
-import {GeneralState} from 'mattermost-redux/types/general';
-import {LogLevel} from 'mattermost-redux/types/client4';
-import {GetStateFunc, DispatchFunc, ActionFunc, batchActions} from 'mattermost-redux/types/actions';
+import {getServerVersion} from 'matterfoss-redux/selectors/entities/general';
+import {isMinimumServerVersion} from 'matterfoss-redux/utils/helpers';
+import {GeneralState} from 'matterfoss-redux/types/general';
+import {LogLevel} from 'matterfoss-redux/types/client4';
+import {GetStateFunc, DispatchFunc, ActionFunc, batchActions} from 'matterfoss-redux/types/actions';
 
 import {logError} from './errors';
 import {loadRolesIfNeeded} from './roles';

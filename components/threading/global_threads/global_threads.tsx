@@ -13,13 +13,13 @@ import {
     getUnreadThreadOrderInCurrentTeam,
     getThreadCountsInCurrentTeam,
     getThread,
-} from 'mattermost-redux/selectors/entities/threads';
+} from 'matterfoss-redux/selectors/entities/threads';
 
-import {getThreads} from 'mattermost-redux/actions/threads';
-import {selectChannel} from 'mattermost-redux/actions/channels';
+import {getThreads} from 'matterfoss-redux/actions/threads';
+import {selectChannel} from 'matterfoss-redux/actions/channels';
 
-import {getPost} from 'mattermost-redux/selectors/entities/posts';
-import {getCurrentRelativeTeamUrl} from 'mattermost-redux/selectors/entities/teams';
+import {getPost} from 'matterfoss-redux/selectors/entities/posts';
+import {getCurrentRelativeTeamUrl} from 'matterfoss-redux/selectors/entities/teams';
 import {setShowNextStepsView} from 'actions/views/next_steps';
 
 import {GlobalState} from 'types/store/index';
@@ -30,9 +30,9 @@ import {setSelectedThreadId} from 'actions/views/threads';
 import {suppressRHS, unsuppressRHS} from 'actions/views/rhs';
 import {loadProfilesForSidebar} from 'actions/user_actions';
 import {getSelectedThreadIdInCurrentTeam} from 'selectors/views/threads';
-import {getConfig} from 'mattermost-redux/selectors/entities/general';
-import {getUseCaseOnboarding} from 'mattermost-redux/selectors/entities/preferences';
-import {isFirstAdmin} from 'mattermost-redux/selectors/entities/users';
+import {getConfig} from 'matterfoss-redux/selectors/entities/general';
+import {getUseCaseOnboarding} from 'matterfoss-redux/selectors/entities/preferences';
+import {isFirstAdmin} from 'matterfoss-redux/selectors/entities/users';
 import {showNextSteps} from 'components/next_steps_view/steps';
 
 import {Constants} from 'utils/constants';

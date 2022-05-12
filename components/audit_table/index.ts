@@ -4,10 +4,10 @@
 import {connect} from 'react-redux';
 import {bindActionCreators, Dispatch} from 'redux';
 
-import {getMissingProfilesByIds} from 'mattermost-redux/actions/users';
-import {getUser, getCurrentUser} from 'mattermost-redux/selectors/entities/users';
-import {getChannelByName, getDirectTeammate} from 'mattermost-redux/selectors/entities/channels';
-import {GenericAction} from 'mattermost-redux/types/actions';
+import {getMissingProfilesByIds} from 'matterfoss-redux/actions/users';
+import {getUser, getCurrentUser} from 'matterfoss-redux/selectors/entities/users';
+import {getChannelByName, getDirectTeammate} from 'matterfoss-redux/selectors/entities/channels';
+import {GenericAction} from 'matterfoss-redux/types/actions';
 
 import {GlobalState} from 'types/store';
 

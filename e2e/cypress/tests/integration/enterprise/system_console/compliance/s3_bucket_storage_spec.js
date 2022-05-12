@@ -9,9 +9,9 @@
 
 // Group: @enterprise @system_console @compliance_export @not_cloud
 
-// Requires "mattermost-minio" docker instance to be accessible at http://localhost:9000
-// and a bucket named "mattermost-test". Bucket can be created manually in the UI or by:
-// ``docker exec mattermost-minio sh -c 'mkdir -p /data/mattermost-test'``
+// Requires "matterfoss-minio" docker instance to be accessible at http://localhost:9000
+// and a bucket named "matterfoss-test". Bucket can be created manually in the UI or by:
+// ``docker exec matterfoss-minio sh -c 'mkdir -p /data/matterfoss-test'``
 
 import * as TIMEOUTS from '../../../../fixtures/timeouts';
 

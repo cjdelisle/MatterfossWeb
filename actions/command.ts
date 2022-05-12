@@ -1,18 +1,18 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
-import {Client4} from 'mattermost-redux/client';
-import {unfavoriteChannel} from 'mattermost-redux/actions/channels';
-import {savePreferences} from 'mattermost-redux/actions/preferences';
-import {getCurrentChannel, getRedirectChannelNameForTeam, isFavoriteChannel} from 'mattermost-redux/selectors/entities/channels';
-import {getCurrentUserId} from 'mattermost-redux/selectors/entities/users';
-import {getCurrentRelativeTeamUrl, getCurrentTeamId} from 'mattermost-redux/selectors/entities/teams';
-import {appsEnabled} from 'mattermost-redux/selectors/entities/apps';
-import {IntegrationTypes} from 'mattermost-redux/action_types';
-import {ActionFunc, DispatchFunc, GetStateFunc} from 'mattermost-redux/types/actions';
-import type {CommandArgs} from 'mattermost-redux/types/integrations';
+import {Client4} from 'matterfoss-redux/client';
+import {unfavoriteChannel} from 'matterfoss-redux/actions/channels';
+import {savePreferences} from 'matterfoss-redux/actions/preferences';
+import {getCurrentChannel, getRedirectChannelNameForTeam, isFavoriteChannel} from 'matterfoss-redux/selectors/entities/channels';
+import {getCurrentUserId} from 'matterfoss-redux/selectors/entities/users';
+import {getCurrentRelativeTeamUrl, getCurrentTeamId} from 'matterfoss-redux/selectors/entities/teams';
+import {appsEnabled} from 'matterfoss-redux/selectors/entities/apps';
+import {IntegrationTypes} from 'matterfoss-redux/action_types';
+import {ActionFunc, DispatchFunc, GetStateFunc} from 'matterfoss-redux/types/actions';
+import type {CommandArgs} from 'matterfoss-redux/types/integrations';
 
-import {AppCallResponseTypes} from 'mattermost-redux/constants/apps';
+import {AppCallResponseTypes} from 'matterfoss-redux/constants/apps';
 
 import {DoAppCallResult} from 'types/apps';
 

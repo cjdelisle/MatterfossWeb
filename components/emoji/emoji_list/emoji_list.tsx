@@ -4,10 +4,10 @@
 import React, {ChangeEvent, ChangeEventHandler} from 'react';
 import {FormattedMessage} from 'react-intl';
 
-import {Emoji} from 'mattermost-redux/constants';
-import {CustomEmoji} from 'mattermost-redux/types/emojis';
-import {ServerError} from 'mattermost-redux/types/errors';
-import {deleteCustomEmoji} from 'mattermost-redux/actions/emojis';
+import {Emoji} from 'matterfoss-redux/constants';
+import {CustomEmoji} from 'matterfoss-redux/types/emojis';
+import {ServerError} from 'matterfoss-redux/types/errors';
+import {deleteCustomEmoji} from 'matterfoss-redux/actions/emojis';
 
 import LoadingScreen from 'components/loading_screen';
 import SaveButton from 'components/save_button';

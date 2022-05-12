@@ -5,11 +5,11 @@ import React, {PureComponent, RefObject} from 'react';
 import AutoSizer from 'react-virtualized-auto-sizer';
 import {DynamicSizeList, OnScrollArgs, OnItemsRenderedArgs} from 'dynamic-virtualized-list';
 
-import {Channel} from 'mattermost-redux/types/channels';
-import {Post} from 'mattermost-redux/types/posts';
-import {UserProfile} from 'mattermost-redux/types/users';
+import {Channel} from 'matterfoss-redux/types/channels';
+import {Post} from 'matterfoss-redux/types/posts';
+import {UserProfile} from 'matterfoss-redux/types/users';
 
-import {isDateLine, isStartOfNewMessages, isCreateComment} from 'mattermost-redux/utils/post_list';
+import {isDateLine, isStartOfNewMessages, isCreateComment} from 'matterfoss-redux/utils/post_list';
 
 import DelayedAction from 'utils/delayed_action';
 import * as Utils from 'utils/utils.jsx';

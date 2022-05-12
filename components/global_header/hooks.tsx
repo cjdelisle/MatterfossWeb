@@ -5,8 +5,8 @@ import {MutableRefObject, useEffect, useRef} from 'react';
 import {useSelector} from 'react-redux';
 import {useLocation} from 'react-router';
 
-import {getCurrentUser, isFirstAdmin} from 'mattermost-redux/selectors/entities/users';
-import {UserProfile} from 'mattermost-redux/types/users';
+import {getCurrentUser, isFirstAdmin} from 'matterfoss-redux/selectors/entities/users';
+import {UserProfile} from 'matterfoss-redux/types/users';
 import {isModalOpen} from 'selectors/views/modals';
 import {GlobalState} from 'types/store';
 import {ProductComponent} from 'types/store/plugins';

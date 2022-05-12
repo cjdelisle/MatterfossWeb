@@ -6,7 +6,7 @@ import {useDispatch} from 'react-redux';
 import {CSSTransition} from 'react-transition-group';
 import {FormattedMessage} from 'react-intl';
 
-import {GeneralTypes} from 'mattermost-redux/action_types';
+import {GeneralTypes} from 'matterfoss-redux/action_types';
 
 import LogoSvg from 'components/common/svg_images_components/logo_dark_blue_svg';
 

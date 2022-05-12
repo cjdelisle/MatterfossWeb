@@ -1,15 +1,15 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
-import {Client4} from 'mattermost-redux/client';
+import {Client4} from 'matterfoss-redux/client';
 
-import {getCurrentTeamId} from 'mattermost-redux/selectors/entities/teams';
-import {getCurrentChannelId} from 'mattermost-redux/selectors/entities/channels';
-import {appsEnabled} from 'mattermost-redux/selectors/entities/apps';
+import {getCurrentTeamId} from 'matterfoss-redux/selectors/entities/teams';
+import {getCurrentChannelId} from 'matterfoss-redux/selectors/entities/channels';
+import {appsEnabled} from 'matterfoss-redux/selectors/entities/apps';
 
-import {ActionFunc, DispatchFunc, GetStateFunc} from 'mattermost-redux/types/actions';
-import type {MarketplaceApp, MarketplacePlugin} from 'mattermost-redux/types/marketplace';
-import type {CommandArgs} from 'mattermost-redux/types/integrations';
+import {ActionFunc, DispatchFunc, GetStateFunc} from 'matterfoss-redux/types/actions';
+import type {MarketplaceApp, MarketplacePlugin} from 'matterfoss-redux/types/marketplace';
+import type {CommandArgs} from 'matterfoss-redux/types/integrations';
 
 import {GlobalState} from 'types/store';
 

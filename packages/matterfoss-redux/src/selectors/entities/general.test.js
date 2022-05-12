@@ -3,9 +3,9 @@
 
 import assert from 'assert';
 
-import {General} from 'mattermost-redux/constants';
+import {General} from 'matterfoss-redux/constants';
 
-import * as Selectors from 'mattermost-redux/selectors/entities/general';
+import * as Selectors from 'matterfoss-redux/selectors/entities/general';
 
 describe('Selectors.General', () => {
     it('canUploadFilesOnMobile', () => {

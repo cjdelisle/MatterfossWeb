@@ -49,7 +49,7 @@ describe('Integrations', () => {
         cy.getLastPostId().then((postId) => {
             cy.get(`#post_${postId}`).
                 should('contain.text', '(Only visible to you)').
-                should('contain.text', 'is not a valid Mattermost SITEURL.');
+                should('contain.text', 'is not a valid MatterFOSS SITEURL.');
         });
     });
 
@@ -94,7 +94,7 @@ describe('Integrations', () => {
         cy.getLastPostId().then((postId) => {
             cy.get(`#post_${postId}`).
                 should('contain.text', '(Only visible to you)').
-                should('contain.text', 'is not a valid Mattermost SITEURL.');
+                should('contain.text', 'is not a valid MatterFOSS SITEURL.');
         });
     });
 

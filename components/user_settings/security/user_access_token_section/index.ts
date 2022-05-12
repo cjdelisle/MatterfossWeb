@@ -11,9 +11,9 @@ import {
     revokeUserAccessToken,
     enableUserAccessToken,
     disableUserAccessToken,
-} from 'mattermost-redux/actions/users';
-import {GlobalState} from 'mattermost-redux/types/store';
-import {ActionFunc} from 'mattermost-redux/types/actions';
+} from 'matterfoss-redux/actions/users';
+import {GlobalState} from 'matterfoss-redux/types/store';
+import {ActionFunc} from 'matterfoss-redux/types/actions';
 
 import UserAccessTokenSection from './user_access_token_section';
 

@@ -3,11 +3,11 @@
 
 import assert from 'assert';
 
-import {General, Preferences} from 'mattermost-redux/constants';
-import deepFreezeAndThrowOnMutation from 'mattermost-redux/utils/deep_freeze';
-import {sortByUsername} from 'mattermost-redux/utils/user_utils';
-import TestHelper from 'mattermost-redux/test/test_helper';
-import * as Selectors from 'mattermost-redux/selectors/entities/users';
+import {General, Preferences} from 'matterfoss-redux/constants';
+import deepFreezeAndThrowOnMutation from 'matterfoss-redux/utils/deep_freeze';
+import {sortByUsername} from 'matterfoss-redux/utils/user_utils';
+import TestHelper from 'matterfoss-redux/test/test_helper';
+import * as Selectors from 'matterfoss-redux/selectors/entities/users';
 const searchProfilesMatchingWithTerm = Selectors.makeSearchProfilesMatchingWithTerm();
 const searchProfilesStartingWithTerm = Selectors.makeSearchProfilesStartingWithTerm();
 

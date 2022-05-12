@@ -4,14 +4,14 @@
 import {connect} from 'react-redux';
 import {ActionCreatorsMapObject, bindActionCreators, Dispatch} from 'redux';
 
-import {addMessageIntoHistory} from 'mattermost-redux/actions/posts';
-import {Preferences, Permissions} from 'mattermost-redux/constants';
-import {getConfig} from 'mattermost-redux/selectors/entities/general';
-import {getChannel} from 'mattermost-redux/selectors/entities/channels';
-import {haveIChannelPermission} from 'mattermost-redux/selectors/entities/roles';
-import {getCurrentTeamId} from 'mattermost-redux/selectors/entities/teams';
-import {getCurrentUserId, isCurrentUserSystemAdmin} from 'mattermost-redux/selectors/entities/users';
-import {getBool} from 'mattermost-redux/selectors/entities/preferences';
+import {addMessageIntoHistory} from 'matterfoss-redux/actions/posts';
+import {Preferences, Permissions} from 'matterfoss-redux/constants';
+import {getConfig} from 'matterfoss-redux/selectors/entities/general';
+import {getChannel} from 'matterfoss-redux/selectors/entities/channels';
+import {haveIChannelPermission} from 'matterfoss-redux/selectors/entities/roles';
+import {getCurrentTeamId} from 'matterfoss-redux/selectors/entities/teams';
+import {getCurrentUserId, isCurrentUserSystemAdmin} from 'matterfoss-redux/selectors/entities/users';
+import {getBool} from 'matterfoss-redux/selectors/entities/preferences';
 
 import {unsetEditingPost} from 'actions/post_actions';
 import {openModal} from 'actions/views/modals';

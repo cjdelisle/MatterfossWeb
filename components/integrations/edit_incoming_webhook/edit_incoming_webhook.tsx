@@ -3,9 +3,9 @@
 
 import React from 'react';
 
-import {Team} from 'mattermost-redux/types/teams';
-import {IncomingWebhook} from 'mattermost-redux/types/integrations';
-import {ActionResult} from 'mattermost-redux/types/actions';
+import {Team} from 'matterfoss-redux/types/teams';
+import {IncomingWebhook} from 'matterfoss-redux/types/integrations';
+import {ActionResult} from 'matterfoss-redux/types/actions';
 
 import {browserHistory} from 'utils/browser_history';
 import {t} from 'utils/i18n';

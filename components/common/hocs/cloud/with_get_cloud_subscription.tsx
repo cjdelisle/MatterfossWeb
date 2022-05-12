@@ -5,7 +5,7 @@ import React, {ComponentType} from 'react';
 
 import {isEmpty} from 'lodash';
 
-import {Subscription, SubscriptionStats} from 'mattermost-redux/types/cloud';
+import {Subscription, SubscriptionStats} from 'matterfoss-redux/types/cloud';
 
 interface Actions {
     getCloudSubscription?: () => void;

@@ -3,20 +3,20 @@
 
 import {createSelector} from 'reselect';
 
-import {Permissions} from 'mattermost-redux/constants';
+import {Permissions} from 'matterfoss-redux/constants';
 
-import {getConfig, getCurrentUrl, isCompatibleWithJoinViewTeamPermissions} from 'mattermost-redux/selectors/entities/general';
-import {haveISystemPermission} from 'mattermost-redux/selectors/entities/roles_helpers';
+import {getConfig, getCurrentUrl, isCompatibleWithJoinViewTeamPermissions} from 'matterfoss-redux/selectors/entities/general';
+import {haveISystemPermission} from 'matterfoss-redux/selectors/entities/roles_helpers';
 
-import {GlobalState} from 'mattermost-redux/types/store';
-import {Team, TeamMembership, TeamStats} from 'mattermost-redux/types/teams';
-import {UserProfile} from 'mattermost-redux/types/users';
-import {IDMappedObjects, RelationOneToOne} from 'mattermost-redux/types/utilities';
+import {GlobalState} from 'matterfoss-redux/types/store';
+import {Team, TeamMembership, TeamStats} from 'matterfoss-redux/types/teams';
+import {UserProfile} from 'matterfoss-redux/types/users';
+import {IDMappedObjects, RelationOneToOne} from 'matterfoss-redux/types/utilities';
 
-import {createIdsSelector} from 'mattermost-redux/utils/helpers';
-import {isTeamAdmin} from 'mattermost-redux/utils/user_utils';
-import {sortTeamsWithLocale, filterTeamsStartingWithTerm} from 'mattermost-redux/utils/team_utils';
-import {getDataRetentionCustomPolicy} from 'mattermost-redux/selectors/entities/admin';
+import {createIdsSelector} from 'matterfoss-redux/utils/helpers';
+import {isTeamAdmin} from 'matterfoss-redux/utils/user_utils';
+import {sortTeamsWithLocale, filterTeamsStartingWithTerm} from 'matterfoss-redux/utils/team_utils';
+import {getDataRetentionCustomPolicy} from 'matterfoss-redux/selectors/entities/admin';
 
 import {isCollapsedThreadsEnabled} from './preferences';
 

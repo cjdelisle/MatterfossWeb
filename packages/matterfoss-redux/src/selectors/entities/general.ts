@@ -3,13 +3,13 @@
 
 import {createSelector} from 'reselect';
 
-import {General} from 'mattermost-redux/constants';
+import {General} from 'matterfoss-redux/constants';
 
-import {GlobalState} from 'mattermost-redux/types/store';
-import {ClientConfig, FeatureFlags, ClientLicense} from 'mattermost-redux/types/config';
-import {SubscriptionStats} from 'mattermost-redux/types/cloud';
+import {GlobalState} from 'matterfoss-redux/types/store';
+import {ClientConfig, FeatureFlags, ClientLicense} from 'matterfoss-redux/types/config';
+import {SubscriptionStats} from 'matterfoss-redux/types/cloud';
 
-import {isMinimumServerVersion} from 'mattermost-redux/utils/helpers';
+import {isMinimumServerVersion} from 'matterfoss-redux/utils/helpers';
 
 export function getConfig(state: GlobalState): Partial<ClientConfig> {
     return state.entities.general.config;

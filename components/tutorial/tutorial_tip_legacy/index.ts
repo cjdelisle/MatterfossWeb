@@ -3,12 +3,12 @@
 import {connect} from 'react-redux';
 import {bindActionCreators, Dispatch} from 'redux';
 
-import {getCurrentUser, getCurrentUserId} from 'mattermost-redux/selectors/entities/users';
-import {getInt} from 'mattermost-redux/selectors/entities/preferences';
-import {savePreferences} from 'mattermost-redux/actions/preferences';
+import {getCurrentUser, getCurrentUserId} from 'matterfoss-redux/selectors/entities/users';
+import {getInt} from 'matterfoss-redux/selectors/entities/preferences';
+import {savePreferences} from 'matterfoss-redux/actions/preferences';
 import {setProductMenuSwitcherOpen} from 'actions/views/product_menu';
-import {GenericAction} from 'mattermost-redux/types/actions';
-import {isAdmin} from 'mattermost-redux/utils/user_utils';
+import {GenericAction} from 'matterfoss-redux/types/actions';
+import {isAdmin} from 'matterfoss-redux/utils/user_utils';
 
 import {closeMenu as closeRhsMenu} from 'actions/views/rhs';
 import {setFirstChannelName} from 'actions/views/channel_sidebar';

@@ -7,9 +7,9 @@ import {FormattedMessage} from 'react-intl';
 
 import classNames from 'classnames';
 
-import {Post, PostPreviewMetadata} from 'mattermost-redux/types/posts';
+import {Post, PostPreviewMetadata} from 'matterfoss-redux/types/posts';
 import UserProfileComponent from 'components/user_profile';
-import {UserProfile} from 'mattermost-redux/types/users';
+import {UserProfile} from 'matterfoss-redux/types/users';
 import Avatar from 'components/widgets/users/avatar';
 import * as PostUtils from 'utils/post_utils';
 import * as Utils from 'utils/utils';
@@ -20,7 +20,7 @@ import PostAttachmentContainer from '../post_attachment_container/post_attachmen
 import FileAttachmentListContainer from 'components/file_attachment_list';
 import PostAttachmentOpenGraph from 'components/post_view/post_attachment_opengraph';
 
-import MattermostLogo from 'components/widgets/icons/mattermost_logo';
+import MatterFOSSLogo from 'components/widgets/icons/matterfoss_logo';
 import {Constants} from 'utils/constants';
 
 export type Props = {
@@ -85,7 +85,7 @@ const PostMessagePreview = (props: Props) => {
         />
     );
     if (isSystemMessage && !fromWebhook && !isBot) {
-        avatar = (<MattermostLogo className='icon'/>);
+        avatar = (<MatterFOSSLogo className='icon'/>);
     } else if (user?.id) {
         avatar = (
             <Avatar

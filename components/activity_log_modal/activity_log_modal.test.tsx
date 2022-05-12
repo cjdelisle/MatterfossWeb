@@ -6,7 +6,7 @@ import {shallow} from 'enzyme';
 
 import ActivityLogModal from 'components/activity_log_modal/activity_log_modal';
 
-import {General} from 'mattermost-redux/constants';
+import {General} from 'matterfoss-redux/constants';
 
 describe('components/ActivityLogModal', () => {
     const baseProps = {

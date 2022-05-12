@@ -261,7 +261,7 @@ describe('Integrations', () => {
         cy.get('#url').type(commandURL);
         cy.get('#saveCommand').click();
         cy.get('#doneButton').click();
-        cy.findByText('Back to Mattermost').click();
+        cy.findByText('Back to MatterFOSS').click();
 
         // # Post slash command
         cy.uiPostMessageQuickly(`/${commandTrigger} `);

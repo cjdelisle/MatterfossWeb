@@ -3,13 +3,13 @@
 
 import {createSelector} from 'reselect';
 
-import {getConfig} from 'mattermost-redux/selectors/entities/general';
+import {getConfig} from 'matterfoss-redux/selectors/entities/general';
 
-import {CustomEmoji} from 'mattermost-redux/types/emojis';
-import {GlobalState} from 'mattermost-redux/types/store';
-import {IDMappedObjects} from 'mattermost-redux/types/utilities';
+import {CustomEmoji} from 'matterfoss-redux/types/emojis';
+import {GlobalState} from 'matterfoss-redux/types/store';
+import {IDMappedObjects} from 'matterfoss-redux/types/utilities';
 
-import {createIdsSelector} from 'mattermost-redux/utils/helpers';
+import {createIdsSelector} from 'matterfoss-redux/utils/helpers';
 
 export const getCustomEmojisEnabled = (state: GlobalState): boolean => {
     return getConfig(state)?.EnableCustomEmoji === 'true';

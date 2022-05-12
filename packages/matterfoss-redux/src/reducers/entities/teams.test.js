@@ -3,9 +3,9 @@
 
 import assert from 'assert';
 
-import {TeamTypes, AdminTypes} from 'mattermost-redux/action_types';
-import teamsReducer from 'mattermost-redux/reducers/entities/teams';
-import deepFreeze from 'mattermost-redux/utils/deep_freeze';
+import {TeamTypes, AdminTypes} from 'matterfoss-redux/action_types';
+import teamsReducer from 'matterfoss-redux/reducers/entities/teams';
+import deepFreeze from 'matterfoss-redux/utils/deep_freeze';
 
 describe('Reducers.teams.myMembers', () => {
     it('initial state', async () => {

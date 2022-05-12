@@ -5,9 +5,9 @@ import React from 'react';
 import {Modal} from 'react-bootstrap';
 import {FormattedMessage} from 'react-intl';
 
-import {ChannelSearchOpts, ChannelWithTeamData} from 'mattermost-redux/types/channels';
+import {ChannelSearchOpts, ChannelWithTeamData} from 'matterfoss-redux/types/channels';
 
-import {ActionResult} from 'mattermost-redux/types/actions';
+import {ActionResult} from 'matterfoss-redux/types/actions';
 
 import Constants from 'utils/constants';
 import {localizeMessage, compareChannels} from 'utils/utils.jsx';

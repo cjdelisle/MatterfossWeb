@@ -4,7 +4,7 @@
 import React from 'react';
 import {FormattedMessage} from 'react-intl';
 
-import {GroupSearchOpts, MixedUnlinkedGroupRedux} from 'mattermost-redux/types/groups';
+import {GroupSearchOpts, MixedUnlinkedGroupRedux} from 'matterfoss-redux/types/groups';
 
 import * as Utils from 'utils/utils';
 
@@ -118,7 +118,7 @@ export default class GroupsList extends React.PureComponent<Props, State> {
 
     public linkSelectedGroups() {
         for (const group of this.props.groups) {
-            if (this.state.checked[group.primary_key] && !group.mattermost_group_id) {
+            if (this.state.checked[group.primary_key] && !group.matterfoss_group_id) {
                 this.props.actions.link(group.primary_key);
             }
         }
@@ -126,7 +126,7 @@ export default class GroupsList extends React.PureComponent<Props, State> {
 
     public unlinkSelectedGroups() {
         for (const group of this.props.groups) {
-            if (this.state.checked[group.primary_key] && group.mattermost_group_id) {
+            if (this.state.checked[group.primary_key] && group.matterfoss_group_id) {
                 this.props.actions.unlink(group.primary_key);
             }
         }
@@ -136,7 +136,7 @@ export default class GroupsList extends React.PureComponent<Props, State> {
         let hasSelectedLinked = false;
         for (const group of this.props.groups) {
             if (this.state.checked[group.primary_key]) {
-                if (!group.mattermost_group_id) {
+                if (!group.matterfoss_group_id) {
                     return 'link';
                 }
                 hasSelectedLinked = true;
@@ -213,7 +213,7 @@ export default class GroupsList extends React.PureComponent<Props, State> {
                     <div className='group-description'>
                         <FormattedMessage
                             id='admin.group_settings.groups_list.mappingHeader'
-                            defaultMessage='Mattermost Linking'
+                            defaultMessage='MatterFOSS Linking'
                         />
                     </div>
                     <div className='group-actions'/>
@@ -246,7 +246,7 @@ export default class GroupsList extends React.PureComponent<Props, State> {
                     key={item.primary_key}
                     primary_key={item.primary_key}
                     name={item.name}
-                    mattermost_group_id={item.mattermost_group_id}
+                    matterfoss_group_id={item.matterfoss_group_id}
                     has_syncables={item.has_syncables}
                     failed={item.failed}
                     checked={Boolean(this.state.checked[item.primary_key])}

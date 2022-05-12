@@ -12,7 +12,7 @@ describe('components/admin_console/group_settings/GroupRow', () => {
             <GroupRow
                 primary_key='primary_key'
                 name='name'
-                mattermost_group_id='group-id'
+                matterfoss_group_id='group-id'
                 has_syncables={true}
                 checked={false}
                 failed={false}
@@ -31,7 +31,7 @@ describe('components/admin_console/group_settings/GroupRow', () => {
             <GroupRow
                 primary_key='primary_key'
                 name='name'
-                mattermost_group_id='group-id'
+                matterfoss_group_id='group-id'
                 has_syncables={false}
                 checked={false}
                 failed={false}
@@ -50,7 +50,7 @@ describe('components/admin_console/group_settings/GroupRow', () => {
             <GroupRow
                 primary_key='primary_key'
                 name='name'
-                mattermost_group_id={null}
+                matterfoss_group_id={null}
                 has_syncables={null}
                 checked={false}
                 failed={false}
@@ -69,7 +69,7 @@ describe('components/admin_console/group_settings/GroupRow', () => {
             <GroupRow
                 primary_key='primary_key'
                 name='name'
-                mattermost_group_id={null}
+                matterfoss_group_id={null}
                 has_syncables={null}
                 checked={true}
                 failed={false}
@@ -88,7 +88,7 @@ describe('components/admin_console/group_settings/GroupRow', () => {
             <GroupRow
                 primary_key='primary_key'
                 name='name'
-                mattermost_group_id='group-id'
+                matterfoss_group_id='group-id'
                 has_syncables={null}
                 checked={false}
                 failed={true}
@@ -107,7 +107,7 @@ describe('components/admin_console/group_settings/GroupRow', () => {
             <GroupRow
                 primary_key='primary_key'
                 name='name'
-                mattermost_group_id={null}
+                matterfoss_group_id={null}
                 has_syncables={null}
                 checked={false}
                 failed={true}
@@ -127,7 +127,7 @@ describe('components/admin_console/group_settings/GroupRow', () => {
             <GroupRow
                 primary_key='primary_key'
                 name='name'
-                mattermost_group_id={null}
+                matterfoss_group_id={null}
                 has_syncables={null}
                 checked={false}
                 failed={false}
@@ -149,7 +149,7 @@ describe('components/admin_console/group_settings/GroupRow', () => {
             <GroupRow
                 primary_key='primary_key'
                 name='name'
-                mattermost_group_id={null}
+                matterfoss_group_id={null}
                 has_syncables={null}
                 checked={false}
                 failed={false}
@@ -172,7 +172,7 @@ describe('components/admin_console/group_settings/GroupRow', () => {
             <GroupRow
                 primary_key='primary_key'
                 name='name'
-                mattermost_group_id={null}
+                matterfoss_group_id={null}
                 has_syncables={null}
                 checked={false}
                 failed={false}

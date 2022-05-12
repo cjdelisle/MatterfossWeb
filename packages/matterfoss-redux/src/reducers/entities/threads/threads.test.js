@@ -1,8 +1,8 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
-import {TeamTypes, ThreadTypes, PostTypes, ChannelTypes} from 'mattermost-redux/action_types';
-import deepFreeze from 'mattermost-redux/utils/deep_freeze';
+import {TeamTypes, ThreadTypes, PostTypes, ChannelTypes} from 'matterfoss-redux/action_types';
+import deepFreeze from 'matterfoss-redux/utils/deep_freeze';
 
 import threadsReducer from './index';
 

@@ -4,11 +4,11 @@
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 
-import {getCurrentUser} from 'mattermost-redux/selectors/entities/users';
-import {getMyTeams, getCurrentTeam} from 'mattermost-redux/selectors/entities/teams';
-import {getConfig} from 'mattermost-redux/selectors/entities/general';
-import {haveITeamPermission, haveISystemPermission} from 'mattermost-redux/selectors/entities/roles';
-import {Permissions} from 'mattermost-redux/constants';
+import {getCurrentUser} from 'matterfoss-redux/selectors/entities/users';
+import {getMyTeams, getCurrentTeam} from 'matterfoss-redux/selectors/entities/teams';
+import {getConfig} from 'matterfoss-redux/selectors/entities/general';
+import {haveITeamPermission, haveISystemPermission} from 'matterfoss-redux/selectors/entities/roles';
+import {Permissions} from 'matterfoss-redux/constants';
 
 import BackstageController from './backstage_controller.jsx';
 

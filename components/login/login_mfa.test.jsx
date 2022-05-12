@@ -43,7 +43,7 @@ describe('components/login/LoginMfa', () => {
         wrapper.instance().handleSubmit({preventDefault: jest.fn()});
         expect(wrapper.state('serverError')).toEqual('');
         expect(wrapper.state('saving')).toEqual(true);
-        expect(submit).toBeCalled(); // This is not a bug. See https://github.com/mattermost/mattermost-server/pull/8881
+        expect(submit).toBeCalled(); // This is not a bug. See https://github.com/matterfoss/matterfoss-server/pull/8881
         expect(submit).toBeCalledWith(props.loginId, props.password, '');
 
         wrapper.setState({token: '123456', serverError: ''});

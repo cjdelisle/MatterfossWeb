@@ -68,7 +68,7 @@ export default class DatabaseSettings extends AdminSettings {
                     helpText={
                         <FormattedMessage
                             id='admin.recycle.recycleDescription'
-                            defaultMessage='Deployments using multiple databases can switch from one master database to another without restarting the Mattermost server by updating "config.json" to the new desired configuration and using the {reloadConfiguration} feature to load the new settings while the server is running. The administrator should then use {featureName} feature to recycle the database connections based on the new settings.'
+                            defaultMessage='Deployments using multiple databases can switch from one master database to another without restarting the MatterFOSS server by updating "config.json" to the new desired configuration and using the {reloadConfiguration} feature to load the new settings while the server is running. The administrator should then use {featureName} feature to recycle the database connections based on the new settings.'
                             values={{
                                 featureName: (
                                     <b>
@@ -317,7 +317,7 @@ export default class DatabaseSettings extends AdminSettings {
                     helpText={
                         <FormattedMarkdownMessage
                             id='admin.sql.disableDatabaseSearchDescription'
-                            defaultMessage='Disables the use of the database to perform searches. Should only be used when other [search engines](!https://mattermost.com/pl/default-search-engine) are configured.'
+                            defaultMessage='Disables the use of the database to perform searches. Should only be used when other [search engines](!https://matterfoss.com/pl/default-search-engine) are configured.'
                         />
                     }
                     value={this.state.disableDatabaseSearch}

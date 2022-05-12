@@ -5,30 +5,30 @@
 
 import {createSelector} from 'reselect';
 
-import {Posts, Preferences} from 'mattermost-redux/constants';
+import {Posts, Preferences} from 'matterfoss-redux/constants';
 
-import {getCurrentUser} from 'mattermost-redux/selectors/entities/common';
-import {getMyPreferences} from 'mattermost-redux/selectors/entities/preferences';
-import {getUsers, getCurrentUserId, getUserStatuses} from 'mattermost-redux/selectors/entities/users';
+import {getCurrentUser} from 'matterfoss-redux/selectors/entities/common';
+import {getMyPreferences} from 'matterfoss-redux/selectors/entities/preferences';
+import {getUsers, getCurrentUserId, getUserStatuses} from 'matterfoss-redux/selectors/entities/users';
 
-import {Channel} from 'mattermost-redux/types/channels';
+import {Channel} from 'matterfoss-redux/types/channels';
 import {
     MessageHistory,
     OpenGraphMetadata,
     Post,
     PostOrderBlock,
     PostWithFormatData,
-} from 'mattermost-redux/types/posts';
-import {Reaction} from 'mattermost-redux/types/reactions';
-import {GlobalState} from 'mattermost-redux/types/store';
-import {UserProfile} from 'mattermost-redux/types/users';
+} from 'matterfoss-redux/types/posts';
+import {Reaction} from 'matterfoss-redux/types/reactions';
+import {GlobalState} from 'matterfoss-redux/types/store';
+import {UserProfile} from 'matterfoss-redux/types/users';
 import {
     IDMappedObjects,
     RelationOneToOne,
     RelationOneToMany,
-} from 'mattermost-redux/types/utilities';
+} from 'matterfoss-redux/types/utilities';
 
-import {createIdsSelector} from 'mattermost-redux/utils/helpers';
+import {createIdsSelector} from 'matterfoss-redux/utils/helpers';
 import {
     isPostEphemeral,
     isSystemMessage,
@@ -36,8 +36,8 @@ import {
     comparePosts,
     isPostPendingOrFailed,
     isPostCommentMention,
-} from 'mattermost-redux/utils/post_utils';
-import {getPreferenceKey} from 'mattermost-redux/utils/preference_utils';
+} from 'matterfoss-redux/utils/post_utils';
+import {getPreferenceKey} from 'matterfoss-redux/utils/preference_utils';
 
 export function getAllPosts(state: GlobalState) {
     return state.entities.posts.posts;
@@ -430,7 +430,7 @@ export const getSearchResults: (state: GlobalState) => Post[] = createSelector(
 );
 
 // Returns the matched text from the search results, if the server has provided them.
-// These matches will only be present if the server is running Mattermost 5.1 or higher
+// These matches will only be present if the server is running MatterFOSS 5.1 or higher
 // with Elasticsearch enabled to search posts. Otherwise, null will be returned.
 export function getSearchMatches(state: GlobalState): {
     [x: string]: string[];

@@ -4,8 +4,8 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 
-import {AuthorType, MarketplacePlugin, ReleaseStage} from 'mattermost-redux/types/marketplace';
-import type {PluginStatusRedux} from 'mattermost-redux/types/plugins';
+import {AuthorType, MarketplacePlugin, ReleaseStage} from 'matterfoss-redux/types/marketplace';
+import type {PluginStatusRedux} from 'matterfoss-redux/types/plugins';
 
 import {trackEvent} from 'actions/telemetry_actions.jsx';
 
@@ -21,15 +21,15 @@ jest.mock('actions/telemetry_actions.jsx', () => {
 
 describe('components/marketplace/', () => {
     const samplePlugin: MarketplacePlugin = {
-        homepage_url: 'https://github.com/mattermost/mattermost-plugin-nps',
-        download_url: 'https://github.com/mattermost/mattermost-plugin-nps/releases/download/v1.0.3/com.mattermost.nps-1.0.3.tar.gz',
-        author_type: AuthorType.Mattermost,
+        homepage_url: 'https://github.com/matterfoss/matterfoss-plugin-nps',
+        download_url: 'https://github.com/matterfoss/matterfoss-plugin-nps/releases/download/v1.0.3/com.matterfoss.nps-1.0.3.tar.gz',
+        author_type: AuthorType.MatterFOSS,
         release_stage: ReleaseStage.Production,
         enterprise: false,
         manifest: {
-            id: 'com.mattermost.nps',
+            id: 'com.matterfoss.nps',
             name: 'User Satisfaction Surveys',
-            description: 'This plugin sends quarterly user satisfaction surveys to gather feedback and help improve Mattermost',
+            description: 'This plugin sends quarterly user satisfaction surveys to gather feedback and help improve MatterFOSS',
             version: '1.0.3',
             min_server_version: '5.14.0',
         },
@@ -37,13 +37,13 @@ describe('components/marketplace/', () => {
     };
 
     const sampleInstalledPlugin: MarketplacePlugin = {
-        homepage_url: 'https://github.com/mattermost/mattermost-test',
-        download_url: 'https://github.com/mattermost/mattermost-test/releases/download/v1.0.3/com.mattermost.nps-1.0.3.tar.gz',
-        author_type: AuthorType.Mattermost,
+        homepage_url: 'https://github.com/matterfoss/matterfoss-test',
+        download_url: 'https://github.com/matterfoss/matterfoss-test/releases/download/v1.0.3/com.matterfoss.nps-1.0.3.tar.gz',
+        author_type: AuthorType.MatterFOSS,
         release_stage: ReleaseStage.Production,
         enterprise: false,
         manifest: {
-            id: 'com.mattermost.test',
+            id: 'com.matterfoss.test',
             name: 'Test',
             description: 'This plugin is to test',
             version: '1.0.3',

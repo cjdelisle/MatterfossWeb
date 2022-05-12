@@ -131,7 +131,7 @@
       }
     },
     {
-      "files": ["tests/**", "**/*.test.*", "tests/*.js", "packages/mattermost-redux/test/*"],
+      "files": ["tests/**", "**/*.test.*", "tests/*.js", "packages/matterfoss-redux/test/*"],
       "env": {
         "jest": true
       },
