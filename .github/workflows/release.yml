@@ -45,20 +45,6 @@ jobs:
       - name: Pre-build dist
         run: NODE_ENV=production npx webpack
 
-      - name: Archive production artifacts
-        uses: actions/upload-artifact@v3
-        with:
-          name: ${{ env.RELEASE_NAME }}-pre-built-dist
-          path: |
-            dist
-
-      - name: Archive node modules artifacts
-        uses: actions/upload-artifact@v3
-        with:
-          name: ${{ env.RELEASE_NAME }}-node_modules
-          path: |
-            node_modules
-
       - name: Publish release
         run: /bin/bash -c "source $GITHUB_WORKSPACE/contrib/github-actions/release.sh"
         env:
