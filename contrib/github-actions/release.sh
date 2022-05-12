@@ -1,31 +1,39 @@
 #!/bin/bash
 
 function publish() {
-  local dist
-  dist="${1}"
+  local project_root_directory
+  project_root_directory="${1}"
 
-  if [ ! -e "${dist}" ];
-  then
-      echo 'Invalid pre-built dist ('"${dist}"')'
+  local release_name
+  release_name="${2}"
 
-      return 1
-  fi
+  cd "${project_root_directory}" || exit
 
-  local node_modules
-  node_modules="${2}"
+  local node_modules_archive
+  node_modules_archive="${release_name}_node_modules.tar.gz"
 
-  if [ ! -e "${node_modules}" ];
-  then
-      echo 'Invalid pre-built dist ('"${node_modules}"')'
+  tar \
+  --create \
+  --file "${node_modules_archive}" \
+  --gzip \
+  --verbose \
+  --files-from <(find ./node_modules | grep -Ev '(tests\/|\.md|LICENSE|\.editorconfig|\.ts$)')
 
-      return 1
-  fi
+  local node_modules_checksum
+  node_modules_checksum="$(sha256sum "${node_modules_archive}" | cut -d ' ' -f 1)"
+
+  local dist_archive
+  dist_archive="${release_name}_dist.tar.gz"
+
+  tar \
+  --create "${dist_archive}" \
+  --file  \
+  --gzip \
+  --verbose \
+  --files-from <(find ./dist)
 
   local dist_checksum
   dist_checksum="$(sha256sum "${dist}" | cut -d ' ' -f 1)"
-
-  local node_modules_checksum
-  node_modules_checksum="$(sha256sum "${dist}" | cut -d ' ' -f 1)"
 
   local base_url
   base_url='https://api.github.com/repos/'"${GITHUB_REPOSITORY}"
@@ -40,7 +48,6 @@ function publish() {
 
   upload_url=${upload_url/\{?name,label\}/}
 
-  local release_name
   release_name="$(curl \
     -H 'Content-Type: application/octet-stream' \
     -H "Authorization: Bearer ${GITHUB_TOKEN}" \
@@ -50,31 +57,30 @@ function publish() {
 
   curl \
     -X POST \
-    --data-binary @"${dist}" \
+    --data-binary @"${dist_archive}" \
     -H 'Content-Type: application/octet-stream' \
     -H "Authorization: Bearer ${GITHUB_TOKEN}" \
-    "${upload_url}?name=${release_name}-pre-built-dist"
+    "${upload_url}?name=${release_name}-pre-built-dist.tar.gz"
 
   curl \
     -X POST \
     --data "${dist_checksum}" \
     -H 'Content-Type: text/plain' \
     -H "Authorization: Bearer ${GITHUB_TOKEN}" \
-    "${upload_url}?name=${release_name}-pre-built-dist.sha256sum"
+    "${upload_url}?name=${release_name}-pre-built-dist.tar.gz.sha256sum"
 
     curl \
     -X POST \
-    --data-binary @"${node_modules}" \
+    --data-binary @"${node_modules_archive}" \
     -H 'Content-Type: application/octet-stream' \
     -H "Authorization: Bearer ${GITHUB_TOKEN}" \
-    "${upload_url}?name=${release_name}-pre-built-dist"
+    "${upload_url}?name=${release_name}-node_modules.tar.gz"
 
     curl \
     -X POST \
     --data "${node_modules_checksum}" \
     -H 'Content-Type: text/plain' \
     -H "Authorization: Bearer ${GITHUB_TOKEN}" \
-    "${upload_url}?name=${release_name}-node_modules.sha256sum"
+    "${upload_url}?name=${release_name}-node_modules.tar.gz.sha256sum"
 }
-
-publish "${GITHUB_WORKSPACE}/${RELEASE_NAME}-pre-built-dist" "${GITHUB_WORKSPACE}/${RELEASE_NAME}-node_modules"
+publish "${GITHUB_WORKSPACE}" ${RELEASE_NAME}
