@@ -48,7 +48,31 @@ jobs:
           NODE_ENV: production
 
       - name: Publish release
-        run: /bin/bash -c "source $GITHUB_WORKSPACE/contrib/github-actions/release.sh"
+        run: /bin/bash -c "source $GITHUB_WORKSPACE/contrib/github-actions/make_archives.sh"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           RELEASE_NAME: ${{ env.RELEASE_NAME }}
+
+      - name: Upload node_modules archive
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ env.RELEASE_NAME }}_node_modules.tar.gz
+          path: ${{ github.workspace }}/${{ env.RELEASE_NAME }}_node_modules.tar.gz
+
+      - name: Upload node_modules archive checksum
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ env.RELEASE_NAME }}_node_modules.tar.gz.SHA256sig
+          path: ${{ github.workspace }}/${{ env.RELEASE_NAME }}_node_modules.tar.gz.SHA256sig
+
+      - name: Upload dist archive
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ env.RELEASE_NAME }}_node_modules.tar.gz
+          path: ${{ github.workspace }}/${{ env.RELEASE_NAME }}_dist.tar.gz
+
+      - name: Upload dist archive checksum
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ env.RELEASE_NAME }}_node_modules.tar.gz.SHA256sig
+          path: ${{ github.workspace }}/${{ env.RELEASE_NAME }}_dist.tar.gz
