@@ -7,12 +7,12 @@ function make_archives() {
 	local project_root_directory
 	project_root_directory="${1}"
 
-  echo 'Project root directory is: "'"${project_root_directory}"'"'
+	echo 'Project root directory is: "'"${project_root_directory}"'"'
 
 	local release_name
 	release_name="${2}"
 
-  echo 'Release name is: "'"${release_name}"'"'
+	echo 'Release name is: "'"${release_name}"'"'
 
 	cd "${project_root_directory}" || exit
 
@@ -36,7 +36,7 @@ function make_archives() {
 		jq -r '.[] | .tag_name' |
 		head -n1)"
 
-  echo 'Release name (API) is: "'"${release_name}"'"'
+	echo 'Release name (API) is: "'"${release_name}"'"'
 
 	local node_modules_archive
 	node_modules_archive="${release_name}_node_modules.tar.gz"
@@ -48,7 +48,7 @@ function make_archives() {
 		--verbose \
 		--files-from <(find ./node_modules | \grep -Ev '(tests\/|\.md|LICENSE|\.editorconfig|\.ts$)')
 
-	sha256sum "./${node_modules_archive}" | cut -d ' ' -f 1 > "${project_root_directory}/${node_modules_archive}.SHA256sig"
+	echo -n "$(sha256sum "./${node_modules_archive}" | cut -d ' ' -f 1) ${node_modules_archive}" >"${project_root_directory}/${node_modules_archive}.SHA256sig"
 
 	local dist_archive
 	dist_archive="${release_name}_dist.tar.gz"
@@ -60,7 +60,7 @@ function make_archives() {
 		--verbose \
 		--files-from <(find ./dist)
 
-	sha256sum "./${dist_archive}" | cut -d ' ' -f 1 > "${project_root_directory}/${dist_archive}.SHA256sig"
+	echo -n "$(sha256sum "./${dist_archive}" | cut -d ' ' -f 1) ${dist_archive}" >"${project_root_directory}/${dist_archive}.SHA256sig"
 }
 make_archives "${GITHUB_WORKSPACE}" ${RELEASE_NAME}
 
