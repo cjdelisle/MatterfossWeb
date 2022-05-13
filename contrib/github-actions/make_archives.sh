@@ -48,7 +48,7 @@ function make_archives() {
 		--verbose \
 		--files-from <(find ./node_modules | \grep -Ev '(tests\/|\.md|LICENSE|\.editorconfig|\.ts$)')
 
-	echo -n "$(sha256sum "./${node_modules_archive}" | cut -d ' ' -f 1) ${node_modules_archive}" >"${project_root_directory}/${node_modules_archive}.SHA256sig"
+	echo -n "$(sha256sum "./${node_modules_archive}" | cut -d ' ' -f 1) ${release_name}-node_modules.tar.gz" >"${project_root_directory}/${node_modules_archive}.SHA256sig"
 
 	local dist_archive
 	dist_archive="${release_name}_dist.tar.gz"
@@ -60,7 +60,7 @@ function make_archives() {
 		--verbose \
 		--files-from <(find ./dist)
 
-	echo -n "$(sha256sum "./${dist_archive}" | cut -d ' ' -f 1) ${dist_archive}" >"${project_root_directory}/${dist_archive}.SHA256sig"
+	echo -n "$(sha256sum "./${dist_archive}" | cut -d ' ' -f 1) ${release_name}-dist.tar.gz" >"${project_root_directory}/${dist_archive}.SHA256sig"
 }
 make_archives "${GITHUB_WORKSPACE}" ${RELEASE_NAME}
 
