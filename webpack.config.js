@@ -436,8 +436,8 @@ if (targetIsDevServer) {
                     // redirect (root, team routes, etc)
                     return '/static/root.html';
                 },
-                logLevel: 'silent',
                 target: env.SERVER_SCHEME_HOST_PORT,
+                logLevel: 'debug',
                 xfwd: true,
                 ws: true,
             }],
