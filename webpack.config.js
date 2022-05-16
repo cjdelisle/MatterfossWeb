@@ -390,6 +390,8 @@ if (DEV) {
     env.RUDDER_DATAPLANE_URL = JSON.stringify(process.env.RUDDER_DATAPLANE_URL || ''); //eslint-disable-line no-process-env
     env.SERVER_SCHEME_HOST_PORT = JSON.stringify(process.env.SERVER_SCHEME_HOST_PORT || 'http://localhost:8065'); //eslint-disable-line no-process-env
     env.BOT_USERNAME = JSON.stringify(process.env.BOT_USERNAME || ''); //eslint-disable-line no-process-env
+    env.WEBAPP_HOST = JSON.stringify(process.env.WEBAPP_HOST || 'localhost'); //eslint-disable-line no-process-env
+
     if (process.env.MM_LIVE_RELOAD) { //eslint-disable-line no-process-env
         config.plugins.push(new LiveReloadPlugin());
     }
@@ -439,6 +441,15 @@ if (targetIsDevServer) {
                 xfwd: true,
                 ws: true,
             }],
+            host: env.WEBAPP_HOST,
+            allowedHosts: [
+                'matterfoss.local',
+                'localhost',
+                '[::1]',
+                '192.168.196.1',
+                '127.0.0.1',
+                'webapp',
+            ],
             port: 9005,
             devMiddleware: {
                 writeToDisk: false,
