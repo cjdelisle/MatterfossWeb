@@ -388,6 +388,7 @@ if (DEV) {
     env.PUBLIC_PATH = JSON.stringify(publicPath);
     env.RUDDER_KEY = JSON.stringify(process.env.RUDDER_KEY || ''); //eslint-disable-line no-process-env
     env.RUDDER_DATAPLANE_URL = JSON.stringify(process.env.RUDDER_DATAPLANE_URL || ''); //eslint-disable-line no-process-env
+    env.SERVER_SCHEME_HOST_PORT = JSON.stringify(process.env.SERVER_SCHEME_HOST_PORT || 'http://localhost:8065'); //eslint-disable-line no-process-env
     env.BOT_USERNAME = JSON.stringify(process.env.BOT_USERNAME || ''); //eslint-disable-line no-process-env
     if (process.env.MM_LIVE_RELOAD) { //eslint-disable-line no-process-env
         config.plugins.push(new LiveReloadPlugin());
@@ -434,7 +435,7 @@ if (targetIsDevServer) {
                     return '/static/root.html';
                 },
                 logLevel: 'silent',
-                target: 'http://localhost:8065',
+                target: env.SERVER_SCHEME_HOST_PORT,
                 xfwd: true,
                 ws: true,
             }],
