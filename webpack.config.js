@@ -442,14 +442,7 @@ if (targetIsDevServer) {
                 ws: true,
             }],
             host: env.WEBAPP_HOST,
-            allowedHosts: [
-                'matterfoss.local',
-                'localhost',
-                '[::1]',
-                '192.168.196.1',
-                '127.0.0.1',
-                'webapp',
-            ],
+            allowedHosts: 'all',
             port: 9005,
             devMiddleware: {
                 writeToDisk: false,
