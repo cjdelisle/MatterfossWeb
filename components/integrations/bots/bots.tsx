@@ -4,11 +4,11 @@
 import React from 'react';
 import {FormattedMessage} from 'react-intl';
 
-import {Bot as BotType} from 'mattermost-redux/types/bots';
-import {RelationOneToOne} from 'mattermost-redux/types/utilities';
-import {UserProfile, UserAccessToken} from 'mattermost-redux/types/users';
-import {ActionResult} from 'mattermost-redux/types/actions';
-import {Team} from 'mattermost-redux/types/teams';
+import {Bot as BotType} from 'matterfoss-redux/types/bots';
+import {RelationOneToOne} from 'matterfoss-redux/types/utilities';
+import {UserProfile, UserAccessToken} from 'matterfoss-redux/types/users';
+import {ActionResult} from 'matterfoss-redux/types/actions';
+import {Team} from 'matterfoss-redux/types/teams';
 
 import {getSiteURL} from 'utils/url';
 import * as Utils from 'utils/utils.jsx';
@@ -245,13 +245,13 @@ export default class Bots extends React.PureComponent<Props, State> {
                     <React.Fragment>
                         <FormattedMessage
                             id='bots.manage.help1'
-                            defaultMessage='Use {botAccounts} to integrate with Mattermost through plugins or the API. Bot accounts are available to everyone on your server. '
+                            defaultMessage='Use {botAccounts} to integrate with MatterFOSS through plugins or the API. Bot accounts are available to everyone on your server. '
                             values={{
                                 botAccounts: (
                                     <a
                                         target='_blank'
                                         rel='noopener noreferrer'
-                                        href='https://mattermost.com/pl/default-bot-accounts'
+                                        href='https://matterfoss.com/pl/default-bot-accounts'
                                     >
                                         <FormattedMessage
                                             id='bots.manage.bot_accounts'

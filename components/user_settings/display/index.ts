@@ -7,15 +7,15 @@ import {bindActionCreators, Dispatch} from 'redux';
 
 import timezones from 'timezones.json';
 
-import {GenericAction} from 'mattermost-redux/types/actions';
+import {GenericAction} from 'matterfoss-redux/types/actions';
 
-import {savePreferences} from 'mattermost-redux/actions/preferences';
-import {autoUpdateTimezone} from 'mattermost-redux/actions/timezone';
-import {getConfig, getLicense} from 'mattermost-redux/selectors/entities/general';
-import {getCurrentUserId} from 'mattermost-redux/selectors/entities/users';
-import {get, isCollapsedThreadsAllowed, getCollapsedThreadsPreference} from 'mattermost-redux/selectors/entities/preferences';
-import {getTimezoneLabel, getUserTimezone} from 'mattermost-redux/selectors/entities/timezone';
-import {getUserCurrentTimezone} from 'mattermost-redux/utils/timezone_utils';
+import {savePreferences} from 'matterfoss-redux/actions/preferences';
+import {autoUpdateTimezone} from 'matterfoss-redux/actions/timezone';
+import {getConfig, getLicense} from 'matterfoss-redux/selectors/entities/general';
+import {getCurrentUserId} from 'matterfoss-redux/selectors/entities/users';
+import {get, isCollapsedThreadsAllowed, getCollapsedThreadsPreference} from 'matterfoss-redux/selectors/entities/preferences';
+import {getTimezoneLabel, getUserTimezone} from 'matterfoss-redux/selectors/entities/timezone';
+import {getUserCurrentTimezone} from 'matterfoss-redux/utils/timezone_utils';
 
 import {GlobalState} from 'types/store';
 import {Preferences} from 'utils/constants';

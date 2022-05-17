@@ -51,7 +51,7 @@ exports[`components/channel_header/components/UserGuideDropdown should match sna
         onClick={[Function]}
         show={true}
         text="Ask the community"
-        url="https://mattermost.com/pl/default-ask-mattermost-community/"
+        url="https://matterfoss.com/pl/default-ask-matterfoss-community/"
       />
       <MenuItemExternalLink
         id="helpResourcesLink"
@@ -210,7 +210,7 @@ exports[`components/channel_header/components/UserGuideDropdown should match sna
         onClick={[Function]}
         show={true}
         text="Ask the community"
-        url="https://mattermost.com/pl/default-ask-mattermost-community/"
+        url="https://matterfoss.com/pl/default-ask-matterfoss-community/"
       />
       <MenuItemExternalLink
         id="helpResourcesLink"

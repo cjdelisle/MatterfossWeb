@@ -3,10 +3,10 @@
 
 import {createSelector} from 'reselect';
 
-import {makeGetChannel} from 'mattermost-redux/selectors/entities/channels';
-import {Post, PostType} from 'mattermost-redux/types/posts';
-import {getCurrentUserId} from 'mattermost-redux/selectors/entities/users';
-import {Channel} from 'mattermost-redux/types/channels';
+import {makeGetChannel} from 'matterfoss-redux/selectors/entities/channels';
+import {Post, PostType} from 'matterfoss-redux/types/posts';
+import {getCurrentUserId} from 'matterfoss-redux/selectors/entities/users';
+import {Channel} from 'matterfoss-redux/types/channels';
 
 import {makeGetGlobalItem} from 'selectors/storage';
 import {PostTypes} from 'utils/constants';

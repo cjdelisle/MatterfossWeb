@@ -4,10 +4,10 @@
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 
-import {getConfig, getLicense, getSubscriptionStats as subscriptionStatsSelector} from 'mattermost-redux/selectors/entities/general';
-import {getCurrentUserId} from 'mattermost-redux/selectors/entities/users';
-import {getUseCaseOnboarding} from 'mattermost-redux/selectors/entities/preferences';
-import {getTeamInviteInfo} from 'mattermost-redux/actions/teams';
+import {getConfig, getLicense, getSubscriptionStats as subscriptionStatsSelector} from 'matterfoss-redux/selectors/entities/general';
+import {getCurrentUserId} from 'matterfoss-redux/selectors/entities/users';
+import {getUseCaseOnboarding} from 'matterfoss-redux/selectors/entities/preferences';
+import {getTeamInviteInfo} from 'matterfoss-redux/actions/teams';
 
 import {getGlobalItem} from 'selectors/storage';
 import {removeGlobalItem} from 'actions/storage';

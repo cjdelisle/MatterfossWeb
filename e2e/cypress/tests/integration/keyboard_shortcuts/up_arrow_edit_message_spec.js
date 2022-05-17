@@ -139,7 +139,7 @@ describe('Keyboard Shortcuts', () => {
 
     it('MM-T1271_2 UP - Removing all text in edit does not delete post if with attachment', () => {
         const message = 'This is a message';
-        const filename = 'mattermost-icon.png';
+        const filename = 'matterfoss-icon.png';
         cy.apiLogin(testUser);
 
         // # Visit the channel using the channel name
@@ -281,7 +281,7 @@ describe('Keyboard Shortcuts', () => {
         cy.visit(`/${testTeam.name}/channels/${testChannel.name}`);
 
         // # Upload file
-        cy.get('#fileUploadInput').attachFile('mattermost-icon.png');
+        cy.get('#fileUploadInput').attachFile('matterfoss-icon.png');
 
         // # Wait for file to upload
         cy.wait(TIMEOUTS.TWO_SEC);

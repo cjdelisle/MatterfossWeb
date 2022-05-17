@@ -8,7 +8,7 @@
 // See https://jsdoc.app/index.html for reference.
 // Basic requirements for documentation are the following:
 // - Meaningful description
-// - Specific link to https://api.mattermost.com
+// - Specific link to https://api.matterfoss.com
 // - Each parameter with `@params`
 // - Return value with `@returns`
 // - Example usage with `@example`
@@ -32,7 +32,7 @@ declare namespace Cypress {
 
         /**
          * Get plugins.
-         * See https://api.mattermost.com/#tag/plugins/paths/~1plugins/get
+         * See https://api.matterfoss.com/#tag/plugins/paths/~1plugins/get
          * @returns {PluginsResponse} `out.plugins` as `PluginsResponse`
          *
          * @example
@@ -58,7 +58,7 @@ declare namespace Cypress {
 
         /**
          * Upload plugin.
-         * See https://api.mattermost.com/#tag/plugins/paths/~1plugins/post
+         * See https://api.matterfoss.com/#tag/plugins/paths/~1plugins/post
          * @param {string} filename - name of the plugin to upload
          * @returns {Response} response: Cypress-chainable response
          *
@@ -88,7 +88,7 @@ declare namespace Cypress {
 
         /**
          * Install plugin from url.
-         * See https://api.mattermost.com/#tag/plugins/paths/~1plugins~1install_from_url/post
+         * See https://api.matterfoss.com/#tag/plugins/paths/~1plugins~1install_from_url/post
          * @param {string} pluginDownloadUrl - URL used to download the plugin
          * @param {string} force - Set to 'true' to overwrite a previously installed plugin with the same ID, if any
          * @returns {PluginManifest} `out.plugin` as `PluginManifest`
@@ -102,7 +102,7 @@ declare namespace Cypress {
 
         /**
          * Enable plugin.
-         * See https://api.mattermost.com/#tag/plugins/paths/~1plugins~1{plugin_id}~1enable/post
+         * See https://api.matterfoss.com/#tag/plugins/paths/~1plugins~1{plugin_id}~1enable/post
          * @param {string} pluginId - Id of the plugin to enable
          * @returns {string} `out.status`
          *
@@ -113,7 +113,7 @@ declare namespace Cypress {
 
         /**
          * Disable plugin.
-         * See https://api.mattermost.com/#tag/plugins/paths/~1plugins~1{plugin_id}~disable/post
+         * See https://api.matterfoss.com/#tag/plugins/paths/~1plugins~1{plugin_id}~disable/post
          * @param {string} pluginId - Id of the plugin to disable
          * @returns {string} `out.status`
          *
@@ -132,7 +132,7 @@ declare namespace Cypress {
 
         /**
          * Remove plugin.
-         * See https://api.mattermost.com/#tag/plugins/paths/~1plugins~1{plugin_id}/delete
+         * See https://api.matterfoss.com/#tag/plugins/paths/~1plugins~1{plugin_id}/delete
          * @param {string} pluginId - Id of the plugin to uninstall
          * @returns {string} `out.status`
          *

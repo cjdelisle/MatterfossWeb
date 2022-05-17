@@ -4,12 +4,12 @@
 import {connect} from 'react-redux';
 import {bindActionCreators, Dispatch} from 'redux';
 
-import {getChannel} from 'mattermost-redux/selectors/entities/channels';
-import {canAddReactions} from 'mattermost-redux/selectors/entities/reactions';
+import {getChannel} from 'matterfoss-redux/selectors/entities/channels';
+import {canAddReactions} from 'matterfoss-redux/selectors/entities/reactions';
 
-import {GenericAction} from 'mattermost-redux/types/actions';
-import {Post} from 'mattermost-redux/types/posts';
-import {Reaction} from 'mattermost-redux/types/reactions';
+import {GenericAction} from 'matterfoss-redux/types/actions';
+import {Post} from 'matterfoss-redux/types/posts';
+import {Reaction} from 'matterfoss-redux/types/reactions';
 
 import {GlobalState} from 'types/store';
 

@@ -24,19 +24,19 @@ describe('Main menu', () => {
 
     it('MM-T913 About opens About modal', () => {
         // # click to open about modal
-        cy.findByText('About Mattermost').click();
+        cy.findByText('About MatterFOSS').click();
 
         // * Verify server link text has correct link destination and opens in a new tab
-        verifyLink('server', 'https://github.com/mattermost/mattermost-server/blob/master/NOTICE.txt');
+        verifyLink('server', 'https://github.com/matterfoss/matterfoss-server/blob/master/NOTICE.txt');
 
         // * Verify link text has correct link destination and opens in a new tab
-        verifyLink('desktop', 'https://github.com/mattermost/desktop/blob/master/NOTICE.txt');
+        verifyLink('desktop', 'https://github.com/matterfoss/desktop/blob/master/NOTICE.txt');
 
         // * Verify link text has correct matches link destination and opens in a new tab
-        verifyLink('mobile', 'https://github.com/mattermost/mattermost-mobile/blob/master/NOTICE.txt');
+        verifyLink('mobile', 'https://github.com/matterfoss/matterfoss-mobile/blob/master/NOTICE.txt');
 
         // * Verify version exists in modal
-        cy.findByText('Mattermost Version:').should('be.visible');
+        cy.findByText('MatterFOSS Version:').should('be.visible');
 
         // * Verify licensed to exists in modal
         cy.findByText('Licensed to:').should('be.visible');

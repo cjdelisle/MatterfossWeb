@@ -57,6 +57,6 @@ describe('Multi Team and DM', () => {
         cy.findAllByText(prefix).should('not.exist');
 
         // * Assert that the search term returns the correct user and is visible
-        cy.findByText(`${searchTerm}@sample.mattermost.com`).should('be.visible');
+        cy.findByText(`${searchTerm}@sample.matterfoss.com`).should('be.visible');
     });
 });

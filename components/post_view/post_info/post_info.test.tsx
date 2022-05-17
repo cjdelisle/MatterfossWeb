@@ -8,8 +8,8 @@ import ActionsMenu from 'components/actions_menu';
 import PostInfo from 'components/post_view/post_info/post_info';
 import PostFlagIcon from 'components/post_view/post_flag_icon';
 
-import {Posts} from 'mattermost-redux/constants';
-import {Post, PostType} from 'mattermost-redux/types/posts';
+import {Posts} from 'matterfoss-redux/constants';
+import {Post, PostType} from 'matterfoss-redux/types/posts';
 
 import Constants from 'utils/constants';
 import {TestHelper} from 'utils/test_helper';

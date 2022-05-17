@@ -5,11 +5,11 @@ import React, {memo, useCallback, ReactNode} from 'react';
 import {useIntl} from 'react-intl';
 import {useSelector, useDispatch} from 'react-redux';
 
-import {UserThread} from 'mattermost-redux/types/threads';
-import {setThreadFollow} from 'mattermost-redux/actions/threads';
+import {UserThread} from 'matterfoss-redux/types/threads';
+import {setThreadFollow} from 'matterfoss-redux/actions/threads';
 
-import {makeGetChannel} from 'mattermost-redux/selectors/entities/channels';
-import {getPost, makeGetPostsForThread} from 'mattermost-redux/selectors/entities/posts';
+import {makeGetChannel} from 'matterfoss-redux/selectors/entities/channels';
+import {getPost, makeGetPostsForThread} from 'matterfoss-redux/selectors/entities/posts';
 
 import {t} from 'utils/i18n';
 

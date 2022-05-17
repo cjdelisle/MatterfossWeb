@@ -3,11 +3,11 @@
 import {connect, ConnectedProps} from 'react-redux';
 import {bindActionCreators, Dispatch} from 'redux';
 
-import {getFilePublicLink} from 'mattermost-redux/actions/files';
-import * as Selectors from 'mattermost-redux/selectors/entities/files';
+import {getFilePublicLink} from 'matterfoss-redux/actions/files';
+import * as Selectors from 'matterfoss-redux/selectors/entities/files';
 
-import {GlobalState} from 'mattermost-redux/types/store';
-import {GenericAction} from 'mattermost-redux/types/actions';
+import {GlobalState} from 'matterfoss-redux/types/store';
+import {GenericAction} from 'matterfoss-redux/types/actions';
 
 import GetPublicLinkModal from './get_public_link_modal';
 

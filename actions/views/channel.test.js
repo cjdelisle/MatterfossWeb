@@ -4,10 +4,10 @@
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 
-import {General, Posts, RequestStatus} from 'mattermost-redux/constants';
-import {leaveChannel, markChannelAsRead} from 'mattermost-redux/actions/channels';
-import * as UserActions from 'mattermost-redux/actions/users';
-import * as PostActions from 'mattermost-redux/actions/posts';
+import {General, Posts, RequestStatus} from 'matterfoss-redux/constants';
+import {leaveChannel, markChannelAsRead} from 'matterfoss-redux/actions/channels';
+import * as UserActions from 'matterfoss-redux/actions/users';
+import * as PostActions from 'matterfoss-redux/actions/posts';
 
 import {browserHistory} from 'utils/browser_history';
 import * as Actions from 'actions/views/channel';
@@ -31,10 +31,10 @@ jest.mock('utils/channel_utils.tsx', () => {
     };
 });
 
-jest.mock('mattermost-redux/actions/users');
+jest.mock('matterfoss-redux/actions/users');
 
-jest.mock('mattermost-redux/actions/channels', () => ({
-    ...jest.requireActual('mattermost-redux/actions/channels'),
+jest.mock('matterfoss-redux/actions/channels', () => ({
+    ...jest.requireActual('matterfoss-redux/actions/channels'),
     markChannelAsRead: jest.fn(() => ({type: ''})),
     leaveChannel: jest.fn(() => ({type: ''})),
 }));
@@ -44,13 +44,13 @@ jest.mock('actions/views/rhs', () => ({
     closeRightHandSide: jest.fn(() => ({type: ''})),
 }));
 
-jest.mock('mattermost-redux/actions/posts');
+jest.mock('matterfoss-redux/actions/posts');
 
 jest.mock('selectors/local_storage', () => ({
     getLastViewedChannelName: () => 'channel1',
 }));
 
-jest.mock('mattermost-redux/selectors/entities/utils', () => ({
+jest.mock('matterfoss-redux/selectors/entities/utils', () => ({
     makeAddLastViewAtToProfiles: () => jest.fn().mockReturnValue([]),
 }));
 

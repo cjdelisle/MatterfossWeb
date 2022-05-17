@@ -63,7 +63,7 @@ const UseCase = (props: Props) => {
                         <Title>
                             <FormattedMessage
                                 id={'onboarding_wizard.use_case.title'}
-                                defaultMessage='How do you plan to use Mattermost?'
+                                defaultMessage='How do you plan to use MatterFOSS?'
                             />
                         </Title>
                         <Description>

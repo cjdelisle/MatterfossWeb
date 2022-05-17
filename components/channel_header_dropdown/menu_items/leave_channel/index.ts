@@ -4,7 +4,7 @@
 import {bindActionCreators, Dispatch} from 'redux';
 import {connect, ConnectedProps} from 'react-redux';
 
-import {GenericAction} from 'mattermost-redux/types/actions';
+import {GenericAction} from 'matterfoss-redux/types/actions';
 
 import {leaveChannel} from 'actions/views/channel';
 import {openModal} from 'actions/views/modals';

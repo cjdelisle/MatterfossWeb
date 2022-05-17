@@ -5,7 +5,7 @@ import React from 'react';
 import {injectIntl, IntlShape} from 'react-intl';
 import {matchPath} from 'react-router-dom';
 
-import {Permissions} from 'mattermost-redux/constants';
+import {Permissions} from 'matterfoss-redux/constants';
 
 import * as GlobalActions from 'actions/global_actions';
 import {Constants, ModalIdentifiers} from 'utils/constants';
@@ -30,10 +30,10 @@ import Menu from 'components/widgets/menu/menu';
 import TeamGroupsManageModal from 'components/team_groups_manage_modal';
 
 import withGetCloudSubscription from '../common/hocs/cloud/with_get_cloud_subscription';
-import {SubscriptionStats} from 'mattermost-redux/types/cloud';
+import {SubscriptionStats} from 'matterfoss-redux/types/cloud';
 import {ModalData} from 'types/actions';
 import {PluginComponent} from 'types/store/plugins';
-import {UserProfile} from 'mattermost-redux/types/users';
+import {UserProfile} from 'matterfoss-redux/types/users';
 
 import {browserHistory} from 'utils/browser_history';
 
@@ -374,7 +374,7 @@ export class MainMenu extends React.PureComponent<Props> {
                         id='about'
                         modalId={ModalIdentifiers.ABOUT}
                         dialogType={AboutBuildModal}
-                        text={formatMessage({id: 'navbar_dropdown.about', defaultMessage: 'About {appTitle}'}, {appTitle: this.props.siteName || 'Mattermost'})}
+                        text={formatMessage({id: 'navbar_dropdown.about', defaultMessage: 'About {appTitle}'}, {appTitle: this.props.siteName || 'MatterFOSS'})}
                         icon={<i className='fa fa-info'/>}
                     />
                 </Menu.Group>

@@ -3,7 +3,7 @@
 
 import {connect} from 'react-redux';
 
-import {makeGetFilesForPost} from 'mattermost-redux/selectors/entities/files';
+import {makeGetFilesForPost} from 'matterfoss-redux/selectors/entities/files';
 
 import CommentedOnFilesMessage from './commented_on_files_message.jsx';
 

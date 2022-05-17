@@ -6,19 +6,19 @@ import {bindActionCreators, Dispatch} from 'redux';
 
 import {withRouter} from 'react-router-dom';
 
-import {getConfig, getEnvironmentConfig, updateConfig} from 'mattermost-redux/actions/admin';
-import {loadRolesIfNeeded, editRole} from 'mattermost-redux/actions/roles';
-import * as Selectors from 'mattermost-redux/selectors/entities/admin';
-import {getConfig as getGeneralConfig, getLicense} from 'mattermost-redux/selectors/entities/general';
-import {getRoles} from 'mattermost-redux/selectors/entities/roles';
-import {selectChannel} from 'mattermost-redux/actions/channels';
-import {selectTeam} from 'mattermost-redux/actions/teams';
-import {isCurrentUserSystemAdmin, currentUserHasAnAdminRole, getCurrentUserId} from 'mattermost-redux/selectors/entities/users';
-import {getTeam} from 'mattermost-redux/selectors/entities/teams';
-import {ConsoleAccess} from 'mattermost-redux/types/admin';
+import {getConfig, getEnvironmentConfig, updateConfig} from 'matterfoss-redux/actions/admin';
+import {loadRolesIfNeeded, editRole} from 'matterfoss-redux/actions/roles';
+import * as Selectors from 'matterfoss-redux/selectors/entities/admin';
+import {getConfig as getGeneralConfig, getLicense} from 'matterfoss-redux/selectors/entities/general';
+import {getRoles} from 'matterfoss-redux/selectors/entities/roles';
+import {selectChannel} from 'matterfoss-redux/actions/channels';
+import {selectTeam} from 'matterfoss-redux/actions/teams';
+import {isCurrentUserSystemAdmin, currentUserHasAnAdminRole, getCurrentUserId} from 'matterfoss-redux/selectors/entities/users';
+import {getTeam} from 'matterfoss-redux/selectors/entities/teams';
+import {ConsoleAccess} from 'matterfoss-redux/types/admin';
 
-import {General} from 'mattermost-redux/constants';
-import {GenericAction} from 'mattermost-redux/types/actions';
+import {General} from 'matterfoss-redux/constants';
+import {GenericAction} from 'matterfoss-redux/types/actions';
 
 import {setNavigationBlocked, deferNavigation, cancelNavigation, confirmNavigation} from 'actions/admin_actions.jsx';
 import {getNavigationBlocked, showNavigationPrompt} from 'selectors/views/admin';

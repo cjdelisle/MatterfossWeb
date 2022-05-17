@@ -4,12 +4,12 @@
 import {connect} from 'react-redux';
 import {bindActionCreators, Dispatch} from 'redux';
 
-import {setCategoryCollapsed, setCategorySorting} from 'mattermost-redux/actions/channel_categories';
-import {GenericAction} from 'mattermost-redux/types/actions';
-import {savePreferences} from 'mattermost-redux/actions/preferences';
-import {ChannelCategory} from 'mattermost-redux/types/channel_categories';
-import {getBool} from 'mattermost-redux/selectors/entities/preferences';
-import {getCurrentUserId} from 'mattermost-redux/selectors/entities/users';
+import {setCategoryCollapsed, setCategorySorting} from 'matterfoss-redux/actions/channel_categories';
+import {GenericAction} from 'matterfoss-redux/types/actions';
+import {savePreferences} from 'matterfoss-redux/actions/preferences';
+import {ChannelCategory} from 'matterfoss-redux/types/channel_categories';
+import {getBool} from 'matterfoss-redux/selectors/entities/preferences';
+import {getCurrentUserId} from 'matterfoss-redux/selectors/entities/users';
 import {Preferences, Touched} from 'utils/constants';
 
 import {getDraggingState, makeGetFilteredChannelIdsForCategory} from 'selectors/views/channel_sidebar';

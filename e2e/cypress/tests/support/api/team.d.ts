@@ -8,7 +8,7 @@
 // See https://jsdoc.app/index.html for reference.
 // Basic requirements for documentation are the following:
 // - Meaningful description
-// - Specific link to https://api.mattermost.com
+// - Specific link to https://api.matterfoss.com
 // - Each parameter with `@params`
 // - Return value with `@returns`
 // - Example usage with `@example`
@@ -20,7 +20,7 @@ declare namespace Cypress {
 
         /**
          * Create a team.
-         * See https://api.mattermost.com/#tag/teams/paths/~1teams/post
+         * See https://api.matterfoss.com/#tag/teams/paths/~1teams/post
          * @param {String} name - Unique handler for a team, will be present in the team URL
          * @param {String} displayName - Non-unique UI name for the team
          * @param {String} type - 'O' for open (default), 'I' for invite only
@@ -39,7 +39,7 @@ declare namespace Cypress {
          * Delete a team.
          * Soft deletes a team, by marking the team as deleted in the database.
          * Optionally use the permanent query parameter to hard delete the team.
-         * See https://api.mattermost.com/#tag/teams/paths/~1teams~1{team_id}/delete
+         * See https://api.matterfoss.com/#tag/teams/paths/~1teams~1{team_id}/delete
          * @param {String} teamId - The team ID to be deleted
          * @param {Boolean} permanent - false (default) as soft delete and true as permanent delete
          * @returns {Object} `out.data` as response status
@@ -51,7 +51,7 @@ declare namespace Cypress {
 
         /**
          * Delete the team member object for a user, effectively removing them from a team.
-         * See https://api.mattermost.com/#tag/teams/paths/~1teams~1{team_id}~1members~1{user_id}/delete
+         * See https://api.matterfoss.com/#tag/teams/paths/~1teams~1{team_id}~1members~1{user_id}/delete
          * @param {String} teamId - The team ID which the user is to be removed from
          * @param {String} userId - The user ID to be removed from team
          * @returns {Object} `out.data` as response status
@@ -66,7 +66,7 @@ declare namespace Cypress {
          * Partially update a team by providing only the fields you want to update.
          * Omitted fields will not be updated.
          * The fields that can be updated are defined in the request body, all other provided fields will be ignored.
-         * See https://api.mattermost.com/#tag/teams/paths/~1teams/post
+         * See https://api.matterfoss.com/#tag/teams/paths/~1teams/post
          * @param {String} teamId - The team ID to be patched
          * @param {String} patch.display_name - Display name
          * @param {String} patch.description - Description
@@ -85,7 +85,7 @@ declare namespace Cypress {
 
         /**
          * Get a team based on provided name string.
-         * See https://api.mattermost.com/#tag/teams/paths/~1teams~1name~1{name}/get
+         * See https://api.matterfoss.com/#tag/teams/paths/~1teams~1name~1{name}/get
          * @param {String} name - Name of a team
          * @returns {Team} `out.team` as `Team`
          *
@@ -100,7 +100,7 @@ declare namespace Cypress {
          * Get teams.
          * For regular users only returns open teams.
          * Users with the "manage_system" permission will return teams regardless of type.
-         * See https://api.mattermost.com/#tag/teams/paths/~1teams/get
+         * See https://api.matterfoss.com/#tag/teams/paths/~1teams/get
          * @param {String} queryParams.page - Page to select, 0 (default)
          * @param {String} queryParams.perPage - The number of teams per page, 60 (default)
          * @returns {Team[]} `out.teams` as `Team[]`
@@ -115,7 +115,7 @@ declare namespace Cypress {
 
         /**
          * Get a list of teams that a user is on.
-         * See https://api.mattermost.com/#tag/teams/paths/~1users~1{user_id}~1teams/get
+         * See https://api.matterfoss.com/#tag/teams/paths/~1users~1{user_id}~1teams/get
          * @param {String} userId - User ID to get teams, or 'me' (default)
          * @returns {Team[]} `out.teams` as `Team[]`
          *
@@ -128,7 +128,7 @@ declare namespace Cypress {
 
         /**
          * Add user to the team by user_id.
-         * See https://api.mattermost.com/#tag/teams/paths/~1teams~1{team_id}~1members/post
+         * See https://api.matterfoss.com/#tag/teams/paths/~1teams~1{team_id}~1members/post
          * @param {String} teamId - Team ID
          * @param {String} userId - User ID to be added into a team
          * @returns {TeamMembership} `out.member` as `TeamMembership`
@@ -142,7 +142,7 @@ declare namespace Cypress {
 
         /**
          * Get team members.
-         * See https://api.mattermost.com/#tag/teams/paths/~1teams~1{team_id}~1members/get
+         * See https://api.matterfoss.com/#tag/teams/paths/~1teams~1{team_id}~1members/get
          * @param {string} teamId - team ID
          * @returns {TeamMembership[]} `out.members` as `TeamMembership[]`
          *
@@ -155,7 +155,7 @@ declare namespace Cypress {
 
         /**
          * Add a number of users to the team.
-         * See https://api.mattermost.com/#tag/teams/paths/~1teams~1{team_id}~1members~1batch/post
+         * See https://api.matterfoss.com/#tag/teams/paths/~1teams~1{team_id}~1members~1batch/post
          * @param {string} teamId - team ID
          * @param {TeamMembership[]} teamMembers - users to add
          * @returns {TeamMembership[]} `out.members` as `TeamMembership[]`
@@ -170,7 +170,7 @@ declare namespace Cypress {
         /**
          * Update the scheme-derived roles of a team member.
          * Requires sysadmin session to initiate this command.
-         * See https://api.mattermost.com/#tag/teams/paths/~1teams~1{team_id}~1members~1{user_id}~1schemeRoles/put
+         * See https://api.matterfoss.com/#tag/teams/paths/~1teams~1{team_id}~1members~1{user_id}~1schemeRoles/put
          * @param {string} teamId - team ID
          * @param {string} userId - user ID
          * @param {Object} schemeRoles.scheme_admin - false (default) or true to change into team admin

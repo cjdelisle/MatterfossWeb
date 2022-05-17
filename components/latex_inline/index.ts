@@ -3,9 +3,9 @@
 
 import {connect} from 'react-redux';
 
-import {getConfig} from 'mattermost-redux/selectors/entities/general';
+import {getConfig} from 'matterfoss-redux/selectors/entities/general';
 
-import {GlobalState} from 'mattermost-redux/types/store';
+import {GlobalState} from 'matterfoss-redux/types/store';
 
 import LatexInline from './latex_inline';
 

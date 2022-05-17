@@ -7,8 +7,8 @@ import {useIntl} from 'react-intl';
 
 import {useDispatch, useSelector} from 'react-redux';
 
-import {DispatchFunc} from 'mattermost-redux/types/actions';
-import {getLicenseConfig} from 'mattermost-redux/actions/general';
+import {DispatchFunc} from 'matterfoss-redux/types/actions';
+import {getLicenseConfig} from 'matterfoss-redux/actions/general';
 
 import {GlobalState} from 'types/store';
 

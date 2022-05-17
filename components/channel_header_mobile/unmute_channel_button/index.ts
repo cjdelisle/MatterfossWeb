@@ -4,9 +4,9 @@
 import {bindActionCreators, Dispatch} from 'redux';
 import {connect} from 'react-redux';
 
-import {updateChannelNotifyProps} from 'mattermost-redux/actions/channels';
+import {updateChannelNotifyProps} from 'matterfoss-redux/actions/channels';
 
-import {GenericAction} from 'mattermost-redux/types/actions';
+import {GenericAction} from 'matterfoss-redux/types/actions';
 
 import UnmuteChannelButton from './unmute_channel_button';
 

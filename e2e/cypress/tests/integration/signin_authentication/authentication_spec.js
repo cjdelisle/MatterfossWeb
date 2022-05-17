@@ -43,7 +43,7 @@ describe('Authentication', () => {
     });
 
     it('MM-T406 Sign In Forgot password - Email address not on server (but valid) Focus in login field on login page', () => {
-        // # On a server with site URL and email settings configured (such as rc.test.mattermost.com):
+        // # On a server with site URL and email settings configured (such as rc.test.matterfoss.com):
         // # Go to the login page where you enter username & password
         cy.visit('/login').wait(timeouts.FIVE_SEC);
 

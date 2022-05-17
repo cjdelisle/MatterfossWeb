@@ -4,7 +4,7 @@
 import React, {useEffect, useState} from 'react';
 import {FormattedMessage} from 'react-intl';
 
-import {Client4} from 'mattermost-redux/client';
+import {Client4} from 'matterfoss-redux/client';
 
 import {trackEvent} from 'actions/telemetry_actions';
 

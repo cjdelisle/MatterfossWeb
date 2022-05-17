@@ -5,11 +5,11 @@ import {ActionCreatorsMapObject, bindActionCreators, Dispatch} from 'redux';
 
 import {connect} from 'react-redux';
 
-import {getConfig, getLicense} from 'mattermost-redux/selectors/entities/general';
-import {getChannel, getChannelModerations} from 'mattermost-redux/selectors/entities/channels';
-import {getAllGroups, getGroupsAssociatedToChannel} from 'mattermost-redux/selectors/entities/groups';
-import {getScheme} from 'mattermost-redux/selectors/entities/schemes';
-import {getScheme as loadScheme} from 'mattermost-redux/actions/schemes';
+import {getConfig, getLicense} from 'matterfoss-redux/selectors/entities/general';
+import {getChannel, getChannelModerations} from 'matterfoss-redux/selectors/entities/channels';
+import {getAllGroups, getGroupsAssociatedToChannel} from 'matterfoss-redux/selectors/entities/groups';
+import {getScheme} from 'matterfoss-redux/selectors/entities/schemes';
+import {getScheme as loadScheme} from 'matterfoss-redux/actions/schemes';
 import {
     addChannelMember,
     deleteChannel,
@@ -22,24 +22,24 @@ import {
     unarchiveChannel,
     updateChannelMemberSchemeRoles,
     updateChannelPrivacy,
-} from 'mattermost-redux/actions/channels';
-import {getTeam as fetchTeam} from 'mattermost-redux/actions/teams';
+} from 'matterfoss-redux/actions/channels';
+import {getTeam as fetchTeam} from 'matterfoss-redux/actions/teams';
 
 import {
     getGroupsAssociatedToChannel as fetchAssociatedGroups,
     linkGroupSyncable,
     patchGroupSyncable,
     unlinkGroupSyncable,
-} from 'mattermost-redux/actions/groups';
+} from 'matterfoss-redux/actions/groups';
 
-import {getTeam} from 'mattermost-redux/selectors/entities/teams';
-import {GlobalState} from 'mattermost-redux/types/store';
+import {getTeam} from 'matterfoss-redux/selectors/entities/teams';
+import {GlobalState} from 'matterfoss-redux/types/store';
 
-import {ActionFunc} from 'mattermost-redux/types/actions';
+import {ActionFunc} from 'matterfoss-redux/types/actions';
 
 import {setNavigationBlocked} from 'actions/admin_actions';
 
-import {LicenseSkus} from 'mattermost-redux/types/general';
+import {LicenseSkus} from 'matterfoss-redux/types/general';
 
 import ChannelDetails, {ChannelDetailsActions} from './channel_details';
 

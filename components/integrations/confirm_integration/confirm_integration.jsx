@@ -72,7 +72,7 @@ export default class ConfirmIntegration extends React.PureComponent {
                 <p>
                     <FormattedMarkdownMessage
                         id='add_command.doneHelp'
-                        defaultMessage='Your slash command is set up. The following token will be sent in the outgoing payload. Please use it to verify the request came from your Mattermost team (details at [Slash Commands](!https://developers.mattermost.com/integrate/admin-guide/admin-slash-commands/)).'
+                        defaultMessage='Your slash command is set up. The following token will be sent in the outgoing payload. Please use it to verify the request came from your MatterFOSS team (details at [Slash Commands](!https://developers.matterfoss.com/integrate/admin-guide/admin-slash-commands/)).'
                     />
                 </p>
             );
@@ -103,7 +103,7 @@ export default class ConfirmIntegration extends React.PureComponent {
                 <p>
                     <FormattedMarkdownMessage
                         id='add_incoming_webhook.doneHelp'
-                        defaultMessage='Your incoming webhook is set up. Please send data to the following URL (details at [Incoming Webhooks](!https://developers.mattermost.com/integrate/admin-guide/admin-webhooks-incoming/)).'
+                        defaultMessage='Your incoming webhook is set up. Please send data to the following URL (details at [Incoming Webhooks](!https://developers.matterfoss.com/integrate/admin-guide/admin-webhooks-incoming/)).'
                     />
                 </p>
             );
@@ -134,7 +134,7 @@ export default class ConfirmIntegration extends React.PureComponent {
                 <p>
                     <FormattedMarkdownMessage
                         id='add_outgoing_webhook.doneHelp'
-                        defaultMessage='Your outgoing webhook is set up. The following token will be sent in the outgoing payload. Please use it to verify that the request came from your Mattermost team (details at [Outgoing Webhooks](!https://developers.mattermost.com/integrate/admin-guide/admin-webhooks-outgoing/)).'
+                        defaultMessage='Your outgoing webhook is set up. The following token will be sent in the outgoing payload. Please use it to verify that the request came from your MatterFOSS team (details at [Outgoing Webhooks](!https://developers.matterfoss.com/integrate/admin-guide/admin-webhooks-outgoing/)).'
                     />
                 </p>
             );
@@ -168,7 +168,7 @@ export default class ConfirmIntegration extends React.PureComponent {
                 <p key='add_oauth_app.doneHelp'>
                     <FormattedMarkdownMessage
                         id='add_oauth_app.doneHelp'
-                        defaultMessage='Your OAuth 2.0 application is set up. Please use the following Client ID and Client Secret when requesting authorization for your application (details at [oAuth 2 Applications](!https://developers.mattermost.com/integrate/admin-guide/admin-oauth2/)).'
+                        defaultMessage='Your OAuth 2.0 application is set up. Please use the following Client ID and Client Secret when requesting authorization for your application (details at [oAuth 2 Applications](!https://developers.matterfoss.com/integrate/admin-guide/admin-oauth2/)).'
                     />
                 </p>,
             );
@@ -235,7 +235,7 @@ export default class ConfirmIntegration extends React.PureComponent {
                 <p>
                     <FormattedMarkdownMessage
                         id='bots.manage.created.text'
-                        defaultMessage='Your bot account **{botname}** has been created successfully. Please use the following access token to connect to the bot (see [documentation](https://mattermost.com/pl/default-bot-accounts) for further details).'
+                        defaultMessage='Your bot account **{botname}** has been created successfully. Please use the following access token to connect to the bot (see [documentation](https://matterfoss.com/pl/default-bot-accounts) for further details).'
                         values={{
                             botname: bot.display_name || bot.username,
                         }}
@@ -258,7 +258,7 @@ export default class ConfirmIntegration extends React.PureComponent {
                     <br/>
                     <FormattedMarkdownMessage
                         id='add_outgoing_webhook.token.message'
-                        defaultMessage='Make sure to add this bot account to teams and channels you want it to interact in. See [documentation](https://mattermost.com/pl/default-bot-accounts) to learn more.'
+                        defaultMessage='Make sure to add this bot account to teams and channels you want it to interact in. See [documentation](https://matterfoss.com/pl/default-bot-accounts) to learn more.'
                     />
                 </p>
             );

@@ -5,7 +5,7 @@ import React from 'react';
 import {Modal} from 'react-bootstrap';
 import {shallow} from 'enzyme';
 
-import {ClientConfig, ClientLicense} from 'mattermost-redux/types/config';
+import {ClientConfig, ClientLicense} from 'matterfoss-redux/types/config';
 
 import AboutBuildModal from 'components/about_build_modal/about_build_modal';
 
@@ -52,7 +52,7 @@ describe('components/AboutBuildModal', () => {
         };
         license = {
             IsLicensed: 'true',
-            Company: 'Mattermost Inc',
+            Company: 'MatterFOSS Inc',
         };
     });
 

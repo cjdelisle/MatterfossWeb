@@ -1,6 +1,6 @@
 {
-  "id" : "mattermost",
-  "realm" : "mattermost",
+  "id" : "matterfoss",
+  "realm" : "matterfoss",
   "displayName" : "Keycloak",
   "displayNameHtml" : "<div class=\"kc-logo-text\"><span>Keycloak</span></div>",
   "notBefore" : 0,
@@ -47,7 +47,7 @@
       "description" : "${role_offline-access}",
       "composite" : false,
       "clientRole" : false,
-      "containerId" : "mattermost",
+      "containerId" : "matterfoss",
       "attributes" : { }
     }, {
       "id" : "c7fdcde8-78f3-4255-bd19-7c945859d42f",
@@ -55,7 +55,7 @@
       "description" : "${role_create-realm}",
       "composite" : false,
       "clientRole" : false,
-      "containerId" : "mattermost",
+      "containerId" : "matterfoss",
       "attributes" : { }
     }, {
       "id" : "41e2f2bd-b7a1-491d-9cdd-dc593f3d7483",
@@ -63,7 +63,7 @@
       "description" : "${role_uma_authorization}",
       "composite" : false,
       "clientRole" : false,
-      "containerId" : "mattermost",
+      "containerId" : "matterfoss",
       "attributes" : { }
     }, {
       "id" : "86d6d932-461e-4e75-a2e1-0fe79802ee3b",
@@ -73,11 +73,11 @@
       "composites" : {
         "realm" : [ "create-realm" ],
         "client" : {
-          "mattermost-realm" : [ "impersonation", "manage-clients", "view-events", "view-authorization", "view-realm", "create-client", "manage-authorization", "query-users", "manage-identity-providers", "view-users", "view-clients", "manage-users", "query-clients", "manage-realm", "manage-events", "view-identity-providers", "query-realms", "query-groups" ]
+          "matterfoss-realm" : [ "impersonation", "manage-clients", "view-events", "view-authorization", "view-realm", "create-client", "manage-authorization", "query-users", "manage-identity-providers", "view-users", "view-clients", "manage-users", "query-clients", "manage-realm", "manage-events", "view-identity-providers", "query-realms", "query-groups" ]
         }
       },
       "clientRole" : false,
-      "containerId" : "mattermost",
+      "containerId" : "matterfoss",
       "attributes" : { }
     } ],
     "client" : {
@@ -94,7 +94,7 @@
         "containerId" : "1a5d8538-3004-48ad-a9ea-767e4ae09b53",
         "attributes" : { }
       } ],
-      "mattermost-realm" : [ {
+      "matterfoss-realm" : [ {
         "id" : "89f8999a-8b53-4aa8-ab1f-233c13954a88",
         "name" : "impersonation",
         "description" : "${role_impersonation}",
@@ -173,7 +173,7 @@
         "composite" : true,
         "composites" : {
           "client" : {
-            "mattermost-realm" : [ "query-users", "query-groups" ]
+            "matterfoss-realm" : [ "query-users", "query-groups" ]
           }
         },
         "clientRole" : true,
@@ -186,7 +186,7 @@
         "composite" : true,
         "composites" : {
           "client" : {
-            "mattermost-realm" : [ "query-clients" ]
+            "matterfoss-realm" : [ "query-clients" ]
           }
         },
         "clientRole" : true,
@@ -404,14 +404,14 @@
     "clientId" : "account",
     "name" : "${client_account}",
     "rootUrl" : "${authBaseUrl}",
-    "baseUrl" : "/realms/mattermost/account/",
+    "baseUrl" : "/realms/matterfoss/account/",
     "surrogateAuthRequired" : false,
     "enabled" : true,
     "alwaysDisplayInConsole" : false,
     "clientAuthenticatorType" : "client-secret",
     "secret" : "7228d94d-bf02-4b5d-ab61-07a5b4d71b24",
     "defaultRoles" : [ "manage-account", "view-profile" ],
-    "redirectUris" : [ "/realms/mattermost/account/*" ],
+    "redirectUris" : [ "/realms/matterfoss/account/*" ],
     "webOrigins" : [ ],
     "notBefore" : 0,
     "bearerOnly" : false,
@@ -434,13 +434,13 @@
     "clientId" : "account-console",
     "name" : "${client_account-console}",
     "rootUrl" : "${authBaseUrl}",
-    "baseUrl" : "/realms/mattermost/account/",
+    "baseUrl" : "/realms/matterfoss/account/",
     "surrogateAuthRequired" : false,
     "enabled" : true,
     "alwaysDisplayInConsole" : false,
     "clientAuthenticatorType" : "client-secret",
     "secret" : "0406c700-8b2e-4163-9ab5-5091fdf15e5b",
-    "redirectUris" : [ "/realms/mattermost/account/*" ],
+    "redirectUris" : [ "/realms/matterfoss/account/*" ],
     "webOrigins" : [ ],
     "notBefore" : 0,
     "bearerOnly" : false,
@@ -702,8 +702,8 @@
     "optionalClientScopes" : [ "address", "phone", "offline_access", "microprofile-jwt" ]
   }, {
     "id" : "9db3c486-1d1d-430a-84d9-304773d9b9b6",
-    "clientId" : "mattermost-realm",
-    "name" : "mattermost Realm",
+    "clientId" : "matterfoss-realm",
+    "name" : "matterfoss Realm",
     "surrogateAuthRequired" : false,
     "enabled" : true,
     "alwaysDisplayInConsole" : false,
@@ -731,13 +731,13 @@
     "clientId" : "security-admin-console",
     "name" : "${client_security-admin-console}",
     "rootUrl" : "${authAdminUrl}",
-    "baseUrl" : "/admin/mattermost/console/",
+    "baseUrl" : "/admin/matterfoss/console/",
     "surrogateAuthRequired" : false,
     "enabled" : true,
     "alwaysDisplayInConsole" : false,
     "clientAuthenticatorType" : "client-secret",
     "secret" : "e3ff2e21-394f-4536-90ce-d9d8697da91f",
-    "redirectUris" : [ "/admin/mattermost/console/*" ],
+    "redirectUris" : [ "/admin/matterfoss/console/*" ],
     "webOrigins" : [ "+" ],
     "notBefore" : 0,
     "bearerOnly" : false,

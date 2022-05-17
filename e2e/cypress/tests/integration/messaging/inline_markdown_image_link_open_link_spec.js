@@ -29,7 +29,7 @@ describe('Messaging', () => {
         });
 
         const linkUrl = 'https://www.google.com';
-        const imageUrl = 'https://docs.mattermost.com/_images/icon-76x76.png';
+        const imageUrl = 'https://docs.matterfoss.com/_images/icon-76x76.png';
         const label = 'Build Status';
         const baseUrl = Cypress.config('baseUrl');
 

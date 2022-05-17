@@ -4,9 +4,9 @@
 import thunk from 'redux-thunk';
 import configureStore from 'redux-mock-store';
 
-import {Preferences, General} from 'mattermost-redux/constants';
-import {CategoryTypes} from 'mattermost-redux/constants/channel_categories';
-import {getPreferenceKey} from 'mattermost-redux/utils/preference_utils';
+import {Preferences, General} from 'matterfoss-redux/constants';
+import {CategoryTypes} from 'matterfoss-redux/constants/channel_categories';
+import {getPreferenceKey} from 'matterfoss-redux/utils/preference_utils';
 
 import * as UserActions from 'actions/user_actions';
 import {getState} from 'stores/redux_store';
@@ -14,8 +14,8 @@ import TestHelper from 'tests/helpers/client-test-helper';
 
 const mockStore = configureStore([thunk]);
 
-jest.mock('mattermost-redux/actions/users', () => {
-    const original = jest.requireActual('mattermost-redux/actions/users');
+jest.mock('matterfoss-redux/actions/users', () => {
+    const original = jest.requireActual('matterfoss-redux/actions/users');
     return {
         ...original,
         searchProfiles: (...args) => ({type: 'MOCK_SEARCH_PROFILES', args}),
@@ -26,24 +26,24 @@ jest.mock('mattermost-redux/actions/users', () => {
     };
 });
 
-jest.mock('mattermost-redux/actions/teams', () => {
-    const original = jest.requireActual('mattermost-redux/actions/teams');
+jest.mock('matterfoss-redux/actions/teams', () => {
+    const original = jest.requireActual('matterfoss-redux/actions/teams');
     return {
         ...original,
         getTeamMembersByIds: (...args) => ({type: 'MOCK_GET_TEAM_MEMBERS_BY_IDS', args}),
     };
 });
 
-jest.mock('mattermost-redux/actions/channels', () => {
-    const original = jest.requireActual('mattermost-redux/actions/channels');
+jest.mock('matterfoss-redux/actions/channels', () => {
+    const original = jest.requireActual('matterfoss-redux/actions/channels');
     return {
         ...original,
         getChannelMembersByIds: (...args) => ({type: 'MOCK_GET_CHANNEL_MEMBERS_BY_IDS', args}),
     };
 });
 
-jest.mock('mattermost-redux/actions/preferences', () => {
-    const original = jest.requireActual('mattermost-redux/actions/preferences');
+jest.mock('matterfoss-redux/actions/preferences', () => {
+    const original = jest.requireActual('matterfoss-redux/actions/preferences');
     return {
         ...original,
         deletePreferences: (...args) => ({type: 'MOCK_DELETE_PREFERENCES', args}),
@@ -106,7 +106,7 @@ describe('Actions.User', () => {
                         category: 'theme',
                         name: 'team_1',
                         user_id: 'current_user_id',
-                        value: JSON.stringify(Preferences.THEMES.mattermostDark),
+                        value: JSON.stringify(Preferences.THEMES.matterfossDark),
                     },
                 },
             },

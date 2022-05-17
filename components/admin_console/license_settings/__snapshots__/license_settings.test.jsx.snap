@@ -23,7 +23,7 @@ exports[`components/admin_console/license_settings/LicenseSettings load screen a
           isLicenseExpired={false}
           license={
             Object {
-              "Company": "Mattermost Inc.",
+              "Company": "MatterFOSS Inc.",
               "ExpiresAt": "1620335443650",
               "IsLicensed": "true",
               "IssuedAt": "1517714643650",
@@ -64,7 +64,7 @@ exports[`components/admin_console/license_settings/LicenseSettings load screen a
           >
             See also 
             <a
-              href="https://mattermost.com/terms-of-use/"
+              href="https://matterfoss.com/terms-of-use/"
               id="privacyLink"
               rel="noopener noreferrer"
               target="_blank"
@@ -73,7 +73,7 @@ exports[`components/admin_console/license_settings/LicenseSettings load screen a
             </a>
              and 
             <a
-              href="https://mattermost.com/privacy-policy/"
+              href="https://matterfoss.com/privacy-policy/"
               id="privacyLink"
               rel="noopener noreferrer"
               target="_blank"
@@ -129,7 +129,7 @@ exports[`components/admin_console/license_settings/LicenseSettings load screen w
           isLicenseExpired={false}
           license={
             Object {
-              "Company": "Mattermost Inc.",
+              "Company": "MatterFOSS Inc.",
               "ExpiresAt": "1620335443650",
               "IsLicensed": "true",
               "IssuedAt": "1517714643650",
@@ -170,7 +170,7 @@ exports[`components/admin_console/license_settings/LicenseSettings load screen w
           >
             See also 
             <a
-              href="https://mattermost.com/terms-of-use/"
+              href="https://matterfoss.com/terms-of-use/"
               id="privacyLink"
               rel="noopener noreferrer"
               target="_blank"
@@ -179,7 +179,7 @@ exports[`components/admin_console/license_settings/LicenseSettings load screen w
             </a>
              and 
             <a
-              href="https://mattermost.com/privacy-policy/"
+              href="https://matterfoss.com/privacy-policy/"
               id="privacyLink"
               rel="noopener noreferrer"
               target="_blank"
@@ -280,7 +280,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
           >
             See also 
             <a
-              href="https://mattermost.com/terms-of-use/"
+              href="https://matterfoss.com/terms-of-use/"
               id="privacyLink"
               rel="noopener noreferrer"
               target="_blank"
@@ -289,7 +289,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
             </a>
              and 
             <a
-              href="https://mattermost.com/privacy-policy/"
+              href="https://matterfoss.com/privacy-policy/"
               id="privacyLink"
               rel="noopener noreferrer"
               target="_blank"
@@ -311,7 +311,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
           >
             Curious about upgrading? 
             <a
-              href="https://mattermost.com/pricing/"
+              href="https://matterfoss.com/pricing/"
               id="privacyLink"
               rel="noopener noreferrer"
               target="_blank"
@@ -349,7 +349,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
           isLicenseExpired={false}
           license={
             Object {
-              "Company": "Mattermost Inc.",
+              "Company": "MatterFOSS Inc.",
               "ExpiresAt": "1620335443650",
               "IsLicensed": "true",
               "IssuedAt": "1517714643650",
@@ -393,7 +393,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
               }
               license={
                 Object {
-                  "Company": "Mattermost Inc.",
+                  "Company": "MatterFOSS Inc.",
                   "ExpiresAt": "1620335443650",
                   "IsLicensed": "true",
                   "IssuedAt": "1517714643650",
@@ -418,7 +418,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
           >
             See also 
             <a
-              href="https://mattermost.com/terms-of-use/"
+              href="https://matterfoss.com/terms-of-use/"
               id="privacyLink"
               rel="noopener noreferrer"
               target="_blank"
@@ -427,7 +427,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
             </a>
              and 
             <a
-              href="https://mattermost.com/privacy-policy/"
+              href="https://matterfoss.com/privacy-policy/"
               id="privacyLink"
               rel="noopener noreferrer"
               target="_blank"
@@ -446,7 +446,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
               isTrialLicense={false}
               license={
                 Object {
-                  "Company": "Mattermost Inc.",
+                  "Company": "MatterFOSS Inc.",
                   "ExpiresAt": "1620335443650",
                   "IsLicensed": "true",
                   "IssuedAt": "1517714643650",
@@ -463,7 +463,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
           >
             Curious about upgrading? 
             <a
-              href="https://mattermost.com/pricing/"
+              href="https://matterfoss.com/pricing/"
               id="privacyLink"
               rel="noopener noreferrer"
               target="_blank"
@@ -501,7 +501,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
           isLicenseExpired={false}
           license={
             Object {
-              "Company": "Mattermost Inc.",
+              "Company": "MatterFOSS Inc.",
               "ExpiresAt": "1620335443650",
               "IsLicensed": "true",
               "IssuedAt": "1517714643650",
@@ -545,7 +545,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
               }
               license={
                 Object {
-                  "Company": "Mattermost Inc.",
+                  "Company": "MatterFOSS Inc.",
                   "ExpiresAt": "1620335443650",
                   "IsLicensed": "true",
                   "IssuedAt": "1517714643650",
@@ -570,7 +570,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
           >
             See also 
             <a
-              href="https://mattermost.com/terms-of-use/"
+              href="https://matterfoss.com/terms-of-use/"
               id="privacyLink"
               rel="noopener noreferrer"
               target="_blank"
@@ -579,7 +579,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
             </a>
              and 
             <a
-              href="https://mattermost.com/privacy-policy/"
+              href="https://matterfoss.com/privacy-policy/"
               id="privacyLink"
               rel="noopener noreferrer"
               target="_blank"
@@ -598,7 +598,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
               isTrialLicense={false}
               license={
                 Object {
-                  "Company": "Mattermost Inc.",
+                  "Company": "MatterFOSS Inc.",
                   "ExpiresAt": "1620335443650",
                   "IsLicensed": "true",
                   "IssuedAt": "1517714643650",
@@ -640,7 +640,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
           isLicenseExpired={false}
           license={
             Object {
-              "Company": "Mattermost Inc.",
+              "Company": "MatterFOSS Inc.",
               "ExpiresAt": "1620335443650",
               "IsLicensed": "true",
               "IssuedAt": "1517714643650",
@@ -684,7 +684,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
               }
               license={
                 Object {
-                  "Company": "Mattermost Inc.",
+                  "Company": "MatterFOSS Inc.",
                   "ExpiresAt": "1620335443650",
                   "IsLicensed": "true",
                   "IssuedAt": "1517714643650",
@@ -709,7 +709,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
           >
             See also 
             <a
-              href="https://mattermost.com/terms-of-use/"
+              href="https://matterfoss.com/terms-of-use/"
               id="privacyLink"
               rel="noopener noreferrer"
               target="_blank"
@@ -718,7 +718,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
             </a>
              and 
             <a
-              href="https://mattermost.com/privacy-policy/"
+              href="https://matterfoss.com/privacy-policy/"
               id="privacyLink"
               rel="noopener noreferrer"
               target="_blank"
@@ -737,7 +737,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
               isTrialLicense={false}
               license={
                 Object {
-                  "Company": "Mattermost Inc.",
+                  "Company": "MatterFOSS Inc.",
                   "ExpiresAt": "1620335443650",
                   "IsLicensed": "true",
                   "IssuedAt": "1517714643650",
@@ -779,7 +779,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
           isLicenseExpired={false}
           license={
             Object {
-              "Company": "Mattermost Inc.",
+              "Company": "MatterFOSS Inc.",
               "ExpiresAt": "1620335443650",
               "IsLicensed": "true",
               "IssuedAt": "1517714643650",
@@ -823,7 +823,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
               }
               license={
                 Object {
-                  "Company": "Mattermost Inc.",
+                  "Company": "MatterFOSS Inc.",
                   "ExpiresAt": "1620335443650",
                   "IsLicensed": "true",
                   "IssuedAt": "1517714643650",
@@ -848,7 +848,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
           >
             See also 
             <a
-              href="https://mattermost.com/terms-of-use/"
+              href="https://matterfoss.com/terms-of-use/"
               id="privacyLink"
               rel="noopener noreferrer"
               target="_blank"
@@ -857,7 +857,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
             </a>
              and 
             <a
-              href="https://mattermost.com/privacy-policy/"
+              href="https://matterfoss.com/privacy-policy/"
               id="privacyLink"
               rel="noopener noreferrer"
               target="_blank"
@@ -876,7 +876,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
               isTrialLicense={false}
               license={
                 Object {
-                  "Company": "Mattermost Inc.",
+                  "Company": "MatterFOSS Inc.",
                   "ExpiresAt": "1620335443650",
                   "IsLicensed": "true",
                   "IssuedAt": "1517714643650",
@@ -918,7 +918,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
           isLicenseExpired={false}
           license={
             Object {
-              "Company": "Mattermost Inc.",
+              "Company": "MatterFOSS Inc.",
               "ExpiresAt": "1620335443650",
               "IsLicensed": "true",
               "IssuedAt": "1517714643650",
@@ -962,7 +962,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
               }
               license={
                 Object {
-                  "Company": "Mattermost Inc.",
+                  "Company": "MatterFOSS Inc.",
                   "ExpiresAt": "1620335443650",
                   "IsLicensed": "true",
                   "IssuedAt": "1517714643650",
@@ -987,7 +987,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
           >
             See also 
             <a
-              href="https://mattermost.com/terms-of-use/"
+              href="https://matterfoss.com/terms-of-use/"
               id="privacyLink"
               rel="noopener noreferrer"
               target="_blank"
@@ -996,7 +996,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
             </a>
              and 
             <a
-              href="https://mattermost.com/privacy-policy/"
+              href="https://matterfoss.com/privacy-policy/"
               id="privacyLink"
               rel="noopener noreferrer"
               target="_blank"
@@ -1015,7 +1015,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
               isTrialLicense={false}
               license={
                 Object {
-                  "Company": "Mattermost Inc.",
+                  "Company": "MatterFOSS Inc.",
                   "ExpiresAt": "1620335443650",
                   "IsLicensed": "true",
                   "IssuedAt": "1517714643650",
@@ -1057,7 +1057,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
           isLicenseExpired={false}
           license={
             Object {
-              "Company": "Mattermost Inc.",
+              "Company": "MatterFOSS Inc.",
               "ExpiresAt": "1620335443650",
               "IsLicensed": "true",
               "IssuedAt": "1517714643650",
@@ -1101,7 +1101,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
               }
               license={
                 Object {
-                  "Company": "Mattermost Inc.",
+                  "Company": "MatterFOSS Inc.",
                   "ExpiresAt": "1620335443650",
                   "IsLicensed": "true",
                   "IssuedAt": "1517714643650",
@@ -1126,7 +1126,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
           >
             See also 
             <a
-              href="https://mattermost.com/terms-of-use/"
+              href="https://matterfoss.com/terms-of-use/"
               id="privacyLink"
               rel="noopener noreferrer"
               target="_blank"
@@ -1135,7 +1135,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
             </a>
              and 
             <a
-              href="https://mattermost.com/privacy-policy/"
+              href="https://matterfoss.com/privacy-policy/"
               id="privacyLink"
               rel="noopener noreferrer"
               target="_blank"
@@ -1154,7 +1154,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
               isTrialLicense={false}
               license={
                 Object {
-                  "Company": "Mattermost Inc.",
+                  "Company": "MatterFOSS Inc.",
                   "ExpiresAt": "1620335443650",
                   "IsLicensed": "true",
                   "IssuedAt": "1517714643650",
@@ -1273,7 +1273,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
           >
             Curious about upgrading? 
             <a
-              href="https://mattermost.com/pricing/"
+              href="https://matterfoss.com/pricing/"
               id="privacyLink"
               rel="noopener noreferrer"
               target="_blank"
@@ -1356,7 +1356,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
           >
             See also 
             <a
-              href="https://mattermost.com/terms-of-use/"
+              href="https://matterfoss.com/terms-of-use/"
               id="privacyLink"
               rel="noopener noreferrer"
               target="_blank"
@@ -1365,7 +1365,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
             </a>
              and 
             <a
-              href="https://mattermost.com/privacy-policy/"
+              href="https://matterfoss.com/privacy-policy/"
               id="privacyLink"
               rel="noopener noreferrer"
               target="_blank"
@@ -1387,7 +1387,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
           >
             Curious about upgrading? 
             <a
-              href="https://mattermost.com/pricing/"
+              href="https://matterfoss.com/pricing/"
               id="privacyLink"
               rel="noopener noreferrer"
               target="_blank"
@@ -1470,7 +1470,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
           >
             See also 
             <a
-              href="https://mattermost.com/terms-of-use/"
+              href="https://matterfoss.com/terms-of-use/"
               id="privacyLink"
               rel="noopener noreferrer"
               target="_blank"
@@ -1479,7 +1479,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
             </a>
              and 
             <a
-              href="https://mattermost.com/privacy-policy/"
+              href="https://matterfoss.com/privacy-policy/"
               id="privacyLink"
               rel="noopener noreferrer"
               target="_blank"
@@ -1501,7 +1501,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
           >
             Curious about upgrading? 
             <a
-              href="https://mattermost.com/pricing/"
+              href="https://matterfoss.com/pricing/"
               id="privacyLink"
               rel="noopener noreferrer"
               target="_blank"
@@ -1539,7 +1539,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
           isLicenseExpired={false}
           license={
             Object {
-              "Company": "Mattermost Inc.",
+              "Company": "MatterFOSS Inc.",
               "ExpiresAt": "1620335443650",
               "IsLicensed": "true",
               "IssuedAt": "1517714643650",
@@ -1580,7 +1580,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
           >
             See also 
             <a
-              href="https://mattermost.com/terms-of-use/"
+              href="https://matterfoss.com/terms-of-use/"
               id="privacyLink"
               rel="noopener noreferrer"
               target="_blank"
@@ -1589,7 +1589,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
             </a>
              and 
             <a
-              href="https://mattermost.com/privacy-policy/"
+              href="https://matterfoss.com/privacy-policy/"
               id="privacyLink"
               rel="noopener noreferrer"
               target="_blank"
@@ -1683,7 +1683,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
           >
             See also 
             <a
-              href="https://mattermost.com/terms-of-use/"
+              href="https://matterfoss.com/terms-of-use/"
               id="privacyLink"
               rel="noopener noreferrer"
               target="_blank"
@@ -1692,7 +1692,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
             </a>
              and 
             <a
-              href="https://mattermost.com/privacy-policy/"
+              href="https://matterfoss.com/privacy-policy/"
               id="privacyLink"
               rel="noopener noreferrer"
               target="_blank"
@@ -1723,7 +1723,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
           >
             Curious about upgrading? 
             <a
-              href="https://mattermost.com/pricing/"
+              href="https://matterfoss.com/pricing/"
               id="privacyLink"
               rel="noopener noreferrer"
               target="_blank"
@@ -1791,7 +1791,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
           >
             See also 
             <a
-              href="https://mattermost.com/terms-of-use/"
+              href="https://matterfoss.com/terms-of-use/"
               id="privacyLink"
               rel="noopener noreferrer"
               target="_blank"
@@ -1800,7 +1800,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
             </a>
              and 
             <a
-              href="https://mattermost.com/privacy-policy/"
+              href="https://matterfoss.com/privacy-policy/"
               id="privacyLink"
               rel="noopener noreferrer"
               target="_blank"
@@ -1822,7 +1822,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
           >
             Curious about upgrading? 
             <a
-              href="https://mattermost.com/pricing/"
+              href="https://matterfoss.com/pricing/"
               id="privacyLink"
               rel="noopener noreferrer"
               target="_blank"
@@ -1887,7 +1887,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
               license={
                 Object {
                   "Cloud": "true",
-                  "Company": "Mattermost Inc.",
+                  "Company": "MatterFOSS Inc.",
                   "ExpiresAt": "1620993600000",
                   "IsLicensed": "true",
                   "IssuedAt": "1517714643650",
@@ -1912,7 +1912,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
           >
             See also 
             <a
-              href="https://mattermost.com/terms-of-use/"
+              href="https://matterfoss.com/terms-of-use/"
               id="privacyLink"
               rel="noopener noreferrer"
               target="_blank"
@@ -1921,7 +1921,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
             </a>
              and 
             <a
-              href="https://mattermost.com/privacy-policy/"
+              href="https://matterfoss.com/privacy-policy/"
               id="privacyLink"
               rel="noopener noreferrer"
               target="_blank"
@@ -1941,7 +1941,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
               license={
                 Object {
                   "Cloud": "true",
-                  "Company": "Mattermost Inc.",
+                  "Company": "MatterFOSS Inc.",
                   "ExpiresAt": "1620993600000",
                   "IsLicensed": "true",
                   "IssuedAt": "1517714643650",
@@ -1983,7 +1983,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
           isLicenseExpired={false}
           license={
             Object {
-              "Company": "Mattermost Inc.",
+              "Company": "MatterFOSS Inc.",
               "ExpiresAt": "1620993600000",
               "IsLicensed": "true",
               "IssuedAt": "1517714643650",
@@ -2027,7 +2027,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
               }
               license={
                 Object {
-                  "Company": "Mattermost Inc.",
+                  "Company": "MatterFOSS Inc.",
                   "ExpiresAt": "1620993600000",
                   "IsLicensed": "true",
                   "IssuedAt": "1517714643650",
@@ -2052,7 +2052,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
           >
             See also 
             <a
-              href="https://mattermost.com/terms-of-use/"
+              href="https://matterfoss.com/terms-of-use/"
               id="privacyLink"
               rel="noopener noreferrer"
               target="_blank"
@@ -2061,7 +2061,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
             </a>
              and 
             <a
-              href="https://mattermost.com/privacy-policy/"
+              href="https://matterfoss.com/privacy-policy/"
               id="privacyLink"
               rel="noopener noreferrer"
               target="_blank"
@@ -2080,7 +2080,7 @@ exports[`components/admin_console/license_settings/LicenseSettings should match 
               isTrialLicense={false}
               license={
                 Object {
-                  "Company": "Mattermost Inc.",
+                  "Company": "MatterFOSS Inc.",
                   "ExpiresAt": "1620993600000",
                   "IsLicensed": "true",
                   "IssuedAt": "1517714643650",

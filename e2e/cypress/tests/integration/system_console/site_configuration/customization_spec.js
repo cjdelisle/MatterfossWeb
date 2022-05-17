@@ -31,8 +31,8 @@ describe('Customization', () => {
         cy.findByTestId('TeamSettings.SiteNamelabel').scrollIntoView().should('be.visible').and('have.text', 'Site Name:');
 
         // # Update both Site Name and Description to store test values
-        const siteName = 'Mattermost_Text';
-        const siteDescription = 'This is a testing Mattermost site';
+        const siteName = 'MatterFOSS_Text';
+        const siteDescription = 'This is a testing MatterFOSS site';
         cy.findByTestId('TeamSettings.SiteNameinput').clear().type(siteName);
         cy.findByTestId('TeamSettings.CustomDescriptionTextinput').clear().type(siteDescription);
 
@@ -64,7 +64,7 @@ describe('Customization', () => {
         // # Exit settings
         cy.visit('/');
 
-        // # Open About Mattermost menu option
+        // # Open About MatterFOSS menu option
         cy.uiOpenProductMenu(`About ${siteName}`);
 
         // * Verify in the about modal that the new site name is being shown
@@ -75,8 +75,8 @@ describe('Customization', () => {
         // * Verify that setting is visible and matches text content
         cy.findByTestId('TeamSettings.SiteNamelabel').scrollIntoView().should('be.visible').and('have.text', 'Site Name:');
 
-        // Character limit is 30, and Mattermost is exactly 10 characters long
-        const siteName = 'Mattermost'.repeat(3);
+        // Character limit is 30, and MatterFOSS is exactly 10 characters long
+        const siteName = 'MatterFOSS'.repeat(3);
 
         // # Type the maximum amount of characters and then some more
         cy.findByTestId('TeamSettings.SiteNameinput').clear().type(siteName + 'something else');
@@ -127,7 +127,7 @@ describe('Customization', () => {
 
         // # Upload the image
         cy.findByTestId('CustomBrandImage').should('be.visible').within(() => {
-            cy.get('input').attachFile('mattermost-icon.png');
+            cy.get('input').attachFile('matterfoss-icon.png');
         });
 
         // * Verify that custom brand image setting is visible and matches text content
@@ -174,7 +174,7 @@ describe('Customization', () => {
         cy.get('.backstage-form').should('be.visible').within(() => {
             // # Fill the emoji data
             cy.get('input#name').clear().type('yay');
-            cy.get('input#select-emoji').attachFile('mattermost-icon.png');
+            cy.get('input#select-emoji').attachFile('matterfoss-icon.png');
 
             // # Save emoji
             cy.get('.backstage-form__footer button').click();
@@ -198,7 +198,7 @@ describe('Customization', () => {
 **This has been bolded**
 ~~This has been strikethrough~~
 *This has been italicized*
-[This is a link to mattermost.com](https://mattermost.com)
+[This is a link to matterfoss.com](https://matterfoss.com)
 ` + '`This is inline code`'; // eslint-disable-line no-useless-concat
 
         // # Update custom brand text
@@ -239,7 +239,7 @@ describe('Customization', () => {
                 cy.get('em').should('be.visible').and('have.text', 'This has been italicized');
 
                 // * Ensure the link has been rendered
-                cy.get('a.markdown__link').should('be.visible').and('have.text', 'This is a link to mattermost.com').and('have.attr', 'href', 'https://mattermost.com');
+                cy.get('a.markdown__link').should('be.visible').and('have.text', 'This is a link to matterfoss.com').and('have.attr', 'href', 'https://matterfoss.com');
 
                 // * Ensure the inline code has been rendered
                 cy.get('.codespan__pre-wrap').should('be.visible').and('have.text', 'This is inline code');
@@ -256,7 +256,7 @@ describe('Customization', () => {
         cy.findByTestId('TeamSettings.SiteNamelabel').scrollIntoView().should('be.visible').and('have.text', 'Site Name:');
 
         // # Update both Site Name and Description to store default or empty values
-        const siteName = 'Mattermost';
+        const siteName = 'MatterFOSS';
         cy.findByTestId('TeamSettings.SiteNameinput').clear().type(siteName);
         cy.findByTestId('TeamSettings.CustomDescriptionTextinput').clear();
 
@@ -328,7 +328,7 @@ describe('Customization', () => {
         cy.url().should('include', '/login');
 
         // * Ensure that the default Site Name is shown in the login screen
-        cy.get('#site_name').should('have.text', 'Mattermost');
+        cy.get('#site_name').should('have.text', 'MatterFOSS');
 
         // # Log back in as an administrator
         cy.apiAdminLogin();
@@ -337,7 +337,7 @@ describe('Customization', () => {
         cy.visit('/admin_console/site_config/customization');
 
         // * Ensure that the 'about' link and modal render the default Site Name
-        verifySiteNameInAboutModal('Mattermost');
+        verifySiteNameInAboutModal('MatterFOSS');
     });
 });
 

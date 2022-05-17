@@ -6,8 +6,8 @@ import {FormattedMessage} from 'react-intl';
 import {debounce} from 'lodash';
 
 import Constants from 'utils/constants';
-import {ActionResult} from 'mattermost-redux/types/actions';
-import {Team, TeamSearchOpts} from 'mattermost-redux/types/teams';
+import {ActionResult} from 'matterfoss-redux/types/actions';
+import {Team, TeamSearchOpts} from 'matterfoss-redux/types/teams';
 
 import * as Utils from 'utils/utils.jsx';
 

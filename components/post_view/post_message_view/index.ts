@@ -3,9 +3,9 @@
 
 import {connect} from 'react-redux';
 
-import {Preferences} from 'mattermost-redux/constants';
-import {getTheme, getBool} from 'mattermost-redux/selectors/entities/preferences';
-import {getCurrentRelativeTeamUrl} from 'mattermost-redux/selectors/entities/teams';
+import {Preferences} from 'matterfoss-redux/constants';
+import {getTheme, getBool} from 'matterfoss-redux/selectors/entities/preferences';
+import {getCurrentRelativeTeamUrl} from 'matterfoss-redux/selectors/entities/teams';
 
 import {getIsRhsExpanded, getIsRhsOpen} from 'selectors/rhs';
 

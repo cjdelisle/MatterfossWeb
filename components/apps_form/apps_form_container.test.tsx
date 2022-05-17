@@ -5,7 +5,7 @@ import React from 'react';
 
 import {shallow} from 'enzyme';
 
-import {AppCallResponseTypes} from 'mattermost-redux/constants/apps';
+import {AppCallResponseTypes} from 'matterfoss-redux/constants/apps';
 
 import EmojiMap from 'utils/emoji_map';
 

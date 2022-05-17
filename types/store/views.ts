@@ -1,11 +1,11 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
-import {Channel} from 'mattermost-redux/types/channels';
-import {MarketplaceApp, MarketplacePlugin} from 'mattermost-redux/types/marketplace';
-import {RelationOneToOne} from 'mattermost-redux/types/utilities';
-import {Team} from 'mattermost-redux/types/teams';
-import {UserThread} from 'mattermost-redux/types/threads';
+import {Channel} from 'matterfoss-redux/types/channels';
+import {MarketplaceApp, MarketplacePlugin} from 'matterfoss-redux/types/marketplace';
+import {RelationOneToOne} from 'matterfoss-redux/types/utilities';
+import {Team} from 'matterfoss-redux/types/teams';
+import {UserThread} from 'matterfoss-redux/types/threads';
 
 import {I18nState} from './i18n';
 import {RhsViewState} from './rhs';

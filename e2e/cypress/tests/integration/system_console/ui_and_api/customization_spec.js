@@ -43,7 +43,7 @@ describe('Customization', () => {
             cy.get('.help-text').should('be.visible').and('have.text', contents);
 
             // # upload the image
-            cy.get('input').attachFile('mattermost-icon.png');
+            cy.get('input').attachFile('matterfoss-icon.png');
         });
 
         // # Save setting
@@ -64,7 +64,7 @@ describe('Customization', () => {
         cy.findByTestId('TeamSettings.SiteNameinput').should('have.value', origConfig.TeamSettings.SiteName);
 
         // * Verify the site name's help text is visible and matches the text
-        cy.findByTestId('TeamSettings.SiteNamehelp-text').should('be.visible').and('have.text', 'Name of service shown in login screens and UI. When not specified, it defaults to "Mattermost".');
+        cy.findByTestId('TeamSettings.SiteNamehelp-text').should('be.visible').and('have.text', 'Name of service shown in login screens and UI. When not specified, it defaults to "MatterFOSS".');
 
         // # Generate and enter a random site name
         const siteName = 'New site name';

@@ -14,17 +14,17 @@ import {
     patchGroup,
     patchGroupSyncable,
     unlinkGroupSyncable,
-} from 'mattermost-redux/actions/groups';
-import {getProfilesInGroup} from 'mattermost-redux/actions/users';
+} from 'matterfoss-redux/actions/groups';
+import {getProfilesInGroup} from 'matterfoss-redux/actions/users';
 import {
     getGroup,
     getGroupChannels,
     getGroupMemberCount,
     getGroupTeams,
-} from 'mattermost-redux/selectors/entities/groups';
-import {getProfilesInGroup as selectProfilesInGroup} from 'mattermost-redux/selectors/entities/users';
-import {ActionFunc, GenericAction} from 'mattermost-redux/types/actions';
-import {GlobalState} from 'mattermost-redux/types/store';
+} from 'matterfoss-redux/selectors/entities/groups';
+import {getProfilesInGroup as selectProfilesInGroup} from 'matterfoss-redux/selectors/entities/users';
+import {ActionFunc, GenericAction} from 'matterfoss-redux/types/actions';
+import {GlobalState} from 'matterfoss-redux/types/store';
 
 import GroupDetails, {Props} from './group_details';
 

@@ -6,9 +6,9 @@ import React from 'react';
 import AutoSizer from 'react-virtualized-auto-sizer';
 import {DynamicSizeList} from 'dynamic-virtualized-list';
 
-import {isDateLine, isStartOfNewMessages} from 'mattermost-redux/utils/post_list';
+import {isDateLine, isStartOfNewMessages} from 'matterfoss-redux/utils/post_list';
 
-import EventEmitter from 'mattermost-redux/utils/event_emitter';
+import EventEmitter from 'matterfoss-redux/utils/event_emitter';
 
 import Constants, {PostListRowListIds, EventTypes, PostRequestTypes} from 'utils/constants';
 import DelayedAction from 'utils/delayed_action';

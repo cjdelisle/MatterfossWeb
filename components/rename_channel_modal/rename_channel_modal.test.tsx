@@ -3,9 +3,9 @@
 
 import React from 'react';
 
-import {RequestStatus} from 'mattermost-redux/constants';
-import {Channel} from 'mattermost-redux/types/channels';
-import {Team} from 'mattermost-redux/types/teams';
+import {RequestStatus} from 'matterfoss-redux/constants';
+import {Channel} from 'matterfoss-redux/types/channels';
+import {Team} from 'matterfoss-redux/types/teams';
 
 import {shallowWithIntl} from 'tests/helpers/intl-test-helper';
 

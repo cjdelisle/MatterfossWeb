@@ -6,11 +6,11 @@ import classNames from 'classnames';
 
 import {FormattedMessage} from 'react-intl';
 
-import {SchemaMigration} from 'mattermost-redux/types/admin';
+import {SchemaMigration} from 'matterfoss-redux/types/admin';
 
 import './migrations_table.scss';
 
-import {ActionResult} from 'mattermost-redux/types/actions';
+import {ActionResult} from 'matterfoss-redux/types/actions';
 
 export type Props = {
     createHelpText: React.ReactElement;

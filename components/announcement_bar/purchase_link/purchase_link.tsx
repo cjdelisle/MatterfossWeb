@@ -15,7 +15,7 @@ const PurchaseLink: React.FC<Props> = (props: Props) => {
     const handlePurchaseLinkClick = async (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         e.preventDefault();
         trackEvent('admin', props.eventID || 'in_trial_purchase_license');
-        window.open('https://customers.mattermost.com/signup', '_blank');
+        window.open('https://customers.matterfoss.com/signup', '_blank');
     };
 
     return (

@@ -12,9 +12,9 @@ import FormattedMarkdownMessage from 'components/formatted_markdown_message';
 
 import completedImg from 'images/completed.svg';
 
-import {GlobalState} from 'mattermost-redux/types/store';
-import {getLicense} from 'mattermost-redux/selectors/entities/general';
-import {getPrevTrialLicense} from 'mattermost-redux/actions/admin';
+import {GlobalState} from 'matterfoss-redux/types/store';
+import {getLicense} from 'matterfoss-redux/selectors/entities/general';
+import {getPrevTrialLicense} from 'matterfoss-redux/actions/admin';
 
 import StartTrialBtn from 'components/learn_more_trial_modal/start_trial_btn';
 
@@ -145,7 +145,7 @@ const Completed = (props: Props): JSX.Element => {
                     <span className='completed-subtitle'>
                         <FormattedMessage
                             id={'onboardingTask.checklist.completed_subtitle'}
-                            defaultMessage='We hope Mattermost is more familiar now.'
+                            defaultMessage='We hope MatterFOSS is more familiar now.'
                         />
                     </span>
 
@@ -180,7 +180,7 @@ const Completed = (props: Props): JSX.Element => {
                         <span>
                             <FormattedMarkdownMessage
                                 id='onboardingTask.checklist.downloads'
-                                defaultMessage='Now that you’re all set up, [download our apps.](!https://mattermost.com/download)'
+                                defaultMessage='Now that you’re all set up, [download our apps.](!https://matterfoss.com/download)'
                             />
                         </span>
                     </div>
@@ -188,7 +188,7 @@ const Completed = (props: Props): JSX.Element => {
                         <span>
                             <FormattedMarkdownMessage
                                 id='onboardingTask.checklist.disclaimer'
-                                defaultMessage='By clicking “Start trial”, I agree to the [Mattermost Software Evaluation Agreement,](!https://mattermost.com/software-evaluation-agreement) [privacy policy,](!https://mattermost.com/privacy-policy/) and receiving product emails.'
+                                defaultMessage='By clicking “Start trial”, I agree to the [MatterFOSS Software Evaluation Agreement,](!https://matterfoss.com/software-evaluation-agreement) [privacy policy,](!https://matterfoss.com/privacy-policy/) and receiving product emails.'
                             />
                         </span>
                     </div>

@@ -4,11 +4,11 @@
 import {connect} from 'react-redux';
 import {bindActionCreators, Dispatch, ActionCreatorsMapObject} from 'redux';
 
-import {deleteCommand, regenCommandToken} from 'mattermost-redux/actions/integrations';
-import {haveITeamPermission} from 'mattermost-redux/selectors/entities/roles';
-import {Permissions} from 'mattermost-redux/constants';
-import {GenericAction, ActionResult, ActionFunc} from 'mattermost-redux/types/actions';
-import {GlobalState} from 'mattermost-redux/types/store';
+import {deleteCommand, regenCommandToken} from 'matterfoss-redux/actions/integrations';
+import {haveITeamPermission} from 'matterfoss-redux/selectors/entities/roles';
+import {Permissions} from 'matterfoss-redux/constants';
+import {GenericAction, ActionResult, ActionFunc} from 'matterfoss-redux/types/actions';
+import {GlobalState} from 'matterfoss-redux/types/store';
 
 import InstalledCommands from './installed_commands';
 

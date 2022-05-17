@@ -3,15 +3,15 @@
 
 import {connect} from 'react-redux';
 
-import {getChannel} from 'mattermost-redux/selectors/entities/channels';
-import {getConfig} from 'mattermost-redux/selectors/entities/general';
-import {getSearchMatches, getSearchResults} from 'mattermost-redux/selectors/entities/posts';
-import {getSearchFilesResults} from 'mattermost-redux/selectors/entities/files';
-import * as PreferenceSelectors from 'mattermost-redux/selectors/entities/preferences';
-import {getCurrentSearchForCurrentTeam} from 'mattermost-redux/selectors/entities/search';
-import {Post} from 'mattermost-redux/types/posts';
-import {FileSearchResultItem} from 'mattermost-redux/types/files';
-import {getCurrentTeam} from 'mattermost-redux/selectors/entities/teams';
+import {getChannel} from 'matterfoss-redux/selectors/entities/channels';
+import {getConfig} from 'matterfoss-redux/selectors/entities/general';
+import {getSearchMatches, getSearchResults} from 'matterfoss-redux/selectors/entities/posts';
+import {getSearchFilesResults} from 'matterfoss-redux/selectors/entities/files';
+import * as PreferenceSelectors from 'matterfoss-redux/selectors/entities/preferences';
+import {getCurrentSearchForCurrentTeam} from 'matterfoss-redux/selectors/entities/search';
+import {Post} from 'matterfoss-redux/types/posts';
+import {FileSearchResultItem} from 'matterfoss-redux/types/files';
+import {getCurrentTeam} from 'matterfoss-redux/selectors/entities/teams';
 
 import {
     getSearchResultsTerms,

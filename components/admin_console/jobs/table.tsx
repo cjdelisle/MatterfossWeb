@@ -6,8 +6,8 @@ import classNames from 'classnames';
 
 import {FormattedMessage} from 'react-intl';
 
-import {Job, JobType} from 'mattermost-redux/types/jobs';
-import {ActionResult} from 'mattermost-redux/types/actions';
+import {Job, JobType} from 'matterfoss-redux/types/jobs';
+import {ActionResult} from 'matterfoss-redux/types/actions';
 
 import {JobTypes} from 'utils/constants';
 

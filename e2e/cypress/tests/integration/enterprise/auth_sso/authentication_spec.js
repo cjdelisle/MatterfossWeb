@@ -34,7 +34,7 @@ describe('Authentication', () => {
         // # Enable open server and turn on user account creation and set restricted domain
         cy.apiUpdateConfig({
             TeamSettings: {
-                RestrictCreationToDomains: 'mattermost.com, test.com',
+                RestrictCreationToDomains: 'matterfoss.com, test.com',
                 EnableUserCreation: true,
                 EnableOpenServer: true,
             },
@@ -46,8 +46,8 @@ describe('Authentication', () => {
             // # Click "Save"
             cy.findByText('Save').scrollIntoView().click();
 
-            // # Wait until we are at the Mattermost Teams page
-            cy.findByText('Mattermost Teams', {timeout: TIMEOUTS.ONE_MIN}).should('be.visible');
+            // # Wait until we are at the MatterFOSS Teams page
+            cy.findByText('MatterFOSS Teams', {timeout: TIMEOUTS.ONE_MIN}).should('be.visible');
 
             cy.apiLogout();
 
@@ -94,7 +94,7 @@ describe('Authentication', () => {
                 EnableSignUpWithEmail: true,
             },
             TeamSettings: {
-                RestrictCreationToDomains: 'mattermost.com, test.com',
+                RestrictCreationToDomains: 'matterfoss.com, test.com',
                 EnableUserCreation: true,
                 EnableOpenServer: true,
             },

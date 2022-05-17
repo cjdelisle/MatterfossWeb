@@ -6,12 +6,12 @@ import {connect} from 'react-redux';
 
 import {GlobalState} from 'types/store/index.js';
 
-import {GenericAction} from 'mattermost-redux/types/actions.js';
+import {GenericAction} from 'matterfoss-redux/types/actions.js';
 
-import {savePreferences} from 'mattermost-redux/actions/preferences';
-import {Preferences} from 'mattermost-redux/constants';
-import {get as getPreference} from 'mattermost-redux/selectors/entities/preferences';
-import {getCurrentUserId} from 'mattermost-redux/selectors/entities/users';
+import {savePreferences} from 'matterfoss-redux/actions/preferences';
+import {Preferences} from 'matterfoss-redux/constants';
+import {get as getPreference} from 'matterfoss-redux/selectors/entities/preferences';
+import {getCurrentUserId} from 'matterfoss-redux/selectors/entities/users';
 
 import JoinLeaveSection from './join_leave_section';
 

@@ -4,12 +4,12 @@
 import {connect} from 'react-redux';
 import {bindActionCreators, Dispatch} from 'redux';
 
-import {setCategorySorting} from 'mattermost-redux/actions/channel_categories';
-import {savePreferences} from 'mattermost-redux/actions/preferences';
-import {GenericAction} from 'mattermost-redux/types/actions';
-import {getCurrentUserId} from 'mattermost-redux/selectors/entities/users';
-import {getInt} from 'mattermost-redux/selectors/entities/preferences';
-import {Preferences} from 'mattermost-redux/constants';
+import {setCategorySorting} from 'matterfoss-redux/actions/channel_categories';
+import {savePreferences} from 'matterfoss-redux/actions/preferences';
+import {GenericAction} from 'matterfoss-redux/types/actions';
+import {getCurrentUserId} from 'matterfoss-redux/selectors/entities/users';
+import {getInt} from 'matterfoss-redux/selectors/entities/preferences';
+import {Preferences} from 'matterfoss-redux/constants';
 
 import {GlobalState} from 'types/store';
 

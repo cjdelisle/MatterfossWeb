@@ -4,14 +4,14 @@
 import {connect} from 'react-redux';
 import {bindActionCreators, Dispatch, ActionCreatorsMapObject} from 'redux';
 
-import {fetchMyCategories} from 'mattermost-redux/actions/channel_categories';
-import {Preferences} from 'mattermost-redux/constants';
-import Permissions from 'mattermost-redux/constants/permissions';
-import {getLicense} from 'mattermost-redux/selectors/entities/general';
-import {getBool, isCustomGroupsEnabled} from 'mattermost-redux/selectors/entities/preferences';
-import {haveICurrentChannelPermission, haveISystemPermission} from 'mattermost-redux/selectors/entities/roles';
-import {getCurrentTeam} from 'mattermost-redux/selectors/entities/teams';
-import {GenericAction} from 'mattermost-redux/types/actions';
+import {fetchMyCategories} from 'matterfoss-redux/actions/channel_categories';
+import {Preferences} from 'matterfoss-redux/constants';
+import Permissions from 'matterfoss-redux/constants/permissions';
+import {getLicense} from 'matterfoss-redux/selectors/entities/general';
+import {getBool, isCustomGroupsEnabled} from 'matterfoss-redux/selectors/entities/preferences';
+import {haveICurrentChannelPermission, haveISystemPermission} from 'matterfoss-redux/selectors/entities/roles';
+import {getCurrentTeam} from 'matterfoss-redux/selectors/entities/teams';
+import {GenericAction} from 'matterfoss-redux/types/actions';
 import {createCategory, clearChannelSelection} from 'actions/views/channel_sidebar';
 import {isUnreadFilterEnabled} from 'selectors/views/channel_sidebar';
 import {closeModal, openModal} from 'actions/views/modals';

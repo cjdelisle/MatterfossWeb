@@ -7,7 +7,7 @@ import classNames from 'classnames';
 
 import Pluggable from 'plugins/pluggable';
 
-import {Channel} from 'mattermost-redux/types/channels';
+import {Channel} from 'matterfoss-redux/types/channels';
 
 import {mark, trackEvent} from 'actions/telemetry_actions';
 

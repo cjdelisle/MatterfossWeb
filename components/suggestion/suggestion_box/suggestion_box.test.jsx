@@ -10,8 +10,8 @@ import SuggestionBox from 'components/suggestion/suggestion_box/suggestion_box';
 import SuggestionList from 'components/suggestion/suggestion_list.jsx';
 import * as Utils from 'utils/utils.jsx';
 
-jest.mock('mattermost-redux/client', () => {
-    const actual = jest.requireActual('mattermost-redux/client');
+jest.mock('matterfoss-redux/client', () => {
+    const actual = jest.requireActual('matterfoss-redux/client');
 
     return {
         ...actual,

@@ -4,11 +4,11 @@
 import React from 'react';
 import {FormattedMessage} from 'react-intl';
 
-import {ActionResult} from 'mattermost-redux/types/actions';
-import {ServerError} from 'mattermost-redux/types/errors';
-import {UserProfile, UsersStats, GetFilteredUsersStatsOpts} from 'mattermost-redux/types/users';
-import {Channel, ChannelMembership} from 'mattermost-redux/types/channels';
-import GeneralConstants from 'mattermost-redux/constants/general';
+import {ActionResult} from 'matterfoss-redux/types/actions';
+import {ServerError} from 'matterfoss-redux/types/errors';
+import {UserProfile, UsersStats, GetFilteredUsersStatsOpts} from 'matterfoss-redux/types/users';
+import {Channel, ChannelMembership} from 'matterfoss-redux/types/channels';
+import GeneralConstants from 'matterfoss-redux/constants/general';
 
 import {t} from 'utils/i18n';
 import Constants, {ModalIdentifiers} from 'utils/constants';

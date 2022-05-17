@@ -4,13 +4,13 @@
 import {connect} from 'react-redux';
 import {bindActionCreators, Dispatch, ActionCreatorsMapObject} from 'redux';
 
-import {sendVerificationEmail} from 'mattermost-redux/actions/users';
-import {getConfig} from 'mattermost-redux/selectors/entities/general';
-import {getCurrentUser} from 'mattermost-redux/selectors/entities/users';
-import {isCollapsedThreadsEnabled} from 'mattermost-redux/selectors/entities/preferences';
+import {sendVerificationEmail} from 'matterfoss-redux/actions/users';
+import {getConfig} from 'matterfoss-redux/selectors/entities/general';
+import {getCurrentUser} from 'matterfoss-redux/selectors/entities/users';
+import {isCollapsedThreadsEnabled} from 'matterfoss-redux/selectors/entities/preferences';
 import {GlobalState} from 'types/store';
 import {openModal} from 'actions/views/modals';
-import {Action} from 'mattermost-redux/types/actions';
+import {Action} from 'matterfoss-redux/types/actions';
 
 import UserSettingsModal, {Props} from './user_settings_modal';
 

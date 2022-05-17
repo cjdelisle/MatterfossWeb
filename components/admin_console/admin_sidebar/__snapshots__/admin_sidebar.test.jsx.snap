@@ -63,8 +63,8 @@ exports[`components/AdminSidebar Plugins should filter plugins 1`] = `
             }
           >
             <AdminSidebarSection
-              key="custompluginmattermost-autolink"
-              name="plugins/plugin_mattermost-autolink"
+              key="custompluginmatterfoss-autolink"
+              name="plugins/plugin_matterfoss-autolink"
               parentLink=""
               subsection={false}
               title="Autolink"
@@ -294,8 +294,8 @@ exports[`components/AdminSidebar Plugins should match snapshot 1`] = `
               }
             />
             <AdminSidebarSection
-              key="custompluginmattermost-autolink"
-              name="plugins/plugin_mattermost-autolink"
+              key="custompluginmatterfoss-autolink"
+              name="plugins/plugin_matterfoss-autolink"
               parentLink=""
               subsection={false}
               title="Autolink"

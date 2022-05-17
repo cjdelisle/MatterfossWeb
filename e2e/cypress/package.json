@@ -28,7 +28,7 @@
     "lodash.mapkeys": "4.6.0",
     "lodash.without": "4.4.0",
     "lodash.xor": "4.5.0",
-    "mattermost-redux": "5.33.1",
+    "matterfoss-redux": "5.33.1",
     "mime": "2.5.2",
     "mime-types": "2.1.33",
     "mocha": "9.1.2",

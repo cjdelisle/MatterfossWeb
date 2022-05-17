@@ -1,12 +1,12 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
-import {General} from 'mattermost-redux/constants';
+import {General} from 'matterfoss-redux/constants';
 
-import * as ChannelUtils from 'mattermost-redux/utils/channel_utils';
+import * as ChannelUtils from 'matterfoss-redux/utils/channel_utils';
 
-import mergeObjects from 'packages/mattermost-redux/test/merge_objects';
-import TestHelper from 'packages/mattermost-redux/test/test_helper';
+import mergeObjects from 'packages/matterfoss-redux/test/merge_objects';
+import TestHelper from 'packages/matterfoss-redux/test/test_helper';
 
 import {makeGetOptions} from './index';
 

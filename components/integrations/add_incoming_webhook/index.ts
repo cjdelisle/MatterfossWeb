@@ -4,12 +4,12 @@
 import {connect} from 'react-redux';
 import {ActionCreatorsMapObject, bindActionCreators, Dispatch} from 'redux';
 
-import {createIncomingHook} from 'mattermost-redux/actions/integrations';
-import {getConfig} from 'mattermost-redux/selectors/entities/general';
+import {createIncomingHook} from 'matterfoss-redux/actions/integrations';
+import {getConfig} from 'matterfoss-redux/selectors/entities/general';
 
-import {GlobalState} from 'mattermost-redux/types/store';
-import {Action, GenericAction} from 'mattermost-redux/types/actions';
-import {IncomingWebhook} from 'mattermost-redux/types/integrations';
+import {GlobalState} from 'matterfoss-redux/types/store';
+import {Action, GenericAction} from 'matterfoss-redux/types/actions';
+import {IncomingWebhook} from 'matterfoss-redux/types/integrations';
 
 import AddIncomingWebhook from './add_incoming_webhook';
 

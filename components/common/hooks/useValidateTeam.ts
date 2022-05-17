@@ -5,7 +5,7 @@ import {useState, useRef, useEffect} from 'react';
 
 import debounce from 'lodash/debounce';
 
-import {Client4} from 'mattermost-redux/client';
+import {Client4} from 'matterfoss-redux/client';
 
 import {cleanUpUrlable, BadUrlReasons, teamNameToUrl} from 'utils/url';
 import Constants from 'utils/constants';

@@ -4,9 +4,9 @@
 import {useEffect, useRef} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 
-import {isCollapsedThreadsEnabled} from 'mattermost-redux/selectors/entities/preferences';
+import {isCollapsedThreadsEnabled} from 'matterfoss-redux/selectors/entities/preferences';
 
-import {resetReloadPostsInChannel} from 'mattermost-redux/actions/posts';
+import {resetReloadPostsInChannel} from 'matterfoss-redux/actions/posts';
 
 const PostsChannelResetWatcher = () => {
     const dispatch = useDispatch();

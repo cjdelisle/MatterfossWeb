@@ -14,10 +14,10 @@ const GuestAccessFeatureDiscovery: React.FC = () => {
         <FeatureDiscovery
             featureName='guest_access'
             titleID='admin.guest_access_feature_discovery.title'
-            titleDefault='Enable guest accounts with Mattermost Professional'
+            titleDefault='Enable guest accounts with MatterFOSS Professional'
             copyID='admin.guest_access_feature_discovery.copy'
             copyDefault={'Collaborate with users outside of your organization while tightly controlling their access channels and team members.'}
-            learnMoreURL='https://docs.mattermost.com/deployment/guest-accounts.html'
+            learnMoreURL='https://docs.matterfoss.com/deployment/guest-accounts.html'
             featureDiscoveryImage={<GuestAccessSVG/>}
         />
     );

@@ -4,7 +4,7 @@
 import React, {ReactFragment} from 'react';
 import {FormattedMessage} from 'react-intl';
 
-import {ServerError} from 'mattermost-redux/types/errors';
+import {ServerError} from 'matterfoss-redux/types/errors';
 
 import {isErrorInvalidSlashCommand} from 'utils/post_utils';
 

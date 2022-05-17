@@ -4,10 +4,10 @@
 import {bindActionCreators, Dispatch, ActionCreatorsMapObject} from 'redux';
 import {connect} from 'react-redux';
 
-import {getConfig} from 'mattermost-redux/selectors/entities/general';
-import {sendVerificationEmail} from 'mattermost-redux/actions/users';
-import {GenericAction, ActionFunc} from 'mattermost-redux/types/actions';
-import {GlobalState} from 'mattermost-redux/types/store';
+import {getConfig} from 'matterfoss-redux/selectors/entities/general';
+import {sendVerificationEmail} from 'matterfoss-redux/actions/users';
+import {GenericAction, ActionFunc} from 'matterfoss-redux/types/actions';
+import {GlobalState} from 'matterfoss-redux/types/store';
 
 import ShouldVerifyEmail from './should_verify_email';
 

@@ -4,11 +4,11 @@
 import React from 'react';
 import {FormattedMessage} from 'react-intl';
 
-import Permissions from 'mattermost-redux/constants/permissions';
-import {ClientLicense} from 'mattermost-redux/types/config';
-import {isEnterpriseLicense, isNonEnterpriseLicense} from 'mattermost-redux/types/general';
+import Permissions from 'matterfoss-redux/constants/permissions';
+import {ClientLicense} from 'matterfoss-redux/types/config';
+import {isEnterpriseLicense, isNonEnterpriseLicense} from 'matterfoss-redux/types/general';
 
-import {Role} from 'mattermost-redux/types/roles';
+import {Role} from 'matterfoss-redux/types/roles';
 
 import PermissionGroup from './permission_group';
 

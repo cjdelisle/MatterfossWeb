@@ -4,7 +4,7 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 
-import {UserProfile} from 'mattermost-redux/types/users';
+import {UserProfile} from 'matterfoss-redux/types/users';
 
 import SignupEmail from 'components/signup/signup_email/signup_email';
 
@@ -17,7 +17,7 @@ describe('components/SignupEmail', () => {
             search: '?token=9f392f193973g11ggh398h39hg0ghH&email=test@example.com',
         },
         enableSignUpWithEmail: true,
-        siteName: 'Mattermost',
+        siteName: 'MatterFOSS',
         termsOfServiceLink: '',
         privacyPolicyLink: '',
         customDescriptionText: '',

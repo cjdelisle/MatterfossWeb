@@ -152,12 +152,12 @@ function generateTestReport(summary, isUploadedToS3, reportLink, environment, te
 
         return {
             username: 'Cypress UI Test',
-            icon_url: 'https://mattermost.com/wp-content/uploads/2022/02/icon_WS.png',
+            icon_url: 'https://matterfoss.com/wp-content/uploads/2022/02/icon_WS.png',
             attachments: [{
                 color: testResult.color,
                 author_name: 'Webapp End-to-end Testing',
-                author_icon: 'https://mattermost.com/wp-content/uploads/2022/02/icon_WS.png',
-                author_link: 'https://www.mattermost.com',
+                author_icon: 'https://matterfoss.com/wp-content/uploads/2022/02/icon_WS.png',
+                author_link: 'https://www.matterfoss.com',
                 title,
                 fields: [
                     {
@@ -189,12 +189,12 @@ function generateTestReport(summary, isUploadedToS3, reportLink, environment, te
 
     return {
         username: 'Cypress UI Test',
-        icon_url: 'https://mattermost.com/wp-content/uploads/2022/02/icon_WS.png',
+        icon_url: 'https://matterfoss.com/wp-content/uploads/2022/02/icon_WS.png',
         attachments: [{
             color: testResult.color,
             author_name: 'Webapp End-to-end Testing',
-            author_icon: 'https://mattermost.com/wp-content/uploads/2022/02/icon_WS.png',
-            author_link: 'https://www.mattermost.com/',
+            author_icon: 'https://matterfoss.com/wp-content/uploads/2022/02/icon_WS.png',
+            author_link: 'https://www.matterfoss.com/',
             title,
             text: `${quickSummary} | ${(stats.duration / (60 * 1000)).toFixed(2)} mins ${testCycleLink}\n${envValue}`,
         }],
@@ -213,7 +213,7 @@ function generateTitle() {
 
     let dockerImageLink = '';
     if (MM_DOCKER_IMAGE && MM_DOCKER_TAG) {
-        dockerImageLink = ` with [${MM_DOCKER_IMAGE}:${MM_DOCKER_TAG}](https://hub.docker.com/r/mattermost/${MM_DOCKER_IMAGE}/tags?name=${MM_DOCKER_TAG})`;
+        dockerImageLink = ` with [${MM_DOCKER_IMAGE}:${MM_DOCKER_TAG}](https://hub.docker.com/r/matterfoss/${MM_DOCKER_IMAGE}/tags?name=${MM_DOCKER_TAG})`;
     }
 
     let releaseDate = '';
@@ -254,12 +254,12 @@ function generateDiagnosticReport(summary, serverInfo) {
 
     return {
         username: 'Cypress UI Test',
-        icon_url: 'https://mattermost.com/wp-content/uploads/2022/02/icon_WS.png',
+        icon_url: 'https://matterfoss.com/wp-content/uploads/2022/02/icon_WS.png',
         attachments: [{
             color: '#43A047',
             author_name: 'Cypress UI Test',
-            author_icon: 'https://mattermost.com/wp-content/uploads/2022/02/icon_WS.png',
-            author_link: 'https://community.mattermost.com/core/channels/ui-test-automation',
+            author_icon: 'https://matterfoss.com/wp-content/uploads/2022/02/icon_WS.png',
+            author_link: 'https://community.matterfoss.com/core/channels/ui-test-automation',
             title: `Cypress UI Test Automation #${BUILD_ID}, **${BRANCH}** branch`,
             fields: [{
                 short: false,

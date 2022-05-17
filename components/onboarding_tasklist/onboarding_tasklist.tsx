@@ -7,10 +7,10 @@ import styled, {css} from 'styled-components';
 import Icon from '@mattermost/compass-components/foundations/icon/Icon';
 import {FormattedMessage} from 'react-intl';
 
-import {getPrevTrialLicense} from 'mattermost-redux/actions/admin';
-import {getBool} from 'mattermost-redux/selectors/entities/preferences';
-import {savePreferences} from 'mattermost-redux/actions/preferences';
-import {getCurrentUserId} from 'mattermost-redux/selectors/entities/users';
+import {getPrevTrialLicense} from 'matterfoss-redux/actions/admin';
+import {getBool} from 'matterfoss-redux/selectors/entities/preferences';
+import {savePreferences} from 'matterfoss-redux/actions/preferences';
+import {getCurrentUserId} from 'matterfoss-redux/selectors/entities/users';
 import {trackEvent} from 'actions/telemetry_actions';
 import checklistImg from 'images/onboarding-checklist.svg';
 import {
@@ -87,15 +87,15 @@ const Button = styled.button<{open: boolean}>(({open}) => {
         background: var(--center-channel-bg);
         border: solid 1px rgba(var(--center-channel-color-rgb), 0.16);
         box-shadow: var(--elevation-3);
-        
+
         i {
             color: rgba(var(--center-channel-color-rgb), 0.56);
         }
-        
+
         &:hover {
             border-color: rgba(var(--center-channel-color-rgb), 0.24);
             box-shadow: var(--elevation-4);
-            
+
             i {
                 color: rgba(var(--center-channel-color-rgb), 0.72)
             }
@@ -133,7 +133,7 @@ const PlayButton = styled.button`
     left: 0;
     right: 0;
     top: 48px;
-  
+
     &:hover {
         border-color: rgba(var(--center-channel-color-rgb), 0.24);
         box-shadow: var(--elevation-4);
@@ -248,8 +248,8 @@ const OnBoardingTaskList = (): JSX.Element => {
                         <>
                             <h1>
                                 <FormattedMessage
-                                    id='next_steps_view.welcomeToMattermost'
-                                    defaultMessage='Welcome to Mattermost'
+                                    id='next_steps_view.welcomeToMatterFOSS'
+                                    defaultMessage='Welcome to MatterFOSS'
                                 />
                             </h1>
                             <p>

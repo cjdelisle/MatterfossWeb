@@ -3,7 +3,7 @@
 
 import React from 'react';
 
-import {BasicUnreadMeta} from 'mattermost-redux/selectors/entities/channels';
+import {BasicUnreadMeta} from 'matterfoss-redux/selectors/entities/channels';
 type Props = BasicUnreadMeta;
 
 export default class NotifyCounts extends React.PureComponent<Props> {

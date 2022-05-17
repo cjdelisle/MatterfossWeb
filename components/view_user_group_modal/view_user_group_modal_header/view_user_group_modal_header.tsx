@@ -7,13 +7,13 @@ import {FormattedMessage} from 'react-intl';
 import {ModalData} from 'types/actions';
 import LocalizedIcon from 'components/localized_icon';
 import {t} from 'utils/i18n';
-import {Group} from 'mattermost-redux/types/groups';
+import {Group} from 'matterfoss-redux/types/groups';
 import {ModalIdentifiers} from 'utils/constants';
 import MenuWrapper from 'components/widgets/menu/menu_wrapper';
 import Menu from 'components/widgets/menu/menu';
 import AddUsersToGroupModal from 'components/add_users_to_group_modal';
 import * as Utils from 'utils/utils.jsx';
-import {ActionResult} from 'mattermost-redux/types/actions';
+import {ActionResult} from 'matterfoss-redux/types/actions';
 import UpdateUserGroupModal from 'components/update_user_group_modal';
 
 export type Props = {

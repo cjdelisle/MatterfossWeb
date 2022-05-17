@@ -235,8 +235,8 @@ var config = {
             path.resolve(__dirname),
         ],
         alias: {
-            'mattermost-redux/test': 'packages/mattermost-redux/test',
-            'mattermost-redux': 'packages/mattermost-redux/src',
+            'matterfoss-redux/test': 'packages/matterfoss-redux/test',
+            'matterfoss-redux': 'packages/matterfoss-redux/src',
             reselect: 'packages/reselect/src',
             superagent: 'node_modules/superagent/lib/client',
         },
@@ -303,10 +303,10 @@ var config = {
         // Generate manifest.json, honouring any configured publicPath. This also handles injecting
         // <link rel="apple-touch-icon" ... /> and <meta name="apple-*" ... /> tags into root.html.
         new WebpackPwaManifest({
-            name: 'Mattermost',
-            short_name: 'Mattermost',
+            name: 'MatterFOSS',
+            short_name: 'MatterFOSS',
             start_url: '..',
-            description: 'Mattermost is an open source, self-hosted Slack-alternative',
+            description: 'MatterFOSS is an open source, self-hosted Slack-alternative',
             background_color: '#ffffff',
             inject: true,
             ios: true,
@@ -383,11 +383,16 @@ if (DEV) {
     config.devtool = 'source-map';
 }
 
+const server_scheme_host_port = process.env.SERVER_SCHEME_HOST_PORT || 'http://localhost:8065'
+const webapp_host = process.env.WEBAPP_HOST || 'localhost'
+
 const env = {};
 if (DEV) {
     env.PUBLIC_PATH = JSON.stringify(publicPath);
     env.RUDDER_KEY = JSON.stringify(process.env.RUDDER_KEY || ''); //eslint-disable-line no-process-env
     env.RUDDER_DATAPLANE_URL = JSON.stringify(process.env.RUDDER_DATAPLANE_URL || ''); //eslint-disable-line no-process-env
+    env.BOT_USERNAME = JSON.stringify(process.env.BOT_USERNAME || ''); //eslint-disable-line no-process-env
+
     if (process.env.MM_LIVE_RELOAD) { //eslint-disable-line no-process-env
         config.plugins.push(new LiveReloadPlugin());
     }
@@ -395,6 +400,7 @@ if (DEV) {
     env.NODE_ENV = JSON.stringify('production');
     env.RUDDER_KEY = JSON.stringify(process.env.RUDDER_KEY || ''); //eslint-disable-line no-process-env
     env.RUDDER_DATAPLANE_URL = JSON.stringify(process.env.RUDDER_DATAPLANE_URL || ''); //eslint-disable-line no-process-env
+    env.BOT_USERNAME = JSON.stringify(process.env.BOT_USERNAME || ''); //eslint-disable-line no-process-env
 }
 
 config.plugins.push(new webpack.DefinePlugin({
@@ -431,11 +437,13 @@ if (targetIsDevServer) {
                     // redirect (root, team routes, etc)
                     return '/static/root.html';
                 },
-                logLevel: 'silent',
-                target: 'http://localhost:8065',
+                logLevel: 'debug',
+                target: server_scheme_host_port,
                 xfwd: true,
                 ws: true,
             }],
+            host: webapp_host,
+            allowedHosts: 'all',
             port: 9005,
             devMiddleware: {
                 writeToDisk: false,

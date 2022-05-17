@@ -6,14 +6,14 @@ import {bindActionCreators, Dispatch} from 'redux';
 
 import {GlobalState} from 'types/store';
 
-import {Channel} from 'mattermost-redux/types/channels';
+import {Channel} from 'matterfoss-redux/types/channels';
 
-import {DispatchFunc, GenericAction} from 'mattermost-redux/types/actions';
+import {DispatchFunc, GenericAction} from 'matterfoss-redux/types/actions';
 
-import {autoUpdateTimezone} from 'mattermost-redux/actions/timezone';
-import {getCurrentChannelId} from 'mattermost-redux/selectors/entities/channels';
-import {getLicense, getConfig} from 'mattermost-redux/selectors/entities/general';
-import {getCurrentUser, shouldShowTermsOfService} from 'mattermost-redux/selectors/entities/users';
+import {autoUpdateTimezone} from 'matterfoss-redux/actions/timezone';
+import {getCurrentChannelId} from 'matterfoss-redux/selectors/entities/channels';
+import {getLicense, getConfig} from 'matterfoss-redux/selectors/entities/general';
+import {getCurrentUser, shouldShowTermsOfService} from 'matterfoss-redux/selectors/entities/users';
 
 import {browserHistory} from 'utils/browser_history';
 import {checkIfMFARequired} from 'utils/route';

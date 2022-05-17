@@ -5,9 +5,9 @@ import React, {memo, useEffect, useState} from 'react';
 import {FormattedMessage} from 'react-intl';
 import {useDispatch, useSelector} from 'react-redux';
 
-import {getFilePublicLink} from 'mattermost-redux/actions/files';
-import {getFilePublicLink as selectFilePublicLink} from 'mattermost-redux/selectors/entities/files';
-import {FileInfo} from 'mattermost-redux/types/files';
+import {getFilePublicLink} from 'matterfoss-redux/actions/files';
+import {getFilePublicLink as selectFilePublicLink} from 'matterfoss-redux/selectors/entities/files';
+import {FileInfo} from 'matterfoss-redux/types/files';
 
 import OverlayTrigger from 'components/overlay_trigger';
 import Tooltip from 'components/tooltip';

@@ -1,0 +1,85 @@
+on:
+  push:
+    tags:
+      - matterfoss-webapp-v*.*.*
+
+jobs:
+  release:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+
+      matrix:
+
+        node-version: [16.4.0]
+
+    steps:
+
+      - name: Set env
+        run: echo "RELEASE_NAME=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
+
+      - name: Create a release
+        uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          prerelease: false
+          automatic_release_tag: ${{ env.RELEASE_NAME }}
+
+      - name: Set release name env
+        run: echo "RELEASE_NAME=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
+
+      - name: Install packages
+        run: sudo apt-get install tar gzip curl bash
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Pre-build dist
+        run: npx webpack
+        env:
+          NODE_ENV: production
+
+      - name: Make archives
+        run: /bin/bash -c "source $GITHUB_WORKSPACE/contrib/github-actions/make_archives.sh"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RELEASE_NAME: ${{ env.RELEASE_NAME }}
+
+      - name: Upload node_modules archive
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ env.RELEASE_NAME }}_node_modules.tar.gz
+          path: ${{ github.workspace }}/${{ env.RELEASE_NAME }}_node_modules.tar.gz
+
+      - name: Upload node_modules archive checksum
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ env.RELEASE_NAME }}_node_modules.tar.gz.SHA256sig
+          path: ${{ github.workspace }}/${{ env.RELEASE_NAME }}_node_modules.tar.gz.SHA256sig
+
+      - name: Upload dist archive
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ env.RELEASE_NAME }}_dist.tar.gz
+          path: ${{ github.workspace }}/${{ env.RELEASE_NAME }}_dist.tar.gz
+
+      - name: Upload dist archive checksum
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ env.RELEASE_NAME }}_dist.tar.gz.SHA256sig
+          path: ${{ github.workspace }}/${{ env.RELEASE_NAME }}_dist.tar.gz.SHA256sig
+
+      - name: Publish dist archive
+        run: /bin/bash -c "source $GITHUB_WORKSPACE/contrib/github-actions/publish.sh"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RELEASE_NAME: ${{ env.RELEASE_NAME }}
+

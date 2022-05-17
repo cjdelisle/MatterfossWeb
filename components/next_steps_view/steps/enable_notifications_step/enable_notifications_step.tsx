@@ -30,7 +30,7 @@ export default function EnableNotificationsStep(props: StepComponentProps) {
                 ),
                 body: Utils.localizeMessage(
                     'next_steps_view.notificationSetup.notficationsEnabledBody',
-                    'This is how notifications from Mattermost will appear',
+                    'This is how notifications from MatterFOSS will appear',
                 ),
                 requireInteraction: false,
                 silent: false,

@@ -107,7 +107,7 @@ Cypress.Commands.add('checkForLDAPError', () => {
     cy.wait(TIMEOUTS.FIVE_SEC);
     return cy.get('body').then((body) => {
         if (body.text().includes('User not registered on AD/LDAP server.')) {
-            cy.findByText('Back to Mattermost').should('exist').and('be.visible').click().wait(TIMEOUTS.FIVE_SEC);
+            cy.findByText('Back to MatterFOSS').should('exist').and('be.visible').click().wait(TIMEOUTS.FIVE_SEC);
             return cy.wrap(true);
         }
         return cy.wrap(false);

@@ -2,7 +2,7 @@
 // See LICENSE.txt for license information.
 
 import {isLicenseExpired, isLicenseExpiring, isLicensePastGracePeriod, isEnterpriseOrE20License} from 'utils/license_utils.jsx';
-import {LicenseSkus} from 'mattermost-redux/types/general';
+import {LicenseSkus} from 'matterfoss-redux/types/general';
 
 describe('license_utils', () => {
     const millisPerDay = 24 * 60 * 60 * 1000;

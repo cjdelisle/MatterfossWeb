@@ -8,22 +8,22 @@ import {
     getChannelByNameAndTeamName,
     getChannelStats,
     selectChannel,
-} from 'mattermost-redux/actions/channels';
-import {logout, loadMe} from 'mattermost-redux/actions/users';
-import {Preferences} from 'mattermost-redux/constants';
-import {getConfig, isPerformanceDebuggingEnabled} from 'mattermost-redux/selectors/entities/general';
-import {getCurrentTeamId, getMyTeams, getTeam, getMyTeamMember, getTeamMemberships} from 'mattermost-redux/selectors/entities/teams';
-import {getBool, isCollapsedThreadsEnabled} from 'mattermost-redux/selectors/entities/preferences';
-import {getCurrentUser, getCurrentUserId} from 'mattermost-redux/selectors/entities/users';
-import {getCurrentChannelStats, getCurrentChannelId, getMyChannelMember, getRedirectChannelNameForTeam, getChannelsNameMapInTeam, getAllDirectChannels, getChannelMessageCount} from 'mattermost-redux/selectors/entities/channels';
-import {appsEnabled} from 'mattermost-redux/selectors/entities/apps';
-import {ChannelTypes} from 'mattermost-redux/action_types';
-import {fetchAppBindings} from 'mattermost-redux/actions/apps';
-import {Channel, ChannelMembership} from 'mattermost-redux/types/channels';
-import {UserProfile} from 'mattermost-redux/types/users';
-import {ActionFunc, DispatchFunc, GetStateFunc} from 'mattermost-redux/types/actions';
-import {Team} from 'mattermost-redux/types/teams';
-import {calculateUnreadCount} from 'mattermost-redux/utils/channel_utils';
+} from 'matterfoss-redux/actions/channels';
+import {logout, loadMe} from 'matterfoss-redux/actions/users';
+import {Preferences} from 'matterfoss-redux/constants';
+import {getConfig, isPerformanceDebuggingEnabled} from 'matterfoss-redux/selectors/entities/general';
+import {getCurrentTeamId, getMyTeams, getTeam, getMyTeamMember, getTeamMemberships} from 'matterfoss-redux/selectors/entities/teams';
+import {getBool, isCollapsedThreadsEnabled} from 'matterfoss-redux/selectors/entities/preferences';
+import {getCurrentUser, getCurrentUserId} from 'matterfoss-redux/selectors/entities/users';
+import {getCurrentChannelStats, getCurrentChannelId, getMyChannelMember, getRedirectChannelNameForTeam, getChannelsNameMapInTeam, getAllDirectChannels, getChannelMessageCount} from 'matterfoss-redux/selectors/entities/channels';
+import {appsEnabled} from 'matterfoss-redux/selectors/entities/apps';
+import {ChannelTypes} from 'matterfoss-redux/action_types';
+import {fetchAppBindings} from 'matterfoss-redux/actions/apps';
+import {Channel, ChannelMembership} from 'matterfoss-redux/types/channels';
+import {UserProfile} from 'matterfoss-redux/types/users';
+import {ActionFunc, DispatchFunc, GetStateFunc} from 'matterfoss-redux/types/actions';
+import {Team} from 'matterfoss-redux/types/teams';
+import {calculateUnreadCount} from 'matterfoss-redux/utils/channel_utils';
 
 import {browserHistory} from 'utils/browser_history';
 import {handleNewPost} from 'actions/post_actions.jsx';

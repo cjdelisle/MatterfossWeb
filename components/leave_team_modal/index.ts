@@ -4,13 +4,13 @@
 import {connect} from 'react-redux';
 import {bindActionCreators, Dispatch} from 'redux';
 
-import {removeUserFromTeam as leaveTeam} from 'mattermost-redux/actions/teams';
+import {removeUserFromTeam as leaveTeam} from 'matterfoss-redux/actions/teams';
 
-import {getMyChannels} from 'mattermost-redux/selectors/entities/channels';
-import {getCurrentTeamId} from 'mattermost-redux/selectors/entities/teams';
-import {getCurrentUserId, getCurrentUser} from 'mattermost-redux/selectors/entities/users';
+import {getMyChannels} from 'matterfoss-redux/selectors/entities/channels';
+import {getCurrentTeamId} from 'matterfoss-redux/selectors/entities/teams';
+import {getCurrentUserId, getCurrentUser} from 'matterfoss-redux/selectors/entities/users';
 
-import {GenericAction} from 'mattermost-redux/types/actions';
+import {GenericAction} from 'matterfoss-redux/types/actions';
 
 import {toggleSideBarRightMenuAction} from 'actions/global_actions';
 

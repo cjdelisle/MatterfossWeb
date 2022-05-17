@@ -10,8 +10,8 @@ import {
     getCurrentUser,
     getUserStatuses,
     getCurrentUserId,
-} from 'mattermost-redux/selectors/entities/users';
-import {getCurrentTeamId} from 'mattermost-redux/selectors/entities/teams';
+} from 'matterfoss-redux/selectors/entities/users';
+import {getCurrentTeamId} from 'matterfoss-redux/selectors/entities/teams';
 import {
     getCurrentChannel,
     isCurrentChannelDefault,
@@ -19,7 +19,7 @@ import {
     isCurrentChannelMuted,
     isCurrentChannelArchived,
     getRedirectChannelNameForTeam,
-} from 'mattermost-redux/selectors/entities/channels';
+} from 'matterfoss-redux/selectors/entities/channels';
 
 import {getPenultimateViewedChannelName} from 'selectors/local_storage';
 

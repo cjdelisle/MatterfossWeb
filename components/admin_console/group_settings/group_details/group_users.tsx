@@ -9,8 +9,8 @@ import GroupUsersRow from 'components/admin_console/group_settings/group_details
 import FormattedMarkdownMessage from 'components/formatted_markdown_message';
 import NextIcon from 'components/widgets/icons/fa_next_icon';
 import PreviousIcon from 'components/widgets/icons/fa_previous_icon';
-import {ActionResult} from 'mattermost-redux/types/actions';
-import {UserProfile} from 'mattermost-redux/types/users';
+import {ActionResult} from 'matterfoss-redux/types/actions';
+import {UserProfile} from 'matterfoss-redux/types/users';
 
 import {getSiteURL} from 'utils/url';
 

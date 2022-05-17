@@ -5,9 +5,9 @@ import React from 'react';
 import {Modal} from 'react-bootstrap';
 import {FormattedMessage} from 'react-intl';
 
-import Permissions from 'mattermost-redux/constants/permissions';
+import Permissions from 'matterfoss-redux/constants/permissions';
 
-import {Team} from 'mattermost-redux/types/teams';
+import {Team} from 'matterfoss-redux/types/teams';
 
 import TeamPermissionGate from 'components/permissions_gates/team_permission_gate';
 import MemberListTeam from 'components/member_list_team';

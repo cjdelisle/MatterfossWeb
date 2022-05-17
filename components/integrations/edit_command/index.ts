@@ -4,12 +4,12 @@
 import {connect} from 'react-redux';
 import {bindActionCreators, Dispatch, ActionCreatorsMapObject} from 'redux';
 
-import {editCommand, getCustomTeamCommands} from 'mattermost-redux/actions/integrations';
-import {getCommands} from 'mattermost-redux/selectors/entities/integrations';
-import {getConfig} from 'mattermost-redux/selectors/entities/general';
-import {GlobalState} from 'mattermost-redux/types/store';
-import {GenericAction, ActionFunc} from 'mattermost-redux/types/actions';
-import {Command} from 'mattermost-redux/types/integrations';
+import {editCommand, getCustomTeamCommands} from 'matterfoss-redux/actions/integrations';
+import {getCommands} from 'matterfoss-redux/selectors/entities/integrations';
+import {getConfig} from 'matterfoss-redux/selectors/entities/general';
+import {GlobalState} from 'matterfoss-redux/types/store';
+import {GenericAction, ActionFunc} from 'matterfoss-redux/types/actions';
+import {Command} from 'matterfoss-redux/types/integrations';
 
 import EditCommand from './edit_command';
 

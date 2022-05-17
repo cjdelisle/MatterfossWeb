@@ -14,10 +14,10 @@ const DataRetentionFeatureDiscovery: React.FC = () => {
         <FeatureDiscovery
             featureName='data_retention'
             titleID='admin.data_retention_feature_discovery.title'
-            titleDefault='Create data retention schedules with Mattermost Enterprise'
+            titleDefault='Create data retention schedules with MatterFOSS Enterprise'
             copyID='admin.data_retention_feature_discovery.copy'
             copyDefault={'Hold on to your data only as long as you need to. Create data retention jobs for select channels and teams to automatically delete disposable data.'}
-            learnMoreURL='https://docs.mattermost.com/administration/data-retention.html'
+            learnMoreURL='https://docs.matterfoss.com/administration/data-retention.html'
             featureDiscoveryImage={<DataRetentionSVG/>}
         />
     );

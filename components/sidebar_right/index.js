@@ -4,7 +4,7 @@
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 
-import {getCurrentChannel} from 'mattermost-redux/selectors/entities/channels';
+import {getCurrentChannel} from 'matterfoss-redux/selectors/entities/channels';
 
 import {setRhsExpanded, showPinnedPosts, showChannelFiles, openRHSSearch, closeRightHandSide, openAtPrevious, updateSearchTerms} from 'actions/views/rhs';
 import {

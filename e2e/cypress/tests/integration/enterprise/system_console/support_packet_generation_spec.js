@@ -31,7 +31,7 @@ describe('Support Packet Generation', () => {
         goToSupportPacketGenerationModal();
 
         // * Verify that the "submit a support ticket." link exist and points to Customer Support Request page
-        cy.findByRole('link', {name: 'submit a support ticket.'}).should('have.attr', 'href').and('include', 'https://support.mattermost.com/hc/en-us/requests/new');
+        cy.findByRole('link', {name: 'submit a support ticket.'}).should('have.attr', 'href').and('include', 'https://support.matterfoss.com/hc/en-us/requests/new');
 
         // * Verify that the "here" link exist and points to Logging admin page
         cy.findByRole('link', {name: 'here'}).should('have.attr', 'href').and('include', '/admin_console/environment/logging');

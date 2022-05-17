@@ -5,7 +5,7 @@ import React from 'react';
 import {FormattedMessage} from 'react-intl';
 import {useSelector} from 'react-redux';
 
-import {getConfig} from 'mattermost-redux/selectors/entities/general';
+import {getConfig} from 'matterfoss-redux/selectors/entities/general';
 
 import {getCurrentLocale} from 'selectors/i18n';
 import {GlobalState} from 'types/store';

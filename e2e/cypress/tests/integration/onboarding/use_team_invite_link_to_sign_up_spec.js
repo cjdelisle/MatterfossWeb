@@ -85,8 +85,8 @@ describe('Onboarding', () => {
 
         cy.wait(TIMEOUTS.HALF_SEC);
 
-        // * Check that 'Mattermost: You are almost done' text should be visible when email hasn't been verified yet
-        cy.findByText('Mattermost: You are almost done').should('be.visible');
+        // * Check that 'MatterFOSS: You are almost done' text should be visible when email hasn't been verified yet
+        cy.findByText('MatterFOSS: You are almost done').should('be.visible');
 
         cy.getRecentEmail(user).then((data) => {
             const {body: expectedBody} = data;
@@ -119,7 +119,7 @@ describe('Onboarding', () => {
             cy.get('#sidebarItem_town-square').should('exist');
         });
 
-        // * Check that the 'Welcome to Mattermost' message is visible
-        cy.findByText('Welcome to Mattermost').should('be.visible').wait(TIMEOUTS.ONE_SEC);
+        // * Check that the 'Welcome to MatterFOSS' message is visible
+        cy.findByText('Welcome to MatterFOSS').should('be.visible').wait(TIMEOUTS.ONE_SEC);
     });
 });

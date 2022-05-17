@@ -3,8 +3,8 @@
 
 import React from 'react';
 
-import {Channel, ChannelMembership} from 'mattermost-redux/types/channels';
-import {Theme} from 'mattermost-redux/types/themes';
+import {Channel, ChannelMembership} from 'matterfoss-redux/types/channels';
+import {Theme} from 'matterfoss-redux/types/themes';
 
 import ChannelHeaderPlug from 'plugins/channel_header_plug/channel_header_plug';
 import {mountWithIntl} from '../../tests/helpers/intl-test-helper';

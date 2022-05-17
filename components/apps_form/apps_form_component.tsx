@@ -7,10 +7,10 @@ import {FormattedMessage, injectIntl, WrappedComponentProps} from 'react-intl';
 
 import {
     checkDialogElementForError, checkIfErrorsMatchElements,
-} from 'mattermost-redux/utils/integration_utils';
-import {AppCallResponse, AppField, AppForm, AppFormValues, AppSelectOption, FormResponseData, AppLookupResponse, AppFormValue} from 'mattermost-redux/types/apps';
-import {DialogElement} from 'mattermost-redux/types/integrations';
-import {AppCallResponseTypes, AppFieldTypes} from 'mattermost-redux/constants/apps';
+} from 'matterfoss-redux/utils/integration_utils';
+import {AppCallResponse, AppField, AppForm, AppFormValues, AppSelectOption, FormResponseData, AppLookupResponse, AppFormValue} from 'matterfoss-redux/types/apps';
+import {DialogElement} from 'matterfoss-redux/types/integrations';
+import {AppCallResponseTypes, AppFieldTypes} from 'matterfoss-redux/constants/apps';
 
 import {DoAppCallResult} from 'types/apps';
 

@@ -2,10 +2,10 @@
 // See LICENSE.txt for license information.
 import {createSelector} from 'reselect';
 
-import {makeGetCategory} from 'mattermost-redux/selectors/entities/preferences';
-import {UserProfile} from 'mattermost-redux/types/users';
+import {makeGetCategory} from 'matterfoss-redux/selectors/entities/preferences';
+import {UserProfile} from 'matterfoss-redux/types/users';
 
-import {getCurrentUser, isFirstAdmin} from 'mattermost-redux/selectors/entities/users';
+import {getCurrentUser, isFirstAdmin} from 'matterfoss-redux/selectors/entities/users';
 
 import {GlobalState} from 'types/store';
 import {RecommendedNextSteps, Preferences} from 'utils/constants';

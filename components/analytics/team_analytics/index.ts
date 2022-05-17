@@ -4,11 +4,11 @@
 import {connect} from 'react-redux';
 import {ActionCreatorsMapObject, bindActionCreators, Dispatch} from 'redux';
 
-import {Action, ActionResult, GenericAction} from 'mattermost-redux/types/actions';
+import {Action, ActionResult, GenericAction} from 'matterfoss-redux/types/actions';
 
-import {getTeams} from 'mattermost-redux/actions/teams';
-import {getProfilesInTeam} from 'mattermost-redux/actions/users';
-import {getTeamsList} from 'mattermost-redux/selectors/entities/teams';
+import {getTeams} from 'matterfoss-redux/actions/teams';
+import {getProfilesInTeam} from 'matterfoss-redux/actions/users';
+import {getTeamsList} from 'matterfoss-redux/selectors/entities/teams';
 
 import {GlobalState} from 'types/store';
 

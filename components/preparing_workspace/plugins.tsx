@@ -131,7 +131,7 @@ const Plugins = (props: Props) => {
                                     a: (chunks: React.ReactNode | React.ReactNodeArray) => (
                                         <strong>
                                             <a
-                                                href='https://mattermost.com/marketplace/'
+                                                href='https://matterfoss.com/marketplace/'
                                                 target='_blank'
                                                 rel='noreferrer'
                                             >

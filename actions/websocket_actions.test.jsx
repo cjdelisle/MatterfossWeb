@@ -5,14 +5,14 @@ import {
     getProfilesAndStatusesForPosts,
     getThreadsForPosts,
     receivedNewPost,
-} from 'mattermost-redux/actions/posts';
-import {ChannelTypes, UserTypes} from 'mattermost-redux/action_types';
+} from 'matterfoss-redux/actions/posts';
+import {ChannelTypes, UserTypes} from 'matterfoss-redux/action_types';
 import {
     getMissingProfilesByIds,
     getStatusesByIds,
     getUser,
-} from 'mattermost-redux/actions/users';
-import {General, WebsocketEvents} from 'mattermost-redux/constants';
+} from 'matterfoss-redux/actions/users';
+import {General, WebsocketEvents} from 'matterfoss-redux/constants';
 
 import {handleNewPost} from 'actions/post_actions';
 import {closeRightHandSide} from 'actions/views/rhs';
@@ -42,19 +42,19 @@ import {
     handleAppsPluginDisabled,
 } from './websocket_actions';
 
-jest.mock('mattermost-redux/actions/posts', () => ({
-    ...jest.requireActual('mattermost-redux/actions/posts'),
+jest.mock('matterfoss-redux/actions/posts', () => ({
+    ...jest.requireActual('matterfoss-redux/actions/posts'),
     getThreadsForPosts: jest.fn(() => ({type: 'GET_THREADS_FOR_POSTS'})),
     getProfilesAndStatusesForPosts: jest.fn(),
 }));
 
-jest.mock('mattermost-redux/actions/users', () => ({
+jest.mock('matterfoss-redux/actions/users', () => ({
     getMissingProfilesByIds: jest.fn(() => ({type: 'GET_MISSING_PROFILES_BY_IDS'})),
     getStatusesByIds: jest.fn(() => ({type: 'GET_STATUSES_BY_IDS'})),
     getUser: jest.fn(() => ({type: 'GET_STATUSES_BY_IDS'})),
 }));
 
-jest.mock('mattermost-redux/actions/channels', () => ({
+jest.mock('matterfoss-redux/actions/channels', () => ({
     getChannelStats: jest.fn(() => ({type: 'GET_CHANNEL_STATS'})),
 }));
 
@@ -753,7 +753,7 @@ describe('handlePluginEnabled/handlePluginDisabled', () => {
     describe('handlePluginEnabled', () => {
         const baseManifest = {
             name: 'Demo Plugin',
-            description: 'This plugin demonstrates the capabilities of a Mattermost plugin.',
+            description: 'This plugin demonstrates the capabilities of a MatterFOSS plugin.',
             version: '0.2.0',
             min_server_version: '5.12.0',
             server: {
@@ -782,7 +782,7 @@ describe('handlePluginEnabled/handlePluginDisabled', () => {
         test('when a plugin is enabled', () => {
             const manifest = {
                 ...baseManifest,
-                id: 'com.mattermost.demo-plugin',
+                id: 'com.matterfoss.demo-plugin',
             };
             const initialize = jest.fn();
             window.plugins = {
@@ -827,7 +827,7 @@ describe('handlePluginEnabled/handlePluginDisabled', () => {
         test('when a plugin is upgraded', () => {
             const manifest = {
                 ...baseManifest,
-                id: 'com.mattermost.demo-2-plugin',
+                id: 'com.matterfoss.demo-2-plugin',
             };
             const initialize = jest.fn();
             window.plugins = {
@@ -907,7 +907,7 @@ describe('handlePluginEnabled/handlePluginDisabled', () => {
     describe('handlePluginDisabled', () => {
         const baseManifest = {
             name: 'Demo Plugin',
-            description: 'This plugin demonstrates the capabilities of a Mattermost plugin.',
+            description: 'This plugin demonstrates the capabilities of a MatterFOSS plugin.',
             version: '0.2.0',
             min_server_version: '5.12.0',
             server: {
@@ -936,7 +936,7 @@ describe('handlePluginEnabled/handlePluginDisabled', () => {
         test('when a plugin is disabled', () => {
             const manifest = {
                 ...baseManifest,
-                id: 'com.mattermost.demo-3-plugin',
+                id: 'com.matterfoss.demo-3-plugin',
             };
             const initialize = jest.fn();
             window.plugins = {

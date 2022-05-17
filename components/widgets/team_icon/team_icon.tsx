@@ -4,7 +4,7 @@
 import React from 'react';
 import classNames from 'classnames';
 
-import {Team} from 'mattermost-redux/types/teams';
+import {Team} from 'matterfoss-redux/types/teams';
 
 import {imageURLForTeam} from 'utils/utils.jsx';
 

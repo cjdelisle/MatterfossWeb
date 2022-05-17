@@ -4,14 +4,14 @@
 import {useEffect} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 
-import {DispatchFunc} from 'mattermost-redux/types/actions';
-import {getStandardAnalytics} from 'mattermost-redux/actions/admin';
-import {PreferenceType} from 'mattermost-redux/types/preferences';
+import {DispatchFunc} from 'matterfoss-redux/types/actions';
+import {getStandardAnalytics} from 'matterfoss-redux/actions/admin';
+import {PreferenceType} from 'matterfoss-redux/types/preferences';
 
-import {getConfig, getLicense} from 'mattermost-redux/selectors/entities/general';
-import {makeGetCategory} from 'mattermost-redux/selectors/entities/preferences';
-import {getCurrentUser, isCurrentUserSystemAdmin} from 'mattermost-redux/selectors/entities/users';
-import {savePreferences} from 'mattermost-redux/actions/preferences';
+import {getConfig, getLicense} from 'matterfoss-redux/selectors/entities/general';
+import {makeGetCategory} from 'matterfoss-redux/selectors/entities/preferences';
+import {getCurrentUser, isCurrentUserSystemAdmin} from 'matterfoss-redux/selectors/entities/users';
+import {savePreferences} from 'matterfoss-redux/actions/preferences';
 
 import {openModal} from 'actions/views/modals';
 import {GlobalState} from 'types/store';

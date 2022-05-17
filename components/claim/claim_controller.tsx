@@ -4,7 +4,7 @@
 import React from 'react';
 import {Route, Switch} from 'react-router-dom';
 
-import {ActionFunc} from 'mattermost-redux/types/actions';
+import {ActionFunc} from 'matterfoss-redux/types/actions';
 
 import logoImage from 'images/logo.png';
 import BackButton from 'components/common/back_button';

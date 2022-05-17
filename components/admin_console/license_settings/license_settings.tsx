@@ -7,9 +7,9 @@
 import React from 'react';
 import {FormattedDate, FormattedTime} from 'react-intl';
 
-import {ClientConfig, ClientLicense} from 'mattermost-redux/types/config';
-import {ActionResult} from 'mattermost-redux/types/actions';
-import {StatusOK} from 'mattermost-redux/types/client4';
+import {ClientConfig, ClientLicense} from 'matterfoss-redux/types/config';
+import {ActionResult} from 'matterfoss-redux/types/actions';
+import {StatusOK} from 'matterfoss-redux/types/client4';
 
 import {isLicenseExpired, isLicenseExpiring, isTrialLicense, isEnterpriseOrE20License} from 'utils/license_utils';
 
@@ -339,7 +339,7 @@ export default class LicenseSettings extends React.PureComponent<Props, State> {
             );
         } else {
             // Note: DO NOT LOCALISE THESE STRINGS. Legally we can not since the license is in English.
-            // This is Mattermost Starter (Already downloaded the binary but no license has been set, or ended the trial period)
+            // This is MatterFOSS Starter (Already downloaded the binary but no license has been set, or ended the trial period)
             leftPanel = (
                 <StarterLeftPanel
                     openEELicenseModal={this.openEELicenseModal}

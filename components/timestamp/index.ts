@@ -3,11 +3,11 @@
 
 import {connect} from 'react-redux';
 
-import {getCurrentUserId} from 'mattermost-redux/selectors/entities/users';
-import {getUserTimezone} from 'mattermost-redux/selectors/entities/timezone';
-import {getUserCurrentTimezone} from 'mattermost-redux/utils/timezone_utils';
-import {getBool} from 'mattermost-redux/selectors/entities/preferences';
-import {UserTimezone} from 'mattermost-redux/types/users';
+import {getCurrentUserId} from 'matterfoss-redux/selectors/entities/users';
+import {getUserTimezone} from 'matterfoss-redux/selectors/entities/timezone';
+import {getUserCurrentTimezone} from 'matterfoss-redux/utils/timezone_utils';
+import {getBool} from 'matterfoss-redux/selectors/entities/preferences';
+import {UserTimezone} from 'matterfoss-redux/types/users';
 
 import {areTimezonesEnabledAndSupported} from 'selectors/general';
 

@@ -3,7 +3,7 @@
 
 import React from 'react';
 
-import {Channel} from 'mattermost-redux/types/channels';
+import {Channel} from 'matterfoss-redux/types/channels';
 
 import Constants from 'utils/constants';
 import * as Utils from 'utils/utils.jsx';

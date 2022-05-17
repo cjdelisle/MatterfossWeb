@@ -20,7 +20,7 @@ import {browserHistory} from 'utils/browser_history';
 
 import type {PropsFromRedux} from './index';
 
-const askTheCommunityUrl = 'https://mattermost.com/pl/default-ask-mattermost-community/';
+const askTheCommunityUrl = 'https://matterfoss.com/pl/default-ask-matterfoss-community/';
 
 type Props = WrappedComponentProps & PropsFromRedux & {
     location: {

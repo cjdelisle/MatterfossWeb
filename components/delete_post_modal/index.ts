@@ -5,9 +5,9 @@ import {ActionCreatorsMapObject, bindActionCreators, Dispatch} from 'redux';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 
-import {ActionFunc} from 'mattermost-redux/types/actions';
-import {Post} from 'mattermost-redux/types/posts';
-import {makeGetCommentCountForPost} from 'mattermost-redux/selectors/entities/posts';
+import {ActionFunc} from 'matterfoss-redux/types/actions';
+import {Post} from 'matterfoss-redux/types/posts';
+import {makeGetCommentCountForPost} from 'matterfoss-redux/selectors/entities/posts';
 
 import {GlobalState} from 'types/store';
 import {deleteAndRemovePost} from 'actions/post_actions.jsx';

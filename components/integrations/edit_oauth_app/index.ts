@@ -7,12 +7,12 @@
 import {connect} from 'react-redux';
 import {bindActionCreators, Dispatch, ActionCreatorsMapObject} from 'redux';
 
-import {GlobalState} from 'mattermost-redux/types/store';
-import {getOAuthApp, editOAuthApp} from 'mattermost-redux/actions/integrations';
-import {getConfig} from 'mattermost-redux/selectors/entities/general';
+import {GlobalState} from 'matterfoss-redux/types/store';
+import {getOAuthApp, editOAuthApp} from 'matterfoss-redux/actions/integrations';
+import {getConfig} from 'matterfoss-redux/selectors/entities/general';
 
-import {ActionFunc, ActionResult} from 'mattermost-redux/types/actions';
-import {OAuthApp} from 'mattermost-redux/types/integrations';
+import {ActionFunc, ActionResult} from 'matterfoss-redux/types/actions';
+import {OAuthApp} from 'matterfoss-redux/types/integrations';
 
 import EditOAuthApp from './edit_oauth_app';
 

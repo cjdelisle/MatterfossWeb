@@ -17,9 +17,9 @@ import {
     IntegrationTypes,
     PreferenceTypes,
     AppsTypes,
-} from 'mattermost-redux/action_types';
-import {WebsocketEvents, General, Permissions, Preferences} from 'mattermost-redux/constants';
-import {addChannelToInitialCategory, fetchMyCategories, receivedCategoryOrder} from 'mattermost-redux/actions/channel_categories';
+} from 'matterfoss-redux/action_types';
+import {WebsocketEvents, General, Permissions, Preferences} from 'matterfoss-redux/constants';
+import {addChannelToInitialCategory, fetchMyCategories, receivedCategoryOrder} from 'matterfoss-redux/actions/channel_categories';
 import {
     getChannelAndMyMember,
     getMyChannelMember,
@@ -27,12 +27,12 @@ import {
     viewChannel,
     markChannelAsRead,
     getChannelMemberCountsByGroup,
-} from 'mattermost-redux/actions/channels';
-import {getCloudSubscription, getSubscriptionStats} from 'mattermost-redux/actions/cloud';
-import {loadRolesIfNeeded} from 'mattermost-redux/actions/roles';
+} from 'matterfoss-redux/actions/channels';
+import {getCloudSubscription, getSubscriptionStats} from 'matterfoss-redux/actions/cloud';
+import {loadRolesIfNeeded} from 'matterfoss-redux/actions/roles';
 
-import {getBool, isCollapsedThreadsEnabled} from 'mattermost-redux/selectors/entities/preferences';
-import {getThread, getThreads} from 'mattermost-redux/selectors/entities/threads';
+import {getBool, isCollapsedThreadsEnabled} from 'matterfoss-redux/selectors/entities/preferences';
+import {getThread, getThreads} from 'matterfoss-redux/selectors/entities/threads';
 import {
     getThread as fetchThread,
     getThreads as fetchThreads,
@@ -43,9 +43,9 @@ import {
     handleAllThreadsInChannelMarkedRead,
     updateThreadRead,
     decrementThreadCounts,
-} from 'mattermost-redux/actions/threads';
+} from 'matterfoss-redux/actions/threads';
 
-import {setServerVersion, getClientConfig} from 'mattermost-redux/actions/general';
+import {setServerVersion, getClientConfig} from 'matterfoss-redux/actions/general';
 import {
     getCustomEmojiForReaction,
     getPosts,
@@ -55,21 +55,23 @@ import {
     postDeleted,
     receivedNewPost,
     receivedPost,
-} from 'mattermost-redux/actions/posts';
-import {clearErrors, logError} from 'mattermost-redux/actions/errors';
+} from 'matterfoss-redux/actions/posts';
+import {clearErrors, logError} from 'matterfoss-redux/actions/errors';
 
-import * as TeamActions from 'mattermost-redux/actions/teams';
+import * as TeamActions from 'matterfoss-redux/actions/teams';
 import {
     checkForModifiedUsers,
     getMissingProfilesByIds,
     getStatusesByIds,
     getUser as loadUser,
-} from 'mattermost-redux/actions/users';
-import {removeNotVisibleUsers} from 'mattermost-redux/actions/websocket';
-import {Client4} from 'mattermost-redux/client';
-import {getCurrentUser, getCurrentUserId, getStatusForUserId, getUser, getIsManualStatusForUserId, isCurrentUserSystemAdmin} from 'mattermost-redux/selectors/entities/users';
-import {getMyTeams, getCurrentRelativeTeamUrl, getCurrentTeamId, getCurrentTeamUrl, getTeam} from 'mattermost-redux/selectors/entities/teams';
-import {getConfig, getLicense, isPerformanceDebuggingEnabled} from 'mattermost-redux/selectors/entities/general';
+} from 'matterfoss-redux/actions/users';
+import {removeNotVisibleUsers} from 'matterfoss-redux/actions/websocket';
+import {Client4} from 'matterfoss-redux/client';
+import {getCurrentUser, getCurrentUserId, getStatusForUserId, getUser, getIsManualStatusForUserId, isCurrentUserSystemAdmin,
+    makeSearchProfilesMatchingWithTerm
+} from 'matterfoss-redux/selectors/entities/users';
+import {getMyTeams, getCurrentRelativeTeamUrl, getCurrentTeamId, getCurrentTeamUrl, getTeam} from 'matterfoss-redux/selectors/entities/teams';
+import {getConfig, getLicense, isPerformanceDebuggingEnabled} from 'matterfoss-redux/selectors/entities/general';
 import {
     getChannel,
     getChannelMembersInChannels,
@@ -77,13 +79,17 @@ import {
     getCurrentChannel,
     getCurrentChannelId,
     getRedirectChannelNameForTeam,
-} from 'mattermost-redux/selectors/entities/channels';
-import {getPost, getMostRecentPostIdInChannel} from 'mattermost-redux/selectors/entities/posts';
-import {haveISystemPermission, haveITeamPermission} from 'mattermost-redux/selectors/entities/roles';
-import {appsFeatureFlagEnabled} from 'mattermost-redux/selectors/entities/apps';
-import {getStandardAnalytics} from 'mattermost-redux/actions/admin';
+    getAllDirectChannelIds,
+    getMyChannelMemberships,
+    getChannelsInCurrentTeam,
+    getDirectAndGroupChannels, getChannelMessageCount
+} from 'matterfoss-redux/selectors/entities/channels';
+import {getPost, getMostRecentPostIdInChannel} from 'matterfoss-redux/selectors/entities/posts';
+import {haveISystemPermission, haveITeamPermission} from 'matterfoss-redux/selectors/entities/roles';
+import {appsFeatureFlagEnabled} from 'matterfoss-redux/selectors/entities/apps';
+import {getStandardAnalytics} from 'matterfoss-redux/actions/admin';
 
-import {fetchAppBindings, fetchRHSAppsBindings} from 'mattermost-redux/actions/apps';
+import {fetchAppBindings, fetchRHSAppsBindings} from 'matterfoss-redux/actions/apps';
 
 import {getSelectedChannelId, getSelectedPost} from 'selectors/rhs';
 import {isThreadOpen, isThreadManuallyUnread} from 'selectors/views/threads';
@@ -97,7 +103,7 @@ import {updateThreadLastOpened} from 'actions/views/threads';
 import {browserHistory} from 'utils/browser_history';
 import {loadChannelsForCurrentUser} from 'actions/channel_actions.jsx';
 import {loadCustomEmojisIfNeeded} from 'actions/emoji_actions';
-import {redirectUserToDefaultTeam} from 'actions/global_actions';
+import {getTeamRedirectChannelIfIsAccesible, redirectUserToDefaultTeam} from 'actions/global_actions';
 import {handleNewPost} from 'actions/post_actions.jsx';
 import * as StatusActions from 'actions/status_actions.jsx';
 import {loadProfilesForSidebar} from 'actions/user_actions.jsx';
@@ -106,9 +112,17 @@ import WebSocketClient from 'client/web_websocket_client.jsx';
 import {loadPlugin, loadPluginsIfNecessary, removePlugin} from 'plugins';
 import {ActionTypes, Constants, AnnouncementBarMessages, SocketEvents, UserStatuses, ModalIdentifiers, WarnMetricTypes} from 'utils/constants';
 import {getSiteURL} from 'utils/url';
-import {isGuest} from 'mattermost-redux/utils/user_utils';
+import {isGuest} from 'matterfoss-redux/utils/user_utils';
+
+import {getCurrentLocale} from "../selectors/i18n";
+import {filterAndSortTeamsByDisplayName} from "../utils/team_utils";
+import * as ChannelActions from "matterfoss-redux/actions/channels";
+import {calculateUnreadCount} from "matterfoss-redux/utils/channel_utils";
+
 import RemovedFromChannelModal from 'components/removed_from_channel_modal';
 import InteractiveDialog from 'components/interactive_dialog';
+import {goToDirectChannelByUserIds} from "../components/channel_layout/channel_identifier_router/actions";
+const searchProfilesMatchingWithTerm = makeSearchProfilesMatchingWithTerm();
 
 const dispatch = store.dispatch;
 const getState = store.getState;
@@ -309,11 +323,81 @@ function handleClose(failCount) {
     ]));
 }
 
+async function handleWelcomeMessage() {
+    const botIdentifier = process.env.BOT_USERNAME || '';
+    const isBotIdentified = botIdentifier.length === 0;
+
+    if (isBotIdentified) {
+        return false;
+    }
+
+    const state = getState();
+    const currentUser = getCurrentUser(state);
+
+    getChannelsInCurrentTeam(state).concat(getDirectAndGroupChannels(state));
+    await dispatch(ChannelActions.fetchMyChannelsAndMembers(getCurrentTeamId(state)));
+
+    const users = Object.assign([], searchProfilesMatchingWithTerm(state, botIdentifier, false));
+    if (users.length === 0) {
+        return false;
+    }
+
+    // Find bot among users matching its identifier
+    const bot = users[0];
+
+    const locale = getCurrentLocale(state);
+    let myTeams = getMyTeams(state);
+
+    const directChannelIds = getAllDirectChannelIds(state);
+    const botDirectMessageChannelName = `${currentUser.id}__${bot.id}`;
+
+    // Assuming we've not switched to the bot direct message channel before
+    if (getCurrentChannel(store.getState()).name === botDirectMessageChannelName) {
+        return false;
+    }
+
+    for (const id of directChannelIds) {
+        const channel = getChannel(state, id);
+
+        const messageCount = getChannelMessageCount(state, channel.id);
+        const member = getMyChannelMember(channel.id);
+        const collapsedThreads = isCollapsedThreadsEnabled(state);
+
+        // Figuring if there are unread messages in the bot direct message channel
+        let {showUnread} = calculateUnreadCount(messageCount, member, collapsedThreads);
+
+        if (showUnread && channel.name === botDirectMessageChannelName) {
+            myTeams = filterAndSortTeamsByDisplayName(myTeams, locale);
+            for (const myTeam of myTeams) {
+                const channel = await getTeamRedirectChannelIfIsAccesible(currentUser, myTeam); // eslint-disable-line no-await-in-loop
+                if (channel) {
+                    // Switch channels
+                    await dispatch(goToDirectChannelByUserIds(
+                        {
+                            params: {
+                                team: myTeam.name,
+                                identifier: `${currentUser.id}__${bot.id}`, //eslint-disable-line no-process-env
+                                path: '/',
+                            },
+                            url: '',
+                        },
+                        browserHistory
+                    ));
+                    return true;
+                }
+            }
+        }
+    }
+
+    return false
+}
+
 export function handleEvent(msg) {
     switch (msg.event) {
     case SocketEvents.POSTED:
     case SocketEvents.EPHEMERAL_MESSAGE:
         handleNewPostEventDebounced(msg);
+        handleWelcomeMessage();
         break;
 
     case SocketEvents.POST_EDITED:
@@ -450,6 +534,7 @@ export function handleEvent(msg) {
 
     case SocketEvents.CHANNEL_VIEWED:
         handleChannelViewedEvent(msg);
+        handleWelcomeMessage();
         break;
 
     case SocketEvents.PLUGIN_ENABLED:
@@ -1049,7 +1134,7 @@ export function handleUserRemovedEvent(msg) {
 export async function handleUserUpdatedEvent(msg) {
     // This websocket event is sent to all non-guest users on the server, so be careful requesting data from the server
     // in response to it. That can overwhelm the server if every connected user makes such a request at the same time.
-    // See https://mattermost.atlassian.net/browse/MM-40050 for more information.
+    // See https://matterfoss.atlassian.net/browse/MM-40050 for more information.
 
     const state = getState();
     const currentUser = getCurrentUser(state);

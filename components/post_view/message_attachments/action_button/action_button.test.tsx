@@ -4,9 +4,9 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 
-import {Theme} from 'mattermost-redux/types/themes';
-import {changeOpacity} from 'mattermost-redux/utils/theme_utils';
-import {Preferences} from 'mattermost-redux/constants';
+import {Theme} from 'matterfoss-redux/types/themes';
+import {changeOpacity} from 'matterfoss-redux/utils/theme_utils';
+import {Preferences} from 'matterfoss-redux/constants';
 
 import ActionButton from 'components/post_view/message_attachments/action_button/action_button';
 

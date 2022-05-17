@@ -4,10 +4,10 @@
 import {connect, ConnectedProps} from 'react-redux';
 import {bindActionCreators, Dispatch} from 'redux';
 
-import {makeGetFilesForPost} from 'mattermost-redux/selectors/entities/files';
-import {getConfig} from 'mattermost-redux/selectors/entities/general';
-import {Post} from 'mattermost-redux/types/posts';
-import {GenericAction} from 'mattermost-redux/types/actions';
+import {makeGetFilesForPost} from 'matterfoss-redux/selectors/entities/files';
+import {getConfig} from 'matterfoss-redux/selectors/entities/general';
+import {Post} from 'matterfoss-redux/types/posts';
+import {GenericAction} from 'matterfoss-redux/types/actions';
 
 import {GlobalState} from 'types/store';
 

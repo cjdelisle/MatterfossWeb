@@ -3,7 +3,7 @@
 
 import marked from 'marked';
 
-import {getConfig} from 'mattermost-redux/selectors/entities/general';
+import {getConfig} from 'matterfoss-redux/selectors/entities/general';
 
 import store from 'stores/redux_store.jsx';
 

@@ -4,7 +4,7 @@
 import React from 'react';
 import {mount} from 'enzyme';
 
-import {Preferences} from 'mattermost-redux/constants';
+import {Preferences} from 'matterfoss-redux/constants';
 import {TestHelper} from 'utils/test_helper';
 
 import {mockStore} from 'tests/test_store';

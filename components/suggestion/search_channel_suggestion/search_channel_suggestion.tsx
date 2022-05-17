@@ -2,14 +2,14 @@
 // See LICENSE.txt for license information.
 import React from 'react';
 
-import {getUserIdFromChannelName} from 'mattermost-redux/utils/channel_utils';
+import {getUserIdFromChannelName} from 'matterfoss-redux/utils/channel_utils';
 import {imageURLForUser} from 'utils/utils.jsx';
 import Constants from 'utils/constants';
 import Avatar from 'components/widgets/users/avatar';
 import BotBadge from 'components/widgets/badges/bot_badge';
 import Suggestion from '../suggestion';
 
-import {Channel} from 'mattermost-redux/types/channels';
+import {Channel} from 'matterfoss-redux/types/channels';
 
 function itemToName(item: Channel, currentUser: string): {icon: React.ReactElement; name: string; description: string} | null {
     if (item.type === Constants.DM_CHANNEL) {

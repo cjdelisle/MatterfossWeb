@@ -11,12 +11,12 @@ import Trending from 'components/gif_picker/components/Trending';
 import constants from 'components/gif_picker/utils/constants';
 
 export const appProps = {
-    appName: constants.appName.mattermost,
-    basePath: '/mattermost',
+    appName: constants.appName.matterfoss,
+    basePath: '/matterfoss',
     itemTapType: constants.ItemTapAction.SHARE,
     appClassName: 'gfycat',
-    shareEvent: 'shareMattermost',
-    appId: 'mattermostwebviews',
+    shareEvent: 'shareMatterFOSS',
+    appId: 'matterfosswebviews',
     enableHistory: true,
     header: {
         tabs: [constants.Tab.TRENDING, constants.Tab.REACTIONS],

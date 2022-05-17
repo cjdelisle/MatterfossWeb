@@ -4,21 +4,21 @@
 import {connect} from 'react-redux';
 import {bindActionCreators, Dispatch} from 'redux';
 
-import {getChannel, getDirectTeammate} from 'mattermost-redux/selectors/entities/channels';
-import {getConfig} from 'mattermost-redux/selectors/entities/general';
-import {makeGetCommentCountForPost} from 'mattermost-redux/selectors/entities/posts';
+import {getChannel, getDirectTeammate} from 'matterfoss-redux/selectors/entities/channels';
+import {getConfig} from 'matterfoss-redux/selectors/entities/general';
+import {makeGetCommentCountForPost} from 'matterfoss-redux/selectors/entities/posts';
 
 import {
     getMyPreferences,
     isCollapsedThreadsEnabled,
-} from 'mattermost-redux/selectors/entities/preferences';
-import {getCurrentTeam, getTeam, getTeamMemberships} from 'mattermost-redux/selectors/entities/teams';
-import {getUser} from 'mattermost-redux/selectors/entities/users';
+} from 'matterfoss-redux/selectors/entities/preferences';
+import {getCurrentTeam, getTeam, getTeamMemberships} from 'matterfoss-redux/selectors/entities/teams';
+import {getUser} from 'matterfoss-redux/selectors/entities/users';
 
-import {GenericAction} from 'mattermost-redux/types/actions';
-import {Post} from 'mattermost-redux/types/posts';
+import {GenericAction} from 'matterfoss-redux/types/actions';
+import {Post} from 'matterfoss-redux/types/posts';
 
-import {isPostFlagged} from 'mattermost-redux/utils/post_utils';
+import {isPostFlagged} from 'matterfoss-redux/utils/post_utils';
 
 import {
     closeRightHandSide,
@@ -34,7 +34,7 @@ import {GlobalState} from 'types/store';
 
 import {getDisplayNameByUser} from 'utils/utils.jsx';
 
-import {General} from 'mattermost-redux/constants';
+import {General} from 'matterfoss-redux/constants';
 
 import {RHSStates} from 'utils/constants.jsx';
 import {getIsPostBeingEditedInRHS} from '../../selectors/posts';

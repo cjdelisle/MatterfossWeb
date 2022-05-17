@@ -6,41 +6,41 @@ import {ActionCreatorsMapObject, bindActionCreators, Dispatch} from 'redux';
 
 import {GlobalState} from 'types/store/index.js';
 
-import {Post} from 'mattermost-redux/types/posts.js';
+import {Post} from 'matterfoss-redux/types/posts.js';
 
-import {FileInfo} from 'mattermost-redux/types/files.js';
+import {FileInfo} from 'matterfoss-redux/types/files.js';
 
-import {ActionResult} from 'mattermost-redux/types/actions.js';
+import {ActionResult} from 'matterfoss-redux/types/actions.js';
 
-import {CommandArgs} from 'mattermost-redux/types/integrations.js';
+import {CommandArgs} from 'matterfoss-redux/types/integrations.js';
 
 import {PostDraft} from 'types/store/rhs.js';
 
 import {ModalData} from 'types/actions.js';
 
-import {getConfig, getLicense} from 'mattermost-redux/selectors/entities/general';
-import {getCurrentTeamId} from 'mattermost-redux/selectors/entities/teams';
+import {getConfig, getLicense} from 'matterfoss-redux/selectors/entities/general';
+import {getCurrentTeamId} from 'matterfoss-redux/selectors/entities/teams';
 
-import {getCurrentChannel, getCurrentChannelStats, getChannelMemberCountsByGroup as selectChannelMemberCountsByGroup} from 'mattermost-redux/selectors/entities/channels';
-import {getCurrentUserId, getStatusForUserId, getUser} from 'mattermost-redux/selectors/entities/users';
-import {haveICurrentChannelPermission} from 'mattermost-redux/selectors/entities/roles';
-import {getChannelTimezones, getChannelMemberCountsByGroup} from 'mattermost-redux/actions/channels';
-import {get, getInt, getBool, isCustomGroupsEnabled} from 'mattermost-redux/selectors/entities/preferences';
-import {PreferenceType} from 'mattermost-redux/types/preferences';
-import {savePreferences} from 'mattermost-redux/actions/preferences';
+import {getCurrentChannel, getCurrentChannelStats, getChannelMemberCountsByGroup as selectChannelMemberCountsByGroup} from 'matterfoss-redux/selectors/entities/channels';
+import {getCurrentUserId, getStatusForUserId, getUser} from 'matterfoss-redux/selectors/entities/users';
+import {haveICurrentChannelPermission} from 'matterfoss-redux/selectors/entities/roles';
+import {getChannelTimezones, getChannelMemberCountsByGroup} from 'matterfoss-redux/actions/channels';
+import {get, getInt, getBool, isCustomGroupsEnabled} from 'matterfoss-redux/selectors/entities/preferences';
+import {PreferenceType} from 'matterfoss-redux/types/preferences';
+import {savePreferences} from 'matterfoss-redux/actions/preferences';
 import {
     getCurrentUsersLatestPost,
     getLatestReplyablePostId,
     makeGetMessageInHistoryItem,
-} from 'mattermost-redux/selectors/entities/posts';
-import {getAssociatedGroupsForReferenceByMention} from 'mattermost-redux/selectors/entities/groups';
+} from 'matterfoss-redux/selectors/entities/posts';
+import {getAssociatedGroupsForReferenceByMention} from 'matterfoss-redux/selectors/entities/groups';
 import {
     addMessageIntoHistory,
     moveHistoryIndexBack,
     moveHistoryIndexForward,
     removeReaction,
-} from 'mattermost-redux/actions/posts';
-import {Permissions, Posts, Preferences as PreferencesRedux} from 'mattermost-redux/constants';
+} from 'matterfoss-redux/actions/posts';
+import {Permissions, Posts, Preferences as PreferencesRedux} from 'matterfoss-redux/constants';
 
 import {connectionErrorCount} from 'selectors/views/system';
 

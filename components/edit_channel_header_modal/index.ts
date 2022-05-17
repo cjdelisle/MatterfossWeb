@@ -3,11 +3,11 @@
 import {ActionCreatorsMapObject, bindActionCreators, Dispatch} from 'redux';
 import {connect} from 'react-redux';
 
-import {ActionFunc, ActionResult, GenericAction} from 'mattermost-redux/types/actions';
-import {Channel} from 'mattermost-redux/types/channels';
-import {getBool} from 'mattermost-redux/selectors/entities/preferences';
-import {patchChannel} from 'mattermost-redux/actions/channels';
-import {Preferences} from 'mattermost-redux/constants';
+import {ActionFunc, ActionResult, GenericAction} from 'matterfoss-redux/types/actions';
+import {Channel} from 'matterfoss-redux/types/channels';
+import {getBool} from 'matterfoss-redux/selectors/entities/preferences';
+import {patchChannel} from 'matterfoss-redux/actions/channels';
+import {Preferences} from 'matterfoss-redux/constants';
 import {Constants} from 'utils/constants';
 import {isFeatureEnabled} from 'utils/utils';
 

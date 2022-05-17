@@ -6,7 +6,7 @@ import {FormattedMessage} from 'react-intl';
 
 import desktopImg from 'images/deep-linking/deeplinking-desktop-img.png';
 import mobileImg from 'images/deep-linking/deeplinking-mobile-img.png';
-import MattermostLogoSvg from 'images/logo.svg';
+import MatterFOSSLogoSvg from 'images/logo.svg';
 import FormattedMarkdownMessage from 'components/formatted_markdown_message';
 import CheckboxCheckedIcon from 'components/widgets/icons/checkbox_checked_icon';
 import BrowserStore from 'stores/browser_store';
@@ -45,7 +45,7 @@ export default class LinkingLandingPage extends PureComponent<Props, State> {
             rememberChecked: false,
             redirectPage: false,
             location,
-            nativeLocation: location.replace(/^(https|http)/, 'mattermost'),
+            nativeLocation: location.replace(/^(https|http)/, 'matterfoss'),
             brandImageError: false,
             navigating: false,
         };
@@ -58,7 +58,7 @@ export default class LinkingLandingPage extends PureComponent<Props, State> {
     componentDidMount() {
         Utils.applyTheme(this.props.defaultTheme);
         if (this.checkLandingPreferenceApp()) {
-            this.openMattermostApp();
+            this.openMatterFOSSApp();
         }
 
         window.addEventListener('beforeunload', this.clearLandingPreferenceIfNotChecked);
@@ -102,7 +102,7 @@ export default class LinkingLandingPage extends PureComponent<Props, State> {
 
         switch (pref) {
         case LandingPreferenceTypes.MATTERMOSTAPP:
-            BrowserStore.setLandingPreferenceToMattermostApp(this.props.siteUrl);
+            BrowserStore.setLandingPreferenceToMatterFOSSApp(this.props.siteUrl);
             break;
         case LandingPreferenceTypes.BROWSER:
             BrowserStore.setLandingPreferenceToBrowser(this.props.siteUrl);
@@ -112,7 +112,7 @@ export default class LinkingLandingPage extends PureComponent<Props, State> {
         }
     }
 
-    openMattermostApp = () => {
+    openMatterFOSSApp = () => {
         this.setPreference(LandingPreferenceTypes.MATTERMOSTAPP);
         this.setState({redirectPage: true});
         window.location.href = this.state.nativeLocation;
@@ -271,7 +271,7 @@ export default class LinkingLandingPage extends PureComponent<Props, State> {
         let openingLink = (
             <FormattedMessage
                 id='get_app.openingLink'
-                defaultMessage='Opening link in Mattermost...'
+                defaultMessage='Opening link in MatterFOSS...'
             />
         );
         if (this.props.enableCustomBrand) {
@@ -280,7 +280,7 @@ export default class LinkingLandingPage extends PureComponent<Props, State> {
                     id='get_app.openingLinkWhiteLabel'
                     defaultMessage='Opening link in {appName}...'
                     values={{
-                        appName: this.props.siteName || 'Mattermost',
+                        appName: this.props.siteName || 'MatterFOSS',
                     }}
                 />
             );
@@ -315,7 +315,7 @@ export default class LinkingLandingPage extends PureComponent<Props, State> {
                 id='get_app.ifNothingPrompts'
                 defaultMessage='You can view {siteName} in the desktop app or continue in your web browser.'
                 values={{
-                    siteName: this.props.enableCustomBrand ? '' : ' Mattermost',
+                    siteName: this.props.enableCustomBrand ? '' : ' MatterFOSS',
                 }}
             />
         );
@@ -325,7 +325,7 @@ export default class LinkingLandingPage extends PureComponent<Props, State> {
                     id='get_app.ifNothingPromptsMobile'
                     defaultMessage='You can view {siteName} in the mobile app or continue in your web browser.'
                     values={{
-                        siteName: this.props.enableCustomBrand ? '' : ' Mattermost',
+                        siteName: this.props.enableCustomBrand ? '' : ' MatterFOSS',
                     }}
                 />
             );
@@ -402,7 +402,7 @@ export default class LinkingLandingPage extends PureComponent<Props, State> {
         let header = (
             <div className='get-app__header'>
                 <img
-                    src={MattermostLogoSvg}
+                    src={MatterFOSSLogoSvg}
                     className='get-app__logo'
                 />
             </div>

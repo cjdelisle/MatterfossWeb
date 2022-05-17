@@ -196,7 +196,7 @@ export default class MessageExportSettings extends AdminSettings {
                             defaultMessage='Email Address:'
                         />
                     }
-                    placeholder={Utils.localizeMessage('admin.complianceExport.globalRelayEmailAddress.example', 'E.g.: "globalrelay@mattermost.com"')}
+                    placeholder={Utils.localizeMessage('admin.complianceExport.globalRelayEmailAddress.example', 'E.g.: "globalrelay@matterfoss.com"')}
                     helpText={
                         <FormattedMessage
                             id='admin.complianceExport.globalRelayEmailAddress.description'
@@ -241,7 +241,7 @@ export default class MessageExportSettings extends AdminSettings {
                     helpText={
                         <FormattedMarkdownMessage
                             id='admin.service.complianceExportDesc'
-                            defaultMessage='When true, Mattermost will export all messages that were posted in the last 24 hours. The export task is scheduled to run once per day. See [the documentation](!https://docs.mattermost.com/comply/compliance-export.html) to learn more.'
+                            defaultMessage='When true, MatterFOSS will export all messages that were posted in the last 24 hours. The export task is scheduled to run once per day. See [the documentation](!https://docs.matterfoss.com/comply/compliance-export.html) to learn more.'
                         />
                     }
                     value={this.state.enableComplianceExport}

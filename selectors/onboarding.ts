@@ -3,7 +3,7 @@
 
 import {createSelector} from 'reselect';
 
-import {makeGetCategory} from 'mattermost-redux/selectors/entities/preferences';
+import {makeGetCategory} from 'matterfoss-redux/selectors/entities/preferences';
 
 import {GlobalState} from 'types/store';
 

@@ -3,10 +3,10 @@
 
 import {createSelector} from 'reselect';
 
-import {getCustomEmojisByName} from 'mattermost-redux/selectors/entities/emojis';
-import {getCurrentUserId} from 'mattermost-redux/selectors/entities/users';
-import {getConfig} from 'mattermost-redux/selectors/entities/general';
-import {get} from 'mattermost-redux/selectors/entities/preferences';
+import {getCustomEmojisByName} from 'matterfoss-redux/selectors/entities/emojis';
+import {getCurrentUserId} from 'matterfoss-redux/selectors/entities/users';
+import {getConfig} from 'matterfoss-redux/selectors/entities/general';
+import {get} from 'matterfoss-redux/selectors/entities/preferences';
 
 import LocalStorageStore from 'stores/local_storage_store';
 

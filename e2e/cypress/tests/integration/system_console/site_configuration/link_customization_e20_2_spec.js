@@ -21,8 +21,8 @@ import * as TIMEOUTS from '../../../fixtures/timeouts';
 import {backToTeam, saveSetting} from './helper';
 
 describe('SupportSettings', () => {
-    const tosLink = 'https://github.com/mattermost/platform/blob/master/README.md';
-    const privacyLink = 'https://github.com/mattermost/platform/blob/master/README.md';
+    const tosLink = 'https://github.com/matterfoss/platform/blob/master/README.md';
+    const privacyLink = 'https://github.com/matterfoss/platform/blob/master/README.md';
 
     let testTeam;
     let siteName;
@@ -153,7 +153,7 @@ describe('SupportSettings', () => {
             } else if (isWindows()) {
                 suffix = ' for Windows';
             }
-            cy.findAllByText(`Get Mattermost${suffix}`);
+            cy.findAllByText(`Get MatterFOSS${suffix}`);
         });
     });
 });

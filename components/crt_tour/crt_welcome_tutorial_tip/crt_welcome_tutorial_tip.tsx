@@ -4,7 +4,7 @@ import React from 'react';
 import {FormattedMessage} from 'react-intl';
 import {useDispatch, useSelector} from 'react-redux';
 
-import {getCurrentRelativeTeamUrl} from 'mattermost-redux/selectors/entities/teams';
+import {getCurrentRelativeTeamUrl} from 'matterfoss-redux/selectors/entities/teams';
 import {Constants} from 'utils/constants';
 import {GlobalState} from 'types/store';
 import FormattedMarkdownMessage from 'components/formatted_markdown_message.jsx';

@@ -4,9 +4,9 @@
 
 import React, {CSSProperties} from 'react';
 
-import {AppBinding} from 'mattermost-redux/types/apps';
+import {AppBinding} from 'matterfoss-redux/types/apps';
 
-import {Post} from 'mattermost-redux/types/posts';
+import {Post} from 'matterfoss-redux/types/posts';
 
 import * as Utils from 'utils/utils';
 import LinkOnlyRenderer from 'utils/markdown/link_only_renderer';
@@ -18,8 +18,8 @@ import ShowMore from 'components/post_view/show_more';
 import ButtonBinding from '../button_binding';
 import SelectBinding from '../select_binding';
 
-import {cleanBinding} from 'mattermost-redux/utils/apps';
-import {AppBindingLocations} from 'mattermost-redux/constants/apps';
+import {cleanBinding} from 'matterfoss-redux/utils/apps';
+import {AppBindingLocations} from 'matterfoss-redux/constants/apps';
 
 type Props = {
 

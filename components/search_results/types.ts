@@ -4,8 +4,8 @@
 import React from 'react';
 import {IntlShape} from 'react-intl';
 
-import {Post} from 'mattermost-redux/types/posts';
-import {FileInfo} from 'mattermost-redux/types/files';
+import {Post} from 'matterfoss-redux/types/posts';
+import {FileInfo} from 'matterfoss-redux/types/files';
 
 import {SearchFilterType} from '../search/types';
 

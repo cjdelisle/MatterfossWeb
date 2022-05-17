@@ -5,10 +5,10 @@ import {combineReducers} from 'redux';
 
 import remove from 'lodash/remove';
 
-import {UserTypes} from 'mattermost-redux/action_types';
-import type {GenericAction} from 'mattermost-redux/types/actions';
-import {IDMappedObjects} from 'mattermost-redux/types/utilities';
-import {ClientPluginManifest} from 'mattermost-redux/types/plugins';
+import {UserTypes} from 'matterfoss-redux/action_types';
+import type {GenericAction} from 'matterfoss-redux/types/actions';
+import {IDMappedObjects} from 'matterfoss-redux/types/utilities';
+import {ClientPluginManifest} from 'matterfoss-redux/types/plugins';
 
 import type {PluginsState, PluginComponent, AdminConsolePluginComponent, Menu} from 'types/store/plugins';
 

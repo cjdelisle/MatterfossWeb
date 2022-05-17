@@ -6,8 +6,8 @@ import {useIntl} from 'react-intl';
 import classNames from 'classnames';
 import throttle from 'lodash/throttle';
 
-import {getEmojiImageUrl, isSystemEmoji} from 'mattermost-redux/utils/emoji_utils';
-import {Emoji} from 'mattermost-redux/types/emojis';
+import {getEmojiImageUrl, isSystemEmoji} from 'matterfoss-redux/utils/emoji_utils';
+import {Emoji} from 'matterfoss-redux/types/emojis';
 
 import imgTrans from 'images/img_trans.gif';
 import {EmojiCursor} from 'components/emoji_picker/types';

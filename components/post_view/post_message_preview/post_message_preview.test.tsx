@@ -5,8 +5,8 @@ import {shallow} from 'enzyme';
 
 import React from 'react';
 
-import {Post, PostEmbed} from 'mattermost-redux/types/posts';
-import {UserProfile} from 'mattermost-redux/types/users';
+import {Post, PostEmbed} from 'matterfoss-redux/types/posts';
+import {UserProfile} from 'matterfoss-redux/types/users';
 
 import PostMessagePreview, {Props} from './post_message_preview';
 

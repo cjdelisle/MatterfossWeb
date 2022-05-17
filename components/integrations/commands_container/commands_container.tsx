@@ -4,13 +4,13 @@
 import React from 'react';
 import {Route, Switch, Redirect} from 'react-router-dom';
 
-import {Team} from 'mattermost-redux/types/teams';
+import {Team} from 'matterfoss-redux/types/teams';
 
-import {UserProfile} from 'mattermost-redux/types/users';
+import {UserProfile} from 'matterfoss-redux/types/users';
 
-import {RelationOneToOne} from 'mattermost-redux/types/utilities';
+import {RelationOneToOne} from 'matterfoss-redux/types/utilities';
 
-import {Command} from 'mattermost-redux/types/integrations';
+import {Command} from 'matterfoss-redux/types/integrations';
 
 import InstalledCommands from 'components/integrations/installed_commands';
 import AddCommand from 'components/integrations/add_command';

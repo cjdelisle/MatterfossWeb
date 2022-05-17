@@ -1,7 +1,7 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
-import {GeneralTypes} from 'mattermost-redux/action_types';
+import {GeneralTypes} from 'matterfoss-redux/action_types';
 
 import store from 'stores/redux_store.jsx';
 

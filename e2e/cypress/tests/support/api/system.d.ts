@@ -8,7 +8,7 @@
 // See https://jsdoc.app/index.html for reference.
 // Basic requirements for documentation are the following:
 // - Meaningful description
-// - Specific link to https://api.mattermost.com
+// - Specific link to https://api.matterfoss.com
 // - Each parameter with `@params`
 // - Return value with `@returns`
 // - Example usage with `@example`
@@ -20,7 +20,7 @@ declare namespace Cypress {
 
         /**
          * Get a subset of the server license needed by the client.
-         * See https://api.mattermost.com/#tag/system/paths/~1license~1client/get
+         * See https://api.matterfoss.com/#tag/system/paths/~1license~1client/get
          * @returns {ClientLicense} `out.license` as `ClientLicense`
          * @returns {Boolean} `out.isLicensed`
          * @returns {Boolean} `out.isCloudLicensed`
@@ -56,19 +56,19 @@ declare namespace Cypress {
 
         /**
          * Upload a license to enable enterprise features.
-         * See https://api.mattermost.com/#tag/system/paths/~1license/post
+         * See https://api.matterfoss.com/#tag/system/paths/~1license/post
          * @param {String} filePath - path of the license file relative to fixtures folder
          * @returns {Response} response: Cypress-chainable response which should have successful HTTP status of 200 OK to continue or pass.
          *
          * @example
-         *   const filePath = 'mattermost-license.txt';
+         *   const filePath = 'matterfoss-license.txt';
          *   cy.apiUploadLicense(filePath);
          */
         apiUploadLicense(filePath: string): Chainable<Response>;
 
         /**
          * Request and install a trial license for your server.
-         * See https://api.mattermost.com/#tag/system/paths/~1trial-license/post
+         * See https://api.matterfoss.com/#tag/system/paths/~1trial-license/post
          * @returns {Object} `out.data` as response status
          *
          * @example
@@ -78,7 +78,7 @@ declare namespace Cypress {
 
         /**
          * Remove the license file from the server. This will disable all enterprise features.
-         * See https://api.mattermost.com/#tag/system/paths/~1license/delete
+         * See https://api.matterfoss.com/#tag/system/paths/~1license/delete
          * @returns {Response} response: Cypress-chainable response which should have successful HTTP status of 200 OK to continue or pass.
          *
          * @example
@@ -88,7 +88,7 @@ declare namespace Cypress {
 
         /**
          * Update configuration.
-         * See https://api.mattermost.com/#tag/system/paths/~1config/put
+         * See https://api.matterfoss.com/#tag/system/paths/~1config/put
          * @param {AdminConfig} newConfig - new config
          * @returns {AdminConfig} `out.config` as `AdminConfig`
          *
@@ -101,7 +101,7 @@ declare namespace Cypress {
 
         /**
          * Reload the configuration file to pick up on any changes made to it.
-         * See https://api.mattermost.com/#tag/system/paths/~1config~1reload/post
+         * See https://api.matterfoss.com/#tag/system/paths/~1config~1reload/post
          * @returns {AdminConfig} `out.config` as `AdminConfig`
          *
          * @example
@@ -113,7 +113,7 @@ declare namespace Cypress {
 
         /**
          * Get configuration.
-         * See https://api.mattermost.com/#tag/system/paths/~1config/get
+         * See https://api.matterfoss.com/#tag/system/paths/~1config/get
          * @param {Boolean} old - false (default) or true to return old format of client config
          * @returns {AdminConfig} `out.config` as `AdminConfig`
          *
@@ -126,7 +126,7 @@ declare namespace Cypress {
 
         /**
          * Get analytics.
-         * See https://api.mattermost.com/#tag/system/paths/~1analytics~1old/get
+         * See https://api.matterfoss.com/#tag/system/paths/~1analytics~1old/get
          * @returns {AnalyticsRow[]} `out.analytics` as `AnalyticsRow[]`
          *
          * @example
@@ -138,7 +138,7 @@ declare namespace Cypress {
 
         /**
          * Invalidate all the caches.
-         * See https://api.mattermost.com/#tag/system/paths/~1caches~1invalidate/post
+         * See https://api.matterfoss.com/#tag/system/paths/~1caches~1invalidate/post
          * @returns {Object} `out.data` as response status
          *
          * @example

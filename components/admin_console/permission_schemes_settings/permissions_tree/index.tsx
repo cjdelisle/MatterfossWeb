@@ -3,10 +3,10 @@
 
 import {connect} from 'react-redux';
 
-import {getConfig, getLicense} from 'mattermost-redux/selectors/entities/general';
-import {isCustomGroupsEnabled} from 'mattermost-redux/selectors/entities/preferences';
+import {getConfig, getLicense} from 'matterfoss-redux/selectors/entities/general';
+import {isCustomGroupsEnabled} from 'matterfoss-redux/selectors/entities/preferences';
 
-import Permissions from 'mattermost-redux/constants/permissions';
+import Permissions from 'matterfoss-redux/constants/permissions';
 
 import {GlobalState} from 'types/store';
 

@@ -5,8 +5,8 @@ import React from 'react';
 import {FormattedMessage} from 'react-intl';
 import ReactSelect, {ValueType} from 'react-select';
 
-import {ActionResult} from 'mattermost-redux/types/actions';
-import {UserProfile} from 'mattermost-redux/types/users';
+import {ActionResult} from 'matterfoss-redux/types/actions';
+import {UserProfile} from 'matterfoss-redux/types/users';
 
 import * as I18n from 'i18n/i18n.jsx';
 import SettingItemMax from 'components/setting_item_max.jsx';
@@ -219,7 +219,7 @@ export default class ManageLanguage extends React.PureComponent<Props, State> {
                     <br/>
                     <FormattedMarkdownMessage
                         id='user.settings.languages.promote'
-                        defaultMessage='Select which language Mattermost displays in the user interface.\n \nWould you like to help with translations? Join the [Mattermost Translation Server](!http://translate.mattermost.com/) to contribute.'
+                        defaultMessage='Select which language MatterFOSS displays in the user interface.\n \nWould you like to help with translations? Join the [MatterFOSS Translation Server](!http://translate.matterfoss.com/) to contribute.'
                     />
                 </div>
             </div>

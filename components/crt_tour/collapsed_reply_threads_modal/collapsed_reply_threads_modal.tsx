@@ -5,8 +5,8 @@ import React, {useCallback, useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {FormattedMessage} from 'react-intl';
 
-import {savePreferences} from 'mattermost-redux/actions/preferences';
-import {getCurrentUserId} from 'mattermost-redux/selectors/entities/users';
+import {savePreferences} from 'matterfoss-redux/actions/preferences';
+import {getCurrentUserId} from 'matterfoss-redux/selectors/entities/users';
 import crtBetaImg from 'images/crt-beta.gif';
 import {closeModal} from 'actions/views/modals';
 import GenericModal from 'components/generic_modal';

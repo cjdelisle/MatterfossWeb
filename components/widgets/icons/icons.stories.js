@@ -45,7 +45,7 @@ import LeaveTeamIcon from './leave_team_icon';
 import LockIcon from './lock_icon';
 import MailIcon from './mail_icon';
 import MailPlusIcon from './mail_plus_icon';
-import MattermostLogo from './mattermost_logo';
+import MatterFOSSLogo from './matterfoss_logo';
 import MentionsIcon from './mentions_icon';
 import MenuIcon from './menu_icon';
 import MessageIcon from './message_icon';
@@ -75,7 +75,7 @@ const icons = [
     FlagIconFilled, FlagIcon, GfycatIcon, GifReactionsIcon,
     GifSearchClearIcon, GifSearchIcon, GifTrendingIcon, GlobeIcon, InfoIcon,
     InfoSmallIcon, LeaveTeamIcon, LockIcon, MailIcon,
-    MailPlusIcon, MattermostLogo, MentionsIcon, MenuIcon,
+    MailPlusIcon, MatterFOSSLogo, MentionsIcon, MenuIcon,
     MessageIcon, PinIcon, ReplyIcon, ScrollToBottomIcon, SearchIcon, ShieldOutlineIcon,
     StatusAwayAvatarIcon, StatusAwayIcon, StatusDndAvatarIcon, StatusDndIcon,
     StatusOfflineAvatarIcon, StatusOfflineIcon, StatusOnlineAvatarIcon,

@@ -10,7 +10,7 @@ import cloudDefaultConfig from './cloud_default_config.json';
 
 // *****************************************************************************
 // System
-// https://api.mattermost.com/#tag/system
+// https://api.matterfoss.com/#tag/system
 // *****************************************************************************
 
 function hasLicenseForFeature(license, key) {

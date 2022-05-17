@@ -5,10 +5,10 @@ import React, {useEffect} from 'react';
 import {FormattedMessage} from 'react-intl';
 import {useDispatch, useSelector} from 'react-redux';
 
-import {savePreferences} from 'mattermost-redux/actions/preferences';
-import {getCurrentUserId} from 'mattermost-redux/selectors/entities/users';
-import {PreferenceType} from 'mattermost-redux/types/preferences';
-import {makeGetCategory} from 'mattermost-redux/selectors/entities/preferences';
+import {savePreferences} from 'matterfoss-redux/actions/preferences';
+import {getCurrentUserId} from 'matterfoss-redux/selectors/entities/users';
+import {PreferenceType} from 'matterfoss-redux/types/preferences';
+import {makeGetCategory} from 'matterfoss-redux/selectors/entities/preferences';
 
 import AlertBanner from 'components/alert_banner';
 import LoadingWrapper from 'components/widgets/loading/loading_wrapper';
@@ -130,7 +130,7 @@ const TrialBanner: React.FC<TrialBannerProps> = ({
             <p className='trial-error'>
                 <FormattedMarkdownMessage
                     id='admin.license.trial-request.error'
-                    defaultMessage='Trial license could not be retrieved. Visit [https://mattermost.com/trial/](https://mattermost.com/trial/) to request a license.'
+                    defaultMessage='Trial license could not be retrieved. Visit [https://matterfoss.com/trial/](https://matterfoss.com/trial/) to request a license.'
                 />
             </p>
         ) : null;
@@ -156,11 +156,11 @@ const TrialBanner: React.FC<TrialBannerProps> = ({
             <>
                 <FormattedMessage
                     id='admin.license.trial-request.title'
-                    defaultMessage='Experience Mattermost Enterprise Edition for free for the next 30 days. No obligation to buy or credit card required. '
+                    defaultMessage='Experience MatterFOSS Enterprise Edition for free for the next 30 days. No obligation to buy or credit card required. '
                 />
                 <FormattedMarkdownMessage
                     id='admin.license.trial-request.accept-terms'
-                    defaultMessage='By clicking **Start trial**, I agree to the [Mattermost Software Evaluation Agreement](!https://mattermost.com/software-evaluation-agreement/), [Privacy Policy](!https://mattermost.com/privacy-policy/), and receiving product emails.'
+                    defaultMessage='By clicking **Start trial**, I agree to the [MatterFOSS Software Evaluation Agreement](!https://matterfoss.com/software-evaluation-agreement/), [Privacy Policy](!https://matterfoss.com/privacy-policy/), and receiving product emails.'
                 />
             </>
         );
@@ -199,7 +199,7 @@ const TrialBanner: React.FC<TrialBannerProps> = ({
             <>
                 <FormattedMessage
                     id='admin.license.upgrade-and-trial-request.title'
-                    defaultMessage='Upgrade to Enterprise Edition and Experience Mattermost Enterprise Edition for free for the next 30 days. No obligation to buy or credit card required. '
+                    defaultMessage='Upgrade to Enterprise Edition and Experience MatterFOSS Enterprise Edition for free for the next 30 days. No obligation to buy or credit card required. '
                 />
             </>
         );
@@ -209,11 +209,11 @@ const TrialBanner: React.FC<TrialBannerProps> = ({
                 <p className='upgrade-legal-terms'>
                     <FormattedMarkdownMessage
                         id='admin.license.upgrade-and-trial-request.accept-terms-initial-part'
-                        defaultMessage='By selecting **Upgrade Server And Start trial**, I agree to the [Mattermost Software Evaluation Agreement](!https://mattermost.com/software-evaluation-agreement/), [Privacy Policy](!https://mattermost.com/privacy-policy/), and receiving product emails. '
+                        defaultMessage='By selecting **Upgrade Server And Start trial**, I agree to the [MatterFOSS Software Evaluation Agreement](!https://matterfoss.com/software-evaluation-agreement/), [Privacy Policy](!https://matterfoss.com/privacy-policy/), and receiving product emails. '
                     />
                     <FormattedMessage
                         id='admin.license.upgrade-and-trial-request.accept-terms-final-part'
-                        defaultMessage='Also, I agree to the terms of the Mattermost {eeModalTerms}. Upgrading will download the binary and update your Team Edition instance.'
+                        defaultMessage='Also, I agree to the terms of the MatterFOSS {eeModalTerms}. Upgrading will download the binary and update your Team Edition instance.'
                         values={{eeModalTerms}}
                     />
                 </p>

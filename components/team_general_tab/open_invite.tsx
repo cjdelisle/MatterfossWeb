@@ -4,8 +4,8 @@
 import React, {useCallback, useState} from 'react';
 import {FormattedMessage, useIntl} from 'react-intl';
 
-import type {ActionResult} from 'mattermost-redux/types/actions';
-import type {Team} from 'mattermost-redux/types/teams';
+import type {ActionResult} from 'matterfoss-redux/types/actions';
+import type {Team} from 'matterfoss-redux/types/teams';
 
 import SettingItemMax from 'components/setting_item_max.jsx';
 import SettingItemMin from 'components/setting_item_min';
@@ -79,7 +79,7 @@ const OpenInvite = (props: Props) => {
                 <div>
                     <FormattedMarkdownMessage
                         id='team_settings.openInviteDescription.groupConstrained'
-                        defaultMessage='No, members of this team are added and removed by linked groups. [Learn More](!https://mattermost.com/pl/default-ldap-group-constrained-team-channel.html)'
+                        defaultMessage='No, members of this team are added and removed by linked groups. [Learn More](!https://matterfoss.com/pl/default-ldap-group-constrained-team-channel.html)'
                     />
                 </div>
             </div>,

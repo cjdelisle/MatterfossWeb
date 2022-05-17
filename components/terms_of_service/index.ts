@@ -4,13 +4,13 @@
 import {connect} from 'react-redux';
 import {bindActionCreators, Dispatch, ActionCreatorsMapObject} from 'redux';
 
-import {getTermsOfService, updateMyTermsOfServiceStatus} from 'mattermost-redux/actions/users';
-import {getConfig} from 'mattermost-redux/selectors/entities/general';
-import {getUseCaseOnboarding} from 'mattermost-redux/selectors/entities/preferences';
+import {getTermsOfService, updateMyTermsOfServiceStatus} from 'matterfoss-redux/actions/users';
+import {getConfig} from 'matterfoss-redux/selectors/entities/general';
+import {getUseCaseOnboarding} from 'matterfoss-redux/selectors/entities/preferences';
 
-import {GlobalState} from 'mattermost-redux/types/store';
-import {ActionFunc, GenericAction} from 'mattermost-redux/types/actions';
-import {TermsOfService as ReduxTermsOfService} from 'mattermost-redux/types/terms_of_service';
+import {GlobalState} from 'matterfoss-redux/types/store';
+import {ActionFunc, GenericAction} from 'matterfoss-redux/types/actions';
+import {TermsOfService as ReduxTermsOfService} from 'matterfoss-redux/types/terms_of_service';
 
 import {getEmojiMap} from 'selectors/emojis';
 

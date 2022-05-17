@@ -4,7 +4,7 @@
 import React from 'react';
 import {FormattedMessage} from 'react-intl';
 
-import {AnalyticsRow} from 'mattermost-redux/types/admin';
+import {AnalyticsRow} from 'matterfoss-redux/types/admin';
 
 import * as AdminActions from 'actions/admin_actions.jsx';
 import Constants from 'utils/constants';
@@ -75,7 +75,7 @@ export default class SystemAnalytics extends React.PureComponent<Props> {
                     <div className='banner__content'>
                         <FormattedMarkdownMessage
                             id='analytics.system.skippedIntensiveQueries'
-                            defaultMessage='To maximize performance, some statistics are disabled. You can [re-enable them in config.json](!https://docs.mattermost.com/administration/statistics.html).'
+                            defaultMessage='To maximize performance, some statistics are disabled. You can [re-enable them in config.json](!https://docs.matterfoss.com/administration/statistics.html).'
                         />
                     </div>
                 </div>

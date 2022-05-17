@@ -4,8 +4,8 @@ import React, {useEffect, useState} from 'react';
 import {FormattedMessage} from 'react-intl';
 import moment from 'moment';
 
-import {ClientLicense} from 'mattermost-redux/types/config';
-import {Client4} from 'mattermost-redux/client';
+import {ClientLicense} from 'matterfoss-redux/types/config';
+import {Client4} from 'matterfoss-redux/client';
 
 import RenewalLink from 'components/announcement_bar/renewal_link/';
 

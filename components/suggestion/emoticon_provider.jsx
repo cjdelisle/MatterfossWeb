@@ -3,8 +3,8 @@
 
 import React from 'react';
 
-import {autocompleteCustomEmojis} from 'mattermost-redux/actions/emojis';
-import {getEmojiImageUrl} from 'mattermost-redux/utils/emoji_utils';
+import {autocompleteCustomEmojis} from 'matterfoss-redux/actions/emojis';
+import {getEmojiImageUrl} from 'matterfoss-redux/utils/emoji_utils';
 
 import {getEmojiMap, getRecentEmojis} from 'selectors/emojis';
 
@@ -105,7 +105,7 @@ export default class EmoticonProvider extends Provider {
     // changes to the cache from expanding the cache with emojis found in existing posts.
     //
     // For now, this behaviour and difference is by design.
-    // See https://mattermost.atlassian.net/browse/MM-17320.
+    // See https://matterfoss.atlassian.net/browse/MM-17320.
     findAndSuggestEmojis(text, partialName, resultsCallback) {
         const recentMatched = [];
         const matched = [];

@@ -24,7 +24,7 @@ test('Intro to channel as regular user', async ({page, isMobile, browserName}, t
 
     const {userClient, adminConfig, user} = await initSetup();
 
-    const fullPath = path.join(path.resolve(__dirname), '../..', 'support/fixtures/mattermost-icon_128x128.png');
+    const fullPath = path.join(path.resolve(__dirname), '../..', 'support/fixtures/matterfoss-icon_128x128.png');
     await userClient.uploadProfileImageX(user.id, fullPath);
 
     // Go to login page

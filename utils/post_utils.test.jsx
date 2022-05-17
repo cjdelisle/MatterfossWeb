@@ -6,7 +6,7 @@ import assert from 'assert';
 
 import {createIntl} from 'react-intl';
 
-import {Preferences} from 'mattermost-redux/constants';
+import {Preferences} from 'matterfoss-redux/constants';
 
 import * as PostUtils from 'utils/post_utils';
 import {PostListRowListIds, Constants} from 'utils/constants';

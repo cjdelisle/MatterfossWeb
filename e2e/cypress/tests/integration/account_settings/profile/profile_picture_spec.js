@@ -35,7 +35,7 @@ describe('Profile > Profile Settings > Profile Picture', () => {
         cy.get('#pictureEdit').should('be.visible').click();
 
         // # Upload and save profile picture
-        cy.findByTestId('uploadPicture').attachFile('mattermost-icon.png');
+        cy.findByTestId('uploadPicture').attachFile('matterfoss-icon.png');
         cy.uiSave().wait(TIMEOUTS.HALF_SEC);
 
         // # Close modal

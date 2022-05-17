@@ -5,9 +5,9 @@ import React, {RefObject} from 'react';
 import {Modal} from 'react-bootstrap';
 import {FormattedMessage} from 'react-intl';
 
-import {Groups} from 'mattermost-redux/constants';
+import {Groups} from 'matterfoss-redux/constants';
 
-import {Group, GroupsWithCount, SyncablePatch, SyncableType} from 'mattermost-redux/types/groups';
+import {Group, GroupsWithCount, SyncablePatch, SyncableType} from 'matterfoss-redux/types/groups';
 
 import Constants from 'utils/constants';
 import {localizeMessage} from 'utils/utils.jsx';

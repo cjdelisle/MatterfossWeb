@@ -7,8 +7,8 @@ import React from 'react';
 import classNames from 'classnames';
 import {injectIntl, IntlShape} from 'react-intl';
 
-import {Posts} from 'mattermost-redux/constants';
-import {sortFileInfos} from 'mattermost-redux/utils/file_utils';
+import {Posts} from 'matterfoss-redux/constants';
+import {sortFileInfos} from 'matterfoss-redux/utils/file_utils';
 
 import * as GlobalActions from 'actions/global_actions';
 import Constants, {StoragePrefixes, ModalIdentifiers, Locations, A11yClassNames} from 'utils/constants';
@@ -42,18 +42,18 @@ import TextboxClass from 'components/textbox/textbox';
 import TextboxLinks from 'components/textbox/textbox_links';
 
 import MessageSubmitError from 'components/message_submit_error';
-import {Channel, ChannelMemberCountsByGroup} from 'mattermost-redux/types/channels';
+import {Channel, ChannelMemberCountsByGroup} from 'matterfoss-redux/types/channels';
 import {PostDraft} from 'types/store/rhs';
-import {Post, PostMetadata} from 'mattermost-redux/types/posts';
-import {PreferenceType} from 'mattermost-redux/types/preferences';
+import {Post, PostMetadata} from 'matterfoss-redux/types/posts';
+import {PreferenceType} from 'matterfoss-redux/types/preferences';
 import EmojiMap from 'utils/emoji_map';
-import {ActionResult} from 'mattermost-redux/types/actions';
-import {ServerError} from 'mattermost-redux/types/errors';
-import {CommandArgs} from 'mattermost-redux/types/integrations';
-import {Group} from 'mattermost-redux/types/groups';
+import {ActionResult} from 'matterfoss-redux/types/actions';
+import {ServerError} from 'matterfoss-redux/types/errors';
+import {CommandArgs} from 'matterfoss-redux/types/integrations';
+import {Group} from 'matterfoss-redux/types/groups';
 import {ModalData} from 'types/actions';
-import {FileInfo} from 'mattermost-redux/types/files';
-import {Emoji} from 'mattermost-redux/types/emojis';
+import {FileInfo} from 'matterfoss-redux/types/files';
+import {Emoji} from 'matterfoss-redux/types/emojis';
 import {FilePreviewInfo} from 'components/file_preview/file_preview';
 import {SendMessageTour} from 'components/onboarding_tour';
 const KeyCodes = Constants.KeyCodes;

@@ -1,5 +1,5 @@
 {
-  "name": "@mattermost/webapp",
+  "name": "@matterfoss/webapp",
   "browser": {
     "./client/web_client.jsx": "./client/browser_web_client.jsx"
   },
@@ -236,8 +236,8 @@
       "text-summary"
     ],
     "moduleNameMapper": {
-      "^mattermost-redux/test/(.*)$": "<rootDir>/packages/mattermost-redux/test/$1",
-      "^mattermost-redux/(.*)$": "<rootDir>/packages/mattermost-redux/src/$1",
+      "^matterfoss-redux/test/(.*)$": "<rootDir>/packages/matterfoss-redux/test/$1",
+      "^matterfoss-redux/(.*)$": "<rootDir>/packages/matterfoss-redux/src/$1",
       "^reselect$": "<rootDir>/packages/reselect/src",
       "^.+\\.(jpg|jpeg|png|apng|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "identity-obj-proxy",
       "^.+\\.(css|less|scss)$": "identity-obj-proxy",

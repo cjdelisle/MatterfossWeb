@@ -5,10 +5,10 @@ import React, {useEffect, useState} from 'react';
 import {FormattedDate, FormattedMessage, FormattedNumber} from 'react-intl';
 import {useDispatch, useSelector} from 'react-redux';
 
-import {getInvoices} from 'mattermost-redux/actions/cloud';
-import {Client4} from 'mattermost-redux/client';
-import {Invoice} from 'mattermost-redux/types/cloud';
-import {GlobalState} from 'mattermost-redux/types/store';
+import {getInvoices} from 'matterfoss-redux/actions/cloud';
+import {Client4} from 'matterfoss-redux/client';
+import {Invoice} from 'matterfoss-redux/types/cloud';
+import {GlobalState} from 'matterfoss-redux/types/store';
 
 import LoadingSpinner from 'components/widgets/loading/loading_spinner';
 

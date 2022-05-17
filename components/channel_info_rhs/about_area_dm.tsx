@@ -5,10 +5,10 @@ import React from 'react';
 import styled from 'styled-components';
 import {useIntl} from 'react-intl';
 
-import {Channel} from 'mattermost-redux/types/channels';
+import {Channel} from 'matterfoss-redux/types/channels';
 import Markdown from 'components/markdown';
 import ProfilePicture from 'components/profile_picture';
-import {Client4} from 'mattermost-redux/client';
+import {Client4} from 'matterfoss-redux/client';
 import BotBadge from 'components/widgets/badges/bot_badge';
 import GuestBadge from 'components/widgets/badges/guest_badge';
 

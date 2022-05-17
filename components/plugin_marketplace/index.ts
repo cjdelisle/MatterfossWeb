@@ -5,12 +5,12 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators, Dispatch, ActionCreatorsMapObject} from 'redux';
 
-import {GenericAction, ActionFunc} from 'mattermost-redux/types/actions';
+import {GenericAction, ActionFunc} from 'matterfoss-redux/types/actions';
 
 import {GlobalState} from 'types/store';
 import {getListing, getInstalledListing} from 'selectors/views/marketplace';
-import {setFirstAdminVisitMarketplaceStatus} from 'mattermost-redux/actions/general';
-import {getFirstAdminVisitMarketplaceStatus} from 'mattermost-redux/selectors/entities/general';
+import {setFirstAdminVisitMarketplaceStatus} from 'matterfoss-redux/actions/general';
+import {getFirstAdminVisitMarketplaceStatus} from 'matterfoss-redux/selectors/entities/general';
 
 import {makeAsyncComponent} from 'components/async_load';
 

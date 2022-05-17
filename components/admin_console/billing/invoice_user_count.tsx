@@ -3,7 +3,7 @@
 
 import React from 'react';
 
-import {Invoice, InvoiceLineItemType} from 'mattermost-redux/types/cloud';
+import {Invoice, InvoiceLineItemType} from 'matterfoss-redux/types/cloud';
 
 import {numberToFixedDynamic} from 'utils/utils';
 

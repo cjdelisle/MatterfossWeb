@@ -12,10 +12,10 @@ import debounce from 'lodash/debounce';
 
 import * as ChannelUtils from 'utils/channel_utils';
 
-import {General} from 'mattermost-redux/constants';
-import {Channel} from 'mattermost-redux/types/channels';
-import {ChannelCategory} from 'mattermost-redux/types/channel_categories';
-import {Team} from 'mattermost-redux/types/teams';
+import {General} from 'matterfoss-redux/constants';
+import {Channel} from 'matterfoss-redux/types/channels';
+import {ChannelCategory} from 'matterfoss-redux/types/channel_categories';
+import {Team} from 'matterfoss-redux/types/teams';
 
 import {trackEvent} from 'actions/telemetry_actions';
 import {DraggingState} from 'types/store';

@@ -4,7 +4,7 @@
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 
-import {addOAuthApp} from 'mattermost-redux/actions/integrations';
+import {addOAuthApp} from 'matterfoss-redux/actions/integrations';
 
 import AddOAuthApp from './add_oauth_app.jsx';
 

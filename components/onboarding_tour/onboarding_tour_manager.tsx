@@ -4,11 +4,11 @@
 import React, {useCallback, useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 
-import {getInt} from 'mattermost-redux/selectors/entities/preferences';
-import {isFirstAdmin} from 'mattermost-redux/selectors/entities/users';
-import {GlobalState} from 'mattermost-redux/types/store';
-import {savePreferences, savePreferences as storeSavePreferences} from 'mattermost-redux/actions/preferences';
-import {getCurrentUserId} from 'mattermost-redux/selectors/entities/common';
+import {getInt} from 'matterfoss-redux/selectors/entities/preferences';
+import {isFirstAdmin} from 'matterfoss-redux/selectors/entities/users';
+import {GlobalState} from 'matterfoss-redux/types/store';
+import {savePreferences, savePreferences as storeSavePreferences} from 'matterfoss-redux/actions/preferences';
+import {getCurrentUserId} from 'matterfoss-redux/selectors/entities/common';
 import {setAddChannelDropdown} from 'actions/views/add_channel_dropdown';
 import {open as openLhs} from 'actions/views/lhs.js';
 import {trackEvent as trackEventAction} from 'actions/telemetry_actions';

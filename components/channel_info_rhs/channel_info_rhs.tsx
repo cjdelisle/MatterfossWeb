@@ -5,11 +5,11 @@ import React, {memo} from 'react';
 
 import styled from 'styled-components';
 
-import {UserProfile} from 'mattermost-redux/types/users';
-import {Channel} from 'mattermost-redux/types/channels';
+import {UserProfile} from 'matterfoss-redux/types/users';
+import {Channel} from 'matterfoss-redux/types/channels';
 import {getSiteURL} from 'utils/url';
 import ChannelInviteModal from 'components/channel_invite_modal';
-import {Team} from 'mattermost-redux/types/teams';
+import {Team} from 'matterfoss-redux/types/teams';
 import {ModalData} from 'types/actions';
 import Constants, {ModalIdentifiers} from 'utils/constants';
 import EditChannelPurposeModal from 'components/edit_channel_purpose_modal';

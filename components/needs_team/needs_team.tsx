@@ -5,10 +5,10 @@ import React from 'react';
 import {Route, Switch} from 'react-router-dom';
 import iNoBounce from 'inobounce';
 
-import {Channel, ChannelMembership} from 'mattermost-redux/types/channels';
-import {Team, TeamMembership} from 'mattermost-redux/types/teams';
-import {Group} from 'mattermost-redux/types/groups';
-import {UserProfile, UserStatus} from 'mattermost-redux/types/users';
+import {Channel, ChannelMembership} from 'matterfoss-redux/types/channels';
+import {Team, TeamMembership} from 'matterfoss-redux/types/teams';
+import {Group} from 'matterfoss-redux/types/groups';
+import {UserProfile, UserStatus} from 'matterfoss-redux/types/users';
 
 import {startPeriodicStatusUpdates, stopPeriodicStatusUpdates} from 'actions/status_actions.jsx';
 import {startPeriodicSync, stopPeriodicSync, reconnect} from 'actions/websocket_actions.jsx';
@@ -17,7 +17,7 @@ import * as GlobalActions from 'actions/global_actions';
 import Constants from 'utils/constants';
 import * as UserAgent from 'utils/user_agent';
 import * as Utils from 'utils/utils.jsx';
-import {isGuest} from 'mattermost-redux/utils/user_utils';
+import {isGuest} from 'matterfoss-redux/utils/user_utils';
 
 import {makeAsyncComponent} from 'components/async_load';
 const LazyBackstageController = React.lazy(() => import('components/backstage'));
@@ -25,7 +25,7 @@ import ChannelController from 'components/channel_layout/channel_controller';
 import Pluggable from 'plugins/pluggable';
 
 import LocalStorageStore from 'stores/local_storage_store';
-import type {isCollapsedThreadsEnabled} from 'mattermost-redux/selectors/entities/preferences';
+import type {isCollapsedThreadsEnabled} from 'matterfoss-redux/selectors/entities/preferences';
 
 const BackstageController = makeAsyncComponent('BackstageController', LazyBackstageController);
 

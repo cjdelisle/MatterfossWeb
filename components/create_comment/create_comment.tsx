@@ -9,7 +9,7 @@ import {FormattedMessage, injectIntl, IntlShape} from 'react-intl';
 
 import {ModalData} from 'types/actions.js';
 
-import {sortFileInfos} from 'mattermost-redux/utils/file_utils';
+import {sortFileInfos} from 'matterfoss-redux/utils/file_utils';
 
 import * as GlobalActions from 'actions/global_actions';
 
@@ -39,13 +39,13 @@ import TextboxClass from 'components/textbox/textbox';
 import TextboxLinks from 'components/textbox/textbox_links';
 import MessageSubmitError from 'components/message_submit_error';
 import {PostDraft} from 'types/store/rhs';
-import {Group} from 'mattermost-redux/types/groups';
-import {ChannelMemberCountsByGroup} from 'mattermost-redux/types/channels';
+import {Group} from 'matterfoss-redux/types/groups';
+import {ChannelMemberCountsByGroup} from 'matterfoss-redux/types/channels';
 import {FilePreviewInfo} from 'components/file_preview/file_preview';
-import {Emoji} from 'mattermost-redux/types/emojis';
-import {ActionResult} from 'mattermost-redux/types/actions';
-import {ServerError} from 'mattermost-redux/types/errors';
-import {FileInfo} from 'mattermost-redux/types/files';
+import {Emoji} from 'matterfoss-redux/types/emojis';
+import {ActionResult} from 'matterfoss-redux/types/actions';
+import {ServerError} from 'matterfoss-redux/types/errors';
+import {FileInfo} from 'matterfoss-redux/types/files';
 
 import RhsSuggestionList from 'components/suggestion/rhs_suggestion_list';
 

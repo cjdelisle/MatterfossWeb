@@ -3,8 +3,8 @@
 
 import {connect} from 'react-redux';
 
-import {getCurrentUser} from 'mattermost-redux/selectors/entities/users';
-import {GlobalState} from 'mattermost-redux/types/store';
+import {getCurrentUser} from 'matterfoss-redux/selectors/entities/users';
+import {GlobalState} from 'matterfoss-redux/types/store';
 
 import UserSettings from './user_settings';
 

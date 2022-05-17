@@ -35,7 +35,7 @@ describe('Teams Settings', () => {
         cy.uiSaveButton().should('be.disabled');
 
         // # Upload a file on center view
-        cy.findByTestId('uploadPicture').attachFile('mattermost-icon.png');
+        cy.findByTestId('uploadPicture').attachFile('matterfoss-icon.png');
 
         // * Save then close
         cy.uiSaveAndClose();

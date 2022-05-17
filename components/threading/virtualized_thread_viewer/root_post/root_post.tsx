@@ -3,7 +3,7 @@
 
 import React, {memo} from 'react';
 
-import {Post} from 'mattermost-redux/types/posts';
+import {Post} from 'matterfoss-redux/types/posts';
 
 import RhsRootPost from 'components/rhs_root_post';
 import {Props as TimestampProps} from 'components/timestamp/timestamp';

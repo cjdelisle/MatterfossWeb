@@ -4,10 +4,10 @@
 import {connect} from 'react-redux';
 import {ActionCreatorsMapObject, bindActionCreators, Dispatch} from 'redux';
 
-import {getUser} from 'mattermost-redux/actions/users';
-import {UserProfile} from 'mattermost-redux/types/users';
-import {GenericAction, ActionFunc} from 'mattermost-redux/types/actions';
-import {GlobalState} from 'mattermost-redux/types/store';
+import {getUser} from 'matterfoss-redux/actions/users';
+import {UserProfile} from 'matterfoss-redux/types/users';
+import {GenericAction, ActionFunc} from 'matterfoss-redux/types/actions';
+import {GlobalState} from 'matterfoss-redux/types/store';
 
 import SystemUsersList from './system_users_list';
 import {getNonBotUsers} from './selectors';

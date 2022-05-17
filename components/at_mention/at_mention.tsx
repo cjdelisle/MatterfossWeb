@@ -4,10 +4,10 @@
 import React from 'react';
 import {Overlay} from 'react-bootstrap';
 
-import {Client4} from 'mattermost-redux/client';
-import {displayUsername} from 'mattermost-redux/utils/user_utils';
-import {UserProfile} from 'mattermost-redux/types/users';
-import {Group} from 'mattermost-redux/types/groups';
+import {Client4} from 'matterfoss-redux/client';
+import {displayUsername} from 'matterfoss-redux/utils/user_utils';
+import {UserProfile} from 'matterfoss-redux/types/users';
+import {Group} from 'matterfoss-redux/types/groups';
 
 import ProfilePopover from 'components/profile_popover';
 

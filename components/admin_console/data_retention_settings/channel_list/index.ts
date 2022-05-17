@@ -4,19 +4,19 @@
 import {connect} from 'react-redux';
 import {ActionCreatorsMapObject, bindActionCreators, Dispatch} from 'redux';
 
-import {getDataRetentionCustomPolicyChannels, searchDataRetentionCustomPolicyChannels as searchChannels} from 'mattermost-redux/actions/admin';
-import {filterChannelList, getChannelsInPolicy, searchChannelsInPolicy} from 'mattermost-redux/selectors/entities/channels';
-import {getDataRetentionCustomPolicy} from 'mattermost-redux/selectors/entities/admin';
-import {filterChannelsMatchingTerm, channelListToMap} from 'mattermost-redux/utils/channel_utils';
+import {getDataRetentionCustomPolicyChannels, searchDataRetentionCustomPolicyChannels as searchChannels} from 'matterfoss-redux/actions/admin';
+import {filterChannelList, getChannelsInPolicy, searchChannelsInPolicy} from 'matterfoss-redux/selectors/entities/channels';
+import {getDataRetentionCustomPolicy} from 'matterfoss-redux/selectors/entities/admin';
+import {filterChannelsMatchingTerm, channelListToMap} from 'matterfoss-redux/utils/channel_utils';
 
-import {ActionFunc, ActionResult, GenericAction} from 'mattermost-redux/types/actions';
+import {ActionFunc, ActionResult, GenericAction} from 'matterfoss-redux/types/actions';
 
-import {Channel, ChannelSearchOpts, ChannelWithTeamData} from 'mattermost-redux/types/channels';
+import {Channel, ChannelSearchOpts, ChannelWithTeamData} from 'matterfoss-redux/types/channels';
 
 import {GlobalState} from 'types/store';
 
 import {setChannelListSearch, setChannelListFilters} from 'actions/views/search';
-import {DataRetentionCustomPolicy} from 'mattermost-redux/types/data_retention';
+import {DataRetentionCustomPolicy} from 'matterfoss-redux/types/data_retention';
 
 import ChannelList from './channel_list';
 

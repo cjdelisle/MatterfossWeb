@@ -52,7 +52,7 @@ exports[`components/GetLinkModal should have called onHide 1`] = `
       id="linkModalTextArea"
       onClick={[Function]}
       readOnly={true}
-      value="https://mattermost.com"
+      value="https://matterfoss.com"
     />
   </ModalBody>
   <ModalFooter
@@ -147,7 +147,7 @@ exports[`components/GetLinkModal should have called onHide 2`] = `
       id="linkModalTextArea"
       onClick={[Function]}
       readOnly={true}
-      value="https://mattermost.com"
+      value="https://matterfoss.com"
     />
   </ModalBody>
   <ModalFooter
@@ -238,7 +238,7 @@ exports[`components/GetLinkModal should match snapshot when all props is set 1`]
       id="linkModalTextArea"
       onClick={[Function]}
       readOnly={true}
-      value="https://mattermost.com"
+      value="https://matterfoss.com"
     />
   </ModalBody>
   <ModalFooter
@@ -324,7 +324,7 @@ exports[`components/GetLinkModal should match snapshot when helpText is not set 
       id="linkModalTextArea"
       onClick={[Function]}
       readOnly={true}
-      value="https://mattermost.com"
+      value="https://matterfoss.com"
     />
   </ModalBody>
   <ModalFooter

@@ -4,9 +4,9 @@
 import {connect} from 'react-redux';
 import {ActionCreatorsMapObject, bindActionCreators, Dispatch} from 'redux';
 
-import {getTheme} from 'mattermost-redux/selectors/entities/preferences';
-import {appBarEnabled, appsEnabled, getChannelHeaderAppBindings} from 'mattermost-redux/selectors/entities/apps';
-import {GenericAction} from 'mattermost-redux/types/actions';
+import {getTheme} from 'matterfoss-redux/selectors/entities/preferences';
+import {appBarEnabled, appsEnabled, getChannelHeaderAppBindings} from 'matterfoss-redux/selectors/entities/apps';
+import {GenericAction} from 'matterfoss-redux/types/actions';
 
 import {HandleBindingClick, OpenAppsModal, PostEphemeralCallResponseForChannel} from 'types/apps';
 

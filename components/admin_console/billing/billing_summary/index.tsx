@@ -8,7 +8,7 @@ import {GlobalState} from 'types/store';
 
 import {
     noBillingHistory,
-    upgradeFreeTierMattermostCloud,
+    upgradeFreeTierMatterFOSSCloud,
     lastInvoiceInfo,
     freeTrial,
 } from './billing_summary';
@@ -19,10 +19,10 @@ type BillingSummaryProps = {
     isPaidTier: boolean;
     isFreeTrial: boolean;
     daysLeftOnTrial: number;
-    onUpgradeMattermostCloud: () => void;
+    onUpgradeMatterFOSSCloud: () => void;
 }
 
-const BillingSummary: React.FC<BillingSummaryProps> = ({isPaidTier, isFreeTrial, daysLeftOnTrial, onUpgradeMattermostCloud}: BillingSummaryProps) => {
+const BillingSummary: React.FC<BillingSummaryProps> = ({isPaidTier, isFreeTrial, daysLeftOnTrial, onUpgradeMatterFOSSCloud}: BillingSummaryProps) => {
     const subscription = useSelector((state: GlobalState) => state.entities.cloud.subscription);
     const product = useSelector((state: GlobalState) => {
         if (state.entities.cloud.products && subscription) {
@@ -34,9 +34,9 @@ const BillingSummary: React.FC<BillingSummaryProps> = ({isPaidTier, isFreeTrial,
     let body = noBillingHistory;
 
     if (isFreeTrial) {
-        body = freeTrial(onUpgradeMattermostCloud, daysLeftOnTrial);
+        body = freeTrial(onUpgradeMatterFOSSCloud, daysLeftOnTrial);
     } else if (!isPaidTier) {
-        body = upgradeFreeTierMattermostCloud(onUpgradeMattermostCloud);
+        body = upgradeFreeTierMatterFOSSCloud(onUpgradeMatterFOSSCloud);
     } else if (subscription?.last_invoice) {
         const invoice = subscription!.last_invoice;
         const fullCharges = invoice.line_items.filter((item) => item.type === 'full');

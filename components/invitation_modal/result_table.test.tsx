@@ -6,7 +6,7 @@ import {shallow} from 'enzyme';
 
 import {mountWithIntl} from 'tests/helpers/intl-test-helper';
 
-import deepFreeze from 'mattermost-redux/utils/deep_freeze';
+import deepFreeze from 'matterfoss-redux/utils/deep_freeze';
 
 import EmailIcon from 'components/widgets/icons/mail_icon';
 import AlertIcon from 'components/widgets/icons/alert_icon';

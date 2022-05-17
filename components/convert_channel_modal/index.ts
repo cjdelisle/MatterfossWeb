@@ -4,7 +4,7 @@
 import {bindActionCreators, Dispatch} from 'redux';
 import {connect} from 'react-redux';
 
-import {updateChannelPrivacy} from 'mattermost-redux/actions/channels';
+import {updateChannelPrivacy} from 'matterfoss-redux/actions/channels';
 
 import ConvertChannelModal from './convert_channel_modal';
 

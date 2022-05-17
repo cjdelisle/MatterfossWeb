@@ -32,12 +32,12 @@ describe('Plugin Marketplace', () => {
                 Enable: true,
                 EnableMarketplace: true,
                 EnableRemoteMarketplace: true,
-                MarketplaceURL: 'https://api.integrations.mattermost.com',
+                MarketplaceURL: 'https://api.integrations.matterfoss.com',
                 PluginStates: {
                     github: {
                         Enable: false,
                     },
-                    'com.mattermost.webex': {
+                    'com.matterfoss.webex': {
                         Enable: false,
                     },
                 },
@@ -155,22 +155,22 @@ describe('Plugin Marketplace', () => {
 
     it('should install a plugin on demand', () => {
         // # Uninstall any existing webex plugin
-        cy.apiRemovePluginById('com.mattermost.webex');
+        cy.apiRemovePluginById('com.matterfoss.webex');
 
         // * Verify webex plugin should be visible
         cy.findByText('Next').click();
-        cy.get('#marketplace-plugin-com\\.mattermost\\.webex').scrollIntoView().should('be.visible');
+        cy.get('#marketplace-plugin-com\\.matterfoss\\.webex').scrollIntoView().should('be.visible');
 
         // # Install the webex plugin
-        cy.get('#marketplace-plugin-com\\.mattermost\\.webex').find('.btn.btn-primary').click();
+        cy.get('#marketplace-plugin-com\\.matterfoss\\.webex').find('.btn.btn-primary').click();
 
         // * Verify should show "Configure" after installation
-        cy.get('#marketplace-plugin-com\\.mattermost\\.webex').find('.btn.btn-outline', {timeout: TIMEOUTS.ONE_MIN}).scrollIntoView().should('be.visible').and('have.text', 'Configure');
+        cy.get('#marketplace-plugin-com\\.matterfoss\\.webex').find('.btn.btn-outline', {timeout: TIMEOUTS.ONE_MIN}).scrollIntoView().should('be.visible').and('have.text', 'Configure');
     });
 
     it('should install a plugin from search results on demand', () => {
         // # Uninstall any existing webex plugin
-        cy.apiRemovePluginById('com.mattermost.webex');
+        cy.apiRemovePluginById('com.matterfoss.webex');
 
         // # Filter to webex plugin only
         cy.findByPlaceholderText('Search Marketplace').scrollIntoView().should('be.visible').type('webex');
@@ -179,13 +179,13 @@ describe('Plugin Marketplace', () => {
         cy.get('#marketplaceTabs-pane-allListing').find('.more-modal__row').should('have.length', 1);
 
         // * Verify webex plugin should be visible
-        cy.get('#marketplace-plugin-com\\.mattermost\\.webex').scrollIntoView().should('be.visible');
+        cy.get('#marketplace-plugin-com\\.matterfoss\\.webex').scrollIntoView().should('be.visible');
 
         // # Install the webex plugin
-        cy.get('#marketplace-plugin-com\\.mattermost\\.webex').find('.btn.btn-primary').click();
+        cy.get('#marketplace-plugin-com\\.matterfoss\\.webex').find('.btn.btn-primary').click();
 
         // * Verify should show "Configure" after installation
-        cy.get('#marketplace-plugin-com\\.mattermost\\.webex').find('.btn.btn-outline', {timeout: TIMEOUTS.ONE_MIN}).scrollIntoView().should('be.visible').and('have.text', 'Configure');
+        cy.get('#marketplace-plugin-com\\.matterfoss\\.webex').find('.btn.btn-outline', {timeout: TIMEOUTS.ONE_MIN}).scrollIntoView().should('be.visible').and('have.text', 'Configure');
 
         // * Verify search filter should be maintained
         cy.get('#marketplaceTabs-pane-allListing').find('.more-modal__row').should('have.length', 1);

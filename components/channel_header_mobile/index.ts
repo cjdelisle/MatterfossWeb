@@ -8,13 +8,13 @@ import {withRouter, matchPath} from 'react-router-dom';
 
 import {createSelector} from 'reselect';
 
-import {getCurrentUser} from 'mattermost-redux/selectors/entities/users';
+import {getCurrentUser} from 'matterfoss-redux/selectors/entities/users';
 import {
     getCurrentChannel,
     getMyCurrentChannelMembership,
-} from 'mattermost-redux/selectors/entities/channels';
-import {getCurrentRelativeTeamUrl} from 'mattermost-redux/selectors/entities/teams';
-import {isChannelMuted} from 'mattermost-redux/utils/channel_utils';
+} from 'matterfoss-redux/selectors/entities/channels';
+import {getCurrentRelativeTeamUrl} from 'matterfoss-redux/selectors/entities/teams';
+import {isChannelMuted} from 'matterfoss-redux/utils/channel_utils';
 
 import {
     closeRightHandSide as closeRhs,

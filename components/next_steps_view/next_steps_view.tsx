@@ -5,8 +5,8 @@ import React from 'react';
 import classNames from 'classnames';
 import {FormattedMessage} from 'react-intl';
 
-import {PreferenceType} from 'mattermost-redux/types/preferences';
-import {UserProfile} from 'mattermost-redux/types/users';
+import {PreferenceType} from 'matterfoss-redux/types/preferences';
+import {UserProfile} from 'matterfoss-redux/types/users';
 
 import {pageVisited, trackEvent} from 'actions/telemetry_actions';
 import Accordion from 'components/accordion';
@@ -287,8 +287,8 @@ export default class NextStepsView extends React.PureComponent<Props, State> {
                     <div className='NextStepsView__header-headerText'>
                         <h1 className='NextStepsView__header-headerTopText'>
                             <FormattedMessage
-                                id='next_steps_view.welcomeToMattermost'
-                                defaultMessage='Welcome to Mattermost'
+                                id='next_steps_view.welcomeToMatterFOSS'
+                                defaultMessage='Welcome to MatterFOSS'
                             />
                         </h1>
                         <h2 className='NextStepsView__header-headerBottomText'>

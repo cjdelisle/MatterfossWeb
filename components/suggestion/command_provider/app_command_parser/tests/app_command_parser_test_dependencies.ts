@@ -6,9 +6,9 @@ export {thunk};
 const configureStore = require('redux-mock-store').default;
 export {configureStore};
 
-export {Client4} from 'mattermost-redux/client';
+export {Client4} from 'matterfoss-redux/client';
 
-export type {AppBinding, AppForm} from 'mattermost-redux/types/apps';
-export {AppFieldTypes} from 'mattermost-redux/constants/apps';
+export type {AppBinding, AppForm} from 'matterfoss-redux/types/apps';
+export {AppFieldTypes} from 'matterfoss-redux/constants/apps';
 
 export const checkForExecuteSuggestion = true;

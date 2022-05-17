@@ -29,18 +29,18 @@ npm run test
 
 #### 1. Run docker container using latest focal version
 
-Change directory to root folder of mattermost-webapp then run docker container
+Change directory to root folder of matterfoss-webapp then run docker container
 
 ```
 cd ../..
-docker run -it --rm -v "$(pwd):/mattermost-webapp/" --ipc=host mcr.microsoft.com/playwright:v1.20.0-focal /bin/bash
+docker run -it --rm -v "$(pwd):/matterfoss-webapp/" --ipc=host mcr.microsoft.com/playwright:v1.20.0-focal /bin/bash
 ```
 
 #### 2. Inside the docker container
 
 ```
 export PW_BASE_URL=http://host.docker.internal:8065
-cd mattermost-webapp/e2e/playwright/
+cd matterfoss-webapp/e2e/playwright/
 
 # Install npm packages
 npm i

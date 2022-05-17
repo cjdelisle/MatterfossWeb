@@ -13,7 +13,7 @@ import {localizeMessage} from 'utils/utils.jsx';
 
 import {trackEvent} from 'actions/telemetry_actions.jsx';
 
-import {AddMembersToChanneltreatments} from 'mattermost-redux/constants/config';
+import {AddMembersToChanneltreatments} from 'matterfoss-redux/constants/config';
 
 import ChannelMembersModal from 'components/channel_members_modal';
 import ChannelInviteModal from 'components/channel_invite_modal';

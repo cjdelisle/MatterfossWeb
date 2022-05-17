@@ -4,9 +4,9 @@
 import React, {ComponentProps} from 'react';
 import {shallow} from 'enzyme';
 
-import {UserThread} from 'mattermost-redux/types/threads';
-import {Post} from 'mattermost-redux/types/posts';
-import {Channel} from 'mattermost-redux/types/channels';
+import {UserThread} from 'matterfoss-redux/types/threads';
+import {Post} from 'matterfoss-redux/types/posts';
+import {Channel} from 'matterfoss-redux/types/channels';
 
 import * as Utils from 'utils/utils';
 import ThreadMenu from '../thread_menu';

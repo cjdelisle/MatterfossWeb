@@ -5,18 +5,18 @@ import {connect} from 'react-redux';
 import {bindActionCreators, Dispatch} from 'redux';
 import {withRouter} from 'react-router-dom';
 
-import {getTeams} from 'mattermost-redux/actions/teams';
-import {loadRolesIfNeeded} from 'mattermost-redux/actions/roles';
-import {getConfig} from 'mattermost-redux/selectors/entities/general';
-import {Permissions} from 'mattermost-redux/constants';
-import {haveISystemPermission} from 'mattermost-redux/selectors/entities/roles';
-import {getSortedListableTeams, getTeamMemberships} from 'mattermost-redux/selectors/entities/teams';
-import {getCurrentUser} from 'mattermost-redux/selectors/entities/users';
+import {getTeams} from 'matterfoss-redux/actions/teams';
+import {loadRolesIfNeeded} from 'matterfoss-redux/actions/roles';
+import {getConfig} from 'matterfoss-redux/selectors/entities/general';
+import {Permissions} from 'matterfoss-redux/constants';
+import {haveISystemPermission} from 'matterfoss-redux/selectors/entities/roles';
+import {getSortedListableTeams, getTeamMemberships} from 'matterfoss-redux/selectors/entities/teams';
+import {getCurrentUser} from 'matterfoss-redux/selectors/entities/users';
 
 import {GlobalState} from 'types/store';
 
 import {addUserToTeam} from 'actions/team_actions';
-import {isGuest} from 'mattermost-redux/utils/user_utils';
+import {isGuest} from 'matterfoss-redux/utils/user_utils';
 
 import SelectTeam from './select_team';
 

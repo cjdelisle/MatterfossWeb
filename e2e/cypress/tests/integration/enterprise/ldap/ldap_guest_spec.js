@@ -16,7 +16,7 @@ import {getAdminAccount} from '../../../support/env';
 import {getRandomId} from '../../../utils';
 
 // assumes that E20 license is uploaded
-// for setup with AWS: Follow the instructions mentioned in the mattermost/platform-private/config/ldap-test-setup.txt file
+// for setup with AWS: Follow the instructions mentioned in the matterfoss/platform-private/config/ldap-test-setup.txt file
 describe('LDAP guest', () => {
     let testSettings;
     let user1Data;
@@ -206,7 +206,7 @@ describe('LDAP guest', () => {
 
                     // # Accept confirmation modal
                     cy.get('#confirmModalButton').should('be.visible').click();
-                    cy.get('.admin-console__header', {timeout: TIMEOUTS.ONE_MIN}).should('be.visible').and('have.text', 'Mattermost Teams');
+                    cy.get('.admin-console__header', {timeout: TIMEOUTS.ONE_MIN}).should('be.visible').and('have.text', 'MatterFOSS Teams');
 
                     // # Login as board.one user
                     testSettings.user = userBoard1;

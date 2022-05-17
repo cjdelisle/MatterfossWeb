@@ -53,7 +53,7 @@ describe('Integrations', () => {
             cy.findByText(offline.message);
 
             // * Verify system message profile is visible and without status
-            cy.findByLabelText('Mattermost Logo').should('be.visible');
+            cy.findByLabelText('MatterFOSS Logo').should('be.visible');
             cy.get('.post__img').find('.status').should('not.exist');
         });
     });

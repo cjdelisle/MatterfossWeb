@@ -3,7 +3,7 @@
 
 import React from 'react';
 
-import {setThemeDefaults} from 'mattermost-redux/utils/theme_utils';
+import {setThemeDefaults} from 'matterfoss-redux/utils/theme_utils';
 
 import {mountWithIntl, shallowWithIntl} from 'tests/helpers/intl-test-helper';
 

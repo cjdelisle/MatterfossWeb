@@ -93,7 +93,7 @@ describe('components/MarketplaceItemApp', () => {
         test('should render with icon', () => {
             const props: MarketplaceItemAppProps = {
                 ...baseProps,
-                iconURL: 'http://localhost:8065/plugins/com.mattermost.apps/apps/com.mattermost.servicenow/static/now-mobile-icon.png',
+                iconURL: 'http://localhost:8065/plugins/com.matterfoss.apps/apps/com.matterfoss.servicenow/static/now-mobile-icon.png',
             };
 
             const wrapper = shallow<MarketplaceItemApp>(

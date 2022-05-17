@@ -6,7 +6,7 @@ import {shallow} from 'enzyme';
 
 import AtMention from 'components/at_mention/at_mention';
 
-import {General} from 'mattermost-redux/constants';
+import {General} from 'matterfoss-redux/constants';
 
 import {TestHelper} from 'utils/test_helper';
 

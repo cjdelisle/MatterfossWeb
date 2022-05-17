@@ -6,17 +6,17 @@ import {ActionCreatorsMapObject, bindActionCreators, Dispatch} from 'redux';
 
 import {GlobalState} from 'types/store/index.js';
 
-import {ActionFunc, GenericAction} from 'mattermost-redux/types/actions.js';
+import {ActionFunc, GenericAction} from 'matterfoss-redux/types/actions.js';
 
-import {UserStatus} from 'mattermost-redux/types/users.js';
+import {UserStatus} from 'matterfoss-redux/types/users.js';
 
-import {PreferenceType} from 'mattermost-redux/types/preferences.js';
+import {PreferenceType} from 'matterfoss-redux/types/preferences.js';
 
-import {savePreferences} from 'mattermost-redux/actions/preferences';
-import {setStatus} from 'mattermost-redux/actions/users';
-import {Preferences} from 'mattermost-redux/constants';
-import {get} from 'mattermost-redux/selectors/entities/preferences';
-import {getStatusForUserId} from 'mattermost-redux/selectors/entities/users';
+import {savePreferences} from 'matterfoss-redux/actions/preferences';
+import {setStatus} from 'matterfoss-redux/actions/users';
+import {Preferences} from 'matterfoss-redux/constants';
+import {get} from 'matterfoss-redux/selectors/entities/preferences';
+import {getStatusForUserId} from 'matterfoss-redux/selectors/entities/users';
 
 import {autoResetStatus} from 'actions/user_actions.jsx';
 

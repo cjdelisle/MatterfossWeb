@@ -10,17 +10,17 @@ import {PostDraft} from 'types/store/rhs.js';
 
 import {ModalData} from 'types/actions.js';
 
-import {ActionFunc, ActionResult, DispatchFunc} from 'mattermost-redux/types/actions.js';
+import {ActionFunc, ActionResult, DispatchFunc} from 'matterfoss-redux/types/actions.js';
 
-import {getConfig, getLicense} from 'mattermost-redux/selectors/entities/general';
-import {haveIChannelPermission} from 'mattermost-redux/selectors/entities/roles';
-import {getBool, isCustomGroupsEnabled} from 'mattermost-redux/selectors/entities/preferences';
-import {getAllChannelStats, getChannelMemberCountsByGroup as selectChannelMemberCountsByGroup} from 'mattermost-redux/selectors/entities/channels';
-import {makeGetMessageInHistoryItem} from 'mattermost-redux/selectors/entities/posts';
-import {resetCreatePostRequest, resetHistoryIndex} from 'mattermost-redux/actions/posts';
-import {getChannelTimezones, getChannelMemberCountsByGroup} from 'mattermost-redux/actions/channels';
-import {Permissions, Preferences, Posts} from 'mattermost-redux/constants';
-import {getAssociatedGroupsForReferenceByMention} from 'mattermost-redux/selectors/entities/groups';
+import {getConfig, getLicense} from 'matterfoss-redux/selectors/entities/general';
+import {haveIChannelPermission} from 'matterfoss-redux/selectors/entities/roles';
+import {getBool, isCustomGroupsEnabled} from 'matterfoss-redux/selectors/entities/preferences';
+import {getAllChannelStats, getChannelMemberCountsByGroup as selectChannelMemberCountsByGroup} from 'matterfoss-redux/selectors/entities/channels';
+import {makeGetMessageInHistoryItem} from 'matterfoss-redux/selectors/entities/posts';
+import {resetCreatePostRequest, resetHistoryIndex} from 'matterfoss-redux/actions/posts';
+import {getChannelTimezones, getChannelMemberCountsByGroup} from 'matterfoss-redux/actions/channels';
+import {Permissions, Preferences, Posts} from 'matterfoss-redux/constants';
+import {getAssociatedGroupsForReferenceByMention} from 'matterfoss-redux/selectors/entities/groups';
 
 import {connectionErrorCount} from 'selectors/views/system';
 

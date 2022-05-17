@@ -1,7 +1,7 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
-import {General} from 'mattermost-redux/constants';
+import {General} from 'matterfoss-redux/constants';
 import {mapStateToProps} from 'components/search_results_item';
 
 import {RHSStates, WindowSizes} from 'utils/constants';

@@ -5,13 +5,13 @@ import React from 'react';
 import {FormattedMessage} from 'react-intl';
 import {uniq, difference} from 'lodash';
 
-import {Role} from 'mattermost-redux/types/roles';
-import {Client4} from 'mattermost-redux/client';
+import {Role} from 'matterfoss-redux/types/roles';
+import {Client4} from 'matterfoss-redux/client';
 
-import {UserProfile} from 'mattermost-redux/types/users';
-import {ActionResult} from 'mattermost-redux/types/actions';
+import {UserProfile} from 'matterfoss-redux/types/users';
+import {ActionResult} from 'matterfoss-redux/types/actions';
 
-import Permissions from 'mattermost-redux/constants/permissions';
+import Permissions from 'matterfoss-redux/constants/permissions';
 
 import Constants from 'utils/constants';
 import {browserHistory} from 'utils/browser_history';

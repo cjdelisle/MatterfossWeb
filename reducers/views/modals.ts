@@ -3,8 +3,8 @@
 
 import {combineReducers} from 'redux';
 
-import {GeneralTypes, UserTypes} from 'mattermost-redux/action_types';
-import {GenericAction} from 'mattermost-redux/types/actions';
+import {GeneralTypes, UserTypes} from 'matterfoss-redux/action_types';
+import {GenericAction} from 'matterfoss-redux/types/actions';
 
 import {ViewsState} from 'types/store/views';
 

@@ -6,11 +6,11 @@ import {Link} from 'react-router-dom';
 
 import {ConnectedComponent} from 'react-redux';
 
-import {Client4} from 'mattermost-redux/client';
+import {Client4} from 'matterfoss-redux/client';
 
-import {UserProfile} from 'mattermost-redux/types/users';
-import {Channel, ChannelMembership} from 'mattermost-redux/types/channels';
-import {ServerError} from 'mattermost-redux/types/errors';
+import {UserProfile} from 'matterfoss-redux/types/users';
+import {Channel, ChannelMembership} from 'matterfoss-redux/types/channels';
+import {ServerError} from 'matterfoss-redux/types/errors';
 
 import * as Utils from 'utils/utils.jsx';
 import ProfilePicture from 'components/profile_picture';

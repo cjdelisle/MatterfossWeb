@@ -65,7 +65,7 @@ describe('Onboarding - Sysadmin', () => {
         cy.get('#input_fullName').should('be.visible').clear().type('Theodore Logan');
 
         // # Select profile picture
-        cy.findByTestId('PictureSelector__input-CompleteProfileStep__profilePicture').attachFile('mattermost-icon.png');
+        cy.findByTestId('PictureSelector__input-CompleteProfileStep__profilePicture').attachFile('matterfoss-icon.png');
 
         // # Click Save profile button
         cy.findByTestId('CompleteProfileStep__saveProfileButton').should('be.visible').and('not.be.disabled').click();
@@ -80,7 +80,7 @@ describe('Onboarding - Sysadmin', () => {
         cy.get('#input_teamName').should('be.visible').clear().type('Wyld Stallyns');
 
         // # Select profile picture
-        cy.findByTestId('PictureSelector__input-TeamProfileStep__teamIcon').attachFile('mattermost-icon.png');
+        cy.findByTestId('PictureSelector__input-TeamProfileStep__teamIcon').attachFile('matterfoss-icon.png');
 
         // # Click Save team button
         cy.findByTestId('TeamProfileStep__saveTeamButton').should('be.visible').and('not.be.disabled').click();

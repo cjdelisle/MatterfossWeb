@@ -7,8 +7,8 @@ import {extendPrototype} from 'localforage-observable';
 
 import {persistStore, REHYDRATE} from 'redux-persist';
 
-import {General, RequestStatus} from 'mattermost-redux/constants';
-import configureServiceStore from 'mattermost-redux/store';
+import {General, RequestStatus} from 'matterfoss-redux/constants';
+import configureServiceStore from 'matterfoss-redux/store';
 
 import {clearUserCookie} from 'actions/views/cookie';
 import appReducers from 'reducers';

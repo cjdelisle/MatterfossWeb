@@ -6,7 +6,7 @@ import {ActionCreatorsMapObject, bindActionCreators, Dispatch} from 'redux';
 
 import {GlobalState} from 'types/store/index.js';
 
-import {Action, GenericAction} from 'mattermost-redux/types/actions.js';
+import {Action, GenericAction} from 'matterfoss-redux/types/actions.js';
 
 import {closeModal} from 'actions/views/modals';
 

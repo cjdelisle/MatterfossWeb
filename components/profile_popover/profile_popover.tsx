@@ -3,7 +3,7 @@
 import React from 'react';
 import {FormattedMessage, injectIntl, IntlShape} from 'react-intl';
 
-import EventEmitter from 'mattermost-redux/utils/event_emitter';
+import EventEmitter from 'matterfoss-redux/utils/event_emitter';
 import StatusIcon from 'components/status_icon';
 import Timestamp from 'components/timestamp';
 import OverlayTrigger from 'components/overlay_trigger';
@@ -14,7 +14,7 @@ import * as GlobalActions from 'actions/global_actions';
 import Constants, {ModalIdentifiers, UserStatuses} from 'utils/constants';
 import {t} from 'utils/i18n';
 import * as Utils from 'utils/utils.jsx';
-import {isGuest, isSystemAdmin} from 'mattermost-redux/utils/user_utils';
+import {isGuest, isSystemAdmin} from 'matterfoss-redux/utils/user_utils';
 import Pluggable from 'plugins/pluggable';
 import AddUserToChannelModal from 'components/add_user_to_channel_modal';
 import LocalizedIcon from 'components/localized_icon';
@@ -26,8 +26,8 @@ import CustomStatusEmoji from 'components/custom_status/custom_status_emoji';
 import CustomStatusModal from 'components/custom_status/custom_status_modal';
 import CustomStatusText from 'components/custom_status/custom_status_text';
 import ExpiryTime from 'components/custom_status/expiry_time';
-import {UserCustomStatus, UserProfile, UserTimezone, CustomStatusDuration} from 'mattermost-redux/types/users';
-import {ServerError} from 'mattermost-redux/types/errors';
+import {UserCustomStatus, UserProfile, UserTimezone, CustomStatusDuration} from 'matterfoss-redux/types/users';
+import {ServerError} from 'matterfoss-redux/types/errors';
 import {ModalData} from 'types/actions';
 
 import './profile_popover.scss';

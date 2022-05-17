@@ -4,12 +4,12 @@
 import {connect} from 'react-redux';
 import {bindActionCreators, Dispatch, ActionCreatorsMapObject} from 'redux';
 
-import Permissions from 'mattermost-redux/constants/permissions';
-import {haveICurrentChannelPermission} from 'mattermost-redux/selectors/entities/roles';
-import {getCurrentTeam} from 'mattermost-redux/selectors/entities/teams';
-import {Action} from 'mattermost-redux/types/actions';
-import {createChannel} from 'mattermost-redux/actions/channels';
-import {GlobalState} from 'mattermost-redux/types/store';
+import Permissions from 'matterfoss-redux/constants/permissions';
+import {haveICurrentChannelPermission} from 'matterfoss-redux/selectors/entities/roles';
+import {getCurrentTeam} from 'matterfoss-redux/selectors/entities/teams';
+import {Action} from 'matterfoss-redux/types/actions';
+import {createChannel} from 'matterfoss-redux/actions/channels';
+import {GlobalState} from 'matterfoss-redux/types/store';
 
 import {switchToChannel} from 'actions/views/channel';
 import {closeModal} from 'actions/views/modals';

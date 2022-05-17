@@ -3,8 +3,8 @@
 
 import {createSelector} from 'reselect';
 
-import {getPost} from 'mattermost-redux/selectors/entities/posts';
-import {getCurrentUserId} from 'mattermost-redux/selectors/entities/users';
+import {getPost} from 'matterfoss-redux/selectors/entities/posts';
+import {getCurrentUserId} from 'matterfoss-redux/selectors/entities/users';
 
 import {getGlobalItem} from 'selectors/storage';
 import {arePreviewsCollapsed} from 'selectors/preferences';

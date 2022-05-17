@@ -3,8 +3,8 @@
 
 import {connect} from 'react-redux';
 
-import {getCommands, getOAuthApps, getIncomingHooks, getOutgoingHooks} from 'mattermost-redux/selectors/entities/integrations';
-import {getBotAccounts} from 'mattermost-redux/selectors/entities/bots';
+import {getCommands, getOAuthApps, getIncomingHooks, getOutgoingHooks} from 'matterfoss-redux/selectors/entities/integrations';
+import {getBotAccounts} from 'matterfoss-redux/selectors/entities/bots';
 
 import ConfirmIntegration from './confirm_integration.jsx';
 

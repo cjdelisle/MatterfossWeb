@@ -3,8 +3,8 @@
 
 import configureStore from 'redux-mock-store';
 
-import {UserProfile} from 'mattermost-redux/types/users';
-import {Team} from 'mattermost-redux/types/teams';
+import {UserProfile} from 'matterfoss-redux/types/users';
+import {Team} from 'matterfoss-redux/types/teams';
 
 import {browserHistory} from 'utils/browser_history';
 import {closeRightHandSide, closeMenu as closeRhsMenu} from 'actions/views/rhs';
@@ -22,7 +22,7 @@ jest.mock('actions/views/lhs', () => ({
     close: jest.fn(),
 }));
 
-jest.mock('mattermost-redux/actions/users', () => ({
+jest.mock('matterfoss-redux/actions/users', () => ({
     loadMe: () => ({type: 'MOCK_RECEIVED_ME'}),
 }));
 

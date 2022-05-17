@@ -6,14 +6,14 @@ import {FormattedMessage, useIntl} from 'react-intl';
 import classNames from 'classnames';
 import {useDispatch, useSelector} from 'react-redux';
 
-import {Channel} from 'mattermost-redux/types/channels';
-import {Post} from 'mattermost-redux/types/posts';
-import {UserThread} from 'mattermost-redux/types/threads';
-import {getChannel as fetchChannel} from 'mattermost-redux/actions/channels';
-import {getInt} from 'mattermost-redux/selectors/entities/preferences';
-import {getCurrentUserId} from 'mattermost-redux/selectors/entities/users';
-import {getMissingProfilesByIds} from 'mattermost-redux/actions/users';
-import {Posts} from 'mattermost-redux/constants';
+import {Channel} from 'matterfoss-redux/types/channels';
+import {Post} from 'matterfoss-redux/types/posts';
+import {UserThread} from 'matterfoss-redux/types/threads';
+import {getChannel as fetchChannel} from 'matterfoss-redux/actions/channels';
+import {getInt} from 'matterfoss-redux/selectors/entities/preferences';
+import {getCurrentUserId} from 'matterfoss-redux/selectors/entities/users';
+import {getMissingProfilesByIds} from 'matterfoss-redux/actions/users';
+import {Posts} from 'matterfoss-redux/constants';
 
 import * as Utils from 'utils/utils';
 import {Constants, CrtTutorialSteps, Preferences} from 'utils/constants';

@@ -4,24 +4,24 @@
 import debounce from 'lodash/debounce';
 import {batchActions} from 'redux-batched-actions';
 
-import {SearchTypes} from 'mattermost-redux/action_types';
+import {SearchTypes} from 'matterfoss-redux/action_types';
 import {
     clearSearch,
     getFlaggedPosts,
     getPinnedPosts,
     searchPostsWithParams,
     searchFilesWithParams,
-} from 'mattermost-redux/actions/search';
-import * as PostActions from 'mattermost-redux/actions/posts';
-import {getCurrentUserId, getCurrentUserMentionKeys} from 'mattermost-redux/selectors/entities/users';
-import {getCurrentTeamId} from 'mattermost-redux/selectors/entities/teams';
-import {getConfig} from 'mattermost-redux/selectors/entities/general';
-import {getCurrentChannelId, getCurrentChannelNameForSearchShortcut} from 'mattermost-redux/selectors/entities/channels';
-import {getPost} from 'mattermost-redux/selectors/entities/posts';
-import {getUserTimezone} from 'mattermost-redux/selectors/entities/timezone';
-import {getUserCurrentTimezone} from 'mattermost-redux/utils/timezone_utils';
-import {Action, ActionResult, DispatchFunc, GenericAction, GetStateFunc} from 'mattermost-redux/types/actions';
-import {Post} from 'mattermost-redux/types/posts';
+} from 'matterfoss-redux/actions/search';
+import * as PostActions from 'matterfoss-redux/actions/posts';
+import {getCurrentUserId, getCurrentUserMentionKeys} from 'matterfoss-redux/selectors/entities/users';
+import {getCurrentTeamId} from 'matterfoss-redux/selectors/entities/teams';
+import {getConfig} from 'matterfoss-redux/selectors/entities/general';
+import {getCurrentChannelId, getCurrentChannelNameForSearchShortcut} from 'matterfoss-redux/selectors/entities/channels';
+import {getPost} from 'matterfoss-redux/selectors/entities/posts';
+import {getUserTimezone} from 'matterfoss-redux/selectors/entities/timezone';
+import {getUserCurrentTimezone} from 'matterfoss-redux/utils/timezone_utils';
+import {Action, ActionResult, DispatchFunc, GenericAction, GetStateFunc} from 'matterfoss-redux/types/actions';
+import {Post} from 'matterfoss-redux/types/posts';
 
 import {trackEvent} from 'actions/telemetry_actions.jsx';
 import {getSearchTerms, getRhsState, getPluggableId, getFilesSearchExtFilter} from 'selectors/rhs';
@@ -30,7 +30,7 @@ import * as Utils from 'utils/utils';
 import {getBrowserUtcOffset, getUtcOffsetForTimeZone} from 'utils/timezone';
 import {RhsState} from 'types/store/rhs';
 import {GlobalState} from 'types/store';
-import {getPostsByIds} from 'mattermost-redux/actions/posts';
+import {getPostsByIds} from 'matterfoss-redux/actions/posts';
 import {unsetEditingPost} from '../post_actions';
 
 function selectPostFromRightHandSideSearchWithPreviousState(post: Post, previousRhsState?: RhsState) {

@@ -6,12 +6,12 @@ import {ActionCreatorsMapObject, bindActionCreators, Dispatch} from 'redux';
 
 import {createSelector} from 'reselect';
 
-import {getTeams as fetchTeams, searchTeams} from 'mattermost-redux/actions/teams';
-import {getTeams} from 'mattermost-redux/selectors/entities/teams';
+import {getTeams as fetchTeams, searchTeams} from 'matterfoss-redux/actions/teams';
+import {getTeams} from 'matterfoss-redux/selectors/entities/teams';
 
-import {ActionFunc} from 'mattermost-redux/types/actions';
+import {ActionFunc} from 'matterfoss-redux/types/actions';
 
-import {TeamSearchOpts, TeamsWithCount} from 'mattermost-redux/types/teams';
+import {TeamSearchOpts, TeamsWithCount} from 'matterfoss-redux/types/teams';
 
 import {GlobalState} from 'types/store';
 

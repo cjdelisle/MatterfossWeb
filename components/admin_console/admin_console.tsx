@@ -4,12 +4,12 @@
 import React from 'react';
 import {Route, Switch, Redirect} from 'react-router-dom';
 
-import {ActionFunc} from 'mattermost-redux/types/actions';
-import {AdminConfig, EnvironmentConfig, ClientLicense} from 'mattermost-redux/types/config';
-import {Role} from 'mattermost-redux/types/roles';
-import {ConsoleAccess} from 'mattermost-redux/types/admin';
-import {CloudState} from 'mattermost-redux/types/cloud';
-import {Team} from 'mattermost-redux/types/teams';
+import {ActionFunc} from 'matterfoss-redux/types/actions';
+import {AdminConfig, EnvironmentConfig, ClientLicense} from 'matterfoss-redux/types/config';
+import {Role} from 'matterfoss-redux/types/roles';
+import {ConsoleAccess} from 'matterfoss-redux/types/admin';
+import {CloudState} from 'matterfoss-redux/types/cloud';
+import {Team} from 'matterfoss-redux/types/teams';
 
 import AnnouncementBar from 'components/announcement_bar';
 import SystemNotice from 'components/system_notice';

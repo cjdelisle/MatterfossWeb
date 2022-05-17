@@ -4,10 +4,10 @@
 import {connect} from 'react-redux';
 import {bindActionCreators, Dispatch, ActionCreatorsMapObject} from 'redux';
 
-import {Action} from 'mattermost-redux/types/actions';
-import {shouldShowUnreadsCategory, isCustomGroupsEnabled} from 'mattermost-redux/selectors/entities/preferences';
-import {haveISystemPermission} from 'mattermost-redux/selectors/entities/roles';
-import Permissions from 'mattermost-redux/constants/permissions';
+import {Action} from 'matterfoss-redux/types/actions';
+import {shouldShowUnreadsCategory, isCustomGroupsEnabled} from 'matterfoss-redux/selectors/entities/preferences';
+import {haveISystemPermission} from 'matterfoss-redux/selectors/entities/roles';
+import Permissions from 'matterfoss-redux/constants/permissions';
 
 import {openModal, closeModal} from 'actions/views/modals';
 import {browserHistory} from 'utils/browser_history';

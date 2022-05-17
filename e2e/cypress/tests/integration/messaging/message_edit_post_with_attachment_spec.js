@@ -31,7 +31,7 @@ describe('Messaging', () => {
         cy.url().should('include', offtopiclink);
 
         // # Upload a file on center view
-        cy.get('#fileUploadInput').attachFile('mattermost-icon.png');
+        cy.get('#fileUploadInput').attachFile('matterfoss-icon.png');
 
         // # Type 'This is sample text' and submit
         cy.postMessage('This is sample text');

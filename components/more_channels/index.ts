@@ -6,14 +6,14 @@ import {ActionCreatorsMapObject, bindActionCreators, Dispatch} from 'redux';
 
 import {createSelector} from 'reselect';
 
-import {RequestStatus} from 'mattermost-redux/constants';
-import {Channel} from 'mattermost-redux/types/channels';
-import {getConfig} from 'mattermost-redux/selectors/entities/general';
-import {Action, ActionResult} from 'mattermost-redux/types/actions';
-import {getCurrentTeam} from 'mattermost-redux/selectors/entities/teams';
-import {getCurrentUserId} from 'mattermost-redux/selectors/entities/users';
-import {getChannels, getArchivedChannels, joinChannel} from 'mattermost-redux/actions/channels';
-import {getOtherChannels, getChannelsInCurrentTeam} from 'mattermost-redux/selectors/entities/channels';
+import {RequestStatus} from 'matterfoss-redux/constants';
+import {Channel} from 'matterfoss-redux/types/channels';
+import {getConfig} from 'matterfoss-redux/selectors/entities/general';
+import {Action, ActionResult} from 'matterfoss-redux/types/actions';
+import {getCurrentTeam} from 'matterfoss-redux/selectors/entities/teams';
+import {getCurrentUserId} from 'matterfoss-redux/selectors/entities/users';
+import {getChannels, getArchivedChannels, joinChannel} from 'matterfoss-redux/actions/channels';
+import {getOtherChannels, getChannelsInCurrentTeam} from 'matterfoss-redux/selectors/entities/channels';
 
 import {searchMoreChannels} from 'actions/channel_actions.jsx';
 import {openModal, closeModal} from 'actions/views/modals';

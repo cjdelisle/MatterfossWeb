@@ -19,7 +19,7 @@ describe('System Console', () => {
         cy.apiUpdateConfig({
             EmailSettings: {
                 PushNotificationContents: 'full',
-                FeedbackName: 'Mattermost Test Team',
+                FeedbackName: 'MatterFOSS Test Team',
                 FeedbackEmail: 'feedback@mattertest.com',
             },
             SupportSettings: {

@@ -88,7 +88,7 @@ describe('Guest Account - Verify Manage Guest Users', () => {
         cy.wait(TIMEOUTS.HALF_SEC).findByText('Update Email').click();
 
         // * Update email of Guest User
-        const email = `temp-${getRandomId()}@mattermost.com`;
+        const email = `temp-${getRandomId()}@matterfoss.com`;
         cy.findByTestId('resetEmailModal').should('be.visible').within(() => {
             cy.findByTestId('resetEmailForm').should('be.visible').get('input').type(email);
             cy.findByTestId('resetEmailButton').click();

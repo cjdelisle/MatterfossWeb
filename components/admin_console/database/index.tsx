@@ -5,9 +5,9 @@ import {connect} from 'react-redux';
 
 import {bindActionCreators, Dispatch, ActionCreatorsMapObject} from 'redux';
 
-import {ActionFunc, ActionResult, GenericAction} from 'mattermost-redux/types/actions';
+import {ActionFunc, ActionResult, GenericAction} from 'matterfoss-redux/types/actions';
 
-import {getAppliedSchemaMigrations} from 'mattermost-redux/actions/admin';
+import {getAppliedSchemaMigrations} from 'matterfoss-redux/actions/admin';
 
 import MigrationsTable from './migrations_table';
 

@@ -6,8 +6,8 @@ import {useIntl} from 'react-intl';
 
 import Icon from '@mattermost/compass-components/foundations/icon';
 
-import {Permissions} from 'mattermost-redux/constants';
-import {UserProfile} from 'mattermost-redux/types/users';
+import {Permissions} from 'matterfoss-redux/constants';
+import {UserProfile} from 'matterfoss-redux/types/users';
 import AboutBuildModal from 'components/about_build_modal';
 import SystemPermissionGate from 'components/permissions_gates/system_permission_gate';
 import TeamPermissionGate from 'components/permissions_gates/team_permission_gate';

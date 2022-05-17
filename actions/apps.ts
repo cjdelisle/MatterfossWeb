@@ -1,12 +1,12 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
-import {Client4} from 'mattermost-redux/client';
-import {Action, ActionFunc, DispatchFunc} from 'mattermost-redux/types/actions';
-import {AppCallResponse, AppForm, AppCallRequest, AppContext, AppBinding} from 'mattermost-redux/types/apps';
-import {AppCallResponseTypes} from 'mattermost-redux/constants/apps';
-import {Post} from 'mattermost-redux/types/posts';
-import {CommandArgs} from 'mattermost-redux/types/integrations';
+import {Client4} from 'matterfoss-redux/client';
+import {Action, ActionFunc, DispatchFunc} from 'matterfoss-redux/types/actions';
+import {AppCallResponse, AppForm, AppCallRequest, AppContext, AppBinding} from 'matterfoss-redux/types/apps';
+import {AppCallResponseTypes} from 'matterfoss-redux/constants/apps';
+import {Post} from 'matterfoss-redux/types/posts';
+import {CommandArgs} from 'matterfoss-redux/types/integrations';
 
 import {openModal} from 'actions/views/modals';
 
@@ -17,7 +17,7 @@ import {getSiteURL, shouldOpenInNewTab} from 'utils/url';
 import {browserHistory} from 'utils/browser_history';
 import {createCallRequest, makeCallErrorResponse} from 'utils/apps';
 
-import {cleanForm} from 'mattermost-redux/utils/apps';
+import {cleanForm} from 'matterfoss-redux/utils/apps';
 
 import {sendEphemeralPost} from './global_actions';
 

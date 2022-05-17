@@ -4,7 +4,7 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 
-import {Groups} from 'mattermost-redux/constants';
+import {Groups} from 'matterfoss-redux/constants';
 
 import AddGroupsToChannelModal, {Props} from 'components/add_groups_to_channel_modal/add_groups_to_channel_modal';
 

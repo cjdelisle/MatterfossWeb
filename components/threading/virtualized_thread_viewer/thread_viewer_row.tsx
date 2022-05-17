@@ -3,8 +3,8 @@
 
 import React, {memo} from 'react';
 
-import * as PostListUtils from 'mattermost-redux/utils/post_list';
-import {Post} from 'mattermost-redux/types/posts';
+import * as PostListUtils from 'matterfoss-redux/utils/post_list';
+import {Post} from 'matterfoss-redux/types/posts';
 
 import CombinedUserActivityPost from 'components/post_view/combined_user_activity_post';
 import DateSeparator from 'components/post_view/date_separator';

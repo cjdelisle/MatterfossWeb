@@ -3,13 +3,13 @@
 
 import {connect, ConnectedProps} from 'react-redux';
 
-import {savePreferences} from 'mattermost-redux/actions/preferences';
+import {savePreferences} from 'matterfoss-redux/actions/preferences';
 
-import {Preferences} from 'mattermost-redux/constants';
+import {Preferences} from 'matterfoss-redux/constants';
 
-import {isPerformanceDebuggingEnabled} from 'mattermost-redux/selectors/entities/general';
-import {getBool} from 'mattermost-redux/selectors/entities/preferences';
-import {getCurrentUserId} from 'mattermost-redux/selectors/entities/users';
+import {isPerformanceDebuggingEnabled} from 'matterfoss-redux/selectors/entities/general';
+import {getBool} from 'matterfoss-redux/selectors/entities/preferences';
+import {getCurrentUserId} from 'matterfoss-redux/selectors/entities/users';
 
 import {GlobalState} from 'types/store';
 

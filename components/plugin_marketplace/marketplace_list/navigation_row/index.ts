@@ -3,8 +3,8 @@
 
 import {connect} from 'react-redux';
 
-import {getTheme} from 'mattermost-redux/selectors/entities/preferences';
-import {GlobalState} from 'mattermost-redux/types/store';
+import {getTheme} from 'matterfoss-redux/selectors/entities/preferences';
+import {GlobalState} from 'matterfoss-redux/types/store';
 
 import NavigationRow from './navigation_row';
 

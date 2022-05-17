@@ -12,7 +12,7 @@
 
 // assumes the CYPRESS_* variables are set
 // assumes that E20 license is uploaded
-// for setup with AWS: Follow the instructions mentioned in the mattermost/platform-private/config/ldap-test-setup.txt file
+// for setup with AWS: Follow the instructions mentioned in the matterfoss/platform-private/config/ldap-test-setup.txt file
 
 describe('LDAP settings', () => {
     beforeEach(() => {
@@ -70,7 +70,7 @@ describe('LDAP settings', () => {
                 username: 'test.two',
                 password: 'Password1',
             },
-            siteName: 'Mattermost',
+            siteName: 'MatterFOSS',
         };
 
         // # Login as a new LDAP user

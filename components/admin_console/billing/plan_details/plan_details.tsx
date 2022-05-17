@@ -16,7 +16,7 @@ import {localizeMessage} from 'utils/utils';
 import Badge from 'components/widgets/badges/badge';
 
 import './plan_details.scss';
-import {Product} from 'mattermost-redux/types/cloud';
+import {Product} from 'matterfoss-redux/types/cloud';
 
 const howBillingWorksLink = (
     <a
@@ -162,7 +162,7 @@ export const planDetailsTopElements = (
             productName = (
                 <FormattedMessage
                     id='admin.billing.subscription.planDetails.productName.mmCloud'
-                    defaultMessage='Mattermost Cloud'
+                    defaultMessage='MatterFOSS Cloud'
                 />
             );
             break;
@@ -186,7 +186,7 @@ export const planDetailsTopElements = (
         productName = (
             <FormattedMessage
                 id='admin.billing.subscription.planDetails.productName.mmCloud'
-                defaultMessage='Mattermost Cloud'
+                defaultMessage='MatterFOSS Cloud'
             />
         );
     }

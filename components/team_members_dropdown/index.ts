@@ -4,22 +4,22 @@
 import {connect} from 'react-redux';
 import {bindActionCreators, Dispatch} from 'redux';
 
-import {getChannelStats} from 'mattermost-redux/actions/channels';
+import {getChannelStats} from 'matterfoss-redux/actions/channels';
 import {
     getMyTeamMembers,
     getMyTeamUnreads,
     getTeamStats,
     getTeamMember,
     updateTeamMemberSchemeRoles,
-} from 'mattermost-redux/actions/teams';
-import {getUser, updateUserActive} from 'mattermost-redux/actions/users';
-import {getCurrentUser} from 'mattermost-redux/selectors/entities/users';
-import {getCurrentRelativeTeamUrl, getCurrentTeam} from 'mattermost-redux/selectors/entities/teams';
-import {isCollapsedThreadsEnabled} from 'mattermost-redux/selectors/entities/preferences';
+} from 'matterfoss-redux/actions/teams';
+import {getUser, updateUserActive} from 'matterfoss-redux/actions/users';
+import {getCurrentUser} from 'matterfoss-redux/selectors/entities/users';
+import {getCurrentRelativeTeamUrl, getCurrentTeam} from 'matterfoss-redux/selectors/entities/teams';
+import {isCollapsedThreadsEnabled} from 'matterfoss-redux/selectors/entities/preferences';
 
-import {GlobalState} from 'mattermost-redux/types/store';
+import {GlobalState} from 'matterfoss-redux/types/store';
 
-import {GenericAction} from 'mattermost-redux/types/actions';
+import {GenericAction} from 'matterfoss-redux/types/actions';
 
 import {removeUserFromTeamAndGetStats} from 'actions/team_actions.jsx';
 

@@ -4,11 +4,11 @@
 import {connect} from 'react-redux';
 import {ActionCreatorsMapObject, bindActionCreators, Dispatch} from 'redux';
 
-import {getAllChannels as loadChannels, searchAllChannels} from 'mattermost-redux/actions/channels';
+import {getAllChannels as loadChannels, searchAllChannels} from 'matterfoss-redux/actions/channels';
 
-import {ChannelWithTeamData, ChannelSearchOpts} from 'mattermost-redux/types/channels';
+import {ChannelWithTeamData, ChannelSearchOpts} from 'matterfoss-redux/types/channels';
 
-import {ActionFunc, ActionResult, GenericAction} from 'mattermost-redux/types/actions';
+import {ActionFunc, ActionResult, GenericAction} from 'matterfoss-redux/types/actions';
 
 import {setModalSearchTerm} from 'actions/views/search';
 

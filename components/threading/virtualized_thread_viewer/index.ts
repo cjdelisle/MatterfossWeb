@@ -3,13 +3,13 @@
 
 import {connect} from 'react-redux';
 
-import {getPost} from 'mattermost-redux/selectors/entities/posts';
-import {getDirectTeammate} from 'mattermost-redux/selectors/entities/channels';
-import {getCurrentUserId} from 'mattermost-redux/selectors/entities/common';
-import {isCollapsedThreadsEnabled} from 'mattermost-redux/selectors/entities/preferences';
+import {getPost} from 'matterfoss-redux/selectors/entities/posts';
+import {getDirectTeammate} from 'matterfoss-redux/selectors/entities/channels';
+import {getCurrentUserId} from 'matterfoss-redux/selectors/entities/common';
+import {isCollapsedThreadsEnabled} from 'matterfoss-redux/selectors/entities/preferences';
 
-import {Channel} from 'mattermost-redux/types/channels';
-import {Post} from 'mattermost-redux/types/posts';
+import {Channel} from 'matterfoss-redux/types/channels';
+import {Post} from 'matterfoss-redux/types/posts';
 
 import {FakePost} from 'types/store/rhs';
 

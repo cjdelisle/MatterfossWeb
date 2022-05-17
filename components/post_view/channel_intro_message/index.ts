@@ -5,15 +5,15 @@ import {connect} from 'react-redux';
 
 import {bindActionCreators, Dispatch} from 'redux';
 
-import {getConfig} from 'mattermost-redux/selectors/entities/general';
-import {getCurrentChannel, getDirectTeammate} from 'mattermost-redux/selectors/entities/channels';
-import {getCurrentTeam} from 'mattermost-redux/selectors/entities/teams';
-import {getProfilesInCurrentChannel, getCurrentUserId, getUser, getTotalUsersStats as getTotalUsersStatsSelector} from 'mattermost-redux/selectors/entities/users';
-import {get} from 'mattermost-redux/selectors/entities/preferences';
+import {getConfig} from 'matterfoss-redux/selectors/entities/general';
+import {getCurrentChannel, getDirectTeammate} from 'matterfoss-redux/selectors/entities/channels';
+import {getCurrentTeam} from 'matterfoss-redux/selectors/entities/teams';
+import {getProfilesInCurrentChannel, getCurrentUserId, getUser, getTotalUsersStats as getTotalUsersStatsSelector} from 'matterfoss-redux/selectors/entities/users';
+import {get} from 'matterfoss-redux/selectors/entities/preferences';
 
 import {getChannelIntroPluginComponents} from 'selectors/plugins';
 
-import {getTotalUsersStats} from 'mattermost-redux/actions/users';
+import {getTotalUsersStats} from 'matterfoss-redux/actions/users';
 
 import {Preferences} from 'utils/constants';
 import {getDisplayNameByUser} from 'utils/utils.jsx';
@@ -21,7 +21,7 @@ import {getCurrentLocale} from 'selectors/i18n';
 
 import {GlobalState} from 'types/store';
 
-import {GenericAction} from 'mattermost-redux/types/actions';
+import {GenericAction} from 'matterfoss-redux/types/actions';
 
 import ChannelIntroMessage from './channel_intro_message';
 

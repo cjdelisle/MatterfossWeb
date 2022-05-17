@@ -4,8 +4,8 @@
 import {connect} from 'react-redux';
 import {bindActionCreators, Dispatch} from 'redux';
 
-import {GenericAction} from 'mattermost-redux/types/actions';
-import {appsEnabled} from 'mattermost-redux/selectors/entities/apps';
+import {GenericAction} from 'matterfoss-redux/types/actions';
+import {appsEnabled} from 'matterfoss-redux/selectors/entities/apps';
 
 import {toggleEmbedVisibility} from 'actions/post_actions';
 import {isEmbedVisible} from 'selectors/posts';

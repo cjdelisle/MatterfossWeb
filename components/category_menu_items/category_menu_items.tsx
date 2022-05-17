@@ -5,12 +5,12 @@ import React from 'react';
 import {useIntl} from 'react-intl';
 import {useDispatch, useSelector} from 'react-redux';
 
-import {CategoryTypes} from 'mattermost-redux/constants/channel_categories';
-import {getCategoryInTeamWithChannel} from 'mattermost-redux/selectors/entities/channel_categories';
-import {getCurrentTeam} from 'mattermost-redux/selectors/entities/teams';
-import {Channel} from 'mattermost-redux/types/channels';
-import {DispatchFunc} from 'mattermost-redux/types/actions';
-import {ChannelCategory} from 'mattermost-redux/types/channel_categories';
+import {CategoryTypes} from 'matterfoss-redux/constants/channel_categories';
+import {getCategoryInTeamWithChannel} from 'matterfoss-redux/selectors/entities/channel_categories';
+import {getCurrentTeam} from 'matterfoss-redux/selectors/entities/teams';
+import {Channel} from 'matterfoss-redux/types/channels';
+import {DispatchFunc} from 'matterfoss-redux/types/actions';
+import {ChannelCategory} from 'matterfoss-redux/types/channel_categories';
 
 import {trackEvent} from 'actions/telemetry_actions';
 import {addChannelsInSidebar} from 'actions/views/channel_sidebar';

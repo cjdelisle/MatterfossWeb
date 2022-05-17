@@ -4,8 +4,8 @@
 import React from 'react';
 import {ShallowWrapper} from 'enzyme';
 
-import {CategoryTypes} from 'mattermost-redux/constants/channel_categories';
-import {ChannelType} from 'mattermost-redux/types/channels';
+import {CategoryTypes} from 'matterfoss-redux/constants/channel_categories';
+import {ChannelType} from 'matterfoss-redux/types/channels';
 
 import {shallowWithIntl} from 'tests/helpers/intl-test-helper';
 import Constants from 'utils/constants';

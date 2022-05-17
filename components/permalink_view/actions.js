@@ -1,14 +1,14 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
-import {getChannel, getChannelMember, selectChannel, joinChannel, getChannelStats} from 'mattermost-redux/actions/channels';
-import {getPostThread} from 'mattermost-redux/actions/posts';
-import {getMissingProfilesByIds} from 'mattermost-redux/actions/users';
-import {getCurrentTeam, getTeam} from 'mattermost-redux/selectors/entities/teams';
-import {getCurrentUser} from 'mattermost-redux/selectors/entities/users';
-import {getCurrentChannel} from 'mattermost-redux/selectors/entities/channels';
-import {isCollapsedThreadsEnabled} from 'mattermost-redux/selectors/entities/preferences';
-import {getUserIdFromChannelName} from 'mattermost-redux/utils/channel_utils';
+import {getChannel, getChannelMember, selectChannel, joinChannel, getChannelStats} from 'matterfoss-redux/actions/channels';
+import {getPostThread} from 'matterfoss-redux/actions/posts';
+import {getMissingProfilesByIds} from 'matterfoss-redux/actions/users';
+import {getCurrentTeam, getTeam} from 'matterfoss-redux/selectors/entities/teams';
+import {getCurrentUser} from 'matterfoss-redux/selectors/entities/users';
+import {getCurrentChannel} from 'matterfoss-redux/selectors/entities/channels';
+import {isCollapsedThreadsEnabled} from 'matterfoss-redux/selectors/entities/preferences';
+import {getUserIdFromChannelName} from 'matterfoss-redux/utils/channel_utils';
 
 import {loadChannelsForCurrentUser} from 'actions/channel_actions.jsx';
 import {loadNewDMIfNeeded, loadNewGMIfNeeded} from 'actions/user_actions.jsx';
@@ -17,7 +17,7 @@ import {selectPostAndHighlight} from 'actions/views/rhs';
 import {browserHistory} from 'utils/browser_history';
 import {joinPrivateChannelPrompt} from 'utils/channel_utils';
 import {ActionTypes, Constants, ErrorPageTypes} from 'utils/constants';
-import {isSystemAdmin} from 'mattermost-redux/utils/user_utils';
+import {isSystemAdmin} from 'matterfoss-redux/utils/user_utils';
 import {isComment, getPostURL} from 'utils/post_utils';
 
 let privateChannelJoinPromptVisible = false;

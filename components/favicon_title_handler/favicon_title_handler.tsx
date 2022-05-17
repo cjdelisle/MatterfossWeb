@@ -4,13 +4,13 @@
 import React from 'react';
 import {injectIntl, IntlShape} from 'react-intl';
 
-import {Channel} from 'mattermost-redux/types/channels';
-import {Team} from 'mattermost-redux/types/teams';
+import {Channel} from 'matterfoss-redux/types/channels';
+import {Team} from 'matterfoss-redux/types/teams';
 
 import * as UserAgent from 'utils/user_agent';
 import {Constants} from 'utils/constants';
 
-import {basicUnreadMeta, BasicUnreadStatus} from 'mattermost-redux/selectors/entities/channels';
+import {basicUnreadMeta, BasicUnreadStatus} from 'matterfoss-redux/selectors/entities/channels';
 
 // default favicons
 import faviconDefault16x16 from 'images/favicon/favicon-default-16x16.png';
@@ -109,7 +109,7 @@ export class FaviconTitleHandlerClass extends React.PureComponent<Props> {
                 siteName: currentSiteName,
             });
         } else {
-            document.title = formatMessage({id: 'sidebar.team_select', defaultMessage: '{siteName} - Join a team'}, {siteName: currentSiteName || 'Mattermost'});
+            document.title = formatMessage({id: 'sidebar.team_select', defaultMessage: '{siteName} - Join a team'}, {siteName: currentSiteName || 'MatterFOSS'});
         }
     }
 

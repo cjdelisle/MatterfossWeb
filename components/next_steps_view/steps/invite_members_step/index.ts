@@ -4,12 +4,12 @@
 import {connect} from 'react-redux';
 import {bindActionCreators, Dispatch, ActionCreatorsMapObject} from 'redux';
 
-import {sendEmailInvitesToTeamGracefully, regenerateTeamInviteId} from 'mattermost-redux/actions/teams';
-import {getConfig, getLicense, getSubscriptionStats} from 'mattermost-redux/selectors/entities/general';
-import {getCurrentTeam} from 'mattermost-redux/selectors/entities/teams';
-import {GenericAction, ActionFunc} from 'mattermost-redux/types/actions';
-import {ServerError} from 'mattermost-redux/types/errors';
-import {TeamInviteWithError} from 'mattermost-redux/types/teams';
+import {sendEmailInvitesToTeamGracefully, regenerateTeamInviteId} from 'matterfoss-redux/actions/teams';
+import {getConfig, getLicense, getSubscriptionStats} from 'matterfoss-redux/selectors/entities/general';
+import {getCurrentTeam} from 'matterfoss-redux/selectors/entities/teams';
+import {GenericAction, ActionFunc} from 'matterfoss-redux/types/actions';
+import {ServerError} from 'matterfoss-redux/types/errors';
+import {TeamInviteWithError} from 'matterfoss-redux/types/teams';
 
 import {GlobalState} from 'types/store';
 

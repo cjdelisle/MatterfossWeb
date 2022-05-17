@@ -16,7 +16,7 @@ describe('Environment', () => {
     let townsquareLink;
     let testTeam;
 
-    const mattermostIcon = 'mattermost-icon_128x128.png';
+    const matterfossIcon = 'matterfoss-icon_128x128.png';
     before(() => {
         cy.shouldNotRunOnCloudEdition();
         cy.apiInitSetup().then(({team}) => {
@@ -52,7 +52,7 @@ describe('Environment', () => {
             cy.uiSaveButton().should('be.disabled');
 
             // # Upload a file on center view
-            cy.findByTestId('uploadPicture').attachFile(mattermostIcon);
+            cy.findByTestId('uploadPicture').attachFile(matterfossIcon);
 
             // after uploading the picture the save button must be disabled
             cy.uiSave().wait(TIMEOUTS.HALF_SEC);
@@ -67,7 +67,7 @@ describe('Environment', () => {
                 const url = imageDiv.css('background-image').split('"')[1];
 
                 // # Verify that the image is the correct one
-                cy.fixture(mattermostIcon).then((overrideImage) => {
+                cy.fixture(matterfossIcon).then((overrideImage) => {
                     cy.request({url, encoding: 'base64'}).then((response) => {
                         expect(response.status).to.equal(200);
                         expect(response.body).to.eq(overrideImage);
@@ -104,7 +104,7 @@ describe('Environment', () => {
             cy.uiSaveButton().should('be.disabled');
 
             // # Upload a file on center view
-            cy.findByTestId('uploadPicture').attachFile(mattermostIcon);
+            cy.findByTestId('uploadPicture').attachFile(matterfossIcon);
 
             // * After uploading the picture the save button must be disabled
             cy.uiSave().wait(TIMEOUTS.HALF_SEC);
@@ -119,7 +119,7 @@ describe('Environment', () => {
                 const url = imageDiv.css('background-image').split('"')[1];
 
                 // # Verify that the image is the correct one
-                cy.fixture(mattermostIcon).then((overrideImage) => {
+                cy.fixture(matterfossIcon).then((overrideImage) => {
                     cy.request({url, encoding: 'base64'}).then((response) => {
                         expect(response.status).to.equal(200);
                         expect(response.body).to.eq(overrideImage);
@@ -156,7 +156,7 @@ describe('Environment', () => {
             cy.uiSaveButton().should('be.disabled');
 
             // # Upload a file on center view
-            cy.findByTestId('uploadPicture').attachFile(mattermostIcon);
+            cy.findByTestId('uploadPicture').attachFile(matterfossIcon);
 
             // * After uploading the picture the save button must be disabled
             cy.uiSave().wait(TIMEOUTS.HALF_SEC);
@@ -171,7 +171,7 @@ describe('Environment', () => {
                 const url = imageDiv.css('background-image').split('"')[1];
 
                 // # Verify that the image is the correct one
-                cy.fixture(mattermostIcon).then((overrideImage) => {
+                cy.fixture(matterfossIcon).then((overrideImage) => {
                     cy.request({url, encoding: 'base64'}).then((response) => {
                         expect(response.status).to.equal(200);
                         expect(response.body).to.eq(overrideImage);

@@ -2,8 +2,8 @@
 // See LICENSE.txt for license information.
 
 import {GlobalState} from 'types/store';
-import {UserTimezone} from 'mattermost-redux/types/users';
-import {PreferenceType} from 'mattermost-redux/types/preferences';
+import {UserTimezone} from 'matterfoss-redux/types/users';
+import {PreferenceType} from 'matterfoss-redux/types/preferences';
 
 import * as Timestamp from './timestamp';
 

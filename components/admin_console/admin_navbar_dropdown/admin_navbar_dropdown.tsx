@@ -4,7 +4,7 @@
 import React from 'react';
 import {injectIntl, IntlShape} from 'react-intl';
 
-import {Team} from 'mattermost-redux/types/teams';
+import {Team} from 'matterfoss-redux/types/teams';
 
 import * as GlobalActions from 'actions/global_actions';
 import {trackEvent} from 'actions/telemetry_actions.jsx';
@@ -79,7 +79,7 @@ class AdminNavbarDropdown extends React.PureComponent<Props> {
         let commercialSupport = (
             <Menu.ItemExternalLink
                 onClick={() => trackEvent('admin', 'click_administrators_support')}
-                url='https://mattermost.com/support/'
+                url='https://matterfoss.com/support/'
                 text={formatMessage({id: 'admin.nav.commercialSupport', defaultMessage: 'Commercial Support'})}
             />
         );
@@ -94,9 +94,9 @@ class AdminNavbarDropdown extends React.PureComponent<Props> {
             );
         }
 
-        let adminGuideLink = 'https://docs.mattermost.com/guides/administration.html';
+        let adminGuideLink = 'https://docs.matterfoss.com/guides/administration.html';
         if (isCloud) {
-            adminGuideLink = 'https://docs.mattermost.com/guides/cloud-admin-guide.html';
+            adminGuideLink = 'https://docs.matterfoss.com/guides/cloud-admin-guide.html';
         }
 
         return (
@@ -113,7 +113,7 @@ class AdminNavbarDropdown extends React.PureComponent<Props> {
                     />
                     <Menu.ItemExternalLink
                         onClick={() => trackEvent('admin', 'click_administrators_forum')}
-                        url={'https://forum.mattermost.com/t/how-to-use-the-troubleshooting-forum/150'}
+                        url={'https://forum.matterfoss.com/t/how-to-use-the-troubleshooting-forum/150'}
                         text={formatMessage({id: 'admin.nav.troubleshootingForum', defaultMessage: 'Troubleshooting Forum'})}
                     />
                     {commercialSupport}
@@ -121,7 +121,7 @@ class AdminNavbarDropdown extends React.PureComponent<Props> {
                         onClick={() => trackEvent('admin', 'click_administrators_about')}
                         modalId={ModalIdentifiers.ABOUT}
                         dialogType={AboutBuildModal}
-                        text={formatMessage({id: 'navbar_dropdown.about', defaultMessage: 'About {appTitle}'}, {appTitle: siteName || 'Mattermost'})}
+                        text={formatMessage({id: 'navbar_dropdown.about', defaultMessage: 'About {appTitle}'}, {appTitle: siteName || 'MatterFOSS'})}
                     />
                 </Menu.Group>
                 <Menu.Group>

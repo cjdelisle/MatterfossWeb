@@ -1,10 +1,10 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
-import * as IntegrationActions from 'mattermost-redux/actions/integrations';
-import {getProfilesByIds} from 'mattermost-redux/actions/users';
-import {getUser} from 'mattermost-redux/selectors/entities/users';
-import {appsEnabled} from 'mattermost-redux/selectors/entities/apps';
+import * as IntegrationActions from 'matterfoss-redux/actions/integrations';
+import {getProfilesByIds} from 'matterfoss-redux/actions/users';
+import {getUser} from 'matterfoss-redux/selectors/entities/users';
+import {appsEnabled} from 'matterfoss-redux/selectors/entities/apps';
 
 const DEFAULT_PAGE_SIZE = 100;
 

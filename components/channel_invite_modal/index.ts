@@ -4,11 +4,11 @@
 import {connect} from 'react-redux';
 import {ActionCreatorsMapObject, bindActionCreators, Dispatch} from 'redux';
 
-import {getTeamStats} from 'mattermost-redux/actions/teams';
-import {getProfilesNotInChannel, searchProfiles} from 'mattermost-redux/actions/users';
-import {getProfilesNotInCurrentChannel, getProfilesNotInCurrentTeam, getProfilesNotInTeam, getUserStatuses, makeGetProfilesNotInChannel} from 'mattermost-redux/selectors/entities/users';
-import {Action, ActionResult} from 'mattermost-redux/types/actions';
-import {UserProfile} from 'mattermost-redux/types/users';
+import {getTeamStats} from 'matterfoss-redux/actions/teams';
+import {getProfilesNotInChannel, searchProfiles} from 'matterfoss-redux/actions/users';
+import {getProfilesNotInCurrentChannel, getProfilesNotInCurrentTeam, getProfilesNotInTeam, getUserStatuses, makeGetProfilesNotInChannel} from 'matterfoss-redux/selectors/entities/users';
+import {Action, ActionResult} from 'matterfoss-redux/types/actions';
+import {UserProfile} from 'matterfoss-redux/types/users';
 
 import {Value} from 'components/multiselect/multiselect';
 

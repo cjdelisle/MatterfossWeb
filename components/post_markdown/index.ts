@@ -4,14 +4,14 @@ import {connect} from 'react-redux';
 
 import {createSelector} from 'reselect';
 
-import {getChannel} from 'mattermost-redux/selectors/entities/channels';
+import {getChannel} from 'matterfoss-redux/selectors/entities/channels';
 import {
     getMyGroupMentionKeysForChannel,
     getMyGroupMentionKeys,
-} from 'mattermost-redux/selectors/entities/groups';
-import {getCurrentUserMentionKeys} from 'mattermost-redux/selectors/entities/users';
-import {Post} from 'mattermost-redux/types/posts';
-import {Channel} from 'mattermost-redux/types/channels';
+} from 'matterfoss-redux/selectors/entities/groups';
+import {getCurrentUserMentionKeys} from 'matterfoss-redux/selectors/entities/users';
+import {Post} from 'matterfoss-redux/types/posts';
+import {Channel} from 'matterfoss-redux/types/channels';
 
 import {GlobalState} from 'types/store';
 

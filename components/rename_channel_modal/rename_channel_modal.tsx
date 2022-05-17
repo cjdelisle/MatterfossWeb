@@ -5,9 +5,9 @@ import React, {ChangeEvent, MouseEvent} from 'react';
 import {Modal} from 'react-bootstrap';
 import {defineMessages, FormattedMessage, injectIntl, IntlShape} from 'react-intl';
 
-import {Channel} from 'mattermost-redux/types/channels';
-import {Team} from 'mattermost-redux/types/teams';
-import {ServerError} from 'mattermost-redux/types/errors';
+import {Channel} from 'matterfoss-redux/types/channels';
+import {Team} from 'matterfoss-redux/types/teams';
+import {ServerError} from 'matterfoss-redux/types/errors';
 
 import LocalizedInput from 'components/localized_input/localized_input';
 import OverlayTrigger from 'components/overlay_trigger';

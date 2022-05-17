@@ -4,16 +4,16 @@
 import thunk from 'redux-thunk';
 import configureStore from 'redux-mock-store';
 
-import {ChannelTypes, SearchTypes} from 'mattermost-redux/action_types';
-import * as PostActions from 'mattermost-redux/actions/posts';
-import {Posts} from 'mattermost-redux/constants';
+import {ChannelTypes, SearchTypes} from 'matterfoss-redux/action_types';
+import * as PostActions from 'matterfoss-redux/actions/posts';
+import {Posts} from 'matterfoss-redux/constants';
 
 import * as Actions from 'actions/post_actions';
 import {Constants, ActionTypes, RHSStates} from 'utils/constants';
 
 const mockStore = configureStore([thunk]);
 
-jest.mock('mattermost-redux/actions/posts', () => ({
+jest.mock('matterfoss-redux/actions/posts', () => ({
     addReaction: (...args) => ({type: 'MOCK_ADD_REACTION', args}),
     createPost: (...args) => ({type: 'MOCK_CREATE_POST', args}),
     createPostImmediately: (...args) => ({type: 'MOCK_CREATE_POST_IMMEDIATELY', args}),

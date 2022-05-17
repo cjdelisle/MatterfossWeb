@@ -4,11 +4,11 @@
 import {connect} from 'react-redux';
 import {bindActionCreators, Dispatch} from 'redux';
 
-import {getLogs} from 'mattermost-redux/actions/admin';
+import {getLogs} from 'matterfoss-redux/actions/admin';
 
-import * as Selectors from 'mattermost-redux/selectors/entities/admin';
+import * as Selectors from 'matterfoss-redux/selectors/entities/admin';
 
-import {GenericAction} from 'mattermost-redux/types/actions';
+import {GenericAction} from 'matterfoss-redux/types/actions';
 
 import {GlobalState} from 'types/store';
 

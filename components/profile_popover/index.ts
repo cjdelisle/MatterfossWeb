@@ -4,17 +4,17 @@
 import {connect} from 'react-redux';
 import {ActionCreatorsMapObject, bindActionCreators, Dispatch} from 'redux';
 
-import {getCurrentUserId, getStatusForUserId, getUser} from 'mattermost-redux/selectors/entities/users';
+import {getCurrentUserId, getStatusForUserId, getUser} from 'matterfoss-redux/selectors/entities/users';
 import {
     getCurrentTeam,
     getCurrentRelativeTeamUrl,
     getTeamMember,
-} from 'mattermost-redux/selectors/entities/teams';
+} from 'matterfoss-redux/selectors/entities/teams';
 import {
     getChannelMembersInChannels,
     canManageAnyChannelMembersInCurrentTeam,
     getCurrentChannelId,
-} from 'mattermost-redux/selectors/entities/channels';
+} from 'matterfoss-redux/selectors/entities/channels';
 
 import {openDirectChannelToUserId} from 'actions/channel_actions.jsx';
 import {getMembershipForEntities} from 'actions/views/profile_popover';
@@ -25,12 +25,12 @@ import {getRhsState, getSelectedPost} from 'selectors/rhs';
 import {getIsMobileView} from 'selectors/views/browser';
 
 import {makeGetCustomStatus, isCustomStatusEnabled, isCustomStatusExpired} from 'selectors/views/custom_status';
-import {Action} from 'mattermost-redux/types/actions';
+import {Action} from 'matterfoss-redux/types/actions';
 
 import {ModalData} from 'types/actions';
 import {GlobalState} from 'types/store';
 
-import {ServerError} from 'mattermost-redux/types/errors';
+import {ServerError} from 'matterfoss-redux/types/errors';
 
 import ProfilePopover from './profile_popover';
 

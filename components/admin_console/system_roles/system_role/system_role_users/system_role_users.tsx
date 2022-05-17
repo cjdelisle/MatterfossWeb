@@ -4,9 +4,9 @@
 import React from 'react';
 import {FormattedMessage} from 'react-intl';
 
-import {Role} from 'mattermost-redux/types/roles';
-import {ServerError} from 'mattermost-redux/types/errors';
-import {UserProfile, UsersStats, GetFilteredUsersStatsOpts} from 'mattermost-redux/types/users';
+import {Role} from 'matterfoss-redux/types/roles';
+import {ServerError} from 'matterfoss-redux/types/errors';
+import {UserProfile, UsersStats, GetFilteredUsersStatsOpts} from 'matterfoss-redux/types/users';
 
 import Constants, {ModalIdentifiers} from 'utils/constants';
 import {t} from 'utils/i18n';

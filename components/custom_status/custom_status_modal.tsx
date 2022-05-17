@@ -6,11 +6,11 @@ import classNames from 'classnames';
 import {FormattedMessage, useIntl} from 'react-intl';
 import moment, {Moment} from 'moment-timezone';
 
-import {setCustomStatus, unsetCustomStatus, removeRecentCustomStatus} from 'mattermost-redux/actions/users';
-import {setCustomStatusInitialisationState} from 'mattermost-redux/actions/preferences';
-import {Preferences} from 'mattermost-redux/constants';
-import {UserCustomStatus, CustomStatusDuration} from 'mattermost-redux/types/users';
-import {Emoji} from 'mattermost-redux/types/emojis';
+import {setCustomStatus, unsetCustomStatus, removeRecentCustomStatus} from 'matterfoss-redux/actions/users';
+import {setCustomStatusInitialisationState} from 'matterfoss-redux/actions/preferences';
+import {Preferences} from 'matterfoss-redux/constants';
+import {UserCustomStatus, CustomStatusDuration} from 'matterfoss-redux/types/users';
+import {Emoji} from 'matterfoss-redux/types/emojis';
 
 import {loadCustomEmojisIfNeeded} from 'actions/emoji_actions';
 import GenericModal from 'components/generic_modal';
@@ -38,7 +38,7 @@ type Props = {
 };
 
 // This is the same limit set
-// https://github.com/mattermost/mattermost-server/pull/16835/files#diff-73c61af5954b16f5e3cb5ee786af9eb698f660eff0d65db5556949be5fb6e60bR15
+// https://github.com/matterfoss/matterfoss-server/pull/16835/files#diff-73c61af5954b16f5e3cb5ee786af9eb698f660eff0d65db5556949be5fb6e60bR15
 const CUSTOM_STATUS_TEXT_CHARACTER_LIMIT = 100;
 const EMOJI_PICKER_WIDTH_OFFSET = 308;
 

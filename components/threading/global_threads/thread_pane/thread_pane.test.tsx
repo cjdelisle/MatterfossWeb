@@ -5,8 +5,8 @@ import React, {ComponentProps} from 'react';
 
 import {shallow} from 'enzyme';
 
-import {setThreadFollow} from 'mattermost-redux/actions/threads';
-jest.mock('mattermost-redux/actions/threads');
+import {setThreadFollow} from 'matterfoss-redux/actions/threads';
+jest.mock('matterfoss-redux/actions/threads');
 
 import Header from 'components/widgets/header';
 

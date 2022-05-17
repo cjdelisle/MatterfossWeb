@@ -5,15 +5,15 @@ import React from 'react';
 
 import {
     getChannelsInCurrentTeam,
-} from 'mattermost-redux/selectors/entities/channels';
-import {getMyChannelMemberships} from 'mattermost-redux/selectors/entities/common';
-import {getConfig} from 'mattermost-redux/selectors/entities/general';
-import {getCurrentTeamId} from 'mattermost-redux/selectors/entities/teams';
-import {getCurrentUserLocale} from 'mattermost-redux/selectors/entities/i18n';
-import {haveIChannelPermission} from 'mattermost-redux/selectors/entities/roles';
-import {Permissions} from 'mattermost-redux/constants';
-import {sortChannelsByTypeAndDisplayName} from 'mattermost-redux/utils/channel_utils';
-import {logError} from 'mattermost-redux/actions/errors';
+} from 'matterfoss-redux/selectors/entities/channels';
+import {getMyChannelMemberships} from 'matterfoss-redux/selectors/entities/common';
+import {getConfig} from 'matterfoss-redux/selectors/entities/general';
+import {getCurrentTeamId} from 'matterfoss-redux/selectors/entities/teams';
+import {getCurrentUserLocale} from 'matterfoss-redux/selectors/entities/i18n';
+import {haveIChannelPermission} from 'matterfoss-redux/selectors/entities/roles';
+import {Permissions} from 'matterfoss-redux/constants';
+import {sortChannelsByTypeAndDisplayName} from 'matterfoss-redux/utils/channel_utils';
+import {logError} from 'matterfoss-redux/actions/errors';
 
 import store from 'stores/redux_store.jsx';
 import {Constants} from 'utils/constants';

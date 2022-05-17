@@ -5,9 +5,9 @@ import React from 'react';
 
 import {FormattedMessage} from 'react-intl';
 
-import {ActionFunc} from 'mattermost-redux/types/actions';
+import {ActionFunc} from 'matterfoss-redux/types/actions';
 
-import {AdminConfig} from 'mattermost-redux/types/config';
+import {AdminConfig} from 'matterfoss-redux/types/config';
 
 import {BaseProps} from 'components/admin_console/admin_settings';
 
@@ -112,7 +112,7 @@ export default class OpenIdConvert extends React.PureComponent<Props, State> {
                         </button>
                         <a
                             className='btn-secondary'
-                            href='https://www.mattermost.com/default-openid-docs'
+                            href='https://www.matterfoss.com/default-openid-docs'
                             data-testid='openIdLearnMore'
                             target='_blank'
                             rel='noopener noreferrer'

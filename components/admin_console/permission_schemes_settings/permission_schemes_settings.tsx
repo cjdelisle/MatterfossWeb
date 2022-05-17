@@ -17,9 +17,9 @@ import LoadingWrapper from 'components/widgets/loading/loading_wrapper';
 import FormattedAdminHeader from 'components/widgets/admin_console/formatted_admin_header';
 import AdminPanelWithLink from 'components/widgets/admin_console/admin_panel_with_link';
 
-import {ActionResult} from 'mattermost-redux/types/actions';
+import {ActionResult} from 'matterfoss-redux/types/actions';
 
-import {Scheme, SchemeScope, SchemesState} from 'mattermost-redux/types/schemes';
+import {Scheme, SchemeScope, SchemesState} from 'matterfoss-redux/types/schemes';
 
 import PermissionsSchemeSummary from './permissions_scheme_summary';
 
@@ -101,7 +101,7 @@ export default class PermissionSchemesSettings extends React.PureComponent<Props
 
         const docLink = (
             <a
-                href='https://docs.mattermost.com/administration/config-settings.html#jobs'
+                href='https://docs.matterfoss.com/administration/config-settings.html#jobs'
                 rel='noopener noreferrer'
                 target='_blank'
             >
@@ -163,7 +163,7 @@ export default class PermissionSchemesSettings extends React.PureComponent<Props
                     titleId={t('admin.permissions.teamOverrideSchemesTitle')}
                     titleDefault='Team Override Schemes'
                     subtitleId={t('admin.permissions.teamOverrideSchemesBannerText')}
-                    subtitleDefault='Use when specific teams need permission exceptions to the [System Scheme](!https://docs.mattermost.com/onboard/advanced-permissions.html).'
+                    subtitleDefault='Use when specific teams need permission exceptions to the [System Scheme](!https://docs.matterfoss.com/onboard/advanced-permissions.html).'
                     url='/admin_console/user_management/permissions/team_override_scheme'
                     disabled={(teamOverrideView !== null) || this.props.isDisabled}
                     linkTextId={t('admin.permissions.teamOverrideSchemesNewButton')}
@@ -222,7 +222,7 @@ export default class PermissionSchemesSettings extends React.PureComponent<Props
                                 <span>
                                     <FormattedMarkdownMessage
                                         id='admin.permissions.introBanner'
-                                        defaultMessage='Permission Schemes set the default permissions for Team Admins, Channel Admins and everyone else. Learn more about permission schemes in our [documentation](!https://docs.mattermost.com/onboard/advanced-permissions.html).'
+                                        defaultMessage='Permission Schemes set the default permissions for Team Admins, Channel Admins and everyone else. Learn more about permission schemes in our [documentation](!https://docs.matterfoss.com/onboard/advanced-permissions.html).'
                                     />
                                 </span>
                             </div>
@@ -233,7 +233,7 @@ export default class PermissionSchemesSettings extends React.PureComponent<Props
                             titleId={t('admin.permissions.systemSchemeBannerTitle')}
                             titleDefault='System Scheme'
                             subtitleId={t('admin.permissions.systemSchemeBannerText')}
-                            subtitleDefault='Set the default permissions inherited by all teams unless a [Team Override Scheme](!https://docs.mattermost.com/onboard/advanced-permissions.html) is applied.'
+                            subtitleDefault='Set the default permissions inherited by all teams unless a [Team Override Scheme](!https://docs.matterfoss.com/onboard/advanced-permissions.html) is applied.'
                             url='/admin_console/user_management/permissions/system_scheme'
                             disabled={teamOverrideView !== null}
                             linkTextId={t('admin.permissions.systemSchemeBannerButton')}

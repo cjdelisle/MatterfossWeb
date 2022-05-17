@@ -4,10 +4,10 @@
 import {connect} from 'react-redux';
 import {ActionCreatorsMapObject, bindActionCreators, Dispatch} from 'redux';
 
-import {getProfilesNotInGroup, searchProfiles, getProfiles} from 'mattermost-redux/actions/users';
-import {getProfilesNotInCurrentGroup, getUserStatuses, getProfiles as getUsers} from 'mattermost-redux/selectors/entities/users';
-import {Action, ActionResult} from 'mattermost-redux/types/actions';
-import {UserProfile} from 'mattermost-redux/types/users';
+import {getProfilesNotInGroup, searchProfiles, getProfiles} from 'matterfoss-redux/actions/users';
+import {getProfilesNotInCurrentGroup, getUserStatuses, getProfiles as getUsers} from 'matterfoss-redux/selectors/entities/users';
+import {Action, ActionResult} from 'matterfoss-redux/types/actions';
+import {UserProfile} from 'matterfoss-redux/types/users';
 
 import {Value} from 'components/multiselect/multiselect';
 

@@ -4,11 +4,11 @@
 import React from 'react';
 import {injectIntl, IntlShape, MessageDescriptor} from 'react-intl';
 
-import {Posts} from 'mattermost-redux/constants';
+import {Posts} from 'matterfoss-redux/constants';
 
-import {UserProfile} from 'mattermost-redux/types/users';
+import {UserProfile} from 'matterfoss-redux/types/users';
 
-import {ActionFunc} from 'mattermost-redux/types/actions';
+import {ActionFunc} from 'matterfoss-redux/types/actions';
 
 import {t} from 'utils/i18n';
 import Markdown from 'components/markdown';

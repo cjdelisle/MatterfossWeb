@@ -4,7 +4,7 @@
 import {connect} from 'react-redux';
 import {AnyAction, bindActionCreators, Dispatch} from 'redux';
 
-import {getCurrentChannel, isCurrentChannelFavorite, isCurrentChannelMuted, isCurrentChannelArchived} from 'mattermost-redux/selectors/entities/channels';
+import {getCurrentChannel, isCurrentChannelFavorite, isCurrentChannelMuted, isCurrentChannelArchived} from 'matterfoss-redux/selectors/entities/channels';
 import {isModalOpen} from 'selectors/views/modals';
 
 import {closeRightHandSide} from 'actions/views/rhs';
@@ -13,19 +13,19 @@ import {GlobalState} from 'types/store';
 
 import {Constants, ModalIdentifiers} from 'utils/constants';
 
-import {getCurrentUser} from 'mattermost-redux/selectors/entities/common';
+import {getCurrentUser} from 'matterfoss-redux/selectors/entities/common';
 import {getIsMobileView} from 'selectors/views/browser';
-import {getCurrentTeam} from 'mattermost-redux/selectors/entities/teams';
-import {unfavoriteChannel, favoriteChannel} from 'mattermost-redux/actions/channels';
+import {getCurrentTeam} from 'matterfoss-redux/selectors/entities/teams';
+import {unfavoriteChannel, favoriteChannel} from 'matterfoss-redux/actions/channels';
 import {muteChannel, unmuteChannel} from 'actions/channel_actions';
 import {openModal} from 'actions/views/modals';
 import {getDisplayNameByUser, getUserIdFromChannelId} from 'utils/utils';
-import {getProfilesInCurrentChannel, getStatusForUserId, getUser} from 'mattermost-redux/selectors/entities/users';
-import {isGuest} from 'mattermost-redux/utils/user_utils';
+import {getProfilesInCurrentChannel, getStatusForUserId, getUser} from 'matterfoss-redux/selectors/entities/users';
+import {isGuest} from 'matterfoss-redux/utils/user_utils';
 
-import {haveIChannelPermission} from 'mattermost-redux/selectors/entities/roles';
-import {Permissions} from 'mattermost-redux/constants';
-import {Channel} from 'mattermost-redux/types/channels';
+import {haveIChannelPermission} from 'matterfoss-redux/selectors/entities/roles';
+import {Permissions} from 'matterfoss-redux/constants';
+import {Channel} from 'matterfoss-redux/types/channels';
 
 import RHS, {Props} from './channel_info_rhs';
 

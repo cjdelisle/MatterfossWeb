@@ -14,7 +14,7 @@
  * Environment:
  *   AUTOMATION_DASHBOARD_URL   : Dashboard URL
  *   AUTOMATION_DASHBOARD_TOKEN : Dashboard token
- *   REPO                       : Project repository, ex. mattermost-webapp
+ *   REPO                       : Project repository, ex. matterfoss-webapp
  *   BRANCH                     : Branch identifier from CI
  *   BUILD_ID                   : Build identifier from CI
  *   CI_BASE_URL                : Test server base URL in CI

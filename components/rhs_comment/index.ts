@@ -5,19 +5,19 @@ import {connect} from 'react-redux';
 import {bindActionCreators, Dispatch} from 'redux';
 
 import {showActionsDropdownPulsatingDot} from 'selectors/actions_menu';
-import {setActionsMenuInitialisationState} from 'mattermost-redux/actions/preferences';
-import {getConfig} from 'mattermost-redux/selectors/entities/general';
-import {getPost} from 'mattermost-redux/selectors/entities/posts';
+import {setActionsMenuInitialisationState} from 'matterfoss-redux/actions/preferences';
+import {getConfig} from 'matterfoss-redux/selectors/entities/general';
+import {getPost} from 'matterfoss-redux/selectors/entities/posts';
 
 import {
     get,
     isCollapsedThreadsEnabled,
-} from 'mattermost-redux/selectors/entities/preferences';
-import {getCurrentTeamId} from 'mattermost-redux/selectors/entities/teams';
-import {getUser} from 'mattermost-redux/selectors/entities/users';
+} from 'matterfoss-redux/selectors/entities/preferences';
+import {getCurrentTeamId} from 'matterfoss-redux/selectors/entities/teams';
+import {getUser} from 'matterfoss-redux/selectors/entities/users';
 
-import {GenericAction} from 'mattermost-redux/types/actions';
-import {Post} from 'mattermost-redux/types/posts';
+import {GenericAction} from 'matterfoss-redux/types/actions';
+import {Post} from 'matterfoss-redux/types/posts';
 
 import {markPostAsUnread, emitShortcutReactToLastPostFrom} from 'actions/post_actions';
 

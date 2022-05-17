@@ -7,9 +7,9 @@ import {FormattedMessage} from 'react-intl';
 
 import {Dispatch} from 'redux';
 
-import Permissions from 'mattermost-redux/constants/permissions';
+import Permissions from 'matterfoss-redux/constants/permissions';
 
-import {Emoji} from 'mattermost-redux/types/emojis';
+import {Emoji} from 'matterfoss-redux/types/emojis';
 
 import {Locations} from 'utils/constants';
 import {localizeMessage} from 'utils/utils.jsx';

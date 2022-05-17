@@ -4,11 +4,11 @@
 import thunk from 'redux-thunk';
 import configureStore from 'redux-mock-store';
 
-import {getProfilesByIds} from 'mattermost-redux/actions/users';
+import {getProfilesByIds} from 'matterfoss-redux/actions/users';
 
 import * as Actions from 'actions/integration_actions.jsx';
 
-jest.mock('mattermost-redux/actions/users', () => ({
+jest.mock('matterfoss-redux/actions/users', () => ({
     getProfilesByIds: jest.fn(() => {
         return {type: ''};
     }),

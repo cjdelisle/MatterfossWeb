@@ -5,7 +5,7 @@ import React from 'react';
 import {ReactWrapper} from 'enzyme';
 import {act} from 'react-dom/test-utils';
 
-import {Client4} from 'mattermost-redux/client';
+import {Client4} from 'matterfoss-redux/client';
 import {mountWithIntl} from 'tests/helpers/intl-test-helper';
 
 import RenewalLink from './renewal_link';

@@ -4,15 +4,15 @@
 import {connect} from 'react-redux';
 import {bindActionCreators, Dispatch} from 'redux';
 
-import {Permissions} from 'mattermost-redux/constants';
-import {haveISystemPermission} from 'mattermost-redux/selectors/entities/roles';
-import {getConfig, getLicense, warnMetricsStatus as getWarnMetricsStatus} from 'mattermost-redux/selectors/entities/general';
-import {getDisplayableErrors} from 'mattermost-redux/selectors/errors';
-import {dismissError} from 'mattermost-redux/actions/errors';
-import {getStandardAnalytics} from 'mattermost-redux/actions/admin';
-import {GenericAction} from 'mattermost-redux/types/actions';
-import {getCloudSubscription, getCloudCustomer, getSubscriptionStats} from 'mattermost-redux/actions/cloud';
-import {isCurrentUserSystemAdmin} from 'mattermost-redux/selectors/entities/users';
+import {Permissions} from 'matterfoss-redux/constants';
+import {haveISystemPermission} from 'matterfoss-redux/selectors/entities/roles';
+import {getConfig, getLicense, warnMetricsStatus as getWarnMetricsStatus} from 'matterfoss-redux/selectors/entities/general';
+import {getDisplayableErrors} from 'matterfoss-redux/selectors/errors';
+import {dismissError} from 'matterfoss-redux/actions/errors';
+import {getStandardAnalytics} from 'matterfoss-redux/actions/admin';
+import {GenericAction} from 'matterfoss-redux/types/actions';
+import {getCloudSubscription, getCloudCustomer, getSubscriptionStats} from 'matterfoss-redux/actions/cloud';
+import {isCurrentUserSystemAdmin} from 'matterfoss-redux/selectors/entities/users';
 
 import {dismissNotice} from 'actions/views/notice';
 import {GlobalState} from 'types/store';

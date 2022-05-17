@@ -2,14 +2,14 @@
 // See LICENSE.txt for license information.
 import React from 'react';
 
-import {Group} from 'mattermost-redux/types/groups';
-import {UserProfile} from 'mattermost-redux/types/users';
+import {Group} from 'matterfoss-redux/types/groups';
+import {UserProfile} from 'matterfoss-redux/types/users';
 
 import Avatar from 'components/widgets/users/avatar';
 import * as Utils from 'utils/utils.jsx';
 import LocalizedIcon from 'components/localized_icon';
 import {t} from 'utils/i18n';
-import {ActionResult} from 'mattermost-redux/types/actions';
+import {ActionResult} from 'matterfoss-redux/types/actions';
 
 export type Props = {
     groupId: string;

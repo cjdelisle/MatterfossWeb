@@ -3,7 +3,7 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
 
-import {getEmojiImageUrl} from 'mattermost-redux/utils/emoji_utils';
+import {getEmojiImageUrl} from 'matterfoss-redux/utils/emoji_utils';
 
 import {getEmojiMap} from 'selectors/emojis';
 import {GlobalState} from 'types/store';

@@ -5,7 +5,7 @@ import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 
-import {saveSearchScrollPosition} from 'mattermost-redux/actions/gifs';
+import {saveSearchScrollPosition} from 'matterfoss-redux/actions/gifs';
 
 import {trackEvent} from 'actions/telemetry_actions.jsx';
 

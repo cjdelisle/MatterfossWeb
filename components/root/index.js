@@ -4,12 +4,12 @@
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 
-import {getConfig} from 'mattermost-redux/selectors/entities/general';
-import {shouldShowTermsOfService, getCurrentUserId, isFirstAdmin} from 'mattermost-redux/selectors/entities/users';
-import {getTeam} from 'mattermost-redux/selectors/entities/teams';
-import {getFirstAdminSetupComplete} from 'mattermost-redux/actions/general';
-import {getTheme, getBool} from 'mattermost-redux/selectors/entities/preferences';
-import {getProfiles} from 'mattermost-redux/actions/users';
+import {getConfig} from 'matterfoss-redux/selectors/entities/general';
+import {shouldShowTermsOfService, getCurrentUserId, isFirstAdmin} from 'matterfoss-redux/selectors/entities/users';
+import {getTeam} from 'matterfoss-redux/selectors/entities/teams';
+import {getFirstAdminSetupComplete} from 'matterfoss-redux/actions/general';
+import {getTheme, getBool} from 'matterfoss-redux/selectors/entities/preferences';
+import {getProfiles} from 'matterfoss-redux/actions/users';
 
 import {loadMeAndConfig} from 'actions/views/root';
 import {emitBrowserWindowResized} from 'actions/views/browser';

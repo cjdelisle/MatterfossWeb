@@ -5,10 +5,10 @@ import React from 'react';
 
 import {TIconGlyph} from '@mattermost/compass-components/foundations/icon';
 
-import {ClientPluginManifest} from 'mattermost-redux/types/plugins';
-import {FileInfo} from 'mattermost-redux/types/files';
-import {Post, PostEmbed} from 'mattermost-redux/types/posts';
-import {IDMappedObjects} from 'mattermost-redux/types/utilities';
+import {ClientPluginManifest} from 'matterfoss-redux/types/plugins';
+import {FileInfo} from 'matterfoss-redux/types/files';
+import {Post, PostEmbed} from 'matterfoss-redux/types/posts';
+import {IDMappedObjects} from 'matterfoss-redux/types/utilities';
 
 export type PluginsState = {
     plugins: IDMappedObjects<ClientPluginManifest>;

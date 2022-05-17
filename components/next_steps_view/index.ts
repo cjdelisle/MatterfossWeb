@@ -5,12 +5,12 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators, Dispatch} from 'redux';
 
-import {savePreferences} from 'mattermost-redux/actions/preferences';
-import {getProfiles} from 'mattermost-redux/actions/users';
-import {makeGetCategory} from 'mattermost-redux/selectors/entities/preferences';
-import {getCurrentUser, isFirstAdmin, isCurrentUserSystemAdmin} from 'mattermost-redux/selectors/entities/users';
-import {getLicense} from 'mattermost-redux/selectors/entities/general';
-import {selectChannel} from 'mattermost-redux/actions/channels';
+import {savePreferences} from 'matterfoss-redux/actions/preferences';
+import {getProfiles} from 'matterfoss-redux/actions/users';
+import {makeGetCategory} from 'matterfoss-redux/selectors/entities/preferences';
+import {getCurrentUser, isFirstAdmin, isCurrentUserSystemAdmin} from 'matterfoss-redux/selectors/entities/users';
+import {getLicense} from 'matterfoss-redux/selectors/entities/general';
+import {selectChannel} from 'matterfoss-redux/actions/channels';
 
 import {setShowNextStepsView} from 'actions/views/next_steps';
 import {closeRightHandSide} from 'actions/views/rhs';

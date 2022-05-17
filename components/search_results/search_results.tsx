@@ -8,10 +8,10 @@ import Scrollbars from 'react-custom-scrollbars';
 
 import classNames from 'classnames';
 
-import {debounce} from 'mattermost-redux/actions/helpers';
-import {FileSearchResultItem as FileSearchResultItemType} from 'mattermost-redux/types/files';
-import {getConfig} from 'mattermost-redux/selectors/entities/general';
-import {Post} from 'mattermost-redux/types/posts';
+import {debounce} from 'matterfoss-redux/actions/helpers';
+import {FileSearchResultItem as FileSearchResultItemType} from 'matterfoss-redux/types/files';
+import {getConfig} from 'matterfoss-redux/selectors/entities/general';
+import {Post} from 'matterfoss-redux/types/posts';
 
 import {getFilesDropdownPluginMenuItems} from 'selectors/plugins';
 

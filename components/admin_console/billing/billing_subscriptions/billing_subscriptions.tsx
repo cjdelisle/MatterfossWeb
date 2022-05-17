@@ -18,7 +18,7 @@ export const contactSalesCard = (
     isFreeTrial: boolean,
     trialQuestionsLink: any,
     subscriptionPlan: string | undefined,
-    onUpgradeMattermostCloud: () => void,
+    onUpgradeMatterFOSSCloud: () => void,
     productsLength: number,
 ) => {
     let title;
@@ -37,10 +37,10 @@ export const contactSalesCard = (
     );
 
     // prior to releasing the cloud-{(s)tarter,(p)rofessional,(e)nterprise} plans,
-    // there is only one product fetched and available on this page, Mattermost Cloud.
-    // Mattermost Cloud pre cloud-{s,p,e} release does not have a sku,
+    // there is only one product fetched and available on this page, MatterFOSS Cloud.
+    // MatterFOSS Cloud pre cloud-{s,p,e} release does not have a sku,
     // so we test for it with `productLengths === 1`.
-    // Post cloud-{s,p,e} release, Mattermost Cloud has a sku named cloud-legacy,
+    // Post cloud-{s,p,e} release, MatterFOSS Cloud has a sku named cloud-legacy,
     // so we test for it with `subscriptionPlan === CloudProducts.LEGACY`.
     // We have to, since post cloud-{s,p,e} we fetch all 4 products.
     const isCloudLegacyPlan = productsLength === 1 || subscriptionPlan === CloudProducts.LEGACY;
@@ -68,7 +68,7 @@ export const contactSalesCard = (
         description = (
             <FormattedMessage
                 id='admin.billing.subscription.privateCloudCard.cloudEnterprise.description'
-                defaultMessage='At Mattermost, we work with you and your team to meet your needs throughout the product. If you are looking for an annual discount, please reach out to our sales team.'
+                defaultMessage='At MatterFOSS, we work with you and your team to meet your needs throughout the product. If you are looking for an annual discount, please reach out to our sales team.'
             />
         );
     } else {
@@ -112,7 +112,7 @@ export const contactSalesCard = (
             description = (
                 <FormattedMessage
                     id='admin.billing.subscription.privateCloudCard.cloudEnterprise.description'
-                    defaultMessage='At Mattermost, we work with you and your team to meet your needs throughout the product. If you are looking for an annual discount, please reach out to our sales team.'
+                    defaultMessage='At MatterFOSS, we work with you and your team to meet your needs throughout the product. If you are looking for an annual discount, please reach out to our sales team.'
                 />
             );
             break;
@@ -161,7 +161,7 @@ export const contactSalesCard = (
                 {(!isFreeTrial && productsLength > 1 && subscriptionPlan !== CloudProducts.ENTERPRISE && subscriptionPlan !== CloudProducts.LEGACY) &&
                     <button
                         type='button'
-                        onClick={onUpgradeMattermostCloud}
+                        onClick={onUpgradeMatterFOSSCloud}
                         className='PrivateCloudCard__actionButton'
                     >
                         <FormattedMessage
@@ -236,7 +236,7 @@ export const infoBanner = (handleHide: () => void) => {
             message={
                 <FormattedMessage
                     id='billing.subscription.info.headsup.description'
-                    defaultMessage='You’re nearing the user limit with the free tier of Mattermost Cloud. We’ll let you know if you hit that limit.'
+                    defaultMessage='You’re nearing the user limit with the free tier of MatterFOSS Cloud. We’ll let you know if you hit that limit.'
                 />
             }
             onDismiss={() => handleHide()}

@@ -1,11 +1,11 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
-import {searchAssociatedGroupsForReferenceLocal} from 'mattermost-redux/selectors/entities/groups';
-import {isCustomGroupsEnabled} from 'mattermost-redux/selectors/entities/preferences';
-import {haveIChannelPermission} from 'mattermost-redux/selectors/entities/roles';
-import {searchGroups} from 'mattermost-redux/actions/groups';
-import Permissions from 'mattermost-redux/constants/permissions';
+import {searchAssociatedGroupsForReferenceLocal} from 'matterfoss-redux/selectors/entities/groups';
+import {isCustomGroupsEnabled} from 'matterfoss-redux/selectors/entities/preferences';
+import {haveIChannelPermission} from 'matterfoss-redux/selectors/entities/roles';
+import {searchGroups} from 'matterfoss-redux/actions/groups';
+import Permissions from 'matterfoss-redux/constants/permissions';
 
 export function searchAssociatedGroupsForReference(prefix, teamId, channelId) {
     return async (dispatch, getState) => {

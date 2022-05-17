@@ -120,7 +120,7 @@ export default function HelpFormatting(): JSX.Element {
             <p>
                 <FormattedMarkdownMessage
                     id='help.formatting.syntax.description'
-                    defaultMessage='To add syntax highlighting, type the language to be highlighted after the ``` at the beginning of the code block. Mattermost also offers four different code themes (GitHub, Solarized Dark, Solarized Light, Monokai) that can be changed in **Settings > Display > Theme > Custom Theme > Center Channel Styles > Code Theme**.'
+                    defaultMessage='To add syntax highlighting, type the language to be highlighted after the ``` at the beginning of the code block. MatterFOSS also offers four different code themes (GitHub, Solarized Dark, Solarized Light, Monokai) that can be changed in **Settings > Display > Theme > Custom Theme > Center Channel Styles > Code Theme**.'
                 />
             </p>
             <p>
@@ -156,7 +156,7 @@ export default function HelpFormatting(): JSX.Element {
             </p>
             <p>
                 <img
-                    src='https://docs.mattermost.com/_images/syntax-highlighting-github.png'
+                    src='https://docs.matterfoss.com/_images/syntax-highlighting-github.png'
                     alt='go syntax-highlighting'
                     className='markdown-inline-img'
                 />
@@ -169,7 +169,7 @@ export default function HelpFormatting(): JSX.Element {
             </p>
             <p>
                 <img
-                    src='https://docs.mattermost.com/_images/syntax-highlighting-sol-dark.png'
+                    src='https://docs.matterfoss.com/_images/syntax-highlighting-sol-dark.png'
                     alt='go syntax-highlighting'
                     className='markdown-inline-img'
                 />
@@ -182,7 +182,7 @@ export default function HelpFormatting(): JSX.Element {
             </p>
             <p>
                 <img
-                    src='https://docs.mattermost.com/_images/syntax-highlighting-sol-light.png'
+                    src='https://docs.matterfoss.com/_images/syntax-highlighting-sol-light.png'
                     alt='go syntax-highlighting'
                     className='markdown-inline-img'
                 />
@@ -195,7 +195,7 @@ export default function HelpFormatting(): JSX.Element {
             </p>
             <p>
                 <img
-                    src='https://docs.mattermost.com/_images/syntax-highlighting-monokai.png'
+                    src='https://docs.matterfoss.com/_images/syntax-highlighting-monokai.png'
                     alt='go syntax-highlighting'
                     className='markdown-inline-img'
                 />
@@ -235,7 +235,7 @@ export default function HelpFormatting(): JSX.Element {
             </p>
             <FormattedMessage
                 id='help.formatting.linkEx'
-                defaultMessage={'[Check out Mattermost!](https://mattermost.com/)'}
+                defaultMessage={'[Check out MatterFOSS!](https://matterfoss.com/)'}
             >
                 {(example) => (
                     <div>
@@ -258,7 +258,7 @@ export default function HelpFormatting(): JSX.Element {
             <p>
                 <FormattedMarkdownMessage
                     id='help.formatting.images.description'
-                    defaultMessage='Create in-line images using an `!` followed by the alt text in square brackets and the link in normal brackets. Add hover text by placing it in quotes after the link. See the [product documentation](!https://docs.mattermost.com/messaging/formatting-text.html#in-line-images) for details on working with in-line images.'
+                    defaultMessage='Create in-line images using an `!` followed by the alt text in square brackets and the link in normal brackets. Add hover text by placing it in quotes after the link. See the [product documentation](!https://docs.matterfoss.com/messaging/formatting-text.html#in-line-images) for details on working with in-line images.'
                 />
             </p>
             <h2 className='markdown__heading'>
@@ -270,7 +270,7 @@ export default function HelpFormatting(): JSX.Element {
             <p>
                 <FormattedMarkdownMessage
                     id='help.formatting.emojis.description'
-                    defaultMessage={'Open the emoji autocomplete by typing `:`. A full list of emojis can be found [online](!http://www.emoji-cheat-sheet.com/). It is also possible to create your own [Custom Emoji](!https://docs.mattermost.com/messaging/using-emoji.html#creating-custom-emojis) if the emoji you want to use doesn\'t exist.'}
+                    defaultMessage={'Open the emoji autocomplete by typing `:`. A full list of emojis can be found [online](!http://www.emoji-cheat-sheet.com/). It is also possible to create your own [Custom Emoji](!https://docs.matterfoss.com/messaging/using-emoji.html#creating-custom-emojis) if the emoji you want to use doesn\'t exist.'}
                 />
             </p>
             {renderRawExampleWithResult(':smile: :+1: :sheep:')}

@@ -4,8 +4,8 @@
 import {ActionCreatorsMapObject, bindActionCreators, Dispatch} from 'redux';
 import {connect} from 'react-redux';
 
-import {updateChannelNotifyProps} from 'mattermost-redux/actions/channels';
-import {ActionFunc} from 'mattermost-redux/types/actions';
+import {updateChannelNotifyProps} from 'matterfoss-redux/actions/channels';
+import {ActionFunc} from 'matterfoss-redux/types/actions';
 
 import MenuItemToggleMuteChannel, {Actions} from './toggle_mute_channel';
 

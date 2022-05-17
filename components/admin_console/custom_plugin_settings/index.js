@@ -5,8 +5,8 @@ import {connect} from 'react-redux';
 
 import {createSelector} from 'reselect';
 
-import {getRoles} from 'mattermost-redux/selectors/entities/roles';
-import {appsFeatureFlagEnabled} from 'mattermost-redux/selectors/entities/apps';
+import {getRoles} from 'matterfoss-redux/selectors/entities/roles';
+import {appsFeatureFlagEnabled} from 'matterfoss-redux/selectors/entities/apps';
 
 import {Constants} from 'utils/constants';
 import {localizeMessage} from 'utils/utils.jsx';

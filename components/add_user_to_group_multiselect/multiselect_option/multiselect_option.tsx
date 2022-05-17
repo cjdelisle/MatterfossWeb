@@ -4,11 +4,11 @@
 import React from 'react';
 import classNames from 'classnames';
 
-import {Client4} from 'mattermost-redux/client';
-import {UserProfile} from 'mattermost-redux/types/users';
-import {RelationOneToOne} from 'mattermost-redux/types/utilities';
+import {Client4} from 'matterfoss-redux/client';
+import {UserProfile} from 'matterfoss-redux/types/users';
+import {RelationOneToOne} from 'matterfoss-redux/types/utilities';
 
-import {isGuest} from 'mattermost-redux/utils/user_utils';
+import {isGuest} from 'matterfoss-redux/utils/user_utils';
 import {displayEntireNameForUser} from 'utils/utils.jsx';
 import ProfilePicture from 'components/profile_picture';
 import AddIcon from 'components/widgets/icons/fa_add_icon';

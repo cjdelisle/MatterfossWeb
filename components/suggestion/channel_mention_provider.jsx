@@ -3,9 +3,9 @@
 
 import React from 'react';
 
-import {getMyChannels, getMyChannelMemberships} from 'mattermost-redux/selectors/entities/channels';
+import {getMyChannels, getMyChannelMemberships} from 'matterfoss-redux/selectors/entities/channels';
 
-import {sortChannelsByTypeAndDisplayName} from 'mattermost-redux/utils/channel_utils';
+import {sortChannelsByTypeAndDisplayName} from 'matterfoss-redux/utils/channel_utils';
 
 import store from 'stores/redux_store.jsx';
 

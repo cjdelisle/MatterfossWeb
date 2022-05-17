@@ -3,11 +3,11 @@
 
 import React from 'react';
 
-import {Channel} from 'mattermost-redux/types/channels';
-import {ClientConfig} from 'mattermost-redux/types/config';
-import {Team} from 'mattermost-redux/types/teams';
-import {Theme} from 'mattermost-redux/types/themes';
-import {UserProfile, UserStatus} from 'mattermost-redux/types/users';
+import {Channel} from 'matterfoss-redux/types/channels';
+import {ClientConfig} from 'matterfoss-redux/types/config';
+import {Team} from 'matterfoss-redux/types/teams';
+import {Theme} from 'matterfoss-redux/types/themes';
+import {UserProfile, UserStatus} from 'matterfoss-redux/types/users';
 
 import {GlobalState} from 'types/store';
 

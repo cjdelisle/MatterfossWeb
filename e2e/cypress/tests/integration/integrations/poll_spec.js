@@ -50,16 +50,16 @@ describe('/poll', () => {
     });
 
     it('MM-T576_1 /poll', () => {
-        // # In center post the following: /poll "Do you like https://mattermost.com?"
-        cy.postMessage('/poll "Do you like https://mattermost.com?"');
+        // # In center post the following: /poll "Do you like https://matterfoss.com?"
+        cy.postMessage('/poll "Do you like https://matterfoss.com?"');
 
         cy.uiGetPostBody().within(() => {
             // * Poll displays as expected in center
             cy.findByLabelText('matterpoll').should('be.visible');
 
-            // * Mattermost URL renders as a live link
-            cy.contains('a', 'https://mattermost.com').
-                should('have.attr', 'href', 'https://mattermost.com');
+            // * MatterFOSS URL renders as a live link
+            cy.contains('a', 'https://matterfoss.com').
+                should('have.attr', 'href', 'https://matterfoss.com');
 
             // # Click "Yes" or "No"
             cy.findByText('Yes').click();
@@ -106,7 +106,7 @@ describe('/poll', () => {
         cy.findByText('End').click();
 
         // * Username displays the same on the original poll post and on the "This poll has ended" post
-        cy.uiWaitUntilMessagePostedIncludes('The poll Do you like https://mattermost.com? has ended');
+        cy.uiWaitUntilMessagePostedIncludes('The poll Do you like https://matterfoss.com? has ended');
         cy.uiGetNthPost(-4).within(() => {
             cy.contains('This poll has ended').should('be.visible');
             cy.contains(user1.nickname);
@@ -131,7 +131,7 @@ describe('/poll', () => {
     });
 
     it('MM-T576_3 /poll', () => {
-        cy.postMessage('/poll "Do you like https://mattermost.com?"');
+        cy.postMessage('/poll "Do you like https://matterfoss.com?"');
         cy.uiGetPostBody().within(() => {
             cy.findByText('Yes').click();
         });
@@ -151,7 +151,7 @@ describe('/poll', () => {
         cy.findByText('End').click();
 
         // * There is a message in the channel that the Poll has ended with a "here" link to view the responses
-        cy.uiWaitUntilMessagePostedIncludes('The poll Do you like https://mattermost.com? has ended and the original post has been updated. You can jump to it by pressing here.');
+        cy.uiWaitUntilMessagePostedIncludes('The poll Do you like https://matterfoss.com? has ended and the original post has been updated. You can jump to it by pressing here.');
         cy.uiGetPostBody().within(() => {
             cy.contains('a', 'here').click();
         });

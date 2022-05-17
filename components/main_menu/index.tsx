@@ -5,22 +5,22 @@ import {connect} from 'react-redux';
 import {bindActionCreators, Dispatch} from 'redux';
 import {withRouter} from 'react-router-dom';
 
-import {GenericAction} from 'mattermost-redux/types/actions';
+import {GenericAction} from 'matterfoss-redux/types/actions';
 
 import {
     getConfig,
-} from 'mattermost-redux/selectors/entities/general';
+} from 'matterfoss-redux/selectors/entities/general';
 import {
     getJoinableTeamIds,
     getCurrentTeam,
     getCurrentRelativeTeamUrl,
-} from 'mattermost-redux/selectors/entities/teams';
-import {getCurrentUser, isFirstAdmin} from 'mattermost-redux/selectors/entities/users';
-import {getUseCaseOnboarding} from 'mattermost-redux/selectors/entities/preferences';
-import {haveICurrentTeamPermission, haveISystemPermission} from 'mattermost-redux/selectors/entities/roles';
+} from 'matterfoss-redux/selectors/entities/teams';
+import {getCurrentUser, isFirstAdmin} from 'matterfoss-redux/selectors/entities/users';
+import {getUseCaseOnboarding} from 'matterfoss-redux/selectors/entities/preferences';
+import {haveICurrentTeamPermission, haveISystemPermission} from 'matterfoss-redux/selectors/entities/roles';
 
-import {getSubscriptionStats} from 'mattermost-redux/actions/cloud';
-import {Permissions} from 'mattermost-redux/constants';
+import {getSubscriptionStats} from 'matterfoss-redux/actions/cloud';
+import {Permissions} from 'matterfoss-redux/constants';
 
 import {RHSStates} from 'utils/constants';
 

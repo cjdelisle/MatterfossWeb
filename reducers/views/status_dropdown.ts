@@ -2,8 +2,8 @@
 // See LICENSE.txt for license information.
 import {combineReducers} from 'redux';
 
-import {UserTypes} from 'mattermost-redux/action_types';
-import {GenericAction} from 'mattermost-redux/types/actions';
+import {UserTypes} from 'matterfoss-redux/action_types';
+import {GenericAction} from 'matterfoss-redux/types/actions';
 
 import {ActionTypes} from 'utils/constants';
 

@@ -4,9 +4,9 @@
 import React from 'react';
 import {FormattedMessage} from 'react-intl';
 
-import {Team} from 'mattermost-redux/types/teams';
-import {Command} from 'mattermost-redux/types/integrations';
-import {RelationOneToOne} from 'mattermost-redux/types/utilities';
+import {Team} from 'matterfoss-redux/types/teams';
+import {Command} from 'matterfoss-redux/types/integrations';
+import {RelationOneToOne} from 'matterfoss-redux/types/utilities';
 
 import {browserHistory} from 'utils/browser_history';
 import {t} from 'utils/i18n';

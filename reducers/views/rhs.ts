@@ -8,8 +8,8 @@ import {
     TeamTypes,
     SearchTypes,
     UserTypes,
-} from 'mattermost-redux/action_types';
-import type {GenericAction} from 'mattermost-redux/types/actions';
+} from 'matterfoss-redux/action_types';
+import type {GenericAction} from 'matterfoss-redux/types/actions';
 
 import type {RhsState} from 'types/store/rhs';
 

@@ -3,7 +3,7 @@
 
 import {expect, Locator, Page} from '@playwright/test';
 
-import {users, config} from '../../../../../packages/mattermost-redux/src/types';
+import {users, config} from '../../../../../packages/matterfoss-redux/src/types';
 
 export class SignupPage {
     readonly serverConfig: config.AdminConfig;

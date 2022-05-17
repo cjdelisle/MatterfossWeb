@@ -6,11 +6,11 @@ import {connect} from 'react-redux';
 import {bindActionCreators, Dispatch} from 'redux';
 import {withRouter, RouteChildrenProps, matchPath} from 'react-router-dom';
 
-import {getCurrentChannel, getUnreadStatus} from 'mattermost-redux/selectors/entities/channels';
-import {getConfig} from 'mattermost-redux/selectors/entities/general';
-import {getCurrentTeam} from 'mattermost-redux/selectors/entities/teams';
-import {GlobalState} from 'mattermost-redux/types/store';
-import {GenericAction} from 'mattermost-redux/types/actions';
+import {getCurrentChannel, getUnreadStatus} from 'matterfoss-redux/selectors/entities/channels';
+import {getConfig} from 'matterfoss-redux/selectors/entities/general';
+import {getCurrentTeam} from 'matterfoss-redux/selectors/entities/teams';
+import {GlobalState} from 'matterfoss-redux/types/store';
+import {GenericAction} from 'matterfoss-redux/types/actions';
 
 import FaviconTitleHandler from './favicon_title_handler';
 

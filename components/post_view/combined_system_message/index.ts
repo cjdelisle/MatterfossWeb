@@ -4,12 +4,12 @@
 import {connect} from 'react-redux';
 import {bindActionCreators, Dispatch} from 'redux';
 
-import {getMissingProfilesByIds, getMissingProfilesByUsernames} from 'mattermost-redux/actions/users';
-import {Preferences} from 'mattermost-redux/constants';
-import {getBool} from 'mattermost-redux/selectors/entities/preferences';
-import {getCurrentUser, makeGetProfilesByIdsAndUsernames} from 'mattermost-redux/selectors/entities/users';
-import {GlobalState} from 'mattermost-redux/types/store';
-import {GenericAction} from 'mattermost-redux/types/actions';
+import {getMissingProfilesByIds, getMissingProfilesByUsernames} from 'matterfoss-redux/actions/users';
+import {Preferences} from 'matterfoss-redux/constants';
+import {getBool} from 'matterfoss-redux/selectors/entities/preferences';
+import {getCurrentUser, makeGetProfilesByIdsAndUsernames} from 'matterfoss-redux/selectors/entities/users';
+import {GlobalState} from 'matterfoss-redux/types/store';
+import {GenericAction} from 'matterfoss-redux/types/actions';
 
 import CombinedSystemMessage from './combined_system_message';
 

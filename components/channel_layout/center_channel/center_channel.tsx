@@ -5,7 +5,7 @@ import React from 'react';
 import {Route, Switch, Redirect} from 'react-router-dom';
 import classNames from 'classnames';
 
-import {ActionFunc} from 'mattermost-redux/types/actions';
+import {ActionFunc} from 'matterfoss-redux/types/actions';
 
 import LoadingScreen from 'components/loading_screen';
 import PermalinkView from 'components/permalink_view';

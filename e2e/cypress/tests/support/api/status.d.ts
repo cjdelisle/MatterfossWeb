@@ -8,7 +8,7 @@
 // See https://jsdoc.app/index.html for reference.
 // Basic requirements for documentation are the following:
 // - Meaningful description
-// - Specific link to https://api.mattermost.com
+// - Specific link to https://api.matterfoss.com
 // - Each parameter with `@params`
 // - Return value with `@returns`
 // - Example usage with `@example`
@@ -20,7 +20,7 @@ declare namespace Cypress {
 
         /**
          * Update status of a current user.
-         * See https://api.mattermost.com/#tag/status/paths/~1users~1{user_id}~1status/put
+         * See https://api.matterfoss.com/#tag/status/paths/~1users~1{user_id}~1status/put
          * @param {String} status - "online" (default), "offline", "away" or "dnd"
          * @returns {UserStatus} `out.status` as `UserStatus`
          *
@@ -33,7 +33,7 @@ declare namespace Cypress {
 
         /**
          * Get status of a current user.
-         * See https://api.mattermost.com/#tag/status/paths/~1users~1{user_id}~1status/get
+         * See https://api.matterfoss.com/#tag/status/paths/~1users~1{user_id}~1status/get
          * @param {String} userId - ID of a given user
          * @returns {UserStatus} `out.status` as `UserStatus`
          *
@@ -46,7 +46,7 @@ declare namespace Cypress {
 
         /**
          * Update custom status of current user.
-         * See https://api.mattermost.com/#tag/custom_status/paths/~1users~1{user_id}~1status/custom/put
+         * See https://api.matterfoss.com/#tag/custom_status/paths/~1users~1{user_id}~1status/custom/put
          * @param {UserCustomStatus} customStatus - custom status to be updated
          *
          * @example
@@ -56,7 +56,7 @@ declare namespace Cypress {
 
         /**
          * Clear custom status of the current user.
-         * See https://api.mattermost.com/#tag/custom_status/paths/~1users~1{user_id}~1status/custom/delete
+         * See https://api.matterfoss.com/#tag/custom_status/paths/~1users~1{user_id}~1status/custom/delete
          * @param {UserCustomStatus} customStatus - custom status to be updated
          *
          * @example

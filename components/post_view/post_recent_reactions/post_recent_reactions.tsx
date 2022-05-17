@@ -4,8 +4,8 @@
 import React from 'react';
 import {Dispatch} from 'redux';
 
-import Permissions from 'mattermost-redux/constants/permissions';
-import {Emoji} from 'mattermost-redux/types/emojis';
+import Permissions from 'matterfoss-redux/constants/permissions';
+import {Emoji} from 'matterfoss-redux/types/emojis';
 import {Locations} from 'utils/constants';
 import ChannelPermissionGate from 'components/permissions_gates/channel_permission_gate';
 import OverlayTrigger from 'components/overlay_trigger';

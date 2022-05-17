@@ -127,7 +127,7 @@ describe('/components/create_team/components/display_name', () => {
         wrapper.find('button').simulate('click', {preventDefault: () => jest.fn()});
         expect(wrapper.state('nameError')).toEqual(
             <FormattedMarkdownMessage
-                defaultMessage='This URL [starts with a reserved word](!https://docs.mattermost.com/help/getting-started/creating-teams.html#team-url) or is unavailable. Please try another.'
+                defaultMessage='This URL [starts with a reserved word](!https://docs.matterfoss.com/help/getting-started/creating-teams.html#team-url) or is unavailable. Please try another.'
                 id='create_team.team_url.taken'
             />,
         );

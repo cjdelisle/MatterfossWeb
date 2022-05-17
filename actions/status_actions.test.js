@@ -5,12 +5,12 @@ import clone from 'clone';
 import thunk from 'redux-thunk';
 import configureStore from 'redux-mock-store';
 
-import {Preferences} from 'mattermost-redux/constants';
-import {getStatusesByIds} from 'mattermost-redux/actions/users';
+import {Preferences} from 'matterfoss-redux/constants';
+import {getStatusesByIds} from 'matterfoss-redux/actions/users';
 
 import * as Actions from 'actions/status_actions.jsx';
 
-jest.mock('mattermost-redux/actions/users', () => ({
+jest.mock('matterfoss-redux/actions/users', () => ({
     getStatusesByIds: jest.fn(() => {
         return {type: ''};
     }),

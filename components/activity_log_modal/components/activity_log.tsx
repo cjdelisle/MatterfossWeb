@@ -4,8 +4,8 @@
 import React from 'react';
 import {FormattedDate, FormattedMessage, FormattedTime} from 'react-intl';
 
-import {General} from 'mattermost-redux/constants';
-import {Session} from 'mattermost-redux/types/sessions';
+import {General} from 'matterfoss-redux/constants';
+import {Session} from 'matterfoss-redux/types/sessions';
 
 import {localizeMessage} from 'utils/utils.jsx';
 import {getMonthLong, t} from 'utils/i18n';

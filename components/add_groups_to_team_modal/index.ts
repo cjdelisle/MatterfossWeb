@@ -4,12 +4,12 @@
 import {connect} from 'react-redux';
 import {ActionCreatorsMapObject, bindActionCreators, Dispatch} from 'redux';
 
-import {getGroupsNotAssociatedToTeam, linkGroupSyncable, getAllGroupsAssociatedToTeam} from 'mattermost-redux/actions/groups';
-import {getGroupsNotAssociatedToTeam as selectGroupsNotAssociatedToTeam} from 'mattermost-redux/selectors/entities/groups';
-import {getCurrentTeam} from 'mattermost-redux/selectors/entities/teams';
-import {Team} from 'mattermost-redux/types/teams';
-import {Group} from 'mattermost-redux/types/groups';
-import {ActionFunc, GenericAction} from 'mattermost-redux/types/actions';
+import {getGroupsNotAssociatedToTeam, linkGroupSyncable, getAllGroupsAssociatedToTeam} from 'matterfoss-redux/actions/groups';
+import {getGroupsNotAssociatedToTeam as selectGroupsNotAssociatedToTeam} from 'matterfoss-redux/selectors/entities/groups';
+import {getCurrentTeam} from 'matterfoss-redux/selectors/entities/teams';
+import {Team} from 'matterfoss-redux/types/teams';
+import {Group} from 'matterfoss-redux/types/groups';
+import {ActionFunc, GenericAction} from 'matterfoss-redux/types/actions';
 
 import {setModalSearchTerm} from 'actions/views/search';
 import {GlobalState} from '../../types/store';

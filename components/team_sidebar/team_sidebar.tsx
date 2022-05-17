@@ -13,11 +13,11 @@ import {Dispatch} from 'redux';
 
 import {RouteComponentProps} from 'react-router-dom';
 
-import Permissions from 'mattermost-redux/constants/permissions';
+import Permissions from 'matterfoss-redux/constants/permissions';
 
-import {Team, TeamMembership} from 'mattermost-redux/types/teams';
+import {Team, TeamMembership} from 'matterfoss-redux/types/teams';
 
-import {GenericAction, GetStateFunc} from 'mattermost-redux/types/actions';
+import {GenericAction, GetStateFunc} from 'matterfoss-redux/types/actions';
 
 import {Constants} from 'utils/constants.jsx';
 import {filterAndSortTeamsByDisplayName} from 'utils/team_utils';
@@ -25,7 +25,7 @@ import * as Utils from 'utils/utils.jsx';
 
 import SystemPermissionGate from 'components/permissions_gates/system_permission_gate';
 
-import {ThreadsState} from 'mattermost-redux/types/threads';
+import {ThreadsState} from 'matterfoss-redux/types/threads';
 
 import {ProductComponent} from '../../types/store/plugins';
 

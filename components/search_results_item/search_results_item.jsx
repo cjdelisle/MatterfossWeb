@@ -5,8 +5,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {FormattedMessage} from 'react-intl';
 
-import {Posts} from 'mattermost-redux/constants/index';
-import * as ReduxPostUtils from 'mattermost-redux/utils/post_utils';
+import {Posts} from 'matterfoss-redux/constants/index';
+import * as ReduxPostUtils from 'matterfoss-redux/utils/post_utils';
 
 import AutoHeightSwitcher, {AutoHeightSlots} from 'components/common/auto_height_switcher';
 import PostMessageContainer from 'components/post_view/post_message_view';

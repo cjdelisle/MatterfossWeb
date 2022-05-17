@@ -4,10 +4,10 @@
 import {ActionCreatorsMapObject, bindActionCreators, Dispatch} from 'redux';
 import {connect} from 'react-redux';
 
-import {getFirstAdminSetupComplete} from 'mattermost-redux/actions/general';
-import {getCurrentUserId, isCurrentUserSystemAdmin, isFirstAdmin} from 'mattermost-redux/selectors/entities/users';
-import {getUseCaseOnboarding} from 'mattermost-redux/selectors/entities/preferences';
-import {GenericAction} from 'mattermost-redux/types/actions';
+import {getFirstAdminSetupComplete} from 'matterfoss-redux/actions/general';
+import {getCurrentUserId, isCurrentUserSystemAdmin, isFirstAdmin} from 'matterfoss-redux/selectors/entities/users';
+import {getUseCaseOnboarding} from 'matterfoss-redux/selectors/entities/preferences';
+import {GenericAction} from 'matterfoss-redux/types/actions';
 
 import {GlobalState} from 'types/store';
 

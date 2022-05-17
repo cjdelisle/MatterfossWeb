@@ -3,8 +3,8 @@
 
 import {combineReducers} from 'redux';
 
-import {ChannelTypes, PostTypes, UserTypes, GeneralTypes} from 'mattermost-redux/action_types';
-import type {GenericAction} from 'mattermost-redux/types/actions';
+import {ChannelTypes, PostTypes, UserTypes, GeneralTypes} from 'matterfoss-redux/action_types';
+import type {GenericAction} from 'matterfoss-redux/types/actions';
 
 import {ActionTypes, Constants} from 'utils/constants';
 

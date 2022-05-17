@@ -10,9 +10,9 @@ import Text from '@mattermost/compass-components/components/text';
 import Icon from '@mattermost/compass-components/foundations/icon/Icon';
 import {TUserStatus} from '@mattermost/compass-components/shared';
 
-import {PreferenceType} from 'mattermost-redux/types/preferences';
-import {ActionFunc} from 'mattermost-redux/types/actions';
-import {CustomStatusDuration, UserCustomStatus, UserProfile, UserStatus} from 'mattermost-redux/types/users';
+import {PreferenceType} from 'matterfoss-redux/types/preferences';
+import {ActionFunc} from 'matterfoss-redux/types/actions';
+import {CustomStatusDuration, UserCustomStatus, UserProfile, UserStatus} from 'matterfoss-redux/types/users';
 
 import * as GlobalActions from 'actions/global_actions';
 import CustomStatusEmoji from 'components/custom_status/custom_status_emoji';

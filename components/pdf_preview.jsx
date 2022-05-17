@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import debounce from 'lodash/debounce';
 
-import {getFileDownloadUrl} from 'mattermost-redux/utils/file_utils';
+import {getFileDownloadUrl} from 'matterfoss-redux/utils/file_utils';
 
 import LoadingSpinner from 'components/widgets/loading/loading_spinner';
 import FileInfoPreview from 'components/file_info_preview';

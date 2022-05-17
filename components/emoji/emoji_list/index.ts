@@ -4,12 +4,12 @@
 import {connect} from 'react-redux';
 import {ActionCreatorsMapObject, bindActionCreators, Dispatch} from 'redux';
 
-import {getCustomEmojiIdsSortedByName} from 'mattermost-redux/selectors/entities/emojis';
-import {ActionFunc, GenericAction} from 'mattermost-redux/types/actions';
-import {getCustomEmojis, searchCustomEmojis} from 'mattermost-redux/actions/emojis';
-import {GlobalState} from 'mattermost-redux/types/store';
-import {CustomEmoji} from 'mattermost-redux/types/emojis';
-import {ServerError} from 'mattermost-redux/types/errors';
+import {getCustomEmojiIdsSortedByName} from 'matterfoss-redux/selectors/entities/emojis';
+import {ActionFunc, GenericAction} from 'matterfoss-redux/types/actions';
+import {getCustomEmojis, searchCustomEmojis} from 'matterfoss-redux/actions/emojis';
+import {GlobalState} from 'matterfoss-redux/types/store';
+import {CustomEmoji} from 'matterfoss-redux/types/emojis';
+import {ServerError} from 'matterfoss-redux/types/errors';
 
 import EmojiList from './emoji_list';
 

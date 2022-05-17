@@ -3,15 +3,15 @@
 
 import semver from 'semver';
 
-import {logError} from 'mattermost-redux/actions/errors';
-import {getProfilesByIds} from 'mattermost-redux/actions/users';
-import {getCurrentChannel, getMyChannelMember, makeGetChannel} from 'mattermost-redux/selectors/entities/channels';
-import {getConfig} from 'mattermost-redux/selectors/entities/general';
-import {getTeammateNameDisplaySetting, isCollapsedThreadsEnabled} from 'mattermost-redux/selectors/entities/preferences';
-import {getCurrentUserId, getCurrentUser, getStatusForUserId, getUser} from 'mattermost-redux/selectors/entities/users';
-import {isChannelMuted} from 'mattermost-redux/utils/channel_utils';
-import {isSystemMessage} from 'mattermost-redux/utils/post_utils';
-import {displayUsername} from 'mattermost-redux/utils/user_utils';
+import {logError} from 'matterfoss-redux/actions/errors';
+import {getProfilesByIds} from 'matterfoss-redux/actions/users';
+import {getCurrentChannel, getMyChannelMember, makeGetChannel} from 'matterfoss-redux/selectors/entities/channels';
+import {getConfig} from 'matterfoss-redux/selectors/entities/general';
+import {getTeammateNameDisplaySetting, isCollapsedThreadsEnabled} from 'matterfoss-redux/selectors/entities/preferences';
+import {getCurrentUserId, getCurrentUser, getStatusForUserId, getUser} from 'matterfoss-redux/selectors/entities/users';
+import {isChannelMuted} from 'matterfoss-redux/utils/channel_utils';
+import {isSystemMessage} from 'matterfoss-redux/utils/post_utils';
+import {displayUsername} from 'matterfoss-redux/utils/user_utils';
 
 import {isThreadOpen} from 'selectors/views/threads';
 

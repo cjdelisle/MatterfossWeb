@@ -5,7 +5,7 @@ import React from 'react';
 import {shallow} from 'enzyme';
 import {Modal} from 'react-bootstrap';
 
-import {Channel, ChannelType} from 'mattermost-redux/types/channels';
+import {Channel, ChannelType} from 'matterfoss-redux/types/channels';
 
 import {browserHistory} from 'utils/browser_history';
 
@@ -31,7 +31,7 @@ describe('components/delete_channel_modal', () => {
     };
 
     const currentTeamDetails = {
-        name: 'mattermostDev',
+        name: 'matterfossDev',
     };
 
     const baseProps: Props = {
@@ -76,7 +76,7 @@ describe('components/delete_channel_modal', () => {
 
         expect(actions.deleteChannel).toHaveBeenCalledTimes(1);
         expect(actions.deleteChannel).toHaveBeenCalledWith(props.channel.id);
-        expect(browserHistory.push).toHaveBeenCalledWith('/mattermostDev/channels/my-prev-channel');
+        expect(browserHistory.push).toHaveBeenCalledWith('/matterfossDev/channels/my-prev-channel');
         expect(wrapper.state('show')).toEqual(false);
     });
 

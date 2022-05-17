@@ -5,7 +5,7 @@ import React, {ComponentProps} from 'react';
 
 import {shallow} from 'enzyme';
 
-import {LicenseSkus} from 'mattermost-redux/types/general';
+import {LicenseSkus} from 'matterfoss-redux/types/general';
 
 import PermissionsTreePlaybooks from 'components/admin_console/permission_schemes_settings/permissions_tree_playbooks';
 import PermissionGroup from 'components/admin_console/permission_schemes_settings/permission_group.jsx';

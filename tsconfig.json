@@ -21,7 +21,7 @@
     "jsx": "react",
     "baseUrl": ".",
     "paths": {
-        "mattermost-redux/*": ["packages/mattermost-redux/src/*"],
+        "matterfoss-redux/*": ["packages/matterfoss-redux/src/*"],
         "reselect": ["packages/reselect/src"],
     }
   },

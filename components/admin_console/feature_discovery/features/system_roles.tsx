@@ -14,10 +14,10 @@ const SystemRolesFeatureDiscovery: React.FC = () => {
         <FeatureDiscovery
             featureName='system_roles'
             titleID='admin.system_roles_feature_discovery.title'
-            titleDefault='Provide controlled access to the System Console with Mattermost Enterprise'
+            titleDefault='Provide controlled access to the System Console with MatterFOSS Enterprise'
             copyID='admin.system_roles_feature_discovery.copy'
             copyDefault={'Use System Roles to give designated users read and/or write access to select sections of System Console.'}
-            learnMoreURL='https://docs.mattermost.com/deployment/admin-roles.html'
+            learnMoreURL='https://docs.matterfoss.com/deployment/admin-roles.html'
             featureDiscoveryImage={<SystemRolesSVG/>}
         />
     );

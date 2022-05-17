@@ -4,10 +4,10 @@
 import React from 'react';
 import {Modal} from 'react-bootstrap';
 
-import {FileInfo} from 'mattermost-redux/types/files';
-import {Post} from 'mattermost-redux/types/posts';
+import {FileInfo} from 'matterfoss-redux/types/files';
+import {Post} from 'matterfoss-redux/types/posts';
 
-import {getFileDownloadUrl, getFilePreviewUrl, getFileUrl} from 'mattermost-redux/utils/file_utils';
+import {getFileDownloadUrl, getFilePreviewUrl, getFileUrl} from 'matterfoss-redux/utils/file_utils';
 import LoadingImagePreview from 'components/loading_image_preview';
 import Constants, {FileTypes, ZoomSettings} from 'utils/constants';
 import * as Utils from 'utils/utils';

@@ -4,17 +4,17 @@
 import React from 'react';
 import {FormattedMessage} from 'react-intl';
 
-import {ClientConfig, ClientLicense} from 'mattermost-redux/types/config.js';
+import {ClientConfig, ClientLicense} from 'matterfoss-redux/types/config.js';
 
-import Permissions from 'mattermost-redux/constants/permissions';
-import {Role} from 'mattermost-redux/types/roles';
+import Permissions from 'matterfoss-redux/constants/permissions';
+import {Role} from 'matterfoss-redux/types/roles';
 
 import PermissionGroup from '../permission_group.jsx';
 
 import EditPostTimeLimitButton from '../edit_post_time_limit_button';
 import EditPostTimeLimitModal from '../edit_post_time_limit_modal';
 
-import {isEnterpriseLicense, isNonEnterpriseLicense} from 'mattermost-redux/types/general';
+import {isEnterpriseLicense, isNonEnterpriseLicense} from 'matterfoss-redux/types/general';
 
 import {AdditionalValues, Group} from './types';
 

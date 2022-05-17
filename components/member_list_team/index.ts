@@ -4,15 +4,15 @@
 import {connect} from 'react-redux';
 import {bindActionCreators, Dispatch, ActionCreatorsMapObject} from 'redux';
 
-import {getTeamStats, getTeamMembers} from 'mattermost-redux/actions/teams';
-import {GetTeamMembersOpts, TeamStats, TeamMembership} from 'mattermost-redux/types/teams';
-import {haveITeamPermission} from 'mattermost-redux/selectors/entities/roles';
-import {getMembersInCurrentTeam, getCurrentTeamStats} from 'mattermost-redux/selectors/entities/teams';
-import {getProfilesInCurrentTeam, searchProfilesInCurrentTeam} from 'mattermost-redux/selectors/entities/users';
-import {Permissions} from 'mattermost-redux/constants';
-import {searchProfiles} from 'mattermost-redux/actions/users';
-import {ActionFunc, GenericAction, ActionResult} from 'mattermost-redux/types/actions';
-import {UserProfile} from 'mattermost-redux/types/users';
+import {getTeamStats, getTeamMembers} from 'matterfoss-redux/actions/teams';
+import {GetTeamMembersOpts, TeamStats, TeamMembership} from 'matterfoss-redux/types/teams';
+import {haveITeamPermission} from 'matterfoss-redux/selectors/entities/roles';
+import {getMembersInCurrentTeam, getCurrentTeamStats} from 'matterfoss-redux/selectors/entities/teams';
+import {getProfilesInCurrentTeam, searchProfilesInCurrentTeam} from 'matterfoss-redux/selectors/entities/users';
+import {Permissions} from 'matterfoss-redux/constants';
+import {searchProfiles} from 'matterfoss-redux/actions/users';
+import {ActionFunc, GenericAction, ActionResult} from 'matterfoss-redux/types/actions';
+import {UserProfile} from 'matterfoss-redux/types/users';
 
 import {loadStatusesForProfilesList} from 'actions/status_actions.jsx';
 import {loadProfilesAndTeamMembers, loadTeamMembersForProfilesList} from 'actions/user_actions.jsx';

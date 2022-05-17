@@ -3,7 +3,7 @@
 
 import React from 'react';
 
-import {sortFileInfos} from 'mattermost-redux/utils/file_utils';
+import {sortFileInfos} from 'matterfoss-redux/utils/file_utils';
 
 import {FileTypes, ModalIdentifiers} from 'utils/constants';
 import {getFileType} from 'utils/utils';

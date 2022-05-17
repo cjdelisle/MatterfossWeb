@@ -6,11 +6,11 @@ import {connect} from 'react-redux';
 
 import {createSelector} from 'reselect';
 
-import {Post} from 'mattermost-redux/types/posts';
-import {GenericAction} from 'mattermost-redux/types/actions';
+import {Post} from 'matterfoss-redux/types/posts';
+import {GenericAction} from 'matterfoss-redux/types/actions';
 
-import {makeGetPostsForThread} from 'mattermost-redux/selectors/entities/posts';
-import {getCurrentUser} from 'mattermost-redux/selectors/entities/users';
+import {makeGetPostsForThread} from 'matterfoss-redux/selectors/entities/posts';
+import {getCurrentUser} from 'matterfoss-redux/selectors/entities/users';
 
 import {updateThreadToastStatus} from 'actions/views/threads';
 

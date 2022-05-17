@@ -4,16 +4,16 @@
 import {connect} from 'react-redux';
 import {Dispatch, bindActionCreators, ActionCreatorsMapObject} from 'redux';
 
-import {favoriteChannel, unfavoriteChannel, markChannelAsRead} from 'mattermost-redux/actions/channels';
-import Permissions from 'mattermost-redux/constants/permissions';
-import {isFavoriteChannel} from 'mattermost-redux/selectors/entities/channels';
-import {getMyChannelMemberships, getCurrentUserId} from 'mattermost-redux/selectors/entities/common';
-import {getCategoryInTeamWithChannel} from 'mattermost-redux/selectors/entities/channel_categories';
-import {haveIChannelPermission} from 'mattermost-redux/selectors/entities/roles';
-import {getCurrentTeam} from 'mattermost-redux/selectors/entities/teams';
-import {Action} from 'mattermost-redux/types/actions';
-import {Channel} from 'mattermost-redux/types/channels';
-import {isChannelMuted} from 'mattermost-redux/utils/channel_utils';
+import {favoriteChannel, unfavoriteChannel, markChannelAsRead} from 'matterfoss-redux/actions/channels';
+import Permissions from 'matterfoss-redux/constants/permissions';
+import {isFavoriteChannel} from 'matterfoss-redux/selectors/entities/channels';
+import {getMyChannelMemberships, getCurrentUserId} from 'matterfoss-redux/selectors/entities/common';
+import {getCategoryInTeamWithChannel} from 'matterfoss-redux/selectors/entities/channel_categories';
+import {haveIChannelPermission} from 'matterfoss-redux/selectors/entities/roles';
+import {getCurrentTeam} from 'matterfoss-redux/selectors/entities/teams';
+import {Action} from 'matterfoss-redux/types/actions';
+import {Channel} from 'matterfoss-redux/types/channels';
+import {isChannelMuted} from 'matterfoss-redux/utils/channel_utils';
 
 import {unmuteChannel, muteChannel} from 'actions/channel_actions';
 import {addChannelsInSidebar} from 'actions/views/channel_sidebar';

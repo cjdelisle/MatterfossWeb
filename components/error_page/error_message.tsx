@@ -25,7 +25,7 @@ const ErrorMessage: React.FC<Props> = ({type, message, service, isGuest}: Props)
                 <div>
                     <FormattedMessage
                         id='error.local_storage.message'
-                        defaultMessage='Mattermost was unable to load because a setting in your browser prevents the use of its local storage features. To allow Mattermost to load, try the following actions:'
+                        defaultMessage='MatterFOSS was unable to load because a setting in your browser prevents the use of its local storage features. To allow MatterFOSS to load, try the following actions:'
                     />
                     <ul>
                         <li>
@@ -107,7 +107,7 @@ const ErrorMessage: React.FC<Props> = ({type, message, service, isGuest}: Props)
                             values={{
                                 link: (
                                     <ErrorLink
-                                        url={'https://docs.mattermost.com/deployment/sso-google.html'}
+                                        url={'https://docs.matterfoss.com/deployment/sso-google.html'}
                                         messageId={t('error.oauth_missing_code.google.link')}
                                         defaultMessage={'Google Apps'}
                                     />
@@ -118,11 +118,11 @@ const ErrorMessage: React.FC<Props> = ({type, message, service, isGuest}: Props)
                     <p>
                         <FormattedMessage
                             id='error.oauth_missing_code.office365'
-                            defaultMessage='For {link} make sure the administrator of your Microsoft organization has enabled the Mattermost app.'
+                            defaultMessage='For {link} make sure the administrator of your Microsoft organization has enabled the MatterFOSS app.'
                             values={{
                                 link: (
                                     <ErrorLink
-                                        url={'https://docs.mattermost.com/deployment/sso-office.html'}
+                                        url={'https://docs.matterfoss.com/deployment/sso-office.html'}
                                         messageId={t('error.oauth_missing_code.office365.link')}
                                         defaultMessage={'Office 365'}
                                     />
@@ -137,7 +137,7 @@ const ErrorMessage: React.FC<Props> = ({type, message, service, isGuest}: Props)
                             values={{
                                 link: (
                                     <ErrorLink
-                                        url={'https://docs.mattermost.com/deployment/sso-gitlab.html'}
+                                        url={'https://docs.matterfoss.com/deployment/sso-gitlab.html'}
                                         messageId={t('error.oauth_missing_code.gitlab.link')}
                                         defaultMessage={'GitLab'}
                                     />
@@ -152,7 +152,7 @@ const ErrorMessage: React.FC<Props> = ({type, message, service, isGuest}: Props)
                             values={{
                                 link: (
                                     <ErrorLink
-                                        url={'https://forum.mattermost.com/c/trouble-shoot'}
+                                        url={'https://forum.matterfoss.com/c/trouble-shoot'}
                                         messageId={t('error.oauth_missing_code.forum.link')}
                                         defaultMessage={'Troubleshooting forum'}
                                     />
@@ -168,7 +168,7 @@ const ErrorMessage: React.FC<Props> = ({type, message, service, isGuest}: Props)
                 <p>
                     <FormattedMessage
                         id='error.oauth_access_denied'
-                        defaultMessage='You must authorize Mattermost to log in with {service}.'
+                        defaultMessage='You must authorize MatterFOSS to log in with {service}.'
                         values={{
                             service,
                         }}

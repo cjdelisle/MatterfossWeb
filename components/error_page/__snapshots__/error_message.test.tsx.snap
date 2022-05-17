@@ -21,7 +21,7 @@ exports[`components/error_page/ErrorMessage should match snapshot, channel_not_f
 exports[`components/error_page/ErrorMessage should match snapshot, local_storage type 1`] = `
 <div>
   <MemoizedFormattedMessage
-    defaultMessage="Mattermost was unable to load because a setting in your browser prevents the use of its local storage features. To allow Mattermost to load, try the following actions:"
+    defaultMessage="MatterFOSS was unable to load because a setting in your browser prevents the use of its local storage features. To allow MatterFOSS to load, try the following actions:"
     id="error.local_storage.message"
   />
   <ul>
@@ -65,7 +65,7 @@ exports[`components/error_page/ErrorMessage should match snapshot, no type nor m
 exports[`components/error_page/ErrorMessage should match snapshot, oauth_access_denied type 1`] = `
 <p>
   <MemoizedFormattedMessage
-    defaultMessage="You must authorize Mattermost to log in with {service}."
+    defaultMessage="You must authorize MatterFOSS to log in with {service}."
     id="error.oauth_access_denied"
     values={
       Object {
@@ -110,7 +110,7 @@ exports[`components/error_page/ErrorMessage should match snapshot, oauth_missing
           "link": <ErrorLink
             defaultMessage="Google Apps"
             messageId="error.oauth_missing_code.google.link"
-            url="https://docs.mattermost.com/deployment/sso-google.html"
+            url="https://docs.matterfoss.com/deployment/sso-google.html"
           />,
         }
       }
@@ -118,14 +118,14 @@ exports[`components/error_page/ErrorMessage should match snapshot, oauth_missing
   </p>
   <p>
     <MemoizedFormattedMessage
-      defaultMessage="For {link} make sure the administrator of your Microsoft organization has enabled the Mattermost app."
+      defaultMessage="For {link} make sure the administrator of your Microsoft organization has enabled the MatterFOSS app."
       id="error.oauth_missing_code.office365"
       values={
         Object {
           "link": <ErrorLink
             defaultMessage="Office 365"
             messageId="error.oauth_missing_code.office365.link"
-            url="https://docs.mattermost.com/deployment/sso-office.html"
+            url="https://docs.matterfoss.com/deployment/sso-office.html"
           />,
         }
       }
@@ -140,7 +140,7 @@ exports[`components/error_page/ErrorMessage should match snapshot, oauth_missing
           "link": <ErrorLink
             defaultMessage="GitLab"
             messageId="error.oauth_missing_code.gitlab.link"
-            url="https://docs.mattermost.com/deployment/sso-gitlab.html"
+            url="https://docs.matterfoss.com/deployment/sso-gitlab.html"
           />,
         }
       }
@@ -155,7 +155,7 @@ exports[`components/error_page/ErrorMessage should match snapshot, oauth_missing
           "link": <ErrorLink
             defaultMessage="Troubleshooting forum"
             messageId="error.oauth_missing_code.forum.link"
-            url="https://forum.mattermost.com/c/trouble-shoot"
+            url="https://forum.matterfoss.com/c/trouble-shoot"
           />,
         }
       }

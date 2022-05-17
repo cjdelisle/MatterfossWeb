@@ -3,7 +3,7 @@
 
 import React, {memo} from 'react';
 
-import {FileInfo} from 'mattermost-redux/types/files';
+import {FileInfo} from 'matterfoss-redux/types/files';
 
 import Post from 'components/post_view/post/post';
 

@@ -6,7 +6,7 @@ import './entry.js';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import {logError} from 'mattermost-redux/actions/errors';
+import {logError} from 'matterfoss-redux/actions/errors';
 
 // Import our styles
 import 'sass/styles.scss';

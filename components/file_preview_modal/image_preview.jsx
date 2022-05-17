@@ -4,7 +4,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import {getFilePreviewUrl, getFileDownloadUrl} from 'mattermost-redux/utils/file_utils';
+import {getFilePreviewUrl, getFileDownloadUrl} from 'matterfoss-redux/utils/file_utils';
 
 import './image_preview.scss';
 

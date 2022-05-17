@@ -4,17 +4,17 @@
 import thunk from 'redux-thunk';
 import configureStore from 'redux-mock-store';
 
-import {ChannelTypes} from 'mattermost-redux/action_types';
-import {receivedNewPost} from 'mattermost-redux/actions/posts';
-import {Posts} from 'mattermost-redux/constants';
+import {ChannelTypes} from 'matterfoss-redux/action_types';
+import {receivedNewPost} from 'matterfoss-redux/actions/posts';
+import {Posts} from 'matterfoss-redux/constants';
 
 import * as NewPostActions from 'actions/new_post';
 import {Constants} from 'utils/constants';
 
 const mockStore = configureStore([thunk]);
 
-jest.mock('mattermost-redux/actions/channels', () => ({
-    ...jest.requireActual('mattermost-redux/actions/channels'),
+jest.mock('matterfoss-redux/actions/channels', () => ({
+    ...jest.requireActual('matterfoss-redux/actions/channels'),
     markChannelAsReadOnServer: (...args) => ({type: 'MOCK_MARK_CHANNEL_AS_READ_ON_SERVER', args}),
 }));
 

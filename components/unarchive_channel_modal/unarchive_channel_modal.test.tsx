@@ -28,7 +28,7 @@ describe('components/unarchive_channel_modal', () => {
     });
 
     const currentTeamDetails = {
-        name: 'mattermostDev',
+        name: 'matterfossDev',
     };
 
     const baseProps = {

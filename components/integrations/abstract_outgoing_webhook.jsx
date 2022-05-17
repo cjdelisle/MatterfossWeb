@@ -475,7 +475,7 @@ export default class AbstractOutgoingWebhook extends React.PureComponent {
                                         values={{
                                             link: (
                                                 <a
-                                                    href='https://docs.mattermost.com/configure/configuration-settings.html#session-lengths'
+                                                    href='https://docs.matterfoss.com/configure/configuration-settings.html#session-lengths'
                                                     target='_blank'
                                                     rel='noopener noreferrer'
                                                 >

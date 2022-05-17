@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import {FormattedMessage} from 'react-intl';
 
-import {Permissions} from 'mattermost-redux/constants';
+import {Permissions} from 'matterfoss-redux/constants';
 
 import BotAccountsIcon from 'images/bot_default_icon.png';
 
@@ -147,7 +147,7 @@ export default class Integrations extends React.PureComponent {
                         description={
                             <FormattedMessage
                                 id='integrations.oauthApps.description'
-                                defaultMessage='Auth 2.0 allows external applications to make authorized requests to the Mattermost API'
+                                defaultMessage='Auth 2.0 allows external applications to make authorized requests to the MatterFOSS API'
                             />
                         }
                         link={'/' + this.props.team.name + '/integrations/oauth2-apps'}
@@ -172,7 +172,7 @@ export default class Integrations extends React.PureComponent {
                     description={
                         <FormattedMessage
                             id='bots.manage.description'
-                            defaultMessage='Use bot accounts to integrate with Mattermost through plugins or the API'
+                            defaultMessage='Use bot accounts to integrate with MatterFOSS through plugins or the API'
                         />
                     }
                     link={'/' + this.props.team.name + '/integrations/bots'}
@@ -193,13 +193,13 @@ export default class Integrations extends React.PureComponent {
                 <div className='backstage-list__help'>
                     <FormattedMessage
                         id='integrations.help'
-                        defaultMessage='Visit the {appDirectory} to find self-hosted, third-party apps and integrations for Mattermost.'
+                        defaultMessage='Visit the {appDirectory} to find self-hosted, third-party apps and integrations for MatterFOSS.'
                         values={{
                             appDirectory: (
                                 <a
                                     target='_blank'
                                     rel='noopener noreferrer'
-                                    href='https://mattermost.com/marketplace'
+                                    href='https://matterfoss.com/marketplace'
                                 >
                                     <FormattedMessage
                                         id='integrations.help.appDirectory'

@@ -3,8 +3,8 @@
 
 import {IntlShape} from 'react-intl';
 
-import {AppBinding, AppCallRequest, AppCallResponse, AppContext, AppForm} from 'mattermost-redux/types/apps';
-import {Post} from 'mattermost-redux/types/posts';
+import {AppBinding, AppCallRequest, AppCallResponse, AppContext, AppForm} from 'matterfoss-redux/types/apps';
+import {Post} from 'matterfoss-redux/types/posts';
 
 export type DoAppCallResult<Res=unknown> = {
     data?: AppCallResponse<Res>;

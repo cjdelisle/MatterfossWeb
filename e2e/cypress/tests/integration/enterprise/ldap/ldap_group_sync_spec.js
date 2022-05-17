@@ -23,7 +23,7 @@ function setLDAPTestSettings(config) {
 
 // assumes the CYPRESS_* variables are set
 // assumes that E20 license is uploaded
-// for setup with AWS: Follow the instructions mentioned in the mattermost/platform-private/config/ldap-test-setup.txt file
+// for setup with AWS: Follow the instructions mentioned in the matterfoss/platform-private/config/ldap-test-setup.txt file
 context('ldap', () => {
     let testChannel;
     let testTeam;
@@ -96,7 +96,7 @@ context('ldap', () => {
 
             // # Click save settings on bottom screen to save settings
             cy.get('#saveSetting').should('be.enabled').click();
-            cy.get('.admin-console__header', {timeout: TIMEOUTS.ONE_MIN}).should('be.visible').and('have.text', 'Mattermost Channels');
+            cy.get('.admin-console__header', {timeout: TIMEOUTS.ONE_MIN}).should('be.visible').and('have.text', 'MatterFOSS Channels');
 
             // # Go back to the testChannel management page
             cy.visit(`/admin_console/user_management/channels/${testChannel.id}`);
@@ -143,7 +143,7 @@ context('ldap', () => {
 
             // # Accept confirmation modal
             cy.get('#confirmModalButton').should('be.visible').click();
-            cy.get('.admin-console__header', {timeout: TIMEOUTS.ONE_MIN}).should('be.visible').and('have.text', 'Mattermost Teams');
+            cy.get('.admin-console__header', {timeout: TIMEOUTS.ONE_MIN}).should('be.visible').and('have.text', 'MatterFOSS Teams');
 
             // # Go to board group edit page
             cy.visit('/admin_console/user_management/groups');
@@ -173,7 +173,7 @@ context('ldap', () => {
 
             // # Save the settings
             cy.get('#saveSetting').should('be.enabled').click();
-            cy.get('.admin-console__header', {timeout: TIMEOUTS.ONE_MIN}).should('be.visible').and('have.text', 'Mattermost Teams');
+            cy.get('.admin-console__header', {timeout: TIMEOUTS.ONE_MIN}).should('be.visible').and('have.text', 'MatterFOSS Teams');
 
             // # Start with a new team
             cy.apiCreateTeam('team', 'Team').then(({team}) => {
@@ -255,7 +255,7 @@ context('ldap', () => {
                 cy.findByTestId('allow-all-toggle').click();
                 cy.get('#cancelButtonSettings').click();
                 cy.get('#confirmModalButton').click();
-                cy.get('.admin-console__header', {timeout: TIMEOUTS.ONE_MIN}).should('be.visible').and('have.text', 'Mattermost Channels');
+                cy.get('.admin-console__header', {timeout: TIMEOUTS.ONE_MIN}).should('be.visible').and('have.text', 'MatterFOSS Channels');
 
                 // Reload
                 cy.visit(`/admin_console/user_management/channels/${privateChannel.id}`);
@@ -267,7 +267,7 @@ context('ldap', () => {
                 cy.findByTestId('allow-all-toggle').should('has.have.text', 'Private').click();
                 cy.get('#saveSetting').should('be.enabled').click();
                 cy.get('#confirmModalButton').click();
-                cy.get('.admin-console__header', {timeout: TIMEOUTS.ONE_MIN}).should('be.visible').and('have.text', 'Mattermost Channels');
+                cy.get('.admin-console__header', {timeout: TIMEOUTS.ONE_MIN}).should('be.visible').and('have.text', 'MatterFOSS Channels');
 
                 // Reload
                 cy.visit(`/admin_console/user_management/channels/${privateChannel.id}`);

@@ -100,7 +100,7 @@ const initialState = {
 
 const realDateNow = Date.now;
 
-jest.mock('mattermost-redux/actions/channels', () => ({
+jest.mock('matterfoss-redux/actions/channels', () => ({
     fetchMyChannelsAndMembers: (...args) => ({type: 'MOCK_FETCH_CHANNELS_AND_MEMBERS', args}),
     searchChannels: () => {
         return {

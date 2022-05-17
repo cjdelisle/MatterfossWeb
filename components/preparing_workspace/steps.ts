@@ -1,7 +1,7 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 //
-import deepFreeze from 'mattermost-redux/utils/deep_freeze';
+import deepFreeze from 'matterfoss-redux/utils/deep_freeze';
 
 export const WizardSteps = {
     Organization: 'Organization',
@@ -152,10 +152,10 @@ type PluginNameMap = {
 };
 export const PLUGIN_NAME_TO_ID_MAP: PluginNameMap = {
     github: 'github',
-    gitlab: 'com.github.manland.mattermost-plugin-gitlab',
+    gitlab: 'com.github.manland.matterfoss-plugin-gitlab',
     jira: 'jira',
     zoom: 'zoom',
-    todo: 'com.mattermost.plugin-todo',
+    todo: 'com.matterfoss.plugin-todo',
 } as const;
 
 export type Form = {

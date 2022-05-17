@@ -5,10 +5,10 @@ import React from 'react';
 
 import {isEmpty} from 'lodash';
 
-import {PreferenceType} from 'mattermost-redux/types/preferences';
-import {UserProfile} from 'mattermost-redux/types/users';
-import {AnalyticsRow} from 'mattermost-redux/types/admin';
-import {Subscription} from 'mattermost-redux/types/cloud';
+import {PreferenceType} from 'matterfoss-redux/types/preferences';
+import {UserProfile} from 'matterfoss-redux/types/users';
+import {AnalyticsRow} from 'matterfoss-redux/types/admin';
+import {Subscription} from 'matterfoss-redux/types/cloud';
 
 import {trackEvent} from 'actions/telemetry_actions';
 
@@ -163,8 +163,8 @@ class UserLimitAnnouncementBar extends React.PureComponent<Props> {
                 showCloseButton={dismissable}
                 handleClose={this.handleClose}
                 onButtonClick={this.showModal}
-                modalButtonText={t('admin.billing.subscription.upgradeMattermostCloud.upgradeButton')}
-                modalButtonDefaultText={'Upgrade Mattermost Cloud'}
+                modalButtonText={t('admin.billing.subscription.upgradeMatterFOSSCloud.upgradeButton')}
+                modalButtonDefaultText={'Upgrade MatterFOSS Cloud'}
                 message={dismissable ? t('upgrade.cloud_banner_reached') : t('upgrade.cloud_banner_over')}
                 showLinkAsButton={true}
             />

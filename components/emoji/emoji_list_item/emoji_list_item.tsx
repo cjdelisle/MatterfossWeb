@@ -3,10 +3,10 @@
 
 import React from 'react';
 
-import Permissions from 'mattermost-redux/constants/permissions';
-import {Client4} from 'mattermost-redux/client';
-import {CustomEmoji} from 'mattermost-redux/types/emojis';
-import {ActionFunc} from 'mattermost-redux/types/actions';
+import Permissions from 'matterfoss-redux/constants/permissions';
+import {Client4} from 'matterfoss-redux/client';
+import {CustomEmoji} from 'matterfoss-redux/types/emojis';
+import {ActionFunc} from 'matterfoss-redux/types/actions';
 
 import AnyTeamPermissionGate from 'components/permissions_gates/any_team_permission_gate';
 

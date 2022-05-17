@@ -5,19 +5,19 @@ import moment from 'moment';
 
 import {createSelector} from 'reselect';
 
-import {makeGetPostsForIds} from 'mattermost-redux/selectors/entities/posts';
-import {getCurrentTeamId} from 'mattermost-redux/selectors/entities/teams';
-import {getThreads} from 'mattermost-redux/selectors/entities/threads';
-import {isTimezoneEnabled} from 'mattermost-redux/selectors/entities/timezone';
-import {getCurrentUser} from 'mattermost-redux/selectors/entities/common';
+import {makeGetPostsForIds} from 'matterfoss-redux/selectors/entities/posts';
+import {getCurrentTeamId} from 'matterfoss-redux/selectors/entities/teams';
+import {getThreads} from 'matterfoss-redux/selectors/entities/threads';
+import {isTimezoneEnabled} from 'matterfoss-redux/selectors/entities/timezone';
+import {getCurrentUser} from 'matterfoss-redux/selectors/entities/common';
 
-import {Team} from 'mattermost-redux/types/teams';
-import {UserThread} from 'mattermost-redux/types/threads';
-import {Post} from 'mattermost-redux/types/posts';
+import {Team} from 'matterfoss-redux/types/teams';
+import {UserThread} from 'matterfoss-redux/types/threads';
+import {Post} from 'matterfoss-redux/types/posts';
 
-import {DATE_LINE, makeCombineUserActivityPosts, START_OF_NEW_MESSAGES, CREATE_COMMENT} from 'mattermost-redux/utils/post_list';
-import {createIdsSelector} from 'mattermost-redux/utils/helpers';
-import {getUserCurrentTimezone} from 'mattermost-redux/utils/timezone_utils';
+import {DATE_LINE, makeCombineUserActivityPosts, START_OF_NEW_MESSAGES, CREATE_COMMENT} from 'matterfoss-redux/utils/post_list';
+import {createIdsSelector} from 'matterfoss-redux/utils/helpers';
+import {getUserCurrentTimezone} from 'matterfoss-redux/utils/timezone_utils';
 
 import {GlobalState} from 'types/store';
 import {ViewsState} from 'types/store/views';

@@ -2,7 +2,7 @@
 // See LICENSE.txt for license information.
 import moment from 'moment';
 
-import {LicenseSkus} from 'mattermost-redux/types/general';
+import {LicenseSkus} from 'matterfoss-redux/types/general';
 
 const LICENSE_EXPIRY_NOTIFICATION = 1000 * 60 * 60 * 24 * 60; // 60 days
 const LICENSE_GRACE_PERIOD = 1000 * 60 * 60 * 24 * 10; // 10 days

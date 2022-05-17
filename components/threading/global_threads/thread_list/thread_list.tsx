@@ -8,9 +8,9 @@ import {isEmpty} from 'lodash';
 
 import * as Utils from 'utils/utils';
 
-import {getThreadCountsInCurrentTeam} from 'mattermost-redux/selectors/entities/threads';
-import {getThreads, markAllThreadsInTeamRead} from 'mattermost-redux/actions/threads';
-import {UserThread} from 'mattermost-redux/types/threads';
+import {getThreadCountsInCurrentTeam} from 'matterfoss-redux/selectors/entities/threads';
+import {getThreads, markAllThreadsInTeamRead} from 'matterfoss-redux/actions/threads';
+import {UserThread} from 'matterfoss-redux/types/threads';
 import {trackEvent} from 'actions/telemetry_actions';
 
 import {Constants, CrtTutorialSteps, Preferences} from 'utils/constants';
@@ -26,7 +26,7 @@ import {useThreadRouting} from '../../hooks';
 import './thread_list.scss';
 import CRTListTutorialTip from 'components/crt_tour/crt_list_tutorial_tip/crt_list_tutorial_tip';
 import {GlobalState} from 'types/store';
-import {getInt} from 'mattermost-redux/selectors/entities/preferences';
+import {getInt} from 'matterfoss-redux/selectors/entities/preferences';
 import CRTUnreadTutorialTip
     from 'components/crt_tour/crt_unread_tutorial_tip/crt_unread_tutorial_tip';
 

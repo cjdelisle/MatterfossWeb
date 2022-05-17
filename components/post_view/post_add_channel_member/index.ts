@@ -4,13 +4,13 @@
 import {bindActionCreators, Dispatch} from 'redux';
 import {connect} from 'react-redux';
 
-import {addChannelMember} from 'mattermost-redux/actions/channels';
-import {removePost} from 'mattermost-redux/actions/posts';
-import {getPost} from 'mattermost-redux/selectors/entities/posts';
-import {getChannel} from 'mattermost-redux/selectors/entities/channels';
-import {getCurrentUser} from 'mattermost-redux/selectors/entities/users';
-import {GlobalState} from 'mattermost-redux/types/store';
-import {GenericAction} from 'mattermost-redux/types/actions';
+import {addChannelMember} from 'matterfoss-redux/actions/channels';
+import {removePost} from 'matterfoss-redux/actions/posts';
+import {getPost} from 'matterfoss-redux/selectors/entities/posts';
+import {getChannel} from 'matterfoss-redux/selectors/entities/channels';
+import {getCurrentUser} from 'matterfoss-redux/selectors/entities/users';
+import {GlobalState} from 'matterfoss-redux/types/store';
+import {GenericAction} from 'matterfoss-redux/types/actions';
 
 import PostAddChannelMember from './post_add_channel_member';
 

@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import {injectIntl} from 'react-intl';
 
-import {getEmojiImageUrl} from 'mattermost-redux/utils/emoji_utils';
+import {getEmojiImageUrl} from 'matterfoss-redux/utils/emoji_utils';
 
 // eslint-disable-next-line react/require-optimization
 class EmojiItem extends React.Component {

@@ -4,11 +4,11 @@
 import {connect} from 'react-redux';
 import {ActionCreatorsMapObject, bindActionCreators, Dispatch} from 'redux';
 
-import {getLicenseConfig} from 'mattermost-redux/actions/general';
-import {StatusOK} from 'mattermost-redux/types/client4';
-import {Action, ActionResult, GenericAction} from 'mattermost-redux/types/actions';
-import {uploadLicense, removeLicense, getPrevTrialLicense} from 'mattermost-redux/actions/admin';
-import {getConfig} from 'mattermost-redux/selectors/entities/general';
+import {getLicenseConfig} from 'matterfoss-redux/actions/general';
+import {StatusOK} from 'matterfoss-redux/types/client4';
+import {Action, ActionResult, GenericAction} from 'matterfoss-redux/types/actions';
+import {uploadLicense, removeLicense, getPrevTrialLicense} from 'matterfoss-redux/actions/admin';
+import {getConfig} from 'matterfoss-redux/selectors/entities/general';
 
 import {GlobalState} from 'types/store';
 import {ModalData} from 'types/actions';

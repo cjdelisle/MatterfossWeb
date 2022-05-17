@@ -8,10 +8,10 @@ import {Dropdown, Tooltip} from 'react-bootstrap';
 import {RootCloseWrapper} from 'react-overlays';
 import {FormattedMessage, injectIntl, IntlShape} from 'react-intl';
 
-import {Channel, ChannelMembership} from 'mattermost-redux/types/channels';
-import {Theme} from 'mattermost-redux/types/themes';
-import {AppBinding} from 'mattermost-redux/types/apps';
-import {AppCallResponseTypes} from 'mattermost-redux/constants/apps';
+import {Channel, ChannelMembership} from 'matterfoss-redux/types/channels';
+import {Theme} from 'matterfoss-redux/types/themes';
+import {AppBinding} from 'matterfoss-redux/types/apps';
+import {AppCallResponseTypes} from 'matterfoss-redux/constants/apps';
 
 import {HandleBindingClick, OpenAppsModal, PostEphemeralCallResponseForChannel} from 'types/apps';
 

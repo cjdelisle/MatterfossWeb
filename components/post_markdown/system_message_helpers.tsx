@@ -4,10 +4,10 @@
 import React, {ReactNode} from 'react';
 import {FormattedMessage} from 'react-intl';
 
-import {General, Posts} from 'mattermost-redux/constants';
-import {Post} from 'mattermost-redux/types/posts';
+import {General, Posts} from 'matterfoss-redux/constants';
+import {Post} from 'matterfoss-redux/types/posts';
 
-import {Channel} from 'mattermost-redux/types/channels';
+import {Channel} from 'matterfoss-redux/types/channels';
 
 import * as Utils from 'utils/utils.jsx';
 import {TextFormattingOptions} from 'utils/text_formatting';

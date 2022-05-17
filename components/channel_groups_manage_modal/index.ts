@@ -4,10 +4,10 @@
 import {bindActionCreators, Dispatch, ActionCreatorsMapObject} from 'redux';
 import {connect} from 'react-redux';
 
-import {getGroupsAssociatedToChannel, unlinkGroupSyncable, patchGroupSyncable} from 'mattermost-redux/actions/groups';
-import {getMyChannelMember} from 'mattermost-redux/actions/channels';
-import {GlobalState} from 'mattermost-redux/types/store';
-import {Action} from 'mattermost-redux/types/actions';
+import {getGroupsAssociatedToChannel, unlinkGroupSyncable, patchGroupSyncable} from 'matterfoss-redux/actions/groups';
+import {getMyChannelMember} from 'matterfoss-redux/actions/channels';
+import {GlobalState} from 'matterfoss-redux/types/store';
+import {Action} from 'matterfoss-redux/types/actions';
 
 import {closeModal, openModal} from 'actions/views/modals';
 

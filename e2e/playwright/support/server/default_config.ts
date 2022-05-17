@@ -8,7 +8,7 @@ import {
     ServiceSettings,
     TeamSettings,
     PluginSettings,
-} from '../../../../packages/mattermost-redux/src/types/config';
+} from '../../../../packages/matterfoss-redux/src/types/config';
 
 import testConfig from '../../test.config';
 
@@ -46,7 +46,7 @@ const onPremServerConfig = (): Partial<TestAdminConfig> => {
     };
 };
 
-// Should be based only from the generated default config from mattermost-server via "make config-reset"
+// Should be based only from the generated default config from matterfoss-server via "make config-reset"
 // Based on v6.5 server
 const defaultServerConfig: AdminConfig = {
     ServiceSettings: {
@@ -137,7 +137,7 @@ const defaultServerConfig: AdminConfig = {
         EnableInlineLatex: true,
         EnableAPIChannelDeletion: false,
         EnableLocalMode: false,
-        LocalModeSocketLocation: '/var/tmp/mattermost_local.socket',
+        LocalModeSocketLocation: '/var/tmp/matterfoss_local.socket',
         EnableAWSMetering: false,
         SplitKey: '',
         FeatureFlagSyncIntervalSeconds: 30,
@@ -148,7 +148,7 @@ const defaultServerConfig: AdminConfig = {
         EnableCustomGroups: true,
     },
     TeamSettings: {
-        SiteName: 'Mattermost',
+        SiteName: 'MatterFOSS',
         MaxUsersPerTeam: 50,
         EnableUserCreation: true,
         EnableOpenServer: false,
@@ -179,7 +179,7 @@ const defaultServerConfig: AdminConfig = {
     SqlSettings: {
         DriverName: 'postgres',
         DataSource:
-            'postgres://mmuser:mostest@localhost/mattermost_test?sslmode=disable\u0026connect_timeout=10\u0026binary_parameters=yes',
+            'postgres://mmuser:mostest@localhost/matterfoss_test?sslmode=disable\u0026connect_timeout=10\u0026binary_parameters=yes',
         DataSourceReplicas: [],
         DataSourceSearchReplicas: [],
         MaxIdleConns: 20,
@@ -278,7 +278,7 @@ const defaultServerConfig: AdminConfig = {
         SMTPServerTimeout: 10,
         ConnectionSecurity: '',
         SendPushNotifications: true,
-        PushNotificationServer: 'https://push-test.mattermost.com',
+        PushNotificationServer: 'https://push-test.matterfoss.com',
         PushNotificationContents: 'full',
         PushNotificationBuffer: 1000,
         EnableEmailBatching: false,
@@ -305,11 +305,11 @@ const defaultServerConfig: AdminConfig = {
         ShowFullName: true,
     },
     SupportSettings: {
-        TermsOfServiceLink: 'https://mattermost.com/terms-of-use/',
-        PrivacyPolicyLink: 'https://mattermost.com/privacy-policy/',
-        AboutLink: 'https://about.mattermost.com/default-about/',
-        HelpLink: 'https://about.mattermost.com/default-help/',
-        ReportAProblemLink: 'https://about.mattermost.com/default-report-a-problem/',
+        TermsOfServiceLink: 'https://matterfoss.com/terms-of-use/',
+        PrivacyPolicyLink: 'https://matterfoss.com/privacy-policy/',
+        AboutLink: 'https://about.matterfoss.com/default-about/',
+        HelpLink: 'https://about.matterfoss.com/default-help/',
+        ReportAProblemLink: 'https://about.matterfoss.com/default-report-a-problem/',
         SupportEmail: '',
         CustomTermsOfServiceEnabled: false,
         CustomTermsOfServiceReAcceptancePeriod: 365,
@@ -323,7 +323,7 @@ const defaultServerConfig: AdminConfig = {
         AllowBannerDismissal: true,
         AdminNoticesEnabled: true,
         UserNoticesEnabled: true,
-        NoticesURL: 'https://notices.mattermost.com/',
+        NoticesURL: 'https://notices.matterfoss.com/',
         NoticesFetchFrequency: 3600,
         NoticesSkipCache: false,
     },
@@ -467,9 +467,9 @@ const defaultServerConfig: AdminConfig = {
     },
     NativeAppSettings: {
         AppCustomURLSchemes: ['mmauth://', 'mmauthbeta://'],
-        AppDownloadLink: 'https://mattermost.com/download/#mattermostApps',
-        AndroidAppDownloadLink: 'https://about.mattermost.com/mattermost-android-app/',
-        IosAppDownloadLink: 'https://about.mattermost.com/mattermost-ios-app/',
+        AppDownloadLink: 'https://matterfoss.com/download/#matterfossApps',
+        AndroidAppDownloadLink: 'https://about.matterfoss.com/matterfoss-android-app/',
+        IosAppDownloadLink: 'https://about.matterfoss.com/matterfoss-ios-app/',
     },
     ClusterSettings: {
         Enable: false,
@@ -577,7 +577,7 @@ const defaultServerConfig: AdminConfig = {
         ClientDirectory: './client/plugins',
         Plugins: {},
         PluginStates: {
-            'com.mattermost.nps': {
+            'com.matterfoss.nps': {
                 Enable: true,
             },
             focalboard: {
@@ -591,7 +591,7 @@ const defaultServerConfig: AdminConfig = {
         EnableRemoteMarketplace: true,
         AutomaticPrepackagedPlugins: true,
         RequirePluginSignature: false,
-        MarketplaceURL: 'https://api.integrations.mattermost.com',
+        MarketplaceURL: 'https://api.integrations.matterfoss.com',
         SignaturePublicKeyFiles: [],
         ChimeraOAuthProxyURL: '',
     },
@@ -612,8 +612,8 @@ const defaultServerConfig: AdminConfig = {
         RemoteImageProxyOptions: '',
     },
     CloudSettings: {
-        CWSURL: 'https://customers.mattermost.com',
-        CWSAPIURL: 'https://portal.internal.prod.cloud.mattermost.com',
+        CWSURL: 'https://customers.matterfoss.com',
+        CWSAPIURL: 'https://portal.internal.prod.cloud.matterfoss.com',
     },
     FeatureFlags: {
         TestFeature: 'off',

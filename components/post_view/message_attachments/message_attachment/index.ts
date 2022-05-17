@@ -4,10 +4,10 @@
 import {connect} from 'react-redux';
 import {ActionCreatorsMapObject, bindActionCreators, Dispatch} from 'redux';
 
-import {doPostActionWithCookie} from 'mattermost-redux/actions/posts';
-import {getCurrentRelativeTeamUrl} from 'mattermost-redux/selectors/entities/teams';
-import {GlobalState} from 'mattermost-redux/types/store';
-import {ActionFunc, ActionResult, GenericAction} from 'mattermost-redux/types/actions';
+import {doPostActionWithCookie} from 'matterfoss-redux/actions/posts';
+import {getCurrentRelativeTeamUrl} from 'matterfoss-redux/selectors/entities/teams';
+import {GlobalState} from 'matterfoss-redux/types/store';
+import {ActionFunc, ActionResult, GenericAction} from 'matterfoss-redux/types/actions';
 
 import {openModal} from 'actions/views/modals';
 import {ModalData} from 'types/actions';

@@ -8,7 +8,7 @@
 // See https://jsdoc.app/index.html for reference.
 // Basic requirements for documentation are the following:
 // - Meaningful description
-// - Specific link to https://api.mattermost.com
+// - Specific link to https://api.matterfoss.com
 // - Each parameter with `@params`
 // - Return value with `@returns`
 // - Example usage with `@example`
@@ -20,7 +20,7 @@ declare namespace Cypress {
 
         /**
          * Get products.
-         * See https://api.mattermost.com/#operation/GetCloudProducts
+         * See https://api.matterfoss.com/#operation/GetCloudProducts
          * @returns {Product[]} out.Products: `Product[]` object
          *
          * @example
@@ -30,7 +30,7 @@ declare namespace Cypress {
 
         /**
          * Get subscriptions.
-         * See https://api.mattermost.com/#operation/GetSubscription
+         * See https://api.matterfoss.com/#operation/GetSubscription
          * @returns {Subscription} out.subscription: `Subscription` object
          *
          * @example

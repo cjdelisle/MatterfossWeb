@@ -5,7 +5,7 @@ import {bindActionCreators, Dispatch} from 'redux';
 import {connect} from 'react-redux';
 
 import {closeRightHandSide, showChannelInfo} from 'actions/views/rhs';
-import {GenericAction} from 'mattermost-redux/types/actions';
+import {GenericAction} from 'matterfoss-redux/types/actions';
 import {getIsRhsOpen, getRhsState} from 'selectors/rhs';
 import {GlobalState} from 'types/store';
 import {RHSStates} from 'utils/constants';

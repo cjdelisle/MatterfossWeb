@@ -3,21 +3,21 @@
 
 import {History} from 'history';
 
-import {joinChannel, getChannelByNameAndTeamName, getChannelMember, markGroupChannelOpen, fetchMyChannelsAndMembers} from 'mattermost-redux/actions/channels';
-import {getUser, getUserByUsername, getUserByEmail} from 'mattermost-redux/actions/users';
-import {getTeamByName} from 'mattermost-redux/selectors/entities/teams';
-import {getCurrentUser, getCurrentUserId, getUserByUsername as selectUserByUsername, getUser as selectUser, getUserByEmail as selectUserByEmail} from 'mattermost-redux/selectors/entities/users';
-import {getChannelByName, getOtherChannels, getChannel, getChannelsNameMapInTeam, getRedirectChannelNameForTeam} from 'mattermost-redux/selectors/entities/channels';
-import {GetStateFunc, DispatchFunc, ActionFunc} from 'mattermost-redux/types/actions';
-import {GlobalState} from 'mattermost-redux/types/store';
-import {Channel} from 'mattermost-redux/types/channels';
+import {joinChannel, getChannelByNameAndTeamName, getChannelMember, markGroupChannelOpen, fetchMyChannelsAndMembers} from 'matterfoss-redux/actions/channels';
+import {getUser, getUserByUsername, getUserByEmail} from 'matterfoss-redux/actions/users';
+import {getTeamByName} from 'matterfoss-redux/selectors/entities/teams';
+import {getCurrentUser, getCurrentUserId, getUserByUsername as selectUserByUsername, getUser as selectUser, getUserByEmail as selectUserByEmail} from 'matterfoss-redux/selectors/entities/users';
+import {getChannelByName, getOtherChannels, getChannel, getChannelsNameMapInTeam, getRedirectChannelNameForTeam} from 'matterfoss-redux/selectors/entities/channels';
+import {GetStateFunc, DispatchFunc, ActionFunc} from 'matterfoss-redux/types/actions';
+import {GlobalState} from 'matterfoss-redux/types/store';
+import {Channel} from 'matterfoss-redux/types/channels';
 
 import {openDirectChannelToUserId} from 'actions/channel_actions';
 import * as GlobalActions from 'actions/global_actions';
 import {joinPrivateChannelPrompt} from 'utils/channel_utils';
 import {Constants} from 'utils/constants';
 import * as Utils from 'utils/utils.jsx';
-import * as UserUtils from 'mattermost-redux/utils/user_utils';
+import * as UserUtils from 'matterfoss-redux/utils/user_utils';
 
 import {Match, MatchAndHistory} from './channel_identifier_router';
 

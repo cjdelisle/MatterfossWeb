@@ -4,9 +4,9 @@
 import React from 'react';
 import {FormattedMessage} from 'react-intl';
 
-import {OAuthApp} from 'mattermost-redux/types/integrations';
-import {Team} from 'mattermost-redux/types/teams';
-import {ActionResult} from 'mattermost-redux/types/actions';
+import {OAuthApp} from 'matterfoss-redux/types/integrations';
+import {Team} from 'matterfoss-redux/types/teams';
+import {ActionResult} from 'matterfoss-redux/types/actions';
 
 import {browserHistory} from 'utils/browser_history';
 import LoadingScreen from 'components/loading_screen';

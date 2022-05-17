@@ -5,11 +5,11 @@ import {connect} from 'react-redux';
 
 import {bindActionCreators, Dispatch} from 'redux';
 
-import {getConfig} from 'mattermost-redux/selectors/entities/general';
-import {getOpenGraphMetadataForUrl} from 'mattermost-redux/selectors/entities/posts';
-import {getBool} from 'mattermost-redux/selectors/entities/preferences';
-import {getCurrentUserId} from 'mattermost-redux/selectors/entities/users';
-import {GenericAction} from 'mattermost-redux/types/actions';
+import {getConfig} from 'matterfoss-redux/selectors/entities/general';
+import {getOpenGraphMetadataForUrl} from 'matterfoss-redux/selectors/entities/posts';
+import {getBool} from 'matterfoss-redux/selectors/entities/preferences';
+import {getCurrentUserId} from 'matterfoss-redux/selectors/entities/users';
+import {GenericAction} from 'matterfoss-redux/types/actions';
 
 import {editPost} from 'actions/views/posts';
 import {GlobalState} from 'types/store';

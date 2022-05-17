@@ -3,11 +3,11 @@
 
 import React from 'react';
 
-import {General, Posts} from 'mattermost-redux/constants';
+import {General, Posts} from 'matterfoss-redux/constants';
 
-import {UserProfile} from 'mattermost-redux/types/users';
+import {UserProfile} from 'matterfoss-redux/types/users';
 
-import {ActionFunc} from 'mattermost-redux/types/actions';
+import {ActionFunc} from 'matterfoss-redux/types/actions';
 
 import {shallowWithIntl} from 'tests/helpers/intl-test-helper';
 

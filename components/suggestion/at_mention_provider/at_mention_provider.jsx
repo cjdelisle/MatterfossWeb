@@ -1,9 +1,9 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
-import {getSuggestionsSplitBy, getSuggestionsSplitByMultiple} from 'mattermost-redux/utils/user_utils';
-import {makeGetProfilesInChannel} from 'mattermost-redux/selectors/entities/users';
-import {makeAddLastViewAtToProfiles} from 'mattermost-redux/selectors/entities/utils';
+import {getSuggestionsSplitBy, getSuggestionsSplitByMultiple} from 'matterfoss-redux/utils/user_utils';
+import {makeGetProfilesInChannel} from 'matterfoss-redux/selectors/entities/users';
+import {makeAddLastViewAtToProfiles} from 'matterfoss-redux/selectors/entities/utils';
 
 import store from 'stores/redux_store';
 import {Constants} from 'utils/constants';

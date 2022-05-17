@@ -5,7 +5,7 @@
 
 import React from 'react';
 
-import reducerRegistry from 'mattermost-redux/store/reducer_registry';
+import reducerRegistry from 'matterfoss-redux/store/reducer_registry';
 
 import {
     registerPluginWebSocketEvent,

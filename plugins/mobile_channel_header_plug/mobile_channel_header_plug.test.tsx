@@ -8,9 +8,9 @@ import {mount} from 'enzyme';
 import MobileChannelHeaderPlug, {RawMobileChannelHeaderPlug} from 'plugins/mobile_channel_header_plug/mobile_channel_header_plug';
 import {mountWithIntl} from 'tests/helpers/intl-test-helper';
 import {createCallContext} from 'utils/apps';
-import {AppCallResponseTypes} from 'mattermost-redux/constants/apps';
-import {Channel, ChannelMembership} from 'mattermost-redux/types/channels';
-import {Theme} from 'mattermost-redux/types/themes';
+import {AppCallResponseTypes} from 'matterfoss-redux/constants/apps';
+import {Channel, ChannelMembership} from 'matterfoss-redux/types/channels';
+import {Theme} from 'matterfoss-redux/types/themes';
 
 describe('plugins/MobileChannelHeaderPlug', () => {
     const testPlug = {

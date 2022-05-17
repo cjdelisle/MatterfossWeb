@@ -82,7 +82,7 @@ describe('Custom emojis', () => {
         cy.get('#name').type(customEmoji);
 
         // # Select emoji image
-        cy.get('input#select-emoji').attachFile('mattermost-icon.png');
+        cy.get('input#select-emoji').attachFile('matterfoss-icon.png');
 
         // # Click on Cancel
         cy.get('.backstage-form__footer').findByText('Cancel').click().wait(TIMEOUTS.FIVE_SEC);

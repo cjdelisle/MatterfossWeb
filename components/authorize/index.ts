@@ -4,8 +4,8 @@
 import {connect} from 'react-redux';
 import {bindActionCreators, Dispatch, ActionCreatorsMapObject} from 'redux';
 
-import {GenericAction, ActionFunc} from 'mattermost-redux/types/actions';
-import {OAuthApp} from 'mattermost-redux/types/integrations';
+import {GenericAction, ActionFunc} from 'matterfoss-redux/types/actions';
+import {OAuthApp} from 'matterfoss-redux/types/integrations';
 
 import {allowOAuth2, getOAuthAppInfo} from 'actions/admin_actions.jsx';
 

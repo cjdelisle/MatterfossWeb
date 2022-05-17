@@ -7,13 +7,13 @@ import {Redirect, RouteComponentProps} from 'react-router-dom';
 import {FormattedMessage} from 'react-intl';
 import {Overlay} from 'react-bootstrap';
 
-import {isEmail} from 'mattermost-redux/utils/helpers';
+import {isEmail} from 'matterfoss-redux/utils/helpers';
 
-import {Team, TeamMembership} from 'mattermost-redux/types/teams';
+import {Team, TeamMembership} from 'matterfoss-redux/types/teams';
 
-import {UserProfile} from 'mattermost-redux/types/users';
+import {UserProfile} from 'matterfoss-redux/types/users';
 
-import {ServerError} from 'mattermost-redux/types/errors';
+import {ServerError} from 'matterfoss-redux/types/errors';
 
 import {adminResetMfa, adminResetEmail} from 'actions/admin_actions.jsx';
 

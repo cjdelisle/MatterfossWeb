@@ -4,10 +4,10 @@
 import {connect} from 'react-redux';
 import {bindActionCreators, Dispatch} from 'redux';
 
-import {makeGetPostsForThread} from 'mattermost-redux/selectors/entities/posts';
-import {removePost, getPostThread} from 'mattermost-redux/actions/posts';
-import {GenericAction} from 'mattermost-redux/types/actions';
-import {Post} from 'mattermost-redux/types/posts';
+import {makeGetPostsForThread} from 'matterfoss-redux/selectors/entities/posts';
+import {removePost, getPostThread} from 'matterfoss-redux/actions/posts';
+import {GenericAction} from 'matterfoss-redux/types/actions';
+import {Post} from 'matterfoss-redux/types/posts';
 
 import {getSelectedChannel, getSelectedPost} from 'selectors/rhs';
 import {selectPostCard} from 'actions/views/rhs';

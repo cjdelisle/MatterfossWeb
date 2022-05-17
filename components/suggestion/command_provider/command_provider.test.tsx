@@ -4,9 +4,9 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 
-import {Client4} from 'mattermost-redux/client';
+import {Client4} from 'matterfoss-redux/client';
 
-import {AutocompleteSuggestion} from 'mattermost-redux/types/integrations';
+import {AutocompleteSuggestion} from 'matterfoss-redux/types/integrations';
 
 import CommandProvider, {CommandSuggestion, Results} from './command_provider';
 

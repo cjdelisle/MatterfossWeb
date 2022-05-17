@@ -5,10 +5,10 @@ import React, {ComponentProps} from 'react';
 
 import {shallow} from 'enzyme';
 
-import {getThreads, markAllThreadsInTeamRead} from 'mattermost-redux/actions/threads';
+import {getThreads, markAllThreadsInTeamRead} from 'matterfoss-redux/actions/threads';
 import {TestHelper} from 'utils/test_helper';
 
-jest.mock('mattermost-redux/actions/threads');
+jest.mock('matterfoss-redux/actions/threads');
 
 import Header from 'components/widgets/header';
 

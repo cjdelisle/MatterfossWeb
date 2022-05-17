@@ -4,15 +4,15 @@
 import {connect} from 'react-redux';
 import {ActionCreatorsMapObject, bindActionCreators, Dispatch} from 'redux';
 
-import {getCurrentChannelId, getUnreadChannels} from 'mattermost-redux/selectors/entities/channels';
-import {memoizeResult} from 'mattermost-redux/utils/helpers';
-import {isChannelMuted} from 'mattermost-redux/utils/channel_utils';
-import {getMyChannelMemberships} from 'mattermost-redux/selectors/entities/common';
+import {getCurrentChannelId, getUnreadChannels} from 'matterfoss-redux/selectors/entities/channels';
+import {memoizeResult} from 'matterfoss-redux/utils/helpers';
+import {isChannelMuted} from 'matterfoss-redux/utils/channel_utils';
+import {getMyChannelMemberships} from 'matterfoss-redux/selectors/entities/common';
 
-import {Channel, ChannelMembership} from 'mattermost-redux/types/channels';
-import {PostList} from 'mattermost-redux/types/posts';
+import {Channel, ChannelMembership} from 'matterfoss-redux/types/channels';
+import {PostList} from 'matterfoss-redux/types/posts';
 
-import {RelationOneToOne} from 'mattermost-redux/types/utilities';
+import {RelationOneToOne} from 'matterfoss-redux/types/utilities';
 
 import {prefetchChannelPosts} from 'actions/views/channel';
 
@@ -20,7 +20,7 @@ import {getCategoriesForCurrentTeam} from 'selectors/views/channel_sidebar';
 
 import {GlobalState} from 'types/store';
 
-import {isCollapsedThreadsEnabled} from '../../packages/mattermost-redux/src/selectors/entities/preferences';
+import {isCollapsedThreadsEnabled} from '../../packages/matterfoss-redux/src/selectors/entities/preferences';
 
 import {trackPreloadedChannels} from './actions';
 import DataPrefetch from './data_prefetch';

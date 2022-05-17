@@ -42,7 +42,7 @@ describe('Team Settings', () => {
         });
     });
 
-    it('MM-T389 Invite new user to closed team with \'Allow only users with a specific email domain to join this team\' set to an email that is NOT \'sample.mattermost.com\'', () => {
+    it('MM-T389 Invite new user to closed team with \'Allow only users with a specific email domain to join this team\' set to an email that is NOT \'sample.matterfoss.com\'', () => {
         // # Allow only users from 'gmail.com' domain
         allowOnlyUserFromSpecificDomain(emailDomain);
 

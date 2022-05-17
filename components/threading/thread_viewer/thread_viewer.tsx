@@ -6,11 +6,11 @@
 import React, {HTMLAttributes} from 'react';
 import classNames from 'classnames';
 
-import {ActionFunc} from 'mattermost-redux/types/actions';
-import {Channel} from 'mattermost-redux/types/channels';
-import {ExtendedPost} from 'mattermost-redux/actions/posts';
-import {Post} from 'mattermost-redux/types/posts';
-import {UserThread} from 'mattermost-redux/types/threads';
+import {ActionFunc} from 'matterfoss-redux/types/actions';
+import {Channel} from 'matterfoss-redux/types/channels';
+import {ExtendedPost} from 'matterfoss-redux/actions/posts';
+import {Post} from 'matterfoss-redux/types/posts';
+import {UserThread} from 'matterfoss-redux/types/threads';
 
 import deferComponentRender from 'components/deferComponentRender';
 import FileUploadOverlay from 'components/file_upload_overlay';

@@ -4,8 +4,8 @@
 import {connect} from 'react-redux';
 import {ActionCreatorsMapObject, bindActionCreators, Dispatch} from 'redux';
 
-import {getUserAccessTokensForUser} from 'mattermost-redux/actions/users';
-import {ActionFunc} from 'mattermost-redux/types/actions';
+import {getUserAccessTokensForUser} from 'matterfoss-redux/actions/users';
+import {ActionFunc} from 'matterfoss-redux/types/actions';
 
 import {GlobalState} from 'types/store';
 

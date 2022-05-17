@@ -7,14 +7,14 @@ import {useIntl, FormattedMessage} from 'react-intl';
 
 import {useSelector, useDispatch} from 'react-redux';
 
-import {Permissions} from 'mattermost-redux/constants';
+import {Permissions} from 'matterfoss-redux/constants';
 
 import {GlobalState} from 'types/store';
 
-import {getCurrentTeamId} from 'mattermost-redux/selectors/entities/teams';
-import {DispatchFunc} from 'mattermost-redux/types/actions';
+import {getCurrentTeamId} from 'matterfoss-redux/selectors/entities/teams';
+import {DispatchFunc} from 'matterfoss-redux/types/actions';
 
-import {getTotalUsersStats} from 'mattermost-redux/actions/users';
+import {getTotalUsersStats} from 'matterfoss-redux/actions/users';
 
 import ToggleModalButton from 'components/toggle_modal_button';
 import InvitationModal from 'components/invitation_modal';

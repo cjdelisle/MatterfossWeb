@@ -13,7 +13,7 @@ import {mountWithIntl} from 'tests/helpers/intl-test-helper';
 
 import {Constants} from 'utils/constants';
 
-import {Permissions} from 'mattermost-redux/constants';
+import {Permissions} from 'matterfoss-redux/constants';
 
 import Menu from 'components/widgets/menu/menu';
 

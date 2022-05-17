@@ -8,7 +8,7 @@ import {Provider} from 'react-redux';
 import configureStore from 'redux-mock-store';
 import {render, fireEvent, screen} from '@testing-library/react';
 
-import {Preferences} from 'mattermost-redux/constants';
+import {Preferences} from 'matterfoss-redux/constants';
 
 import UserSettingsTheme from 'components/user_settings/display/user_settings_theme/user_settings_theme.jsx';
 

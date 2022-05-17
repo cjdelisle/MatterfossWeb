@@ -1,7 +1,7 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
-// This is based on "packages/mattermost-redux/src/client/client4.ts". Modified for node client.
+// This is based on "packages/matterfoss-redux/src/client/client4.ts". Modified for node client.
 // Update should be made in comparison with the base Client4.
 
 import fs from 'fs';
@@ -15,14 +15,14 @@ import Client4, {
     parseAndMergeNestedHeaders,
     HEADER_X_VERSION_ID,
     HEADER_X_CLUSTER_ID,
-} from '../../../../packages/mattermost-redux/src/client/client4';
-import {UserProfile} from '../../../../packages/mattermost-redux/src/types/users';
-import {Options, StatusOK, ClientResponse} from '../../../../packages/mattermost-redux/src/types/client4';
-import {CustomEmoji} from '../../../../packages/mattermost-redux/src/types/emojis';
-import {PluginManifest} from '../../../../packages/mattermost-redux/src/types/plugins';
-import {License} from '../../../../packages/mattermost-redux/src/types/config';
+} from '../../../../packages/matterfoss-redux/src/client/client4';
+import {UserProfile} from '../../../../packages/matterfoss-redux/src/types/users';
+import {Options, StatusOK, ClientResponse} from '../../../../packages/matterfoss-redux/src/types/client4';
+import {CustomEmoji} from '../../../../packages/matterfoss-redux/src/types/emojis';
+import {PluginManifest} from '../../../../packages/matterfoss-redux/src/types/plugins';
+import {License} from '../../../../packages/matterfoss-redux/src/types/config';
 
-import {buildQueryString} from '../../../../packages/mattermost-redux/src/utils/helpers_client';
+import {buildQueryString} from '../../../../packages/matterfoss-redux/src/utils/helpers_client';
 
 type ItemsFromCookie = {
     token?: string;

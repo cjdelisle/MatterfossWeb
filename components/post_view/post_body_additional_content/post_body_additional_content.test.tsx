@@ -10,9 +10,9 @@ import {
     PostEmbed,
     PostImage,
     PostMetadata,
-} from 'mattermost-redux/types/posts';
+} from 'matterfoss-redux/types/posts';
 
-import {getEmbedFromMetadata} from 'mattermost-redux/utils/post_utils';
+import {getEmbedFromMetadata} from 'matterfoss-redux/utils/post_utils';
 
 import MessageAttachmentList from 'components/post_view/message_attachments/message_attachment_list';
 import PostAttachmentOpenGraph from 'components/post_view/post_attachment_opengraph';
@@ -21,8 +21,8 @@ import YoutubeVideo from 'components/youtube_video';
 
 import PostBodyAdditionalContent, {Props} from './post_body_additional_content';
 
-jest.mock('mattermost-redux/utils/post_utils', () => {
-    const actual = jest.requireActual('mattermost-redux/utils/post_utils');
+jest.mock('matterfoss-redux/utils/post_utils', () => {
+    const actual = jest.requireActual('matterfoss-redux/utils/post_utils');
     return {
         ...actual,
         getEmbedFromMetadata: jest.fn(actual.getEmbedFromMetadata),
@@ -374,7 +374,7 @@ describe('PostBodyAdditionalContent', () => {
     });
 
     describe('with a permalinklink', () => {
-        const permalinkUrl = 'https://community.mattermost.com/core/pl/123456789';
+        const permalinkUrl = 'https://community.matterfoss.com/core/pl/123456789';
 
         const permalinkBaseProps = {
             ...baseProps,

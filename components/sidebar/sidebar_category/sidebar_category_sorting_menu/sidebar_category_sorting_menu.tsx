@@ -4,9 +4,9 @@
 import React from 'react';
 import {injectIntl, IntlShape} from 'react-intl';
 
-import {Preferences} from 'mattermost-redux/constants';
-import {ChannelCategory, CategorySorting} from 'mattermost-redux/types/channel_categories';
-import {PreferenceType} from 'mattermost-redux/types/preferences';
+import {Preferences} from 'matterfoss-redux/constants';
+import {ChannelCategory, CategorySorting} from 'matterfoss-redux/types/channel_categories';
+import {PreferenceType} from 'matterfoss-redux/types/preferences';
 
 import Constants from 'utils/constants';
 

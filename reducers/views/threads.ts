@@ -5,8 +5,8 @@ import {combineReducers} from 'redux';
 
 import {findKey} from 'lodash';
 
-import {PostTypes, UserTypes} from 'mattermost-redux/action_types';
-import {GenericAction} from 'mattermost-redux/types/actions';
+import {PostTypes, UserTypes} from 'matterfoss-redux/action_types';
+import {GenericAction} from 'matterfoss-redux/types/actions';
 
 import {ViewsState} from 'types/store/views';
 

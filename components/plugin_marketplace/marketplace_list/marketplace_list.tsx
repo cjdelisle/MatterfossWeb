@@ -3,8 +3,8 @@
 
 import React from 'react';
 
-import type {MarketplaceApp, MarketplacePlugin} from 'mattermost-redux/types/marketplace';
-import {isPlugin, getName} from 'mattermost-redux/utils/marketplace';
+import type {MarketplaceApp, MarketplacePlugin} from 'matterfoss-redux/types/marketplace';
+import {isPlugin, getName} from 'matterfoss-redux/utils/marketplace';
 
 import MarketplaceItemPlugin from '../marketplace_item/marketplace_item_plugin';
 import MarketplaceItemApp from '../marketplace_item/marketplace_item_app';

@@ -6,20 +6,20 @@ import {bindActionCreators, Dispatch} from 'redux';
 
 import {withRouter} from 'react-router-dom';
 
-import {getTeams} from 'mattermost-redux/actions/teams';
+import {getTeams} from 'matterfoss-redux/actions/teams';
 
-import {getConfig} from 'mattermost-redux/selectors/entities/general';
+import {getConfig} from 'matterfoss-redux/selectors/entities/general';
 import {
     getCurrentTeamId,
     getJoinableTeamIds,
     getMyTeams,
     getTeamMemberships,
-} from 'mattermost-redux/selectors/entities/teams';
-import {get, isCollapsedThreadsEnabled} from 'mattermost-redux/selectors/entities/preferences';
+} from 'matterfoss-redux/selectors/entities/teams';
+import {get, isCollapsedThreadsEnabled} from 'matterfoss-redux/selectors/entities/preferences';
 
-import {ClientConfig} from 'mattermost-redux/types/config';
+import {ClientConfig} from 'matterfoss-redux/types/config';
 
-import {GenericAction} from 'mattermost-redux/types/actions';
+import {GenericAction} from 'matterfoss-redux/types/actions';
 
 import {getCurrentLocale} from 'selectors/i18n';
 import {getIsLhsOpen} from 'selectors/lhs';
@@ -27,7 +27,7 @@ import {switchTeam, updateTeamsOrderForUser} from 'actions/team_actions.jsx';
 import {Preferences} from 'utils/constants.jsx';
 import {GlobalState} from 'types/store';
 
-import {getThreadCounts} from 'mattermost-redux/selectors/entities/threads';
+import {getThreadCounts} from 'matterfoss-redux/selectors/entities/threads';
 
 import TeamSidebar from './team_sidebar';
 
