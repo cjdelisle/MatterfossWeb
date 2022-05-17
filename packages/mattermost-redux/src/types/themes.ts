@@ -3,11 +3,11 @@
 
 export type LegacyThemeKey = 'default' | 'organization' | 'mattermostDark' | 'windows10';
 
-export type ThemeKey = 'denim' | 'sapphire' | 'quartz' | 'indigo' | 'onyx';
+export type ThemeKey = 'pktlight' | 'pktdark' | 'denim' | 'sapphire' | 'quartz' | 'indigo' | 'onyx';
 
 export type LegacyThemeType = 'Mattermost' | 'Organization' | 'Mattermost Dark' | 'Windows Dark';
 
-export type ThemeType = 'Denim' | 'Sapphire' | 'Quartz' | 'Indigo' | 'Onyx';
+export type ThemeType = 'PktLight' | 'PktDark' | 'Denim' | 'Sapphire' | 'Quartz' | 'Indigo' | 'Onyx';
 
 export type Theme = {
     [key: string]: string | undefined;

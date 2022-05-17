@@ -5923,6 +5923,16 @@ const AdminDefinition = {
                         help_text_markdown: true,
                         options: [
                             {
+                                value: 'pktlight',
+                                display_name: 'PktLight',
+                                display_name_default: 'PktLight',
+                            },
+                            {
+                                value: 'pktdark',
+                                display_name: 'PktDark',
+                                display_name_default: 'PktDark',
+                            },
+                            {
                                 value: 'denim',
                                 display_name: 'Denim',
                                 display_name_default: 'Denim',

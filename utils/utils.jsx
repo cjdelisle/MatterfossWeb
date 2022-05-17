@@ -688,7 +688,7 @@ export function applyTheme(theme) {
 }
 
 export function resetTheme() {
-    applyTheme(Preferences.THEMES.denim);
+    applyTheme(Preferences.THEMES.pktlight);
 }
 
 function changeCss(className, classValue) {

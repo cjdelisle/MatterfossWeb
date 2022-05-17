@@ -119,7 +119,7 @@ export const blendColors = (background: string, foreground: string, opacity: num
 // object mapping theme types to their respective keys for retrieving the source themes directly
 // - supports mapping old themes to new themes
 const themeTypeMap: ThemeTypeMap = {
-    Mattermost: 'denim',
+    Mattermost: 'pktlight',
     Organization: 'sapphire',
     'Mattermost Dark': 'indigo',
     'Windows Dark': 'onyx',
@@ -128,11 +128,13 @@ const themeTypeMap: ThemeTypeMap = {
     Quartz: 'quartz',
     Indigo: 'indigo',
     Onyx: 'onyx',
+    PktLight: 'pktlight',
+    PktDark: 'pktdark',
 };
 
 // setThemeDefaults will set defaults on the theme for any unset properties.
 export function setThemeDefaults(theme: Partial<Theme>): Theme {
-    const defaultTheme = Preferences.THEMES.denim;
+    const defaultTheme = Preferences.THEMES.pktlight;
 
     const processedTheme = {...theme};
 
