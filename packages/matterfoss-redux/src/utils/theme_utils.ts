@@ -119,6 +119,7 @@ export const blendColors = (background: string, foreground: string, opacity: num
 // object mapping theme types to their respective keys for retrieving the source themes directly
 // - supports mapping old themes to new themes
 const themeTypeMap: ThemeTypeMap = {
+    Mattermost: 'pktlight',
     MatterFOSS: 'pktlight',
     Organization: 'sapphire',
     'MatterFOSS Dark': 'indigo',
